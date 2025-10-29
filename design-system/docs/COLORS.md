@@ -1,195 +1,166 @@
-# White Horse Heritage Palette
+# Midnight Majesty Design System – Color Documentation
 
 ## 🎨 Overview
 
-The **White Horse Restaurant & Pub** color system reimagines the interface around Nepalese heritage. The palette balances bright alpine neutrals, bold Royal Crimson, deep Sapphire Blue, grounding Himalayan Clay, celebratory Temple Gold, fresh Mountain Forest greens, and reliable Stone Grey neutrals.
+The **Midnight Majesty** palette defines the primary visual language for White Horse Restaurant & Pub: deep Midnight Navy foundations, radiant Golden Hour highlights, and vibrant Rhododendron flourishes. All color tokens originate from `theme/colors.js` and are emitted to CSS variables via `npm run colors:generate`. Tailwind utilities reference these variables directly (e.g. `bg-brand-600`, `text-accent-400`).
 
-All tokens originate from `theme/colors.js` and are emitted to CSS variables by `npm run colors:generate`. Tailwind utilities reference these variables directly (e.g. `bg-brand-600`, `text-crimson-700`).
+## 🌈 Core Palette Families
 
-## 🌈 Palette Families
-
-### Primary — *Himalayan Snow*
+### Primary — *Midnight Navy*
 ```css
---color-primary-50: #FFFFFF;
---color-primary-100: #FAFAFA;
---color-primary-200: #F5F5F5;
---color-primary-300: #EEEEEE;
---color-primary-400: #E0E0E0;
---color-primary-500: #D4D4D4;
---color-primary-600: #BDBDBD;
---color-primary-700: #9E9E9E;
---color-primary-800: #757575;
---color-primary-900: #616161;
---color-primary-950: #4A4A4A;
+--color-primary-50: #F0F4F8;
+--color-primary-100: #D9E2EC;
+--color-primary-200: #BCCCDC;
+--color-primary-300: #9FB3C8;
+--color-primary-400: #829AB1;
+--color-primary-500: #1E3A5F; /* 🎯 Primary CTA */
+--color-primary-600: #102A43;
+--color-primary-700: #0C2133;
+--color-primary-800: #091A28;
+--color-primary-900: #061420;
+--color-primary-950: #040D18;
 ```
-Use for spacious backgrounds, elevated surfaces, and gentle dividers.
+Use for hero backgrounds, navigational chrome, and premium call-to-action buttons.
 
-### Accent — *Royal Crimson*
+### Accent — *Golden Hour*
 ```css
---color-accent-50: #FEF2F2;
---color-accent-100: #FEE2E2;
---color-accent-200: #FECACA;
---color-accent-300: #FCA5A5;
---color-accent-400: #F87171;
---color-accent-500: #DC143C; /* 🎯 Primary CTA */
---color-accent-600: #C41E3A;
---color-accent-700: #991B1B;
---color-accent-800: #7F1D1D;
---color-accent-900: #5F1416;
---color-accent-950: #3B0B0D;
+--color-accent-50: #FFFBEB;
+--color-accent-100: #FEF3C7;
+--color-accent-200: #FDE68A;
+--color-accent-300: #FCD34D;
+--color-accent-400: #FBBF24;
+--color-accent-500: #F59E0B; /* 🎯 Golden highlight */
+--color-accent-600: #D97706;
+--color-accent-700: #B45309;
+--color-accent-800: #92400E;
+--color-accent-900: #78350F;
+--color-accent-950: #4E2208;
 ```
-Apply to call-to-action buttons, hero headlines, and key highlights.
+Apply to premium CTAs, pricing highlights, and hospitality-focused accents.
 
-### Secondary — *Sapphire Blue*
+### Secondary — *Rhododendron Bloom*
 ```css
---color-secondary-50: #EFF6FF;
---color-secondary-100: #DBEAFE;
---color-secondary-200: #BFDBFE;
---color-secondary-300: #93C5FD;
---color-secondary-400: #60A5FA;
---color-secondary-500: #003893;
---color-secondary-600: #002D72;
---color-secondary-700: #002561;
---color-secondary-800: #001E4F;
---color-secondary-900: #001840;
---color-secondary-950: #00112D;
+--color-secondary-50: #FDF2F8;
+--color-secondary-100: #FCE7F3;
+--color-secondary-200: #FBCFE8;
+--color-secondary-300: #F9A8D4;
+--color-secondary-400: #F472B6;
+--color-secondary-500: #DB2777; /* 🎯 Signature flourish */
+--color-secondary-600: #BE185D;
+--color-secondary-700: #9D174D;
+--color-secondary-800: #831843;
+--color-secondary-900: #6B1A3A;
+--color-secondary-950: #4F102F;
 ```
-Ideal for navigation, interactive states, and informational accents.
+Perfect for celebratory moments, special offers, and contrast against the navy foundation.
 
-### Earth — *Himalayan Clay*
+### Neutrals — *Twilight Mist*
 ```css
---color-earth-50: #FDF8F7;
---color-earth-100: #F9EFEC;
---color-earth-200: #F1DDD8;
---color-earth-300: #E5C3B9;
---color-earth-400: #D49D8C;
---color-earth-500: #B8735A;
---color-earth-600: #9C5D47;
---color-earth-700: #7D4A39;
---color-earth-800: #5F3A2D;
---color-earth-900: #4A2E23;
---color-earth-950: #352019;
+--color-neutral-50: #F7FAFC;
+--color-neutral-100: #EDF2F7;
+--color-neutral-200: #E2E8F0;
+--color-neutral-300: #CBD5E1;
+--color-neutral-400: #94A3B8;
+--color-neutral-500: #64748B;
+--color-neutral-600: #475569;
+--color-neutral-700: #334155;
+--color-neutral-800: #1E293B;
+--color-neutral-900: #0F172A;
+--color-neutral-950: #0A1120;
 ```
-Reserve for warm backgrounds, textured sections, and supporting gradients.
+Use for surfaces, typography, and layout structure in both dining (light) and pub (dark) contexts.
 
-### Gold — *Temple Gold*
+### Deep Surface — *Obsidian Slate*
 ```css
---color-gold-50: #FFFDF7;
---color-gold-100: #FEF9E7;
---color-gold-200: #FDF2C8;
---color-gold-300: #FCE7A1;
---color-gold-400: #F9D669;
---color-gold-500: #D4AF37;
---color-gold-600: #B8941F;
---color-gold-700: #8C7315;
---color-gold-800: #6B5A11;
---color-gold-900: #4F420C;
---color-gold-950: #362D08;
+--color-stout-50: #F5F7FA;
+--color-stout-100: #E4E7EB;
+--color-stout-200: #CBD2D9;
+--color-stout-300: #9AA5B1;
+--color-stout-400: #7B8794;
+--color-stout-500: #616E7C;
+--color-stout-600: #52606D;
+--color-stout-700: #3E4C59;
+--color-stout-800: #323F4B;
+--color-stout-900: #1F2933;
+--color-stout-950: #111827;
 ```
-Use for premium badges, pricing highlights, and festive callouts.
+Provides the structural dark neutrals used for cards, drawers, and pub-mode surfaces.
 
-### Forest — *Mountain Forest*
+### Supporting Greens — *Evergreen & Cardamom*
+Vegetarian tags and wellness cues retain a dedicated green system.
 ```css
---color-forest-50: #F0FDF4;
---color-forest-100: #DCFCE7;
---color-forest-200: #BBF7D0;
---color-forest-300: #86EFAC;
---color-forest-400: #4ADE80;
---color-forest-500: #2C5F2D;
---color-forest-600: #234D24;
---color-forest-700: #1A3D1B;
---color-forest-800: #143016;
---color-forest-900: #0F2411;
---color-forest-950: #09190C;
+--color-indiagreen-500: #12B76A; /* Evergreen anchor */
+--color-cardamom-500: #5CA660;  /* Herbal accent */
 ```
-Perfect for wellness cues, launch states, and success feedback.
-
-### Neutral — *Stone Grey*
-```css
---color-neutral-50: #F9FAFB;
---color-neutral-100: #F3F4F6;
---color-neutral-200: #E5E7EB;
---color-neutral-300: #D1D5DB;
---color-neutral-400: #9CA3AF;
---color-neutral-500: #6B7280;
---color-neutral-600: #4B5563;
---color-neutral-700: #374151;
---color-neutral-800: #1F2937;
---color-neutral-900: #111827;
---color-neutral-950: #0B1120;
-```
-Use for typography, dividers, subdued backgrounds, and dark mode surfaces.
+Use these only for dietary indicators, success states, or sustainability messaging.
 
 ## 💾 Legacy Token Compatibility
 
-Legacy families map to the new palette:
+| Legacy Utility | Maps To |
+|----------------|---------|
+| `brand-*`      | Midnight Navy (`--color-brand-*` → `primary` scale) |
+| `accent-*`     | Golden Hour scale |
+| `secondary-*`  | Rhododendron scale |
+| `crimson-*`    | Rhododendron scale (preserves "red" class names) |
+| `marigold-*`   | Golden Hour scale |
+| `stout-*`      | Obsidian Slate dark neutrals |
+| `indiagreen-*` | Evergreen scale (dietary cues) |
+| `cardamom-*`   | Herbal cardamom scale (soft green support) |
+| `rose-*`       | Rhododendron scale (explicit rose alias) |
 
-| Legacy Family | New Source |
-|---------------|------------|
-| `brand-*`     | Royal Crimson scale (`--color-brand-*` mirrors `accent`) |
-| `crimson-*`   | Royal Crimson scale |
-| `indiagreen-*`| Mountain Forest scale |
-| `marigold-*`  | Temple Gold scale |
-| `stout-*`     | Himalayan Clay scale |
-| `cardamom-*`  | Mountain Forest scale |
-
-This ensures existing utility classes (`bg-brand-50`, `text-marigold-600`, etc.) render with the updated palette.
+These aliases keep existing Tailwind utilities working while the brand shifts to Midnight Majesty hues.
 
 ## 🧭 Semantic Tokens
 
-Light Mode (`semantic.light`):
-- Surfaces: `base` → `--color-primary-50`, `muted` → `--color-primary-200`.
-- Text: primary → `--color-neutral-800`, brand accents → `--color-crimson-700`.
-- Borders: subtle → `--color-neutral-200`, brand → `--color-crimson-400`.
-- Aliases: `--color-primary` = `--color-crimson-500`, `--color-accent` = `--color-gold-500`.
+- **Light mode** surfaces pull from `Twilight Mist` with accents from Navy, Gold, and Rhododendron.
+- **Dark mode** surfaces lean on deep Midnight Navy tones with lighter neutrals for typography.
+- `--color-primary` → `--color-primary-500`
+- `--color-secondary` → `--color-accent-500`
+- `--color-accent` → `--color-secondary-500`
 
-Dark Mode (`semantic.dark`):
-- Surfaces draw from Stone Grey deep tones.
-- Text/alias tokens lighten the Royal Crimson, Temple Gold, and Sapphire Blue families for contrast.
-
-Use semantic tokens (`var(--color-surface-base)`, `var(--color-text-primary)`) whenever possible; fall back to explicit palette steps for bespoke visuals.
+Use semantic tokens (`var(--color-surface-base)`, `var(--color-text-primary)`) for most UI components to maintain theme safety.
 
 ## ✅ Status Scales
 
-Feedback colors reuse palette families:
-- Success → Mountain Forest
-- Warning → Temple Gold
-- Info → Sapphire Blue
-- Error → Royal Crimson
+- `success-*` → Evergreen
+- `warning-*` → Golden Hour
+- `info-*` → Midnight Navy
+- `error-*` → Rhododendron
 
-Utilities like `bg-success-500` and semantic aliases (`--color-success`) pick from these scales.
+UI feedback (alerts, badges, toasts) should rely on these scales or the semantic equivalents (`--color-success`, `--color-warning`, etc.).
 
 ## 🛠️ Usage Patterns
 
-- **Restaurant menu & signage**: `bg-primary-50`, `text-crimson-700`, `border-gold-300`.
-- **Pub ambience**: `bg-earth-800`, `text-primary-50`, `accent-gold-500` highlights.
-- **Website CTAs**: `bg-crimson-600 hover:bg-crimson-700`, `focus-visible:ring-gold-400`.
-- **Branding**: combine `brand` (Royal Crimson), `secondary` (Sapphire Blue), and `gold` accent. Use `primary-50` for the White Horse icon.
+- **Upscale dining CTA**: `bg-brand-600 hover:bg-brand-700 text-neutral-50`
+- **Premium promo card**: `bg-accent-50 border-accent-200 text-brand-700`
+- **Cocktail highlight**: `bg-secondary-500 text-neutral-50 hover:bg-secondary-600`
+- **Vegetarian badge**: `bg-indiagreen-100 text-indiagreen-700`
 
 ## 🔁 Generation Workflow
 
-1. Update `theme/colors.js` (single source of truth).
+1. Update `theme/colors.js` when palette values change.
 2. Run `npm run colors:generate` to refresh `styles/generated/colors.css`.
-3. Tailwind immediately picks up new variables via `var(--color-... )` bindings.
-4. Verify with DevTools color palette, contrast checks, and theme toggles.
+3. Tailwind consumes the regenerated CSS variables automatically; purge cache if developing.
+4. Use Chrome DevTools to verify contrast in light & dark modes after every palette change.
 
-## 🧪 Contrast & Accessibility
+## ♿ Accessibility Notes
 
-- Aim for WCAG AA (4.5:1) for body text; rely on `semantic.text` tokens to stay compliant.
-- Buttons should combine `bg-crimson-600` with `text-primary-50` and `focus-visible:ring-secondary-300`.
-- Provide non-color cues (icons, bold text) for state changes.
+- Midnight Navy + neutral 50 meets AA contrast for body text (≥ 4.5:1).
+- Golden Hour on navy requires medium-weight typography (≥ 16px / 600 weight) to maintain contrast; otherwise prefer white on navy.
+- Rhododendron on dark surfaces is best paired with white text or used as outline/overlays.
+- Preserve non-color cues (icons, weight, underlines) for status communication.
 
 ## 📌 Quick Reference
 
-- Primary CTA: `bg-crimson-600`, hover `bg-crimson-700`.
-- Secondary CTA: `bg-secondary-500`, hover `bg-secondary-600`.
-- Premium highlight: `border-gold-400`, `text-gold-600`.
-- Success badge: `bg-forest-100 text-forest-700`.
-- Neutral card: `bg-primary-50 border-neutral-200 text-neutral-800`.
+- Primary CTA: `bg-brand-600 hover:bg-brand-700 text-neutral-50`
+- Secondary CTA: `bg-accent-500 hover:bg-accent-600 text-neutral-50`
+- Premium outline: `border-accent-400 text-accent-600`
+- Info chip: `bg-info-100 text-info-700`
+- Success badge: `bg-indiagreen-100 text-indiagreen-700`
 
 ## 🧭 Maintenance Checklist
 
-- [ ] Update docs when palette shifts.
-- [ ] Run `npm run colors:generate` after edits.
-- [ ] Re-run contrast audits in light & dark themes.
-- [ ] Coordinate design reviews for major hue changes.
+- [ ] Run `npm run colors:generate` after editing token values.
+- [ ] Sync this document with any palette updates.
+- [ ] Perform light + dark QA (desktop/mobile) before release.
+- [ ] Review contrast with automated tooling (Lighthouse, axe) regularly.
