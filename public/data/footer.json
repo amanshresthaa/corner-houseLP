@@ -1,0 +1,20 @@
+{
+  "sections": [
+    {
+      "title": "QUICK LINKS",
+      "links": [
+        { "href": "/menu", "label": "Menu" },
+        { "href": "/about", "label": "About" },
+        { "href": "/events", "label": "Events" },
+        { "href": "/contact", "label": "Contact" }
+      ]
+    },
+    {
+      "title": "LEGAL",
+      "links": [
+        { "href": "/tos", "label": "Terms of Service" },
+        { "href": "/privacy-policy", "label": "Privacy Policy" }
+      ]
+    }
+  ]
+}

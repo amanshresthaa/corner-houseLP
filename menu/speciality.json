@@ -1,0 +1,23 @@
+[
+  { "name": "Kathmandu Tikka (Served in Grill) (GF)", "price": { "amount": 13.00, "currency": "GBP" }, "labels": ["GF","dry"] },
+  { "name": "Rack of Lamb (GF)", "price": { "amount": 15.00, "currency": "GBP" }, "labels": ["GF","dry"] },
+  { "name": "Paneer Saslick (GF)", "price": { "amount": 13.00, "currency": "GBP" }, "labels": ["veg","GF","dry"] },
+  { "name": "Salmon Tikka (GF)", "price": { "amount": 17.00, "currency": "GBP" }, "labels": ["GF","dry"] },
+  { "name": "Tandoori King Prawn (GF)", "price": { "amount": 18.00, "currency": "GBP" }, "labels": ["GF","dry"] },
+  { "name": "Himali Lamb (GF)", "price": { "amount": 14.00, "currency": "GBP" } },
+  { "name": "Special Veggie Tarkari (V)(GF)", "price": { "amount": 12.00, "currency": "GBP" }, "labels": ["veg","GF"] },
+  { "name": "Veggie Biryani", "price": { "amount": 13.00, "currency": "GBP" } },
+  { "name": "Chicken Biryani", "price": { "amount": 14.00, "currency": "GBP" } },
+  { "name": "Lamb Biryani", "price": { "amount": 15.00, "currency": "GBP" } },
+  { "name": "King Prawn Biryani", "price": { "amount": 16.00, "currency": "GBP" } },
+  { "name": "Bhutuwa Chicken (GF)", "price": { "amount": 13.00, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Bhutuwa Lamb (GF)", "price": { "amount": 14.00, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Special Butter Chicken (GF)", "price": { "amount": 14.00, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Lasun Kukhura Khursani (LKK) Chicken (GF)", "price": { "amount": 13.00, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Lasun Khasi Khursani (LLK) Lamb (GF)", "price": { "amount": 14.00, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Khasi Ko Masu (Goat Curry) (GF)", "price": { "amount": 14.50, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Pokhareli Fish Curry (GF)", "price": { "amount": 14.00, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Chicken Rum Rum (GF)", "price": { "amount": 13.00, "currency": "GBP" }, "labels": ["GF"] },
+  { "name": "Rara King Prawn", "price": { "amount": 15.00, "currency": "GBP" } },
+  { "name": "Kathmandu Tikka Masala (GF)", "price": { "amount": 14.00, "currency": "GBP" }, "labels": ["GF"] }
+]

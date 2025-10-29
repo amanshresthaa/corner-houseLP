@@ -1,0 +1,281 @@
+const { themes, base } = require('./theme/colors');
+const LIGHT = themes.light.colors;
+
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./styles/globals.css",
+  ],
+  theme: {
+    // Custom container to align with requested breakpoint sizes
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1rem',
+        md: '1.25rem',
+        lg: '1.5rem',
+        xl: '2rem',
+        '2xl': '2.5rem',
+      },
+      screens: {
+        sm: '576px',   // Small tablets portrait
+        md: '768px',   // Tablets portrait, small laptops
+        lg: '992px',   // Tablets landscape, desktop
+        xl: '1200px',  // Desktop
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      // Additional fine‑grained breakpoints (preserve Tailwind defaults)
+      screens: {
+        xxs: '320px',   // Smallest phones
+        xs: '375px',    // iPhone SE, small phones
+        sm480: '480px', // Large phones landscape
+        sm576: '576px', // Small tablets portrait
+        lg992: '992px',
+        xl1200: '1200px',
+        xl1400: '1400px',
+        fhd: '1920px',  // Full HD+
+        uw2k: '2560px', // 2K/4K ultra-wide
+        uw3440: '3440px',
+      },
+      colors: {
+        // White Horse Heritage Palette (50-950 scales)
+        brand: {
+          50: 'var(--color-brand-50)',
+          100: 'var(--color-brand-100)',
+          200: 'var(--color-brand-200)',
+          300: 'var(--color-brand-300)',
+          400: 'var(--color-brand-400)',
+          500: 'var(--color-brand-500)', // Royal Crimson anchor
+          600: 'var(--color-brand-600)',
+          700: 'var(--color-brand-700)',
+          800: 'var(--color-brand-800)',
+          900: 'var(--color-brand-900)',
+          950: 'var(--color-brand-950)',
+        },
+        accent: {
+          50: 'var(--color-accent-50)',
+          100: 'var(--color-accent-100)',
+          200: 'var(--color-accent-200)',
+          300: 'var(--color-accent-300)',
+          400: 'var(--color-accent-400)',
+          500: 'var(--color-accent-500)', // Royal Crimson anchor
+          600: 'var(--color-accent-600)',
+          700: 'var(--color-accent-700)',
+          800: 'var(--color-accent-800)',
+          900: 'var(--color-accent-900)',
+        },
+        secondary: {
+          300: 'var(--color-secondary-300)',
+          500: 'var(--color-secondary-500)', // Sapphire Blue anchor
+          600: 'var(--color-secondary-600)',
+          700: 'var(--color-secondary-700)',
+        },
+        crimson: {
+          50: 'var(--color-crimson-50)',
+          100: 'var(--color-crimson-100)',
+          200: 'var(--color-crimson-200)',
+          300: 'var(--color-crimson-300)',
+          400: 'var(--color-crimson-400)',
+          500: 'var(--color-crimson-500)', // Royal Crimson anchor
+          600: 'var(--color-crimson-600)',
+          700: 'var(--color-crimson-700)',
+          800: 'var(--color-crimson-800)',
+        },
+
+        indiagreen: {
+          50: 'var(--color-indiagreen-50)',
+          100: 'var(--color-indiagreen-100)',
+          200: 'var(--color-indiagreen-200)',
+          300: 'var(--color-indiagreen-300)',
+          400: 'var(--color-indiagreen-400)',
+          500: 'var(--color-indiagreen-500)', // Mountain Forest anchor
+          600: 'var(--color-indiagreen-600)',
+          700: 'var(--color-indiagreen-700)',
+          800: 'var(--color-indiagreen-800)',
+          900: 'var(--color-indiagreen-900)',
+          950: 'var(--color-indiagreen-950)',
+        },
+        marigold: {
+          50: 'var(--color-marigold-50)',
+          100: 'var(--color-marigold-100)',
+          200: 'var(--color-marigold-200)',
+          300: 'var(--color-marigold-300)',
+          400: 'var(--color-marigold-400)',
+          500: 'var(--color-marigold-500)', // Temple Gold anchor
+          600: 'var(--color-marigold-600)',
+          700: 'var(--color-marigold-700)',
+          800: 'var(--color-marigold-800)',
+          900: 'var(--color-marigold-900)',
+          950: 'var(--color-marigold-950)',
+        },
+
+
+
+        stout: {
+          50: 'var(--color-stout-50)',
+          100: 'var(--color-stout-100)',
+          200: 'var(--color-stout-200)',
+          300: 'var(--color-stout-300)',
+          400: 'var(--color-stout-400)',
+          500: 'var(--color-stout-500)', // Himalayan Clay anchor
+          600: 'var(--color-stout-600)',
+          700: 'var(--color-stout-700)',
+          800: 'var(--color-stout-800)',
+          900: 'var(--color-stout-900)',
+          950: 'var(--color-stout-950)',
+        },
+        cardamom: {
+          50: 'var(--color-cardamom-50)',
+          100: 'var(--color-cardamom-100)',
+          200: 'var(--color-cardamom-200)',
+          300: 'var(--color-cardamom-300)',
+          400: 'var(--color-cardamom-400)',
+          500: 'var(--color-cardamom-500)', // Mountain Forest soft anchor
+          600: 'var(--color-cardamom-600)',
+          700: 'var(--color-cardamom-700)',
+          800: 'var(--color-cardamom-800)',
+          900: 'var(--color-cardamom-900)',
+          950: 'var(--color-cardamom-950)',
+        },
+        gold: {
+          50: 'var(--color-gold-50)',
+          100: 'var(--color-gold-100)',
+          200: 'var(--color-gold-200)',
+          300: 'var(--color-gold-300)',
+          400: 'var(--color-gold-400)',
+          500: 'var(--color-gold-500)',
+          600: 'var(--color-gold-600)',
+          700: 'var(--color-gold-700)',
+          800: 'var(--color-gold-800)',
+          900: 'var(--color-gold-900)',
+          950: 'var(--color-gold-950)',
+        },
+        forest: {
+          50: 'var(--color-forest-50)',
+          100: 'var(--color-forest-100)',
+          200: 'var(--color-forest-200)',
+          300: 'var(--color-forest-300)',
+          400: 'var(--color-forest-400)',
+          500: 'var(--color-forest-500)',
+          600: 'var(--color-forest-600)',
+          700: 'var(--color-forest-700)',
+          800: 'var(--color-forest-800)',
+          900: 'var(--color-forest-900)',
+          950: 'var(--color-forest-950)',
+        },
+        earth: {
+          50: 'var(--color-earth-50)',
+          100: 'var(--color-earth-100)',
+          200: 'var(--color-earth-200)',
+          300: 'var(--color-earth-300)',
+          400: 'var(--color-earth-400)',
+          500: 'var(--color-earth-500)',
+          600: 'var(--color-earth-600)',
+          700: 'var(--color-earth-700)',
+          800: 'var(--color-earth-800)',
+          900: 'var(--color-earth-900)',
+          950: 'var(--color-earth-950)',
+        },
+        
+        // Legacy Crown mappings for backward compatibility
+        crown: {
+          gold: 'var(--color-gold-500)',
+          'gold-light': 'var(--color-gold-400)',
+          'gold-dark': 'var(--color-gold-600)',
+          dark: 'var(--color-text)',
+          ochre: 'var(--color-gold-600)',
+          slate: 'var(--color-neutral-700)',
+          'slate-light': 'var(--color-neutral-600)',
+          'slate-dark': 'var(--color-neutral-800)',
+          red: 'var(--color-crimson-600)',
+          'red-light': 'var(--color-crimson-500)',
+          'red-dark': 'var(--color-crimson-800)',
+          cream: 'var(--color-neutral-50)',
+          'cream-dark': 'var(--color-neutral-100)',
+        },
+        
+        // Semantic colors for restaurant
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        accent: 'var(--color-accent)',
+        neutral: 'var(--color-neutral-100)',
+        success: 'var(--color-success)',
+        warning: 'var(--color-warning)',
+        error: 'var(--color-error)',
+      },
+      fontFamily: {
+        'display': ['var(--font-playfair)', 'Playfair Display', 'serif'], // For headings
+        'body': ['var(--font-inter)', 'Inter', 'sans-serif'], // For body text
+        'sans': ['var(--font-inter)', 'Inter', 'sans-serif'],
+        'serif': ['var(--font-playfair)', 'Playfair Display', 'serif'],
+      },
+      backgroundImage: {
+        'hero-pattern': "var(--grad-hero-pattern)",
+        gradient: "var(--grad-spectrum)",
+        'skeleton-shimmer': "var(--grad-skeleton)",
+      },
+      animation: {
+        opacity: "opacity 0.25s ease-in-out",
+        appearFromRight: "appearFromRight 300ms ease-in-out",
+        wiggle: "wiggle 1.5s ease-in-out infinite",
+        popup: "popup 0.25s ease-in-out",
+        shimmer: "shimmer 3s ease-out infinite alternate",
+        "scroll-left": "scroll-left 30s linear infinite",
+      },
+      keyframes: {
+        opacity: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        appearFromRight: {
+          "0%": { opacity: 0.3, transform: "translate(15%, 0px);" },
+          "100%": { opacity: 1, transform: "translate(0);" },
+        },
+        wiggle: {
+          "0%, 20%, 80%, 100%": {
+            transform: "rotate(0deg)",
+          },
+          "30%, 60%": {
+            transform: "rotate(-2deg)",
+          },
+          "40%, 70%": {
+            transform: "rotate(2deg)",
+          },
+          "45%": {
+            transform: "rotate(-4deg)",
+          },
+          "55%": {
+            transform: "rotate(4deg)",
+          },
+        },
+        popup: {
+          "0%": { transform: "scale(0.8)", opacity: 0.8 },
+          "50%": { transform: "scale(1.1)", opacity: 1 },
+          "100%": { transform: "scale(1)", opacity: 1 },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "0 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "scroll-left": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-320px * 6 - 1.5rem * 5))" },
+        },
+      },
+    },
+  },
+  plugins: [require("daisyui")],
+  daisyui: {
+    // Light & dark themes are added by default (it switches automatically based on OS settings)
+    // You can add another theme among the list of 30+
+    // Add "data-theme='theme_name" to any HTML tag to enable the 'theme_name' theme.
+    // https://daisyui.com/
+    themes: ["light", "dark"],
+  },
+};

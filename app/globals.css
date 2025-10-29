@@ -1,0 +1,639 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* Tailwind directives */
+@import '../styles/generated/colors.css';
+@import '../styles/accessibility.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Anti-flicker loading system - Enhanced */
+.loading-phase-critical {
+  opacity: 1;
+  transform: translateY(0);
+  transition: none;
+}
+
+.loading-phase-above-fold {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.loading-phase-above-fold.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.loading-phase-below-fold {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.loading-phase-below-fold.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Progressive loading enhancements */
+.progressive-section {
+  will-change: opacity, transform;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  contain: layout; /* Prevent layout reflow */
+}
+
+.progressive-section-loading {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.progressive-section-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Immediate display for SSR critical content */
+.progressive-section[data-priority="true"] {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: none !important;
+}
+
+/* Navbar coordination */
+.navbar-placeholder {
+  height: 64px;
+  background-color: rgb(249 250 251);
+  border-bottom: 1px solid rgb(229 231 235);
+  contain: strict; /* Maximum containment for fixed elements */
+}
+
+/* Prevent layout shifts during loading */
+.section-placeholder {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  contain: paint; /* Prevent paint reflows */
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Custom typography and spacing */
+
+/* Prevent hydration flicker */
+.hydration-safe {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hydration-safe[data-hydrated="false"] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* CLS prevention for lazy placeholders */
+img[loading="lazy"]::before {
+  content: '';
+  display: block;
+  padding-bottom: calc(100% / (attr(width) / attr(height)));
+  /* Fallback for aspect-ratio */
+}
+
+img[loading="lazy"] {
+  contain-intrinsic-size: attr(width) px attr(height) px;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Foundation: fluid typography, spacing, and container tokens */
+:root {
+  --rhythm: clamp(0.75rem, 1.6vw, 1.25rem);
+  --lh-body: clamp(1.45, 1.2 + 0.8vw, 1.65);
+  --container-gutter: clamp(1rem, 3vw, 2rem);
+  --content-max: 72ch; /* optimal reading width */
+  --page-max: 1440px; /* default page max */
+}
+
+/* Performance hygiene */
+.lazy-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
+}
+
+/* Gate hover micro-lifts on touch devices */
+@media (pointer: coarse) {
+  .hover-lift {
+    transform: none !important;
+  }
+}
+
+/* Only enable will-change hint when explicitly toggled */
+[data-animating="true"] {
+  will-change: transform, opacity;
+}
+
+/* Safari subpixel wobble mitigation */
+.gpu-fix {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduced motion: disable any smooth scrolling globally */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+}
+
+body {
+  font-size: clamp(0.9375rem, 0.85rem + 0.4vw, 1.0625rem);
+  line-height: var(--lh-body);
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 3.5rem); line-height: 1.15; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.75rem); line-height: 1.2; }
+h3 { font-size: clamp(1.25rem, 2.8vw, 2rem); line-height: 1.25; }
+h4 { font-size: clamp(1.125rem, 2.2vw, 1.5rem); line-height: 1.3; }
+h5 { font-size: clamp(1rem, 1.8vw, 1.25rem); line-height: 1.35; }
+h6 { font-size: clamp(0.95rem, 1.4vw, 1.125rem); line-height: 1.4; }
+
+/* Fluid container with safe-area gutters */
+.oc-container { margin-inline: auto; padding-inline: max(var(--container-gutter), env(safe-area-inset-left)); width: min(100%, var(--page-max)); }
+.oc-content { max-width: var(--content-max); margin-inline: auto; }
+.safe-area-top { padding-top: env(safe-area-inset-top); }
+.safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-area-x { padding-inline: max(var(--container-gutter), env(safe-area-inset-left), env(safe-area-inset-right)); }
+
+/* Improve scroll performance and prevent scroll issues */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Enhanced navigation positioning support */
+.navbar-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  width: 100% !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+  -webkit-transform: translateZ(0) !important;
+}
+
+/* Ensure body doesn't interfere with fixed navigation */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Force hardware acceleration for smooth scrolling */
+nav {
+  -webkit-overflow-scrolling: touch;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Prevent nested flex/grid overflow */
+main, section, div { min-width: 0; }
+
+/* Legacy sticky support (fallback) */
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Ensure sticky elements work on iOS Safari */
+@supports (-webkit-appearance: none) {
+  .sticky {
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* Prevent scroll anchoring issues during dynamic content changes */
+body {
+  overflow-anchor: none;
+}
+
+/* Ensure smooth scrolling doesn't interfere with programmatic scroll */
+.scroll-manual {
+  scroll-behavior: auto;
+  /* Improve scroll performance for complex layouts */
+  contain: layout style;
+  transform: translateZ(0);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Color palette & semantic tokens imported via styles/generated/colors.css */
+
+/* Backcompat: small set of legacy "crown-*" utility class mappings so existing components keep rendering while we migrate them.
+  These target the most common legacy classes found across the codebase (bg-crown-*, text-crown-*, border-crown-*).
+  They intentionally use the semantic vars / palette variables so changes propagate when the theme switches. */
+.bg-accent-500 { background-color: var(--color-accent-500) !important; }
+.bg-brand-50 { background-color: var(--color-brand-50) !important; }
+.bg-stout-700 { background-color: var(--color-stout-700) !important; }
+.bg-accent-500 { background-color: var(--color-accent) !important; }
+.text-accent-500 { color: var(--color-accent) !important; }
+.text-stout-700 { color: var(--color-stout-700) !important; }
+.text-brand-50 { color: var(--color-brand-50) !important; }
+.border-accent-500 { border-color: var(--color-accent) !important; }
+.ring-accent-500 { box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 12%, transparent) !important; }
+
+/* It makes the HTML progress bar filling smooth when value change. */
+progress::-webkit-progress-value {
+  transition: 0.6s width ease-out;
+}
+
+@layer base {
+  /* Mobile-first performance optimizations */
+  html {
+    font-family: var(--font-inter), Inter, sans-serif;
+    /* Improve text rendering on mobile */
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+  
+  /* Mobile-specific scroll optimizations */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Reduce animations on slow devices */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-snap-type: none !important;
+      transform: none !important; /* Standard */
+    }
+  }
+  
+  /* Battery optimization - reduce animations on low battery */
+  @media (prefers-reduced-motion: no-preference) {
+    html:not([data-force-motion]) * {
+      animation-duration: 0.2s;
+      transition-duration: 0.2s;
+    }
+  }
+  
+  .btn-gradient {
+    @apply !bg-gradient !bg-[length:300%_300%] hover:saturate-[1.2] shadow duration-100 !border-0 !border-transparent !bg-transparent transition-all disabled:!bg-none disabled:!bg-gray-500/30  !text-white;
+  }
+  .btn {
+    @apply !capitalize;
+    /* Mobile-optimized button interactions */
+    @apply transition-transform duration-150 ease-out will-change-transform;
+    /* Increase touch target size for mobile */
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Mobile-first: keep subtle hover lift on non-touch, respect reduced motion */
+  @media (hover: hover) and (pointer: fine) {
+    @media (prefers-reduced-motion: no-preference) {
+      .btn:not(:disabled):not(.btn-disabled):hover {
+        transform: translateY(-1px) scale(1.01); /* Reduced for mobile performance */
+      }
+      .btn:not(:disabled):not(.btn-disabled):active {
+        transform: translateY(0) scale(0.99);
+      }
+    }
+  }
+  
+  /* Mobile-specific touch optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    .btn:not(:disabled):not(.btn-disabled):active {
+      transform: scale(0.97);
+      transition-duration: 0.1s;
+    }
+  }
+  
+  /* Font face declarations */
+  .font-display {
+    font-family: var(--font-playfair), 'Playfair Display', serif;
+    /* Optimize font rendering for mobile */
+    font-display: swap;
+  }
+
+  /* Accessible form defaults with mobile optimization */
+  input, select, textarea { 
+    min-height: 44px; 
+    padding: 12px; 
+    font-size: max(16px, 1rem); /* Prevent zoom on iOS */
+    border-radius: 8px; /* Better touch targets */
+  }
+  .form-group { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
+  }
+  @media (min-width: 768px) {
+    .form-row { 
+      display: flex; 
+      flex-direction: row; 
+      align-items: center; 
+      gap: 1rem; 
+    }
+    .form-label { 
+      flex: 0 0 120px; 
+    }
+  }
+
+  /* Blog-specific styles */
+  .blog-content h2 {
+    @apply text-2xl font-bold text-brand-700 mt-8 mb-4 leading-tight;
+  }
+  
+  .blog-content h3 {
+    @apply text-xl font-semibold text-brand-600 mt-6 mb-3 leading-tight;
+  }
+  
+  .blog-content p {
+    @apply text-neutral-700 leading-relaxed mb-4;
+  }
+  
+  .blog-content ul, .blog-content ol {
+    @apply ml-6 mb-4 space-y-2;
+  }
+  
+  .blog-content li {
+    @apply text-neutral-700 leading-relaxed;
+  }
+  
+  .blog-content strong {
+    @apply font-semibold text-neutral-800;
+  }
+  
+  .blog-content blockquote {
+    @apply border-l-4 border-brand-300 pl-4 italic text-neutral-600 my-6;
+  }
+}
+
+@layer components {
+  /* Line clamp utility for text truncation */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 2; /* Standard if supported */
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 3;
+  }
+  
+  /* Custom scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Focus styles for accessibility */
+  .focus-outline {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-opacity-50 focus:ring-offset-2;
+  }
+  
+  /* Touch target compliance utilities */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .touch-target-sm {
+    min-height: 36px;
+    min-width: 36px;
+  }
+  
+  .badge-touch {
+    @apply px-3 py-2 min-h-[32px] inline-flex items-center;
+  }
+}
+
+@layer utilities {
+  /* Backdrop blur utilities */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  
+  /* Text shadow utilities */
+  .text-shadow {
+    text-shadow: 0 2px 4px var(--overlay-10);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px var(--overlay-20), 0 2px 4px var(--overlay-10);
+  }
+
+  /* Adaptive foreground utilities that follow the semantic token --color-text and variants.
+    Use these for small UI text (prices, metadata, feature lists) so they adapt to light/dark
+    mode and always meet contrast requirements when used on standard surfaces. */
+  .text-foreground { color: var(--color-text) !important; }
+  .text-foreground-strong { color: var(--color-text-primary) !important; }
+  .text-foreground-subtle { color: var(--color-text-secondary) !important; }
+
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Subtle slower pulse animation for attention (reduced motion respected automatically by Tailwind's motion-safe) */
+  @keyframes pulse-slow {
+    0%,100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.05); }
+  }
+  .animate-pulse-slow { @apply motion-safe:animate-[pulse-slow_3.2s_ease-in-out_infinite]; }
+}
+
+/* Menu section entrance animation - optimized for scroll performance */
+@keyframes menu-section-in {
+  from { 
+    opacity: 0; 
+    transform: translateY(6px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+    will-change: auto; /* Remove will-change when animation completes */
+  }
+}
+
+section[data-mounted="true"] {
+  animation: menu-section-in 260ms ease forwards;
+  /* Prevent layout shifts during animation */
+  transform-origin: top;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* Enhanced scroll performance optimizations */
+  will-change: opacity, transform;
+  contain: layout style paint;
+}
+
+/* Rotate chevron when details is open */
+details[open] summary svg { 
+  transform: rotate(180deg); 
+  transition: transform 180ms ease; 
+}
+
+/* Improved fade animations for smoother transitions */
+@keyframes fade-out {
+  from { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+  to { 
+    opacity: 0; 
+    transform: translateY(-6px); 
+  }
+}
+.animate-fade-out { 
+  animation: fade-out 240ms ease forwards;
+  /* Prevent scroll jumps during animation */
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+    transform: translateY(6px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+.animate-fade-in { 
+  animation: fade-in 260ms ease forwards;
+  /* Prevent scroll jumps during animation */
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+/* Scroll optimization classes */
+.scroll-optimized {
+  contain: layout style paint;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Performance-optimized motion elements */
+.motion-safe {
+  /* Only apply animations in motion-safe environments */
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+}
+
+/* Global performance optimizations for Framer Motion components */
+[data-framer-component] {
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  will-change: auto; /* Reset will-change after animations complete */
+}
+
+/* Optimize whileInView animations */
+[data-whileinview="true"] {
+  contain: layout style;
+  will-change: opacity, transform;
+}
+
+[data-whileinview="true"].animate-complete {
+  will-change: auto; /* Remove will-change when animation completes */
+}
+
+/* Intrinsic grids and additional utilities */
+@layer components {
+  .grid-auto-fit { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(1rem, 3vw, 2rem); }
+  .grid-responsive { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: clamp(1rem, 3vw, 2rem); }
+}
+
+@layer utilities {
+  .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  @media (max-width: 767px) {
+    .responsive-table thead { display: none; }
+    .responsive-table tr { display: block; margin-bottom: 1rem; }
+    .responsive-table td { display: block; text-align: right; border: none; padding-left: 50%; position: relative; }
+    .responsive-table td:before { content: attr(data-label); position: absolute; left: 6px; width: 45%; text-align: left; font-weight: bold; }
+  }
+  .vh-section { min-height: 100vh; min-height: 100svh; min-height: 100dvh; }
+  .is-container { container-type: inline-size; }
+}
+
+/* Ultra-wide adaptations to avoid overlong lines */
+@media (min-width: 1400px) { :root { --content-max: 78ch; --page-max: 1600px; } }
+@media (min-width: 1920px) { :root { --content-max: 80ch; --page-max: 1840px; } }
+@media (min-width: 2560px) { :root { --content-max: 82ch; --page-max: 2000px; } }
+
+/* Print optimization */
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow: none !important; text-shadow: none !important; }
+  .no-print { display: none !important; }
+  a[href^="http"]:after { content: " (" attr(href) ")"; }
+}
+
+/* Enhanced Sticky Button Animations */
+@layer utilities {
+  .sticky-fab-entrance {
+    animation: fabEntrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  .sticky-fab-pulse {
+    animation: fabPulse 2s cubic-bezier(0.4, 0.0, 0.6, 1) infinite;
+  }
+  
+  @keyframes fabEntrance {
+    0% { transform: scale(0) rotate(180deg); opacity: 0; }
+    50% { transform: scale(1.1) rotate(90deg); opacity: 0.8; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  
+  @keyframes fabPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.4); }
+    50% { box-shadow: 0 0 0 20px rgba(220, 20, 60, 0); }
+  }
+  
+  /* Enhance focus visibility for better accessibility */
+  .fab-focus-ring:focus-visible {
+    outline: 3px solid #F4C430;
+    outline-offset: 3px;
+  }
+}
+
+/* CLS prevention for lazy placeholders */
+[style*="aspect-ratio"] {
+  contain-intrinsic-size: initial;
+}
+
+img[loading="lazy"] {
+  contain-intrinsic-size: attr(width) attr(height);
+}

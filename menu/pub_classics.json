@@ -1,0 +1,8 @@
+[
+  { "name": "Fish & Chips", "price": { "amount": 12.00, "currency": "GBP" }, "description": "Medium battered cod fish served with tartar sauce" },
+  { "name": "Veg/Vegan Burger & Chips", "price": { "amount": 9.00, "currency": "GBP" } },
+  { "name": "Chicken Burger & Chips", "price": { "amount": 10.00, "currency": "GBP" } },
+  { "name": "Beef Burger & Chips", "price": { "amount": 11.00, "currency": "GBP" } },
+  { "name": "Chicken Strips with Chips", "price": { "amount": 9.00, "currency": "GBP" } },
+  { "name": "Peri-Peri Chicken with Chips", "price": { "amount": 9.00, "currency": "GBP" } }
+]

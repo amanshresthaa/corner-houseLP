@@ -1,0 +1,359 @@
+tailwind.config.js:181:          "linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)",
+theme/colors.js:6: * Brand Colors: Terracotta (#B86B5E), Saffron (#F4C430), Peacock Teal (#008080)
+theme/colors.js:7: * Heritage Colors: Nepal Crimson (#DC143C), India Green (#046A38)
+theme/colors.js:8: * Spice & Tavern: Marigold (#FFB000), Stout (#4C3A2D), Cardamom (#7A8F49)
+theme/colors.js:9: * Neutrals: Cream base (#F5F0E6), Dark base (#2B251F)
+theme/colors.js:14:    50: '#FDF8F7',
+theme/colors.js:15:    100: '#F9EFEC',
+theme/colors.js:16:    200: '#F1DDD8',
+theme/colors.js:17:    300: '#E5C3B9',
+theme/colors.js:18:    400: '#D49D8C',
+theme/colors.js:19:    500: '#B86B5E', // Terracotta anchor
+theme/colors.js:20:    600: '#A15548',
+theme/colors.js:21:    700: '#87453B',
+theme/colors.js:22:    800: '#703A32',
+theme/colors.js:23:    900: '#5D332D',
+theme/colors.js:24:    950: '#321B17',
+theme/colors.js:28:    50: '#FEFDF7',
+theme/colors.js:29:    100: '#FEFAEB',
+theme/colors.js:30:    200: '#FDF2C8',
+theme/colors.js:31:    300: '#FCE7A1',
+theme/colors.js:32:    400: '#F9D669',
+theme/colors.js:33:    500: '#F4C430', // Saffron anchor
+theme/colors.js:34:    600: '#E8A511',
+theme/colors.js:35:    700: '#C37F0F',
+theme/colors.js:36:    800: '#9F6314',
+theme/colors.js:37:    900: '#825217',
+theme/colors.js:38:    950: '#4A2E08',
+theme/colors.js:42:    300: '#5CFFFE',
+theme/colors.js:43:    500: '#008080', // Peacock Teal anchor
+theme/colors.js:44:    600: '#006666',
+theme/colors.js:45:    700: '#005252',
+theme/colors.js:50:    50: '#FEF2F2',
+theme/colors.js:51:    100: '#FEE2E2',
+theme/colors.js:52:    200: '#FECACA',
+theme/colors.js:53:    300: '#FCA5A5',
+theme/colors.js:54:    400: '#F87171',
+theme/colors.js:55:    500: '#DC143C', // Nepal Crimson anchor
+theme/colors.js:56:    600: '#C41E3A',
+theme/colors.js:57:    700: '#A61E3A',
+theme/colors.js:58:    800: '#881C37',
+theme/colors.js:64:    50: '#F0FDF4',
+theme/colors.js:65:    100: '#DCFCE7',
+theme/colors.js:66:    200: '#BBF7D0',
+theme/colors.js:67:    300: '#86EFAC',
+theme/colors.js:68:    400: '#4ADE80',
+theme/colors.js:69:    500: '#046A38', // India Green anchor
+theme/colors.js:70:    600: '#16A34A',
+theme/colors.js:71:    700: '#15803D',
+theme/colors.js:72:    800: '#166534',
+theme/colors.js:73:    900: '#14532D',
+theme/colors.js:74:    950: '#052E16',
+theme/colors.js:79:    50: '#FFFBEB',
+theme/colors.js:80:    100: '#FEF3C7',
+theme/colors.js:81:    200: '#FDE68A',
+theme/colors.js:82:    300: '#FCD34D',
+theme/colors.js:83:    400: '#FBBF24',
+theme/colors.js:84:    500: '#FFB000', // Marigold anchor
+theme/colors.js:85:    600: '#D97706',
+theme/colors.js:86:    700: '#B45309',
+theme/colors.js:87:    800: '#92400E',
+theme/colors.js:88:    900: '#78350F',
+theme/colors.js:89:    950: '#451A03',
+theme/colors.js:99:    50: '#F8F7F4',
+theme/colors.js:100:    100: '#EFEDE6',
+theme/colors.js:101:    200: '#DDD9CD',
+theme/colors.js:102:    300: '#C5BFAB',
+theme/colors.js:103:    400: '#A89F85',
+theme/colors.js:104:    500: '#4C3A2D', // Stout anchor
+theme/colors.js:105:    600: '#6B5D4F',
+theme/colors.js:106:    700: '#584C41',
+theme/colors.js:107:    800: '#4A4037',
+theme/colors.js:108:    900: '#3F3730',
+theme/colors.js:109:    950: '#221E19',
+theme/colors.js:113:    50: '#F7F8F3',
+theme/colors.js:114:    100: '#ECEFE3',
+theme/colors.js:115:    200: '#DAE0C8',
+theme/colors.js:116:    300: '#C0CBA4',
+theme/colors.js:117:    400: '#A4B380',
+theme/colors.js:118:    500: '#7A8F49', // Cardamom anchor
+theme/colors.js:119:    600: '#6B7F3F',
+theme/colors.js:120:    700: '#566435',
+theme/colors.js:121:    800: '#46522E',
+theme/colors.js:122:    900: '#3C4629',
+theme/colors.js:123:    950: '#1F2513',
+theme/colors.js:128:    50: '#F5F0E6', // Cream base for day mode
+theme/colors.js:129:    100: '#EDE6D9',
+theme/colors.js:130:    200: '#DDD4C5',
+theme/colors.js:131:    300: '#C8BBA8',
+theme/colors.js:132:    400: '#B3A08A',
+theme/colors.js:133:    500: '#94A3B8', // Mid-tone for accessibility
+theme/colors.js:134:    600: '#64748b',
+theme/colors.js:135:    700: '#475569',
+theme/colors.js:136:    800: '#334155',
+theme/colors.js:137:    900: '#2B251F', // Dark base for night mode
+theme/colors.js:138:    950: '#1A1611',
+theme/colors.js:143:    success: '#059669',
+theme/colors.js:144:    warning: '#D97706',
+theme/colors.js:145:    error: '#DC2626',
+theme/colors.js:146:    info: '#0284c7',
+theme/colors.js:192:      success: '#4ade80',
+tasks/color-usage-audit-20251029-1813/plan.md:22:  3. `grep`/`sed` sanity checks to confirm `rg` outputs (especially for edge cases like `#fff` without trailing semicolons).
+tasks/color-usage-audit-20251029-1813/research.md:11:- `tailwind.config.js` consumes `theme/colors.js` but ultimately maps Tailwind color utilities to CSS variables rather than raw hex values. Some gradients use embedded rgba/hex literals (e.g., `linear-gradient(60deg, #f79533, ... )`).
+tasks/color-usage-audit-20251029-1813/research.md:29:   - Known hotspots even at a glance: loaders (`linear-gradient` in Tailwind config), shimmer backgrounds (`app/globals.css`), older markdown/JSX content likely containing literal `#fff`, `rgb(...)`, etc.
+Everythingyouneed/color-palette-uses-and-guideline.md:12:        "50": "#FFFFFF",
+Everythingyouneed/color-palette-uses-and-guideline.md:13:        "100": "#FAFAFA",
+Everythingyouneed/color-palette-uses-and-guideline.md:14:        "200": "#F5F5F5",
+Everythingyouneed/color-palette-uses-and-guideline.md:15:        "300": "#EEEEEE",
+Everythingyouneed/color-palette-uses-and-guideline.md:16:        "400": "#E0E0E0",
+Everythingyouneed/color-palette-uses-and-guideline.md:17:        "500": "#D4D4D4",
+Everythingyouneed/color-palette-uses-and-guideline.md:18:        "600": "#BDBDBD",
+Everythingyouneed/color-palette-uses-and-guideline.md:19:        "700": "#9E9E9E",
+Everythingyouneed/color-palette-uses-and-guideline.md:20:        "800": "#757575",
+Everythingyouneed/color-palette-uses-and-guideline.md:21:        "900": "#616161"
+Everythingyouneed/color-palette-uses-and-guideline.md:28:        "50": "#FEF2F2",
+Everythingyouneed/color-palette-uses-and-guideline.md:29:        "100": "#FEE2E2",
+Everythingyouneed/color-palette-uses-and-guideline.md:30:        "200": "#FECACA",
+Everythingyouneed/color-palette-uses-and-guideline.md:31:        "300": "#FCA5A5",
+Everythingyouneed/color-palette-uses-and-guideline.md:32:        "400": "#F87171",
+Everythingyouneed/color-palette-uses-and-guideline.md:33:        "500": "#DC143C",
+Everythingyouneed/color-palette-uses-and-guideline.md:34:        "600": "#C41E3A",
+Everythingyouneed/color-palette-uses-and-guideline.md:35:        "700": "#991B1B",
+Everythingyouneed/color-palette-uses-and-guideline.md:36:        "800": "#7F1D1D",
+Everythingyouneed/color-palette-uses-and-guideline.md:37:        "900": "#5F1416"
+Everythingyouneed/color-palette-uses-and-guideline.md:44:        "50": "#EFF6FF",
+Everythingyouneed/color-palette-uses-and-guideline.md:45:        "100": "#DBEAFE",
+Everythingyouneed/color-palette-uses-and-guideline.md:46:        "200": "#BFDBFE",
+Everythingyouneed/color-palette-uses-and-guideline.md:47:        "300": "#93C5FD",
+Everythingyouneed/color-palette-uses-and-guideline.md:48:        "400": "#60A5FA",
+Everythingyouneed/color-palette-uses-and-guideline.md:49:        "500": "#003893",
+Everythingyouneed/color-palette-uses-and-guideline.md:50:        "600": "#002D72",
+Everythingyouneed/color-palette-uses-and-guideline.md:51:        "700": "#002561",
+Everythingyouneed/color-palette-uses-and-guideline.md:52:        "800": "#001E4F",
+Everythingyouneed/color-palette-uses-and-guideline.md:53:        "900": "#001840"
+Everythingyouneed/color-palette-uses-and-guideline.md:60:        "50": "#FDF8F7",
+Everythingyouneed/color-palette-uses-and-guideline.md:61:        "100": "#F9EFEC",
+Everythingyouneed/color-palette-uses-and-guideline.md:62:        "200": "#F1DDD8",
+Everythingyouneed/color-palette-uses-and-guideline.md:63:        "300": "#E5C3B9",
+Everythingyouneed/color-palette-uses-and-guideline.md:64:        "400": "#D49D8C",
+Everythingyouneed/color-palette-uses-and-guideline.md:65:        "500": "#B8735A",
+Everythingyouneed/color-palette-uses-and-guideline.md:66:        "600": "#9C5D47",
+Everythingyouneed/color-palette-uses-and-guideline.md:67:        "700": "#7D4A39",
+Everythingyouneed/color-palette-uses-and-guideline.md:68:        "800": "#5F3A2D",
+Everythingyouneed/color-palette-uses-and-guideline.md:69:        "900": "#4A2E23"
+Everythingyouneed/color-palette-uses-and-guideline.md:76:        "50": "#FFFDF7",
+Everythingyouneed/color-palette-uses-and-guideline.md:77:        "100": "#FEF9E7",
+Everythingyouneed/color-palette-uses-and-guideline.md:78:        "200": "#FDF2C8",
+Everythingyouneed/color-palette-uses-and-guideline.md:79:        "300": "#FCE7A1",
+Everythingyouneed/color-palette-uses-and-guideline.md:80:        "400": "#F9D669",
+Everythingyouneed/color-palette-uses-and-guideline.md:81:        "500": "#D4AF37",
+Everythingyouneed/color-palette-uses-and-guideline.md:82:        "600": "#B8941F",
+Everythingyouneed/color-palette-uses-and-guideline.md:83:        "700": "#8C7315",
+Everythingyouneed/color-palette-uses-and-guideline.md:84:        "800": "#6B5A11",
+Everythingyouneed/color-palette-uses-and-guideline.md:85:        "900": "#4F420C"
+Everythingyouneed/color-palette-uses-and-guideline.md:92:        "50": "#F0FDF4",
+Everythingyouneed/color-palette-uses-and-guideline.md:93:        "100": "#DCFCE7",
+Everythingyouneed/color-palette-uses-and-guideline.md:94:        "200": "#BBF7D0",
+Everythingyouneed/color-palette-uses-and-guideline.md:95:        "300": "#86EFAC",
+Everythingyouneed/color-palette-uses-and-guideline.md:96:        "400": "#4ADE80",
+Everythingyouneed/color-palette-uses-and-guideline.md:97:        "500": "#2C5F2D",
+Everythingyouneed/color-palette-uses-and-guideline.md:98:        "600": "#234D24",
+Everythingyouneed/color-palette-uses-and-guideline.md:99:        "700": "#1A3D1B",
+Everythingyouneed/color-palette-uses-and-guideline.md:100:        "800": "#143016",
+Everythingyouneed/color-palette-uses-and-guideline.md:101:        "900": "#0F2411"
+Everythingyouneed/color-palette-uses-and-guideline.md:108:        "50": "#F9FAFB",
+Everythingyouneed/color-palette-uses-and-guideline.md:109:        "100": "#F3F4F6",
+Everythingyouneed/color-palette-uses-and-guideline.md:110:        "200": "#E5E7EB",
+Everythingyouneed/color-palette-uses-and-guideline.md:111:        "300": "#D1D5DB",
+Everythingyouneed/color-palette-uses-and-guideline.md:112:        "400": "#9CA3AF",
+Everythingyouneed/color-palette-uses-and-guideline.md:113:        "500": "#6B7280",
+Everythingyouneed/color-palette-uses-and-guideline.md:114:        "600": "#4B5563",
+Everythingyouneed/color-palette-uses-and-guideline.md:115:        "700": "#374151",
+Everythingyouneed/color-palette-uses-and-guideline.md:116:        "800": "#1F2937",
+Everythingyouneed/color-palette-uses-and-guideline.md:117:        "900": "#111827"
+Everythingyouneed/color-palette-uses-and-guideline.md:126:        background: "#FFFFFF",
+Everythingyouneed/color-palette-uses-and-guideline.md:127:        surface: "#F9FAFB",
+Everythingyouneed/color-palette-uses-and-guideline.md:128:        cardBackground: "#FFFFFF",
+Everythingyouneed/color-palette-uses-and-guideline.md:129:        text: "#1F2937",
+Everythingyouneed/color-palette-uses-and-guideline.md:130:        textMuted: "#6B7280",
+Everythingyouneed/color-palette-uses-and-guideline.md:131:        border: "#E5E7EB",
+Everythingyouneed/color-palette-uses-and-guideline.md:132:        primary: "#DC143C",
+Everythingyouneed/color-palette-uses-and-guideline.md:133:        primaryHover: "#C41E3A",
+Everythingyouneed/color-palette-uses-and-guideline.md:134:        secondary: "#003893",
+Everythingyouneed/color-palette-uses-and-guideline.md:135:        accent: "#D4AF37",
+Everythingyouneed/color-palette-uses-and-guideline.md:136:        success: "#2C5F2D",
+Everythingyouneed/color-palette-uses-and-guideline.md:137:        warning: "#F9D669",
+Everythingyouneed/color-palette-uses-and-guideline.md:138:        error: "#DC143C"
+Everythingyouneed/color-palette-uses-and-guideline.md:144:        background: "#1F2937",
+Everythingyouneed/color-palette-uses-and-guideline.md:145:        surface: "#374151",
+Everythingyouneed/color-palette-uses-and-guideline.md:146:        cardBackground: "#2D3748",
+Everythingyouneed/color-palette-uses-and-guideline.md:147:        text: "#F9FAFB",
+Everythingyouneed/color-palette-uses-and-guideline.md:148:        textMuted: "#D1D5DB",
+Everythingyouneed/color-palette-uses-and-guideline.md:149:        border: "#4B5563",
+Everythingyouneed/color-palette-uses-and-guideline.md:150:        primary: "#F87171",
+Everythingyouneed/color-palette-uses-and-guideline.md:151:        primaryHover: "#DC143C",
+Everythingyouneed/color-palette-uses-and-guideline.md:152:        secondary: "#60A5FA",
+Everythingyouneed/color-palette-uses-and-guideline.md:153:        accent: "#F9D669",
+Everythingyouneed/color-palette-uses-and-guideline.md:154:        success: "#4ADE80",
+Everythingyouneed/color-palette-uses-and-guideline.md:155:        warning: "#FCE7A1",
+Everythingyouneed/color-palette-uses-and-guideline.md:156:        error: "#FCA5A5"
+Everythingyouneed/color-palette-uses-and-guideline.md:219:              color: '#fff',
+Everythingyouneed/color-palette-uses-and-guideline.md:251:                  color: name.includes('background') || name.includes('surface') || color.includes('F') ? '#1F2937' : '#fff',
+Everythingyouneed/color-palette-uses-and-guideline.md:303:                      color: '#fff',
+Everythingyouneed/color-palette-uses-and-guideline.md:354:                      color: parseInt(shade) > 400 ? '#fff' : '#1F2937',
+styles/accessibility.css:6:  --accessibility-focus-color: #005fcc;
+styles/accessibility.css:8:  --accessibility-bg-primary: #ffffff;
+styles/accessibility.css:9:  --accessibility-text-primary: #212529;
+styles/accessibility.css:10:  --accessibility-bg-secondary: #f8f9fa;
+styles/accessibility.css:11:  --accessibility-text-secondary: #6c757d;
+styles/accessibility.css:12:  --accessibility-border-primary: #dee2e6;
+styles/accessibility.css:13:  --accessibility-error: #dc3545;
+styles/accessibility.css:14:  --accessibility-success: #28a745;
+styles/accessibility.css:15:  --accessibility-warning: #ffc107;
+styles/accessibility.css:16:  --accessibility-info: #17a2b8;
+styles/accessibility.css:41:  --accessibility-bg-primary: #000000;
+styles/accessibility.css:42:  --accessibility-text-primary: #ffffff;
+styles/accessibility.css:43:  --accessibility-bg-secondary: #1a1a1a;
+styles/accessibility.css:44:  --accessibility-text-secondary: #cccccc;
+styles/accessibility.css:45:  --accessibility-border-primary: #ffffff;
+styles/accessibility.css:46:  --accessibility-focus-color: #ffff00;
+styles/accessibility.css:47:  --accessibility-error: #ff6b6b;
+styles/accessibility.css:48:  --accessibility-success: #51cf66;
+styles/accessibility.css:49:  --accessibility-warning: #ffd43b;
+styles/accessibility.css:50:  --accessibility-info: #74c0fc;
+styles/accessibility.css:74:    color: #74c0fc !important;
+styles/accessibility.css:80:    color: #ffd43b !important;
+styles/accessibility.css:222:  outline: 3px solid #ffff00 !important;
+styles/accessibility.css:433:    --accessibility-bg-primary: #1a1a1a;
+styles/accessibility.css:434:    --accessibility-text-primary: #ffffff;
+styles/accessibility.css:435:    --accessibility-bg-secondary: #2d2d2d;
+styles/accessibility.css:436:    --accessibility-text-secondary: #cccccc;
+styles/accessibility.css:437:    --accessibility-border-primary: #404040;
+styles/accessibility.css:453:    color: #666 !important;
+styles/accessibility.css:529:  border: 2px solid #e0e0e0;
+styles/accessibility.css:544:  border-bottom: 1px solid #e0e0e0;
+styles/accessibility.css:545:  background: #f8f9fa;
+styles/accessibility.css:566:  border-bottom: 1px solid #f0f0f0;
+styles/accessibility.css:575:  background: #ccc;
+styles/accessibility.css:582:  background: #4CAF50;
+lib/criticalLoadingCSS.ts:10:  background-color: #f8f9fa;
+public/sw.js:130:      `<svg width=\"400\" height=\"300\" xmlns=\"http://www.w3.org/2000/svg\">\n        <rect width=\"100%\" height=\"100%\" fill=\"#f3f4f6\"/>\n        <text x=\"50%\" y=\"50%\" text-anchor=\"middle\" fill=\"#9ca3af\" font-family=\"sans-serif\">Image unavailable</text>\n      </svg>`,
+scripts/button-contrast-check.js:55:    const fgToken = tokens.color || '#ffffff';
+app/globals.css:72:  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+app/globals.css:242:  --color-brand-50:#fdf6f5; --color-brand-100:#fbebe9; --color-brand-200:#f6d8d3; --color-brand-300:#f0c5bd; --color-brand-400:#e3a296; --color-brand-500:#B86B5E; --color-brand-600:#a65f53; --color-brand-700:#8c4f45; --color-brand-800:#724038; --color-brand-900:#5f352e; --color-brand-950:#321a17;
+app/globals.css:245:  --color-accent-50:#fffcf2; --color-accent-100:#fef8e0; --color-accent-200:#fcf0c2; --color-accent-300:#fae8a3; --color-accent-400:#f7d86a; --color-accent-500:#F4C430; --color-accent-600:#d8ac2a; --color-accent-700:#b08d22; --color-accent-800:#91721c; --color-accent-900:#7a6218;
+app/globals.css:248:  --color-secondary-300:#80cbcb; --color-secondary-500:#008080; --color-secondary-600:#006666; --color-secondary-700:#004d4d;
+app/globals.css:252:  --color-crimson-50:#fff5f7; --color-crimson-100:#ffe4e8; --color-crimson-200:#feb7c2; --color-crimson-300:#fd8a9b; --color-crimson-400:#f45c74; --color-crimson-500:#DC143C; --color-crimson-600:#b90f31; --color-crimson-700:#980c28; --color-crimson-800:#780a20;
+app/globals.css:257:  --color-indiagreen-50:#edf7f1; --color-indiagreen-100:#d7efe1; --color-indiagreen-200:#a9dec3; --color-indiagreen-300:#7ecea6; --color-indiagreen-400:#43b57c; --color-indiagreen-500:#046A38; --color-indiagreen-600:#035c31; --color-indiagreen-700:#024a27; --color-indiagreen-800:#01381d; --color-indiagreen-900:#022e17; --color-indiagreen-950:#011b0e;
+app/globals.css:261:  --color-marigold-50:#fff8e6; --color-marigold-100:#ffefc2; --color-marigold-200:#ffe18a; --color-marigold-300:#ffd24d; --color-marigold-400:#ffc21a; --color-marigold-500:#FFB000; --color-marigold-600:#db9300; --color-marigold-700:#b77700; --color-marigold-800:#935c00; --color-marigold-900:#784a00; --color-marigold-950:#3f2700;
+app/globals.css:270:  --color-stout-50:#f6f4f2; --color-stout-100:#eae4de; --color-stout-200:#cdbfb6; --color-stout-300:#b09a8f; --color-stout-400:#8f7468; --color-stout-500:#4c3a2d; --color-stout-600:#3f3126; --color-stout-700:#33281f; --color-stout-800:#271f19; --color-stout-900:#1f1914; --color-stout-950:#120f0c;
+app/globals.css:273:  --color-cardamom-50:#f5f8f1; --color-cardamom-100:#e6f0d8; --color-cardamom-200:#cbe1b1; --color-cardamom-300:#b0d18a; --color-cardamom-400:#8ebb5f; --color-cardamom-500:#7A8F49; --color-cardamom-600:#65773d; --color-cardamom-700:#515f32; --color-cardamom-800:#3e4826; --color-cardamom-900:#323a1f; --color-cardamom-950:#1a1f10;
+app/globals.css:276:  --color-success-50:#effaf3; --color-success-100:#d9f2e3; --color-success-200:#b2e4c7; --color-success-300:#86d4aa; --color-success-400:#4fbe84; --color-success-500:#2E7D32; --color-success-600:#256428; --color-success-700:#1d4f20; --color-success-800:#153b18; --color-success-900:#0f2e12; --color-success-950:#081a0a;
+app/globals.css:277:  --color-warning-50:#fffbeb; --color-warning-100:#fef3c7; --color-warning-200:#fde68a; --color-warning-300:#fcd34d; --color-warning-400:#f59e0b; --color-warning-500:#d97706; --color-warning-600:#b45309; --color-warning-700:#92400e; --color-warning-800:#78350f; --color-warning-900:#451a03; --color-warning-950:#2a0f02;
+app/globals.css:278:  --color-info-50:#eff6ff; --color-info-100:#dbeafe; --color-info-200:#bfdbfe; --color-info-300:#93c5fd; --color-info-400:#60a5fa; --color-info-500:#1E40AF; --color-info-600:#1c3a99; --color-info-700:#152e78; --color-info-800:#10235c; --color-info-900:#0b1a45; --color-info-950:#071233;
+app/globals.css:279:  --color-error-50:#fef2f2; --color-error-100:#fee2e2; --color-error-200:#fecaca; --color-error-300:#fca5a5; --color-error-400:#f87171; --color-error-500:#ef4444; --color-error-600:#dc2626; --color-error-700:#b91c1c; --color-error-800:#991b1b; --color-error-900:#7f1d1d; --color-error-950:#450a0a;
+app/globals.css:282:  --color-neutral-50:#f9f6f1; --color-neutral-100:#F5F0E6; /* chai cream */ --color-neutral-200:#e6ded1; --color-neutral-300:#d3c6b3; --color-neutral-400:#b39e85; --color-neutral-500:#8f7a62; --color-neutral-600:#6f5e4d; --color-neutral-700:#55483c; --color-neutral-800:#3c332d; --color-neutral-900:#2b251f; --color-neutral-950:#1c1713;
+app/globals.css:286:  --color-surface-subtle:#fdfbf8; /* lighter cream */
+app/globals.css:301:  --on-dark: #fff;
+app/globals.css:302:  --on-light: #1a1a1a;
+app/globals.css:760:    outline: 3px solid #F4C430;
+public/manifest.json:7:  "background_color": "#FEF7ED",
+public/manifest.json:8:  "theme_color": "#D4941E",
+components/optimization/CLSIntegration.tsx:38:            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+components/optimization/CLSIntegration.tsx:177:      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+components/optimization/CLSIntegration.tsx:220:        backgroundColor: '#f5f5f5' 
+app/layout.tsx:49:        <meta name="theme-color" content="#f9fafb" />
+app/layout.tsx:50:        <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+design-system/tokens/button-tokens.json:18:      "indicatorColor": "#ffffff",
+design-system/tokens/button-tokens.json:26:          "color": "#ffffff",
+design-system/tokens/button-tokens.json:32:          "color": "#ffffff",
+design-system/tokens/button-tokens.json:40:          "color": "#ffffff",
+design-system/tokens/button-tokens.json:46:          "color": "#ffffff",
+design-system/tokens/button-tokens.json:54:          "color": "#ffffff",
+design-system/tokens/button-tokens.json:60:          "color": "#ffffff",
+design-system/tokens/button-tokens.json:71:          "colorHover": "#ffffff"
+design-system/tokens/button-tokens.json:78:          "colorHover": "#ffffff"
+design-system/tokens/button-tokens.json:90:        "light": { "bg": "var(--color-crimson-600)", "color": "#ffffff", "bgHover": "var(--color-crimson-700)" },
+design-system/tokens/button-tokens.json:91:        "dark": { "bg": "var(--color-crimson-700)", "color": "#ffffff", "bgHover": "var(--color-crimson-800)" }
+design-system/css/button.css:32:.ds-button--primary { background: var(--color-primary); color: #fff; border: 1px solid transparent; }
+design-system/css/button.css:35:.ds-button--secondary { background: var(--color-secondary); color: #fff; border: 1px solid transparent; }
+design-system/css/button.css:38:.ds-button--accent { background: var(--color-crimson-500); color: #fff; border: 1px solid transparent; }
+design-system/css/button.css:42:.ds-button--outline:hover { background: var(--color-primary); color: #fff; }
+design-system/css/button.css:50:.ds-button--destructive { background: var(--color-crimson-600); color: #fff; }
+design-system/css/button.css:63:html.dark .ds-button--primary { background: var(--color-brass-700); color: #ffffff; }
+design-system/css/button.css:65:html.dark .ds-button--secondary { background: var(--color-chakra-700); color: #ffffff; }
+design-system/css/button.css:67:html.dark .ds-button--accent { background: var(--color-crimson-700); color: #ffffff; }
+design-system/css/button.css:69:html.dark .ds-button--destructive { background: var(--color-crimson-700); color: #ffffff; }
+design-system/css/button.css:76::root[data-theme='dark'] .ds-button--primary { background: var(--color-brass-700); color: #ffffff; }
+design-system/css/button.css:78::root[data-theme='dark'] .ds-button--secondary { background: var(--color-chakra-700); color: #ffffff; }
+design-system/css/button.css:80::root[data-theme='dark'] .ds-button--accent { background: var(--color-crimson-700); color: #ffffff; }
+design-system/css/button.css:82::root[data-theme='dark'] .ds-button--destructive { background: var(--color-crimson-700); color: #ffffff; }
+design-system/css/button.css:86:[data-theme='dark'] .ds-button--primary { background: var(--color-brass-700); color: #ffffff; }
+design-system/css/button.css:88:[data-theme='dark'] .ds-button--secondary { background: var(--color-chakra-700); color: #ffffff; }
+design-system/css/button.css:90:[data-theme='dark'] .ds-button--accent { background: var(--color-crimson-700); color: #ffffff; }
+design-system/css/button.css:92:[data-theme='dark'] .ds-button--destructive { background: var(--color-crimson-700); color: #ffffff; }
+design-system/css/button.css:96:html[data-theme='dark'] .ds-button--primary { background: var(--color-brass-700); color: #ffffff; }
+design-system/css/button.css:98:html[data-theme='dark'] .ds-button--secondary { background: var(--color-chakra-700); color: #ffffff; }
+design-system/css/button.css:100:html[data-theme='dark'] .ds-button--accent { background: var(--color-crimson-700); color: #ffffff; }
+design-system/css/button.css:102:html[data-theme='dark'] .ds-button--destructive { background: var(--color-crimson-700); color: #ffffff; }
+design-system/examples/button-examples.html:42:  <p style="font-size:13px;color:#666;max-width:720px;">Note: <strong>ghost</strong>, <strong>link</strong>, and <strong>outline</strong> variants are contextual — their perceptible contrast depends on the background. See the examples below showing these variants on light and dark backgrounds.</p>
+design-system/examples/button-examples.html:66:      <div style="padding:16px;background:#ffffff;border:1px solid #eee;border-radius:8px;">
+design-system/examples/button-examples.html:74:      <div style="padding:16px;background:#111827;color:#fff;border-radius:8px;">
+design-system/docs/COLORS.md:15:--color-brand-50: #fdf6f5   /* Lightest cream */
+design-system/docs/COLORS.md:16:--color-brand-100: #fbebe9  /* Light cream */
+design-system/docs/COLORS.md:17:--color-brand-200: #f6d8d3  /* Pale terracotta */
+design-system/docs/COLORS.md:18:--color-brand-300: #f0c5bd  /* Light terracotta */
+design-system/docs/COLORS.md:19:--color-brand-400: #e3a296  /* Medium terracotta */
+design-system/docs/COLORS.md:20:--color-brand-500: #B86B5E  /* 🎯 Anchor - Primary terracotta */
+design-system/docs/COLORS.md:21:--color-brand-600: #a65f53  /* Dark terracotta */
+design-system/docs/COLORS.md:22:--color-brand-700: #8c4f45  /* Darker terracotta */
+design-system/docs/COLORS.md:23:--color-brand-800: #724038  /* Deep terracotta */
+design-system/docs/COLORS.md:24:--color-brand-900: #5f352e  /* Deepest terracotta */
+design-system/docs/COLORS.md:25:--color-brand-950: #321a17  /* Almost black terracotta */
+design-system/docs/COLORS.md:32:--color-accent-50: #fffcf2   /* Lightest saffron */
+design-system/docs/COLORS.md:33:--color-accent-100: #fef8e0  /* Light saffron */
+design-system/docs/COLORS.md:34:--color-accent-200: #fcf0c2  /* Pale gold */
+design-system/docs/COLORS.md:35:--color-accent-300: #fae8a3  /* Light gold */
+design-system/docs/COLORS.md:36:--color-accent-400: #f7d86a  /* Medium gold */
+design-system/docs/COLORS.md:37:--color-accent-500: #F4C430  /* 🎯 Anchor - Pure saffron */
+design-system/docs/COLORS.md:38:--color-accent-600: #d8ac2a  /* Deep saffron */
+design-system/docs/COLORS.md:39:--color-accent-700: #b08d22  /* Darker gold */
+design-system/docs/COLORS.md:40:--color-accent-800: #91721c  /* Deep gold */
+design-system/docs/COLORS.md:41:--color-accent-900: #7a6218  /* Darkest gold */
+design-system/docs/COLORS.md:42:--color-accent-950: #43350c  /* Almost black gold */
+design-system/docs/COLORS.md:51:--color-crimson-500: #DC143C  /* 🎯 Nepal flag crimson */
+design-system/docs/COLORS.md:58:--color-chakra-500: #06038D  /* 🎯 Chakra navy */
+design-system/docs/COLORS.md:65:--color-indiagreen-500: #046A38  /* 🎯 Heritage green */
+design-system/docs/COLORS.md:74:--color-marigold-500: #FFB000  /* 🎯 Marigold orange */
+design-system/docs/COLORS.md:81:--color-masala-500: #6B3E26  /* 🎯 Spice brown */
+design-system/docs/COLORS.md:88:--color-brass-500: #B8860B  /* 🎯 Brass gold */
+design-system/docs/COLORS.md:95:--color-stout-500: #4C3A2D  /* 🎯 Stout brown */
+design-system/docs/COLORS.md:102:--color-cardamom-500: #7A8F49  /* 🎯 Cardamom green */
+design-system/docs/COLORS.md:111:--color-neutral-50: #f9f6f1   /* Lightest cream */
+design-system/docs/COLORS.md:112:--color-neutral-100: #F5F0E6  /* 🎯 Chai cream base */
+design-system/docs/COLORS.md:113:--color-neutral-200: #e6ded1  /* Light neutral */
+design-system/docs/COLORS.md:114:--color-neutral-300: #d3c6b3  /* Medium neutral */
+design-system/docs/COLORS.md:115:--color-neutral-500: #8f7a62  /* Mid neutral */
+design-system/docs/COLORS.md:116:--color-neutral-600: #6f5e4d  /* Dark neutral */
+design-system/docs/COLORS.md:117:--color-neutral-800: #3c332d  /* Deep neutral */
+design-system/docs/COLORS.md:118:--color-neutral-900: #2b251f  /* 🎯 Dark base */
+design-system/docs/COLORS.md:214:  --color-brand-500: #B86B5E;
+design-system/docs/COLORS.md:215:  --color-accent-500: #F4C430;
+design-system/docs/button-accessibility-report.json:4:      "bg": "#87453B",
+design-system/docs/button-accessibility-report.json:5:      "fg": "#ffffff",
+design-system/docs/button-accessibility-report.json:11:      "bg": "#A16207",
+design-system/docs/button-accessibility-report.json:12:      "fg": "#ffffff",
+design-system/docs/button-accessibility-report.json:20:      "bg": "#006666",
+design-system/docs/button-accessibility-report.json:21:      "fg": "#ffffff",
+design-system/docs/button-accessibility-report.json:27:      "bg": "#4338CA",
+design-system/docs/button-accessibility-report.json:28:      "fg": "#ffffff",
+design-system/docs/button-accessibility-report.json:36:      "bg": "#DC143C",
+design-system/docs/button-accessibility-report.json:37:      "fg": "#ffffff",
+design-system/docs/button-accessibility-report.json:43:      "bg": "#A61E3A",
+design-system/docs/button-accessibility-report.json:44:      "fg": "#ffffff",
+design-system/docs/button-accessibility-report.json:88:      "bg": "#C41E3A",
+design-system/docs/button-accessibility-report.json:89:      "fg": "#ffffff",
+design-system/docs/button-accessibility-report.json:95:      "bg": "#A61E3A",
+design-system/docs/button-accessibility-report.json:96:      "fg": "#ffffff",
+design-system/docs/button-accessibility.md:16:1. Ensure `--color-primary` and `--color-primaryAccent` meet 4.5:1 contrast against `#ffffff` where used as foreground in primary buttons.
+components/Hero.tsx:15:          href="https://www.producthunt.com/posts/shipfast-2?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-shipfast&#0045;2"

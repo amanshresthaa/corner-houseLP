@@ -1,0 +1,36 @@
+e2e/responsive.home.spec.ts:128:      expect(bodyBg).not.toBe('rgb(255, 255, 255)');
+tailwind.config.js:179:        'hero-pattern': "linear-gradient(135deg, rgba(212, 148, 30, 0.9), rgba(71, 85, 105, 0.8))",
+tasks/color-usage-audit-20251029-1813/plan.md:32:   - Use layered searches: `rg` for hex (#rrggbb/#rgb, uppercase variations), `rg` for `rgb(` / `rgba(` / `hsl(`, `rg` for CSS named colors by curated word list (e.g., `\bred\b`, `\bwhite\b`).
+tasks/color-usage-audit-20251029-1813/research.md:29:   - Known hotspots even at a glance: loaders (`linear-gradient` in Tailwind config), shimmer backgrounds (`app/globals.css`), older markdown/JSX content likely containing literal `#fff`, `rgb(...)`, etc.
+tasks/color-usage-audit-20251029-1813/research.md:34:   - Node/Tailwind configuration uses JS; some colors might be constructed dynamically (e.g., `color-mix`, `rgba(${var})`). Must consider both static literals and computed strings.
+tasks/color-usage-audit-20251029-1813/rg-hex.txt:103:tasks/color-usage-audit-20251029-1813/research.md:29:   - Known hotspots even at a glance: loaders (`linear-gradient` in Tailwind config), shimmer backgrounds (`app/globals.css`), older markdown/JSX content likely containing literal `#fff`, `rgb(...)`, etc.
+tasks/color-usage-audit-20251029-1813/rg-hex-sorted.txt:260:tasks/color-usage-audit-20251029-1813/research.md:29:   - Known hotspots even at a glance: loaders (`linear-gradient` in Tailwind config), shimmer backgrounds (`app/globals.css`), older markdown/JSX content likely containing literal `#fff`, `rgb(...)`, etc.
+lib/motion/variants.ts:156:      scrolled: { y: 0, backdropFilter: 'blur(8px)', backgroundColor: 'rgba(255,255,255,0.95)' },
+lib/motion/homeVariants.ts:151:      boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
+design-system/tokens/button-tokens.json:83:        "dark": { "bg": "transparent", "color": "var(--color-primary)", "bgHover": "rgba(255,255,255,0.04)" }
+app/globals.css:63:  background-color: rgb(249 250 251);
+app/globals.css:64:  border-bottom: 1px solid rgb(229 231 235);
+app/globals.css:326:  --overlay-10: rgb(0 0 0 / 0.10);
+app/globals.css:327:  --overlay-20: rgb(0 0 0 / 0.20);
+app/globals.css:328:  --overlay-40: rgb(0 0 0 / 0.40);
+app/globals.css:329:  --overlay-60: rgb(0 0 0 / 0.60);
+app/globals.css:754:    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.4); }
+app/globals.css:755:    50% { box-shadow: 0 0 0 20px rgba(220, 20, 60, 0); }
+styles/accessibility.css:215:  box-shadow: 0 0 0 calc(var(--accessibility-focus-width) + var(--accessibility-focus-offset)) rgba(0, 95, 204, 0.3) !important;
+styles/accessibility.css:224:  background-color: rgba(255, 255, 0, 0.1) !important;
+styles/accessibility.css:294:  box-shadow: 0 0 0 2px rgba(0, 95, 204, 0.3) !important;
+styles/accessibility.css:338:  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+styles/accessibility.css:363:  background-color: rgba(23, 162, 184, 0.1) !important;
+styles/accessibility.css:368:  background-color: rgba(23, 162, 184, 0.2) !important;
+styles/accessibility.css:415:  background-color: rgba(0, 0, 0, 0.02) !important;
+styles/accessibility.css:473:  background: rgba(255, 255, 255, 0.8);
+styles/accessibility.css:494:  background-color: rgba(220, 53, 69, 0.1) !important;
+styles/accessibility.css:509:  background-color: rgba(40, 167, 69, 0.1) !important;
+styles/accessibility.css:531:  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+styles/accessibility.css:714:  background: rgba(0, 95, 204, 0.3) !important;
+styles/accessibility.css:719:  background: rgba(0, 95, 204, 0.3) !important;
+components/optimization/CLSIntegration.tsx:53:            background: rgba(0,0,0,0.8);
+app/wakes-menu/page.tsx:173:                style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
+app/wakes-menu/page.tsx:182:                style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
+app/wakes-menu/page.tsx:341:                style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
+app/wakes-menu/page.tsx:350:                style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}

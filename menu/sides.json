@@ -1,0 +1,10 @@
+[
+  { "name": "Tadka Daal (Lentil)", "price": { "amount": 6.00, "currency": "GBP" }, "labels": ["veg"] },
+  { "name": "Gurkha Aalo (Dry potato cooked in Nepalese special herbs)", "price": { "amount": 6.00, "currency": "GBP" }, "labels": ["veg"] },
+  { "name": "Saag Aalo (Spinach and potato)", "price": { "amount": 6.00, "currency": "GBP" }, "labels": ["veg"] },
+  { "name": "Chana Masala (Chickpeas)", "price": { "amount": 6.00, "currency": "GBP" }, "labels": ["veg"] },
+  { "name": "Saag Bhaji (Spinach)", "price": { "amount": 6.00, "currency": "GBP" }, "labels": ["veg"] },
+  { "name": "Mushroom Bhaji", "price": { "amount": 6.00, "currency": "GBP" }, "labels": ["veg"] },
+  { "name": "Saag Paneer (Fresh spinach and cottage cheese)", "price": { "amount": 6.50, "currency": "GBP" }, "labels": ["veg"] },
+  { "name": "Matar Paneer (Green peas and cottage cheese)", "price": { "amount": 6.50, "currency": "GBP" }, "labels": ["veg"] }
+]
