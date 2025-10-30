@@ -1,5 +1,6 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -22,6 +23,8 @@ export const metadata = getSEOTags({
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 
 export default function DogFriendlyDiningPage() {
+  const identity = getRestaurantIdentity();
+  const postalAddress = getPostalAddressSchema();
   const post = {
     title: "The Ultimate Dog-Friendly Dining Experience at Old Crown Girton",
     excerpt: "Discover why Old Crown Girton has become Cambridge's favourite destination for dining with four-legged family members.",
@@ -123,19 +126,12 @@ export default function DogFriendlyDiningPage() {
           },
           "publisher": {
             "@type": "LocalBusiness",
-            "name": "Old Crown Girton",
+            "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
               "url": "https://oldcrowngirton.com/icon.png"
             },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "89 High Street",
-              "addressLocality": "Girton",
-              "addressRegion": "Cambridgeshire",
-              "postalCode": "CB3 0QQ",
-              "addressCountry": "GB"
-            }
+            "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",

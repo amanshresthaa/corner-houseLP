@@ -1,4 +1,9 @@
 import { useState, useEffect } from 'react';
+import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
+
+const FALLBACK_CONTACT = getContactInfo();
+const FALLBACK_EMAIL = FALLBACK_CONTACT.email.primary;
+const FALLBACK_BUSINESS_NAME = getRestaurantIdentity().displayName;
 
 interface TOSContent {
   meta: {
@@ -36,8 +41,8 @@ export function useTOSContent(): TOSContent | null {
           meta: {
             effectiveDate: "10 August 2025",
             title: "Terms of Service",
-            contactEmail: "oldcrown@lapeninns.com",
-            businessName: "The Old Crown Girton"
+            contactEmail: FALLBACK_EMAIL,
+            businessName: FALLBACK_BUSINESS_NAME
           },
           introduction: "These Terms govern your use of this website.",
           policies: {

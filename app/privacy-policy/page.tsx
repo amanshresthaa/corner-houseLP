@@ -2,7 +2,7 @@ import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import Link from '@/lib/debugLink';
-import { getContactInfo } from '@/lib/restaurantData';
+import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
   title: "Privacy Policy | Old Crown Girton - Data Protection & GDPR Compliance",
@@ -18,8 +18,19 @@ export const metadata = getSEOTags({
 
 export default function PrivacyPolicy() {
   const contact = getContactInfo();
+  const identity = getRestaurantIdentity();
   const phoneHref = contact.phone.tel;
   const phoneDisplay = contact.phone.display;
+  const restaurantName = identity.displayName;
+  const primaryEmail = contact.email.primary;
+  const contactAddress = contact.address;
+  const formattedAddress = `${contactAddress.street}, ${contactAddress.area}, ${contactAddress.city} ${contactAddress.postcode}`;
+  const uniqueContactEmails = [
+    contact.email.primary,
+    contact.email.bookings,
+    contact.email.events,
+    contact.email.press,
+  ].filter((value, index, array): value is string => !!value && array.indexOf(value) === index);
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -34,24 +45,24 @@ export default function PrivacyPolicy() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "@id": "https://oldcrowngirton.com//privacy-policy#webpage",
-            "name": "Privacy Policy - Old Crown Girton",
-            "description": "Privacy policy and data protection information for Old Crown Girton restaurant bookings, enquiries and website usage.",
+            "name": `Privacy Policy - ${restaurantName}`,
+            "description": `Privacy policy and data protection information for ${restaurantName} restaurant bookings, enquiries and website usage.`,
             "url": "https://oldcrowngirton.com//privacy-policy",
             "isPartOf": {
               "@type": "WebSite",
-              "name": "Old Crown Girton",
+              "name": restaurantName,
               "url": "https://oldcrowngirton.com/"
             },
             "about": {
               "@type": "LocalBusiness",
-              "name": "Old Crown Girton",
+              "name": restaurantName,
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "89 High Street",
-                "addressLocality": "Girton",
-                "addressRegion": "Cambridgeshire",
-                "postalCode": "CB3 0QQ",
-                "addressCountry": "GB"
+                "streetAddress": contactAddress.street,
+                "addressLocality": contactAddress.area,
+                "addressRegion": contactAddress.state ?? contactAddress.city,
+                "postalCode": contactAddress.postcode,
+                "addressCountry": contactAddress.country
               }
             },
             "mainContentOfPage": {
@@ -168,7 +179,14 @@ export default function PrivacyPolicy() {
                       <li><strong>Withdraw consent:</strong> Remove consent for marketing or optional processing</li>
                     </ul>
                     <p className="leading-relaxed mt-4">
-                 To exercise your rights, contact us at <Link href="mailto:oldcrown@lapeninns.com" className="text-brand-600 hover:text-brand-700 underline">oldcrown@lapeninns.com</Link>.
+                      To exercise your rights, contact us at{' '}
+                      <Link
+                        href={`mailto:${primaryEmail}`}
+                        className="text-brand-600 hover:text-brand-700 underline"
+                      >
+                        {primaryEmail}
+                      </Link>
+                      .
                     </p>
                   </section>
 
@@ -230,12 +248,22 @@ export default function PrivacyPolicy() {
                       </p>
                       <div className="space-y-1 mb-4">
                         <p><strong>Data Protection Officer</strong></p>
-                        <p>Old Crown Girton</p>
-                        <p>89 High Street, Girton, Cambridge CB3 0QQ</p>
-                        <p>Email: <Link href="mailto:oldcrown@lapeninns.com" className="text-brand-600 hover:text-brand-700 underline">oldcrown@lapeninns.com</Link></p>
-                          <p>Email: <Link href="mailto:oldcrown@lapeninns.com" className="text-brand-600 hover:text-brand-700 underline">oldcrown@lapeninns.com</Link></p>
-                          <p>Email: <Link href="mailto:oldcrown@lapeninns.com" className="text-brand-600 hover:text-brand-700 underline">oldcrown@lapeninns.com</Link></p>
-                        <p>Phone: <Link href={phoneHref} className="text-brand-600 hover:text-brand-700 underline">{phoneDisplay}</Link></p>
+                        <p>{restaurantName}</p>
+                        <p>{formattedAddress}</p>
+                        {uniqueContactEmails.map((email) => (
+                          <p key={email}>
+                            Email:{' '}
+                            <Link href={`mailto:${email}`} className="text-brand-600 hover:text-brand-700 underline">
+                              {email}
+                            </Link>
+                          </p>
+                        ))}
+                        <p>
+                          Phone:{' '}
+                          <Link href={phoneHref} className="text-brand-600 hover:text-brand-700 underline">
+                            {phoneDisplay}
+                          </Link>
+                        </p>
                       </div>
                       <p className="text-sm leading-relaxed">
                         You also have the right to lodge a complaint with the Information Commissioner's Office (ICO), the UK supervisory authority for data protection issues:

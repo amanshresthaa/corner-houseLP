@@ -1,5 +1,6 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -22,6 +23,8 @@ export const metadata = getSEOTags({
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 
 export default function SundayRoastGuidePage() {
+  const identity = getRestaurantIdentity();
+  const postalAddress = getPostalAddressSchema();
   const post = {
     title: "Sunday Roast in Cambridge: A Guide + Our Alternatives",
     excerpt: "We don't currently serve a traditional Sunday roast. Here's how to enjoy Sunday lunch in Cambridge and what to try at our thatched pub instead.",
@@ -87,19 +90,12 @@ export default function SundayRoastGuidePage() {
           },
           "publisher": {
             "@type": "LocalBusiness",
-            "name": "Old Crown Girton",
+            "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
               "url": "https://oldcrowngirton.com/icon.png"
             },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "89 High Street",
-              "addressLocality": "Girton",
-              "addressRegion": "Cambridgeshire",
-              "postalCode": "CB3 0QQ",
-              "addressCountry": "GB"
-            }
+            "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",

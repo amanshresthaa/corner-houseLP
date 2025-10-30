@@ -163,10 +163,10 @@ export default async function BookATablePage() {
                     <p>
                       Need to amend or cancel a reservation? Email{' '}
                       <a
-                        href={`mailto:${contact.email?.bookings || 'oldcrown@lapeninns.com'}`}
+                        href={`mailto:${contact.email.bookings ?? contact.email.primary}`}
                         className="font-semibold text-brand-700 underline-offset-2 hover:underline"
                       >
-                        {contact.email?.bookings || 'oldcrown@lapeninns.com'}
+                        {contact.email.bookings ?? contact.email.primary}
                       </a>{' '}
                       or call{' '}
                       <a

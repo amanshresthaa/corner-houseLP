@@ -3,19 +3,20 @@ import { getContentSmart } from '@/src/lib/data/server-loader';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
-import { getContactInfo } from '@/lib/restaurantData';
+import { getContactInfo, getFormattedAddress } from '@/lib/restaurantData';
 
 const CONTACT = getContactInfo();
+const ADDRESS_LINE = getFormattedAddress();
 
 // SEO Metadata
 export const metadata = getSEOTags({
   title: "Contact Old Crown Girton - Book Table | Directions | Opening Hours",
-  description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at 89 High Street, Girton, Cambridge. Phone: ${CONTACT.phone.display}. Free parking available.`,
+  description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}. Free parking available.`,
   keywords: ["Old Crown Girton contact", "book table Girton pub", "Girton pub phone number", "Old Crown directions", "Cambridge pub booking", "Girton restaurant address"],
   canonicalUrlRelative: "/contact",
   openGraph: {
     title: "Contact Old Crown Girton - Book Table | Directions",
-    description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at 89 High Street, Girton, Cambridge. Phone: ${CONTACT.phone.display}.`,
+    description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}.`,
     url: "https://oldcrowngirton.com//contact",
   },
 });

@@ -576,6 +576,23 @@ export const getContactInfo = (): NormalizedContact => ({
 
 export const getAddress = (): NormalizedAddress => cloneAddress(restaurantData.address);
 
+export const getPostalAddressSchema = () => {
+  const address = restaurantData.address;
+  return {
+    '@type': 'PostalAddress',
+    streetAddress: address.street,
+    addressLocality: address.area,
+    addressRegion: address.state ?? address.city,
+    postalCode: address.postcode,
+    addressCountry: address.country,
+  };
+};
+
+export const getFormattedAddress = () => {
+  const address = restaurantData.address;
+  return `${address.street}, ${address.area}, ${address.city} ${address.postcode}`;
+};
+
 export const getHours = (): DetailedHours => cloneHours(restaurantData.hours);
 
 export const getSocialMedia = (): SocialCollection =>

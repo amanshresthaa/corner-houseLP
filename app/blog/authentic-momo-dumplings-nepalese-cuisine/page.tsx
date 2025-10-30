@@ -1,5 +1,6 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -21,6 +22,8 @@ export const metadata = getSEOTags({
 });
 
 export default function MomoDumplingsPage() {
+  const identity = getRestaurantIdentity();
+  const postalAddress = getPostalAddressSchema();
   const post = {
     title: "A Guide to Authentic Momo Dumplings and Nepalese Cuisine at Old Crown Girton",
     excerpt: "Discover the art of authentic Nepalese momo dumplings and explore the rich flavors of Himalayan cuisine at Cambridge's most unique restaurant destination.",
@@ -106,19 +109,12 @@ export default function MomoDumplingsPage() {
           },
           "publisher": {
             "@type": "LocalBusiness",
-            "name": "Old Crown Girton",
+            "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
               "url": "https://oldcrowngirton.com/icon.png"
             },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "89 High Street",
-              "addressLocality": "Girton",
-              "addressRegion": "Cambridgeshire",
-              "postalCode": "CB3 0QQ",
-              "addressCountry": "GB"
-            }
+            "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",

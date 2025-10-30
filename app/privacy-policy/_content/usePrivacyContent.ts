@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import { getContactInfo } from '@/lib/restaurantData';
+
+const FALLBACK_EMAIL = getContactInfo().email.primary;
 
 interface PrivacyContent {
   meta: {
@@ -32,7 +35,7 @@ export function usePrivacyContent(): PrivacyContent | null {
           meta: {
             effectiveDate: "10 August 2025",
             title: "Privacy Policy",
-            contactEmail: "oldcrown@lapeninns.com"
+            contactEmail: FALLBACK_EMAIL
           },
           introduction: "We respect your privacy and handle personal information responsibly.",
           sections: {}

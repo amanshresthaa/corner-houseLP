@@ -3,7 +3,7 @@ import { FadeIn } from '@/components/animations/MotionWrappers';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import Link from '@/lib/debugLink';
 import PressFeatureBanner, { PressFeatureContent } from '@/components/restaurant/sections/PressFeatureBanner';
-import { getContactInfo, getAddress } from '@/lib/restaurantData';
+import { getContactInfo, getAddress, getPostalAddressSchema, getRestaurantIdentity } from '@/lib/restaurantData';
 
 type PressArticle = {
   id: string;
@@ -104,6 +104,8 @@ const PRESS_FACTS = [
 
 const CONTACT = getContactInfo();
 const ADDRESS = getAddress();
+const POSTAL_ADDRESS = getPostalAddressSchema();
+const IDENTITY = getRestaurantIdentity();
 const MEDIA_CONTACT = {
   email: CONTACT.email.press || CONTACT.email.primary,
   phoneDisplay: CONTACT.phone.display,
@@ -149,20 +151,13 @@ export default function PressPage() {
             "url": "https://oldcrowngirton.com//press",
             "isPartOf": {
               "@type": "WebSite",
-              "name": "Old Crown Girton",
+              "name": IDENTITY.displayName,
               "url": "https://oldcrowngirton.com/"
             },
             "about": {
               "@type": "LocalBusiness",
-              "name": "Old Crown Girton",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": MEDIA_CONTACT.address,
-                "addressLocality": "Girton",
-                "addressRegion": "Cambridgeshire",
-                "postalCode": "CB3 0QQ",
-                "addressCountry": "GB"
-              }
+              "name": IDENTITY.displayName,
+              "address": POSTAL_ADDRESS
             }
           },
           {

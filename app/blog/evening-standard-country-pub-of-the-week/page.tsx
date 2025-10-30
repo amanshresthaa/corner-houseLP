@@ -1,5 +1,6 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -29,6 +30,8 @@ export const metadata = getSEOTags({
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 
 export default function EveningStandardPressPage() {
+  const identity = getRestaurantIdentity();
+  const postalAddress = getPostalAddressSchema();
   const post = {
     title: "Evening Standard Spotlights The Old Crown, Girton",
     excerpt: "David Ellis names Old Crown Girton the Evening Standard’s Country Pub of the Week, highlighting our Nepalese cooking, welcoming atmosphere, and evolving menu.",
@@ -91,19 +94,12 @@ export default function EveningStandardPressPage() {
           },
           "publisher": {
             "@type": "LocalBusiness",
-            "name": "Old Crown Girton",
+            "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
               "url": "https://oldcrowngirton.com/icon.png"
             },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "89 High Street",
-              "addressLocality": "Girton",
-              "addressRegion": "Cambridgeshire",
-              "postalCode": "CB3 0QQ",
-              "addressCountry": "GB"
-            }
+            "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",

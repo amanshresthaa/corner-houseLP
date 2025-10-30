@@ -3,7 +3,7 @@ import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import MenuInfoCollapse from '@/components/menu/MenuInfoCollapse';
 import Link from '@/lib/debugLink';
-import { getContactInfo } from '@/lib/restaurantData';
+import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
   title: "Menu Information & Dietary Requirements | Old Crown Girton - Allergens, Dietary Options & Food Safety",
@@ -392,8 +392,13 @@ const buildFaqItems = (phoneDisplay: string) => ([
 
 export default function MenuInformationPage() {
   const contact = getContactInfo();
+  const identity = getRestaurantIdentity();
   const phoneHref = contact.phone.tel;
   const phoneDisplay = contact.phone.display;
+  const primaryEmail = contact.email.primary;
+  const contactAddress = contact.address;
+  const restaurantName = identity.displayName;
+  const locationLine = `${contactAddress.street}, ${contactAddress.area}, ${contactAddress.city} ${contactAddress.postcode}`;
   const faqItems = buildFaqItems(phoneDisplay);
   return (
     <>
@@ -409,8 +414,8 @@ export default function MenuInformationPage() {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             "@id": "https://oldcrowngirton.com//menu-information#faqpage",
-            "name": "Menu Information & Dietary Requirements - Old Crown Girton",
-            "description": "Comprehensive allergen information, dietary requirements, and food safety information for Old Crown Girton restaurant.",
+            "name": `Menu Information & Dietary Requirements - ${restaurantName}`,
+            "description": `Comprehensive allergen information, dietary requirements, and food safety information for ${restaurantName} restaurant.`,
             "url": "https://oldcrowngirton.com//menu-information",
             "mainEntity": faqItems.map((item, index) => ({
               "@type": "Question",
@@ -423,18 +428,18 @@ export default function MenuInformationPage() {
             })),
             "about": {
               "@type": "LocalBusiness",
-              "name": "Old Crown Girton",
+              "name": restaurantName,
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "89 High Street",
-                "addressLocality": "Girton",
-                "addressRegion": "Cambridgeshire",
-                "postalCode": "CB3 0QQ",
-                "addressCountry": "GB"
+                "streetAddress": contactAddress.street,
+                "addressLocality": contactAddress.area,
+                "addressRegion": contactAddress.state ?? contactAddress.city,
+                "postalCode": contactAddress.postcode,
+                "addressCountry": contactAddress.country
               },
               "telephone": contact.phone.primary,
-              "email": "oldcrown@lapeninns.com",
-              "servesCuisine": ["Nepalese", "British", "Indian"],
+              "email": contact.email.primary,
+              "servesCuisine": identity.cuisine,
               "priceRange": "$$"
             }
           },
@@ -583,14 +588,14 @@ export default function MenuInformationPage() {
                   <div className="text-center">
                     <h3 className="font-semibold text-brand-700 mb-2">Email Us</h3>
                     <p className="text-neutral-600 mb-1">Send us your dietary requirements</p>
-                    <Link href="mailto:oldcrown@lapeninns.com" className="text-lg font-bold text-brand-600 hover:text-brand-700">
-                      oldcrown@lapeninns.com
+                    <Link href={`mailto:${primaryEmail}`} className="text-lg font-bold text-brand-600 hover:text-brand-700">
+                      {primaryEmail}
                     </Link>
                   </div>
                 </div>
                 <div className="mt-6 text-center">
                   <p className="text-sm text-neutral-600">
-                    <strong>Location:</strong> 89 High Street, Girton, Cambridge CB3 0QQ
+                    <strong>Location:</strong> {locationLine}
                   </p>
                 </div>
               </div>

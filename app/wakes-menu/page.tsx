@@ -37,6 +37,7 @@ const OPTIONAL_EXTRAS = [
 ];
 
 const contact = getContactInfo();
+const eventsEmail = contact.email.events ?? contact.email.primary;
 
 export const metadata = getSEOTags({
   title: "Wakes Buffet | Celebration of Life Catering | Old Crown Girton",
@@ -177,7 +178,7 @@ export default function WakesMenuPage() {
                 Call to plan your wake
               </MotionLinkButton>
               <MotionLinkButton
-                href="mailto:oldcrown@lapeninns.com"
+                href={`mailto:${eventsEmail}`}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
                 ariaLabel="Email the Old Crown Girton about wakes buffet availability"
@@ -345,7 +346,7 @@ export default function WakesMenuPage() {
                 Call {contact.phone.primary}
               </MotionLinkButton>
               <MotionLinkButton
-                href="mailto:oldcrown@lapeninns.com"
+                href={`mailto:${eventsEmail}`}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-50"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
                 ariaLabel="Email the Old Crown Girton"

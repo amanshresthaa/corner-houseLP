@@ -2,7 +2,7 @@ import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import Link from '@/lib/debugLink';
-import { getContactInfo } from '@/lib/restaurantData';
+import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
   title: "Terms of Service | Old Crown Girton - Restaurant Booking & Service Conditions",
@@ -18,8 +18,19 @@ export const metadata = getSEOTags({
 
 export default function TOS() {
   const contact = getContactInfo();
+  const identity = getRestaurantIdentity();
   const phoneHref = contact.phone.tel;
   const phoneDisplay = contact.phone.display;
+  const primaryEmail = contact.email.primary;
+  const contactAddress = contact.address;
+  const formattedAddress = `${contactAddress.street}, ${contactAddress.area}, ${contactAddress.city} ${contactAddress.postcode}`;
+  const restaurantName = identity.displayName;
+  const uniqueContactEmails = [
+    contact.email.primary,
+    contact.email.bookings,
+    contact.email.events,
+    contact.email.press,
+  ].filter((value, index, array): value is string => !!value && array.indexOf(value) === index);
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -34,24 +45,24 @@ export default function TOS() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "@id": "https://oldcrowngirton.com//tos#webpage",
-            "name": "Terms of Service - Old Crown Girton",
-            "description": "Terms of service and conditions for Old Crown Girton restaurant bookings, reservations and dining services.",
+            "name": `Terms of Service - ${restaurantName}`,
+            "description": `Terms of service and conditions for ${restaurantName} restaurant bookings, reservations and dining services.`,
             "url": "https://oldcrowngirton.com//tos",
             "isPartOf": {
               "@type": "WebSite",
-              "name": "Old Crown Girton",
+              "name": restaurantName,
               "url": "https://oldcrowngirton.com/"
             },
             "about": {
               "@type": "LocalBusiness",
-              "name": "Old Crown Girton",
+              "name": restaurantName,
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "89 High Street",
-                "addressLocality": "Girton",
-                "addressRegion": "Cambridgeshire",
-                "postalCode": "CB3 0QQ",
-                "addressCountry": "GB"
+                "streetAddress": contactAddress.street,
+                "addressLocality": contactAddress.area,
+                "addressRegion": contactAddress.state ?? contactAddress.city,
+                "postalCode": contactAddress.postcode,
+                "addressCountry": contactAddress.country
               }
             },
             "mainContentOfPage": {
@@ -177,7 +188,15 @@ export default function TOS() {
                   <section>
                     <h2 className="text-2xl font-display font-bold text-brand-700 mb-4">8. Dispute Resolution</h2>
                     <p className="leading-relaxed">
-                        In case of disputes, please contact us directly at <Link href="mailto:oldcrown@lapeninns.com" className="text-brand-600 hover:text-brand-700 underline">oldcrown@lapeninns.com</Link>. We aim to resolve all issues amicably. If unresolved, disputes will be subject to the jurisdiction of the courts of England and Wales.
+                      In case of disputes, please contact us directly at{' '}
+                      <Link
+                        href={`mailto:${primaryEmail}`}
+                        className="text-brand-600 hover:text-brand-700 underline"
+                      >
+                        {primaryEmail}
+                      </Link>
+                      . We aim to resolve all issues amicably. If unresolved, disputes will be subject to the
+                      jurisdiction of the courts of England and Wales.
                     </p>
                   </section>
 
@@ -202,10 +221,22 @@ export default function TOS() {
                         For questions or concerns about these terms, please contact:
                       </p>
                       <div className="space-y-1">
-                        <p><strong>Old Crown Girton</strong></p>
-                        <p>89 High Street, Girton, Cambridge CB3 0QQ</p>
-                          <p>Email: <Link href="mailto:oldcrown@lapeninns.com" className="text-brand-600 hover:text-brand-700 underline">oldcrown@lapeninns.com</Link></p>
-                        <p>Phone: <Link href={phoneHref} className="text-brand-600 hover:text-brand-700 underline">{phoneDisplay}</Link></p>
+                        <p><strong>{restaurantName}</strong></p>
+                        <p>{formattedAddress}</p>
+                        {uniqueContactEmails.map((email) => (
+                          <p key={email}>
+                            Email:{' '}
+                            <Link href={`mailto:${email}`} className="text-brand-600 hover:text-brand-700 underline">
+                              {email}
+                            </Link>
+                          </p>
+                        ))}
+                        <p>
+                          Phone:{' '}
+                          <Link href={phoneHref} className="text-brand-600 hover:text-brand-700 underline">
+                            {phoneDisplay}
+                          </Link>
+                        </p>
                       </div>
                     </div>
                   </section>

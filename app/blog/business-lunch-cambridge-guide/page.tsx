@@ -1,5 +1,6 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -21,6 +22,8 @@ export const metadata = getSEOTags({
 });
 
 export default function BusinessLunchGuidePage() {
+  const identity = getRestaurantIdentity();
+  const postalAddress = getPostalAddressSchema();
   const post = {
     title: "The Ultimate Business Lunch Destination in Cambridge",
     excerpt: "Discover why Old Crown Girton has become the go-to choice for professionals seeking the perfect balance of quality cuisine, professional atmosphere, and convenient location.",
@@ -91,19 +94,12 @@ export default function BusinessLunchGuidePage() {
           },
           "publisher": {
             "@type": "LocalBusiness",
-            "name": "Old Crown Girton",
+            "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
               "url": "https://oldcrowngirton.com/icon.png"
             },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "89 High Street",
-              "addressLocality": "Girton",
-              "addressRegion": "Cambridgeshire",
-              "postalCode": "CB3 0QQ",
-              "addressCountry": "GB"
-            }
+            "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",

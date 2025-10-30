@@ -1,5 +1,6 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -22,6 +23,8 @@ export const metadata = getSEOTags({
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 
 export default function ThatchedPubHistoryPage() {
+  const identity = getRestaurantIdentity();
+  const postalAddress = getPostalAddressSchema();
   const post = {
     title: "The Remarkable History of England's Largest Thatched Pub",
     excerpt: "Journey through centuries of history at Old Crown Girton, from its medieval origins to its current status as a unique dining destination.",
@@ -149,19 +152,12 @@ export default function ThatchedPubHistoryPage() {
           },
           "publisher": {
             "@type": "LocalBusiness",
-            "name": "Old Crown Girton",
+            "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
               "url": "https://oldcrowngirton.com/icon.png"
             },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "89 High Street",
-              "addressLocality": "Girton",
-              "addressRegion": "Cambridgeshire",
-              "postalCode": "CB3 0QQ",
-              "addressCountry": "GB"
-            }
+            "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
@@ -203,16 +199,9 @@ export default function ThatchedPubHistoryPage() {
         {
           "@context": "https://schema.org",
           "@type": "HistoricalPlace",
-          "name": "Old Crown Girton",
+          "name": identity.displayName,
           "description": "England's largest thatched pub with origins dating to the 14th century",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "89 High Street",
-            "addressLocality": "Girton",
-            "addressRegion": "Cambridgeshire",
-            "postalCode": "CB3 0QQ",
-            "addressCountry": "GB"
-          },
+          "address": postalAddress,
           "historicalSignificance": "Largest thatched roof of any public house in England, representing centuries of traditional building techniques",
           "architecturalStyle": "English vernacular with thatched roof",
           "foundingDate": "1300",

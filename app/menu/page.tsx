@@ -6,7 +6,7 @@ import { getMarketingSmart, getMenuSmart, getContentSmart } from '@/src/lib/data
 import MenuHero from './_components/MenuHero';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
-import { getContactInfo } from '@/lib/restaurantData';
+import { getContactInfo, getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 // Dynamic imports for Menu page sections - optimized for performance
 const MenuInteractive = dynamic(() => import('./_components/MenuInteractive'), {
 	ssr: true,
@@ -47,6 +47,8 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 
 	const menuContent = content.pages.menu;
 	const contact = getContactInfo();
+	const identity = getRestaurantIdentity();
+	const postalAddress = getPostalAddressSchema();
 	const telHref = contact.phone.tel;
 	const phoneDisplay = contact.phone.display;
 
@@ -80,15 +82,8 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 		inLanguage: 'en-GB',
 		provider: {
 			'@type': 'Restaurant',
-			name: 'The Old Crown Girton',
-			address: {
-				'@type': 'PostalAddress',
-				streetAddress: '89 High Street',
-				addressLocality: 'Girton',
-				addressRegion: 'Cambridge',
-				postalCode: 'CB3 0QQ',
-				addressCountry: 'GB'
-			}
+			name: identity.displayName,
+			address: postalAddress
 		},
 		menuSection: (optimizedMenu?.sections || []).map((section: any) => ({
 			'@type': 'MenuSection',
