@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { v } from '@/components/variants';
+import { getContactInfo } from '@/lib/restaurantData';
 
 interface DishCardProps {
   title: string;
@@ -24,6 +25,8 @@ export default function DishCard({
 }: DishCardProps) {
   const prefersReduced = useReducedMotion();
   const itemVariant = prefersReduced ? { initial: { opacity: 0 }, animate: { opacity: 1 } } : v.fadeUp;
+  const contact = getContactInfo();
+  const phoneHref = contact.phone.tel;
   return (
     <motion.div className="bg-white rounded-2xl sm:rounded-xl shadow-lg overflow-hidden hover-lift gpu-fix" variants={itemVariant as any} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-10% 0%' }} whileHover={{ y: -2, scale: 1.01 }} transition={{ duration: 0.18 }}>
       <div className="relative h-44 sm:h-48 w-full">
@@ -69,7 +72,7 @@ export default function DishCard({
           {description}
         </p>
         <motion.a
-          href="tel:01223 277217"
+          href={phoneHref}
           className="block w-full text-center bg-accent text-white font-medium py-2 px-4 rounded-lg text-sm sm:text-base"
           {...v.button}
         >

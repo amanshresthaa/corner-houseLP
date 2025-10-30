@@ -97,7 +97,7 @@ export default function TakeawayMenuPage() {
                 Download Menu
               </a>
               <MotionLinkButton
-                href={`tel:${contact.phone.primary.replace(/\s+/g, "")}`}
+                href={contact.phone.tel}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
                 ariaLabel="Call to place a takeaway order"
               >

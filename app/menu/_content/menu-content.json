@@ -9,7 +9,7 @@
     "buttons": {
       "bookOnline": {
         "label": "Book Online",
-        "url": "https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true",
+        "url": "/book-a-table",
         "target": "_blank",
         "style": "primary"
       },

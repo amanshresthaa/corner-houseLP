@@ -9,9 +9,12 @@ import { useParsedData } from '@/hooks/useParsedData';
 import { useContent } from '@/hooks/useContent';
 import { useOpeningHours } from '@/hooks/data/useOpeningHours';
 import { MarketingDataSchema } from '@/lib/schemas';
+import Link from '@/lib/debugLink';
 
 export default function Hero() {
   const contact = getContactInfo();
+  const phoneDisplay = contact.phone.display ?? contact.phone.primary;
+  const phoneHref = contact.phone.tel ?? `tel:${(contact.phone.primary || '').replace(/[^+\d]/g, '')}`;
   const { hours, isLoading: hoursLoading } = useOpeningHours();
   
   // Generate hours snippet from actual restaurant data
@@ -94,18 +97,21 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.a
-                href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
-                target="_blank"
-                rel="noopener noreferrer"
+            <motion.div
               whileHover={mv.button.hover}
               whileTap={mv.button.tap}
-                className="bg-brand-600 hover:bg-accent-500 text-neutral-50 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg shadow-lg transition-all duration-200 w-full sm:w-auto"
+              className="w-full sm:w-auto"
+            >
+              <Link
+                href="/book-a-table"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-brand-600 py-3 px-6 text-base font-bold text-neutral-50 shadow-lg transition-all duration-200 hover:bg-accent-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-400 sm:py-4 sm:px-8 sm:text-lg"
+                aria-label={primaryCTA}
               >
                 {primaryCTA}
-              </motion.a>
+              </Link>
+            </motion.div>
             <motion.a
-              href={`tel:${contact?.phone.primary || '01223 277217'}`}
+              href={phoneHref}
               whileHover={mv.button.hover}
               whileTap={mv.button.tap}
               className="bg-crimson-600 hover:bg-crimson-700 text-neutral-50 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg shadow-lg transition-all duration-200 w-full sm:w-auto"
@@ -134,7 +140,7 @@ export default function Hero() {
               <svg className="w-5 h-5 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <span>{contact?.phone.display || '01223277217'}</span>
+              <span>{phoneDisplay}</span>
             </div>
           </motion.div>
         </motion.div>

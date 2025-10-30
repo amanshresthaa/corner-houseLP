@@ -62,8 +62,7 @@ export function SlideCTAButton({
   );
   
   if (href) {
-    const isBookOnline = variant === "book";
-    const isExternal = isBookOnline || href.startsWith('http') || href.startsWith('tel:');
+    const isExternal = href.startsWith('http') || href.startsWith('tel:');
     
     if (isExternal) {
       return (
@@ -72,8 +71,8 @@ export function SlideCTAButton({
           className={className}
           aria-label={finalAriaLabel}
           onClick={onClick}
-          target={isBookOnline ? "_blank" : undefined}
-          rel={isBookOnline ? "noopener noreferrer" : undefined}
+          target={href.startsWith('http') ? "_blank" : undefined}
+          rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
         >
           {content}
         </a>

@@ -18,7 +18,8 @@ describe('ContactInfoSection', () => {
   const mockPhone = {
     title: 'Phone',
     description: 'Call us for bookings',
-    number: '01223277217'
+    number: '01223277217',
+    href: 'tel:01223277217'
   };
 
   const mockLocation = {
@@ -27,8 +28,12 @@ describe('ContactInfoSection', () => {
     address: '89 High Street, Girton, Cambridge, CB3 0QQ'
   };
 
+  const mockEmail = {
+    address: 'oldcrown@lapeninns.com'
+  };
+
   it('renders phone and location information correctly', () => {
-    render(<ContactInfoSection phone={mockPhone} location={mockLocation} />);
+    render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
     
     // Check phone section
     expect(screen.getByText('Phone')).toBeInTheDocument();
@@ -47,15 +52,15 @@ describe('ContactInfoSection', () => {
   });
 
   it('renders phone link with correct href', () => {
-    render(<ContactInfoSection phone={mockPhone} location={mockLocation} />);
-    
+    render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
+
     const phoneLink = screen.getByRole('link', { name: '01223277217' });
-    expect(phoneLink).toHaveAttribute('href', 'tel:01223 277217');
+    expect(phoneLink).toHaveAttribute('href', 'tel:01223277217');
   });
 
   it('renders email link with correct href', () => {
-    render(<ContactInfoSection phone={mockPhone} location={mockLocation} />);
-    
+    render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
+
     const emailLink = screen.getByRole('link', { name: /email restaurant at oldcrown@lapeninns.com/i });
     expect(emailLink).toHaveAttribute('href', 'mailto:oldcrown@lapeninns.com');
   });
@@ -66,7 +71,7 @@ describe('ContactInfoSection', () => {
       address: 'Line 1, Line 2, Line 3, Line 4'
     };
     
-    render(<ContactInfoSection phone={mockPhone} location={locationWithMultiLine} />);
+    render(<ContactInfoSection phone={mockPhone} location={locationWithMultiLine} email={mockEmail} />);
     
     expect(screen.getByText('Line 1')).toBeInTheDocument();
     expect(screen.getByText('Line 2')).toBeInTheDocument();
@@ -76,31 +81,32 @@ describe('ContactInfoSection', () => {
 
   it('returns null when phone is missing', () => {
     const { container } = render(
-      <ContactInfoSection phone={undefined as any} location={mockLocation} />
+      <ContactInfoSection phone={undefined as any} location={mockLocation} email={mockEmail} />
     );
     expect(container.firstChild).toBeNull();
   });
 
   it('returns null when location is missing', () => {
     const { container } = render(
-      <ContactInfoSection phone={mockPhone} location={undefined as any} />
+      <ContactInfoSection phone={mockPhone} location={undefined as any} email={mockEmail} />
     );
     expect(container.firstChild).toBeNull();
   });
 
   it('applies custom className when provided', () => {
     const { container } = render(
-      <ContactInfoSection 
-        phone={mockPhone} 
-        location={mockLocation} 
-        className="custom-class" 
+      <ContactInfoSection
+        phone={mockPhone}
+        location={mockLocation}
+        email={mockEmail}
+        className="custom-class"
       />
     );
     expect(container.firstChild).toHaveClass('custom-class');
   });
 
   it('has proper accessibility attributes', () => {
-    render(<ContactInfoSection phone={mockPhone} location={mockLocation} />);
+    render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
     
     // Check for proper semantic HTML structure
     const headings = screen.getAllByRole('heading', { level: 2 });

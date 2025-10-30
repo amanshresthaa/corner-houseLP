@@ -1,12 +1,49 @@
 {
-  "name": "Old Crown Girton",
-  "phone": "+44 1223 277217",
-  "email": "oldcrown@lapeninns.com",
+  "identity": {
+    "name": "Old Crown Girton",
+    "displayName": "The Old Crown Girton",
+    "tagline": "Historic Thatched Pub & Nepalese Restaurant",
+    "description": "Authentic Nepalese cuisine and traditional British pub classics served in Girton's historic thatched inn.",
+    "established": "1840s",
+    "type": "pub-restaurant",
+    "cuisine": ["Nepalese", "British", "Pub Food"],
+    "slug": "old-crown-girton"
+  },
+  "contact": {
+    "phone": {
+      "primary": "+44 1223 277217",
+      "display": "01223 277217",
+      "tel": "tel:+441223277217",
+      "whatsapp": "+44 1223 277217"
+    },
+    "email": {
+      "primary": "oldcrown@lapeninns.com",
+      "bookings": "bookings@oldcrowngirton.com",
+      "events": "events@oldcrowngirton.com",
+      "press": "press@oldcrowngirton.com"
+    },
+    "website": "https://oldcrowngirton.com",
+    "bookingUrl": "https://oldcrowngirton.com/book-a-table",
+    "orderUrl": "https://oldcrowngirton.com/takeaway-menu"
+  },
   "address": {
     "street": "89 High Street",
-    "city": "Girton",
+    "area": "Girton",
+    "city": "Cambridge",
     "state": "Cambridgeshire",
-    "zip": "CB3 0QQ"
+    "postcode": "CB3 0QQ",
+    "zip": "CB3 0QQ",
+    "country": "United Kingdom",
+    "coordinates": {
+      "lat": 52.2425913,
+      "lng": 0.0814946
+    },
+    "map": {
+      "google": "https://www.google.com/maps/dir/?api=1&destination=52.2425913,0.0814946&travelmode=driving",
+      "apple": "https://maps.apple.com/?daddr=52.2425913,0.0814946&dirflg=d",
+      "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.713554807221!2d0.0790434!3d52.2422262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8707f0f84f5af%3A0x9c66cf5437f52b1!2sThe%20Old%20Crown%20Girton!5e0!3m2!1sen!2suk!4v1709302800000!5m2!1sen!2suk"
+    },
+    "timezone": "Europe/London"
   },
   "hours": {
     "kitchen": {
@@ -26,6 +63,62 @@
       "friday": "12:00-23:00",
       "saturday": "12:00-23:00",
       "sunday": "12:00-22:00"
+    },
+    "display": {
+      "kitchen": {
+        "weekdays": "Mon-Thu: 12:00-15:00 & 17:00-22:00",
+        "friday": "Fri: 12:00-15:00 & 17:00-22:00",
+        "saturday": "Sat: 12:00-22:00",
+        "sunday": "Sun: 12:00-21:00"
+      },
+      "bar": {
+        "weekdays": "Mon-Thu: 12:00-22:00",
+        "friday": "Fri: 12:00-23:00",
+        "saturday": "Sat: 12:00-23:00",
+        "sunday": "Sun: 12:00-22:00"
+      }
+    },
+    "notes": [
+      "Kitchen closes 30 minutes before listed times.",
+      "Bank holiday hours may differ."
+    ],
+    "timezone": "Europe/London"
+  },
+  "social": {
+    "facebook": {
+      "url": "https://www.facebook.com/oldcrowngirton",
+      "handle": "@oldcrowngirton"
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/oldcrowngirton",
+      "handle": "@oldcrowngirton"
+    },
+    "twitter": {
+      "url": "https://twitter.com/oldcrowngirton",
+      "handle": "@oldcrowngirton"
+    },
+    "tripadvisor": {
+      "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g187045-d123456789-Reviews-The_Old_Crown-Girton_Cambridge_Cambridgeshire_England.html"
+    },
+    "google": {
+      "url": "https://g.page/r/CXsample"
     }
-  }
+  },
+  "booking": {
+    "online": true,
+    "walkIns": true,
+    "leadTimeMinutes": 15,
+    "partySizeLimit": 12
+  },
+  "meta": {
+    "slug": "old-crown-girton",
+    "category": ["restaurant", "pub"],
+    "rating": {
+      "average": 4.8,
+      "reviewCount": 327
+    }
+  },
+  "name": "Old Crown Girton",
+  "phone": "+44 1223 277217",
+  "email": "oldcrown@lapeninns.com"
 }

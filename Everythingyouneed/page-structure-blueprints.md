@@ -388,7 +388,7 @@
       "name": "Automatic Redirect",
       "layout": "system",
       "elements": [
-        { "type": "auto_redirect", "target": "https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true", "label": "Togo Booking", "notes": "Client immediately redirected on load." }
+        { "type": "auto_redirect", "target": "/book-a-table", "label": "Togo Booking", "notes": "Client immediately redirected on load." }
       ]
     }
   ]
@@ -436,7 +436,7 @@
       "elements": [
         { "type": "title", "text": "Ready to Book?" },
         { "type": "copy", "text": "Experience the perfect blend of Nepalese hospitality and British pub tradition." },
-        { "type": "button", "labels": ["Book Online"], "links": ["https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"] },
+        { "type": "button", "labels": ["Book Online"], "links": ["/book-a-table"] },
         { "type": "contact_details", "fields": ["89 High St, Girton, Cambridge CB3 0QQ", "See footer for full hours"] }
       ]
     },

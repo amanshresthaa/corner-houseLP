@@ -9,15 +9,18 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import themeTokens from '../theme/colors';
+import { getContactInfo } from '@/lib/restaurantData';
 
 const { themes } = themeTokens;
 const lightTheme = themes.light.colors;
 const darkTheme = themes.dark.colors;
 
+const LAYOUT_CONTACT = getContactInfo();
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://oldcrowngirton.com/'),
   title: 'The Old Crown Girton | Historic Thatched Pub & Nepalese Restaurant',
-  description: 'Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Book: 01223277217',
+  description: `Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Book: ${LAYOUT_CONTACT.phone.display}`,
   manifest: '/manifest.webmanifest',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: lightTheme.background },

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import config from "@/config";
+import { getRestaurantIdentity, getContactInfo, getAddress, getHours } from "@/lib/restaurantData";
 
 /**
  * Contract for getSEOTags inputs.
@@ -74,81 +75,68 @@ export const getSEOTags = (opts: SEOTagOptions = {}): Metadata => {
  * Pass an array of JSON-LD objects or let the helper render a sensible default.
  */
 export const renderSchemaTags = (schemas?: Array<Record<string, any>>): ReactElement | null => {
+  const identity = getRestaurantIdentity();
+  const contact = getContactInfo();
+  const address = getAddress();
+  const hours = getHours();
+
+  const dayMap: Record<string, string> = {
+    monday: 'Monday',
+    tuesday: 'Tuesday',
+    wednesday: 'Wednesday',
+    thursday: 'Thursday',
+    friday: 'Friday',
+    saturday: 'Saturday',
+    sunday: 'Sunday',
+  };
+
+  const openingHoursSpecification = Object.entries(hours.kitchen).map(([day, value]) => {
+    const dayName = dayMap[day.toLowerCase()] || day;
+    const firstRange = value.split(',')[0]?.trim() ?? '';
+    const [opens, closes] = firstRange.includes('-')
+      ? firstRange.split('-').map((part) => part.trim())
+      : ['12:00', '22:00'];
+
+    return {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [dayName],
+      opens,
+      closes,
+    };
+  });
+
   const defaultSchema: Record<string, any> = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
-    name: config.appName,
-    description: config.appDescription,
+    name: identity.displayName,
+    description: identity.description,
     image: `${config.domainName.startsWith("http") ? config.domainName : `https://${config.domainName}`}/icon.png`,
     url: `https://${config.domainName}/`,
-    telephone: "+44 1223 277217",
-    email: "oldcrown@lapeninns.com",
+    telephone: contact.phone.primary,
+    email: contact.email.primary,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "89 High Street",
-      addressLocality: "Girton",
-      addressRegion: "Cambridgeshire",
-      postalCode: "CB3 0QQ",
-      addressCountry: "GB"
+      streetAddress: address.street,
+      addressLocality: address.area,
+      addressRegion: address.city,
+      postalCode: address.postcode,
+      addressCountry: "GB",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "52.2434",
-      longitude: "0.0732"
+      latitude: address.coordinates.lat,
+      longitude: address.coordinates.lng,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday"],
-        opens: "12:00",
-        closes: "22:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday"],
-        opens: "12:00",
-        closes: "22:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Wednesday"],
-        opens: "12:00",
-        closes: "22:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Thursday"],
-        opens: "12:00",
-        closes: "22:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Friday"],
-        opens: "12:00",
-        closes: "23:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "12:00",
-        closes: "23:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Sunday"],
-        opens: "12:00",
-        closes: "22:00"
-      }
-    ],
-    servesCuisine: ["Nepalese", "British", "Pub Food"],
+    openingHoursSpecification,
+    servesCuisine: identity.cuisine,
     priceRange: "££",
     acceptsReservations: true,
     hasMenu: `https://${config.domainName}/menu`,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.5",
-      reviewCount: "127"
-    }
+      reviewCount: "127",
+    },
   };
 
   const schemasToRender = schemas && schemas.length > 0 ? schemas : [defaultSchema];

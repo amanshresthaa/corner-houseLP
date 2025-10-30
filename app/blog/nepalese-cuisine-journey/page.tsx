@@ -233,9 +233,7 @@ export default function BlogPostPage() {
               <h3 className="text-2xl font-bold mb-4">Experience Authentic Nepalese Cuisine</h3>
               <p className="text-brand-100 mb-6">Discover the unique flavors of Nepal in Cambridge's most historic setting. Book your table today and taste the authentic difference.</p>
               <Link 
-                href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book-a-table"
                 className="inline-block px-8 py-3 bg-white text-brand-600 font-semibold rounded-lg hover:bg-brand-50"
               >
                 Book Your Table

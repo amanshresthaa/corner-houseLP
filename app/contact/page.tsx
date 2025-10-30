@@ -3,16 +3,19 @@ import { getContentSmart } from '@/src/lib/data/server-loader';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
+import { getContactInfo } from '@/lib/restaurantData';
+
+const CONTACT = getContactInfo();
 
 // SEO Metadata
 export const metadata = getSEOTags({
   title: "Contact Old Crown Girton - Book Table | Directions | Opening Hours",
-  description: "Contact Old Crown Girton for bookings, directions & enquiries. Located at 89 High Street, Girton, Cambridge. Phone: 01223277217. Free parking available.",
+  description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at 89 High Street, Girton, Cambridge. Phone: ${CONTACT.phone.display}. Free parking available.`,
   keywords: ["Old Crown Girton contact", "book table Girton pub", "Girton pub phone number", "Old Crown directions", "Cambridge pub booking", "Girton restaurant address"],
   canonicalUrlRelative: "/contact",
   openGraph: {
     title: "Contact Old Crown Girton - Book Table | Directions",
-    description: "Contact Old Crown Girton for bookings, directions & enquiries. Located at 89 High Street, Girton, Cambridge. Phone: 01223277217.",
+    description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at 89 High Street, Girton, Cambridge. Phone: ${CONTACT.phone.display}.`,
     url: "https://oldcrowngirton.com//contact",
   },
 });
@@ -27,6 +30,19 @@ const InteractiveMap = dynamic(() => import("@/components/restaurant/Interactive
 export default async function ContactPage() {
   const content = await getContentSmart();
   const contactContent = content.pages.contact;
+  const canonicalContact = CONTACT;
+  const phoneInfo = {
+    ...contactContent.contactInfo.phone,
+    number: canonicalContact.phone.display,
+    href: canonicalContact.phone.tel,
+  };
+  const locationInfo = {
+    ...contactContent.contactInfo.location,
+    address: `${canonicalContact.address.street}, ${canonicalContact.address.area}, ${canonicalContact.address.city}, ${canonicalContact.address.postcode}`,
+  };
+  const emailInfo = {
+    address: canonicalContact.email.primary,
+  };
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -62,9 +78,10 @@ export default async function ContactPage() {
               <section className="grid grid-cols-1 lg:grid-cols-2 gap-8" aria-labelledby="contact-info-heading">
                 <div>
                   <h2 id="contact-info-heading" className="text-2xl font-display font-bold text-brand-700 mb-6">Contact Information</h2>
-                  <ContactInfoSection 
-                    phone={contactContent.contactInfo.phone}
-                    location={contactContent.contactInfo.location}
+                  <ContactInfoSection
+                    phone={phoneInfo}
+                    location={locationInfo}
+                    email={emailInfo}
                   />
                 </div>
 

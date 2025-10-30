@@ -2,6 +2,7 @@ import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import Link from '@/lib/debugLink';
+import { getContactInfo } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
   title: "Terms of Service | Old Crown Girton - Restaurant Booking & Service Conditions",
@@ -16,6 +17,9 @@ export const metadata = getSEOTags({
 });
 
 export default function TOS() {
+  const contact = getContactInfo();
+  const phoneHref = contact.phone.tel;
+  const phoneDisplay = contact.phone.display;
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -201,7 +205,7 @@ export default function TOS() {
                         <p><strong>Old Crown Girton</strong></p>
                         <p>89 High Street, Girton, Cambridge CB3 0QQ</p>
                           <p>Email: <Link href="mailto:oldcrown@lapeninns.com" className="text-brand-600 hover:text-brand-700 underline">oldcrown@lapeninns.com</Link></p>
-                        <p>Phone: <Link href="tel:01223277217" className="text-brand-600 hover:text-brand-700 underline">+44 1223 277217</Link></p>
+                        <p>Phone: <Link href={phoneHref} className="text-brand-600 hover:text-brand-700 underline">{phoneDisplay}</Link></p>
                       </div>
                     </div>
                   </section>

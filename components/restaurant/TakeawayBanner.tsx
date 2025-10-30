@@ -1,8 +1,12 @@
 'use client';
 
 import EmojiIcon from '@/components/common/EmojiIcon';
+import { getContactInfo } from '@/lib/restaurantData';
 
 export default function TakeawayBanner() {
+  const contact = getContactInfo();
+  const phoneDisplay = contact.phone.display;
+  const phoneHref = contact.phone.tel;
   return (
   <section className="bg-gradient-to-r from-brand-600 to-brand-800 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,11 +26,11 @@ export default function TakeawayBanner() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:01223 277217"
+              href={phoneHref}
               className="bg-accent-500 text-neutral-900 font-bold py-4 px-8 rounded-lg text-lg shadow-lg hover:bg-accent-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-300 transition-colors"
-              aria-label="Call to order takeaway at 01223 277217"
+              aria-label={`Call to order takeaway at ${phoneDisplay}`}
             >
-              <EmojiIcon emoji="📞" className="mr-2" /> Call to Order: 01223 277217
+              <EmojiIcon emoji="📞" className="mr-2" /> Call to Order: {phoneDisplay}
             </a>
           </div>
 

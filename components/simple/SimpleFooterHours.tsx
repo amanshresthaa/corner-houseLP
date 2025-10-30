@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { fetchWithResilience } from '@/src/lib/data/fetchWithResilience';
+import { getContactInfo } from '@/lib/restaurantData';
+
+const STATIC_CONTACT = getContactInfo();
 
 interface SimpleHoursData {
   kitchen: Record<string, string>;
@@ -47,7 +50,7 @@ export default function SimpleFooterHours() {
       <div className="text-sm text-neutral-100">
         <p className="font-medium">Hours</p>
         <p>Call for current hours</p>
-        <p>01223277217</p>
+        <p>{STATIC_CONTACT.phone.display}</p>
       </div>
     );
   }

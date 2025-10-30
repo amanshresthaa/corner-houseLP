@@ -6,6 +6,7 @@ import { getMarketingSmart, getMenuSmart, getContentSmart } from '@/src/lib/data
 import MenuHero from './_components/MenuHero';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
+import { getContactInfo } from '@/lib/restaurantData';
 // Dynamic imports for Menu page sections - optimized for performance
 const MenuInteractive = dynamic(() => import('./_components/MenuInteractive'), {
 	ssr: true,
@@ -43,12 +44,15 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 		getContentSmart(),
 		getMenuSmart(priorityCategory) // Pass priority category for optimized loading
 	]);
-	
+
 	const menuContent = content.pages.menu;
-	
+	const contact = getContactInfo();
+	const telHref = contact.phone.tel;
+	const phoneDisplay = contact.phone.display;
+
 	const labels = m.buttons || {};
 	const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline || 'Book Online';
-	const labelOrderTakeaway = labels.orderTakeaway || menuContent.hero.cta.order || 'Order Takeaway';
+	const labelOrderTakeaway = labels.orderTakeaway || menuContent.hero.cta.order || `Order Takeaway: ${phoneDisplay}`;
 	
 	// Optimize menu data structure for faster client-side rendering
 	const optimizedMenu = {
@@ -200,21 +204,19 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 											</p>
 											
 							<div className="flex flex-wrap gap-4 justify-center mb-6">
-								<Link
-									href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 font-bold py-4 px-8 rounded-lg text-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30 inline-block"
-								>
-									{labelBookOnline}
-									<span className="ml-2 text-sm" aria-hidden="true">↗</span>
-								</Link>
-							<Link
-								href="tel:01223 277217"
-								className="transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-4 px-8 rounded-lg text-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30 inline-block"
-							>
-								{labelOrderTakeaway}
-							</Link>
+				<Link
+					href="/book-a-table"
+					className="inline-block rounded-lg border-2 border-brand-200 bg-white px-8 py-4 text-lg font-bold text-brand-800 shadow-xl transition-all duration-200 hover:scale-105 hover:bg-neutral-50 hover:shadow-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+					aria-label={labelBookOnline}
+				>
+					{labelBookOnline}
+				</Link>
+			<Link
+				href={telHref}
+				className="transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-4 px-8 rounded-lg text-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30 inline-block"
+			>
+				{labelOrderTakeaway}
+			</Link>
 							<Link
 								href="/about"
 								className="transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 bg-white hover:bg-neutral-50 text-brand-700 border-2 border-brand-200 font-bold py-4 px-8 rounded-lg text-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30 inline-block"

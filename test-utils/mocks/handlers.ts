@@ -7,31 +7,89 @@ import { http, HttpResponse } from 'msw';
 
 // Mock restaurant data (matches the structure from data/restaurant.json)
 const mockRestaurantData = {
-  name: "Old Crown",
-  description: "A traditional British pub in the heart of Girton",
-  address: {
-    street: "1 High Street",
-    city: "Girton",
-    county: "Cambridgeshire", 
-    postcode: "CB3 0QH",
-    country: "United Kingdom"
+  name: "Old Crown Girton",
+  phone: "+44 1223 277217",
+  email: "oldcrown@lapeninns.com",
+  description: "Historic thatched pub serving Nepalese cuisine in Girton.",
+  identity: {
+    name: "Old Crown Girton",
+    displayName: "The Old Crown Girton",
+    tagline: "Historic Thatched Pub & Nepalese Restaurant",
+    description: "Authentic Nepalese cuisine and traditional British pub classics.",
+    established: "1840s",
+    type: "pub-restaurant",
+    cuisine: ["Nepalese", "British"],
+    slug: "old-crown-girton"
   },
   contact: {
-    phone: "+44 1223 277217",
-    email: "oldcrown@lapeninns.com"
+    phone: {
+      primary: "+44 1223 277217",
+      display: "01223 277217",
+      tel: "tel:+441223277217",
+      whatsapp: "+44 1223 277217"
+    },
+    email: {
+      primary: "oldcrown@lapeninns.com",
+      bookings: "bookings@oldcrowngirton.com",
+      events: "events@oldcrowngirton.com"
+    },
+    website: "https://oldcrowngirton.com",
+    bookingUrl: "https://oldcrowngirton.com/book-a-table"
   },
-  openingHours: {
-    monday: { open: "12:00", close: "23:00" },
-    tuesday: { open: "12:00", close: "23:00" },
-    wednesday: { open: "12:00", close: "23:00" },
-    thursday: { open: "12:00", close: "23:00" },
-    friday: { open: "12:00", close: "23:00" },
-    saturday: { open: "12:00", close: "23:00" },
-    sunday: { open: "12:00", close: "22:30" }
+  address: {
+    street: "89 High Street",
+    area: "Girton",
+    city: "Cambridge",
+    state: "Cambridgeshire",
+    postcode: "CB3 0QQ",
+    zip: "CB3 0QQ",
+    country: "United Kingdom",
+    coordinates: { lat: 52.2425913, lng: 0.0814946 },
+    map: {
+      google: "https://www.google.com/maps/dir/?api=1&destination=52.2425913,0.0814946&travelmode=driving",
+      apple: "https://maps.apple.com/?daddr=52.2425913,0.0814946&dirflg=d"
+    },
+    timezone: "Europe/London"
+  },
+  hours: {
+    kitchen: {
+      monday: "12:00-22:00",
+      tuesday: "12:00-22:00",
+      wednesday: "12:00-22:00",
+      thursday: "12:00-22:00",
+      friday: "12:00-22:30",
+      saturday: "12:00-22:30",
+      sunday: "12:00-21:30"
+    },
+    bar: {
+      monday: "12:00-23:00",
+      tuesday: "12:00-23:00",
+      wednesday: "12:00-23:00",
+      thursday: "12:00-23:00",
+      friday: "12:00-23:30",
+      saturday: "12:00-23:30",
+      sunday: "12:00-22:30"
+    },
+    display: {
+      kitchen: {
+        weekdays: "Mon-Thu: 12:00-22:00",
+        friday: "Fri: 12:00-22:30",
+        saturday: "Sat: 12:00-22:30",
+        sunday: "Sun: 12:00-21:30"
+      },
+      bar: {
+        weekdays: "Mon-Thu: 12:00-23:00",
+        friday: "Fri: 12:00-23:30",
+        saturday: "Sat: 12:00-23:30",
+        sunday: "Sun: 12:00-22:30"
+      }
+    },
+    notes: ["Kitchen closes 30 minutes before closing time."],
+    timezone: "Europe/London"
   },
   features: [
     "Dog Friendly",
-    "Family Friendly", 
+    "Family Friendly",
     "Student Offers",
     "Live Sport",
     "Sunday Roast",
@@ -44,6 +102,26 @@ const mockRestaurantData = {
       { name: "Sunday Roast", price: "£16.95", description: "Traditional roast with all the trimmings" },
       { name: "Steak & Ale Pie", price: "£15.95", description: "Homemade with local ale" }
     ]
+  },
+  social: {
+    facebook: { url: "https://www.facebook.com/oldcrowngirton", handle: "@oldcrowngirton" },
+    instagram: { url: "https://www.instagram.com/oldcrowngirton", handle: "@oldcrowngirton" }
+  },
+  booking: {
+    online: true,
+    walkIns: true,
+    leadTimeMinutes: 15,
+    partySizeLimit: 12,
+    depositRequired: false,
+    cancellationPolicy: "Please contact us 24 hours in advance for cancellations."
+  },
+  meta: {
+    slug: "old-crown-girton",
+    category: ["restaurant", "pub"],
+    rating: {
+      average: 4.8,
+      reviewCount: 327
+    }
   }
 };
 

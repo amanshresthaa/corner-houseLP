@@ -1,12 +1,11 @@
 'use client';
 
-/**
- * Props interfaces for EventsContactSection component
- */
+import { getContactInfo } from '@/lib/restaurantData';
+
 interface EventsContactSectionProps {
   title: string;
   description: string;
-  phone: string;
+  phone?: string;
   className?: string;
 }
 
@@ -24,15 +23,19 @@ interface EventsContactSectionProps {
  * - Semantic HTML structure
  * - Design system styling
  */
-export default function EventsContactSection({ 
-  title, 
-  description, 
-  phone, 
-  className = '' 
+export default function EventsContactSection({
+  title,
+  description,
+  phone,
+  className = ''
 }: EventsContactSectionProps) {
-  if (!title || !phone) {
+  if (!title) {
     return null;
   }
+
+  const contact = getContactInfo();
+  const phoneDisplay = phone || contact.phone.display;
+  const phoneHref = phone ? `tel:${phone.replace(/\s/g, '')}` : contact.phone.tel;
 
   const useCases = [
     'Birthday / anniversary',
@@ -76,11 +79,11 @@ export default function EventsContactSection({
         
         {/* Contact Button */}
         <a
-          href={`tel:${phone.replace(/\s/g, '')}`}
+          href={phoneHref}
           className="inline-block bg-accent text-white font-bold py-4 px-8 rounded-lg text-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-accent/60"
-          aria-label={`Call restaurant to enquire about private events at ${phone}`}
+          aria-label={`Call restaurant to enquire about private events at ${phoneDisplay}`}
         >
-          📞 Enquire / Book: {phone}
+          📞 Enquire / Book: {phoneDisplay}
         </a>
       </div>
     </div>

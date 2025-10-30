@@ -201,7 +201,7 @@ const buildStructuredData = (sections: MenuSection[], contact: ReturnType<typeof
 
 export default function CurryAndCarolsMenuPage() {
   const contact = getContactInfo();
-  const telHref = contact.phone.primary.replace(/\s+/g, "");
+  const telHref = contact.phone.tel;
   const phoneDisplay = contact.phone.display.replace(/\s+/g, "\u00a0");
 
   const structuredData = buildStructuredData(MENU_SECTIONS, contact);
@@ -267,7 +267,7 @@ export default function CurryAndCarolsMenuPage() {
                   Register interest
                 </MotionLinkButton>
                 <MotionLinkButton
-                  href={`tel:${telHref}`}
+                  href={telHref}
                   className="btn btn-outline w-full sm:w-auto min-h-[3.25rem] border-white/60 text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white focus-visible:ring-offset-brand-700 touch-manipulation"
                   ariaLabel="Call the Old Crown Girton team about Curry and Carols"
                 >
@@ -419,7 +419,7 @@ export default function CurryAndCarolsMenuPage() {
                     How to secure your table
                   </h3>
                   <p className="text-base md:text-lg text-brand-600 leading-relaxed mb-6">
-                    Call us on <a href={`tel:${telHref}`} className="font-semibold text-brand-700 underline">{phoneDisplay}</a>{" "}
+                    Call us on <a href={telHref} className="font-semibold text-brand-700 underline">{phoneDisplay}</a>{" "}
                     or send a note through the{" "}
                     <Link
                       href="/contact"

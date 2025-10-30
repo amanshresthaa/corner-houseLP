@@ -307,9 +307,7 @@ export default function ThatchedPubHistoryPage() {
               <h3 className="text-2xl font-bold mb-4">Experience Living History</h3>
               <p className="text-brand-100 mb-6">Visit England's largest thatched pub and dine beneath centuries of heritage. Book your table to experience history firsthand.</p>
               <Link 
-                href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book-a-table"
                 className="inline-block px-8 py-3 bg-white text-brand-600 font-semibold rounded-lg hover:bg-brand-50"
               >
                 Visit Historic Pub

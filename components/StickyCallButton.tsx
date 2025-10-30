@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic';
-import bookingData from "@/config/restaurant.json"; // contains phone
+import { getContactInfo, getAddress, getRestaurantIdentity } from "@/lib/restaurantData";
 import { useParsedData } from "@/hooks/useParsedData";
 import { MarketingDataSchema, MarketingDataParsed } from "@/lib/schemas";
 import config from "@/config";
 import { usePathname } from "next/navigation";
+import Link from '@/lib/debugLink';
 
 // Dynamic motion import to reduce bundle size
 const DynamicMotion = dynamic(() => import('@/lib/motion/DynamicMotion'), {
@@ -17,6 +18,10 @@ const DynamicMotion = dynamic(() => import('@/lib/motion/DynamicMotion'), {
 // Utility to sanitize phone number for tel: links
 const formatTelHref = (raw?: string) =>
 	`tel:${(raw || "").replace(/[^+\d]/g, "")}`;
+
+const STATIC_CONTACT = getContactInfo();
+const STATIC_ADDRESS = getAddress();
+const STATIC_IDENTITY = getRestaurantIdentity();
 
 interface StickyCallButtonProps {
 	/** Optional override phone */
@@ -36,13 +41,16 @@ export default function StickyCallButton({ phone }: StickyCallButtonProps) {
 	const [crispOffset, setCrispOffset] = useState(false);
 	// Button rotation state: 0 = directions, 1 = call, 2 = booking
 	const [currentButtonIndex, setCurrentButtonIndex] = useState(0);
-		// Responsive flag removed: not currently used (kept minimal to avoid UI changes)
-	const restaurantPhone = phone || bookingData?.phone || "01223277217";
+	// Responsive flag removed: not currently used (kept minimal to avoid UI changes)
+	const fallbackDisplay = STATIC_CONTACT.phone.display || STATIC_CONTACT.phone.primary;
+	const fallbackTel = STATIC_CONTACT.phone.tel || formatTelHref(STATIC_CONTACT.phone.primary);
+	const restaurantPhoneDisplay = phone || fallbackDisplay;
+	const restaurantTel = phone ? formatTelHref(phone) : fallbackTel;
 	const pathname = usePathname();
 
 	// Marketing copy (button labels) externalized
 	const { data: marketing } = useParsedData<MarketingDataParsed>("marketing.json", MarketingDataSchema);
-	const btnLabelCall = marketing?.buttons?.callUs || `Call ${restaurantPhone.replace(/\s+/g, " ")}`;
+	const btnLabelCall = marketing?.buttons?.callUs || `Call ${restaurantPhoneDisplay.replace(/\s+/g, " ")}`;
 
 	// Routes where FAB should not appear (can't early return before hooks; decide later)
 	const excludedRoutes = ["/admin", "/dashboard", "/signin"]; // add more as needed
@@ -125,22 +133,19 @@ export default function StickyCallButton({ phone }: StickyCallButtonProps) {
 								transition={{ duration: 0.2 }}
 							>
 								{/** Directions button: open Apple Maps on iOS, Google Maps otherwise */}
-								{(() => {
-									const lat = '52.2425913';
-									const lng = '0.0814946';
-									// Google Maps directions URL (origin omitted = current location in most clients)
-									const googleHref = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
-									// Apple Maps directions URL (https fallback)
-									const appleHref = `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
-									// iOS native maps scheme (attempt to open native app)
-									const appleNative = `maps://?daddr=${lat},${lng}&dirflg=d`;
-									const isiOS = typeof navigator !== 'undefined' && /iPhone|iPad|iPod/i.test(navigator.userAgent);
-									const href = isiOS ? appleHref : googleHref; // DOM-facing href (https) so tests can read it
+							{(() => {
+								const lat = STATIC_ADDRESS.coordinates.lat.toString();
+								const lng = STATIC_ADDRESS.coordinates.lng.toString();
+								const googleHref = STATIC_ADDRESS.map.google || `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
+								const appleHref = STATIC_ADDRESS.map.apple || `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+								const appleNative = `maps://?daddr=${lat},${lng}&dirflg=d`;
+								const isiOS = typeof navigator !== 'undefined' && /iPhone|iPad|iPod/i.test(navigator.userAgent);
+								const href = isiOS ? appleHref : googleHref; // DOM-facing href (https) so tests can read it
 
 									return (
 										<a
 											href={href}
-											aria-label="Get directions"
+									aria-label={`Get directions to ${STATIC_IDENTITY.displayName}`}
 											data-testid="directions-sticky"
 											className="group relative inline-flex items-center justify-center rounded-full h-14 w-14 sm:h-16 sm:w-16 shadow-xl bg-gradient-to-br from-secondary-500 to-secondary-600 text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-secondary-300 hover:from-secondary-600 hover:to-secondary-700 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
 											onClick={(e) => {
@@ -188,12 +193,12 @@ export default function StickyCallButton({ phone }: StickyCallButtonProps) {
 								exit={{ opacity: 0, scale: 0.8 }}
 								transition={{ duration: 0.2 }}
 							>
-								<motion.a
-									href={formatTelHref(restaurantPhone)}
-									aria-label={btnLabelCall}
-									className="group relative flex items-center justify-center rounded-full h-14 w-14 sm:h-16 sm:w-16 shadow-xl bg-gradient-to-br from-crimson-500 to-crimson-600 text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-crimson-300 hover:from-crimson-600 hover:to-crimson-700 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
-									data-analytics-event="fab_call_click"
-									onClick={() => track("call_click", { phone: restaurantPhone })}
+						<motion.a
+							href={restaurantTel}
+							aria-label={btnLabelCall}
+							className="group relative flex items-center justify-center rounded-full h-14 w-14 sm:h-16 sm:w-16 shadow-xl bg-gradient-to-br from-crimson-500 to-crimson-600 text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-crimson-300 hover:from-crimson-600 hover:to-crimson-700 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
+							data-analytics-event="fab_call_click"
+							onClick={() => track("call_click", { phone: restaurantPhoneDisplay })}
 								>
 									{/* Animated background pulse effect */}
 									<motion.div
@@ -231,23 +236,18 @@ export default function StickyCallButton({ phone }: StickyCallButtonProps) {
 								exit={{ opacity: 0, scale: 0.8 }}
 								transition={{ duration: 0.2 }}
 							>
-								{/* Book action: redirect to TOGO booking in a new tab for predictable behavior */}
-								{/** Use the canonical TOGO booking URL used elsewhere in the app */}
-								<a
-									href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="Book a table (opens in new tab)"
+								<Link
+									href="/book-a-table"
+									aria-label="Book a table"
 									data-testid="booking-sticky"
-									className="group relative inline-flex items-center justify-center rounded-full h-14 w-14 sm:h-16 sm:w-16 shadow-xl bg-gradient-to-br from-accent-500 to-accent-600 text-neutral-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-accent-300 hover:from-accent-600 hover:to-accent-700 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
-									onClick={() => track('book_click', { href: 'https://togo.uk.com/makebookingv2.aspx?venueid=2640' })}
+									className="group relative inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-accent-500 to-accent-600 text-neutral-900 shadow-xl transition-all duration-300 hover:from-accent-600 hover:to-accent-700 hover:scale-105 hover:shadow-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-accent-300 sm:h-16 sm:w-16"
+									onClick={() => track('book_click', { href: '/book-a-table' })}
 								>
-									{/* Subtle shimmer effect for premium booking action */}
-									<div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+									<div className="absolute inset-0 -skew-x-12 translate-x-[-100%] rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-[100%]" />
 									
-									<span aria-hidden className="text-xl relative z-10 font-semibold">📅</span>
+									<span aria-hidden className="relative z-10 text-xl font-semibold">📅</span>
 									<span className="sr-only">Book</span>
-								</a>
+								</Link>
 							</motion.div>
 						)}
 							</AnimatePresence>

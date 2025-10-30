@@ -270,9 +270,7 @@ export default function StudentGuideePage() {
               <h3 className="text-2xl font-bold mb-4">Ready for Your Study Break?</h3>
               <p className="text-brand-100 mb-6">Escape the college bubble and experience authentic Cambridge village life. Book your table today for quality food and genuine atmosphere.</p>
               <Link 
-                href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book-a-table"
                 className="inline-block px-8 py-3 bg-white text-brand-600 font-semibold rounded-lg hover:bg-brand-50"
               >
                 Plan Your Visit

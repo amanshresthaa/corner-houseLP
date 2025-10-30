@@ -7,6 +7,7 @@ interface PhoneInfo {
   title: string;
   description: string;
   number: string;
+  href?: string;
 }
 
 interface LocationInfo {
@@ -15,9 +16,15 @@ interface LocationInfo {
   address: string;
 }
 
+interface EmailInfo {
+  address: string;
+  label?: string;
+}
+
 interface ContactInfoSectionProps {
   phone: PhoneInfo;
   location: LocationInfo;
+  email: EmailInfo;
   className?: string;
 }
 
@@ -35,12 +42,13 @@ interface ContactInfoSectionProps {
  * - Design system styling with proper contrast
  * - Address parsing for multi-line display
  */
-export default function ContactInfoSection({ 
-  phone, 
-  location, 
-  className = '' 
+export default function ContactInfoSection({
+  phone,
+  location,
+  email,
+  className = ''
 }: ContactInfoSectionProps) {
-  if (!phone || !location) {
+  if (!phone || !location || !email) {
     return null;
   }
 
@@ -48,6 +56,7 @@ export default function ContactInfoSection({
 
   // Parse address into lines for better display
   const addressLines = location.address.split(', ');
+  const phoneHref = phone.href || `tel:${phone.number.replace(/\s/g, '')}`;
 
   return (
     <div className={`space-y-8 ${className}`}>
@@ -65,8 +74,8 @@ export default function ContactInfoSection({
           </div>
         </div>
               <p>
-                <strong>Phone:</strong> 
-                <a href={`tel:${phone.number.replace(/\s/g, '')}`} className="inline-block bg-brand-600 text-neutral-50 font-semibold py-1 px-3 rounded ml-2">
+                <strong>Phone:</strong>
+                <a href={phoneHref} className="inline-block bg-brand-600 text-neutral-50 font-semibold py-1 px-3 rounded ml-2">
                   {phone.number}
                 </a>
               </p>
@@ -106,11 +115,11 @@ export default function ContactInfoSection({
           </div>
         </div>
               <a
-                href={`mailto:${'oldcrown@lapeninns.com'}`}
+                href={`mailto:${email.address}`}
                 className="inline-block bg-brand-600 text-neutral-50 font-semibold py-2 px-4 rounded focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/60"
-                aria-label="Email restaurant at oldcrown@lapeninns.com"
+                aria-label={`Email restaurant at ${email.address}`}
               >
-                oldcrown@lapeninns.com
+                {email.label ?? email.address}
               </a>
       </div>
     </div>

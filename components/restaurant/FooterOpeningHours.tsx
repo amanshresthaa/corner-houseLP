@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useOpeningHours } from '@/hooks/data/useOpeningHours';
+import { getContactInfo } from '@/lib/restaurantData';
 
 /**
  * Footer Opening Hours Component
@@ -12,6 +13,7 @@ import { useOpeningHours } from '@/hooks/data/useOpeningHours';
 export default function FooterOpeningHours() {
   const [isClient, setIsClient] = useState(false);
   const { hours, isLoading, error } = useOpeningHours();
+  const contact = getContactInfo();
 
   useEffect(() => {
     setIsClient(true);
@@ -32,7 +34,7 @@ export default function FooterOpeningHours() {
       <div className="text-sm text-neutral-100">
         <p className="font-medium">Hours</p>
         <p>Call for current hours</p>
-        <p>01223277217</p>
+        <p>{contact.phone.display}</p>
       </div>
     );
   }

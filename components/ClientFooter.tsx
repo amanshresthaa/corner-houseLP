@@ -4,12 +4,17 @@ import Link from '@/lib/debugLink';
 import EmojiIcon from '@/components/common/EmojiIcon';
 import AllergenNotice from '@/components/restaurant/AllergenNotice';
 import SimpleFooterHours from '@/components/simple/SimpleFooterHours';
+import { getContactInfo, getRestaurantIdentity, getAddress } from '@/lib/restaurantData';
 
 /**
  * Client-side Footer component for seamless loading
  * Static data to avoid server-side dependencies
  */
 export default function ClientFooter() {
+  const contact = getContactInfo();
+  const identity = getRestaurantIdentity();
+  const address = getAddress();
+
   return (
     <footer className="bg-brand-700 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -17,15 +22,15 @@ export default function ClientFooter() {
           {/* Restaurant Info */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-display font-bold text-accent-400 mb-4">
-              Old Crown Girton
+              {identity.displayName}
             </h3>
             <p className="text-neutral-100 mb-4">
-              Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics
+              {identity.description}
             </p>
             <div className="space-y-2 text-sm">
-              <p><EmojiIcon emoji="📍" className="mr-1" /> 89 High Street, Girton, Cambridge CB3 0QQ</p>
-              <p><EmojiIcon emoji="📞" className="mr-1" /> +44 1223 277217</p>
-              <p><EmojiIcon emoji="📧" className="mr-1" /> oldcrown@lapeninns.com</p>
+              <p><EmojiIcon emoji="📍" className="mr-1" /> {address.street}, {address.area}, {address.city} {address.postcode}</p>
+              <p><EmojiIcon emoji="📞" className="mr-1" /> {contact.phone.display}</p>
+              <p><EmojiIcon emoji="📧" className="mr-1" /> {contact.email.primary}</p>
             </div>
           </div>
 

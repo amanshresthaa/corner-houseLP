@@ -323,7 +323,7 @@ export class EnvironmentManager {
       'environments/prod/overrides/': [
         {
           path: 'global.site.description',
-          value: 'Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Book online or call 01223277217',
+          value: 'Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Book online or call our team',
           priority: 10,
           description: 'Production optimized description',
         },

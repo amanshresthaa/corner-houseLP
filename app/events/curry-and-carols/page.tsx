@@ -167,7 +167,7 @@ export default function CurryAndCarolsPage() {
                   Register Interest
                 </MotionLinkButton>
                 <MotionLinkButton
-                  href={`tel:${contact.phone.primary.replace(/\s+/g, "")}`}
+                  href={contact.phone.tel}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700 w-full sm:w-auto min-h-[3.25rem]"
                   ariaLabel="Call the Old Crown Girton team"
                 >
@@ -370,8 +370,8 @@ export default function CurryAndCarolsPage() {
                   <div className="flex flex-col sm:flex-row justify-center gap-4 text-brand-700">
                     <div className="flex items-center gap-2 justify-center">
                       <span aria-hidden="true" role="img">📞</span>
-                      <Link href={`tel:${contact.phone.primary.replace(/\s+/g, "")}`} className="underline font-semibold">
-                        {contact.phone.primary}
+                      <Link href={contact.phone.tel} className="underline font-semibold">
+                        {contact.phone.display}
                       </Link>
                     </div>
                     <div className="flex items-center gap-2 justify-center">

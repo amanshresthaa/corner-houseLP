@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import MenuCTASection from '../../../components/restaurant/sections/MenuCTASection';
+import { getContactInfo } from '@/lib/restaurantData';
 
 // Mock next/link
 jest.mock('next/link', () => {
@@ -30,16 +31,17 @@ jest.mock('framer-motion', () => ({
 }));
 
 describe('MenuCTASection', () => {
+  const contact = getContactInfo();
   const mockButtons = [
     {
       text: 'Book Online',
-      href: 'https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true',
+      href: '/book-a-table',
       variant: 'primary' as const,
-      external: true
+      external: false
     },
     {
-      text: 'Order Takeaway: 01223277217',
-      href: 'tel:01223 277217',
+      text: `Order Takeaway: ${contact.phone.display}`,
+      href: contact.phone.tel,
       variant: 'secondary' as const,
       external: false
     },
@@ -59,7 +61,7 @@ describe('MenuCTASection', () => {
   it('renders title and description with default values', () => {
     render(<MenuCTASection {...defaultProps} />);
     
-    expect(screen.getByText('Ready to Try Our Unique Menu?')).toBeInTheDocument();
+    expect(screen.getByText(/Ready to Try Our Unique Menu\?/)).toBeInTheDocument();
     expect(screen.getByText(/Book a table or order takeaway to experience/)).toBeInTheDocument();
   });
 
@@ -72,7 +74,7 @@ describe('MenuCTASection', () => {
       />
     );
     
-    expect(screen.getByText('Custom Title')).toBeInTheDocument();
+    expect(screen.getByText(/Custom Title/)).toBeInTheDocument();
     expect(screen.getByText('Custom description text')).toBeInTheDocument();
   });
 
@@ -91,26 +93,23 @@ describe('MenuCTASection', () => {
     const orderButton = screen.getByRole('link', { name: /order takeaway/i });
     const storyButton = screen.getByRole('link', { name: /learn our story/i });
     
-    // Primary variant (accent colors)
-    expect(bookButton).toHaveClass('bg-accent', 'hover:bg-accent-700', 'text-white');
+    // Primary variant (light background)
+    expect(bookButton).toHaveClass('bg-white', 'hover:bg-neutral-50', 'text-brand-800');
     
-    // Secondary variant (crimson colors)
-    expect(orderButton).toHaveClass('bg-crimson-600', 'hover:bg-crimson-800', 'text-white');
+    // Secondary variant (brand colors)
+    expect(orderButton).toHaveClass('bg-brand-900', 'hover:bg-brand-950', 'text-white');
     
-    // Tertiary variant (white background)
-    expect(storyButton).toHaveClass('bg-white', 'hover:bg-neutral-100', 'text-stout-700');
+    // Tertiary variant (subtle background)
+    expect(storyButton).toHaveClass('bg-white', 'hover:bg-neutral-50', 'text-brand-700');
   });
 
-  it('handles external links correctly', () => {
+  it('book link uses internal navigation', () => {
     render(<MenuCTASection {...defaultProps} />);
     
-    const externalLink = screen.getByRole('link', { name: /book online/i });
-    expect(externalLink).toHaveAttribute('href', 'https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true');
-    expect(externalLink).toHaveAttribute('target', '_blank');
-    expect(externalLink).toHaveAttribute('rel', 'noopener noreferrer');
-    
-    // Should have external indicator
-    expect(externalLink).toHaveTextContent('↗');
+    const bookingLink = screen.getByRole('link', { name: /book online/i });
+    expect(bookingLink).toHaveAttribute('href', '/book-a-table');
+    expect(bookingLink).not.toHaveAttribute('target');
+    expect(bookingLink).not.toHaveAttribute('rel');
   });
 
   it('handles internal links correctly', () => {
@@ -168,7 +167,7 @@ describe('MenuCTASection', () => {
     
     const button = screen.getByRole('link', { name: /default button/i });
     // Should default to primary styling
-    expect(button).toHaveClass('bg-accent', 'hover:bg-accent-700', 'text-white');
+    expect(button).toHaveClass('bg-white', 'hover:bg-neutral-50', 'text-brand-800');
   });
 
   it('has proper semantic HTML structure', () => {
@@ -188,7 +187,7 @@ describe('MenuCTASection', () => {
     
     const links = screen.getAllByRole('link');
     expect(links[0]).toHaveTextContent('Book Online');
-    expect(links[1]).toHaveTextContent('Order Takeaway: 01223277217');
+    expect(links[1]).toHaveTextContent(`Order Takeaway: ${contact.phone.display}`);
     expect(links[2]).toHaveTextContent('Learn Our Story');
   });
 

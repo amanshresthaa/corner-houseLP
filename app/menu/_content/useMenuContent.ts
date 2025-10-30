@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getContactInfo } from '@/lib/restaurantData';
 
 // Simple URL validation function
 function validateHref(url: string, context?: string): string {
@@ -93,6 +94,16 @@ export function useMenuContent(): MenuContent | null {
         // Load content directly from local file since API endpoint was removed
         const { default: fallbackContent } = await import('./menu-content.json');
         const validatedFallback = validateMenuContent(fallbackContent);
+        const contact = getContactInfo();
+
+        // Ensure CTA buttons use canonical contact details
+        if (validatedFallback.hero?.buttons?.orderTakeaway) {
+          validatedFallback.hero.buttons.orderTakeaway.url = contact.phone.tel;
+          const existingLabel = validatedFallback.hero.buttons.orderTakeaway.label;
+          validatedFallback.hero.buttons.orderTakeaway.label = existingLabel
+            ? existingLabel.replace(/01223277217/g, contact.phone.display)
+            : `Call ${contact.phone.display}`;
+        }
         setContent(validatedFallback);
       } catch (error) {
         console.error('Menu content loading error:', error);

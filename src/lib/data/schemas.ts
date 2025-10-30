@@ -34,23 +34,141 @@ export const MenuSchema = z.object({
   sections: z.array(MenuSectionSchema),
 });
 
+const CoordinatesSchema = z.object({
+  lat: z.number(),
+  lng: z.number(),
+});
+
+const MapLinksSchema = z.object({
+  google: z.string().url().optional(),
+  apple: z.string().url().optional(),
+  waze: z.string().url().optional(),
+  embed: z.string().optional(),
+  placeId: z.string().optional(),
+}).partial({
+  embed: true,
+  placeId: true,
+});
+
+const BasicAddressSchema = z.object({
+  street: z.string(),
+  city: z.string(),
+  state: z.string(),
+  zip: z.string(),
+});
+
+const ExtendedAddressSchema = BasicAddressSchema.extend({
+  area: z.string().optional(),
+  postcode: z.string().optional(),
+  country: z.string().default("United Kingdom"),
+  coordinates: CoordinatesSchema.optional(),
+  map: MapLinksSchema.optional(),
+  timezone: z.string().optional(),
+});
+
+const PhoneSchema = z.object({
+  primary: z.string(),
+  display: z.string().optional(),
+  tel: z.string().optional(),
+  whatsapp: z.string().optional(),
+  reservations: z.string().optional(),
+});
+
+const EmailSchema = z.object({
+  primary: z.string(),
+  bookings: z.string().optional(),
+  events: z.string().optional(),
+  press: z.string().optional(),
+  support: z.string().optional(),
+});
+
+const ContactSchema = z.object({
+  phone: PhoneSchema,
+  email: EmailSchema,
+  website: z.string().url().optional(),
+  bookingUrl: z.string().url().optional(),
+  orderUrl: z.string().url().optional(),
+  enquiryUrl: z.string().url().optional(),
+});
+
+const HoursDetailedSchema = z.object({
+  kitchen: z.record(z.string(), z.string()),
+  bar: z.record(z.string(), z.string()),
+  display: z
+    .object({
+      kitchen: z.record(z.string(), z.string()).optional(),
+      bar: z.record(z.string(), z.string()).optional(),
+    })
+    .optional(),
+  notes: z.array(z.string()).optional(),
+  timezone: z.string().optional(),
+});
+
+const IdentitySchema = z.object({
+  name: z.string(),
+  displayName: z.string().optional(),
+  tagline: z.string().optional(),
+  description: z.string().optional(),
+  established: z.string().optional(),
+  type: z.string().optional(),
+  cuisine: z.array(z.string()).optional(),
+  slug: z.string().optional(),
+});
+
+const SocialProfileSchema = z.object({
+  url: z.string().url(),
+  handle: z.string().optional(),
+  label: z.string().optional(),
+});
+
+const SocialSchema = z
+  .object({
+    facebook: SocialProfileSchema.optional(),
+    instagram: SocialProfileSchema.optional(),
+    twitter: SocialProfileSchema.optional(),
+    tiktok: SocialProfileSchema.optional(),
+    youtube: SocialProfileSchema.optional(),
+    linkedin: SocialProfileSchema.optional(),
+    tripadvisor: SocialProfileSchema.optional(),
+    google: SocialProfileSchema.optional(),
+  })
+  .catchall(SocialProfileSchema.optional());
+
+const BookingSchema = z.object({
+  online: z.boolean().optional(),
+  walkIns: z.boolean().optional(),
+  leadTimeMinutes: z.number().optional(),
+  partySizeLimit: z.number().optional(),
+  depositRequired: z.boolean().optional(),
+  cancellationPolicy: z.string().optional(),
+}).optional();
+
+const MetaSchema = z.object({
+  slug: z.string().optional(),
+  category: z.array(z.string()).optional(),
+  rating: z
+    .object({
+      average: z.number().optional(),
+      reviewCount: z.number().optional(),
+    })
+    .optional(),
+}).optional();
+
 export const RestaurantSchema = z.object({
   name: z.string(),
   phone: z.string(),
   email: z.string(),
-  address: z.object({
-    street: z.string(),
-    city: z.string(),
-    state: z.string(),
-    zip: z.string(),
-  }),
+  description: z.string().optional(),
+  identity: IdentitySchema.optional(),
+  contact: ContactSchema.optional(),
+  address: z.union([BasicAddressSchema, ExtendedAddressSchema]),
   hours: z.union([
     z.record(z.string(), z.string()), // Legacy format: {"Mon-Thu": "12:00-23:00"}
-    z.object({
-      kitchen: z.record(z.string(), z.string()),
-      bar: z.record(z.string(), z.string()),
-    }), // New detailed format: {kitchen: {monday: "12:00-15:00,17:00-22:00"}, bar: {monday: "12:00-22:00"}}
+    HoursDetailedSchema, // Detailed format with kitchen/bar separation
   ]),
+  social: SocialSchema.optional(),
+  booking: BookingSchema,
+  meta: MetaSchema,
 });
 
 export const MarketingSchema = z.object({

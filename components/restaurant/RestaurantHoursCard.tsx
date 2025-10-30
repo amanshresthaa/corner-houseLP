@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useOpeningHours } from '@/hooks/data/useOpeningHours';
+import { getContactInfo } from '@/lib/restaurantData';
+
+const STATIC_CONTACT = getContactInfo();
 
 // Utility function to get current day hours
 const getCurrentDayHours = (hoursData: Array<{ day: string; hours: string; isToday: boolean }>) => {
@@ -109,8 +112,12 @@ const RestaurantHoursCard: React.FC = () => {
           Restaurant & Bar Opening Time
         </h3>
         <p className="text-foreground">Please call us for current hours</p>
-        <a href="tel:01223 277217" className="text-brand-600 hover:text-brand-700 hover:underline transition-colors duration-200" aria-label="Call Old Crown Girton at 01223 277217">
-          01223 277217
+        <a
+          href={STATIC_CONTACT.phone.tel}
+          className="text-brand-600 hover:text-brand-700 hover:underline transition-colors duration-200"
+          aria-label={`Call ${STATIC_CONTACT.phone.display}`}
+        >
+          {STATIC_CONTACT.phone.display}
         </a>
       </div>
     );

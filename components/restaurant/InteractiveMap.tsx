@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { getAddress, getRestaurantIdentity } from '@/lib/restaurantData';
 
 interface InteractiveMapProps {
   className?: string;
@@ -15,14 +16,16 @@ export default function InteractiveMap({
 }: InteractiveMapProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Restaurant coordinates
-  const lat = '52.2425913';
-  const lng = '0.0814946';
+  const address = getAddress();
+  const identity = getRestaurantIdentity();
 
-  // Direction URLs - same logic as sticky button
-  const googleHref = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
-  const appleHref = `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+  const lat = address.coordinates.lat.toString();
+  const lng = address.coordinates.lng.toString();
+
+  const googleHref = address.map.google ?? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
+  const appleHref = address.map.apple ?? `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
   const appleNative = `maps://?daddr=${lat},${lng}&dirflg=d`;
+  const embedSrc = address.map.embed ?? `https://www.google.com/maps/embed/v1/place?key=&q=${lat},${lng}`;
 
   const handleMapClick = () => {
     const isiOS = typeof navigator !== 'undefined' && /iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -58,7 +61,7 @@ export default function InteractiveMap({
         onClick={handleMapClick}
         role="button"
         tabIndex={0}
-        aria-label="Click to get directions to Old Crown Girton"
+        aria-label={`Click to get directions to ${identity.displayName}`}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -68,7 +71,7 @@ export default function InteractiveMap({
       >
         {/* Google Maps Embed */}
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.7892358932124!2d0.09036631577853944!3d52.23847767975736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d870a1c0e1e9b7%3A0x1f4c4f8c4f8c4f8c!2sGirton%2C%20Cambridge!5e0!3m2!1sen!2suk!4v1635789123456!5m2!1sen!2suk"
+          src={embedSrc}
           width="100%"
           height={height}
           style={{ border: 0 }}
@@ -95,7 +98,7 @@ export default function InteractiveMap({
 
         {/* Click Hint (always visible, no motion) */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg text-sm text-neutral-700 font-medium">
-          Click for directions to Old Crown Girton
+          Click for directions to {identity.displayName}
         </div>
 
         {/* Focus Ring */}

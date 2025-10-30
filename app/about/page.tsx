@@ -85,7 +85,7 @@ export default async function AboutPage() {
                   title={aboutContent.cta.title}
                   description={aboutContent.cta.description}
                   buttonText={aboutContent.cta.button}
-                  buttonHref="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
+                  buttonHref="/book-a-table"
                   buttonLabel={labelBookOnline}
                   contact={{
                     address: aboutContent.cta.contact.address

@@ -168,7 +168,7 @@ export default function WakesMenuPage() {
           <FadeInUp>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <MotionLinkButton
-                href={`tel:${contact.phone.primary.replace(/\s+/g, "")}`}
+                href={contact.phone.tel}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
                 ariaLabel="Call to discuss wakes catering at the Old Crown Girton"
@@ -336,7 +336,7 @@ export default function WakesMenuPage() {
           <FadeInUp>
             <div className="flex flex-wrap justify-center gap-4">
               <MotionLinkButton
-                href={`tel:${contact.phone.primary.replace(/\s+/g, "")}`}
+                href={contact.phone.tel}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-700 text-white font-semibold shadow-lg hover:bg-brand-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-50"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
                 ariaLabel="Call the Old Crown Girton"

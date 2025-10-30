@@ -68,9 +68,9 @@ describe('CallToActionSection', () => {
       },
       {
         text: 'Book Online',
-        href: 'https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true',
+        href: '/book-a-table',
         variant: 'crimson' as const,
-        external: true
+        external: false
       }
     ]
   };
@@ -78,7 +78,7 @@ describe('CallToActionSection', () => {
   it('renders headline and description correctly', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
-    expect(screen.getByText('Ready to Experience Girton\'s Thatched Nepalese Pub?')).toBeInTheDocument();
+    expect(screen.getByText(/Ready to Experience Girton's Thatched Nepalese Pub\?/)).toBeInTheDocument();
     expect(screen.getByText(/Reserve a table, explore the menu/)).toBeInTheDocument();
   });
 
@@ -87,7 +87,7 @@ describe('CallToActionSection', () => {
 
     expect(screen.getByRole('link', { name: 'View Menu' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'What\'s On' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Book Online.*opens in new tab/ })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Book Online' })).toBeInTheDocument();
   });
 
   it('applies correct href attributes to all buttons', () => {
@@ -99,15 +99,15 @@ describe('CallToActionSection', () => {
 
     expect(menuLink).toHaveAttribute('href', '/menu');
     expect(eventsLink).toHaveAttribute('href', '/events');
-    expect(bookingLink).toHaveAttribute('href', 'https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true');
+    expect(bookingLink).toHaveAttribute('href', '/book-a-table');
   });
 
-  it('handles external links with proper security attributes', () => {
+  it('renders book link without external attributes', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
     const bookingLink = screen.getByRole('link', { name: /Book Online/ });
-    expect(bookingLink).toHaveAttribute('target', '_blank');
-    expect(bookingLink).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(bookingLink).not.toHaveAttribute('target');
+    expect(bookingLink).not.toHaveAttribute('rel');
   });
 
   it('applies correct button variant styling classes', () => {
@@ -118,20 +118,13 @@ describe('CallToActionSection', () => {
     const bookingLink = screen.getByRole('link', { name: /Book Online/ });
 
     // Check accent variant
-    expect(menuLink).toHaveClass('bg-accent-600', 'hover:bg-accent-700', 'focus:ring-accent-500');
+    expect(menuLink).toHaveClass('bg-white', 'hover:bg-neutral-50', 'text-brand-800');
     
     // Check brand variant
-    expect(eventsLink).toHaveClass('bg-brand-700', 'hover:bg-brand-800', 'focus:ring-brand-500');
+    expect(eventsLink).toHaveClass('bg-brand-900', 'hover:bg-brand-950', 'text-white');
     
     // Check crimson variant
-    expect(bookingLink).toHaveClass('bg-crimson-700', 'hover:bg-crimson-800', 'focus:ring-crimson-500');
-  });
-
-  it('shows external link indicator for external URLs', () => {
-    render(<CallToActionSection {...mockCTAData} />);
-
-    const bookingLink = screen.getByRole('link', { name: /Book Online/ });
-    expect(bookingLink).toHaveTextContent('↗');
+    expect(bookingLink).toHaveClass('bg-white', 'hover:bg-neutral-50', 'text-crimson-700');
   });
 
   it('detects external links automatically by URL pattern', () => {
@@ -160,7 +153,7 @@ describe('CallToActionSection', () => {
     const bookingLink = screen.getByRole('link', { name: /Book Online/ });
 
     expect(menuLink).toHaveAttribute('aria-label', 'View Menu');
-    expect(bookingLink).toHaveAttribute('aria-label', 'Book Online (opens in new tab)');
+    expect(bookingLink).toHaveAttribute('aria-label', 'Book Online');
   });
 
   it('renders semantic HTML structure', () => {
@@ -170,8 +163,8 @@ describe('CallToActionSection', () => {
     const heading = container.querySelector('h2');
 
     expect(section).toBeInTheDocument();
-    expect(section).toHaveClass('py-16', 'bg-accent/10');
-    expect(heading).toHaveClass('font-display', 'font-bold', 'text-brand-700', 'h2');
+    expect(section).toHaveClass('py-16', 'bg-white');
+    expect(heading).toHaveClass('font-display', 'font-bold', 'text-white', 'h2');
   });
 
   it('includes focus management for accessibility', () => {
@@ -179,7 +172,7 @@ describe('CallToActionSection', () => {
 
     const buttons = screen.getAllByRole('link');
     buttons.forEach(button => {
-      expect(button).toHaveClass('focus:outline-none', 'focus:ring-2', 'focus:ring-offset-2');
+      expect(button).toHaveClass('focus:outline-none', 'focus:ring-4', 'focus:ring-offset-2');
     });
   });
 

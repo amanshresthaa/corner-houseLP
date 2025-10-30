@@ -3,6 +3,7 @@ import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import MenuInfoCollapse from '@/components/menu/MenuInfoCollapse';
 import Link from '@/lib/debugLink';
+import { getContactInfo } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
   title: "Menu Information & Dietary Requirements | Old Crown Girton - Allergens, Dietary Options & Food Safety",
@@ -16,7 +17,7 @@ export const metadata = getSEOTags({
   },
 });
 
-const faqItems = [
+const buildFaqItems = (phoneDisplay: string) => ([
   {
     title: "What allergen information do you provide?",
     content: (
@@ -293,7 +294,7 @@ const faqItems = [
         <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
           <h4 className="font-semibold text-indigo-800 mb-2">When Booking:</h4>
           <ul className="text-sm text-indigo-700 space-y-1">
-            <li>• Call us directly at <strong>+44 1223 277217</strong> to discuss requirements</li>
+            <li>• Call us directly at <strong>{phoneDisplay}</strong> to discuss requirements</li>
             <li>• Specify any severe allergies or medical dietary needs</li>
             <li>• Mention the number of people with dietary requirements</li>
             <li>• Ask about specific dishes or ingredients you're unsure about</li>
@@ -387,9 +388,13 @@ const faqItems = [
       </div>
     )
   }
-];
+]);
 
 export default function MenuInformationPage() {
+  const contact = getContactInfo();
+  const phoneHref = contact.phone.tel;
+  const phoneDisplay = contact.phone.display;
+  const faqItems = buildFaqItems(phoneDisplay);
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -427,7 +432,7 @@ export default function MenuInformationPage() {
                 "postalCode": "CB3 0QQ",
                 "addressCountry": "GB"
               },
-              "telephone": "+441223277217",
+              "telephone": contact.phone.primary,
               "email": "oldcrown@lapeninns.com",
               "servesCuisine": ["Nepalese", "British", "Indian"],
               "priceRange": "$$"
@@ -490,8 +495,8 @@ export default function MenuInformationPage() {
               <div className="ml-3">
                 <p className="text-sm text-red-700">
                   <strong>Severe Allergies:</strong> If you have life-threatening allergies, please call us at{' '}
-                  <Link href="tel:01223277217" className="font-medium underline hover:no-underline">
-                    +44 1223 277217
+                  <Link href={phoneHref} className="font-medium underline hover:no-underline">
+                    {phoneDisplay}
                   </Link>{' '}
                   before visiting to discuss safety protocols.
                 </p>
@@ -571,8 +576,8 @@ export default function MenuInformationPage() {
                   <div className="text-center">
                     <h3 className="font-semibold text-brand-700 mb-2">Call Us</h3>
                     <p className="text-neutral-600 mb-1">Speak directly with our team</p>
-                    <Link href="tel:01223277217" className="text-lg font-bold text-brand-600 hover:text-brand-700">
-                      +44 1223 277217
+                    <Link href={phoneHref} className="text-lg font-bold text-brand-600 hover:text-brand-700">
+                      {phoneDisplay}
                     </Link>
                   </div>
                   <div className="text-center">

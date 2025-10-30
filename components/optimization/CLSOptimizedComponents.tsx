@@ -7,6 +7,11 @@
 
 import React from 'react';
 import { CLSImage, CLSContainer, CLSDebugger, useFontOptimization, CLSOptimizedLayouts } from './CLSOptimization';
+import { getContactInfo, getAddress, getHours } from '@/lib/restaurantData';
+
+const CLS_CONTACT = getContactInfo();
+const CLS_ADDRESS = getAddress();
+const CLS_HOURS = getHours();
 
 /**
  * CLS-Optimized Hero Component
@@ -362,15 +367,15 @@ export function CLSOptimizedPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-              <p>High Street, Girton</p>
-              <p>Cambridge CB3 0PU</p>
-              <p>+44 1223 277217</p>
+              <p>{CLS_ADDRESS.street}</p>
+              <p>{CLS_ADDRESS.area}, {CLS_ADDRESS.city} {CLS_ADDRESS.postcode}</p>
+              <p>{CLS_CONTACT.phone.display}</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Opening Hours</h3>
-              <p>Mon-Thu: 12pm-11pm</p>
-              <p>Fri-Sat: 12pm-12am</p>
-              <p>Sun: 12pm-10:30pm</p>
+              <p>{CLS_HOURS.display.kitchen.weekdays}</p>
+              <p>{CLS_HOURS.display.kitchen.friday}</p>
+              <p>{CLS_HOURS.display.kitchen.sunday}</p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-4">Follow Us</h3>

@@ -6,6 +6,8 @@ import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
 import ChristmasMusicPlayer from "./_components/ChristmasMusicPlayer";
 
+const CHRISTMAS_CONTACT = getContactInfo();
+
 export const metadata = getSEOTags({
   title: "Christmas Menu 2025 | Old Crown Girton – Festive Dining in Cambridge",
   description:
@@ -184,7 +186,7 @@ const FULL_CHRISTMAS_MENU: FestiveMenu = {
     location: "89 High St, Girton, Cambridge CB3 0QD",
     contactLabel: "oldcrowngirton.com",
     contactWebsite: "https://oldcrowngirton.com",
-    contactPhone: "01223 277217",
+    contactPhone: CHRISTMAS_CONTACT.phone.display,
     notes:
       "Our regular menu stays available alongside these dishes. Items may change if ingredients run out.",
   },
@@ -271,9 +273,10 @@ const assurancePoints = [
 ] as const;
 
 export default async function ChristmasMenuPage() {
-  const contact = getContactInfo();
-  const telHref = contact.phone.primary.replace(/\s+/g, "");
+  const contact = CHRISTMAS_CONTACT;
+  const telHref = contact.phone.tel;
   const phoneDisplay = contact.phone.display.replace(/\s+/g, "\u00a0");
+  const googleMapLink = contact.address.map.google ?? contact.address.map.embed ?? "#";
 
   const structuredData = [
     {
@@ -420,7 +423,7 @@ export default async function ChristmasMenuPage() {
             <FadeInUp>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <MotionLinkButton
-                  href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
+                  href="/book-a-table"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700"
                   ariaLabel="Book your table online"
                 >
@@ -428,7 +431,7 @@ export default async function ChristmasMenuPage() {
                   Book Your Table Online
                 </MotionLinkButton>
                 <MotionLinkButton
-                  href={`tel:${telHref}`}
+                  href={telHref}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
                   ariaLabel="Book your table via call"
                 >
@@ -531,7 +534,7 @@ export default async function ChristmasMenuPage() {
                         {FULL_CHRISTMAS_MENU.footer.location}
                       </address>
                       <Link
-                        href={contact.address.google_maps_url}
+                        href={googleMapLink}
                         className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 underline"
                       >
                         Open in Maps
@@ -546,7 +549,7 @@ export default async function ChristmasMenuPage() {
                           {FULL_CHRISTMAS_MENU.footer.contactLabel}
                         </Link>
                         <span aria-hidden="true" className="text-brand-500">•</span>
-                        <Link href={`tel:${telHref}`} className="font-semibold underline">
+                        <Link href={telHref} className="font-semibold underline">
                           {phoneDisplay}
                         </Link>
                       </div>
@@ -607,7 +610,7 @@ export default async function ChristmasMenuPage() {
                 )}
                 <div className="mt-6 space-y-3">
                   <MotionLinkButton
-                    href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true"
+                    href="/book-a-table"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-700 px-5 py-3 text-white hover:bg-brand-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-50"
                     ariaLabel="Book the Chef&rsquo;s Christmas set menu online"
                   >
@@ -615,7 +618,7 @@ export default async function ChristmasMenuPage() {
                     Book the festive set menu
                   </MotionLinkButton>
                     <Link
-                      href={`tel:${telHref}`}
+                      href={telHref}
                       className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-brand-200 px-5 py-3 text-brand-700 hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
                     >
                       <span aria-hidden="true" role="img">☎️</span>
@@ -679,7 +682,7 @@ export default async function ChristmasMenuPage() {
                       Email the festive team
                     </Link>
                     <Link
-                      href={contact.address.google_maps_url}
+                      href={googleMapLink}
                       className="inline-flex items-center gap-3 rounded-lg border border-brand-200 px-5 py-3 text-brand-700 hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300"
                     >
                       <span aria-hidden="true" role="img">📍</span>
@@ -687,7 +690,7 @@ export default async function ChristmasMenuPage() {
                     </Link>
                   </div>
                   <p className="text-sm text-brand-500 leading-relaxed">
-                    Prefer a call? Ring us on <a className="font-semibold underline" href={`tel:${telHref}`}>{phoneDisplay}</a> and ask for the Christmas team.
+                    Prefer a call? Ring us on <a className="font-semibold underline" href={telHref}>{phoneDisplay}</a> and ask for the Christmas team.
                   </p>
                 </div>
                 <div className="space-y-5">

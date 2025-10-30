@@ -3,6 +3,7 @@ import { FadeIn } from '@/components/animations/MotionWrappers';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import Link from '@/lib/debugLink';
 import PressFeatureBanner, { PressFeatureContent } from '@/components/restaurant/sections/PressFeatureBanner';
+import { getContactInfo, getAddress } from '@/lib/restaurantData';
 
 type PressArticle = {
   id: string;
@@ -101,10 +102,13 @@ const PRESS_FACTS = [
   "Featured as the Evening Standard's \"Country Pub of the Week\".",
 ];
 
+const CONTACT = getContactInfo();
+const ADDRESS = getAddress();
 const MEDIA_CONTACT = {
-  email: "oldcrown@lapeninns.com",
-  phone: "01223 277217",
-  address: "89 High Street, Girton, Cambridge, CB3 0QQ",
+  email: CONTACT.email.press || CONTACT.email.primary,
+  phoneDisplay: CONTACT.phone.display,
+  phoneTel: CONTACT.phone.tel,
+  address: `${ADDRESS.street}, ${ADDRESS.area}, ${ADDRESS.city}, ${ADDRESS.postcode}`,
 };
 
 export const metadata = getSEOTags({
@@ -348,7 +352,7 @@ export default function PressPage() {
                     </div>
                     <div className="space-y-2 text-sm text-brand-700">
                       <p><strong>Email:</strong> <a href={`mailto:${MEDIA_CONTACT.email}`} className="link link-hover text-brand-600">{MEDIA_CONTACT.email}</a></p>
-                      <p><strong>Phone:</strong> <a href={`tel:${MEDIA_CONTACT.phone.replace(/\s+/g, '')}`} className="link link-hover text-brand-600">{MEDIA_CONTACT.phone}</a></p>
+                      <p><strong>Phone:</strong> <a href={MEDIA_CONTACT.phoneTel} className="link link-hover text-brand-600">{MEDIA_CONTACT.phoneDisplay}</a></p>
                       <p><strong>Address:</strong> {MEDIA_CONTACT.address}</p>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3">

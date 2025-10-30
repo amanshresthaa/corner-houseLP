@@ -289,7 +289,7 @@ export const useRestaurantSchema = () => {
         opens: h.opens,
         closes: h.closes
       })),
-      servesCuisine: data.identity.cuisine_types,
+      servesCuisine: data.identity.cuisine,
       priceRange: '££',
       paymentAccepted: data.paymentMethods,
       currenciesAccepted: 'GBP',
