@@ -209,7 +209,9 @@ const OptimizedMenuItemCard = memoryMemo<OptimizedMenuItemProps>(({
   const imageInfo = useMemo(() => {
     if (!enableImageLoading) return { shouldShow: false, url: null };
 
-    const MENU_ITEM_IMAGES_ENABLED = process.env.NEXT_PUBLIC_MENU_ITEM_IMAGES === 'true';
+    const MENU_ITEM_IMAGES_ENABLED =
+      process.env.NEXT_PUBLIC_MENU_ITEM_IMAGES === 'true' ||
+      process.env.NEXT_PUBLIC_TEST_MODE === 'true';
     if (!MENU_ITEM_IMAGES_ENABLED || !item?.name) {
       return { shouldShow: false, url: null };
     }

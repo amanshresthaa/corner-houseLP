@@ -16,6 +16,7 @@ const MenuInteractive = dynamic(() => import('./_components/MenuInteractive'), {
 		</div>
 	)
 });
+const RestaurantHoursCard = dynamic(() => import('@/components/restaurant/RestaurantHoursCard'));
 // Dynamic imports for Menu page sections - optimized for performance
 
 export const revalidate = 300;
@@ -55,6 +56,10 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const labels = m.buttons || {};
 	const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline || 'Book Online';
 	const labelOrderTakeaway = labels.orderTakeaway || menuContent.hero.cta.order || `Order Takeaway: ${phoneDisplay}`;
+	const allergenNotice = menuContent.sections.allergenNotice;
+	const menuDescription = menuContent.sections.description;
+	const formattedAddress = `${contact.address.street}, ${contact.address.area}, ${contact.address.city} ${contact.address.postcode}`;
+	const directionsHref = contact.address.map?.google || contact.address.map?.apple || contact.address.map?.embed || '#';
 	
 	// Optimize menu data structure for faster client-side rendering
 	const optimizedMenu = {
@@ -143,93 +148,161 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 					<MenuHero />
 				</section>
 
-				{/* Main menu content with progressive disclosure */}
-				<main className="space-y-16">
-					<FadeIn>
-						<section aria-labelledby="interactive-menu-heading">
-							<MenuInteractive 
-								sections={optimizedMenu?.sections || []} 
-								defaultSelected={defaultSelectedStarters}
-								preloadedData={true}
-							/>
-						</section>
-					</FadeIn>
-
-
-
-					<FadeIn>
-						<section aria-labelledby="menu-info-cta-heading" className="bg-brand-50">
-							{/* Dietary Information CTA */}
-							<div className="py-12 pb-8">
-								<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-									<h2 id="menu-info-cta-heading" className="text-3xl font-display font-bold text-stout-700 mb-6">
-										Need Dietary Information?
-									</h2>
-									<p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-										Find comprehensive allergen information, dietary requirements, and food safety details to help you make informed choices.
+			{/* Main menu content with progressive disclosure */}
+			<main>
+				<FadeIn>
+					<section
+						aria-labelledby="interactive-menu-heading"
+						className="bg-neutral-50 py-20 sm:py-24"
+					>
+						<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+							<header className="mb-12 text-center">
+								<span className="inline-flex items-center justify-center rounded-full border border-brand-200 bg-brand-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
+									Explore the menu
+								</span>
+								<h2
+									id="interactive-menu-heading"
+									className="mt-4 text-3xl font-display font-bold text-stout-800 md:text-4xl"
+								>
+									Interactive Menu Experience
+								</h2>
+								{menuDescription && (
+									<p className="mx-auto mt-4 max-w-3xl text-base text-neutral-600 md:text-lg">
+										{menuDescription}
 									</p>
-									<Link 
-										href="/menu-information"
-										className="inline-flex items-center justify-center px-8 py-4 bg-brand-600 text-white font-semibold rounded-lg hover:bg-brand-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
-									>
-										View Menu Information & Dietary Requirements
-										<svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-										</svg>
-									</Link>
-									<div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-neutral-500">
-										<span className="bg-white px-3 py-1 rounded-full">14 Allergen Information</span>
-										<span className="bg-white px-3 py-1 rounded-full">Dietary Options</span>
-										<span className="bg-white px-3 py-1 rounded-full">Natasha's Law Compliant</span>
-									</div>
-								</div>
+								)}
+							</header>
+							<div className="rounded-3xl border border-neutral-200 bg-white p-4 shadow-xl sm:p-6 lg:p-8">
+								<MenuInteractive
+									sections={optimizedMenu?.sections || []}
+									defaultSelected={defaultSelectedStarters}
+									preloadedData={true}
+								/>
 							</div>
-							
-							{/* Main CTA Section - seamlessly integrated */}
-							<div className="pt-8 pb-16">
-								<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-									<div className="bg-gradient-to-r from-brand-600 to-brand-800 rounded-2xl p-8 md:p-12 shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 border-2 border-brand-700">
-										<div className="text-center">
-											<h3 className="text-3xl md:text-4xl font-display font-bold mb-6 text-white drop-shadow-lg">
-												🍽️ Experience Our Interactive Menu
-											</h3>
-											
-											<p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto leading-relaxed">
-												Use our advanced search and dietary filters to find the perfect dish. Book online or call for takeaway orders.
-											</p>
-											
-							<div className="flex flex-wrap gap-4 justify-center mb-6">
-				<Link
-					href="/book-a-table"
-					className="inline-block rounded-lg border-2 border-brand-200 bg-white px-8 py-4 text-lg font-bold text-brand-800 shadow-xl transition-all duration-200 hover:scale-105 hover:bg-neutral-50 hover:shadow-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
-					aria-label={labelBookOnline}
-				>
-					{labelBookOnline}
-				</Link>
-			<Link
-				href={telHref}
-				className="transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-4 px-8 rounded-lg text-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30 inline-block"
-			>
-				{labelOrderTakeaway}
-			</Link>
-							<Link
-								href="/about"
-								className="transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 bg-white hover:bg-neutral-50 text-brand-700 border-2 border-brand-200 font-bold py-4 px-8 rounded-lg text-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30 inline-block"
-							>
-									Learn Our Story
-							</Link>
-											</div>
+						</div>
+					</section>
+				</FadeIn>
 
-											<div className="text-sm text-white/80 bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-												<p>{menuContent.sections.allergenNotice} Use our enhanced filters to find items suitable for your dietary requirements.</p>
-											</div>
-										</div>
+				<FadeIn>
+					<section
+						aria-labelledby="menu-info-cta-heading"
+						className="bg-brand-900 py-20 sm:py-24 text-neutral-100"
+					>
+						<div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+							<h2 id="menu-info-cta-heading" className="text-3xl font-display font-bold text-white md:text-4xl">
+								Need Dietary Information?
+							</h2>
+							<p className="mt-6 text-lg text-neutral-200">
+								Find comprehensive allergen information, dietary requirements, and food safety details to help you make informed choices.
+							</p>
+							<div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+								<Link
+									href="/menu-information"
+									className="inline-flex items-center justify-center rounded-lg bg-brand-600 px-8 py-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-brand-500 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
+								>
+									View Menu Information & Dietary Requirements
+									<svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+									</svg>
+								</Link>
+							</div>
+							<div className="mt-10 flex flex-wrap justify-center gap-4 text-sm text-white/80">
+								<span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-white/90">14 Allergen Information</span>
+								<span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-white/90">Dietary Options</span>
+								<span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-white/90">Natasha&apos;s Law Compliant</span>
+							</div>
+						</div>
+					</section>
+				</FadeIn>
+
+				<FadeIn>
+					<section
+						aria-labelledby="menu-hours-heading"
+						className="bg-brand-50 py-20 sm:py-24"
+					>
+						<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+							<div className="grid gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(0,420px)]">
+								<div className="order-2 flex flex-col gap-10 xl:order-1">
+									<div className="space-y-5">
+										<span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
+											Visit us soon
+										</span>
+										<h2 id="menu-hours-heading" className="text-3xl font-display font-bold text-stout-800 md:text-4xl">
+											Restaurant &amp; Bar Opening Time
+										</h2>
+										<p className="max-w-xl text-base text-neutral-700 md:text-lg">
+											Drop in for a relaxed pint, cosy supper, or speedy takeaway pick-up. Let us know how many are dining and we’ll make sure your table is ready.
+										</p>
+									</div>
+
+									<ul className="grid gap-4 sm:grid-cols-2">
+										<li className="rounded-2xl border border-brand-100 bg-white p-4 shadow-sm">
+											<p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Where to find us</p>
+											<address className="mt-2 space-y-1 not-italic text-neutral-700">
+												<span className="block font-semibold text-stout-800">{formattedAddress}</span>
+												<a
+													href={directionsHref}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="inline-flex items-center text-sm font-semibold text-brand-700 underline-offset-4 transition-colors hover:text-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-50"
+												>
+													Get directions
+													<span aria-hidden className="ml-1 text-xs">↗</span>
+												</a>
+											</address>
+										</li>
+										<li className="rounded-2xl border border-brand-100 bg-white p-4 shadow-sm">
+											<p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Stay for longer</p>
+											<p className="mt-2 text-neutral-700">
+												Quiz night every Wednesday, dog-friendly snug, and heated garden huts for year-round gatherings.
+											</p>
+										</li>
+										<li className="rounded-2xl border border-brand-100 bg-white p-4 shadow-sm">
+											<p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Takeaway ready fast</p>
+											<p className="mt-2 text-neutral-700">
+												Call ahead and we’ll package Nepalese favourites for collection in as little as 20 minutes.
+											</p>
+										</li>
+										<li className="rounded-2xl border border-brand-100 bg-white p-4 shadow-sm">
+											<p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Access &amp; parking</p>
+											<p className="mt-2 text-neutral-700">
+												Free parking along the village green with level access through the front door.
+											</p>
+										</li>
+									</ul>
+
+									<div className="flex flex-col gap-3 sm:flex-row">
+										<Link
+											href="/book-a-table"
+											className="inline-flex w-full items-center justify-center rounded-lg bg-brand-600 px-6 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-brand-500 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-50 sm:w-auto"
+											aria-label={`${labelBookOnline} now`}
+										>
+											Book now
+										</Link>
+										<a
+											href={telHref}
+											className="inline-flex w-full items-center justify-center rounded-lg bg-stout-800 px-6 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-stout-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-stout-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-50 sm:w-auto"
+										>
+											Call now
+										</a>
+										<a
+											href={directionsHref}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="inline-flex w-full items-center justify-center rounded-lg border border-brand-300 bg-white px-6 py-3 text-base font-semibold text-brand-700 transition-colors duration-200 hover:border-brand-400 hover:text-brand-800 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200/80 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-50 sm:w-auto"
+										>
+											Get directions
+										</a>
 									</div>
 								</div>
+								<div className="order-1 flex items-stretch xl:order-2">
+									<RestaurantHoursCard variant="light" />
+								</div>
 							</div>
-						</section>
-					</FadeIn>
-				</main>
+						</div>
+					</section>
+				</FadeIn>
+			</main>
 			</RestaurantLayout>
 		</>
 	);

@@ -9,6 +9,7 @@ type Props = {
   selectedId?: string | null;
   searchTerm?: string;
   className?: string;
+  tone?: 'light' | 'dark';
 };
 
 /**
@@ -20,8 +21,10 @@ export default function MenuSections({
   sections, 
   selectedId, 
   searchTerm = '',
-  className = '' 
+  className = '',
+  tone = 'light'
 }: Props) {
+  const isDark = tone === 'dark';
 
   // Filter sections based on selectedId
   const displaySections = selectedId 
@@ -37,10 +40,10 @@ export default function MenuSections({
   // Early return if no sections to display
   if (!displaySections || displaySections.length === 0) {
     return (
-      <div className="py-16 text-center">
+      <div className={`py-16 text-center ${isDark ? 'text-neutral-100' : ''}`}>
         <div className="max-w-md mx-auto">
           <svg
-            className="mx-auto h-12 w-12 text-neutral-400"
+            className={`mx-auto h-12 w-12 ${isDark ? 'text-neutral-400' : 'text-neutral-400'}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -53,8 +56,10 @@ export default function MenuSections({
               d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"
             />
           </svg>
-          <h3 className="mt-4 text-lg font-medium text-neutral-900">No menu items found</h3>
-          <p className="mt-2 text-sm text-neutral-500">
+          <h3 className={`mt-4 text-lg font-medium ${isDark ? 'text-neutral-50' : 'text-neutral-900'}`}>
+            No menu items found
+          </h3>
+          <p className={`mt-2 text-sm ${isDark ? 'text-neutral-300' : 'text-neutral-500'}`}>
             {searchTerm 
               ? `No items match your search for "${searchTerm}"`
               : 'No menu items are currently available'
@@ -66,72 +71,71 @@ export default function MenuSections({
   }
 
   return (
-    <>
-      <div className={`space-y-12 ${className}`}>
-        {displaySections.map((section) => {
-          const sectionId = ((section.id || section.name || '') as string)
-            .toString()
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-');
+    <div className={className}>
+      {displaySections.map((section) => {
+        const sectionId = ((section.id || section.name || '') as string)
+          .toString()
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-');
 
-          // Skip sections with no items
-          if (!section.items || section.items.length === 0) {
-            return null;
-          }
+        // Skip sections with no items
+        if (!section.items || section.items.length === 0) {
+          return null;
+        }
 
-          return (
-            <section 
-              key={sectionId} 
-              id={sectionId} 
-              className="scroll-optimized" 
-              aria-labelledby={`section-${sectionId}-title`}
-            >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
-                <div className="mb-8 text-center">
-                  <h2 
-                    id={`section-${sectionId}-title`}
-                    className="text-2xl md:text-3xl font-display font-bold text-brand-700 mb-2"
-                  >
-                    {section.name}
-                  </h2>
-                  {section.description && (
-                    <p className="text-lg text-brand-600 max-w-2xl mx-auto">
-                      {section.description}
-                    </p>
-                  )}
-                  <div className="mt-4 flex items-center justify-center">
-                    <div className="h-1 w-16 bg-accent-500 rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Items Grid */}
-                <div 
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                  role="list"
-                  aria-label={`${section.name} menu items`}
+        return (
+          <section
+            key={sectionId}
+            id={sectionId}
+            className={`scroll-optimized py-12 sm:py-16 ${isDark ? 'text-neutral-100' : ''}`}
+            aria-labelledby={`section-${sectionId}-title`}
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Section Header */}
+              <div className="mb-8 text-center">
+                <h2
+                  id={`section-${sectionId}-title`}
+                  className={`text-2xl md:text-3xl font-display font-bold mb-2 ${isDark ? 'text-neutral-50' : 'text-brand-700'}`}
                 >
-                  {section.items.map((item) => (
-                    <div key={item.id || item.name} role="listitem">
-                      <MenuItemCard
-                        item={item}
-                        section={sectionId}
-                        searchTerm={searchTerm}
-                        className="h-full"
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Section Stats */}
-                <div className="mt-6 text-center text-sm text-neutral-500">
-                  {section.items.length} item{section.items.length !== 1 ? 's' : ''} in {section.name}
+                  {section.name}
+                </h2>
+                {section.description && (
+                  <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>
+                    {section.description}
+                  </p>
+                )}
+                <div className="mt-4 flex items-center justify-center">
+                  <div className="h-1 w-16 bg-accent-500 rounded-full"></div>
                 </div>
               </div>
-            </section>
-          );
-        })}
-      </div>
-    </>
+
+              {/* Items Grid */}
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                role="list"
+                aria-label={`${section.name} menu items`}
+              >
+                {section.items.map((item) => (
+                  <div key={item.id || item.name} role="listitem">
+                    <MenuItemCard
+                      item={item}
+                      section={sectionId}
+                      searchTerm={searchTerm}
+                      className="h-full"
+                      tone={tone}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Section Stats */}
+              <div className={`mt-6 text-center text-sm ${isDark ? 'text-neutral-300' : 'text-neutral-500'}`}>
+                {section.items.length} item{section.items.length !== 1 ? 's' : ''} in {section.name}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+    </div>
   );
 }

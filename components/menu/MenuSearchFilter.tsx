@@ -11,6 +11,7 @@ interface MenuSearchFilterProps {
     meta?: { filters: FilterState; summary: string }
   ) => void;
   className?: string;
+  tone?: 'light' | 'dark';
 }
 
 interface FilterState {
@@ -35,7 +36,8 @@ interface FilterState {
 export default function MenuSearchFilter({ 
   sections, 
   onFilterChange, 
-  className = '' 
+  className = '',
+  tone = 'light'
 }: MenuSearchFilterProps) {
   const [filters, setFilters] = useState<FilterState>({
     searchTerm: '',
@@ -53,6 +55,7 @@ export default function MenuSearchFilter({
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [resultsCount, setResultsCount] = useState<number | null>(null);
+  const isDark = tone === 'dark';
   const searchInputRef = useRef<HTMLInputElement>(null);
   const debounceTimeoutRef = useRef<NodeJS.Timeout>();
 
@@ -317,13 +320,13 @@ export default function MenuSearchFilter({
   }, [filters, priceRange, updateFilters, handleDietaryChange]);
 
   return (
-    <div className={`bg-white border border-neutral-200 rounded-lg shadow-sm ${className}`}>
+    <div className={`${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/10 text-neutral-100' : 'bg-white border border-neutral-200'} rounded-lg shadow-sm ${className}`}>
       {/* Search Bar */}
-      <div className="p-4 border-b border-neutral-200">
+      <div className={`p-4 border-b ${isDark ? 'border-white/10' : 'border-neutral-200'}`}>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <svg
-              className="h-5 w-5 text-neutral-400"
+              className={`h-5 w-5 ${isDark ? 'text-neutral-300' : 'text-neutral-400'}`}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -341,7 +344,7 @@ export default function MenuSearchFilter({
             type="text"
             value={filters.searchTerm}
             onChange={handleSearchChange}
-            className="block w-full pl-10 pr-12 py-3 border border-neutral-300 rounded-lg text-sm placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
+            className={`block w-full pl-10 pr-12 py-3 rounded-lg text-sm focus:outline-none focus:ring-2 ${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/20 text-neutral-100 placeholder-neutral-400 focus:ring-white/40 focus:border-white/40' : 'border border-neutral-300 placeholder-neutral-500 focus:ring-accent-500 focus:border-accent-500'}`}
             placeholder="Search menu items..."
             aria-label="Search menu items by name or description"
           />
@@ -349,7 +352,7 @@ export default function MenuSearchFilter({
             <button
               type="button"
               onClick={() => updateFilters({ searchTerm: '' })}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-neutral-400 hover:text-neutral-600"
+              className={`absolute inset-y-0 right-0 pr-3 flex items-center ${isDark ? 'text-neutral-300 hover:text-neutral-100' : 'text-neutral-400 hover:text-neutral-600'}`}
               aria-label="Clear search"
             >
               <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -371,7 +374,7 @@ export default function MenuSearchFilter({
                 key={chip.key}
                 type="button"
                 onClick={chip.onRemove}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full border border-accent-200 bg-accent-50 text-accent-800 text-xs hover:bg-accent-100 focus:outline-none focus:ring-2 focus:ring-accent-500"
+                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs focus:outline-none focus:ring-2 ${isDark ? 'border border-white/20 bg-white/10 text-neutral-100 hover:bg-white/20 focus:ring-white/40' : 'border border-accent-200 bg-accent-50 text-accent-800 hover:bg-accent-100 focus:ring-accent-500'}`}
                 aria-label={`Remove filter ${chip.label}`}
               >
                 <span>{chip.label}</span>
@@ -381,7 +384,7 @@ export default function MenuSearchFilter({
               </button>
             ))}
             {resultsCount !== null && (
-              <span className="ml-auto text-xs text-brand-600">{resultsCount} item{resultsCount === 1 ? '' : 's'} match</span>
+              <span className={`ml-auto text-xs ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>{resultsCount} item{resultsCount === 1 ? '' : 's'} match</span>
             )}
             {/* Screen reader live region */}
             <span className="sr-only" aria-live="polite">
@@ -392,23 +395,23 @@ export default function MenuSearchFilter({
       </div>
 
       {/* Filter Controls */}
-      <div className="p-4">
+      <div className={`p-4 ${isDark ? 'text-neutral-100' : ''}`}>
         <div className="flex items-center justify-between">
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-2 text-sm font-medium text-brand-700 hover:text-brand-800 focus:outline-none focus:ring-2 focus:ring-accent-500 rounded"
+            className={`flex items-center gap-2 text-sm font-medium rounded focus:outline-none focus:ring-2 ${isDark ? 'text-neutral-100 hover:text-white focus:ring-white/40' : 'text-brand-700 hover:text-brand-800 focus:ring-accent-500'}`}
             aria-expanded={isExpanded}
             aria-controls="filter-options"
           >
             <span>Filters</span>
             {activeFilterCount > 0 && (
-              <span className="bg-accent-500 text-white text-xs px-2 py-1 rounded-full">
+              <span className={`text-xs px-2 py-1 rounded-full ${isDark ? 'bg-white/20 text-white' : 'bg-accent-500 text-white'}`}>
                 {activeFilterCount}
               </span>
             )}
             <svg
-              className={`h-4 w-4 ${isExpanded ? 'rotate-180' : ''}`}
+              className={`h-4 w-4 transition-transform ${isExpanded ? 'rotate-180' : ''} ${isDark ? 'text-neutral-100' : ''}`}
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -424,7 +427,7 @@ export default function MenuSearchFilter({
             <button
               type="button"
               onClick={clearFilters}
-              className="text-sm text-accent-700 hover:text-accent-800 font-medium focus:outline-none focus:ring-2 focus:ring-accent-500 rounded"
+              className={`text-sm font-medium rounded focus:outline-none focus:ring-2 ${isDark ? 'text-neutral-100 hover:text-white focus:ring-white/40' : 'text-accent-700 hover:text-accent-800 focus:ring-accent-500'}`}
             >
               Clear all
             </button>
@@ -436,17 +439,17 @@ export default function MenuSearchFilter({
           <div id="filter-options" className="mt-4 space-y-4">
             {/* Dietary Filters */}
             <div>
-              <h3 className="text-sm font-medium text-brand-700 mb-2">Dietary Options</h3>
+              <h3 className={`text-sm font-medium mb-2 ${isDark ? 'text-neutral-100' : 'text-brand-700'}`}>Dietary Options</h3>
               <div className="grid grid-cols-2 gap-2">
                 {Object.entries(filters.dietary).map(([key, value]) => (
-                  <label key={key} className="flex items-center space-x-2 cursor-pointer">
+                  <label key={key} className={`flex items-center space-x-2 cursor-pointer ${isDark ? 'text-neutral-200' : ''}`}>
                     <input
                       type="checkbox"
                       checked={value}
                       onChange={() => handleDietaryChange(key as keyof FilterState['dietary'])}
-                      className="rounded border-neutral-300 text-accent-600 focus:ring-accent-500"
+                      className={`rounded focus:ring-2 ${isDark ? 'border-white/30 bg-transparent text-accent-200 focus:ring-white/40' : 'border-neutral-300 text-accent-600 focus:ring-accent-500'}`}
                     />
-                    <span className="text-sm text-brand-600 capitalize">
+                    <span className={`text-sm capitalize ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>
                       {key === 'glutenFree' ? 'Gluten Free' : key}
                     </span>
                   </label>
@@ -456,7 +459,7 @@ export default function MenuSearchFilter({
 
             {/* Price Range */}
             <div>
-              <h3 className="text-sm font-medium text-brand-700 mb-2">Price Range</h3>
+              <h3 className={`text-sm font-medium mb-2 ${isDark ? 'text-neutral-100' : 'text-brand-700'}`}>Price Range</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="min-price" className="sr-only">Minimum price</label>
@@ -478,7 +481,7 @@ export default function MenuSearchFilter({
                         }
                       });
                     }}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-accent-500"
+                    className={`w-full px-3 py-2 rounded text-sm focus:outline-none focus:ring-2 ${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/20 text-neutral-100 placeholder-neutral-400 focus:ring-white/40 focus:border-white/40' : 'border border-neutral-300 focus:ring-accent-500'}`}
                     placeholder="Min £"
                   />
                 </div>
@@ -502,7 +505,7 @@ export default function MenuSearchFilter({
                         }
                       });
                     }}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-accent-500"
+                    className={`w-full px-3 py-2 rounded text-sm focus:outline-none focus:ring-2 ${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/20 text-neutral-100 placeholder-neutral-400 focus:ring-white/40 focus:border-white/40' : 'border border-neutral-300 focus:ring-accent-500'}`}
                     placeholder="Max £"
                   />
                 </div>
@@ -512,10 +515,10 @@ export default function MenuSearchFilter({
               <div className="mt-3">
                 <div className="relative h-6">
                   {/* Track background */}
-                  <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1 rounded bg-neutral-200" />
+                  <div className={`absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1 rounded ${isDark ? 'bg-white/15' : 'bg-neutral-200'}`} />
                   {/* Selected range highlight */}
                   <div
-                    className="absolute top-1/2 -translate-y-1/2 h-1 rounded bg-accent-500"
+                    className={`absolute top-1/2 -translate-y-1/2 h-1 rounded ${isDark ? 'bg-white' : 'bg-accent-500'}`}
                     style={{
                       left: `${((filters.priceRange.min - priceRange.min) / (priceRange.max - priceRange.min)) * 100}%`,
                       right: `${(1 - (filters.priceRange.max - priceRange.min) / (priceRange.max - priceRange.min)) * 100}%`,
@@ -534,7 +537,7 @@ export default function MenuSearchFilter({
                       const next = Math.min(v, filters.priceRange.max);
                       updateFilters({ priceRange: { ...filters.priceRange, min: next } });
                     }}
-                    className="absolute inset-0 w-full h-6 bg-transparent cursor-pointer appearance-none"
+                    className={`absolute inset-0 w-full h-6 bg-transparent cursor-pointer appearance-none ${isDark ? '[&::-webkit-slider-thumb]:bg-white [&::-moz-range-thumb]:bg-white' : ''}`}
                   />
                   {/* Max thumb overlay to capture separate pointer */}
                   <input
@@ -549,11 +552,11 @@ export default function MenuSearchFilter({
                       const next = Math.max(v, filters.priceRange.min);
                       updateFilters({ priceRange: { ...filters.priceRange, max: next } });
                     }}
-                    className="absolute inset-0 w-full h-6 bg-transparent cursor-pointer appearance-none"
+                    className={`absolute inset-0 w-full h-6 bg-transparent cursor-pointer appearance-none ${isDark ? '[&::-webkit-slider-thumb]:bg-white [&::-moz-range-thumb]:bg-white' : ''}`}
                     style={{ WebkitAppearance: 'none' as any }}
                   />
                 </div>
-                <div className="flex justify-between text-xs text-brand-600 mt-1">
+                <div className={`flex justify-between text-xs mt-1 ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>
                   <span>£{priceRange.min}</span>
                   <span>£{priceRange.max}</span>
                 </div>

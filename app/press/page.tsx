@@ -204,10 +204,10 @@ export default function PressPage() {
           </FadeIn>
         </section>
 
-        <main className="space-y-16 bg-white pb-16">
-          <FadeIn>
-            <section className="pt-12" aria-labelledby="food-hygiene-heading">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<main className="bg-white pb-16">
+		  <FadeIn>
+			<section className="bg-neutral-50 py-16" aria-labelledby="food-hygiene-heading">
+			  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="card bg-brand-700 text-white shadow-xl border border-brand-600">
                   <div className="card-body gap-6 md:gap-8">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
@@ -244,13 +244,15 @@ export default function PressPage() {
             </section>
           </FadeIn>
 
-          <FadeIn>
-            <PressFeatureBanner content={HERO_PRESS_FEATURE} />
-          </FadeIn>
+		  <FadeIn>
+			<div className="pt-16">
+			  <PressFeatureBanner content={HERO_PRESS_FEATURE} />
+			</div>
+		  </FadeIn>
 
-          <FadeIn>
-            <section className="py-12" aria-labelledby="press-highlights-heading">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		  <FadeIn>
+			<section className="py-16" aria-labelledby="press-highlights-heading">
+			  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
                   <div>
                     <h2 id="press-highlights-heading" className="text-2xl md:text-3xl font-display font-bold text-brand-700">
@@ -317,9 +319,9 @@ export default function PressPage() {
             </section>
           </FadeIn>
 
-          <FadeIn>
-            <section className="py-16 bg-brand-50" aria-labelledby="press-kit-heading">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		  <FadeIn>
+			<section className="bg-brand-50 py-16" aria-labelledby="press-kit-heading">
+			  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
                   <div>
                     <h2 id="press-kit-heading" className="text-2xl md:text-3xl font-display font-bold text-brand-700">

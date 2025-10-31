@@ -19,6 +19,8 @@ interface MenuCTASectionProps {
   buttons: CTAButton[];
   allergenNotice?: string;
   className?: string;
+  asChild?: boolean;
+  containerClassName?: string;
 }
 
 /**
@@ -40,7 +42,9 @@ export default function MenuCTASection({
   description = "Book a table or order takeaway to experience the best of Nepal and Britain at Waterbeach's historic thatched pub.",
   buttons,
   allergenNotice,
-  className = '' 
+  className = '',
+  asChild = false,
+  containerClassName = ''
 }: MenuCTASectionProps) {
   if (!buttons || buttons.length === 0) {
     return null;
@@ -60,9 +64,13 @@ export default function MenuCTASection({
     }
   };
 
+  const Wrapper = asChild ? motion.div : motion.section;
+  const wrapperClasses = asChild ? className : `py-16 bg-white ${className}`.trim();
+  const containerClasses = `max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${containerClassName}`.trim();
+
   return (
-    <motion.section className={`py-16 bg-white ${className}`} variants={mv.fadeUp} initial="hidden" animate="visible">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Wrapper className={wrapperClasses} variants={mv.fadeUp} initial="hidden" animate="visible">
+      <div className={containerClasses}>
         <div className="bg-gradient-to-r from-brand-600 to-brand-800 rounded-2xl p-8 md:p-12 shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 border-2 border-brand-700">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-white drop-shadow-lg">
@@ -110,6 +118,6 @@ export default function MenuCTASection({
           </div>
         </div>
       </div>
-    </motion.section>
+    </Wrapper>
   );
 }

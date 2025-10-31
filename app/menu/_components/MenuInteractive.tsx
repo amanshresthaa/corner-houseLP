@@ -9,6 +9,7 @@ type Props = {
   sections: Menu['sections'];
   defaultSelected?: string | null;
   preloadedData?: boolean; // Indicates data is pre-optimized server-side
+  tone?: 'light' | 'dark';
 };
 
 function normalizeId(input?: string | number | null) {
@@ -21,7 +22,7 @@ function normalizeId(input?: string | number | null) {
  * Maintains backward compatibility with existing functionality
  * Enhanced with improved sticky navigation for all responsive devices
  */
-export default function MenuInteractive({ sections, defaultSelected, preloadedData = false }: Props) {
+export default function MenuInteractive({ sections, defaultSelected, preloadedData = false, tone = 'light' }: Props) {
   const [selected, setSelected] = useState<string | null>(defaultSelected ?? null);
   const [isHydrated, setIsHydrated] = useState(preloadedData); // Start hydrated if data is preloaded
   const [filteredSections, setFilteredSections] = useState<Menu['sections']>(sections);
@@ -30,6 +31,7 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
   const [showSearch, setShowSearch] = useState(false);
   const [navbarHeight, setNavbarHeight] = useState(64); // Default to 64px
   const contentRef = useRef<HTMLDivElement>(null);
+  const isDark = tone === 'dark';
 
   // Debounce hash changes to prevent rapid state updates - maintaining existing pattern
   const debouncedHashChange = useCallback(() => {
@@ -165,7 +167,7 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
     <div className="scroll-manual">
       {/* Enhanced Navigation Bar with dynamic positioning */}
       <section 
-        className="py-2 sm:py-3 bg-white/95 border-b border-neutral-200/50 sticky z-30 backdrop-blur-md shadow-sm"
+        className={`py-2 sm:py-3 sticky z-30 backdrop-blur-md transition-colors ${isDark ? 'bg-brand-950 bg-opacity-80 border-b border-white/10 shadow-lg' : 'bg-white/95 border-b border-neutral-200/50 shadow-sm'}`}
         style={{ 
           top: `${navbarHeight}px`,
         }}
@@ -176,22 +178,24 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
             <button
               type="button"
               onClick={toggleSearch}
-              className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-medium text-sm sm:text-base ${
+              className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-medium text-sm sm:text-base focus:outline-none focus-visible:ring-2 ${
                 showSearch 
-                  ? 'bg-accent text-white shadow-md' 
-                  : 'bg-white text-brand-700 border border-neutral-300 shadow-sm'
+                  ? `bg-accent text-white shadow-md ${isDark ? 'border border-accent-200/60 focus-visible:ring-accent-200/70' : 'focus-visible:ring-accent-500'}`
+                  : isDark
+                    ? 'bg-transparent text-neutral-100 border border-white/20 shadow-sm focus-visible:ring-white/40'
+                    : 'bg-white text-brand-700 border border-neutral-300 shadow-sm focus-visible:ring-brand-500/40'
               }`}
               aria-expanded={showSearch}
               aria-controls="search-panel"
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-4 h-4 ${isDark ? 'text-white' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <span className="hidden sm:inline">
                 {showSearch ? 'Hide Search' : 'Search & Filter'}
               </span>
               {(searchTerm || filteredSections.length !== sections.length) && (
-                <span className="bg-white bg-opacity-20 text-xs px-2 py-1 rounded-full">
+                <span className={`text-xs px-2 py-1 rounded-full ${isDark ? 'bg-white/20 text-white' : 'bg-accent-50 text-accent-800 border border-accent-200'}`}>
                   Active
                 </span>
               )}
@@ -202,7 +206,11 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
               <button
                 type="button"
                 onClick={clearSearchAndFilters}
-                className="text-sm text-accent-700 font-medium px-3 py-1 rounded border border-accent-300"
+                className={`text-sm font-medium px-3 py-1 rounded border transition-colors focus:outline-none focus-visible:ring-2 ${
+                  isDark
+                    ? 'text-neutral-100 border-white/20 hover:bg-white/10 focus-visible:ring-white/40'
+                    : 'text-accent-700 border-accent-300 hover:bg-accent-50 focus-visible:ring-accent-400/60'
+                }`}
               >
                 Clear All
               </button>
@@ -224,18 +232,22 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
                   type="button"
                   onClick={() => handleSectionChange(isActive ? null : idSeed)}
                   disabled={sectionItemCount === 0}
-                    className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm font-medium ${
+                    className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
                       isActive 
-                        ? 'bg-accent text-white shadow-sm' 
+                        ? `bg-accent text-white shadow-sm ${isDark ? 'border border-accent-200/70' : ''}` 
                         : sectionItemCount > 0
-                          ? 'bg-neutral-50 text-brand-700'
-                          : 'bg-neutral-200 text-neutral-500 cursor-not-allowed'
+                          ? isDark
+                            ? 'bg-white/10 text-neutral-100 border border-white/15 hover:bg-white/15'
+                            : 'bg-neutral-50 text-brand-700 border border-neutral-200 hover:bg-neutral-100'
+                          : isDark
+                            ? 'bg-white/5 text-white/40 border border-white/10 cursor-not-allowed'
+                            : 'bg-neutral-200 text-neutral-500 cursor-not-allowed border border-neutral-200'
                     }`}
                   aria-pressed={isActive}
                   title={sectionItemCount === 0 ? 'No items in this section match current filters' : undefined}
                 >
                     <span className="truncate max-w-[80px] sm:max-w-none">{section.name}</span>
-                    <span className="text-xs bg-white bg-opacity-20 px-1 sm:px-1.5 py-0.5 rounded-full flex-shrink-0">
+                    <span className={`text-xs px-1 sm:px-1.5 py-0.5 rounded-full flex-shrink-0 ${isDark ? 'bg-white/20 text-white' : 'bg-brand-100 text-brand-700'}`}>
                       {sectionItemCount}
                     </span>
                   </button>
@@ -245,9 +257,9 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
           </div>
           {/* Applied filters summary row (visible when search panel collapsed) */}
           {!showSearch && (searchTerm || filteredSections.length !== sections.length) && (
-            <div className="mt-2 text-xs text-brand-700">
+            <div className={`mt-2 text-xs ${isDark ? 'text-neutral-200' : 'text-brand-700'}`}>
               <span className="font-semibold">Applied:</span>{' '}
-              <span className="text-brand-600">{filterSummary || 'filters active'}</span>
+              <span className={isDark ? 'text-neutral-100' : 'text-brand-600'}>{filterSummary || 'filters active'}</span>
             </div>
           )}
         </div>
@@ -257,7 +269,7 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
       {showSearch && (
         <div 
           id="search-panel" 
-          className="bg-neutral-50 border-b border-neutral-200 py-3 sm:py-4 sticky"
+          className={`py-3 sm:py-4 sticky ${isDark ? 'bg-brand-950 bg-opacity-80 border-b border-white/10' : 'bg-neutral-50 border-b border-neutral-200'}`}
           style={{
             top: `${navbarHeight + 60}px`, // Account for navbar + menu nav estimated height
             zIndex: 25,
@@ -268,6 +280,7 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
               sections={sections}
               onFilterChange={handleFilterChange}
               className="w-full"
+              tone={tone}
             />
           </div>
         </div>
@@ -281,6 +294,7 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
               sections={displaySections} 
               selectedId={selected}
               searchTerm={searchTerm}
+              tone={tone}
             />
           </div>
         </div>
@@ -288,9 +302,9 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
 
       {/* Results Summary */}
       {(searchTerm || filteredSections.length !== sections.length) && (
-        <div className="bg-neutral-100 border-t border-neutral-200 py-3">
+        <div className={`py-3 ${isDark ? 'bg-brand-950 bg-opacity-80 border-t border-white/10' : 'bg-neutral-100 border-t border-neutral-200'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <p className="text-sm text-neutral-600">
+            <p className={`text-sm ${isDark ? 'text-neutral-100' : 'text-neutral-600'}`}>
               Showing {displaySections.reduce((total, section) => total + section.items.length, 0)} items
               {searchTerm && ` matching "${searchTerm}"`}
               {filteredSections.length !== sections.length && ` with applied filters`}

@@ -301,14 +301,14 @@ export default function CurryAndCarolsMenuPage() {
                 </div>
               </FadeIn>
 
-              <div className="space-y-16">
-                {MENU_SECTIONS.map((section) => (
-                  <FadeInUp key={section.id}>
-                    <section
-                      id={section.id}
-                      aria-labelledby={`${section.id}-heading`}
-                      className="scroll-pt-28"
-                    >
+			  <div>
+				{MENU_SECTIONS.map((section, index) => (
+				  <FadeInUp key={section.id}>
+					<section
+					  id={section.id}
+					  aria-labelledby={`${section.id}-heading`}
+					  className={`scroll-pt-28 ${index === 0 ? 'pt-0 pb-12' : 'py-12 border-t border-brand-100/60'}`}
+					>
                       <div className="flex flex-col gap-4 mb-8 text-center">
                         <div className="mx-auto inline-flex items-center justify-center rounded-full bg-brand-50 px-4 py-2 text-brand-700 border border-brand-100">
                           <span aria-hidden="true" className="text-lg">

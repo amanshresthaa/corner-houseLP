@@ -9,6 +9,7 @@ interface MenuItemProps {
   section: string;
   searchTerm?: string;
   className?: string;
+  tone?: 'light' | 'dark';
 }
 
 interface DietaryBadgeProps {
@@ -47,11 +48,15 @@ export default function MenuItemCard({
   item, 
   section, 
   searchTerm,
-  className = '' 
+  className = '',
+  tone = 'light'
 }: MenuItemProps) {
   const [imageError, setImageError] = useState(false);
+  const isDark = tone === 'dark';
   // Feature flag: disable menu item images by default
-  const MENU_ITEM_IMAGES_ENABLED = process.env.NEXT_PUBLIC_MENU_ITEM_IMAGES === 'true';
+  const MENU_ITEM_IMAGES_ENABLED =
+    process.env.NEXT_PUBLIC_MENU_ITEM_IMAGES === 'true' ||
+    process.env.NEXT_PUBLIC_TEST_MODE === 'true';
   
   // Format price with proper currency formatting
   const priceText = item?.price
@@ -105,12 +110,12 @@ export default function MenuItemCard({
 
   return (
     <article 
-      className={`group bg-white rounded-lg border border-neutral-200 shadow-sm overflow-hidden ${className}`}
+      className={`group rounded-lg border shadow-sm overflow-hidden transition-colors ${isDark ? 'bg-white/5 border-white/20 text-neutral-100 backdrop-blur-sm' : 'bg-white border-neutral-200'} ${className}`}
       aria-label={`Menu item: ${item.name}`}
     >
       {/* Image Section */}
       {imageUrl && (
-        <div className="relative h-32 w-full bg-neutral-100">
+        <div className={`relative h-32 w-full ${isDark ? 'bg-white/10' : 'bg-neutral-100'}`}>
           <Image
             src={imageUrl}
             alt={`${item.name} - ${section} from The White Horse Waterbeach`}
@@ -127,13 +132,13 @@ export default function MenuItemCard({
       <div className="p-4 space-y-3">
         {/* Header with Name and Price */}
         <div className="flex justify-between items-start gap-3">
-          <h3 className="font-semibold text-brand-800 text-base leading-tight flex-1 min-w-0">
+          <h3 className={`font-semibold text-base leading-tight flex-1 min-w-0 ${isDark ? 'text-neutral-50' : 'text-brand-800'}`}>
             <span className="break-words hyphens-auto" lang="en">
               {highlightText(item.name)}
             </span>
           </h3>
           {priceText && (
-            <span className="text-brand-700 font-bold text-base tabular-nums flex-shrink-0 ml-2">
+            <span className={`font-bold text-base tabular-nums flex-shrink-0 ml-2 ${isDark ? 'text-neutral-100' : 'text-brand-700'}`}>
               {priceText}
             </span>
           )}
@@ -141,7 +146,7 @@ export default function MenuItemCard({
 
         {/* Description */}
         {item.description && (
-          <p className="text-sm text-brand-600 leading-relaxed">
+          <p className={`text-sm leading-relaxed ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>
             {highlightText(item.description)}
           </p>
         )}

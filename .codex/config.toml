@@ -1,0 +1,53 @@
+model = "gpt-5-codex"
+model_reasoning_effort = "high"
+model_reasoning_summary = "detailed"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+network_access = true
+
+rmcp_client = true
+
+[shell_environment_policy]
+inherit = "all"
+ignore_default_excludes = false
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest", "--headless=true", "--isolated=true"]
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[mcp_servers.shadcn]
+command = "npx"
+args = ["shadcn@latest", "mcp"]
+
+# Temporarily disabled due to initialization issues
+# [mcp_servers.next-devtools]
+# command = "npx"
+# args = ["-y", "next-devtools-mcp@latest"]
+# startup_timeout_sec = 60
+
+[mcp_servers.deepwiki]
+# Codex supports remote (streamable HTTP) MCP servers.
+url = "https://mcp.deepwiki.com/mcp"
+
+[mcp_servers.atlassian]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"]
+
+[mcp_servers.supabase]
+command = "npx"
+args = ["-y", "@supabase/mcp-server-supabase"]
+env = { SUPABASE_PROJECT_REF = "mqtchcaavsucsdjskptc", SUPABASE_ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xdGNoY2FhdnN1Y3NkanNrcHRjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NzMxNDUxNiwiZXhwIjoyMDcyODkwNTE2fQ.axvKCp5pDH5QX4b68QnQ7S1ZXJUzoRDRQi4y21LZ75g" }
+startup_timeout_sec = 30
+
+[notice]
+hide_full_access_warning = true
+
+# Codex CLI configuration
+notify = ["./.codex/hooks/notify.sh"]
+
+[tui]
+notifications = true

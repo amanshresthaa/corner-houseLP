@@ -27,7 +27,7 @@ interface HoursSectionProps {
 }
 
 const HoursSection: React.FC<HoursSectionProps> = ({ title, hoursData, isOpen, darkMode }) => {
-  const [showAllDays, setShowAllDays] = useState(false);
+  const [showAllDays, setShowAllDays] = useState(true);
   const todayHours = getCurrentDayHours(hoursData);
   const headingClass = darkMode ? 'text-white' : 'text-brand-700';
   const statusTextClass = isOpen

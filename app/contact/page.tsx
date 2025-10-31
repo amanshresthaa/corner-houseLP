@@ -73,10 +73,10 @@ export default async function ContactPage() {
         </section>
 
         {/* Main contact content with progressive disclosure */}
-        <main className="bg-white py-16 space-y-16">
+        <main className="bg-white py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
-              <section className="grid grid-cols-1 lg:grid-cols-2 gap-8" aria-labelledby="contact-info-heading">
+              <section className="grid grid-cols-1 gap-8 pb-16 lg:grid-cols-2" aria-labelledby="contact-info-heading">
                 <div>
                   <h2 id="contact-info-heading" className="text-2xl font-display font-bold text-brand-700 mb-6">Contact Information</h2>
                   <ContactInfoSection
@@ -94,7 +94,7 @@ export default async function ContactPage() {
                     <RestaurantHoursCard />
                   </div>
 
-                  <ContactFeaturesSection 
+                  <ContactFeaturesSection
                     title={contactContent.features.title}
                     items={contactContent.features.items}
                   />
@@ -105,13 +105,15 @@ export default async function ContactPage() {
             </FadeIn>
 
             <FadeIn>
-              <section className="mt-16" aria-labelledby="map-heading">
-                <h2 id="map-heading" className="text-2xl font-display font-bold text-brand-700 mb-6 text-center">Find Us</h2>
-                <InteractiveMap 
-                  className="bg-neutral-50 rounded-xl shadow-lg overflow-hidden"
-                  height="400px"
-                  title="The White Horse Waterbeach Location"
-                />
+              <section className="pt-16" aria-labelledby="map-heading">
+                <h2 id="map-heading" className="mb-6 text-center text-2xl font-display font-bold text-brand-700">Find Us</h2>
+                <div className="rounded-3xl bg-brand-50 p-4 shadow-lg shadow-brand-900/10">
+                  <InteractiveMap
+                    title="The White Horse Waterbeach Location"
+                    className="h-[400px] w-full overflow-hidden rounded-2xl border border-brand-200/40"
+                    height="400px"
+                  />
+                </div>
               </section>
             </FadeIn>
           </div>

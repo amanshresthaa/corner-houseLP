@@ -39,7 +39,7 @@ export default function EventsPage() {
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Introduction */}
-          <section className="mb-16">
+          <section className="py-16">
             <div className="text-center mb-12">
               <p className="text-lg text-brand-600 max-w-3xl mx-auto leading-relaxed">
                 Looking for the perfect venue to host your next gathering, or simply catch the big game with friends? The White Horse offers a unique and memorable setting for all occasions, blending the charm of a historic thatched pub with the excitement of live sports and an incredible culinary experience.
@@ -48,7 +48,7 @@ export default function EventsPage() {
           </section>
 
           {/* Curry & Carols Highlight */}
-          <section className="mb-16" aria-labelledby="events-curry-carols-highlight-heading">
+          <section className="py-16" aria-labelledby="events-curry-carols-highlight-heading">
             <FadeIn>
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-700 via-crimson-600 to-cardamom-700 p-8 md:p-12 text-white shadow-2xl border border-white/10">
                 <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
@@ -82,7 +82,7 @@ export default function EventsPage() {
           </section>
 
           {/* Live Sports Section */}
-          <section className="mb-16">
+          <section className="py-16">
             <FadeIn>
               <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 border border-brand-100 hover:shadow-2xl focus-within:shadow-2xl">
               <div className="text-center mb-8">
@@ -153,7 +153,7 @@ export default function EventsPage() {
           </section>
 
           {/* Private Events Section */}
-          <section className="mb-16">
+          <section className="py-16">
             <FadeIn>
               <div className="bg-gradient-to-r from-brand-50 to-accent-50 rounded-2xl p-8 md:p-12 border border-brand-200">
               <div className="text-center mb-8">
@@ -190,7 +190,7 @@ export default function EventsPage() {
           </section>
 
           {/* Occasions Section */}
-          <section className="mb-16">
+          <section className="py-16">
             <FadeIn>
               <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 border border-brand-200 hover:shadow-2xl focus-within:shadow-2xl">
               <div className="text-center mb-8">
