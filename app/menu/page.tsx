@@ -21,14 +21,14 @@ const MenuInteractive = dynamic(() => import('./_components/MenuInteractive'), {
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-	title: 'Menu | Authentic Nepalese Food & Pub Classics | The Old Crown Girton',
+	title: 'Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach',
 	description: 'Explore our searchable menu featuring authentic Nepalese cuisine, momo, dal bhat & curries, plus traditional British pub classics. Advanced search and dietary filters available. Takeaway available.',
-	keywords: 'searchable menu Cambridge, Nepalese menu Cambridge, authentic Nepalese food Girton, momo Cambridge, dal bhat, curry takeaway Cambridge, pub food menu Girton, dietary filters menu, nutrition information',
+	keywords: 'searchable menu Cambridge, Nepalese menu Cambridge, authentic Nepalese food Waterbeach, momo Cambridge, dal bhat, curry takeaway Cambridge, pub food menu Waterbeach, dietary filters menu, nutrition information',
 	openGraph: {
-		title: 'Menu | Authentic Nepalese Food & Pub Classics | The Old Crown Girton',
-		description: 'Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Girton\'s historic thatched pub',
-		url: 'https://oldcrowngirton.com//menu',
-		siteName: 'The Old Crown Girton',
+		title: 'Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach',
+		description: 'Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Waterbeach\'s historic thatched pub',
+		url: 'https://whitehorsepub.co//menu',
+		siteName: 'The White Horse Waterbeach',
 		locale: 'en_GB',
 		type: 'website',
 	},
@@ -76,7 +76,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const structuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'Menu',
-		'@id': 'https://oldcrowngirton.com//menu#menu',
+		'@id': 'https://whitehorsepub.co//menu#menu',
 		name: menuContent.hero.title,
 		description: `${menuContent.sections.description} Browse with advanced search and filtering.`,
 		inLanguage: 'en-GB',

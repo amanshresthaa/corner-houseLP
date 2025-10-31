@@ -41,37 +41,45 @@ export default function QuickLinksSection({ links, className = '' }: QuickLinksS
   const itemVariant = prefersReduced ? mv.fadeIn : mv.fadeUp;
 
   return (
-    <section className={`bg-white py-12 lazy-section ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div className="grid gap-8 md:grid-cols-3" variants={mv.staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10% 0%' }}>
+    <section className={`bg-brand-900 py-11 text-neutral-50 sm:py-12 ${className} lazy-section`}>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3"
+          variants={mv.staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-10% 0%' }}
+        >
           {links.map((link, index) => {
             // Skip items with missing required data
             if (!link.title || !link.description || !link.link || !link.linkText) {
               return null;
             }
-            
-            
+
             return (
               <motion.div
                 key={index}
                 variants={itemVariant as any}
-                className="p-6 rounded-lg border border-neutral-200 bg-neutral/40 hover-lift gpu-fix"
-                whileHover={{ y: -2, scale: 1.01 }}
-                transition={{ duration: 0.18 }}
+                className="group rounded-2xl border border-white/10 bg-white/5 p-5 text-neutral-50 shadow-lg backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent-200/60 hover:shadow-2xl focus-within:border-accent-200/60 focus-within:shadow-2xl"
+                whileHover={prefersReduced ? undefined : { y: -4, scale: 1.01 }}
+                transition={{ duration: 0.2 }}
               >
-                <h3 className="font-display font-bold text-xl mb-2 text-brand-700">
+                <h3 className="mb-2 font-display text-xl font-bold text-white">
                   {link.title}
                 </h3>
-                <p className="text-brand-600 text-sm mb-4">
+                <p className="mb-4 text-sm text-neutral-200">
                   {link.description}
                 </p>
                 <Link
                   key={index}
                   href={sanitizeHref(link.link)}
-                  className="text-foreground-strong font-semibold hover:underline inline-block"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent-100 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
                   aria-label={`${link.title}: ${link.linkText}`}
                 >
                   {link.linkText}
+                  <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
                 </Link>
               </motion.div>
             );

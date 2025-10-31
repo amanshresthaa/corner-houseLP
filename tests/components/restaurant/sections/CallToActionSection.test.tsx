@@ -52,7 +52,7 @@ jest.mock('next/link', () => {
 
 describe('CallToActionSection', () => {
   const mockCTAData = {
-    headline: 'Ready to Experience Girton\'s Thatched Nepalese Pub?',
+    headline: 'Ready to Experience Waterbeach\'s Thatched Nepalese Pub?',
     description: 'Reserve a table, explore the menu or plan an event – we\'d love to host you.',
     buttons: [
       {
@@ -78,7 +78,7 @@ describe('CallToActionSection', () => {
   it('renders headline and description correctly', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
-    expect(screen.getByText(/Ready to Experience Girton's Thatched Nepalese Pub\?/)).toBeInTheDocument();
+    expect(screen.getByText(/Ready to Experience Waterbeach's Thatched Nepalese Pub\?/)).toBeInTheDocument();
     expect(screen.getByText(/Reserve a table, explore the menu/)).toBeInTheDocument();
   });
 

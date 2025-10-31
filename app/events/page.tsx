@@ -12,7 +12,7 @@ export default function EventsPage() {
             <div className="max-w-4xl mx-auto">
               <FadeIn>
                 <h1 className="text-2xl md:text-3xl font-display font-bold text-white mb-3 leading-tight">
-                  Events at The Old Crown, Girton
+                  Events at The White Horse, Waterbeach
                 </h1>
                 <p className="text-base md:text-lg text-brand-100 mb-6 max-w-2xl mx-auto leading-relaxed">
                   Your Hub for Sport, Celebrations & Community!
@@ -42,7 +42,7 @@ export default function EventsPage() {
           <section className="mb-16">
             <div className="text-center mb-12">
               <p className="text-lg text-brand-600 max-w-3xl mx-auto leading-relaxed">
-                Looking for the perfect venue to host your next gathering, or simply catch the big game with friends? The Old Crown offers a unique and memorable setting for all occasions, blending the charm of a historic thatched pub with the excitement of live sports and an incredible culinary experience.
+                Looking for the perfect venue to host your next gathering, or simply catch the big game with friends? The White Horse offers a unique and memorable setting for all occasions, blending the charm of a historic thatched pub with the excitement of live sports and an incredible culinary experience.
               </p>
             </div>
           </section>
@@ -100,7 +100,7 @@ export default function EventsPage() {
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <p className="text-brand-600 mb-6 leading-relaxed">
-                    Never miss a moment of the game at The Old Crown! We&apos;re proud to show a wide range of live sports on Sky TV across our screens, bringing you all the thrilling action from football, rugby, cricket, and more. Gather your mates, grab a refreshing pint from our selection of real ales, and immerse yourself in the electric atmosphere. Whether it&apos;s a tense derby or an international showdown, our pub is the perfect spot to cheer on your favourite team.
+                    Never miss a moment of the game at The White Horse! We&apos;re proud to show a wide range of live sports on Sky TV across our screens, bringing you all the thrilling action from football, rugby, cricket, and more. Gather your mates, grab a refreshing pint from our selection of real ales, and immerse yourself in the electric atmosphere. Whether it&apos;s a tense derby or an international showdown, our pub is the perfect spot to cheer on your favourite team.
                   </p>
 
                   <div className="space-y-4">
@@ -161,12 +161,12 @@ export default function EventsPage() {
                   <span className="text-3xl" aria-hidden="true">🎊</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-700 mb-4">
-                  Host Your Unforgettable Event at The Old Crown
+                  Host Your Unforgettable Event at The White Horse
                 </h2>
               </div>
 
               <p className="text-lg text-brand-600 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
-                Beyond sports, The Old Crown is a versatile and picturesque venue, ideal for celebrating life&apos;s special moments, hosting business gatherings, or bringing people together. Our unique setting, combined with exceptional food and service, ensures your event will be truly memorable.
+                Beyond sports, The White Horse is a versatile and picturesque venue, ideal for celebrating life&apos;s special moments, hosting business gatherings, or bringing people together. Our unique setting, combined with exceptional food and service, ensures your event will be truly memorable.
               </p>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -231,7 +231,7 @@ export default function EventsPage() {
                   <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">
                     <span className="text-2xl" aria-hidden="true">🤝</span>
                     <div>
-                      <strong className="text-brand-700">Community Events:</strong> We love being a hub for Girton! Talk to us about hosting your local group&apos;s next meet-up or event.
+                      <strong className="text-brand-700">Community Events:</strong> We love being a hub for Waterbeach! Talk to us about hosting your local group&apos;s next meet-up or event.
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">

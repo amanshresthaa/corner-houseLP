@@ -23,7 +23,7 @@ export const server = setupServer(
       success: true,
       data: {
         nav: {
-          brand: "Old Crown Girton",
+          brand: "The White Horse Waterbeach",
           links: [
             { text: "Menu", href: "/menu" },
             { text: "About", href: "/about" },
@@ -31,7 +31,7 @@ export const server = setupServer(
           ]
         },
         footer: {
-          copyright: "© 2024 Old Crown Girton. All rights reserved."
+          copyright: "© 2024 The White Horse Waterbeach. All rights reserved."
         }
       },
       meta: {
@@ -72,9 +72,9 @@ export const server = setupServer(
     return HttpResponse.json({
       success: true,
       data: {
-        name: "Old Crown Girton",
+        name: "The White Horse Waterbeach",
         phone: "01223277217",
-        address: "89 High Street, Girton, Cambridge, CB3 0QQ",
+        address: "12 Green Side, Waterbeach, Cambridge, CB25 9HP",
         hours: {
           monday: "12:00-23:00",
           tuesday: "12:00-23:00",

@@ -9,24 +9,24 @@ import ChristmasMusicPlayer from "./_components/ChristmasMusicPlayer";
 const CHRISTMAS_CONTACT = getContactInfo();
 
 export const metadata = getSEOTags({
-  title: "Christmas Menu 2025 | Old Crown Girton – Festive Dining in Cambridge",
+  title: "Christmas Menu 2025 | The White Horse Waterbeach – Festive Dining in Cambridge",
   description:
-    "Enjoy Old Crown Girton's 2025 Christmas menu. Pick a starter, main, side and dessert, with mulled wine or another drink of their choice included. Chef's set menu costs £44.99 per guest.",
+    "Enjoy The White Horse Waterbeach's 2025 Christmas menu. Pick a starter, main, side and dessert, with mulled wine or another drink of their choice included. Chef's set menu costs £44.99 per guest.",
   keywords: [
     "Cambridge Christmas menu",
     "Christmas menu",
-    "Old Crown Girton Christmas",
-    "Girton festive dining",
+    "The White Horse Waterbeach Christmas",
+    "Waterbeach festive dining",
     "best Christmas menu 2025",
     "Christmas dining Cambridge",
-    "festive menu Girton",
+    "festive menu Waterbeach",
   ],
   canonicalUrlRelative: "/christmas-menu",
   openGraph: {
-    title: "Old Crown Girton Christmas Menu 2025 – Reserve Your Festive Table",
+    title: "The White Horse Waterbeach Christmas Menu 2025 – Reserve Your Festive Table",
     description:
-      "Celebrate in Cambridge with the Old Crown Girton Christmas menu. Choose your courses or book the chef's set menu with mulled wine or another drink of their choice included for £44.99 per guest.",
-    url: "https://oldcrowngirton.com/christmas-menu",
+      "Celebrate in Cambridge with the The White Horse Waterbeach Christmas menu. Choose your courses or book the chef's set menu with mulled wine or another drink of their choice included for £44.99 per guest.",
+    url: "https://whitehorsepub.co/christmas-menu",
   },
 });
 
@@ -182,10 +182,10 @@ const FULL_CHRISTMAS_MENU: FestiveMenu = {
     },
   ],
   footer: {
-    experience: "Celebrate Christmas at The Old Crown in Girton.",
-    location: "89 High St, Girton, Cambridge CB3 0QD",
-    contactLabel: "oldcrowngirton.com",
-    contactWebsite: "https://oldcrowngirton.com",
+    experience: "Celebrate Christmas at The White Horse in Waterbeach.",
+    location: "12 Green Side, Waterbeach, Cambridge CB25 9HP",
+    contactLabel: "whitehorsepub.co",
+    contactWebsite: "https://whitehorsepub.co",
     contactPhone: CHRISTMAS_CONTACT.phone.display,
     notes:
       "Our regular menu stays available alongside these dishes. Items may change if ingredients run out.",
@@ -282,9 +282,9 @@ export default async function ChristmasMenuPage() {
     {
       "@context": "https://schema.org",
       "@type": "Menu",
-      name: "Old Crown Girton Christmas Menu 2025",
+      name: "The White Horse Waterbeach Christmas Menu 2025",
       description: FULL_CHRISTMAS_MENU.description,
-      url: "https://oldcrowngirton.com/christmas-menu",
+      url: "https://whitehorsepub.co/christmas-menu",
       hasMenuSection: [
         ...FULL_CHRISTMAS_MENU.sections.map((section) => ({
           "@type": "MenuSection",
@@ -333,12 +333,12 @@ export default async function ChristmasMenuPage() {
           priceCurrency: "GBP",
           description: "Chef's Christmas Selections per person with mulled wine or another drink of their choice included.",
           availability: "https://schema.org/InStoreOnly",
-          url: "https://oldcrowngirton.com/christmas-menu",
+          url: "https://whitehorsepub.co/christmas-menu",
         },
       ],
       provider: {
         "@type": "Restaurant",
-        name: "The Old Crown Girton",
+        name: "The White Horse Waterbeach",
         telephone: contact.phone.primary,
         email: contact.email.primary,
         address: {
@@ -365,8 +365,8 @@ export default async function ChristmasMenuPage() {
         <SchemaInjector
           type="breadcrumb"
           data={[
-            { name: "Home", url: "https://oldcrowngirton.com/" },
-            { name: "Christmas Menu", url: "https://oldcrowngirton.com/christmas-menu" },
+            { name: "Home", url: "https://whitehorsepub.co/" },
+            { name: "Christmas Menu", url: "https://whitehorsepub.co/christmas-menu" },
           ]}
           page="christmas-menu"
         />
@@ -386,12 +386,12 @@ export default async function ChristmasMenuPage() {
             </FadeIn>
             <FadeInUp>
               <h1 id="christmas-hero-heading" className="text-3xl md:text-5xl font-display font-bold leading-tight">
-                Christmas Menu 2025 at Old Crown Girton
+                Christmas Menu 2025 at The White Horse Waterbeach
               </h1>
             </FadeInUp>
             <FadeInUp>
               <p className="text-lg md:text-xl text-neutral-100 max-w-3xl mx-auto leading-relaxed">
-                Join us for a warm festive meal in Girton. Pick your favourites from each course and enjoy mulled wine or another drink of their choice the moment you arrive.
+                Join us for a warm festive meal in Waterbeach. Pick your favourites from each course and enjoy mulled wine or another drink of their choice the moment you arrive.
               </p>
             </FadeInUp>
             <FadeInUp>
@@ -454,7 +454,7 @@ export default async function ChristmasMenuPage() {
               <div className="flex flex-wrap justify-center gap-3 text-sm text-neutral-100/90">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20">
                   <span aria-hidden="true" role="img">📍</span>
-                  Girton, Cambridge
+                  Waterbeach, Cambridge
                 </span>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20">
                   <span aria-hidden="true" role="img">🎉</span>
@@ -639,7 +639,7 @@ export default async function ChristmasMenuPage() {
                   Why guests love our Christmas menu
                 </h2>
                 <p className="text-lg text-brand-600 leading-relaxed">
-                  We mix easy-going Old Crown hospitality with bold Nepalese flavour so your festive meal feels relaxed and special.
+                  We mix easy-going The White Horse hospitality with bold Nepalese flavour so your festive meal feels relaxed and special.
                 </p>
               </div>
             </FadeIn>
@@ -686,7 +686,7 @@ export default async function ChristmasMenuPage() {
                       className="inline-flex items-center gap-3 rounded-lg border border-brand-200 px-5 py-3 text-brand-700 hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300"
                     >
                       <span aria-hidden="true" role="img">📍</span>
-                      Visit Old Crown Girton
+                      Visit The White Horse Waterbeach
                     </Link>
                   </div>
                   <p className="text-sm text-brand-500 leading-relaxed">

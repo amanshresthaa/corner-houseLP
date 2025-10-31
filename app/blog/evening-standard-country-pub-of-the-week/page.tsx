@@ -9,20 +9,20 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import ErrorFallback from '@/components/ErrorFallback';
 
 export const metadata = getSEOTags({
-  title: "Evening Standard Names Old Crown Girton Country Pub of the Week",
-  description: "The Evening Standard celebrates Old Crown Girton as Country Pub of the Week, praising our Nepalese cooking, village welcome, and ever-evolving menu.",
+  title: "Evening Standard Names The White Horse Waterbeach Country Pub of the Week",
+  description: "The Evening Standard celebrates The White Horse Waterbeach as Country Pub of the Week, praising our Nepalese cooking, village welcome, and ever-evolving menu.",
   keywords: [
     "Evening Standard review",
     "Country pub of the week",
-    "Old Crown Girton press",
+    "The White Horse Waterbeach press",
     "Cambridge pub press feature",
     "Nepalese food Cambridge review"
   ],
   canonicalUrlRelative: "/blog/evening-standard-country-pub-of-the-week",
   openGraph: {
-    title: "Old Crown Girton Featured as Country Pub of the Week",
-    description: "David Ellis spotlights Old Crown Girton in the Evening Standard, applauding our Nepalese cooking and vibrant village pub atmosphere.",
-    url: "https://oldcrowngirton.com/blog/evening-standard-country-pub-of-the-week",
+    title: "The White Horse Waterbeach Featured as Country Pub of the Week",
+    description: "David Ellis spotlights The White Horse Waterbeach in the Evening Standard, applauding our Nepalese cooking and vibrant village pub atmosphere.",
+    url: "https://whitehorsepub.co/blog/evening-standard-country-pub-of-the-week",
     type: "article",
   },
 });
@@ -33,14 +33,14 @@ export default function EveningStandardPressPage() {
   const identity = getRestaurantIdentity();
   const postalAddress = getPostalAddressSchema();
   const post = {
-    title: "Evening Standard Spotlights The Old Crown, Girton",
-    excerpt: "David Ellis names Old Crown Girton the Evening Standard’s Country Pub of the Week, highlighting our Nepalese cooking, welcoming atmosphere, and evolving menu.",
+    title: "Evening Standard Spotlights The White Horse, Waterbeach",
+    excerpt: "David Ellis names The White Horse Waterbeach the Evening Standard’s Country Pub of the Week, highlighting our Nepalese cooking, welcoming atmosphere, and evolving menu.",
     content: `
-      <p>The Evening Standard’s <em>Country Pub of the Week</em> column has shone a light on Old Crown Girton, celebrating how our historic thatched pub keeps locals coming back with flavourful Nepalese cooking and a relaxed village welcome.</p>
+      <p>The Evening Standard’s <em>Country Pub of the Week</em> column has shone a light on The White Horse Waterbeach, celebrating how our historic thatched pub keeps locals coming back with flavourful Nepalese cooking and a relaxed village welcome.</p>
 
       <p>Reviewer David Ellis praised the way our menu blends first-rate Nepalese dishes with the familiar comforts of a proper pub — from fresh momo to televised matches, a dog-friendly garden, and free parking for easy visits.</p>
 
-      <blockquote cite="https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html">
+      <blockquote cite="https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html">
         “The changes keep locals coming back. Adapt or die, that’s the ticket.”
       </blockquote>
 
@@ -56,15 +56,15 @@ export default function EveningStandardPressPage() {
     image: Images.blog.thatchedExterior,
     category: "Press & Media",
     author: {
-      name: "Old Crown Team",
-      bio: "The team keeping Girton’s historic thatched pub lively, welcoming, and delicious."
+      name: "The White Horse Team",
+      bio: "The team keeping Waterbeach’s historic thatched pub lively, welcoming, and delicious."
     },
     publishedDate: "2024-12-19T09:00:00+00:00",
     modifiedDate: "2024-12-19T09:00:00+00:00",
     readTime: "2 min read",
     slug: "evening-standard-country-pub-of-the-week",
-    tags: ["press coverage", "Evening Standard", "Country pub of the week", "Old Crown Girton"],
-    articleUrl: "https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html"
+    tags: ["press coverage", "Evening Standard", "Country pub of the week", "The White Horse Waterbeach"],
+    articleUrl: "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html"
   };
 
   return (
@@ -81,10 +81,10 @@ export default function EveningStandardPressPage() {
         {
           "@context": "https://schema.org",
           "@type": "NewsArticle",
-          "@id": "https://oldcrowngirton.com/blog/evening-standard-country-pub-of-the-week#newsarticle",
+          "@id": "https://whitehorsepub.co/blog/evening-standard-country-pub-of-the-week#newsarticle",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/evening-standard-country-pub-of-the-week",
+          "url": "https://whitehorsepub.co/blog/evening-standard-country-pub-of-the-week",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -97,17 +97,17 @@ export default function EveningStandardPressPage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/evening-standard-country-pub-of-the-week"
+            "@id": "https://whitehorsepub.co/blog/evening-standard-country-pub-of-the-week"
           },
           "image": {
             "@type": "ImageObject",
-            "url": "https://oldcrowngirton.com/" + post.image,
+            "url": "https://whitehorsepub.co/" + post.image,
             "width": 1200,
             "height": 630
           },
@@ -117,8 +117,8 @@ export default function EveningStandardPressPage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "sameAs": [
             post.articleUrl
@@ -127,18 +127,18 @@ export default function EveningStandardPressPage() {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "@id": "https://oldcrowngirton.com/blog/evening-standard-country-pub-of-the-week#webpage",
+          "@id": "https://whitehorsepub.co/blog/evening-standard-country-pub-of-the-week#webpage",
           "name": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/evening-standard-country-pub-of-the-week",
+          "url": "https://whitehorsepub.co/blog/evening-standard-country-pub-of-the-week",
           "isPartOf": {
             "@type": "WebSite",
-            "name": "Old Crown Girton",
-            "url": "https://oldcrowngirton.com/"
+            "name": "The White Horse Waterbeach",
+            "url": "https://whitehorsepub.co/"
           },
           "about": {
             "@type": "Restaurant",
-            "name": "Old Crown Girton",
+            "name": "The White Horse Waterbeach",
             "servesCuisine": ["Nepalese", "British"]
           },
           "mainContentOfPage": {

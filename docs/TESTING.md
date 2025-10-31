@@ -406,4 +406,4 @@ test.describe('Feature Area', () => {
 });
 ```
 
-This testing infrastructure ensures comprehensive coverage of responsive behavior, accessibility compliance, and cross-device compatibility for the Old Crown restaurant website.
+This testing infrastructure ensures comprehensive coverage of responsive behavior, accessibility compliance, and cross-device compatibility for the The White Horse restaurant website.

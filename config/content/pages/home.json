@@ -1,11 +1,15 @@
 {
   "hero": {
-    "title": "The Old Crown Girton: Historic Thatched Pub & Authentic Nepalese Restaurant",
-    "subtitle": "Welcome to Girton's unique dining destination, where the largest thatched pub in the country serves exceptional Nepalese cuisine alongside beloved British pub classics.",
-    "description": "Just minutes from Cambridge and Girton College, we're your family-friendly, dog-welcoming village hub for memorable meals and community gathering.",
+    "title": "Reborn White Horse Waterbeach \u2013 Nepalese soul, village heart",
+    "subtitle": "England\u2019s largest thatched pub reopened February 2025 with Himalayan cooking, Sky Sports and garden cabins for every gathering.",
+    "description": "Call or email to reserve for Nepalese feasts, Sunday roasts or takeaway nights opposite Waterbeach village green.",
     "cta": {
-      "primary": "Book Online",
-      "secondary": "View Menu"
+      "primary": "Call 01223 375578",
+      "secondary": "View Menu",
+      "primaryHref": "tel:+441223375578",
+      "secondaryHref": "/menu",
+      "secondaryExternal": false,
+      "primaryExternal": true
     }
   },
   "sections": {
@@ -13,77 +17,78 @@
       "title": "What Makes Us Special",
       "items": [
         {
-          "icon": "🏛️",
-          "title": "Historic Thatched Building",
-          "description": "Largest in the country"
+          "icon": "\ud83c\udf5b",
+          "title": "Nepalese + pub classics",
+          "description": "Gautam family recipes alongside comforting British favourites"
         },
         {
-          "icon": "🍛",
-          "title": "Authentic Nepalese Food",
-          "description": "Traditional recipes"
+          "icon": "\ud83c\udfe1",
+          "title": "Village landmark",
+          "description": "England\u2019s largest thatched pub, preserved by Waterbeach community"
         },
         {
-          "icon": "👨‍👩‍👧‍👦",
-          "title": "Family Friendly",
-          "description": "Kids welcome until 9pm"
+          "icon": "\ud83c\udf89",
+          "title": "Weekly traditions",
+          "description": "Quiz night Wednesdays, Sky & TNT Sports and takeaway Fridays"
         },
         {
-          "icon": "🐕",
-          "title": "Dog Friendly",
-          "description": "Well-behaved dogs welcome"
+          "icon": "\ud83d\udc3e",
+          "title": "Welcoming to all",
+          "description": "Families, mixed groups and well-behaved dogs share the same warm welcome"
         }
       ]
     },
     "pressFeature": {
       "label": "In the press",
-      "eyebrow": "Country pub of the week",
-      "title": "Evening Standard spotlights The Old Crown, Girton",
-      "summary": "David Ellis praises our welcoming village pub, authentic Nepalese cooking, and ever-evolving menu in the Evening Standard's Country Pub of the Week column.",
-      "quote": "The changes keep locals coming back.",
-      "quoteAttribution": "David Ellis, Evening Standard",
+      "eyebrow": "Ely Standard",
+      "title": "Waterbeach celebrates The White Horse relaunch",
+      "summary": "Local media spotlight the February 2025 reopening, praising authentic Nepalese food, a revitalised pub interior and a renewed community mission.",
+      "quote": "The locals were more excited than I am\u2014they thought it would be flats, but the regulars turned up and were so welcoming.",
+      "quoteAttribution": "Subodh Gautam via Ely Standard",
       "cta": {
-        "text": "Read the review",
-        "href": "https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html"
+        "text": "Read the coverage",
+        "href": "https://www.elystandard.co.uk/news/24942044.white-horse-waterbeach-reopens-nepalese-restaurant/"
       }
     },
     "quickLinks": [
       {
-        "title": "Community & Events",
-        "description": "Quiz nights, seasonal gatherings & live sports – see what's coming up.",
+        "title": "What\u2019s On Weekly",
+        "description": "See quiz night line-ups, Sky & TNT fixtures and seasonal garden gatherings.",
         "link": "/events",
-        "linkText": "View Events →"
+        "linkText": "See events \u2192"
       },
       {
-        "title": "Heritage & Story",
-        "description": "Discover how our thatched village pub evolved into a Nepalese + British hub.",
-        "link": "/about",
-        "linkText": "Explore Heritage →"
-      },
-      {
-        "title": "Our Menu",
-        "description": "Authentic Nepalese dishes alongside classic pub favorites.",
+        "title": "Menus & Takeaway",
+        "description": "Browse Nepalese signatures, Sunday masala roasts and Friday takeaway favourites.",
         "link": "/menu",
-        "linkText": "View Menu →"
+        "linkText": "Explore menus \u2192"
+      },
+      {
+        "title": "Plan Your Visit",
+        "description": "Directions, parking tips and accessibility guidance opposite the village green.",
+        "link": "/contact",
+        "linkText": "Get directions \u2192"
       }
     ],
     "cta": {
-      "headline": "Ready to Experience Girton's Thatched Nepalese Pub?",
-      "description": "Reserve a table, explore the menu or plan an event – we'd love to host you.",
+      "headline": "Ready to gather at Waterbeach\u2019s thatched pub?",
+      "description": "Call or email for table bookings, group enquiries or takeaway collections \u2013 we\u2019ll look after the details.",
       "buttons": [
         {
-          "text": "View Menu",
-          "href": "/menu",
+          "text": "Call 01223 375578",
+          "href": "tel:+441223375578",
+          "variant": "brand",
+          "external": true
+        },
+        {
+          "text": "Email the team",
+          "href": "mailto:hellothewhitehorsewaterbeach@gmail.com",
           "variant": "accent",
-          "key": "viewMenu"
+          "external": true
         },
         {
-          "text": "What's On",
+          "text": "View upcoming events",
           "href": "/events",
-          "variant": "brand"
-        },
-        {
-          "text": "Book Online",
-          "href": "/book-a-table",
           "variant": "crimson"
         }
       ]

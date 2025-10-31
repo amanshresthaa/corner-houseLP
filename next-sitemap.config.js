@@ -1,6 +1,6 @@
 module.exports = {
-  // Old Crown Girton official domain
-  siteUrl: process.env.SITE_URL || "https://oldcrowngirton.com/",
+  // The White Horse Waterbeach official domain
+  siteUrl: process.env.SITE_URL || "https://whitehorsepub.co/",
   generateRobotsTxt: true,
   // Use this to exclude routes from the sitemap (e.g. internal APIs, well-known files, and static asset entries)
   // By default, NextJS app router metadata files are excluded (https://nextjs.org/docs/app/api-reference/file-conventions/metadata)

@@ -5,14 +5,14 @@ import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
-  title: "Terms of Service | Old Crown Girton - Restaurant Booking & Service Conditions",
-  description: "Terms of service for Old Crown Girton covering restaurant bookings, table reservations, cancellations and dining policies for our Cambridge pub.",
-  keywords: ["Old Crown Girton terms", "restaurant booking terms", "pub terms of service Cambridge", "dining terms conditions"],
+  title: "Terms of Service | The White Horse Waterbeach - Restaurant Booking & Service Conditions",
+  description: "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations, cancellations and dining policies for our Cambridge pub.",
+  keywords: ["The White Horse Waterbeach terms", "restaurant booking terms", "pub terms of service Cambridge", "dining terms conditions"],
   canonicalUrlRelative: "/tos",
   openGraph: {
-    title: "Terms of Service | Old Crown Girton",
-    description: "Terms of service for Old Crown Girton covering restaurant bookings, table reservations and dining policies.",
-    url: "https://oldcrowngirton.com//tos",
+    title: "Terms of Service | The White Horse Waterbeach",
+    description: "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations and dining policies.",
+    url: "https://whitehorsepub.co//tos",
   },
 });
 
@@ -44,14 +44,14 @@ export default function TOS() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com//tos#webpage",
+            "@id": "https://whitehorsepub.co//tos#webpage",
             "name": `Terms of Service - ${restaurantName}`,
             "description": `Terms of service and conditions for ${restaurantName} restaurant bookings, reservations and dining services.`,
-            "url": "https://oldcrowngirton.com//tos",
+            "url": "https://whitehorsepub.co//tos",
             "isPartOf": {
               "@type": "WebSite",
               "name": restaurantName,
-              "url": "https://oldcrowngirton.com/"
+              "url": "https://whitehorsepub.co/"
             },
             "about": {
               "@type": "LocalBusiness",
@@ -114,7 +114,7 @@ export default function TOS() {
                 <div className="space-y-8">
                   <section>
                     <p className="text-lg leading-relaxed text-neutral-700">
-                      These Terms of Service govern your use of Old Crown Girton's website and services. By making a booking, placing an order, or using our site, you agree to these terms.
+                      These Terms of Service govern your use of The White Horse Waterbeach's website and services. By making a booking, placing an order, or using our site, you agree to these terms.
                     </p>
                   </section>
 
@@ -163,7 +163,7 @@ export default function TOS() {
                   <section>
                     <h2 className="text-2xl font-display font-bold text-brand-700 mb-4">5. Intellectual Property</h2>
                     <p className="leading-relaxed">
-                      All website content, branding, and materials are the property of Old Crown Girton or its licensors. You may not reproduce, distribute, or use content without written permission.
+                      All website content, branding, and materials are the property of The White Horse Waterbeach or its licensors. You may not reproduce, distribute, or use content without written permission.
                     </p>
                   </section>
 

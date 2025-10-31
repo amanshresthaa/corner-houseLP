@@ -20,13 +20,13 @@ type PressArticle = {
 const HERO_PRESS_FEATURE: PressFeatureContent = {
   label: "In the press",
   eyebrow: "Country pub of the week",
-  title: "Evening Standard spotlights The Old Crown, Girton",
+  title: "Evening Standard spotlights The White Horse, Waterbeach",
   summary: "David Ellis praises our welcoming village pub, authentic Nepalese cooking, and ever-evolving menu in the Evening Standard's Country Pub of the Week column.",
   quote: "The changes keep locals coming back.",
   quoteAttribution: "David Ellis, Evening Standard",
   cta: {
     text: "Read the review",
-    href: "https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html",
+    href: "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html",
   },
 };
 
@@ -34,7 +34,7 @@ const FOOD_HYGIENE_CARD = {
   ratingValue: "5",
   ratingLabel: "Very Good",
   inspectedOn: "18 February 2025",
-  href: "https://ratings.food.gov.uk/business/1750898/old-crown-girton?utm_source=chatgpt.com",
+  href: "https://ratings.food.gov.uk/business/1750898/the-white-horse-girton?utm_source=chatgpt.com",
 };
 
 const PRESS_ARTICLES: PressArticle[] = [
@@ -44,36 +44,36 @@ const PRESS_ARTICLES: PressArticle[] = [
     summary: "David Ellis highlights our Nepalese kitchen, warm village welcome, and ever-evolving pub menu.",
     source: "Evening Standard",
     date: "19 December 2024",
-    href: "https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html",
+    href: "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html",
     ctaLabel: "Full Evening Standard feature",
     isExternal: true,
     tags: ["Press Feature"],
   },
   {
     id: "cambs-edition-royal-makeover",
-    title: "Cambs Edition: The Old Crown’s Royal Makeover",
+    title: "Cambs Edition: The White Horse’s Royal Makeover",
     summary: "Cambridge Edition charts the revitalised interiors, bold Nepalese flavours, and the team leading the transformation.",
     source: "Cambridge Edition",
     date: "20 September 2024",
-    href: "https://cambsedition.co.uk/food-drink/the-old-crown-a-royal-makeover/?utm_source=chatgpt.com",
+    href: "https://cambsedition.co.uk/food-drink/the-the-white-horse-a-royal-makeover/?utm_source=chatgpt.com",
     ctaLabel: "Read Cambs Edition feature",
     isExternal: true,
     tags: ["Lifestyle"],
   },
   {
     id: "cambridge-independent-reopening",
-    title: "Cambridge Independent: Revamped Old Crown Reopens",
+    title: "Cambridge Independent: Revamped The White Horse Reopens",
     summary: "Local press covers our launch party, refreshed spaces, and renewed community focus after the refurbishment.",
     source: "Cambridge Independent",
     date: "21 March 2018",
-    href: "https://www.cambridgeindependent.co.uk/lifestyle/revamped-old-crown-in-girton-celebrates-reopening-with-launch-party-9052915/?utm_source=chatgpt.com",
+    href: "https://www.cambridgeindependent.co.uk/lifestyle/revamped-the-white-horse-in-girton-celebrates-reopening-with-launch-party-9052915/?utm_source=chatgpt.com",
     ctaLabel: "Read Cambridge Independent story",
     isExternal: true,
     tags: ["Community"],
   },
   {
     id: "camra-guide",
-    title: "CAMRA Guide: Old Crown Pub Profile",
+    title: "CAMRA Guide: The White Horse Pub Profile",
     summary: "Cambridge CAMRA’s guide spotlights our historic building, expansive garden, and multi-space dining experience.",
     source: "Cambridge & District CAMRA",
     date: "CAMRA listing",
@@ -85,10 +85,10 @@ const PRESS_ARTICLES: PressArticle[] = [
   {
     id: "visit-south-cambs",
     title: "Visit South Cambs: Hospitality Spotlight",
-    summary: "South Cambridgeshire’s visitor guide features Old Crown Girton as a must-visit hospitality destination.",
+    summary: "South Cambridgeshire’s visitor guide features The White Horse Waterbeach as a must-visit hospitality destination.",
     source: "Visit South Cambs",
     date: "Updated 11 September 2025",
-    href: "https://visitsouthcambs.co.uk/hospitality/old-crown-girton/?utm_source=chatgpt.com",
+    href: "https://visitsouthcambs.co.uk/hospitality/the-white-horse-girton/?utm_source=chatgpt.com",
     ctaLabel: "View Visit South Cambs listing",
     isExternal: true,
     tags: ["Tourism"],
@@ -96,7 +96,7 @@ const PRESS_ARTICLES: PressArticle[] = [
 ];
 
 const PRESS_FACTS = [
-  "England's largest thatched pub, located just outside Cambridge in Girton village.",
+  "England's largest thatched pub, located just outside Cambridge in Waterbeach village.",
   "Authentic Nepalese cuisine paired with British pub classics from our award-winning kitchen team.",
   "Family-friendly, dog-welcoming venue with spacious garden, private dining areas, and live sports.",
   "Featured as the Evening Standard's \"Country Pub of the Week\".",
@@ -114,20 +114,20 @@ const MEDIA_CONTACT = {
 };
 
 export const metadata = getSEOTags({
-  title: "Press & Media | Old Crown Girton - Evening Standard Feature & Media Resources",
-  description: "Explore press coverage of The Old Crown Girton, including our Evening Standard feature, media highlights, and press enquiry information for journalists.",
+  title: "Press & Media | The White Horse Waterbeach - Evening Standard Feature & Media Resources",
+  description: "Explore press coverage of The White Horse Waterbeach, including our Evening Standard feature, media highlights, and press enquiry information for journalists.",
   keywords: [
-    "Old Crown Girton press",
+    "The White Horse Waterbeach press",
     "Cambridge pub media coverage",
     "Evening Standard country pub of the week",
     "Nepalese restaurant press kit",
-    "Girton thatched pub media resources",
+    "Waterbeach thatched pub media resources",
   ],
   canonicalUrlRelative: "/press",
   openGraph: {
-    title: "Press & Media | Old Crown Girton",
-    description: "Discover media coverage, press resources, and contact details for Old Crown Girton's historic thatched pub.",
-    url: "https://oldcrowngirton.com//press",
+    title: "Press & Media | The White Horse Waterbeach",
+    description: "Discover media coverage, press resources, and contact details for The White Horse Waterbeach's historic thatched pub.",
+    url: "https://whitehorsepub.co//press",
   },
 });
 
@@ -145,14 +145,14 @@ export default function PressPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com//press#webpage",
-            "name": "Press & Media - Old Crown Girton",
-            "description": "Media coverage, press resources, and contact information for The Old Crown Girton.",
-            "url": "https://oldcrowngirton.com//press",
+            "@id": "https://whitehorsepub.co//press#webpage",
+            "name": "Press & Media - The White Horse Waterbeach",
+            "description": "Media coverage, press resources, and contact information for The White Horse Waterbeach.",
+            "url": "https://whitehorsepub.co//press",
             "isPartOf": {
               "@type": "WebSite",
               "name": IDENTITY.displayName,
-              "url": "https://oldcrowngirton.com/"
+              "url": "https://whitehorsepub.co/"
             },
             "about": {
               "@type": "LocalBusiness",
@@ -168,13 +168,13 @@ export default function PressPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://oldcrowngirton.com/"
+                "item": "https://whitehorsepub.co/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Press & Media",
-                "item": "https://oldcrowngirton.com//press"
+                "item": "https://whitehorsepub.co//press"
               }
             ]
           }
@@ -232,7 +232,7 @@ export default function PressPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-outline border-white text-white hover:bg-white/10 hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
-                        aria-label="View Old Crown Girton Food Standards Agency hygiene rating (opens in new tab)"
+                        aria-label="View The White Horse Waterbeach Food Standards Agency hygiene rating (opens in new tab)"
                         style={{ touchAction: 'manipulation' }}
                       >
                         View rating ↗
@@ -352,7 +352,7 @@ export default function PressPage() {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
-                        href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: Old Crown Girton`}
+                        href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: The White Horse Waterbeach`}
                         className="btn bg-brand-700 text-white hover:bg-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                         style={{ touchAction: 'manipulation' }}
                       >

@@ -274,7 +274,7 @@ const OptimizedMenuItemCard = memoryMemo<OptimizedMenuItemProps>(({
       {imageInfo.shouldShow && (
         <NetworkAwareImage
           src={imageInfo.url!}
-          alt={`${item.name} - ${section} from Old Crown Girton`}
+          alt={`${item.name} - ${section} from The White Horse Waterbeach`}
           item={item}
           priority={priority}
         />

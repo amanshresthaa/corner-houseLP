@@ -6,14 +6,14 @@ import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
-  title: "Menu Information & Dietary Requirements | Old Crown Girton - Allergens, Dietary Options & Food Safety",
-  description: "Comprehensive allergen information, dietary requirements, and menu transparency for Old Crown Girton. We comply with UK Food Information Regulations 2014 and Natasha's Law.",
-  keywords: ["Old Crown Girton allergens", "dietary requirements Cambridge", "gluten free restaurant", "vegetarian Girton", "food allergies", "menu information", "Natasha's Law compliance"],
+  title: "Menu Information & Dietary Requirements | The White Horse Waterbeach - Allergens, Dietary Options & Food Safety",
+  description: "Comprehensive allergen information, dietary requirements, and menu transparency for The White Horse Waterbeach. We comply with UK Food Information Regulations 2014 and Natasha's Law.",
+  keywords: ["The White Horse Waterbeach allergens", "dietary requirements Cambridge", "gluten free restaurant", "vegetarian Waterbeach", "food allergies", "menu information", "Natasha's Law compliance"],
   canonicalUrlRelative: "/menu-information",
   openGraph: {
-    title: "Menu Information & Dietary Requirements | Old Crown Girton",
-    description: "Complete allergen information and dietary options at Old Crown Girton. Safe dining for all dietary requirements.",
-    url: "https://oldcrowngirton.com//menu-information",
+    title: "Menu Information & Dietary Requirements | The White Horse Waterbeach",
+    description: "Complete allergen information and dietary options at The White Horse Waterbeach. Safe dining for all dietary requirements.",
+    url: "https://whitehorsepub.co//menu-information",
   },
 });
 
@@ -413,13 +413,13 @@ export default function MenuInformationPage() {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "@id": "https://oldcrowngirton.com//menu-information#faqpage",
+            "@id": "https://whitehorsepub.co//menu-information#faqpage",
             "name": `Menu Information & Dietary Requirements - ${restaurantName}`,
             "description": `Comprehensive allergen information, dietary requirements, and food safety information for ${restaurantName} restaurant.`,
-            "url": "https://oldcrowngirton.com//menu-information",
+            "url": "https://whitehorsepub.co//menu-information",
             "mainEntity": faqItems.map((item, index) => ({
               "@type": "Question",
-              "@id": `https://oldcrowngirton.com//menu-information#faq-${index}`,
+              "@id": `https://whitehorsepub.co//menu-information#faq-${index}`,
               "name": item.title,
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -446,14 +446,14 @@ export default function MenuInformationPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com//menu-information#webpage",
+            "@id": "https://whitehorsepub.co//menu-information#webpage",
             "name": "Menu Information & Dietary Requirements",
-            "description": "Complete guide to allergens, dietary options and food safety at Old Crown Girton",
-            "url": "https://oldcrowngirton.com//menu-information",
+            "description": "Complete guide to allergens, dietary options and food safety at The White Horse Waterbeach",
+            "url": "https://whitehorsepub.co//menu-information",
             "isPartOf": {
               "@type": "WebSite",
-              "name": "Old Crown Girton",
-              "url": "https://oldcrowngirton.com/"
+              "name": "The White Horse Waterbeach",
+              "url": "https://whitehorsepub.co/"
             },
             "speakable": {
               "@type": "SpeakableSpecification",

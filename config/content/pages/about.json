@@ -1,36 +1,36 @@
 {
   "hero": {
-    "title": "About Himalayan Spice",
-    "subtitle": "A unique blend of authentic Nepalese cuisine and traditional British pub culture"
+    "title": "About The White Horse Waterbeach",
+    "subtitle": "England's largest thatched pub, relaunched February 2025 with Himalayan hospitality and village spirit."
   },
   "story": {
     "title": "Our Story",
-    "introduction": "Located in the picturesque village of Girton, just minutes from Cambridge, Old Crown offers a truly unique dining experience. We proudly serve authentic Nepalese cuisine alongside traditional pub classics, creating a warm and welcoming atmosphere for locals and visitors alike.",
+    "introduction": "Opposite Waterbeach village green, The White Horse has anchored the community since its 1890 coaching inn days. Saved from redevelopment and revived by Lapen Inns on 6 February 2025, we now pair authentic Nepalese cooking with the warmth of a classic British pub.",
     "timeline": [
       {
-        "period": "Historic Beginnings",
-        "title": "The Village Heart",
-        "description": "For centuries, The Old Crown has been at the heart of Girton village life. Our historic thatched building - recognized as the largest thatched pub in the country - has witnessed countless community gatherings and celebrations."
+        "period": "1890s",
+        "title": "Coaching Inn Origins",
+        "description": "Built for boat crews and railway travellers, the thatched White Horse quickly became Waterbeach's social hub."
       },
       {
-        "period": "Culinary Evolution",
-        "title": "Culinary Evolution",
-        "description": "Under various managements, The Old Crown experimented with different culinary directions, including a period as an upscale gastropub. Each era added to our rich tapestry while maintaining our essential village pub character."
+        "period": "2024",
+        "title": "Community Preservation",
+        "description": "Locals rallied to protect the pub from redevelopment, restoring its garden cabins, terrace and historic frontage."
       },
       {
-        "period": "Today",
-        "title": "The Nepalese-British Fusion",
-        "description": "Under current management, we've discovered our unique identity: combining authentic Nepalese cuisine with traditional British pub classics. This fusion represents Cambridge's multicultural community while honoring our heritage."
+        "period": "2025",
+        "title": "Lapen Inns Relaunch",
+        "description": "On 6 February 2025 the Gautam family reopened the doors, introducing a Nepalese kitchen while keeping cask ales, Sky Sports and village events alive."
       }
     ]
   },
   "cta": {
-    "title": "Ready to Book?",
-    "description": "Experience the perfect blend of Nepalese hospitality and British pub tradition.",
-    "button": "Book Online",
+    "title": "Plan Your Visit",
+    "description": "Call or email to reserve a table, enquire about events or arrange takeaway from Waterbeach's revived thatched pub.",
+    "button": "Call 01223 375578",
     "contact": {
-      "address": "89 High St, Girton, Cambridge CB3 0QQ",
-      "hours": "See footer for full hours"
+      "address": "12 Green Side, Waterbeach, Cambridge CB25 9HP",
+      "hours": "Kitchen: Mon-Fri 12:00-15:00 & 17:00-22:00; Sat 12:00-22:00; Sun 10:00-20:00"
     }
   }
 }

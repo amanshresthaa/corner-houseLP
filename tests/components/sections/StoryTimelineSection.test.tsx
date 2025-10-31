@@ -25,7 +25,7 @@ describe('StoryTimelineSection', () => {
     {
       period: 'Historic Beginnings',
       title: 'The Village Heart',
-      description: 'For centuries, The Old Crown has been at the heart of Girton village life.'
+      description: 'For centuries, The White Horse has been at the heart of Waterbeach village life.'
     },
     {
       period: 'Culinary Evolution',
@@ -41,7 +41,7 @@ describe('StoryTimelineSection', () => {
 
   const mockProps = {
     title: 'Our Story',
-    introduction: 'Located in the picturesque village of Girton, we have a rich history.',
+    introduction: 'Located in the picturesque village of Waterbeach, we have a rich history.',
     timeline: mockTimeline
   };
 
@@ -49,7 +49,7 @@ describe('StoryTimelineSection', () => {
     render(<StoryTimelineSection {...mockProps} />);
     
     expect(screen.getByText('Our Story')).toBeInTheDocument();
-    expect(screen.getByText('Located in the picturesque village of Girton, we have a rich history.')).toBeInTheDocument();
+    expect(screen.getByText('Located in the picturesque village of Waterbeach, we have a rich history.')).toBeInTheDocument();
   });
 
   it('renders all timeline periods correctly', () => {
@@ -66,7 +66,7 @@ describe('StoryTimelineSection', () => {
     expect(screen.getByText('Modern Era')).toBeInTheDocument();
     
     // Check all descriptions are rendered
-    expect(screen.getByText(/For centuries, The Old Crown has been at the heart/)).toBeInTheDocument();
+    expect(screen.getByText(/For centuries, The White Horse has been at the heart/)).toBeInTheDocument();
     expect(screen.getByText(/The pub adapted to different culinary trends/)).toBeInTheDocument();
     expect(screen.getByText(/Today we combine traditional and contemporary/)).toBeInTheDocument();
   });

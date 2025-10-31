@@ -56,7 +56,7 @@ Deliver a single canonical restaurant metadata source (`config/restaurant.json` 
   ```json
   {
     "identity": { "name": "...", "tagline": "...", ... },
-    "contact": { "phone": { "primary": "+441...", "display": "01223 277217", "tel": "tel:+441223277217" }, "email": { ... } },
+    "contact": { "phone": { "primary": "+441...", "display": "01223 375578", "tel": "tel:+441223375578" }, "email": { ... } },
     "address": { "street": "...", "city": "...", "postcode": "...", "geo": { "lat": 52.24, "lng": 0.08 }, "map": { "google": "...", "apple": "..." } },
     "hours": { "kitchen": { ... }, "bar": { ... }, "notes": [...] },
     "social": { "facebook": "...", "instagram": "...", "website": "..." }

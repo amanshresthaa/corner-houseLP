@@ -28,7 +28,7 @@ describe('schemas', () => {
 
   test('RestaurantSchema minimal', () => {
     const r = RestaurantSchema.parse({
-      name: 'Old Crown', phone: 'x', email: 'y',
+      name: 'The White Horse', phone: 'x', email: 'y',
       address: { street: 'a', city: 'b', state: 'c', zip: 'd' },
       hours: { Mon: '9-5' }
     });

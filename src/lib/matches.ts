@@ -35,7 +35,7 @@ export async function getUpcomingMatches(count = 6): Promise<Match[]> {
       homeTeam: home,
       awayTeam: away,
       startDate: d.toISOString(),
-      venue: 'Old Crown Screen',
+      venue: 'The White Horse Screen',
       competition: 'Premier League',
       preview: '',
     });

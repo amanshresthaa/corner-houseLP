@@ -1,43 +1,55 @@
 "use client";
 
-import React, { Suspense, useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
-
-// Critical components - load immediately, no lazy loading
 import Navbar from '@/components/restaurant/Navbar';
 import ClientFooter from '@/components/ClientFooter';
 import Showcase from '@/components/slideshow/Showcase';
-import AboutSection from '@/app/_components/AboutSection';
-import MenuHighlights from '@/app/_components/MenuHighlights';
-import PressFeatureBanner, { PressFeatureContent } from '@/components/restaurant/sections/PressFeatureBanner';
+import QuickLinksSection from '@/components/restaurant/sections/QuickLinksSection';
+import TakeawayBanner from '@/components/restaurant/TakeawayBanner';
+import LocationSection from '@/components/restaurant/LocationSection';
+import CallToActionSection from '@/components/restaurant/sections/CallToActionSection';
 import type { Slide } from '@/components/slideshow/types';
+import HomepagePressTicker, { PressTickerItem } from '@/components/homepage/PressTicker';
+import HomepageAboutSection, { HomepageAboutContent } from '@/components/homepage/HomepageAboutSection';
+import HomepageSignatureDishes, { SignatureDish } from '@/components/homepage/HomepageSignatureDishes';
+import HomepageReviewHighlights, { ReviewHighlight } from '@/components/homepage/HomepageReviewHighlights';
 
-// Below-fold components - load progressively with stable SSR
-const TestimonialsSection = dynamic(() => import('@/components/restaurant/TestimonialsSection'), {
-  ssr: true,
-});
-
-const QuickLinksSection = dynamic(() => import('@/components/restaurant/sections/QuickLinksSection'), {
-  ssr: true,
-});
-
-const CallToActionSection = dynamic(() => import('@/components/restaurant/sections/CallToActionSection'), {
-  ssr: true,
-});
-
-const TakeawayBanner = dynamic(() => import('@/components/restaurant/TakeawayBanner'), {
-  ssr: true,
-});
-
-const LocationSection = dynamic(() => import('@/components/restaurant/LocationSection'), {
-  ssr: true,
-});
+export interface HomeSections {
+  pressTicker?: {
+    label?: string;
+    items: PressTickerItem[];
+  } | null;
+  about?: HomepageAboutContent | null;
+  signatureDishes?: {
+    title?: string;
+    subtitle?: string;
+    items: SignatureDish[];
+  } | null;
+  reviews?: {
+    title?: string;
+    subtitle?: string;
+    items: ReviewHighlight[];
+  } | null;
+  quickLinks?: Array<{
+    title?: string;
+    description?: string;
+    link?: string;
+    linkText?: string;
+  }> | null;
+  closingCta?: {
+    headline?: string;
+    description?: string;
+    buttons?: Array<{
+      text?: string;
+      href?: string;
+      variant?: string;
+      external?: boolean;
+      key?: string;
+    }>;
+  } | null;
+}
 
 interface ClientHomeContentProps {
-  quickLinks: any[];
-  ctaSection: any;
-  ctaButtons: any[];
-  pressFeature?: PressFeatureContent | null;
+  sections: HomeSections;
   slideshow?: {
     slides: Slide[];
     settings?: {
@@ -51,287 +63,104 @@ interface ClientHomeContentProps {
   ariaLabels?: Record<string, string>;
 }
 
-// Optimized progressive loading with immediate display for SSR
-function ProgressiveSection({ 
-  children, 
-  delay = 0, 
-  className = "",
-  placeholder,
-  priority = false
-}: { 
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-  placeholder?: React.ReactNode;
-  priority?: boolean;
-}) {
-  const [shouldShow, setShouldShow] = useState(priority || delay === 0);
-  const [isVisible, setIsVisible] = useState(priority || delay === 0);
+const hasItems = <T,>(items?: T[] | null): items is T[] => Array.isArray(items) && items.length > 0;
 
-  useEffect(() => {
-    // For SSR, show immediately if priority or no delay
-    if (priority || delay === 0) {
-      setShouldShow(true);
-      setIsVisible(true);
-      return;
-    }
-
-    // For non-priority components with delay, use progressive timing
-    const timer = setTimeout(() => {
-      setShouldShow(true);
-      // Small additional delay for smooth transition
-      setTimeout(() => setIsVisible(true), 50);
-    }, delay);
-    
-    return () => clearTimeout(timer);
-  }, [delay, priority]);
-
-  // Always show content for SSR, use progressive loading only for enhancements
-  return (
-    <div 
-      className={`${className} progressive-section ${isVisible ? 'progressive-section-loaded' : 'progressive-section-loading'}`}
-      data-priority={priority ? 'true' : 'false'}
-    >
-      {shouldShow ? children : (placeholder || (
-        <div className="bg-neutral-50 animate-pulse rounded" style={{ minHeight: '100px' }} />
-      ))}
-    </div>
-  );
-}
-
-export default function ClientHomeContent({
-  quickLinks,
-  ctaSection,
-  ctaButtons,
-  pressFeature,
-  slideshow,
-  ariaLabels
-}: ClientHomeContentProps) {
-  const [isHydrated, setIsHydrated] = useState(true); // Start with true for SSR
-  const [navbarLoaded, setNavbarLoaded] = useState(true); // Start with true for immediate display
-  const [criticalAssetsLoaded, setCriticalAssetsLoaded] = useState(true); // Start with true
-
-  useEffect(() => {
-    // Preload critical resources in background
-    const preloadCriticalAssets = () => {
-      // Preload critical images or fonts if any
-      const criticalImages: string[] = [
-        // Add any critical hero images here
-      ];
-      
-      if (criticalImages.length > 0) {
-        Promise.all(
-          criticalImages.map(src => {
-            return new Promise((resolve) => {
-              const img = new Image();
-              img.onload = img.onerror = resolve;
-              img.src = src;
-            });
-          })
-        ).then(() => setCriticalAssetsLoaded(true));
+export default function ClientHomeContent({ sections, slideshow, ariaLabels }: ClientHomeContentProps) {
+  const quickLinks = hasItems(sections.quickLinks) ? sections.quickLinks : [];
+  const pressTicker = sections.pressTicker && hasItems(sections.pressTicker.items)
+    ? sections.pressTicker
+    : null;
+  const about = sections.about ?? null;
+  const signatureDishes = sections.signatureDishes && hasItems(sections.signatureDishes.items)
+    ? sections.signatureDishes
+    : null;
+  const reviews = sections.reviews && hasItems(sections.reviews.items)
+    ? sections.reviews
+    : null;
+  const rawClosingCta = sections.closingCta?.headline && Array.isArray(sections.closingCta.buttons)
+    ? {
+        headline: sections.closingCta.headline,
+        description: sections.closingCta.description ?? '',
+        buttons: sections.closingCta.buttons
+          ?.filter((btn): btn is { text: string; href: string; variant?: string; external?: boolean; key?: string } =>
+            Boolean(btn?.text) && Boolean(btn?.href)
+          )
+          .map((btn) => {
+            const variant = btn.variant;
+            const allowedVariants: Array<'accent' | 'brand' | 'crimson'> = ['accent', 'brand', 'crimson'];
+            const resolvedVariant = allowedVariants.includes(variant as any)
+              ? (variant as 'accent' | 'brand' | 'crimson')
+              : 'accent';
+            return {
+              text: btn.text!,
+              href: btn.href!,
+              variant: resolvedVariant,
+              external: btn.external ?? false,
+              key: btn.key,
+            };
+          }) ?? []
       }
-    };
+    : null;
 
-    // Run preloading in background without blocking UI
-    preloadCriticalAssets();
-  }, []);
-
-  // Remove delays completely for snappier scrolling and rendering
-  const getDelay = (_baseDelay: number) => 0;
+  const closingCta = rawClosingCta && rawClosingCta.buttons.length > 0 ? rawClosingCta : null;
 
   return (
-    <div className="min-h-screen bg-neutral">
-      {/* Critical Navigation - loads first with priority */}
-      <ProgressiveSection 
-        priority={true}
-        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
-        placeholder={
-          <div className="fixed top-0 left-0 right-0 z-50 navbar-placeholder">
-            <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-              <div className="h-8 bg-neutral-200 rounded w-32 section-placeholder"></div>
-              <div className="hidden md:flex space-x-6">
-                <div className="h-6 bg-neutral-200 rounded w-16 section-placeholder"></div>
-                <div className="h-6 bg-neutral-200 rounded w-16 section-placeholder"></div>
-                <div className="h-6 bg-neutral-200 rounded w-16 section-placeholder"></div>
-              </div>
-              <div className="h-8 bg-neutral-200 rounded w-24 section-placeholder"></div>
-            </div>
-          </div>
-        }
-      >
-        <Navbar />
-      </ProgressiveSection>
-      
-      <main 
-        className="overflow-x-hidden relative" 
+    <div className="min-h-screen bg-neutral-50 text-brand-700">
+      <Navbar />
+      <main
         id="main-content"
-        tabIndex={-1}
-        style={{
-          paddingTop: '64px', // Account for fixed navbar
-        }}
+        className="pt-12 sm:pt-16"
       >
-        {/* Hero Section: Slideshow - Above the fold, loads immediately after navbar */}
-        <ProgressiveSection 
-          delay={getDelay(0)}
-          placeholder={
-            <div className="h-screen bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="h-12 bg-neutral-300 rounded w-96 mx-auto section-placeholder"></div>
-                <div className="h-6 bg-neutral-300 rounded w-64 mx-auto section-placeholder"></div>
-              </div>
-            </div>
-          }
-        >
-          <section aria-label={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel ?? 'Restaurant showcase'}>
-            <Showcase
-              slides={slideshow?.slides ?? []}
-              settings={slideshow?.settings}
-              regionLabel={ariaLabels?.slideshowRegion ?? slideshow?.settings?.regionLabel}
-              sectionLabel={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel}
-            />
-          </section>
-        </ProgressiveSection>
+        <section aria-label={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel ?? 'Restaurant showcase'}>
+          <Showcase
+            slides={slideshow?.slides ?? []}
+            settings={slideshow?.settings}
+            regionLabel={ariaLabels?.slideshowRegion ?? slideshow?.settings?.regionLabel}
+            sectionLabel={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel}
+          />
+        </section>
 
-        {pressFeature && (
-          <ProgressiveSection 
-            delay={getDelay(150)}
-            placeholder={
-              <div className="bg-brand-700 py-10 md:py-12">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-                  <div className="h-4 w-32 bg-white/30 rounded section-placeholder"></div>
-                  <div className="h-8 w-3/4 bg-white/40 rounded section-placeholder"></div>
-                  <div className="h-4 w-full md:w-2/3 bg-white/30 rounded section-placeholder"></div>
-                </div>
-              </div>
-            }
-          >
-            <PressFeatureBanner content={pressFeature} />
-          </ProgressiveSection>
-        )}
-        
-        {/* About Section - render immediately for snappier feel */}
-        <ProgressiveSection 
-          delay={getDelay(0)}
-          placeholder={
-            <div className="h-96 bg-neutral-50">
-              <div className="container mx-auto px-4 py-16 space-y-6">
-                <div className="h-8 bg-neutral-200 rounded w-1/2 mx-auto section-placeholder"></div>
-                <div className="h-4 bg-neutral-200 rounded w-3/4 mx-auto section-placeholder"></div>
-                <div className="h-4 bg-neutral-200 rounded w-2/3 mx-auto section-placeholder"></div>
-              </div>
-            </div>
-          }
-        >
-          <section aria-labelledby="about-heading">
-            <AboutSection />
-          </section>
-        </ProgressiveSection>
-        
-        {/* Menu Highlights - loads 1200ms after showcase starts, giving about section more time */}
-        <ProgressiveSection 
-          delay={getDelay(1200)}
-          placeholder={
-            <div className="h-96 bg-neutral-50">
-              <div className="container mx-auto px-4 py-16 space-y-6">
-                <div className="h-8 bg-neutral-200 rounded w-1/3 mx-auto section-placeholder"></div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="h-32 bg-neutral-200 rounded section-placeholder"></div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          }
-        >
-          <section aria-labelledby="menu-highlights-heading">
-            <MenuHighlights />
-          </section>
-        </ProgressiveSection>
-        
-        {/* Below-fold content - loads progressively with longer intervals */}
-        <ProgressiveSection 
-          delay={getDelay(1600)}
-          placeholder={<div className="h-64 bg-neutral-50 animate-pulse"></div>}
-        >
-          <section aria-labelledby="testimonials-heading">
-            <Suspense fallback={<div className="h-64 bg-neutral-50 animate-pulse"></div>}>
-              <TestimonialsSection />
-            </Suspense>
-          </section>
-        </ProgressiveSection>
-        
-        <ProgressiveSection 
-          delay={getDelay(2000)}
-          placeholder={<div className="h-32 bg-neutral-50 animate-pulse"></div>}
-        >
-          <section aria-labelledby="quick-links-heading">
-            <Suspense fallback={<div className="h-32 bg-neutral-50 animate-pulse"></div>}>
-              <QuickLinksSection links={quickLinks} />
-            </Suspense>
-          </section>
-        </ProgressiveSection>
-        
-        <ProgressiveSection 
-          delay={getDelay(2400)}
-          placeholder={<div className="h-24 bg-neutral-50 animate-pulse"></div>}
-        >
-          <section aria-label="Takeaway information">
-            <Suspense fallback={<div className="h-24 bg-neutral-50 animate-pulse"></div>}>
-              <TakeawayBanner />
-            </Suspense>
-          </section>
-        </ProgressiveSection>
-        
-        {/* Location Section - includes maps, loads last of main content */}
-        <ProgressiveSection 
-          delay={getDelay(2800)}
-          placeholder={
-            <div className="h-96 bg-neutral-50 animate-pulse">
-              <div className="container mx-auto px-4 py-16 space-y-6">
-                <div className="h-6 bg-neutral-200 rounded w-1/4"></div>
-                <div className="h-64 bg-neutral-200 rounded"></div>
-              </div>
-            </div>
-          }
-        >
-          <section aria-labelledby="location-heading">
-            <Suspense fallback={
-              <div className="h-96 bg-neutral-50 animate-pulse">
-                <div className="container mx-auto px-4 py-16 space-y-6">
-                  <div className="h-6 bg-neutral-200 rounded w-1/4"></div>
-                  <div className="h-64 bg-neutral-200 rounded"></div>
-                </div>
-              </div>
-            }>
-              <LocationSection />
-            </Suspense>
-          </section>
-        </ProgressiveSection>
-        
-        {/* Call to Action */}
-        <ProgressiveSection 
-          delay={getDelay(3200)}
-          placeholder={<div className="h-48 bg-neutral-50 animate-pulse"></div>}
-        >
-          <section aria-labelledby="cta-heading">
-            <Suspense fallback={<div className="h-48 bg-neutral-50 animate-pulse"></div>}>
-              <CallToActionSection 
-                headline={ctaSection?.headline || "Ready to Experience Girton's Thatched Nepalese Pub?"}
-                description={ctaSection?.description || "Reserve a table, explore the menu or plan an event – we'd love to host you."}
-                buttons={ctaButtons}
-              />
-            </Suspense>
-          </section>
-        </ProgressiveSection>
+        {pressTicker ? (
+          <HomepagePressTicker label={pressTicker.label} items={pressTicker.items} />
+        ) : null}
+
+        {about ? (
+          <HomepageAboutSection content={about} />
+        ) : null}
+
+        {signatureDishes ? (
+          <HomepageSignatureDishes
+            title={signatureDishes.title}
+            subtitle={signatureDishes.subtitle}
+            items={signatureDishes.items}
+          />
+        ) : null}
+
+        {reviews ? (
+          <HomepageReviewHighlights
+            title={reviews.title}
+            subtitle={reviews.subtitle}
+            items={reviews.items}
+          />
+        ) : null}
+
+        {quickLinks.length ? (
+          <QuickLinksSection links={quickLinks} />
+        ) : null}
+
+        <TakeawayBanner />
+        <LocationSection />
+
+        {closingCta && closingCta.buttons.length ? (
+          <CallToActionSection
+            headline={closingCta.headline}
+            description={closingCta.description}
+            buttons={closingCta.buttons}
+            className="pt-6 pb-8 sm:pt-8 sm:pb-10"
+          />
+        ) : null}
       </main>
-      
-      {/* Footer - loads after all main content */}
-      <ProgressiveSection 
-        delay={getDelay(3600)}
-        placeholder={<div className="h-64 bg-neutral-50 animate-pulse"></div>}
-      >
-        <ClientFooter />
-      </ProgressiveSection>
+      <ClientFooter />
     </div>
   );
 }

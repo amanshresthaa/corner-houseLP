@@ -72,7 +72,7 @@ export function useNavContent(): NavContentResult {
     'Close navigation menu';
   const logoAlt =
     content?.global?.accessibility?.altTexts?.logo ||
-    'Old Crown Girton Logo';
+    'The White Horse Waterbeach Logo';
 
   return {
     links: sanitizedLinks,
@@ -93,7 +93,7 @@ export function NavbarLogo({ altText }: { altText: string }) {
       className="flex items-center gap-2 px-2 py-1 text-brand-700"
     >
       <Image
-        src="/images/brand/OldCrownLogo.png"
+        src="/images/brand/WhiteHorseLogo.png"
         alt={altText}
         width={60}
         height={45}

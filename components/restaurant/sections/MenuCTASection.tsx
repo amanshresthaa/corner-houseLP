@@ -37,7 +37,7 @@ interface MenuCTASectionProps {
  */
 export default function MenuCTASection({ 
   title = "Ready to Try Our Unique Menu?",
-  description = "Book a table or order takeaway to experience the best of Nepal and Britain at Girton's historic thatched pub.",
+  description = "Book a table or order takeaway to experience the best of Nepal and Britain at Waterbeach's historic thatched pub.",
   buttons,
   allergenNotice,
   className = '' 

@@ -265,7 +265,7 @@ components/debug/OpeningHoursDebug.tsx:98:      <div className="mt-6 bg-white p-
 components/dev/MobilePerformanceDashboard.tsx:186:    <div className="fixed bottom-4 right-4 z-50 bg-white shadow-2xl rounded-lg border border-gray-200 font-mono text-xs">
 components/menu/MenuHero.tsx:13:        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Menu — Nepalese & Pub Classics</h1>
 components/menu/MenuHero.tsx:16:          <a href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true" target="_blank" rel="noopener noreferrer" className="bg-accent text-white font-semibold py-2 px-4 rounded-md text-sm">
-components/menu/MenuHero.tsx:19:          <a href="tel:01223 277217" className="bg-crimson-500 text-white font-semibold py-2 px-4 rounded-md text-sm">
+components/menu/MenuHero.tsx:19:          <a href="tel:01223 375578" className="bg-crimson-500 text-white font-semibold py-2 px-4 rounded-md text-sm">
 components/menu/MenuInteractive.tsx:174:                  ? 'bg-accent text-white shadow-md' 
 components/menu/MenuInteractive.tsx:175:                  : 'bg-white text-brand-700 hover:bg-accent hover:text-white border border-neutral-300'
 components/menu/MenuInteractive.tsx:187:                <span className="bg-white bg-opacity-20 text-xs px-2 py-1 rounded-full">

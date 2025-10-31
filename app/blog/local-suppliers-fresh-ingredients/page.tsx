@@ -8,14 +8,14 @@ import { Images } from '@/src/lib/images';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Local Suppliers & Fresh Ingredients at Old Crown Girton | Cambridge Local Food",
-  description: "Discover how Old Crown Girton sources fresh, local ingredients from Cambridgeshire suppliers. From farm-to-table vegetables to authentic Nepalese spices, taste the local difference.",
-  keywords: ["local food Cambridge", "farm to table Girton", "local suppliers Cambridge", "fresh ingredients Cambridge", "sustainable dining Girton", "Cambridgeshire produce"],
+  title: "Local Suppliers & Fresh Ingredients at The White Horse Waterbeach | Cambridge Local Food",
+  description: "Discover how The White Horse Waterbeach sources fresh, local ingredients from Cambridgeshire suppliers. From farm-to-table vegetables to authentic Nepalese spices, taste the local difference.",
+  keywords: ["local food Cambridge", "farm to table Waterbeach", "local suppliers Cambridge", "fresh ingredients Cambridge", "sustainable dining Waterbeach", "Cambridgeshire produce"],
   canonicalUrlRelative: "/blog/local-suppliers-fresh-ingredients",
   openGraph: {
-    title: "Local Suppliers & Fresh Ingredients at Old Crown Girton",
+    title: "Local Suppliers & Fresh Ingredients at The White Horse Waterbeach",
     description: "Discover our commitment to local sourcing and fresh ingredients. Supporting Cambridgeshire suppliers while delivering exceptional flavors.",
-    url: "https://oldcrowngirton.com/blog/local-suppliers-fresh-ingredients",
+    url: "https://whitehorsepub.co/blog/local-suppliers-fresh-ingredients",
     type: "article",
   },
 });
@@ -27,9 +27,9 @@ export default function LocalSuppliersPage() {
   const postalAddress = getPostalAddressSchema();
   const post = {
     title: "Supporting Local: Our Commitment to Fresh Ingredients and Community Suppliers",
-    excerpt: "Discover how Old Crown Girton's partnership with local suppliers creates exceptional flavors while supporting the Cambridgeshire community.",
+    excerpt: "Discover how The White Horse Waterbeach's partnership with local suppliers creates exceptional flavors while supporting the Cambridgeshire community.",
     content: `
-      <p>Great food begins with great ingredients, and at Old Crown Girton, we believe the best ingredients come from our own backyard. Our commitment to sourcing locally goes beyond just supporting our community – it's about delivering the freshest, most flavorful dishes while reducing our environmental impact and building relationships that strengthen the entire local food ecosystem.</p>
+      <p>Great food begins with great ingredients, and at The White Horse Waterbeach, we believe the best ingredients come from our own backyard. Our commitment to sourcing locally goes beyond just supporting our community – it's about delivering the freshest, most flavorful dishes while reducing our environmental impact and building relationships that strengthen the entire local food ecosystem.</p>
       
       <h2>Our Local Sourcing Philosophy</h2>
       <p>When we source locally, we're making a choice that benefits everyone: our customers enjoy fresher, more flavorful food, local producers receive fair compensation for their hard work, and our environment benefits from reduced transport miles and more sustainable farming practices.</p>
@@ -143,7 +143,7 @@ export default function LocalSuppliersPage() {
       <h2>Experience the Difference</h2>
       <p>The difference that fresh, local ingredients make is immediately apparent in every dish we serve. From the sweetness of just-picked vegetables in our curries to the rich flavor of locally-raised meat in our roasts, quality ingredients create memorable dining experiences.</p>
       
-      <p>When you dine at Old Crown Girton, you're not just enjoying exceptional food – you're supporting a network of local farmers, producers, and suppliers who make our community stronger. Every meal becomes a celebration of Cambridgeshire's agricultural heritage and a investment in its sustainable future.</p>
+      <p>When you dine at The White Horse Waterbeach, you're not just enjoying exceptional food – you're supporting a network of local farmers, producers, and suppliers who make our community stronger. Every meal becomes a celebration of Cambridgeshire's agricultural heritage and a investment in its sustainable future.</p>
       
       <p>Come taste the difference that local sourcing makes, and join us in supporting the dedicated producers who make our exceptional menu possible.</p>
     `,
@@ -151,7 +151,7 @@ export default function LocalSuppliersPage() {
     category: "Local Sourcing",
     author: {
       name: "Emma Sutton",
-      bio: "Head of procurement at Old Crown Girton, responsible for building relationships with local suppliers and ensuring the highest quality ingredients reach our kitchen."
+      bio: "Head of procurement at The White Horse Waterbeach, responsible for building relationships with local suppliers and ensuring the highest quality ingredients reach our kitchen."
     },
     publishedDate: "2024-11-30T12:00:00+00:00",
     modifiedDate: "2024-11-30T12:00:00+00:00",
@@ -173,10 +173,10 @@ export default function LocalSuppliersPage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/local-suppliers-fresh-ingredients#blogposting",
+          "@id": "https://whitehorsepub.co/blog/local-suppliers-fresh-ingredients#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/local-suppliers-fresh-ingredients",
+          "url": "https://whitehorsepub.co/blog/local-suppliers-fresh-ingredients",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -189,17 +189,17 @@ export default function LocalSuppliersPage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/local-suppliers-fresh-ingredients"
+            "@id": "https://whitehorsepub.co/blog/local-suppliers-fresh-ingredients"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -209,8 +209,8 @@ export default function LocalSuppliersPage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": [
             {
@@ -300,7 +300,7 @@ export default function LocalSuppliersPage() {
               <MotionDiv className="absolute inset-0" layoutId={`post:${post.slug}:image`}>
                 <Image
                   src={post.image}
-                  alt="Fresh local vegetables and ingredients from Cambridgeshire suppliers at Old Crown Girton"
+                  alt="Fresh local vegetables and ingredients from Cambridgeshire suppliers at The White Horse Waterbeach"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1024px"

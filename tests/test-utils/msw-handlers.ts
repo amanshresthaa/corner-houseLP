@@ -31,7 +31,7 @@ export const mockMenu: Menu = {
     },
     {
       id: 'specials',
-      name: 'Old Crown Specialities',
+      name: 'The White Horse Specialities',
       items: [
         {
           id: 'bhutuwa-chicken',
@@ -49,7 +49,7 @@ export const mockMenu: Menu = {
 
 export const mockMarketing: Marketing = {
   hero: {
-    title: 'Old Crown Restaurant',
+    title: 'The White Horse Restaurant',
     subtitle: 'Authentic Nepalese Cuisine',
   },
   promos: [
@@ -60,7 +60,7 @@ export const mockMarketing: Marketing = {
     },
   ],
   seo: {
-    title: 'Old Crown - Best Nepalese Restaurant',
+    title: 'The White Horse - Best Nepalese Restaurant',
     description: 'Experience authentic Nepalese cuisine',
   },
   buttons: {
@@ -70,42 +70,42 @@ export const mockMarketing: Marketing = {
 };
 
 export const mockRestaurant: Restaurant = {
-  name: 'Old Crown Girton',
-  phone: '+44 1223 277217',
-  email: 'oldcrown@lapeninns.com',
-  description: 'Historic thatched pub serving Nepalese cuisine in Girton.',
+  name: 'The White Horse Waterbeach',
+  phone: '+44 1223 375578',
+  email: 'hellothewhitehorsewaterbeach@gmail.com',
+  description: 'Historic thatched pub serving Nepalese cuisine in Waterbeach.',
   identity: {
-    name: 'Old Crown Girton',
-    displayName: 'The Old Crown Girton',
+    name: 'The White Horse Waterbeach',
+    displayName: 'The White Horse Waterbeach',
     tagline: 'Historic Thatched Pub & Nepalese Restaurant',
-    description: 'Authentic Nepalese cuisine and traditional British pub classics in Girton.',
+    description: 'Authentic Nepalese cuisine and traditional British pub classics in Waterbeach.',
     established: '1840s',
     type: 'pub-restaurant',
     cuisine: ['Nepalese', 'British'],
-    slug: 'old-crown-girton',
+    slug: 'the-white-horse-girton',
   },
   contact: {
     phone: {
-      primary: '+44 1223 277217',
-      display: '01223 277217',
-      tel: 'tel:+441223277217',
-      whatsapp: '+44 1223 277217',
+      primary: '+44 1223 375578',
+      display: '01223 375578',
+      tel: 'tel:+441223375578',
+      whatsapp: '+44 1223 375578',
     },
     email: {
-      primary: 'oldcrown@lapeninns.com',
-      bookings: 'bookings@oldcrowngirton.com',
-      events: 'events@oldcrowngirton.com',
+      primary: 'hellothewhitehorsewaterbeach@gmail.com',
+      bookings: 'hellothewhitehorsewaterbeach@gmail.com',
+      events: 'hellothewhitehorsewaterbeach@gmail.com',
     },
-    website: 'https://oldcrowngirton.com',
-    bookingUrl: 'https://oldcrowngirton.com/book-a-table',
+    website: 'https://whitehorsepub.co',
+    bookingUrl: 'https://whitehorsepub.co/book-a-table',
   },
   address: {
-    street: '89 High Street',
+    street: '12 Green Side',
     city: 'Cambridge',
     state: 'Cambridgeshire',
-    zip: 'CB3 0QQ',
-    area: 'Girton',
-    postcode: 'CB3 0QQ',
+    zip: 'CB25 9HP',
+    area: 'Waterbeach',
+    postcode: 'CB25 9HP',
     country: 'United Kingdom',
     coordinates: { lat: 52.2425913, lng: 0.0814946 },
     map: {
@@ -151,8 +151,8 @@ export const mockRestaurant: Restaurant = {
     timezone: 'Europe/London',
   },
   social: {
-    facebook: { url: 'https://www.facebook.com/oldcrowngirton', handle: '@oldcrowngirton' },
-    instagram: { url: 'https://www.instagram.com/oldcrowngirton', handle: '@oldcrowngirton' },
+    facebook: { url: 'https://www.facebook.com/whitehorsewaterbeach', handle: '@whitehorsewaterbeach' },
+    instagram: { url: 'https://www.instagram.com/whitehorsewaterbeach', handle: '@whitehorsewaterbeach' },
   },
   booking: {
     online: true,
@@ -163,7 +163,7 @@ export const mockRestaurant: Restaurant = {
     cancellationPolicy: 'Please contact us 24 hours in advance for cancellations.',
   },
   meta: {
-    slug: 'old-crown-girton',
+    slug: 'the-white-horse-girton',
     category: ['restaurant', 'pub'],
     rating: {
       average: 4.8,
@@ -181,7 +181,7 @@ export const mockConfig: AppConfig = {
   },
   cms: { enabled: false },
   metadata: {
-    appName: 'Old Crown',
+    appName: 'The White Horse',
     domainName: 'localhost',
   },
 };

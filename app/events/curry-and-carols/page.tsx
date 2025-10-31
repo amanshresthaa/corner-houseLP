@@ -24,23 +24,23 @@ const MENU_PREVIEW = [
 ] as const;
 
 export const metadata = getSEOTags({
-  title: "Curry & Carols 2025 | Old Crown Girton – Menu Now Live",
+  title: "Curry & Carols 2025 | The White Horse Waterbeach – Menu Now Live",
   description:
-    "Curry & Carols returns to The Old Crown Girton on 16 & 17 December 2025. £35 per guest for a festive Nepalese banquet with live carols—preview the full menu and register your interest.",
+    "Curry & Carols returns to The White Horse Waterbeach on 16 & 17 December 2025. £35 per guest for a festive Nepalese banquet with live carols—preview the full menu and register your interest.",
   keywords: [
     "Curry and Carols",
-    "Old Crown Girton events",
+    "The White Horse Waterbeach events",
     "Christmas events Cambridge",
-    "Girton festive dining",
+    "Waterbeach festive dining",
     "Curry night Cambridge",
     "Carols night Cambridge",
   ],
   canonicalUrlRelative: "/events/curry-and-carols",
   openGraph: {
-    title: "Curry & Carols at The Old Crown Girton – December 2025",
+    title: "Curry & Carols at The White Horse Waterbeach – December 2025",
     description:
       "Two festive evenings of Nepalese curry and live carols on 16 & 17 December 2025. £35 per guest – menu now live so you can plan your festive feast before booking.",
-    url: "https://oldcrowngirton.com/events/curry-and-carols",
+    url: "https://whitehorsepub.co/events/curry-and-carols",
   },
 });
 
@@ -51,7 +51,7 @@ export default function CurryAndCarolsPage() {
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      name: "Curry & Carols 2025 at The Old Crown Girton",
+      name: "Curry & Carols 2025 at The White Horse Waterbeach",
       description:
         "Festive Curry & Carols evenings featuring a Nepalese banquet and live carollers on 16 and 17 December 2025.",
       eventStatus: "https://schema.org/EventScheduled",
@@ -76,7 +76,7 @@ export default function CurryAndCarolsPage() {
       ],
       location: {
         "@type": "Place",
-        name: "The Old Crown Girton",
+        name: "The White Horse Waterbeach",
         address: {
           "@type": "PostalAddress",
           streetAddress: contact.address.street,
@@ -88,14 +88,14 @@ export default function CurryAndCarolsPage() {
       },
       organizer: {
         "@type": "Restaurant",
-        name: "The Old Crown Girton",
-        url: "https://oldcrowngirton.com",
+        name: "The White Horse Waterbeach",
+        url: "https://whitehorsepub.co",
         telephone: contact.phone.primary,
         email: contact.email.primary,
       },
       image: [
-        "https://oldcrowngirton.com/opengraph-image.png",
-        "https://oldcrowngirton.com/twitter-image.png",
+        "https://whitehorsepub.co/opengraph-image.png",
+        "https://whitehorsepub.co/twitter-image.png",
       ],
       offers: {
         "@type": "Offer",
@@ -103,8 +103,8 @@ export default function CurryAndCarolsPage() {
         price: "35",
         availabilityStarts: "2025-09-01",
         availability: "https://schema.org/PreOrder",
-        url: "https://oldcrowngirton.com/events/curry-and-carols",
-        description: "Register interest for Curry & Carols 2025 at The Old Crown Girton.",
+        url: "https://whitehorsepub.co/events/curry-and-carols",
+        description: "Register interest for Curry & Carols 2025 at The White Horse Waterbeach.",
       },
       performer: {
         "@type": "MusicGroup",
@@ -126,9 +126,9 @@ export default function CurryAndCarolsPage() {
         <SchemaInjector
           type="breadcrumb"
           data={[
-            { name: "Home", url: "https://oldcrowngirton.com/" },
-            { name: "Events", url: "https://oldcrowngirton.com/events" },
-            { name: "Curry & Carols", url: "https://oldcrowngirton.com/events/curry-and-carols" },
+            { name: "Home", url: "https://whitehorsepub.co/" },
+            { name: "Events", url: "https://whitehorsepub.co/events" },
+            { name: "Curry & Carols", url: "https://whitehorsepub.co/events/curry-and-carols" },
           ]}
           page="curry-and-carols"
         />
@@ -148,7 +148,7 @@ export default function CurryAndCarolsPage() {
             </FadeIn>
             <FadeInUp>
               <h1 id="curry-carols-hero-heading" className="text-3xl md:text-5xl font-display font-bold leading-tight">
-                Curry &amp; Carols 2025 at The Old Crown Girton
+                Curry &amp; Carols 2025 at The White Horse Waterbeach
               </h1>
             </FadeInUp>
             <FadeInUp>
@@ -169,7 +169,7 @@ export default function CurryAndCarolsPage() {
                 <MotionLinkButton
                   href={contact.phone.tel}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700 w-full sm:w-auto min-h-[3.25rem]"
-                  ariaLabel="Call the Old Crown Girton team"
+                  ariaLabel="Call the The White Horse Waterbeach team"
                 >
                   <span aria-hidden="true" role="img">📞</span>
                   Call the Team
@@ -185,7 +185,7 @@ export default function CurryAndCarolsPage() {
               <div className="flex flex-wrap justify-center gap-3 text-sm text-neutral-100/90">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20">
                   <span aria-hidden="true" role="img">📍</span>
-                  Girton, Cambridge
+                  Waterbeach, Cambridge
                 </span>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20">
                   <span aria-hidden="true" role="img">🎶</span>

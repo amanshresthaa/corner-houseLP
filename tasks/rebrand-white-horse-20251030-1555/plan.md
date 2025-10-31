@@ -1,11 +1,11 @@
 # Implementation Plan: Rebrand To The White Horse
 
 ## Objective
-Rebrand the application from "The Old Crown Girton" to "The White Horse" using the authoritative data in `Everythingyouneed/whitehorseinformation.md`, ensuring all content, configuration, and metadata reflect the Waterbeach venue.
+Rebrand the application from "The White Horse Waterbeach" to "The White Horse" using the authoritative data in `Everythingyouneed/whitehorseinformation.md`, ensuring all content, configuration, and metadata reflect the Waterbeach venue.
 
 ## Success Criteria
 - [ ] Core config (`config/restaurant.json`, `lib/restaurantData.ts`, `config.ts`) use White Horse identity, contact, address, and hours.
-- [ ] All user-facing copy references "The White Horse" and Waterbeach context; no stale "Old Crown" strings remain in production code or tests.
+- [ ] All user-facing copy references "The White Horse" and Waterbeach context; no stale "The White Horse" strings remain in production code or tests.
 - [ ] Structured data helpers, alt text, and metadata emit accurate White Horse details.
 - [ ] Automated tests and `pnpm run build` pass locally.
 
@@ -27,7 +27,7 @@ Restaurant config → `normalizeRestaurant` → `content` context/hooks → page
 - No external API changes; ensure schema defaults (`RestaurantSchema`) include new slug `the-white-horse` and contact details for generating JSON-LD, metadata, and sitemaps.
 
 ## UI/UX Considerations
-- Replace "Girton" narrative with Waterbeach story while preserving layout structure.
+- Replace "Waterbeach" narrative with Waterbeach story while preserving layout structure.
 - Maintain CTA clarity (booking now phone/email) and ensure links/aria labels use updated labels.
 - Keep mobile-first styles intact; ensure copy length fits existing breakpoints.
 
@@ -37,7 +37,7 @@ Restaurant config → `normalizeRestaurant` → `content` context/hooks → page
 - Build validation: `pnpm run build`.
 
 ## Edge Cases
-- Legacy references (e.g., historic copy quoting Old Crown) may remain intentionally—flag and confirm before removal.
+- Legacy references (e.g., historic copy quoting The White Horse) may remain intentionally—flag and confirm before removal.
 - Ensure telephone URIs and Google Maps embed use Waterbeach coordinates.
 - Validate fallback paths (if config missing) also point to White Horse.
 

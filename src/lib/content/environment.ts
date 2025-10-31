@@ -295,7 +295,7 @@ export class EnvironmentManager {
       'environments/dev/overrides/': [
         {
           path: 'global.site.name',
-          value: 'The Old Crown Girton [DEV]',
+          value: 'The White Horse [DEV]',
           priority: 10,
           description: 'Development site name indicator',
         },
@@ -309,7 +309,7 @@ export class EnvironmentManager {
       'environments/staging/overrides/': [
         {
           path: 'global.site.name',
-          value: 'The Old Crown Girton [STAGING]',
+          value: 'The White Horse [STAGING]',
           priority: 10,
           description: 'Staging site name indicator',
         },
@@ -323,7 +323,8 @@ export class EnvironmentManager {
       'environments/prod/overrides/': [
         {
           path: 'global.site.description',
-          value: 'Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Book online or call our team',
+          value:
+            'Village coaching inn on Waterbeach green serving Nepalese feasts, Sunday roasts, and cask ales from brunch through last orders. Call or email the team to book.',
           priority: 10,
           description: 'Production optimized description',
         },

@@ -8,14 +8,14 @@ import dynamic from 'next/dynamic';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Student Guide to Old Crown Girton | Best Cambridge University Pub Near Girton College",
-  description: "Discover the ultimate student guide to Old Crown Girton - affordable dining, student deals, perfect location near Girton College, and unique Nepalese cuisine for Cambridge University students.",
-  keywords: ["student deals Cambridge", "Cambridge University pub", "student discounts Cambridge pubs", "cheap eats Cambridge", "Girton College pub", "best pubs for students Cambridge"],
+  title: "Student Guide to The White Horse Waterbeach | Best Cambridge University Pub Near Waterbeach College",
+  description: "Discover the ultimate student guide to The White Horse Waterbeach - affordable dining, student deals, perfect location near Waterbeach College, and unique Nepalese cuisine for Cambridge University students.",
+  keywords: ["student deals Cambridge", "Cambridge University pub", "student discounts Cambridge pubs", "cheap eats Cambridge", "Waterbeach College pub", "best pubs for students Cambridge"],
   canonicalUrlRelative: "/blog/student-guide-cambridge-university",
   openGraph: {
-    title: "Student Guide to Old Crown Girton | Best Cambridge University Pub",
-    description: "The ultimate student guide to affordable dining and great atmosphere at Cambridge's most unique pub near Girton College.",
-    url: "https://oldcrowngirton.com/blog/student-guide-cambridge-university",
+    title: "Student Guide to The White Horse Waterbeach | Best Cambridge University Pub",
+    description: "The ultimate student guide to affordable dining and great atmosphere at Cambridge's most unique pub near Waterbeach College.",
+    url: "https://whitehorsepub.co/blog/student-guide-cambridge-university",
     type: "article",
   },
 });
@@ -26,13 +26,13 @@ export default function StudentGuideePage() {
   const identity = getRestaurantIdentity();
   const postalAddress = getPostalAddressSchema();
   const post = {
-    title: "A Cambridge Student's Guide to Old Crown Girton",
-    excerpt: "Discover why Old Crown Girton has become the go-to destination for Cambridge University students seeking affordable quality dining, unique experiences, and the perfect study break.",
+    title: "A Cambridge Student's Guide to The White Horse Waterbeach",
+    excerpt: "Discover why The White Horse Waterbeach has become the go-to destination for Cambridge University students seeking affordable quality dining, unique experiences, and the perfect study break.",
     content: `
-      <p>University life at Cambridge is demanding, expensive, and often overwhelming. Between lectures, supervisions, and the pressure to excel, students need places where they can unwind, socialise, and enjoy quality food without breaking the bank. Old Crown Girton has become that essential escape for countless Cambridge students.</p>
+      <p>University life at Cambridge is demanding, expensive, and often overwhelming. Between lectures, supervisions, and the pressure to excel, students need places where they can unwind, socialise, and enjoy quality food without breaking the bank. The White Horse Waterbeach has become that essential escape for countless Cambridge students.</p>
       
-      <h2>Why Cambridge Students Choose Old Crown Girton</h2>
-      <p>Located just a short cycle ride from central Cambridge and practically next door to Girton College, Old Crown Girton offers everything students need: value for money, authentic atmosphere, and an experience that's genuinely different from college dining halls or chain restaurants.</p>
+      <h2>Why Cambridge Students Choose The White Horse Waterbeach</h2>
+      <p>Located just a short cycle ride from central Cambridge and practically next door to Waterbeach College, The White Horse Waterbeach offers everything students need: value for money, authentic atmosphere, and an experience that's genuinely different from college dining halls or chain restaurants.</p>
       
       <p>Our unique combination of traditional English pub atmosphere with authentic Nepalese cuisine provides the perfect talking point for society socials, first dates, or simply catching up with friends over something more exciting than college food.</p>
       
@@ -52,22 +52,22 @@ export default function StudentGuideePage() {
       <p>The traditional pub atmosphere attracts a mix of locals and students, providing the authentic Cambridge experience that many students seek but struggle to find in the touristy city centre pubs.</p>
       
       <h2>Perfect for Society Events and Group Dining</h2>
-      <p>Cambridge societies looking for venues outside college will find Old Crown Girton ideal for informal socials, committee meals, or end-of-term celebrations. Our team can accommodate group bookings and tailor the experience to your society's needs.</p>
+      <p>Cambridge societies looking for venues outside college will find The White Horse Waterbeach ideal for informal socials, committee meals, or end-of-term celebrations. Our team can accommodate group bookings and tailor the experience to your society's needs.</p>
       
       <p>The combination of indoor and outdoor space means we can handle anything from intimate committee dinners to larger society gatherings, with food that's memorable enough to make your event special.</p>
       
       <h2>Exploring Beyond Your College Bubble</h2>
-      <p>Part of the Cambridge experience should be discovering the broader community beyond the university. Old Crown Girton offers the chance to interact with locals, experience authentic village life, and understand the area's history through our position as England's largest thatched pub.</p>
+      <p>Part of the Cambridge experience should be discovering the broader community beyond the university. The White Horse Waterbeach offers the chance to interact with locals, experience authentic village life, and understand the area's history through our position as England's largest thatched pub.</p>
       
-      <p>Many students discover that some of their best Cambridge memories happen outside the college walls, in places like Old Crown Girton where the real character of the area shines through.</p>
+      <p>Many students discover that some of their best Cambridge memories happen outside the college walls, in places like The White Horse Waterbeach where the real character of the area shines through.</p>
       
       <h2>Practical Information for Students</h2>
-      <p>Cycling is the preferred way to reach us from central Cambridge - it's a pleasant 15-minute ride through Girton village. Secure bike parking is available, and the journey back is mostly downhill. For those without bikes, the Citi 5 bus route provides regular service.</p>
+      <p>Cycling is the preferred way to reach us from central Cambridge - it's a pleasant 15-minute ride through Waterbeach village. Secure bike parking is available, and the journey back is mostly downhill. For those without bikes, the Citi 5 bus route provides regular service.</p>
       
       <p>We're open every day, with food served throughout the day. Kitchen hours are designed to accommodate student schedules, including late lunches between lectures and early dinners before evening commitments.</p>
       
       <h2>Building Memories Beyond the Classroom</h2>
-      <p>Cambridge University provides world-class education, but the memories that last often come from the experiences outside lecture halls and libraries. Old Crown Girton offers the perfect setting for those conversations that define friendships, the meals that celebrate achievements, and the quiet moments that help you remember why you chose Cambridge in the first place.</p>
+      <p>Cambridge University provides world-class education, but the memories that last often come from the experiences outside lecture halls and libraries. The White Horse Waterbeach offers the perfect setting for those conversations that define friendships, the meals that celebrate achievements, and the quiet moments that help you remember why you chose Cambridge in the first place.</p>
     `,
     image: Images.blog.studentGuide,
     category: "Student Life",
@@ -95,10 +95,10 @@ export default function StudentGuideePage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/student-guide-cambridge-university#blogposting",
+          "@id": "https://whitehorsepub.co/blog/student-guide-cambridge-university#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/student-guide-cambridge-university",
+          "url": "https://whitehorsepub.co/blog/student-guide-cambridge-university",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -111,17 +111,17 @@ export default function StudentGuideePage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/student-guide-cambridge-university"
+            "@id": "https://whitehorsepub.co/blog/student-guide-cambridge-university"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -131,8 +131,8 @@ export default function StudentGuideePage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": [
             {
@@ -161,10 +161,10 @@ export default function StudentGuideePage() {
             },
             {
               "@type": "Question",
-              "name": "How do I get to Old Crown Girton from Cambridge University?",
+              "name": "How do I get to The White Horse Waterbeach from Cambridge University?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "It's a pleasant 15-minute bike ride from central Cambridge through Girton village, or take the Citi 5 bus route. Secure bike parking is available at the pub."
+                "text": "It's a pleasant 15-minute bike ride from central Cambridge through Waterbeach village, or take the Citi 5 bus route. Secure bike parking is available at the pub."
               }
             },
             {
@@ -222,7 +222,7 @@ export default function StudentGuideePage() {
               <MotionDiv className="absolute inset-0" layoutId={`post:${post.slug}:image`}>
                 <Image
                   src={post.image}
-                  alt="Cambridge University students enjoying affordable dining and social atmosphere at Old Crown Girton"
+                  alt="Cambridge University students enjoying affordable dining and social atmosphere at The White Horse Waterbeach"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1024px"

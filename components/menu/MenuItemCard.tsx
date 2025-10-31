@@ -113,7 +113,7 @@ export default function MenuItemCard({
         <div className="relative h-32 w-full bg-neutral-100">
           <Image
             src={imageUrl}
-            alt={`${item.name} - ${section} from Old Crown Girton`}
+            alt={`${item.name} - ${section} from The White Horse Waterbeach`}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

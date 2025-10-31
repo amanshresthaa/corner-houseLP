@@ -299,7 +299,7 @@ export class ContentMigrationAdapter {
     return {
       global: {
         site: {
-          name: 'The Old Crown Girton',
+          name: 'The White Horse Waterbeach',
           title: 'Historic Thatched Pub & Nepalese Restaurant',
           description: 'Historic thatched pub serving authentic Nepalese cuisine and British pub classics.',
         },

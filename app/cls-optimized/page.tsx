@@ -20,7 +20,7 @@ function OriginalHomepage() {
       {/* BEFORE: This causes layout shifts */}
       <div className="hero">
         <img src="/images/hero.jpg" alt="Restaurant" />
-        <h1>Welcome to Old Crown Girton</h1>
+        <h1>Welcome to The White Horse Waterbeach</h1>
       </div>
       
       {/* BEFORE: Dynamic content causes shifts */}
@@ -59,7 +59,7 @@ function CLSOptimizedHomepage() {
         <div style={{ height: '600px', position: 'relative' }}>
           <CLSSafeImage
             src="/images/hero.jpg"
-            alt="Old Crown Girton Restaurant"
+            alt="The White Horse Waterbeach Restaurant"
             width={1920}
             height={600}
             priority={true}
@@ -73,7 +73,7 @@ function CLSOptimizedHomepage() {
               style={{ width: '100%', maxWidth: '800px' }}
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-4 font-display">
-                Welcome to Old Crown Girton
+                Welcome to The White Horse Waterbeach
               </h1>
               <p className="text-xl md:text-2xl mb-8">
                 Authentic flavors in Cambridge's most historic setting

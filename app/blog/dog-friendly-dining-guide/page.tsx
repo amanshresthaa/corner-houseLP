@@ -8,14 +8,14 @@ import { Images } from '@/src/lib/images';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Dog-Friendly Dining at Old Crown Girton | Cambridge's Best Pet-Welcome Pub",
-  description: "Discover Cambridge's most welcoming dog-friendly pub restaurant. Our guide to dining with your four-legged family at Old Crown Girton's spacious terrace and bar area.",
-  keywords: ["dog friendly pub Cambridge", "pet friendly restaurant Girton", "dogs welcome Cambridge", "Old Crown Girton dogs", "beer garden dogs Cambridge", "family pub Cambridge"],
+  title: "Dog-Friendly Dining at The White Horse Waterbeach | Cambridge's Best Pet-Welcome Pub",
+  description: "Discover Cambridge's most welcoming dog-friendly pub restaurant. Our guide to dining with your four-legged family at The White Horse Waterbeach's spacious terrace and bar area.",
+  keywords: ["dog friendly pub Cambridge", "pet friendly restaurant Waterbeach", "dogs welcome Cambridge", "The White Horse Waterbeach dogs", "beer garden dogs Cambridge", "family pub Cambridge"],
   canonicalUrlRelative: "/blog/dog-friendly-dining-guide",
   openGraph: {
-    title: "Dog-Friendly Dining at Old Crown Girton | Cambridge's Best Pet-Welcome Pub",
+    title: "Dog-Friendly Dining at The White Horse Waterbeach | Cambridge's Best Pet-Welcome Pub",
     description: "Discover Cambridge's most welcoming dog-friendly pub restaurant with spacious terrace, water bowls, and staff who love meeting furry customers.",
-    url: "https://oldcrowngirton.com/blog/dog-friendly-dining-guide",
+    url: "https://whitehorsepub.co/blog/dog-friendly-dining-guide",
     type: "article",
   },
 });
@@ -26,12 +26,12 @@ export default function DogFriendlyDiningPage() {
   const identity = getRestaurantIdentity();
   const postalAddress = getPostalAddressSchema();
   const post = {
-    title: "The Ultimate Dog-Friendly Dining Experience at Old Crown Girton",
-    excerpt: "Discover why Old Crown Girton has become Cambridge's favourite destination for dining with four-legged family members.",
+    title: "The Ultimate Dog-Friendly Dining Experience at The White Horse Waterbeach",
+    excerpt: "Discover why The White Horse Waterbeach has become Cambridge's favourite destination for dining with four-legged family members.",
     content: `
-      <p>Finding a truly welcoming venue where both you and your beloved dog can relax and enjoy quality time together isn't always easy. At Old Crown Girton, we've made it our mission to create Cambridge's most dog-friendly dining destination, where tail wags are as common as satisfied smiles.</p>
+      <p>Finding a truly welcoming venue where both you and your beloved dog can relax and enjoy quality time together isn't always easy. At The White Horse Waterbeach, we've made it our mission to create Cambridge's most dog-friendly dining destination, where tail wags are as common as satisfied smiles.</p>
       
-      <h2>Why Dogs Love Old Crown Girton</h2>
+      <h2>Why Dogs Love The White Horse Waterbeach</h2>
       <p>Our spacious beer garden and terrace provide the perfect setting for dogs to settle comfortably while their humans enjoy authentic Nepalese cuisine or traditional pub classics. With plenty of room to move around and interesting scents from our kitchen gardens, even the most energetic pups find their zen here.</p>
       
       <p>We always keep fresh water bowls available, and our staff genuinely love meeting our four-legged customers. Don't be surprised if your dog receives as warm a welcome as you do – we've found that a friendly scratch behind the ears often makes for the most loyal returning customers!</p>
@@ -46,7 +46,7 @@ export default function DogFriendlyDiningPage() {
       <p>Unlike many establishments that restrict dogs to outdoor areas only, we welcome well-behaved dogs in our bar area too. This means you can enjoy a cosy pint even during cooler weather, with your furry friend settled beside you by the warming fire.</p>
       
       <h2>Dog-Walking Routes and Local Attractions</h2>
-      <p>Old Crown Girton's location makes it the perfect stopping point for dog walks around the beautiful Cambridgeshire countryside. Just minutes away, you'll find scenic footpaths along the River Cam, while Girton Wood offers longer adventures for more energetic dogs.</p>
+      <p>The White Horse Waterbeach's location makes it the perfect stopping point for dog walks around the beautiful Cambridgeshire countryside. Just minutes away, you'll find scenic footpaths along the River Cam, while Waterbeach Wood offers longer adventures for more energetic dogs.</p>
       
       <p>Many of our regulars make us part of their weekend walking routine – starting with a hearty breakfast, heading out for a countryside ramble, then returning for a relaxed Sunday lunch. While we don't currently serve a traditional Sunday roast, our comforting Nepalese dishes and British pub classics make great Sunday roast alternatives for a laid-back afternoon.</p>
       
@@ -81,9 +81,9 @@ export default function DogFriendlyDiningPage() {
       <p>For special occasions or larger groups with multiple dogs, don't hesitate to call ahead. Our team can help arrange seating that works best for your party and ensure we have everything ready for a comfortable experience.</p>
       
       <h2>Beyond Just Dog-Friendly</h2>
-      <p>What sets Old Crown Girton apart isn't just that we allow dogs – it's that we genuinely celebrate them as part of the family dining experience. In a world where pet-friendly venues are often an afterthought, we've made welcoming dogs central to our identity.</p>
+      <p>What sets The White Horse Waterbeach apart isn't just that we allow dogs – it's that we genuinely celebrate them as part of the family dining experience. In a world where pet-friendly venues are often an afterthought, we've made welcoming dogs central to our identity.</p>
       
-      <p>Whether you're a Girton local looking for your new regular spot, a Cambridge family seeking weekend adventure, or a visitor exploring the area with your travel companion, Old Crown Girton offers the rare combination of exceptional food, historic charm, and genuine dog-loving hospitality.</p>
+      <p>Whether you're a Waterbeach local looking for your new regular spot, a Cambridge family seeking weekend adventure, or a visitor exploring the area with your travel companion, The White Horse Waterbeach offers the rare combination of exceptional food, historic charm, and genuine dog-loving hospitality.</p>
       
       <p>Come discover why so many Cambridge dog owners consider us their second home. Your dog will thank you, and you'll understand why we've become the go-to destination for four-legged family dining in Cambridgeshire.</p>
     `,
@@ -91,7 +91,7 @@ export default function DogFriendlyDiningPage() {
     category: "Dog-Friendly",
     author: {
       name: "Sarah Mitchell",
-      bio: "Dog lover and Old Crown Girton team member who believes every pub should be as welcoming to four-legged customers as two-legged ones."
+      bio: "Dog lover and The White Horse Waterbeach team member who believes every pub should be as welcoming to four-legged customers as two-legged ones."
     },
     publishedDate: "2024-12-20T14:00:00+00:00",
     modifiedDate: "2024-12-20T14:00:00+00:00",
@@ -113,10 +113,10 @@ export default function DogFriendlyDiningPage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/dog-friendly-dining-guide#blogposting",
+          "@id": "https://whitehorsepub.co/blog/dog-friendly-dining-guide#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/dog-friendly-dining-guide",
+          "url": "https://whitehorsepub.co/blog/dog-friendly-dining-guide",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -129,17 +129,17 @@ export default function DogFriendlyDiningPage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/dog-friendly-dining-guide"
+            "@id": "https://whitehorsepub.co/blog/dog-friendly-dining-guide"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -149,8 +149,8 @@ export default function DogFriendlyDiningPage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": [
             {
@@ -160,7 +160,7 @@ export default function DogFriendlyDiningPage() {
             },
             {
               "@type": "Place",
-              "name": "Old Crown Girton",
+              "name": "The White Horse Waterbeach",
               "description": "Historic thatched pub in Cambridge serving Nepalese cuisine"
             }
           ]
@@ -171,7 +171,7 @@ export default function DogFriendlyDiningPage() {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Are dogs allowed inside Old Crown Girton?",
+              "name": "Are dogs allowed inside The White Horse Waterbeach?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, well-behaved dogs are welcome in our bar area as well as our outdoor terrace garden. We provide water bowls and our staff love meeting four-legged customers."
@@ -232,7 +232,7 @@ export default function DogFriendlyDiningPage() {
               <MotionDiv className="absolute inset-0" layoutId={`post:${post.slug}:image`}>
                 <Image
                   src={post.image}
-                  alt="Dog-friendly dining at Old Crown Girton terrace garden"
+                  alt="Dog-friendly dining at The White Horse Waterbeach terrace garden"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1024px"

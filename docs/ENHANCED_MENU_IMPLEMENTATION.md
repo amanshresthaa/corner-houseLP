@@ -1,7 +1,7 @@
 # Enhanced Menu Implementation Summary
 
 ## Overview
-Successfully implemented a comprehensive enhanced menu system for the Old Crown Girton restaurant website as requested in the engineering ticket. The implementation provides a modular, bug-free, and feature-rich menu experience while maintaining backward compatibility.
+Successfully implemented a comprehensive enhanced menu system for the The White Horse Waterbeach restaurant website as requested in the engineering ticket. The implementation provides a modular, bug-free, and feature-rich menu experience while maintaining backward compatibility.
 
 ## ✅ Completed Features
 

@@ -43,7 +43,7 @@ export function ProgressiveHomePage() {
         {/* Adaptive image with device-optimized loading */}
         <AdaptiveImage
           src="/images/restaurant-hero.jpg"
-          alt="Old Crown Girton Restaurant Interior"
+          alt="The White Horse Waterbeach Restaurant Interior"
           width={1920}
           height={1080}
           priority={true}

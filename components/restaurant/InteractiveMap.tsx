@@ -12,7 +12,7 @@ interface InteractiveMapProps {
 export default function InteractiveMap({ 
   className = "h-[600px] bg-neutral-50 rounded-xl shadow-lg overflow-hidden",
   height = "100%",
-  title = "Old Crown Girton Location"
+  title = "The White Horse Waterbeach Location"
 }: InteractiveMapProps) {
   const [isHovered, setIsHovered] = useState(false);
 

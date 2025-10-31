@@ -8,14 +8,14 @@ import { Images } from '@/src/lib/images';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Watch Live Sports at Old Crown Girton | Best Sports Pub Near Cambridge",
-  description: "Experience live sports at Old Crown Girton with crystal-clear large screens, Premier League football, rugby, cricket. The perfect sports pub near Cambridge with great atmosphere.",
-  keywords: ["watch football Cambridge", "sports pub Girton", "live sports Cambridge", "Premier League pub Cambridge", "rugby viewing Cambridge", "pubs showing football"],
+  title: "Watch Live Sports at The White Horse Waterbeach | Best Sports Pub Near Cambridge",
+  description: "Experience live sports at The White Horse Waterbeach with crystal-clear large screens, Premier League football, rugby, cricket. The perfect sports pub near Cambridge with great atmosphere.",
+  keywords: ["watch football Cambridge", "sports pub Waterbeach", "live sports Cambridge", "Premier League pub Cambridge", "rugby viewing Cambridge", "pubs showing football"],
   canonicalUrlRelative: "/blog/ultimate-sports-viewing-guide",
   openGraph: {
-    title: "Watch Live Sports at Old Crown Girton | Best Sports Pub Cambridge",
+    title: "Watch Live Sports at The White Horse Waterbeach | Best Sports Pub Cambridge",
     description: "Experience live sports in Cambridge's most atmospheric sports pub. Crystal-clear screens, great food, and unbeatable match-day atmosphere.",
-    url: "https://oldcrowngirton.com/blog/ultimate-sports-viewing-guide",
+    url: "https://whitehorsepub.co/blog/ultimate-sports-viewing-guide",
     type: "article",
   },
 });
@@ -26,10 +26,10 @@ export default function SportsViewingGuidePage() {
   const identity = getRestaurantIdentity();
   const postalAddress = getPostalAddressSchema();
   const post = {
-    title: "The Ultimate Sports Viewing Experience at Old Crown Girton",
-    excerpt: "Discover why Old Crown Girton has become Cambridge's premier destination for watching live sports with unbeatable atmosphere and crystal-clear viewing.",
+    title: "The Ultimate Sports Viewing Experience at The White Horse Waterbeach",
+    excerpt: "Discover why The White Horse Waterbeach has become Cambridge's premier destination for watching live sports with unbeatable atmosphere and crystal-clear viewing.",
     content: `
-      <p>There's something magical about watching live sports in the company of fellow fans, surrounded by the excitement and atmosphere that only a great sports pub can provide. At Old Crown Girton, we've perfected the art of sports viewing, combining state-of-the-art technology with the authentic pub atmosphere that makes every match feel like an event.</p>
+      <p>There's something magical about watching live sports in the company of fellow fans, surrounded by the excitement and atmosphere that only a great sports pub can provide. At The White Horse Waterbeach, we've perfected the art of sports viewing, combining state-of-the-art technology with the authentic pub atmosphere that makes every match feel like an event.</p>
       
       <h2>State-of-the-Art Viewing Experience</h2>
       <p>Our investment in premium viewing technology ensures that every seat in the house offers an exceptional experience. Our large screen TVs provide crystal-clear picture quality that brings you closer to the action, whether you're watching a Premier League thriller or a crucial Champions League match.</p>
@@ -47,7 +47,7 @@ export default function SportsViewingGuidePage() {
       <p>With strategically positioned screens throughout our venue, you'll never miss a moment of the action. Whether you're seated in our main bar area, relaxing in our comfortable seating areas, or enjoying the outdoor terrace during warmer months, there's always a perfect view available.</p>
       
       <h2>The Sports We Show</h2>
-      <p>Old Crown Girton is your home for all the major sporting events that matter. We pride ourselves on showing the biggest games and most important tournaments across multiple sports.</p>
+      <p>The White Horse Waterbeach is your home for all the major sporting events that matter. We pride ourselves on showing the biggest games and most important tournaments across multiple sports.</p>
       
       <h3>Football Coverage</h3>
       <p><strong>Premier League:</strong> Every weekend, we transform into a football haven showing all the biggest Premier League matches. From early Saturday kick-offs to Monday Night Football, we've got every game covered.</p>
@@ -112,7 +112,7 @@ export default function SportsViewingGuidePage() {
       <p>From traditional real ales to ice-cold lagers, our drink selection caters to every taste. We ensure quick service during half-time breaks and maintain competitive pricing for match day visitors.</p>
       
       <h2>Special Events and Tournament Coverage</h2>
-      <p>Major tournaments and special sporting events receive the full treatment at Old Crown Girton, with enhanced viewing experiences that create lasting memories.</p>
+      <p>Major tournaments and special sporting events receive the full treatment at The White Horse Waterbeach, with enhanced viewing experiences that create lasting memories.</p>
       
       <h3>World Cup and European Championships</h3>
       <p>During major international tournaments, we transform our venue into a celebration of football culture. Special decorations, themed menus, and extended viewing hours ensure you don't miss any of the action.</p>
@@ -124,7 +124,7 @@ export default function SportsViewingGuidePage() {
       <p>Some matches carry extra significance, and we recognize these occasions with enhanced atmosphere and special attention to creating memorable experiences for fans of all teams.</p>
       
       <h2>Family-Friendly Sports Viewing</h2>
-      <p>Sports viewing at Old Crown Girton welcomes families, recognizing that sharing sporting passion across generations creates lifelong memories and new fans.</p>
+      <p>Sports viewing at The White Horse Waterbeach welcomes families, recognizing that sharing sporting passion across generations creates lifelong memories and new fans.</p>
       
       <h3>Children's Accommodations</h3>
       <p>We provide children's menus, comfortable family seating areas, and maintain an environment where young sports fans can experience the excitement of live sports viewing in a controlled, welcoming atmosphere.</p>
@@ -145,7 +145,7 @@ export default function SportsViewingGuidePage() {
       <p>Large groups celebrating special occasions or organizing sports viewing parties can contact us in advance to arrange seating and ensure the best possible experience for your party.</p>
       
       <h2>Community and Camaraderie</h2>
-      <p>What truly sets Old Crown Girton apart as a sports viewing destination is the community that has developed around our shared love of sport. Regular viewers have formed friendships, and newcomers are always welcomed into conversations and explanations.</p>
+      <p>What truly sets The White Horse Waterbeach apart as a sports viewing destination is the community that has developed around our shared love of sport. Regular viewers have formed friendships, and newcomers are always welcomed into conversations and explanations.</p>
       
       <h3>Regular Sports Fans</h3>
       <p>Our regular sports viewing community includes knowledgeable fans who enhance the experience for everyone through their passion, expertise, and welcoming attitude toward new viewers.</p>
@@ -154,7 +154,7 @@ export default function SportsViewingGuidePage() {
       <p>Whether it's supporting the same team through a difficult season or celebrating unexpected victories together, the shared experiences of sports viewing create traditions and memories that extend far beyond individual matches.</p>
       
       <h2>Beyond the Screen</h2>
-      <p>While our viewing technology and atmosphere create the foundation for great sports experiences, it's the complete package that makes Old Crown Girton special. The combination of historical setting, excellent food, quality beverages, and genuine sporting passion creates something unique in the Cambridge area.</p>
+      <p>While our viewing technology and atmosphere create the foundation for great sports experiences, it's the complete package that makes The White Horse Waterbeach special. The combination of historical setting, excellent food, quality beverages, and genuine sporting passion creates something unique in the Cambridge area.</p>
       
       <p>Come experience sports viewing as it should be: surrounded by fellow fans, enjoying great food and drink, and celebrating the passion that makes sport such an important part of community life. Whether you're a dedicated supporter or casual viewer, you'll find your place in our sporting community.</p>
     `,
@@ -162,7 +162,7 @@ export default function SportsViewingGuidePage() {
     category: "Sports & Entertainment",
     author: {
       name: "Tom Richardson",
-      bio: "Sports enthusiast and Old Crown Girton regular who has watched countless matches and helped create our welcoming sports viewing community."
+      bio: "Sports enthusiast and The White Horse Waterbeach regular who has watched countless matches and helped create our welcoming sports viewing community."
     },
     publishedDate: "2024-12-05T16:00:00+00:00",
     modifiedDate: "2024-12-05T16:00:00+00:00",
@@ -184,10 +184,10 @@ export default function SportsViewingGuidePage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/ultimate-sports-viewing-guide#blogposting",
+          "@id": "https://whitehorsepub.co/blog/ultimate-sports-viewing-guide#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/ultimate-sports-viewing-guide",
+          "url": "https://whitehorsepub.co/blog/ultimate-sports-viewing-guide",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -200,17 +200,17 @@ export default function SportsViewingGuidePage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/ultimate-sports-viewing-guide"
+            "@id": "https://whitehorsepub.co/blog/ultimate-sports-viewing-guide"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -220,8 +220,8 @@ export default function SportsViewingGuidePage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": [
             {
@@ -242,7 +242,7 @@ export default function SportsViewingGuidePage() {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What sports do you show at Old Crown Girton?",
+              "name": "What sports do you show at The White Horse Waterbeach?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "We show all major sports including Premier League football, Champions League, Six Nations rugby, international cricket, tennis Grand Slams, and major tournaments across various sports."
@@ -311,7 +311,7 @@ export default function SportsViewingGuidePage() {
               <MotionDiv className="absolute inset-0" layoutId={`post:${post.slug}:image`}>
                 <Image
                   src={post.image}
-                  alt="Sports fans watching Premier League football on large screens at Old Crown Girton"
+                  alt="Sports fans watching Premier League football on large screens at The White Horse Waterbeach"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1024px"

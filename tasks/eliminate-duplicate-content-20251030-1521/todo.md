@@ -7,7 +7,7 @@
 - [x] Replace literal contact info in `app/wakes-menu/page.tsx`.
 - [x] Replace literals in `app/curry-and-carols-menu/page.tsx` & related event pages.
 - [x] Update legal pages (`app/privacy-policy/page.tsx`, `app/tos/page.tsx`).
-- [x] Sweep remaining pages/components for `oldcrown@`, `01223 277217`, `89 High Street`, etc., and refactor to use helpers.
+- [x] Sweep remaining pages/components for `oldcrown@`, `01223 375578`, `12 Green Side`, etc., and refactor to use helpers.
 
 ## Client Hooks & Shared Components
 - [x] Update `usePrivacyContent` / `useTOSContent` fallbacks.

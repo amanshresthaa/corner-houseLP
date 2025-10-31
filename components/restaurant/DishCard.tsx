@@ -7,7 +7,7 @@ import { getContactInfo } from '@/lib/restaurantData';
 interface DishCardProps {
   title: string;
   description: string;
-  price: string;
+  price?: string;
   image: string;
   spiceLevel?: 'mild' | 'medium' | 'hot';
   isVegetarian?: boolean;
@@ -32,7 +32,7 @@ export default function DishCard({
       <div className="relative h-44 sm:h-48 w-full">
         <Image
           src={image}
-          alt={`${title} - authentic Nepalese cuisine at The Old Crown Girton Cambridge`}
+          alt={`${title} - authentic Nepalese cuisine at The White Horse Waterbeach Cambridge`}
           fill
           className="object-cover"
           placeholder="blur"
@@ -57,11 +57,13 @@ export default function DishCard({
         </div>
 
         {/* Price */}
-        <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
-          <span className="bg-accent text-white text-sm sm:text-lg font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
-            {price}
-          </span>
-        </div>
+        {price && price.trim().length > 0 && (
+          <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
+            <span className="bg-accent text-white text-sm sm:text-lg font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full">
+              {price}
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="p-4 sm:p-6">

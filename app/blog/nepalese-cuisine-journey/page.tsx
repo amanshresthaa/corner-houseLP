@@ -10,14 +10,14 @@ import ErrorFallback from '@/components/ErrorFallback';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "The Journey of Nepalese Cuisine to Girton Village | Old Crown Girton Blog",
+  title: "The Journey of Nepalese Cuisine to Waterbeach Village | The White Horse Waterbeach Blog",
   description: "Discover how authentic Nepalese flavors found their home in Cambridge's historic thatched pub, creating a unique dining experience that bridges cultures.",
-  keywords: ["Nepalese cuisine Cambridge", "Old Crown Girton history", "authentic Nepalese food", "Cambridge pub food", "cultural fusion dining"],
+  keywords: ["Nepalese cuisine Cambridge", "The White Horse Waterbeach history", "authentic Nepalese food", "Cambridge pub food", "cultural fusion dining"],
   canonicalUrlRelative: "/blog/nepalese-cuisine-journey",
   openGraph: {
-    title: "The Journey of Nepalese Cuisine to Girton Village",
+    title: "The Journey of Nepalese Cuisine to Waterbeach Village",
     description: "Discover how authentic Nepalese flavors found their home in Cambridge's historic thatched pub, creating a unique dining experience.",
-    url: "https://oldcrowngirton.com/blog/nepalese-cuisine-journey",
+    url: "https://whitehorsepub.co/blog/nepalese-cuisine-journey",
     type: "article",
   },
 });
@@ -28,20 +28,20 @@ export default function BlogPostPage() {
   const identity = getRestaurantIdentity();
   const postalAddress = getPostalAddressSchema();
   const post = {
-    title: "The Journey of Nepalese Cuisine to Girton Village",
+    title: "The Journey of Nepalese Cuisine to Waterbeach Village",
     excerpt: "Discover how authentic Nepalese flavors found their home in Cambridge's historic thatched pub, creating a unique dining experience.",
     content: `
-      <p>When you think of traditional English pub fare, Nepalese cuisine might not be the first thing that comes to mind. Yet at Old Crown Girton, we've successfully married the warmth and community spirit of a classic British pub with the rich, aromatic flavors of Nepal.</p>
+      <p>When you think of traditional English pub fare, Nepalese cuisine might not be the first thing that comes to mind. Yet at The White Horse Waterbeach, we've successfully married the warmth and community spirit of a classic British pub with the rich, aromatic flavors of Nepal.</p>
       
       <h2>A Culinary Bridge Between Cultures</h2>
-      <p>Our journey began with a simple vision: to introduce the Cambridge community to the incredible diversity and depth of Nepalese cuisine while preserving the historic charm and community feel that makes Old Crown Girton special.</p>
+      <p>Our journey began with a simple vision: to introduce the Cambridge community to the incredible diversity and depth of Nepalese cuisine while preserving the historic charm and community feel that makes The White Horse Waterbeach special.</p>
       
       <p>Nepal's cuisine reflects the country's position as a cultural crossroads between India and Tibet, creating unique flavors that are both familiar and exciting. Our momo (traditional dumplings) have become a local favorite, while our dal bhat (lentil curry with rice) offers comfort food with a Himalayan twist.</p>
       
       <h2>Preserving Tradition in a Historic Setting</h2>
       <p>What makes our approach special is how we've integrated these authentic recipes into the fabric of village life. Our head chef, who grew up in Kathmandu, works closely with local suppliers to source the freshest ingredients while maintaining the traditional preparation methods passed down through generations.</p>
       
-      <p>The response from the Girton community has been overwhelmingly positive. Students from nearby Girton College have embraced the diverse menu options, while long-time village residents appreciate the care we take in explaining each dish and accommodating different spice preferences.</p>
+      <p>The response from the Waterbeach community has been overwhelmingly positive. Students from nearby Waterbeach College have embraced the diverse menu options, while long-time village residents appreciate the care we take in explaining each dish and accommodating different spice preferences.</p>
       
       <h2>Looking Forward</h2>
       <p>As we continue to evolve, we remain committed to being both a guardian of Nepalese culinary traditions and a welcoming community hub for all. While we don't currently serve a traditional Sunday roast, our signature Nepalese dishes and British pub classics offer comforting options for every taste.</p>
@@ -49,8 +49,8 @@ export default function BlogPostPage() {
     image: Images.blog.nepaleseHero,
     category: "Cuisine",
     author: {
-      name: "Old Crown Team",
-      bio: "The passionate team behind Old Crown Girton's unique dining experience."
+      name: "The White Horse Team",
+      bio: "The passionate team behind The White Horse Waterbeach's unique dining experience."
     },
     publishedDate: "2025-08-15T10:00:00+01:00",
     modifiedDate: "2025-08-15T10:00:00+01:00",
@@ -73,10 +73,10 @@ export default function BlogPostPage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/nepalese-cuisine-journey#blogposting",
+          "@id": "https://whitehorsepub.co/blog/nepalese-cuisine-journey#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/nepalese-cuisine-journey",
+          "url": "https://whitehorsepub.co/blog/nepalese-cuisine-journey",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -89,17 +89,17 @@ export default function BlogPostPage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/nepalese-cuisine-journey"
+            "@id": "https://whitehorsepub.co/blog/nepalese-cuisine-journey"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -109,8 +109,8 @@ export default function BlogPostPage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": {
             "@type": "Thing",
@@ -121,18 +121,18 @@ export default function BlogPostPage() {
         {
           "@context": "https://schema.org",
           "@type": "WebPage",
-          "@id": "https://oldcrowngirton.com/blog/nepalese-cuisine-journey#webpage",
+          "@id": "https://whitehorsepub.co/blog/nepalese-cuisine-journey#webpage",
           "name": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/nepalese-cuisine-journey",
+          "url": "https://whitehorsepub.co/blog/nepalese-cuisine-journey",
           "isPartOf": {
             "@type": "WebSite",
-            "name": "Old Crown Girton",
-            "url": "https://oldcrowngirton.com/"
+            "name": "The White Horse Waterbeach",
+            "url": "https://whitehorsepub.co/"
           },
           "about": {
             "@type": "LocalBusiness",
-            "name": "Old Crown Girton"
+            "name": "The White Horse Waterbeach"
           },
           "mainContentOfPage": {
             "@type": "WebPageElement",

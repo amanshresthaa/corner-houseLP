@@ -8,15 +8,15 @@ import Link from '@/lib/debugLink';
 const CONTACT = getContactInfo();
 
 export const metadata = getSEOTags({
-  title: 'Book a Table | Old Crown Girton Restaurant Reservations',
+  title: 'Book a Table | The White Horse Waterbeach Restaurant Reservations',
   description:
-    `Reserve a table at The Old Crown Girton in Cambridge. Submit our quick booking request form or call ${CONTACT.phone.display} for immediate assistance.`,
+    `Reserve a table at The White Horse Waterbeach in Cambridge. Submit our quick booking request form or call ${CONTACT.phone.display} for immediate assistance.`,
   canonicalUrlRelative: '/book-a-table',
   openGraph: {
-    title: 'Book a Table at The Old Crown Girton',
+    title: 'Book a Table at The White Horse Waterbeach',
     description:
-      `Request a reservation at The Old Crown Girton. Confirmations within an hour during opening times or call ${CONTACT.phone.display} for urgent enquiries.`,
-    url: 'https://oldcrowngirton.com/book-a-table',
+      `Request a reservation at The White Horse Waterbeach. Confirmations within an hour during opening times or call ${CONTACT.phone.display} for urgent enquiries.`,
+    url: 'https://whitehorsepub.co/book-a-table',
   },
 });
 
@@ -66,8 +66,8 @@ export default async function BookATablePage() {
   const reservationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Restaurant',
-    name: 'The Old Crown Girton',
-    url: 'https://oldcrowngirton.com/book-a-table',
+    name: 'The White Horse Waterbeach',
+    url: 'https://whitehorsepub.co/book-a-table',
     telephone: contact.phone.primary,
     email: contact.email.bookings || contact.email.primary,
     acceptsReservations: true,
@@ -75,7 +75,7 @@ export default async function BookATablePage() {
       '@type': 'ReserveAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://oldcrowngirton.com/book-a-table',
+        urlTemplate: 'https://whitehorsepub.co/book-a-table',
         actionPlatform: [
           'http://schema.org/DesktopWebPlatform',
           'http://schema.org/MobileWebPlatform',
@@ -114,7 +114,7 @@ export default async function BookATablePage() {
               id="booking-page-heading"
               className="mt-4 text-3xl font-display font-bold leading-tight sm:text-4xl lg:text-5xl"
             >
-              Book a Table at The Old Crown Girton
+              Book a Table at The White Horse Waterbeach
             </h1>
             <p className="mt-4 max-w-3xl text-base text-neutral-100 sm:text-lg">
               Secure your table for authentic Nepalese dishes, Sunday roasts, garden gatherings, and
@@ -125,7 +125,7 @@ export default async function BookATablePage() {
               {[
                 'Authentic Nepalese & British pub classics',
                 'Family & dog friendly spaces',
-                'Free on-site parking in Girton',
+                'Free on-site parking in Waterbeach',
                 'Garden, marquee & private hire options',
               ].map((item) => (
                 <div

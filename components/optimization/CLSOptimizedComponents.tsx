@@ -25,7 +25,7 @@ export function CLSOptimizedHero() {
       {/* Background image with reserved space */}
       <CLSImage
         src="/images/restaurant-hero.jpg"
-        alt="Old Crown Girton Restaurant"
+        alt="The White Horse Waterbeach Restaurant"
         width={1920}
         height={600}
         priority={true}
@@ -41,7 +41,7 @@ export function CLSOptimizedHero() {
           className="text-center text-white px-6 max-w-4xl mx-auto"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4 font-display">
-            Welcome to Old Crown Girton
+            Welcome to The White Horse Waterbeach
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
             Authentic flavors in Cambridge's most historic setting
@@ -308,13 +308,13 @@ export function CLSOptimizedHeader() {
         >
           <CLSImage
             src="/images/logo.png"
-            alt="Old Crown Girton"
+            alt="The White Horse Waterbeach"
             width={40}
             height={40}
             priority={true}
             className="mr-3"
           />
-          <span className="text-xl font-bold text-gray-900">Old Crown Girton</span>
+          <span className="text-xl font-bold text-gray-900">The White Horse Waterbeach</span>
         </CLSContainer>
 
         <nav className="hidden md:flex space-x-8">

@@ -15,21 +15,21 @@ import { BlogContentStructure, BLOG_FALLBACK_CONTENT } from '@/types/blog';
 const BlogContentResponseSchema = z.object({
   posts: z.record(z.string(), z.any()).optional().default({}),
   metadata: z.object({
-    siteName: z.string().optional().default('Old Crown Girton'),
-    baseUrl: z.string().optional().default('https://oldcrowngirton.com'),
+    siteName: z.string().optional().default('The White Horse Waterbeach'),
+    baseUrl: z.string().optional().default('https://whitehorsepub.co'),
     defaultAuthor: z.object({
-      name: z.string().optional().default('Old Crown Team'),
-      bio: z.string().optional().default('The passionate team behind Old Crown Girton\'s unique dining experience.'),
+      name: z.string().optional().default('The White Horse Team'),
+      bio: z.string().optional().default('The passionate team behind The White Horse Waterbeach\'s unique dining experience.'),
     }).optional().default({
-      name: 'Old Crown Team',
-      bio: 'The passionate team behind Old Crown Girton\'s unique dining experience.',
+      name: 'The White Horse Team',
+      bio: 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
     }),
   }).optional().default({
-    siteName: 'Old Crown Girton',
-    baseUrl: 'https://oldcrowngirton.com',
+    siteName: 'The White Horse Waterbeach',
+    baseUrl: 'https://whitehorsepub.co',
     defaultAuthor: {
-      name: 'Old Crown Team',
-      bio: 'The passionate team behind Old Crown Girton\'s unique dining experience.',
+      name: 'The White Horse Team',
+      bio: 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
     },
   }),
   ui: z.object({
@@ -78,11 +78,11 @@ const BlogContentResponseSchema = z.object({
 }).transform((data) => ({
   posts: data.posts || {},
   metadata: {
-    siteName: data.metadata?.siteName || 'Old Crown Girton',
-    baseUrl: data.metadata?.baseUrl || 'https://oldcrowngirton.com',
+    siteName: data.metadata?.siteName || 'The White Horse Waterbeach',
+    baseUrl: data.metadata?.baseUrl || 'https://whitehorsepub.co',
     defaultAuthor: {
-      name: data.metadata?.defaultAuthor?.name || 'Old Crown Team',
-      bio: data.metadata?.defaultAuthor?.bio || 'The passionate team behind Old Crown Girton\'s unique dining experience.',
+      name: data.metadata?.defaultAuthor?.name || 'The White Horse Team',
+      bio: data.metadata?.defaultAuthor?.bio || 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
     },
   },
   ui: {

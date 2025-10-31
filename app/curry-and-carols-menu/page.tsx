@@ -5,7 +5,7 @@ import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
 
-const BASE_URL = "https://oldcrowngirton.com";
+const BASE_URL = "https://whitehorsepub.co";
 
 type MenuItem = {
   id: string;
@@ -142,21 +142,21 @@ const ASSURANCE_POINTS = [
 ] as const;
 
 export const metadata = getSEOTags({
-  title: "Curry & Carols Menu 2025 | Old Crown Girton – Festive Nepalese Banquet",
+  title: "Curry & Carols Menu 2025 | The White Horse Waterbeach – Festive Nepalese Banquet",
   description:
-    "Discover the full Curry & Carols 2025 menu at The Old Crown Girton. Share starters, choose from warming curries, and finish with mince pies while live carols fill the room.",
+    "Discover the full Curry & Carols 2025 menu at The White Horse Waterbeach. Share starters, choose from warming curries, and finish with mince pies while live carols fill the room.",
   keywords: [
     "Curry and Carols menu",
-    "Old Crown Girton Christmas menu",
+    "The White Horse Waterbeach Christmas menu",
     "festive Nepalese menu Cambridge",
     "Christmas curry night Cambridge",
     "Curry and carols Cambridge 2025",
   ],
   canonicalUrlRelative: "/curry-and-carols-menu",
   openGraph: {
-    title: "Curry & Carols Menu 2025 | Old Crown Girton",
+    title: "Curry & Carols Menu 2025 | The White Horse Waterbeach",
     description:
-      "Preview the festive Nepalese banquet served during Curry & Carols at The Old Crown Girton—two joyful evenings of food, mulled cheer, and live carols.",
+      "Preview the festive Nepalese banquet served during Curry & Carols at The White Horse Waterbeach—two joyful evenings of food, mulled cheer, and live carols.",
     url: `${BASE_URL}/curry-and-carols-menu`,
   },
 });
@@ -165,13 +165,13 @@ const buildStructuredData = (sections: MenuSection[], contact: ReturnType<typeof
   {
     "@context": "https://schema.org",
     "@type": "Menu",
-    name: "Curry & Carols Menu 2025 at The Old Crown Girton",
+    name: "Curry & Carols Menu 2025 at The White Horse Waterbeach",
     description:
       "Festive Nepalese banquet with sharing starters, warming mains, and classic desserts served during Curry & Carols on 16 & 17 December 2025.",
     url: `${BASE_URL}/curry-and-carols-menu`,
     provider: {
       "@type": "Restaurant",
-      name: "The Old Crown Girton",
+      name: "The White Horse Waterbeach",
       telephone: contact.phone.primary,
       address: {
         "@type": "PostalAddress",
@@ -249,7 +249,7 @@ export default function CurryAndCarolsMenuPage() {
             </FadeInUp>
             <FadeInUp>
               <p className="text-lg md:text-xl text-neutral-100 max-w-3xl mx-auto leading-relaxed">
-                Preview every course from this year&apos;s two-night celebration at The Old Crown Girton. Share starters,
+                Preview every course from this year&apos;s two-night celebration at The White Horse Waterbeach. Share starters,
                 choose a warming curry, and finish with Christmas pudding while live carols fill our thatched
                 dining room.
               </p>
@@ -269,7 +269,7 @@ export default function CurryAndCarolsMenuPage() {
                 <MotionLinkButton
                   href={telHref}
                   className="btn btn-outline w-full sm:w-auto min-h-[3.25rem] border-white/60 text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white focus-visible:ring-offset-brand-700 touch-manipulation"
-                  ariaLabel="Call the Old Crown Girton team about Curry and Carols"
+                  ariaLabel="Call the The White Horse Waterbeach team about Curry and Carols"
                 >
                   <span aria-hidden="true" role="img">
                     📞
@@ -443,7 +443,7 @@ export default function CurryAndCarolsMenuPage() {
                     <MotionLinkButton
                       href={`mailto:${contact.email.primary}`}
                       className="btn btn-ghost w-full sm:w-auto min-h-[3rem] text-brand-800 border-brand-200 hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-accent-50 touch-manipulation"
-                      ariaLabel="Email the Old Crown Girton team about Curry and Carols"
+                      ariaLabel="Email the The White Horse Waterbeach team about Curry and Carols"
                     >
                       <span aria-hidden="true" role="img">
                         ✉️

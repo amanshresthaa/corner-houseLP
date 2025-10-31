@@ -57,15 +57,15 @@ export default function manifest(): MetadataRoute.Manifest {
   };
 
   const manifestData = {
-    name: 'Old Crown Restaurant - Authentic Nepalese Cuisine',
-    short_name: 'Old Crown',
+    name: 'The White Horse Restaurant - Authentic Nepalese Cuisine',
+    short_name: 'The White Horse',
     description:
-      'Authentic Nepalese cuisine and traditional pub classics in Girton, Cambridge. Book a table, order takeaway, or explore our award-winning menu.',
+      'Authentic Nepalese cuisine and traditional pub classics in Waterbeach, Cambridge. Book a table, order takeaway, or explore our award-winning menu.',
     start_url: '/',
     display: 'standalone',
     theme_color: light.primaryAccent,
     background_color: light.background,
-    id: 'old-crown-restaurant-app',
+    id: 'the-white-horse-restaurant-app',
     orientation: 'portrait-primary',
     scope: '/',
     categories: ['food', 'lifestyle', 'business'],
@@ -84,7 +84,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: 'Book Table',
         short_name: 'Book',
-        description: 'Reserve a table at Old Crown Restaurant',
+        description: 'Reserve a table at The White Horse Restaurant',
         url: '/contact?action=booking',
         icons: [{ src: '/booking-shortcut-96.png', sizes: '96x96', type: 'image/png' }],
       },
@@ -98,7 +98,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: 'Contact Us',
         short_name: 'Contact',
-        description: 'Get in touch with Old Crown Restaurant',
+        description: 'Get in touch with The White Horse Restaurant',
         url: '/contact',
         icons: [{ src: '/contact-shortcut-96.png', sizes: '96x96', type: 'image/png' }],
       },
@@ -114,7 +114,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
       {
         platform: 'itunes',
-        url: 'https://apps.apple.com/app/old-crown-restaurant/id123456789',
+        url: 'https://apps.apple.com/app/the-white-horse-restaurant/id123456789',
       },
     ],
     prefer_related_applications: false,

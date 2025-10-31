@@ -8,14 +8,14 @@ import { Images } from '@/src/lib/images';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "England's Largest Thatched Pub | Historic Old Crown Girton Cambridge",
-  description: "Discover the fascinating history of Old Crown Girton, claimed to be England's largest thatched pub. Explore centuries of heritage, architectural significance, and historic Cambridge pub culture.",
-  keywords: ["largest thatched pub England", "historic pubs Cambridge", "Old Crown Girton history", "thatched roof pub Cambridge", "historic Girton", "Cambridge pub heritage"],
+  title: "England's Largest Thatched Pub | Historic The White Horse Waterbeach Cambridge",
+  description: "Discover the fascinating history of The White Horse Waterbeach, claimed to be England's largest thatched pub. Explore centuries of heritage, architectural significance, and historic Cambridge pub culture.",
+  keywords: ["largest thatched pub England", "historic pubs Cambridge", "The White Horse Waterbeach history", "thatched roof pub Cambridge", "historic Waterbeach", "Cambridge pub heritage"],
   canonicalUrlRelative: "/blog/largest-thatched-pub-history",
   openGraph: {
-    title: "England's Largest Thatched Pub | Historic Old Crown Girton",
-    description: "Explore the remarkable history of Old Crown Girton, England's largest thatched pub, from medieval origins to modern Nepalese cuisine.",
-    url: "https://oldcrowngirton.com/blog/largest-thatched-pub-history",
+    title: "England's Largest Thatched Pub | Historic The White Horse Waterbeach",
+    description: "Explore the remarkable history of The White Horse Waterbeach, England's largest thatched pub, from medieval origins to modern Nepalese cuisine.",
+    url: "https://whitehorsepub.co/blog/largest-thatched-pub-history",
     type: "article",
   },
 });
@@ -27,17 +27,17 @@ export default function ThatchedPubHistoryPage() {
   const postalAddress = getPostalAddressSchema();
   const post = {
     title: "The Remarkable History of England's Largest Thatched Pub",
-    excerpt: "Journey through centuries of history at Old Crown Girton, from its medieval origins to its current status as a unique dining destination.",
+    excerpt: "Journey through centuries of history at The White Horse Waterbeach, from its medieval origins to its current status as a unique dining destination.",
     content: `
-      <p>Standing proud on Girton's High Street, Old Crown Girton holds a distinction that sets it apart from every other pub in England: it boasts the largest thatched roof of any public house in the country. But behind this impressive architectural claim lies a story that spans centuries, reflecting the rich tapestry of English village life and the evolution of hospitality.</p>
+      <p>Standing proud on Waterbeach's High Street, The White Horse Waterbeach holds a distinction that sets it apart from every other pub in England: it boasts the largest thatched roof of any public house in the country. But behind this impressive architectural claim lies a story that spans centuries, reflecting the rich tapestry of English village life and the evolution of hospitality.</p>
       
       <h2>Medieval Origins and Early History</h2>
-      <p>The roots of Old Crown Girton stretch deep into English history. While the exact date of establishment remains shrouded in the mists of time, evidence suggests that a public house has stood on this site since at least the 14th century. The original structure would have served the dual purpose of providing refreshment for travelers and acting as a community gathering place for the growing village of Girton.</p>
+      <p>The roots of The White Horse Waterbeach stretch deep into English history. While the exact date of establishment remains shrouded in the mists of time, evidence suggests that a public house has stood on this site since at least the 14th century. The original structure would have served the dual purpose of providing refreshment for travelers and acting as a community gathering place for the growing village of Waterbeach.</p>
       
-      <p>During medieval times, Girton was strategically positioned along important travel routes connecting Cambridge to the north. Travelers, merchants, and pilgrims would have welcomed the sight of the inn's distinctive thatched roof, signaling rest, sustenance, and shelter from the elements.</p>
+      <p>During medieval times, Waterbeach was strategically positioned along important travel routes connecting Cambridge to the north. Travelers, merchants, and pilgrims would have welcomed the sight of the inn's distinctive thatched roof, signaling rest, sustenance, and shelter from the elements.</p>
       
       <h2>The Art and Science of Thatching</h2>
-      <p>The magnificent thatched roof that gives Old Crown its claim to fame is itself a masterpiece of traditional English craftsmanship. Thatching is an ancient building technique that has protected English buildings for over a thousand years, and our roof represents the pinnacle of this timeless art.</p>
+      <p>The magnificent thatched roof that gives The White Horse its claim to fame is itself a masterpiece of traditional English craftsmanship. Thatching is an ancient building technique that has protected English buildings for over a thousand years, and our roof represents the pinnacle of this timeless art.</p>
       
       <h3>Traditional Thatching Materials</h3>
       <p>Our roof is crafted using water reed (Phragmites australis), considered the finest thatching material available. This reed, when properly laid and maintained, can last between 50-60 years, providing excellent insulation and weatherproofing. The distinctive ridge that crowns our roof is traditionally made from sedge or combed wheat reed, adding both functional and aesthetic appeal.</p>
@@ -46,7 +46,7 @@ export default function ThatchedPubHistoryPage() {
       <p>Creating and maintaining a thatched roof of this magnitude requires extraordinary skill. Master thatchers must complete years of apprenticeship to develop the expertise needed to work with natural materials that vary in quality, moisture content, and handling characteristics. The thatcher must understand how to create the proper pitch for water runoff, ensure adequate thickness for insulation, and achieve the smooth, uniform appearance that characterizes quality thatching.</p>
       
       <h2>Architectural Significance</h2>
-      <p>What makes Old Crown Girton's thatched roof so remarkable isn't just its size, but how it exemplifies the best of English vernacular architecture. The building demonstrates the perfect marriage of form and function that characterizes the finest historic buildings.</p>
+      <p>What makes The White Horse Waterbeach's thatched roof so remarkable isn't just its size, but how it exemplifies the best of English vernacular architecture. The building demonstrates the perfect marriage of form and function that characterizes the finest historic buildings.</p>
       
       <h3>Structural Engineering</h3>
       <p>Supporting a thatched roof of this scale requires sophisticated understanding of structural engineering. The timber frame beneath our thatch dates to different periods, showing how successive generations of builders have maintained and strengthened the structure while preserving its historic character.</p>
@@ -54,7 +54,7 @@ export default function ThatchedPubHistoryPage() {
       <p>The thick walls, small windows, and low ceilings that characterize the interior were designed to work in harmony with the thatched roof, creating optimal thermal efficiency long before modern insulation was invented.</p>
       
       <h2>Evolution Through the Centuries</h2>
-      <p>Like all great historic buildings, Old Crown Girton has evolved to meet changing needs while preserving its essential character.</p>
+      <p>Like all great historic buildings, The White Horse Waterbeach has evolved to meet changing needs while preserving its essential character.</p>
       
       <h3>Tudor and Stuart Periods</h3>
       <p>During the 16th and 17th centuries, the inn would have been a crucial part of village life. Licensing laws were less restrictive, and public houses served multiple community functions: meeting places for parish councils, venues for celebrations and wakes, and informal courts where local disputes were settled.</p>
@@ -63,25 +63,25 @@ export default function ThatchedPubHistoryPage() {
       <p>The 18th and 19th centuries brought significant changes to village inns. Improved roads increased travel, and coaching inns like ours adapted to serve the growing number of travelers between Cambridge and the north. During this period, many of the current interior features were added, including the distinctive low-beamed ceilings that create such intimate dining spaces.</p>
       
       <h3>20th Century Challenges and Preservation</h3>
-      <p>The 20th century presented both challenges and opportunities for historic pubs. Two world wars, changing social habits, and the rise of motor transport all affected traditional village inns. However, growing appreciation for heritage architecture led to increased efforts to preserve buildings like Old Crown Girton.</p>
+      <p>The 20th century presented both challenges and opportunities for historic pubs. Two world wars, changing social habits, and the rise of motor transport all affected traditional village inns. However, growing appreciation for heritage architecture led to increased efforts to preserve buildings like The White Horse Waterbeach.</p>
       
       <h2>The Crown Through Different Eras</h2>
-      <p>Throughout its long history, Old Crown Girton has witnessed and adapted to enormous social changes while maintaining its role as a community anchor.</p>
+      <p>Throughout its long history, The White Horse Waterbeach has witnessed and adapted to enormous social changes while maintaining its role as a community anchor.</p>
       
       <h3>Agricultural Community Hub</h3>
-      <p>For centuries, the pub served the agricultural community that formed the backbone of Girton. Farmers would gather to discuss crops, weather, and market prices. Seasonal celebrations marked the agricultural calendar, from harvest festivals to lambing season gatherings.</p>
+      <p>For centuries, the pub served the agricultural community that formed the backbone of Waterbeach. Farmers would gather to discuss crops, weather, and market prices. Seasonal celebrations marked the agricultural calendar, from harvest festivals to lambing season gatherings.</p>
       
       <h3>University Connections</h3>
-      <p>The establishment of Girton College in 1869 as Cambridge University's first women's college brought new energy to the village. While the college maintained strict rules about student behavior, the pub remained an important part of village life, serving college staff and providing a meeting place for townspeople.</p>
+      <p>The establishment of Waterbeach College in 1869 as Cambridge University's first women's college brought new energy to the village. While the college maintained strict rules about student behavior, the pub remained an important part of village life, serving college staff and providing a meeting place for townspeople.</p>
       
       <h3>Modern Community Center</h3>
-      <p>Today, Old Crown Girton continues its traditional role as a community gathering place while embracing contemporary needs. The pub hosts quiz nights, supports local sports teams, and provides a venue for community meetings and celebrations.</p>
+      <p>Today, The White Horse Waterbeach continues its traditional role as a community gathering place while embracing contemporary needs. The pub hosts quiz nights, supports local sports teams, and provides a venue for community meetings and celebrations.</p>
       
       <h2>Architectural Heritage and Conservation</h2>
       <p>Maintaining a building of this historical significance requires ongoing commitment to traditional building techniques and materials.</p>
       
       <h3>Listed Building Status</h3>
-      <p>Old Crown Girton is a Grade II listed building, recognizing its special architectural and historic interest. This designation protects the building's character while allowing sensitive modifications to meet modern needs.</p>
+      <p>The White Horse Waterbeach is a Grade II listed building, recognizing its special architectural and historic interest. This designation protects the building's character while allowing sensitive modifications to meet modern needs.</p>
       
       <h3>Conservation Challenges</h3>
       <p>Caring for our thatched roof requires specialized knowledge and significant investment. Regular maintenance includes cleaning moss and debris, checking for damage from weather or pests, and periodic renewal of sections showing wear. The entire roof requires replacement approximately every 50-60 years, a major undertaking that must be planned well in advance.</p>
@@ -97,19 +97,19 @@ export default function ThatchedPubHistoryPage() {
       <p>The pub regularly features in architectural tours, heritage trails, and guidebooks celebrating England's pub heritage. Photography enthusiasts particularly appreciate how our thatched roof creates different moods and textures throughout the changing seasons.</p>
       
       <h2>From Historic Heritage to Modern Innovation</h2>
-      <p>Perhaps the most remarkable chapter in Old Crown Girton's long history is being written today. While preserving every aspect of our architectural heritage, we've introduced something completely new: authentic Nepalese cuisine served alongside traditional British pub food.</p>
+      <p>Perhaps the most remarkable chapter in The White Horse Waterbeach's long history is being written today. While preserving every aspect of our architectural heritage, we've introduced something completely new: authentic Nepalese cuisine served alongside traditional British pub food.</p>
       
       <p>This cultural fusion represents the best of both preservation and innovation. We honor our past while embracing the multicultural reality of modern Britain. Visitors can enjoy traditional momo or curry beneath the same timber beams that have sheltered generations of local residents.</p>
       
       <h2>Looking Toward the Future</h2>
-      <p>As custodians of this remarkable building, we understand our responsibility to future generations. This means continuing the traditions of maintenance and care that have preserved Old Crown Girton for over 600 years while adapting to serve contemporary needs.</p>
+      <p>As custodians of this remarkable building, we understand our responsibility to future generations. This means continuing the traditions of maintenance and care that have preserved The White Horse Waterbeach for over 600 years while adapting to serve contemporary needs.</p>
       
       <p>Climate change presents new challenges for thatched buildings, requiring innovative approaches to conservation. We work closely with heritage specialists and master thatchers to ensure our roof continues to protect and inspire for centuries to come.</p>
       
       <h2>Visiting Our Historic Pub</h2>
-      <p>When you visit Old Crown Girton, you're not just entering a restaurant or pub – you're stepping into living history. Every beam, every stone, every carefully thatched reed tells part of England's story.</p>
+      <p>When you visit The White Horse Waterbeach, you're not just entering a restaurant or pub – you're stepping into living history. Every beam, every stone, every carefully thatched reed tells part of England's story.</p>
       
-      <p>Whether you're interested in architectural heritage, seeking authentic pub atmosphere, or simply wanting to experience exceptional food in historic surroundings, Old Crown Girton offers something unique. Our largest thatched roof isn't just a record-holder – it's a gateway to understanding how the best of England's past continues to enrich our present.</p>
+      <p>Whether you're interested in architectural heritage, seeking authentic pub atmosphere, or simply wanting to experience exceptional food in historic surroundings, The White Horse Waterbeach offers something unique. Our largest thatched roof isn't just a record-holder – it's a gateway to understanding how the best of England's past continues to enrich our present.</p>
       
       <p>Come and experience the remarkable story of England's largest thatched pub, where every visit adds another page to our ongoing history.</p>
     `,
@@ -139,10 +139,10 @@ export default function ThatchedPubHistoryPage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/largest-thatched-pub-history#blogposting",
+          "@id": "https://whitehorsepub.co/blog/largest-thatched-pub-history#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/largest-thatched-pub-history",
+          "url": "https://whitehorsepub.co/blog/largest-thatched-pub-history",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -155,17 +155,17 @@ export default function ThatchedPubHistoryPage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/largest-thatched-pub-history"
+            "@id": "https://whitehorsepub.co/blog/largest-thatched-pub-history"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -175,8 +175,8 @@ export default function ThatchedPubHistoryPage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": [
             {
@@ -191,7 +191,7 @@ export default function ThatchedPubHistoryPage() {
             },
             {
               "@type": "HistoricBuilding",
-              "name": "Old Crown Girton",
+              "name": "The White Horse Waterbeach",
               "description": "England's largest thatched pub, dating from medieval times"
             }
           ]
@@ -252,7 +252,7 @@ export default function ThatchedPubHistoryPage() {
               <MotionDiv className="absolute inset-0" layoutId={`post:${post.slug}:image`}>
                 <Image
                   src={post.image}
-                  alt="Historic thatched roof exterior of Old Crown Girton, England's largest thatched pub"
+                  alt="Historic thatched roof exterior of The White Horse Waterbeach, England's largest thatched pub"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1024px"

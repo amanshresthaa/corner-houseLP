@@ -53,15 +53,15 @@ export function generateRestaurantSchema(): RestaurantSchema {
     "@type": "Restaurant",
     name: identity.name,
     description: seo.description || identity.description,
-    url: (seo as any)?.og?.url || "https://oldcrowngirton.com/",
+    url: (seo as any)?.og?.url || "https://whitehorsepub.co/",
     telephone: contact?.phone.primary || "+441223 277217",
-    email: contact?.email.primary || "oldcrown@lapeninns.com",
+    email: contact?.email.primary || "hellothewhitehorsewaterbeach@gmail.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: contact?.address.street || "High Street",
-      addressLocality: contact?.address.area || "Girton",
+      addressLocality: contact?.address.area || "Waterbeach",
       addressRegion: contact?.address.city || "Cambridge",
-      postalCode: contact?.address.postcode || "CB3 0QQ",
+      postalCode: contact?.address.postcode || "CB25 9HP",
       addressCountry: "GB"
     },
     geo: {
@@ -87,11 +87,11 @@ export function generateRestaurantSchema(): RestaurantSchema {
       reviewCount: testimonials.length.toString()
     },
     image: [
-      "https://oldcrowngirton.com/images/restaurant-exterior.jpg",
-      "https://oldcrowngirton.com/images/restaurant-interior.jpg",
-      "https://oldcrowngirton.com/images/food-display.jpg"
+      "https://whitehorsepub.co/images/restaurant-exterior.jpg",
+      "https://whitehorsepub.co/images/restaurant-interior.jpg",
+      "https://whitehorsepub.co/images/food-display.jpg"
     ],
-    menu: "https://oldcrowngirton.com/menu",
+    menu: "https://whitehorsepub.co/menu",
     reservationsPolicy: "ReservationsRequired",
     paymentAccepted: features.payment_methods || [
       "Cash",

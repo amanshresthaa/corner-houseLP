@@ -1,6 +1,6 @@
 # Scroll Performance Optimization Guide
 
-This document outlines the comprehensive scroll performance optimizations implemented across the Old Crown Girton website to eliminate scroll jank and ensure smooth user experience.
+This document outlines the comprehensive scroll performance optimizations implemented across the The White Horse Waterbeach website to eliminate scroll jank and ensure smooth user experience.
 
 ## 🚀 Overview
 

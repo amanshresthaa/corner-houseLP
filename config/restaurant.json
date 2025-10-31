@@ -1,59 +1,56 @@
 {
   "identity": {
-    "name": "Old Crown Girton",
-    "displayName": "The Old Crown Girton",
-    "tagline": "Historic Thatched Pub & Nepalese Restaurant",
-    "description": "Authentic Nepalese cuisine and traditional British pub classics served in Girton's historic thatched inn.",
-    "established": "1840s",
+    "name": "The White Horse",
+    "displayName": "The White Horse Waterbeach",
+    "tagline": "Village coaching inn with Nepalese soul",
+    "description": "Village coaching inn reborn on Waterbeach green serving Nepalese feasts, Sunday roasts, and pub favourites all day.",
+    "established": "1890",
     "type": "pub-restaurant",
-    "cuisine": ["Nepalese", "British", "Pub Food"],
-    "slug": "old-crown-girton"
+    "cuisine": ["Nepalese", "British Classics", "Pub Favourites"],
+    "slug": "the-white-horse"
   },
   "contact": {
     "phone": {
-      "primary": "+44 1223 277217",
-      "display": "01223 277217",
-      "tel": "tel:+441223277217",
-      "whatsapp": "+44 1223 277217"
+      "primary": "+44 1223 375578",
+      "display": "01223 375578",
+      "tel": "tel:+441223375578",
+      "whatsapp": "+44 1223 375578"
     },
     "email": {
-      "primary": "oldcrown@lapeninns.com",
-      "bookings": "bookings@oldcrowngirton.com",
-      "events": "events@oldcrowngirton.com",
-      "press": "press@oldcrowngirton.com"
+      "primary": "hellothewhitehorsewaterbeach@gmail.com",
+      "bookings": "hellothewhitehorsewaterbeach@gmail.com",
+      "events": "hellothewhitehorsewaterbeach@gmail.com",
+      "press": "hellothewhitehorsewaterbeach@gmail.com"
     },
-    "website": "https://oldcrowngirton.com",
-    "bookingUrl": "https://oldcrowngirton.com/book-a-table",
-    "orderUrl": "https://oldcrowngirton.com/takeaway-menu"
+    "website": "https://whitehorsepub.co"
   },
   "address": {
-    "street": "89 High Street",
-    "area": "Girton",
+    "street": "12 Green Side",
+    "area": "Waterbeach",
     "city": "Cambridge",
     "state": "Cambridgeshire",
-    "postcode": "CB3 0QQ",
-    "zip": "CB3 0QQ",
+    "postcode": "CB25 9HP",
+    "zip": "CB25 9HP",
     "country": "United Kingdom",
     "coordinates": {
-      "lat": 52.2425913,
-      "lng": 0.0814946
+      "lat": 52.2662426,
+      "lng": 0.1913944
     },
     "map": {
-      "google": "https://www.google.com/maps/dir/?api=1&destination=52.2425913,0.0814946&travelmode=driving",
-      "apple": "https://maps.apple.com/?daddr=52.2425913,0.0814946&dirflg=d",
-      "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.713554807221!2d0.0790434!3d52.2422262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8707f0f84f5af%3A0x9c66cf5437f52b1!2sThe%20Old%20Crown%20Girton!5e0!3m2!1sen!2suk!4v1709302800000!5m2!1sen!2suk"
+      "google": "https://www.google.com/maps/dir/?api=1&destination=52.2662426,0.1913944&travelmode=driving",
+      "apple": "https://maps.apple.com/?daddr=52.2662426,0.1913944&dirflg=d"
     },
     "timezone": "Europe/London"
   },
   "hours": {
     "kitchen": {
       "monday": "12:00-15:00,17:00-22:00",
-      "tuesday": "12:00-15:00,17:00-21:00",
+      "tuesday": "12:00-15:00,17:00-22:00",
       "wednesday": "12:00-15:00,17:00-22:00",
       "thursday": "12:00-15:00,17:00-22:00",
-      "friday": "12:00-15:00,17:00-22:00",
+      "friday": "12:00-22:00",
       "saturday": "12:00-22:00",
-      "sunday": "12:00-21:00"
+      "sunday": "10:00-16:00,17:00-20:00"
     },
     "bar": {
       "monday": "12:00-22:00",
@@ -62,63 +59,61 @@
       "thursday": "12:00-22:00",
       "friday": "12:00-23:00",
       "saturday": "12:00-23:00",
-      "sunday": "12:00-22:00"
+      "sunday": "10:00-20:00"
     },
     "display": {
       "kitchen": {
-        "weekdays": "Mon-Thu: 12:00-15:00 & 17:00-22:00",
-        "friday": "Fri: 12:00-15:00 & 17:00-22:00",
-        "saturday": "Sat: 12:00-22:00",
-        "sunday": "Sun: 12:00-21:00"
+        "weekdays": "Mon-Thu: Lunch 12:00-15:00 • Dinner 17:00-22:00",
+        "friday": "Fri: Kitchen 12:00-22:00 (takeaway available)",
+        "saturday": "Sat: Kitchen 12:00-22:00",
+        "sunday": "Sun: Brunch 10:00-12:00 • Roasts until 16:00 • Curry evening"
       },
       "bar": {
-        "weekdays": "Mon-Thu: 12:00-22:00",
-        "friday": "Fri: 12:00-23:00",
-        "saturday": "Sat: 12:00-23:00",
-        "sunday": "Sun: 12:00-22:00"
+        "weekdays": "Mon-Thu: Bar 12:00-22:00",
+        "friday": "Fri: Bar 12:00-23:00",
+        "saturday": "Sat: Bar 12:00-23:00",
+        "sunday": "Sun: Bar 10:00-20:00"
       }
     },
     "notes": [
-      "Kitchen closes 30 minutes before listed times.",
-      "Bank holiday hours may differ."
+      "Quiz night every Wednesday evening",
+      "Takeaway collection available on Fridays",
+      "Kitchen closes 15 minutes before listed times"
     ],
     "timezone": "Europe/London"
   },
   "social": {
-    "facebook": {
-      "url": "https://www.facebook.com/oldcrowngirton",
-      "handle": "@oldcrowngirton"
-    },
-    "instagram": {
-      "url": "https://www.instagram.com/oldcrowngirton",
-      "handle": "@oldcrowngirton"
-    },
-    "twitter": {
-      "url": "https://twitter.com/oldcrowngirton",
-      "handle": "@oldcrowngirton"
-    },
     "tripadvisor": {
-      "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g187045-d123456789-Reviews-The_Old_Crown-Girton_Cambridge_Cambridgeshire_England.html"
+      "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html"
+    },
+    "camra": {
+      "url": "https://camra.org.uk/pubs/white-horse-waterbeach-131319",
+      "label": "CAMRA Listing"
+    },
+    "visitSouthCambs": {
+      "url": "https://visitsouthcambs.co.uk/hospitality/the-white-horse/"
     },
     "google": {
-      "url": "https://g.page/r/CXsample"
+      "url": "https://www.google.com/maps?q=52.2662426,0.1913944"
     }
   },
   "booking": {
-    "online": true,
+    "online": false,
     "walkIns": true,
-    "leadTimeMinutes": 15,
-    "partySizeLimit": 12
+    "leadTimeMinutes": 0,
+    "partySizeLimit": 12,
+    "depositRequired": false,
+    "cancellationPolicy": "Please phone or email The White Horse team to amend or cancel your booking."
   },
   "meta": {
-    "slug": "old-crown-girton",
+    "slug": "the-white-horse",
     "category": ["restaurant", "pub"],
     "rating": {
-      "average": 4.8,
-      "reviewCount": 327
+      "average": 4.4,
+      "reviewCount": 451
     }
   },
-  "name": "Old Crown Girton",
-  "phone": "+44 1223 277217",
-  "email": "oldcrown@lapeninns.com"
+  "name": "The White Horse",
+  "phone": "+44 1223 375578",
+  "email": "hellothewhitehorsewaterbeach@gmail.com"
 }

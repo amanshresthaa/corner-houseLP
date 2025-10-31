@@ -13,7 +13,7 @@ interface SitemapEntryConfig {
   };
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.oldcrowngirton.com';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.whitehorsepub.co';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();

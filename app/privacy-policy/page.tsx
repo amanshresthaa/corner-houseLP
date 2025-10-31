@@ -5,14 +5,14 @@ import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
 export const metadata = getSEOTags({
-  title: "Privacy Policy | Old Crown Girton - Data Protection & GDPR Compliance",
-  description: "Privacy policy for Old Crown Girton outlining data handling for restaurant bookings, enquiries and website usage. GDPR compliant data protection policy.",
-  keywords: ["Old Crown Girton privacy policy", "restaurant data protection", "GDPR compliance Cambridge", "pub privacy policy"],
+  title: "Privacy Policy | The White Horse Waterbeach - Data Protection & GDPR Compliance",
+  description: "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage. GDPR compliant data protection policy.",
+  keywords: ["The White Horse Waterbeach privacy policy", "restaurant data protection", "GDPR compliance Cambridge", "pub privacy policy"],
   canonicalUrlRelative: "/privacy-policy",
   openGraph: {
-    title: "Privacy Policy | Old Crown Girton",
-    description: "Privacy policy for Old Crown Girton outlining data handling for restaurant bookings, enquiries and website usage.",
-    url: "https://oldcrowngirton.com//privacy-policy",
+    title: "Privacy Policy | The White Horse Waterbeach",
+    description: "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage.",
+    url: "https://whitehorsepub.co//privacy-policy",
   },
 });
 
@@ -44,14 +44,14 @@ export default function PrivacyPolicy() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com//privacy-policy#webpage",
+            "@id": "https://whitehorsepub.co//privacy-policy#webpage",
             "name": `Privacy Policy - ${restaurantName}`,
             "description": `Privacy policy and data protection information for ${restaurantName} restaurant bookings, enquiries and website usage.`,
-            "url": "https://oldcrowngirton.com//privacy-policy",
+            "url": "https://whitehorsepub.co//privacy-policy",
             "isPartOf": {
               "@type": "WebSite",
               "name": restaurantName,
-              "url": "https://oldcrowngirton.com/"
+              "url": "https://whitehorsepub.co/"
             },
             "about": {
               "@type": "LocalBusiness",
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
                 <div className="space-y-8">
                   <section>
                     <p className="text-lg leading-relaxed text-neutral-700">
-                      This Privacy Policy explains how Old Crown Girton, located in Girton, Cambridge, UK, collects, uses, and protects your personal information in accordance with UK GDPR, the Data Protection Act 2018, and other applicable laws.
+                      This Privacy Policy explains how The White Horse Waterbeach, located in Waterbeach, Cambridge, UK, collects, uses, and protects your personal information in accordance with UK GDPR, the Data Protection Act 2018, and other applicable laws.
                     </p>
                   </section>
 

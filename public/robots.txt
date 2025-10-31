@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://oldcrowngirton.com/
+Host: https://whitehorsepub.co/
 
 # Sitemaps
-Sitemap: https://oldcrowngirton.com/sitemap.xml
+Sitemap: https://whitehorsepub.co/sitemap.xml

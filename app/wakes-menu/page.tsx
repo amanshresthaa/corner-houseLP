@@ -40,22 +40,22 @@ const contact = getContactInfo();
 const eventsEmail = contact.email.events ?? contact.email.primary;
 
 export const metadata = getSEOTags({
-  title: "Wakes Buffet | Celebration of Life Catering | Old Crown Girton",
+  title: "Wakes Buffet | Celebration of Life Catering | The White Horse Waterbeach",
   description:
     "Plan a calm celebration of life with our £10-per-guest wakes buffet: one sandwich, chicken wings, and a samosa, plus optional chicken pakora with tea or coffee.",
   keywords: [
     "wakes menu Cambridge",
     "celebration of life catering",
-    "Old Crown Girton wakes",
+    "The White Horse Waterbeach wakes",
     "funeral reception menu",
     "sandwich buffet Cambridge",
   ],
   canonicalUrlRelative: "/wakes-menu",
   openGraph: {
-    title: "Wakes Buffet at The Old Crown Girton",
+    title: "Wakes Buffet at The White Horse Waterbeach",
     description:
       "£10 per guest for a sandwich, chicken wings, and a samosa, with the option to add chicken pakora and hot drinks for £2.50.",
-    url: "https://oldcrowngirton.com/wakes-menu",
+    url: "https://whitehorsepub.co/wakes-menu",
   },
 });
 
@@ -64,10 +64,10 @@ export default function WakesMenuPage() {
     {
       "@context": "https://schema.org",
       "@type": "Menu",
-      name: "Old Crown Girton Wakes Menu",
+      name: "The White Horse Waterbeach Wakes Menu",
       description:
-        "Wakes and celebration of life catering at The Old Crown Girton with one sandwich, chicken wings, and a samosa per guest, plus optional chicken pakora and hot drinks.",
-      url: "https://oldcrowngirton.com/wakes-menu",
+        "Wakes and celebration of life catering at The White Horse Waterbeach with one sandwich, chicken wings, and a samosa per guest, plus optional chicken pakora and hot drinks.",
+      url: "https://whitehorsepub.co/wakes-menu",
       offers: {
         "@type": "Offer",
         price: "10.00",
@@ -76,7 +76,7 @@ export default function WakesMenuPage() {
       },
       provider: {
         "@type": "Restaurant",
-        name: "The Old Crown Girton",
+        name: "The White Horse Waterbeach",
         telephone: contact.phone.primary,
         address: {
           "@type": "PostalAddress",
@@ -146,7 +146,7 @@ export default function WakesMenuPage() {
           </FadeInUp>
           <FadeInUp>
             <p className="text-lg md:text-xl text-neutral-100 max-w-3xl mx-auto leading-relaxed">
-              Bring everyone together with a calm, £10-per-guest buffet prepared by the Old Crown kitchen. Each person receives a sandwich of their choice, a warm chicken wing, and a vegetable or meat samosa. Add chicken pakora with tea or coffee for £2.50 per guest when you want an extra flourish.
+              Bring everyone together with a calm, £10-per-guest buffet prepared by the The White Horse kitchen. Each person receives a sandwich of their choice, a warm chicken wing, and a vegetable or meat samosa. Add chicken pakora with tea or coffee for £2.50 per guest when you want an extra flourish.
             </p>
           </FadeInUp>
           <FadeInUp>
@@ -172,7 +172,7 @@ export default function WakesMenuPage() {
                 href={contact.phone.tel}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
-                ariaLabel="Call to discuss wakes catering at the Old Crown Girton"
+                ariaLabel="Call to discuss wakes catering at the The White Horse Waterbeach"
               >
                 <span aria-hidden="true" role="img">📞</span>
                 Call to plan your wake
@@ -181,7 +181,7 @@ export default function WakesMenuPage() {
                 href={`mailto:${eventsEmail}`}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
-                ariaLabel="Email the Old Crown Girton about wakes buffet availability"
+                ariaLabel="Email the The White Horse Waterbeach about wakes buffet availability"
               >
                 <span aria-hidden="true" role="img">✉️</span>
                 Request availability by email
@@ -340,7 +340,7 @@ export default function WakesMenuPage() {
                 href={contact.phone.tel}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-700 text-white font-semibold shadow-lg hover:bg-brand-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-50"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
-                ariaLabel="Call the Old Crown Girton"
+                ariaLabel="Call the The White Horse Waterbeach"
               >
                 <span aria-hidden="true" role="img">📞</span>
                 Call {contact.phone.primary}
@@ -349,7 +349,7 @@ export default function WakesMenuPage() {
                 href={`mailto:${eventsEmail}`}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-50"
                 style={{ touchAction: "manipulation", WebkitTapHighlightColor: "rgba(0,0,0,0)" }}
-                ariaLabel="Email the Old Crown Girton"
+                ariaLabel="Email the The White Horse Waterbeach"
               >
                 <span aria-hidden="true" role="img">✉️</span>
                 Email the team

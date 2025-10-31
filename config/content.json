@@ -1,17 +1,17 @@
 {
   "global": {
     "site": {
-      "name": "The Old Crown Girton",
+      "name": "The White Horse Waterbeach",
       "title": "Historic Thatched Pub & Nepalese Restaurant",
-      "description": "Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Book: 01223277217",
+      "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Book: 01223277217",
       "keywords": [
-        "pub Girton",
+        "pub Waterbeach",
         "Nepalese restaurant Cambridge",
         "family friendly pub Cambridge",
-        "dog friendly pub Girton",
+        "dog friendly pub Waterbeach",
         "Sunday roast Cambridge",
         "historic thatched pub",
-        "Girton College pub",
+        "Waterbeach College pub",
         "takeaway Cambridge"
       ],
       "branding": {
@@ -85,7 +85,7 @@
             ]
           }
         ],
-        "copyright": "© 2025 The Old Crown Girton. All rights reserved.",
+        "copyright": "© 2025 The White Horse Waterbeach. All rights reserved.",
         "socialMedia": {
           "facebook": {
             "url": "https://facebook.com",
@@ -191,7 +191,7 @@
         "showcaseSection": "Restaurant showcase"
       },
       "altTexts": {
-        "logo": "The Old Crown Girton logo",
+        "logo": "The White Horse Waterbeach logo",
         "heroBanner": "Historic thatched pub exterior",
         "defaultImage": "Restaurant image",
         "profilePicture": "Profile picture",
@@ -205,51 +205,131 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "The Old Crown Girton: Historic Thatched Pub & Authentic Nepalese Restaurant",
-        "subtitle": "Welcome to Girton's unique dining destination, where the largest thatched pub in the country serves exceptional Nepalese cuisine alongside beloved British pub classics.",
-        "description": "Just minutes from Cambridge and Girton College, we're your family-friendly, dog-welcoming village hub for memorable meals and community gathering.",
+        "title": "The White Horse Waterbeach - England's Largest Thatched Pub",
+        "subtitle": "Reopened February 2025 with Himalayan cooking, British pub comfort and village-green hospitality.",
+        "description": "Minutes from Cambridge, our 1890 coaching inn now pairs momo steamers and Sunday roasts with Sky Sports, free parking and a genuine family-and-dog friendly welcome.",
         "cta": {
-          "primary": "Book Online",
-          "secondary": "View Menu"
+          "primary": "Call 01223 375578",
+          "secondary": "View Menu",
+          "primaryHref": "tel:+441223375578",
+          "secondaryHref": "/menu#starters"
         }
       },
       "sections": {
         "features": {
-          "title": "What Makes Us Special",
+          "title": "Why Waterbeach Chooses The White Horse",
           "items": [
             {
-              "icon": "🏛️",
-              "title": "Historic Thatched Building",
-              "description": "Largest in the country"
+              "icon": "🏡",
+              "title": "Village-green landmark",
+              "description": "1890 coaching inn saved from redevelopment and relaunched February 2025."
             },
             {
               "icon": "🍛",
-              "title": "Authentic Nepalese Food",
-              "description": "Traditional recipes"
+              "title": "Authentic Nepalese kitchen",
+              "description": "Gautam family recipes like Bhutuwa chicken and Pokhareli fish curry."
             },
             {
-              "icon": "👨‍👩‍👧‍👦",
-              "title": "Family Friendly",
-              "description": "Kids welcome until 9pm"
+              "icon": "📺",
+              "title": "Community calendar",
+              "description": "Quiz night Wednesdays, Sky & TNT Sports, takeaway Fridays."
             },
             {
-              "icon": "🐕",
-              "title": "Dog Friendly",
-              "description": "Well-behaved dogs welcome"
+              "icon": "🐾",
+              "title": "Families & dogs welcome",
+              "description": "Spacious garden cabins, free roadside parking, water bowls for four-legged regulars."
+            }
+          ]
+        },
+        "pressTicker": {
+          "label": "In the Press",
+          "items": [
+            {
+              "title": "Ely Standard: Waterbeach celebrates Nepalese relaunch",
+              "summary": "Local coverage of the February 2025 reopening that kept the village pub alive with Himalayan cooking.",
+              "ctaText": "Read article",
+              "href": "https://www.elystandard.co.uk/news/24942044.white-horse-waterbeach-reopens-nepalese-restaurant/"
+            },
+            {
+              "title": "Cambridge News: Village pub rescued from redevelopment",
+              "summary": "Reports on the coaching inn's revival, pairing Sky Sports, cask ales and Nepalese feasts minutes from Cambridge.",
+              "ctaText": "See coverage",
+              "href": "https://www.cambridge-news.co.uk/whats-on/food-drink-news/cambridgeshire-village-pub-reopens-new-30923154"
+            }
+          ]
+        },
+        "about": {
+          "title": "Welcome to The White Horse",
+          "tagline": "A Waterbeach coaching inn reborn with Himalayan hospitality",
+          "description": [
+            "Opposite the Waterbeach village green, our thatched 1890 coaching inn was saved from redevelopment and relaunched on 6 February 2025 by the Lapen Inns family.",
+            "We now blend a lively British pub with a Nepalese restaurant: momo steamers, Bhutuwa chicken and Pokhareli fish curry sit happily beside Sunday roasts, cask ales and Sky Sports match days.",
+            "Families, students, commuters and canine companions gather here for quiz nights, takeaway Fridays and sunny afternoons in the garden cabins."
+          ],
+          "features": [
+            "England's largest thatched pub with free village parking",
+            "Authentic Nepalese menu crafted by Subodh Gautam and family",
+            "Heated garden cabins, terrace seating and Sky & TNT Sports",
+            "Dog friendly bar with water bowls and treats on hand"
+          ],
+          "image": {
+            "src": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg",
+            "alt": "Thatched exterior of The White Horse Waterbeach facing the village green"
+          }
+        },
+        "signatureDishes": {
+          "title": "Signature Nepalese Dishes",
+          "subtitle": "Stories behind the plates locals rave about",
+          "items": [
+            {
+              "name": "Bhutuwa Chicken",
+              "description": "Owner Subodh Gautam's favourite: wok-fired chicken tossed with chilli, garlic and ginger, best shared with warm naan.",
+              "image": "/images/white-horse/dishes/rich-red-curry-in-balti-bowl-portrait.jpeg"
+            },
+            {
+              "name": "Pokhareli Fish Curry",
+              "description": "Press-lauded chalk stream fish simmered with Himalayan spices, tomato, fenugreek and mustard seed heat.",
+              "image": "/images/white-horse/dishes/creamy-curry-in-ceramic-bowl-portrait.jpeg"
+            },
+            {
+              "name": "Rara King Prawn",
+              "description": "Tiger prawns finished on a sizzling platter with Nepalese masala, a Waterbeach bestseller since reopening.",
+              "image": "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg"
+            }
+          ]
+        },
+        "reviews": {
+          "title": "What Guests Say",
+          "subtitle": "Real sentiments from guides, reviewers and our own team",
+          "items": [
+            {
+              "quote": "\"Authentic ingredients and a rich, flavourful experience.\"",
+              "source": "Visit South Cambs hospitality guide, 2025",
+              "platform": "Visit South Cambs"
+            },
+            {
+              "quote": "\"Historic pub meets modern culinary flair - a true Cambridge gem.\"",
+              "source": "Google Reviews, February 2025",
+              "platform": "Google"
+            },
+            {
+              "quote": "\"The locals were more excited than I am - they thought it would be flats, but the regulars turned up and were so welcoming.\"",
+              "source": "Subodh Gautam speaking to Ely Standard, Feb 2025",
+              "platform": "Ely Standard"
             }
           ]
         },
         "pressFeature": {
           "label": "In the press",
-          "eyebrow": "Country pub of the week",
-          "title": "Evening Standard spotlights The Old Crown, Girton",
-          "summary": "David Ellis praises our welcoming village pub, authentic Nepalese cooking, and ever-evolving menu in the Evening Standard's Country Pub of the Week column.",
-          "quote": "The changes keep locals coming back.",
-          "quoteAttribution": "David Ellis, Evening Standard",
+          "eyebrow": "Ely Standard feature",
+          "title": "Waterbeach celebrates as The White Horse relaunches with Nepalese soul",
+          "summary": "Ely Standard shares how the Gautam family kept the village pub thriving with Himalayan cooking, Sky Sports and a revived garden.",
+          "quote": "\"The locals were more excited than I am - they thought it would be flats, but the regulars turned up and were so welcoming.\"",
+          "quoteAttribution": "Subodh Gautam, owner",
           "cta": {
-            "text": "Read the review",
-            "href": "https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html",
-            "ariaLabel": "Read the Evening Standard review (opens in new tab)"
+            "text": "Read the article",
+            "href": "https://www.elystandard.co.uk/news/24942044.white-horse-waterbeach-reopens-nepalese-restaurant/",
+            "ariaLabel": "Read Ely Standard coverage (opens in new tab)"
           }
         },
         "quickLinks": [
@@ -273,7 +353,7 @@
           }
         ],
         "cta": {
-          "headline": "Ready to Experience Girton's Thatched Nepalese Pub?",
+          "headline": "Ready to Experience Waterbeach's Thatched Nepalese Pub?",
           "description": "Reserve a table, explore the menu or plan an event – we'd love to host you.",
           "buttons": [
             {
@@ -300,28 +380,28 @@
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "The Old Crown Girton",
-            "url": "https://oldcrowngirton.com/",
-            "description": "Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics.",
+            "name": "The White Horse Waterbeach",
+            "url": "https://whitehorsepub.co/",
+            "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics.",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://oldcrowngirton.com/menu?search={search_term_string}",
+              "target": "https://whitehorsepub.co/menu?search={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           },
           {
             "@context": "https://schema.org",
             "@type": "Restaurant",
-            "@id": "https://oldcrowngirton.com/#restaurant",
-            "name": "The Old Crown Girton",
-            "image": "https://oldcrowngirton.com/opengraph-image.png",
-            "description": "Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Family and dog friendly venue voted #1 restaurant in Girton.",
+            "@id": "https://whitehorsepub.co/#restaurant",
+            "name": "The White Horse Waterbeach",
+            "image": "https://whitehorsepub.co/opengraph-image.png",
+            "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Family and dog friendly venue voted #1 restaurant in Waterbeach.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "89 High Street",
-              "addressLocality": "Girton",
+              "streetAddress": "12 Green Side",
+              "addressLocality": "Waterbeach",
               "addressRegion": "Cambridgeshire",
-              "postalCode": "CB3 0QQ",
+              "postalCode": "CB25 9HP",
               "addressCountry": "GB"
             },
             "geo": {
@@ -329,7 +409,7 @@
               "latitude": 52.2462,
               "longitude": 0.0731
             },
-            "url": "https://oldcrowngirton.com/",
+            "url": "https://whitehorsepub.co/",
             "telephone": "+441223277217",
             "priceRange": "££",
             "servesCuisine": [
@@ -345,10 +425,10 @@
               "worstRating": "1",
               "ratingCount": "150"
             },
-            "hasMenu": "https://oldcrowngirton.com/menu",
+            "hasMenu": "https://whitehorsepub.co/menu",
             "sameAs": [
-              "https://www.facebook.com/oldcrowngirton",
-              "https://www.instagram.com/theoldcrowngirton"
+              "https://www.facebook.com/whitehorsewaterbeach",
+              "https://www.instagram.com/thewhitehorsewaterbeach"
             ],
             "openingHoursSpecification": [
               {
@@ -382,22 +462,22 @@
     },
     "about": {
       "hero": {
-        "title": "About Old Crown Girton",
+        "title": "About The White Horse Waterbeach",
         "subtitle": "A unique blend of authentic Nepalese cuisine and traditional British pub culture"
       },
       "story": {
         "title": "Our Story",
-        "introduction": "Located in the picturesque village of Girton, just minutes from Cambridge, Old Crown Girton is set in England's largest thatched pub. We serve authentic Nepalese cuisine alongside traditional British pub classics for a warm, welcoming village experience. While we don't currently serve a traditional Sunday roast in Cambridge, our Nepalese dishes and pub favourites make comforting Sunday roast alternatives.",
+        "introduction": "Located in the picturesque village of Waterbeach, just minutes from Cambridge, The White Horse Waterbeach is set in England's largest thatched pub. We serve authentic Nepalese cuisine alongside traditional British pub classics for a warm, welcoming village experience. While we don't currently serve a traditional Sunday roast in Cambridge, our Nepalese dishes and pub favourites make comforting Sunday roast alternatives.",
         "timeline": [
           {
             "period": "Historic Beginnings",
             "title": "The Village Heart",
-            "description": "For centuries, The Old Crown has been at the heart of Girton village life. Our historic thatched building - recognized as the largest thatched pub in the country - has witnessed countless community gatherings and celebrations."
+            "description": "For centuries, The White Horse has been at the heart of Waterbeach village life. Our historic thatched building - recognized as the largest thatched pub in the country - has witnessed countless community gatherings and celebrations."
           },
           {
             "period": "Culinary Evolution",
             "title": "Culinary Evolution",
-            "description": "Under various managements, The Old Crown experimented with different culinary directions, including a period as an upscale gastropub. Each era added to our rich tapestry while maintaining our essential village pub character."
+            "description": "Under various managements, The White Horse experimented with different culinary directions, including a period as an upscale gastropub. Each era added to our rich tapestry while maintaining our essential village pub character."
           },
           {
             "period": "Today",
@@ -411,7 +491,7 @@
         "description": "Experience the perfect blend of Nepalese hospitality and British pub tradition.",
         "button": "Book Online",
         "contact": {
-          "address": "89 High St, Girton, Cambridge CB3 0QQ",
+          "address": "12 Green Side, Waterbeach, Cambridge CB25 9HP",
           "hours": "See footer for full hours"
         }
       }
@@ -430,7 +510,7 @@
         },
         "location": {
           "title": "Location",
-          "address": "89 High Street, Girton, Cambridge, CB3 0QQ",
+          "address": "12 Green Side, Waterbeach, Cambridge, CB25 9HP",
           "description": "Just 3 miles from Cambridge city centre"
         }
       },
@@ -471,7 +551,7 @@
     "events": {
       "hero": {
         "title": "What's On & Community Events",
-        "subtitle": "Recurring favourites plus seasonal highlights reflecting Girton village life & Cambridge academic rhythm. Call to reserve or enquire about group space."
+        "subtitle": "Recurring favourites plus seasonal highlights reflecting Waterbeach village life & Cambridge academic rhythm. Call to reserve or enquire about group space."
       },
       "regularEvents": [
         {
@@ -503,13 +583,13 @@
         "title": "Book Your Event",
         "description": "Planning a private event? Get in touch to discuss your requirements.",
         "phone": "01223277217",
-        "email": "events@oldcrowngirton.com"
+        "email": "hellothewhitehorsewaterbeach@gmail.com"
       }
     },
     "menu": {
       "hero": {
         "title": "Our Menu: Authentic Nepalese & Traditional British Cuisine",
-        "subtitle": "Discover the unique flavors of Nepal alongside your favorite pub classics at Girton's historic thatched pub. Every dish made fresh with authentic recipes and quality ingredients.",
+        "subtitle": "Discover the unique flavors of Nepal alongside your favorite pub classics at Waterbeach's historic thatched pub. Every dish made fresh with authentic recipes and quality ingredients.",
         "cta": {
           "book": "Book Online",
           "order": "Order Takeaway: 01223277217"
@@ -521,7 +601,7 @@
       }
     },
     "signin": {
-      "title": "Sign in to The Old Crown Girton",
+      "title": "Sign in to The White Horse Waterbeach",
       "subtitle": "Access your account",
       "form": {
         "email": {
@@ -589,7 +669,7 @@
           "name": "Mike Thompson",
           "text": "Great food and fantastic service. The best of both worlds - proper pub classics and amazing curry. Highly recommended!",
           "rating": 5,
-          "location": "Girton"
+          "location": "Waterbeach"
         }
       ]
     },
@@ -635,355 +715,101 @@
       },
       "slides": [
         {
-          "id": "slide-christmas-2025",
+          "id": "slide-relaunch-beacon",
           "image": {
-            "primary": "/images/slideshow/seasonal/christmas-slide.avif",
-            "fallback": "/images/slideshow/seasonal/christmas-slide.png",
-            "width": 1254,
-            "height": 716
+            "primary": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg"
           },
-          "alt": "Festive Christmas table setting with decorations at The Old Crown Girton",
-          "eyebrow": "Festive Menu 2025",
-          "headline": "Celebrate Christmas at Old Crown Girton",
-          "copy": "Gather your guests for a four-course festive meal with mulled wine or another welcome drink included for every arrival.",
+          "alt": "Thatched exterior of The White Horse Waterbeach on a bright day",
+          "eyebrow": "Village Hub Reborn",
+          "headline": "Waterbeach's thatched landmark is alive with Nepalese flavour",
+          "copy": "Saved from redevelopment and relaunched February 2025, The White Horse pairs a historic coaching inn with Himalayan cooking and proper cask ales.",
           "badges": [
-            "Mulled Wine Included",
-            "Four Courses",
-            "GBP 44.99 per guest"
+            "Open daily",
+            "Families & dogs welcome",
+            "Opposite Waterbeach green"
           ],
           "ctas": {
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-curry-carols-2025",
-          "image": {
-            "primary": "/images/slideshow/seasonal/curry-carols-slide.avif",
-            "fallback": "/images/slideshow/seasonal/curry-carols-slide.png",
-            "width": 763,
-            "height": 436
-          },
-          "alt": "Festive Nepalese curry dishes served alongside Christmas carollers",
-          "eyebrow": "Curry & Carols 2025",
-          "headline": "Two Magical Nights of Curry & Carols",
-          "copy": "Join us on 16 & 17 December for a GBP 35 Nepalese banquet with live carols beneath our thatched roof — limited seats, joyful choruses.",
-          "badges": [
-            "16 & 17 December",
-            "GBP 35 per guest",
-            "Live Carol Singers"
-          ],
-          "ctas": {
-            "callTel": "tel:+441223 277217",
-            "secondaryUrl": "/events/curry-and-carols"
-          }
-        },
-        {
-          "id": "slide-0",
-          "image": {
-            "primary": "/images/slideshow/cars/car-meet-up.avif",
-            "fallback": "/images/slideshow/cars/car-meet-up.jpeg",
-            "width": 2048,
-            "height": 1152
-          },
-          "alt": "A trio of sports cars parked outside the thatched Old Crown Girton pub on a sunny day",
-          "eyebrow": "Road-Trip Welcome",
-          "headline": "A Perfect Stop for Road-Trip Meets",
-          "copy": "Pull up, park, and enjoy great food and drinks — our spacious forecourt and thatched backdrop make every car meet an easy, welcoming occasion.",
-          "badges": [
-            "Car Meets",
-            "Photo Moments",
-            "Friendly Welcome"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-ev-charging",
-          "image": {
-            "primary": "/images/slideshow/cars/electric-vehicle-charging-bays.avif",
-            "fallback": "/images/slideshow/cars/electric-vehicle-charging-bays.png",
-            "width": 1344,
-            "height": 768
-          },
-          "alt": "Electric vehicles charging at dedicated bays outside the Old Crown Girton pub",
-          "eyebrow": "Charge & Dine",
-          "headline": "Plug In While You Unwind Inside",
-          "copy": "Top up your EV and your energy in one stop — enjoy dinner or a pint while our on-site chargers handle your car.",
-          "badges": [
-            "EV Charging",
-            "Road-Trip Ready",
-            "Free Parking"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
+            "callTel": "tel:+441223375578",
+            "secondaryUrl": "/about"
           },
           "required": true
         },
         {
-          "id": "slide-1",
+          "id": "slide-dual-identity",
           "image": {
-            "primary": "/images/slideshow/interior/the-old-crown-pub-restaurant-interior-dining.avif",
-            "fallback": "/images/slideshow/interior/the-old-crown-pub-restaurant-interior-dining.jpg",
-            "width": 2048,
-            "height": 1152
+            "primary": "/images/white-horse/interior/bar-counter-cozy-lighting-taps-and-shelves-landscape.jpeg"
           },
-          "alt": "Historic restaurant interior dining room at Old Crown Girton",
-          "eyebrow": "Historic Restaurant Interior",
-          "headline": "Authentic Nepalese Dining in a Characterful Setting",
-          "copy": "Experience exceptional Nepalese cuisine in our cosy dining room — perfect for family meals and celebrations.",
+          "alt": "Copper-topped bar at The White Horse with cask ales and spirits",
+          "eyebrow": "Two Pubs in One",
+          "headline": "Authentic Nepalese kitchen meets favourite British bar",
+          "copy": "Share momo, Bhutuwa chicken or Sunday roasts while friends enjoy Sky Sports, cask ales and cocktails — one roof, every occasion.",
           "badges": [
-            "Historic Interior",
-            "Nepalese Cuisine",
-            "Family Dining"
+            "Nepalese classics",
+            "CAMRA-kept cask ales",
+            "Sky & TNT Sports"
           ],
           "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
+            "menuUrl": "/menu",
+            "callTel": "tel:+441223375578",
+            "secondaryUrl": "/press"
           }
         },
         {
-          "id": "slide-2",
+          "id": "slide-signature-dishes",
           "image": {
-            "primary": "/images/slideshow/interior/comfy-bar-lounge-with-armchairs-and-tv.avif",
-            "fallback": "/images/slideshow/interior/comfy-bar-lounge-with-armchairs-and-tv.jpeg",
-            "width": 2048,
-            "height": 1152
+            "primary": "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg"
           },
-          "alt": "Comfortable bar lounge with armchairs and TV for sports viewing at Old Crown Girton",
-          "eyebrow": "Sports & Social Hub",
-          "headline": "Live Sports, Craft Beer & Community Spirit",
-          "copy": "Watch the big games in comfort with friends — a welcoming atmosphere for locals and visitors alike.",
+          "alt": "Nepalese sizzling mixed grill served with lemon at The White Horse",
+          "eyebrow": "Signature Dishes",
+          "headline": "Bhutuwa chicken, Pokhareli fish & Rara king prawns lead the menu",
+          "copy": "Press-lauded dishes cooked by the Gautam family showcase Himalayan spice alongside comforting pub favourites and Sunday roasts.",
           "badges": [
-            "Live Sports",
-            "Craft Beer",
-            "Community Hub"
+            "Takeaway Friday",
+            "Vegetarian & gluten-free options",
+            "Spice levels for everyone"
           ],
           "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
+            "menuUrl": "/menu",
+            "callTel": "tel:+441223375578",
+            "secondaryUrl": "/takeaway-menu"
           }
         },
         {
-          "id": "slide-3",
+          "id": "slide-garden-terrace",
           "image": {
-            "primary": "/images/slideshow/interior/stylish-pub-restaurant-dining-area-interior.avif",
-            "fallback": "/images/slideshow/interior/stylish-pub-restaurant-dining-area-interior.jpeg",
-            "width": 2048,
-            "height": 1152
+            "primary": "/images/white-horse/garden/patio-terrace-wicker-chairs-and-parasols-portrait.jpeg"
           },
-          "alt": "Stylish pub restaurant dining area interior at Old Crown Girton",
-          "eyebrow": "Elegant Dining Space",
-          "headline": "Sophisticated Atmosphere for Special Occasions",
-          "copy": "Traditional pub charm with contemporary comfort — ideal for date nights and celebrations.",
+          "alt": "Terrace with wicker chairs and parasols at The White Horse",
+          "eyebrow": "Beer Garden & Cabins",
+          "headline": "Garden cabins, terrace seating & summer-ready parasols",
+          "copy": "Gather on the village green with heated cabins, picnic benches and community events from brunch to curry evenings.",
           "badges": [
-            "Elegant Interior",
-            "Special Occasions",
-            "Modern Comfort"
+            "Heated cabins",
+            "Quiz night Wednesdays",
+            "Free village parking"
           ],
           "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
+            "callTel": "tel:+441223375578",
+            "secondaryUrl": "/events"
           }
         },
         {
-          "id": "slide-4",
+          "id": "slide-community-calendar",
           "image": {
-            "primary": "/images/slideshow/interior/cosy-pub-bar-area-with-games-machine.avif",
-            "fallback": "/images/slideshow/interior/cosy-pub-bar-area-with-games-machine.jpeg",
-            "width": 2048,
-            "height": 1152
+            "primary": "/images/white-horse/interior/bar-counter-front-view-taps-and-bottles-landscape.jpeg"
           },
-          "alt": "Cosy pub bar area with games machine at Old Crown Girton",
-          "eyebrow": "Classic Entertainment",
-          "headline": "Relaxed Bar Lounge for Every Occasion",
-          "copy": "Grab a pint, catch up with friends, and settle into our welcoming atmosphere with traditional pub games.",
+          "alt": "Bar counter with handpulls and warm lighting at The White Horse",
+          "eyebrow": "Community Calendar",
+          "headline": "Live sports, quiz night and takeaway Fridays keep Waterbeach buzzing",
+          "copy": "Catch Premier League fixtures on Sky & TNT, tackle the Wednesday quiz or pick up Nepalese takeaway for the family every Friday night.",
           "badges": [
-            "Relaxed Lounge",
-            "Great Atmosphere",
-            "Pub Games"
+            "Quiz night Wednesday",
+            "Takeaway every Friday",
+            "Gift cards available"
           ],
           "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-4b",
-          "image": {
-            "primary": "/images/slideshow/interior/premier-league-sky-tv-sports.avif",
-            "fallback": "/images/slideshow/interior/premier-league-sky-tv-sports.jpeg",
-            "width": 1344,
-            "height": 768
-          },
-          "alt": "Fans watching live Premier League football on a big screen inside a pub in Girton",
-          "eyebrow": "Live Sports",
-          "headline": "Catch Premier League & Major Matches Live",
-          "copy": "Join us for Premier League, football, rugby and headline sporting events on our big screen — the best place to watch the match in Girton and Cambridge.",
-          "badges": [
-            "Live Sports",
-            "Premier League",
-            "Big Screen"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-5",
-          "image": {
-            "primary": "/images/slideshow/garden/family-friendly-pub-garden-with-picnic-tables.avif",
-            "fallback": "/images/slideshow/garden/family-friendly-pub-garden-with-picnic-tables.jpeg",
-            "width": 2048,
-            "height": 1152
-          },
-          "alt": "Family-friendly pub garden with picnic tables at Old Crown Girton",
-          "eyebrow": "Family Garden",
-          "headline": "Room to Unwind in Our Beer Garden",
-          "copy": "Plenty of space for groups, families, and lazy weekend afternoons with traditional picnic table seating.",
-          "badges": [
-            "Spacious Garden",
-            "Picnic Tables",
-            "Family Friendly"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-6",
-          "image": {
-            "primary": "/images/slideshow/garden/spacious-beer-garden-and-outdoor-seating.avif",
-            "fallback": "/images/slideshow/garden/spacious-beer-garden-and-outdoor-seating.jpeg",
-            "width": 2048,
-            "height": 1152
-          },
-          "alt": "Spacious beer garden with outdoor seating at Old Crown Girton",
-          "eyebrow": "Al Fresco Dining",
-          "headline": "Outdoor Dining in Our Spacious Beer Garden",
-          "copy": "Enjoy fresh air and great food in our expansive outdoor space — perfect for summer dining.",
-          "badges": [
-            "Beer Garden",
-            "Outdoor Dining",
-            "Summer Seating"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-7",
-          "image": {
-            "primary": "/images/slideshow/garden/sunny-pub-garden-patio-seating-wellingborough-terrace.avif",
-            "fallback": "/images/slideshow/garden/sunny-pub-garden-patio-seating-wellingborough-terrace.jpeg",
-            "width": 2048,
-            "height": 1152
-          },
-          "alt": "Sunny pub garden patio seating and terrace at Old Crown Girton",
-          "eyebrow": "Sun-Drenched Terrace",
-          "headline": "Al Fresco Dining on Our Sunny Terrace",
-          "copy": "Relax with weekend lunches and summer drinks on our spacious, sun-drenched terrace.",
-          "badges": [
-            "Sunny Terrace",
-            "Patio Seating",
-            "Summer Dining"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-8",
-          "image": {
-            "primary": "/images/slideshow/garden/childrens-wooden-play-area-with-slide-in-pub-garden.avif",
-            "fallback": "/images/slideshow/garden/childrens-wooden-play-area-with-slide-in-pub-garden.jpeg",
-            "width": 2048,
-            "height": 1152
-          },
-          "alt": "Children's wooden play area with slide in pub garden at Old Crown Girton",
-          "eyebrow": "Kids Adventure Zone",
-          "headline": "Dedicated Children's Play Area for Family Fun",
-          "copy": "Let the kids play safely while you relax. Our secure wooden play area keeps families smiling.",
-          "badges": [
-            "Family Friendly",
-            "Safe Play",
-            "Kids Zone"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-9",
-          "image": {
-            "primary": "/images/slideshow/OldCrownGirtonBuilding.avif",
-            "fallback": "/images/slideshow/OldCrownGirtonBuilding.png",
-            "width": 688,
-            "height": 431
-          },
-          "alt": "Historic thatched exterior of Old Crown Girton - England's largest thatched pub",
-          "eyebrow": "Historic Thatched Exterior",
-          "headline": "England's Largest Thatched Pub — A Cambridge Landmark",
-          "copy": "Discover our remarkable thatched building — a unique setting minutes from Cambridge and Girton College.",
-          "badges": [
-            "Largest Thatched Pub",
-            "Historic Landmark",
-            "Cambridge Icon"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-10",
-          "image": {
-            "primary": "/images/slideshow/exterior/the-old-crown-pub-exterior-and-beer-garden.avif",
-            "fallback": "/images/slideshow/exterior/the-old-crown-pub-exterior-and-beer-garden.jpeg",
-            "width": 2048,
-            "height": 1152
-          },
-          "alt": "The Old Crown pub exterior and beer garden view",
-          "eyebrow": "Pub Exterior & Garden",
-          "headline": "Traditional Pub Charm with Modern Amenities",
-          "copy": "Beautiful exterior showcasing our historic character alongside our expansive garden facilities.",
-          "badges": [
-            "Historic Exterior",
-            "Garden Views",
-            "Traditional Charm"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
-          }
-        },
-        {
-          "id": "slide-11",
-          "image": {
-            "primary": "/images/slideshow/exterior/large-gravel-car-park-at-the-old-crown-pub.avif",
-            "fallback": "/images/slideshow/exterior/large-gravel-car-park-at-the-old-crown-pub.jpeg",
-            "width": 2048,
-            "height": 1152
-          },
-          "alt": "Large gravel car park with ample free parking at Old Crown Girton",
-          "eyebrow": "Convenient Free Parking",
-          "headline": "No Parking Worries — Plenty of Space",
-          "copy": "Unlike city centre, enjoy stress-free dining with our large, free car park.",
-          "badges": [
-            "Free Parking",
-            "Easy Access",
-            "Stress-Free"
-          ],
-          "ctas": {
-            "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223 277217"
+            "callTel": "tel:+441223375578",
+            "secondaryUrl": "https://lapeninns.com/gift-cards"
           },
           "required": true
         }
@@ -1064,12 +890,13 @@
     "terms": {
       "title": "Terms of Service",
       "effectiveDate": "10 August 2025",
-      "contact": "legal@oldcrowngirton.com"
+      "contact": "hellothewhitehorsewaterbeach@gmail.com"
     },
     "privacy": {
       "title": "Privacy Policy",
       "effectiveDate": "10 August 2025",
-      "contact": "privacy@oldcrowngirton.com"
+      "contact": "hellothewhitehorsewaterbeach@gmail.com"
     }
   }
 }
+

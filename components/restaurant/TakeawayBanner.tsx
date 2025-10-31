@@ -8,44 +8,44 @@ export default function TakeawayBanner() {
   const phoneDisplay = contact.phone.display;
   const phoneHref = contact.phone.tel;
   return (
-  <section className="bg-gradient-to-r from-brand-600 to-brand-800 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center text-neutral-50">
-          <div className="flex items-center justify-center mb-4">
-            <EmojiIcon emoji="🥡" size="xl" className="mr-3" />
-            <h2 className="text-3xl md:text-4xl font-display font-bold">
-              Takeaway Available
+    <section className="bg-gradient-to-r from-neutral-100 via-neutral-50 to-white py-11 sm:py-12">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center gap-6 text-center text-brand-800">
+          <div className="flex flex-col items-center gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-brand-700">
+              <EmojiIcon emoji="🥡" size="lg" />
+              Takeaway ready
+            </span>
+            <h2 className="text-3xl font-display font-bold md:text-4xl text-foreground-strong">
+              Take the White Horse experience home
             </h2>
           </div>
-          
-          <p className="text-xl mb-6 max-w-2xl mx-auto">
-            Enjoy our delicious Nepalese cuisine from the comfort of your home. 
-            <br className="hidden md:block" />
-            <span className="font-semibold">Call us to place your takeaway order!</span>
+
+          <p className="max-w-3xl text-lg md:text-xl md:leading-relaxed">
+            Enjoy our Nepalese favourites from the comfort of your sofa. Call ahead and we&apos;ll have everything boxed, hot, and ready when you arrive.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href={phoneHref}
-              className="bg-accent-500 text-neutral-900 font-bold py-4 px-8 rounded-lg text-lg shadow-lg hover:bg-accent-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-300 transition-colors"
-              aria-label={`Call to order takeaway at ${phoneDisplay}`}
-            >
-              <EmojiIcon emoji="📞" className="mr-2" /> Call to Order: {phoneDisplay}
-            </a>
-          </div>
+          <a
+            href={phoneHref}
+            className="inline-flex items-center gap-2 rounded-full bg-brand-900 px-9 py-4 text-lg font-semibold text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100"
+            aria-label={`Call to order takeaway at ${phoneDisplay}`}
+          >
+            <EmojiIcon emoji="📞" className="text-xl" />
+            Call to order: {phoneDisplay}
+          </a>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-base font-medium">
-            <div className="flex items-center gap-2 bg-brand-700/30 backdrop-blur-sm px-4 py-2 rounded-lg border border-accent-300/40">
+          <div className="flex w-full flex-wrap justify-center gap-3 text-sm font-semibold text-brand-700 md:text-base">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 shadow-sm">
               <EmojiIcon emoji="⏰" size="lg" />
-              <span className="text-neutral-50 font-semibold">Ready in 20-30 mins</span>
+              <span>Ready in 20–30 mins</span>
             </div>
-            <div className="flex items-center gap-2 bg-brand-700/30 backdrop-blur-sm px-4 py-2 rounded-lg border border-accent-300/40">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 shadow-sm">
               <EmojiIcon emoji="🚗" size="lg" />
-              <span className="text-neutral-50 font-semibold">Free collection</span>
+              <span>Free collection</span>
             </div>
-            <div className="flex items-center gap-2 bg-brand-700/30 backdrop-blur-sm px-4 py-2 rounded-lg border border-accent-300/40">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-2 shadow-sm">
               <EmojiIcon emoji="📞" size="lg" />
-              <span className="text-neutral-50 font-semibold">Call for current menu & prices</span>
+              <span>Call for today&apos;s menu</span>
             </div>
           </div>
         </div>

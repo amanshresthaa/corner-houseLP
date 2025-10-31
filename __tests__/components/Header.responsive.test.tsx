@@ -13,7 +13,7 @@ const MockHeader = () => {
   return (
     <header className="bg-white shadow-sm">
       <nav className="flex items-center justify-between p-4">
-        <div className="text-xl font-bold">Old Crown</div>
+        <div className="text-xl font-bold">The White Horse</div>
         
         {/* Desktop navigation */}
         <div className="hidden md:flex space-x-6">

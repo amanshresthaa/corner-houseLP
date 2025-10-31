@@ -18,9 +18,9 @@ async function ensureSharp() {
 
 function findDefaultSource() {
   const candidates = [
-    'public/images/brand/OldCrownLogo.png',
+    'public/images/brand/WhiteHorseLogo.png',
     'public/images/brand/Oldcrowngirtonlogo.png',
-    'public/logos/OldCrownLogo.png',
+    'public/logos/WhiteHorseLogo.png',
     'public/images/Oldcrowngirtonlogo.png',
     'Oldcrowngirtonlogo.png',
   ];

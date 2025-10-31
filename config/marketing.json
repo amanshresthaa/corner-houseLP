@@ -1,9 +1,32 @@
 {
-  "hero": { "title": "Historic Thatched Pub & Nepalese Restaurant", "subtitle": "Welcome to The Old Crown, Girton" },
+  "hero": {
+    "title": "England's Largest Thatched Pub Reborn",
+    "subtitle": "Authentic Nepalese cooking, cask ales and community spirit opposite Waterbeach green."
+  },
   "promos": [
-    { "id": "p1", "title": "Curry Night Tuesday", "body": "Special set menus every Tuesday." },
-    { "id": "p2", "title": "Sunday Roast", "body": "Traditional roasts every Sunday." }
+    {
+      "id": "quiz-night",
+      "title": "Quiz Night Wednesdays",
+      "body": "Gather the village for our weekly quiz with Nepalese bar snacks and Sky Sports atmosphere."
+    },
+    {
+      "id": "takeaway-friday",
+      "title": "Takeaway Fridays",
+      "body": "Call 01223 375578 for Bhutuwa chicken, momo and Gurkha lager to enjoy at home."
+    },
+    {
+      "id": "sunday-masala",
+      "title": "Sunday Masala Roast",
+      "body": "Slow-roasted meats brushed with Himalayan spice rub, served until 4pm every Sunday."
+    }
   ],
-  "seo": { "title": "The Old Crown Girton", "description": "Authentic Nepalese cuisine and British pub classics in Girton, Cambridge." },
-  "buttons": { "bookOnline": "Book Online", "viewMenu": "View Menu" }
+  "seo": {
+    "title": "The White Horse Waterbeach",
+    "description": "Waterbeach's thatched coaching inn serving Nepalese cuisine, British pub favourites, Sky Sports and village events."
+  },
+  "buttons": {
+    "bookOnline": "Book Online",
+    "viewMenu": "View Menu",
+    "callTakeaway": "Call 01223 375578"
+  }
 }

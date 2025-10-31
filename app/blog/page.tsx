@@ -7,14 +7,14 @@ import { BlogHero, BlogFeatured, FilterableBlogSection } from './_components';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Blog | Old Crown Girton - Local Stories, Food & Community News | Cambridge",
-  description: "Discover stories from Old Crown Girton: Nepalese cuisine recipes, Girton village history, local events coverage, and community news from Cambridge's historic thatched pub.",
-  keywords: ["Old Crown Girton blog", "Cambridge pub blog", "Girton village stories", "Nepalese cuisine recipes", "Cambridge local news", "pub history blog"],
+  title: "Blog | The White Horse Waterbeach - Local Stories, Food & Community News | Cambridge",
+  description: "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news from Cambridge's historic thatched pub.",
+  keywords: ["The White Horse Waterbeach blog", "Cambridge pub blog", "Waterbeach village stories", "Nepalese cuisine recipes", "Cambridge local news", "pub history blog"],
   canonicalUrlRelative: "/blog",
   openGraph: {
-    title: "Blog | Old Crown Girton - Local Stories & Community News",
-    description: "Discover stories from Old Crown Girton: Nepalese cuisine recipes, Girton village history, local events coverage, and community news.",
-    url: "https://oldcrowngirton.com//blog",
+    title: "Blog | The White Horse Waterbeach - Local Stories & Community News",
+    description: "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news.",
+    url: "https://whitehorsepub.co//blog",
   },
 });
 
@@ -23,7 +23,7 @@ export const metadata = getSEOTags({
 // Featured and recent blog posts data
 const featuredPost = {
   id: "authentic-momo-dumplings-nepalese-cuisine",
-  title: "A Guide to Authentic Momo Dumplings and Nepalese Cuisine at Old Crown Girton",
+  title: "A Guide to Authentic Momo Dumplings and Nepalese Cuisine at The White Horse Waterbeach",
   excerpt: "Discover the art of authentic Nepalese momo dumplings and explore the rich flavors of Himalayan cuisine at Cambridge's most unique restaurant destination.",
   image: Images.blog.momo,
   category: "Nepalese Cuisine",
@@ -36,11 +36,11 @@ const featuredPost = {
 const blogPosts = [
   {
     id: "evening-standard-country-pub-of-the-week",
-    title: "Evening Standard Spotlights The Old Crown, Girton",
+    title: "Evening Standard Spotlights The White Horse, Waterbeach",
     excerpt: "The Evening Standard names us Country Pub of the Week, celebrating our Nepalese cooking, village welcome, and ever-evolving menu.",
     image: Images.blog.thatchedExterior,
     category: "Press & Media",
-    author: "Old Crown Team",
+    author: "The White Horse Team",
     publishedDate: "2024-12-19",
     readTime: "2 min read",
     slug: "evening-standard-country-pub-of-the-week"
@@ -48,7 +48,7 @@ const blogPosts = [
   {
     id: "business-lunch-cambridge-guide",
     title: "The Ultimate Business Lunch Destination in Cambridge",
-    excerpt: "Discover why Old Crown Girton has become the go-to choice for professionals seeking the perfect balance of quality cuisine, professional atmosphere, and convenient location.",
+    excerpt: "Discover why The White Horse Waterbeach has become the go-to choice for professionals seeking the perfect balance of quality cuisine, professional atmosphere, and convenient location.",
     image: Images.blog.businessLunch,
     category: "Business Dining",
     author: "Emma Sutton",
@@ -58,8 +58,8 @@ const blogPosts = [
   },
   {
     id: "dog-friendly-dining-guide",
-    title: "The Ultimate Dog-Friendly Dining Experience at Old Crown Girton",
-    excerpt: "Discover why Old Crown Girton has become Cambridge's favourite destination for dining with four-legged family members.",
+    title: "The Ultimate Dog-Friendly Dining Experience at The White Horse Waterbeach",
+    excerpt: "Discover why The White Horse Waterbeach has become Cambridge's favourite destination for dining with four-legged family members.",
     image: Images.blog.dogFriendly,
     category: "Dog-Friendly",
     author: "Sarah Mitchell",
@@ -69,8 +69,8 @@ const blogPosts = [
   },
   {
     id: "student-guide-cambridge-university",
-    title: "A Cambridge Student's Guide to Old Crown Girton",
-    excerpt: "Discover why Old Crown Girton has become the go-to destination for Cambridge University students seeking affordable quality dining, unique experiences, and the perfect study break.",
+    title: "A Cambridge Student's Guide to The White Horse Waterbeach",
+    excerpt: "Discover why The White Horse Waterbeach has become the go-to destination for Cambridge University students seeking affordable quality dining, unique experiences, and the perfect study break.",
     image: Images.blog.studentGuide,
     category: "Student Life",
     author: "James Mitchell",
@@ -84,7 +84,7 @@ const blogPosts = [
     excerpt: "We don't currently serve a traditional Sunday roast. Explore Cambridge options and what to try at our thatched pub instead.",
     image: Images.blog.sundayRoast,
     category: "Food & Dining",
-    author: "Old Crown Team",
+    author: "The White Horse Team",
     publishedDate: "2024-12-15",
     readTime: "7 min read",
     slug: "perfect-sunday-roast-guide"
@@ -92,7 +92,7 @@ const blogPosts = [
   {
     id: "largest-thatched-pub-history",
     title: "The Remarkable History of England's Largest Thatched Pub",
-    excerpt: "Journey through centuries of history at Old Crown Girton, from its medieval origins to its current status as a unique dining destination.",
+    excerpt: "Journey through centuries of history at The White Horse Waterbeach, from its medieval origins to its current status as a unique dining destination.",
     image: Images.blog.thatchedExterior,
     category: "History & Heritage",
     author: "Dr. Margaret Whitfield",
@@ -102,8 +102,8 @@ const blogPosts = [
   },
   {
     id: "ultimate-sports-viewing-guide",
-    title: "The Ultimate Sports Viewing Experience at Old Crown Girton",
-    excerpt: "Discover why Old Crown Girton has become Cambridge's premier destination for watching live sports with unbeatable atmosphere and crystal-clear viewing.",
+    title: "The Ultimate Sports Viewing Experience at The White Horse Waterbeach",
+    excerpt: "Discover why The White Horse Waterbeach has become Cambridge's premier destination for watching live sports with unbeatable atmosphere and crystal-clear viewing.",
     image: Images.blog.sportsViewing,
     category: "Sports & Entertainment",
     author: "Tom Richardson",
@@ -114,7 +114,7 @@ const blogPosts = [
   {
     id: "local-suppliers-fresh-ingredients",
     title: "Supporting Local: Our Commitment to Fresh Ingredients and Community Suppliers",
-    excerpt: "Discover how Old Crown Girton's partnership with local suppliers creates exceptional flavors while supporting the Cambridgeshire community.",
+    excerpt: "Discover how The White Horse Waterbeach's partnership with local suppliers creates exceptional flavors while supporting the Cambridgeshire community.",
     image: Images.blog.localIngredients,
     category: "Local Sourcing",
     author: "Emma Sutton",
@@ -124,11 +124,11 @@ const blogPosts = [
   },
   {
     id: "nepalese-cuisine-journey",
-    title: "The Journey of Nepalese Cuisine to Girton Village",
+    title: "The Journey of Nepalese Cuisine to Waterbeach Village",
     excerpt: "Discover how authentic Nepalese flavors found their home in Cambridge's historic thatched pub, creating a unique dining experience.",
     image: Images.blog.nepaleseHero,
     category: "Cuisine",
-    author: "Old Crown Team",
+    author: "The White Horse Team",
     publishedDate: "2024-08-15",
     readTime: "5 min read",
     slug: "nepalese-cuisine-journey"
@@ -165,7 +165,7 @@ export default function BlogPage() {
         {/* Blog Hero Section with motion animation */}
         <section aria-labelledby="blog-hero-heading">
           <BlogHero 
-            title="Stories from Old Crown Girton"
+            title="Stories from The White Horse Waterbeach"
             subtitle="Discover the rich heritage, delicious cuisine, and vibrant community that makes our historic thatched pub special"
           />
         </section>
@@ -194,7 +194,7 @@ export default function BlogPage() {
                       📰 Stay Updated
                     </h2>
                     <p className="text-lg text-neutral-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-                      Get the latest stories, event announcements, and special offers from Old Crown Girton
+                      Get the latest stories, event announcements, and special offers from The White Horse Waterbeach
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                       <label htmlFor="newsletter-email" className="sr-only">Email address</label>

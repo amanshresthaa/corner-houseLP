@@ -8,8 +8,8 @@ Overview
 Structure (physical folders)
 - Public brand assets
   - `public/images/brand/Oldcrowngirtonlogo.png`
-  - `public/images/brand/OldCrownLogo.png`
-  - `public/images/slideshow/OldCrownGirtonBuilding.png`
+  - `public/images/brand/WhiteHorseLogo.png`
+  - `public/images/slideshow/WhiteHorseWaterbeachBuilding.png`
 - Venue photos (slideshow set)
   - `public/images/slideshow/{interior,exterior,garden}/*.{jpg,jpeg,png}`
   - Referenced via the registry or static imports

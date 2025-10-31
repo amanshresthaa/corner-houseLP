@@ -235,7 +235,7 @@ const MENU_ITEMS = {
 export const useRestaurantSchema = () => {
   const absoluteUrl = (p: string) => {
     try {
-      const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://oldcrowngirton.com/';
+      const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://whitehorsepub.co/';
       return new URL(p, base).toString();
     } catch {
       return p;
@@ -267,7 +267,7 @@ export const useRestaurantSchema = () => {
       name: data.identity.name,
       alternateName: data.identity.tagline,
       description: data.identity.description,
-      url: 'https://oldcrowngirton.com/',
+      url: 'https://whitehorsepub.co/',
       telephone: data.contact?.phone.primary,
       email: data.contact?.email.primary,
       address: {
@@ -293,17 +293,17 @@ export const useRestaurantSchema = () => {
       priceRange: '££',
       paymentAccepted: data.paymentMethods,
       currenciesAccepted: 'GBP',
-      hasMenu: 'https://oldcrowngirton.com/menu',
+      hasMenu: 'https://whitehorsepub.co/menu',
       image: [
         absoluteUrl(typeof imgExteriorGarden === 'string' ? imgExteriorGarden : (imgExteriorGarden as any)),
         absoluteUrl(typeof imgInteriorDining === 'string' ? imgInteriorDining : (imgInteriorDining as any)),
         absoluteUrl(typeof imgGardenPicnic === 'string' ? imgGardenPicnic : (imgGardenPicnic as any)),
         absoluteUrl(typeof imgCarPark === 'string' ? imgCarPark : (imgCarPark as any)),
       ],
-      logo: absoluteUrl('/images/brand/Oldcrowngirtonlogo.png'),
+      logo: absoluteUrl('/images/brand/WhiteHorseLogo.png'),
       sameAs: [
-        'https://www.facebook.com/oldcrowngirton',
-        'https://www.instagram.com/oldcrowngirton'
+        'https://www.facebook.com/whitehorsewaterbeach',
+        'https://www.instagram.com/whitehorsewaterbeach'
       ],
       smokingAllowed: false,
       acceptsReservations: true,
@@ -324,7 +324,7 @@ export const useRestaurantSchema = () => {
     return {
       '@context': 'https://schema.org',
       '@type': 'Menu',
-      name: 'Old Crown Restaurant Menu',
+      name: 'The White Horse Restaurant Menu',
       description: 'Authentic Nepalese cuisine and traditional pub classics',
       hasMenuSection: [
         {
@@ -434,7 +434,7 @@ export const useRestaurantSchema = () => {
       organizer: {
         '@type': 'Organization',
         name: data.identity.name,
-        url: 'https://oldcrowngirton.com/'
+        url: 'https://whitehorsepub.co/'
       },
       offers: eventData.offers ? {
         '@type': 'Offer',

@@ -8,14 +8,14 @@ import { Images } from '@/src/lib/images';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Sunday Roast in Cambridge: Where to Go + Roast Alternatives | Old Crown Girton",
-  description: "We don't currently serve a traditional Sunday roast. Discover Cambridge Sunday roast options and our Sunday roast alternatives at Old Crown Girton's historic thatched pub.",
-  keywords: ["Sunday roast Girton", "Sunday lunch Cambridge", "best Sunday roast Cambridge", "Sunday roast alternatives", "pub Sunday roast CB3", "family Sunday lunch"],
+  title: "Sunday Roast in Cambridge: Where to Go + Roast Alternatives | The White Horse Waterbeach",
+  description: "We don't currently serve a traditional Sunday roast. Discover Cambridge Sunday roast options and our Sunday roast alternatives at The White Horse Waterbeach's historic thatched pub.",
+  keywords: ["Sunday roast Waterbeach", "Sunday lunch Cambridge", "best Sunday roast Cambridge", "Sunday roast alternatives", "pub Sunday roast CB3", "family Sunday lunch"],
   canonicalUrlRelative: "/blog/perfect-sunday-roast-guide",
   openGraph: {
     title: "Sunday Roast in Cambridge: Where to Go + Alternatives",
     description: "We don't serve a traditional Sunday roast — explore Cambridge options and our comforting Sunday alternatives.",
-    url: "https://oldcrowngirton.com/blog/perfect-sunday-roast-guide",
+    url: "https://whitehorsepub.co/blog/perfect-sunday-roast-guide",
     type: "article",
   },
 });
@@ -29,7 +29,7 @@ export default function SundayRoastGuidePage() {
     title: "Sunday Roast in Cambridge: A Guide + Our Alternatives",
     excerpt: "We don't currently serve a traditional Sunday roast. Here's how to enjoy Sunday lunch in Cambridge and what to try at our thatched pub instead.",
     content: `
-      <p>There's something special about a proper Sunday roast – it turns a regular weekend into a ritual. While Old Crown Girton does not currently serve a traditional Sunday roast, we want to help you enjoy Sunday lunch in Cambridge and share our favourite roast alternatives at our historic thatched pub.</p>
+      <p>There's something special about a proper Sunday roast – it turns a regular weekend into a ritual. While The White Horse Waterbeach does not currently serve a traditional Sunday roast, we want to help you enjoy Sunday lunch in Cambridge and share our favourite roast alternatives at our historic thatched pub.</p>
       
       <h2>What Makes a Great Sunday Roast</h2>
       <p>The classic British Sunday roast brings together roasted meat, crispy potatoes, seasonal vegetables, Yorkshire pudding and gravy. Families gather, friends catch up, and the pace slows down – it's as much about comfort and connection as it is about the food.</p>
@@ -37,7 +37,7 @@ export default function SundayRoastGuidePage() {
       <h2>Finding a Sunday Roast in Cambridge</h2>
       <p>Across Cambridge and nearby villages, many pubs and gastropubs offer Sunday roast. If you're set on a traditional roast, check local listings and book ahead – popular spots tend to fill quickly, especially in colder months.</p>
       
-      <h2>Our Sunday Roast Alternatives at Old Crown Girton</h2>
+      <h2>Our Sunday Roast Alternatives at The White Horse Waterbeach</h2>
       <p>Although we don't serve a traditional Sunday roast, our kitchen focuses on authentic Nepalese cuisine and British pub classics that deliver the same comforting, unhurried Sunday feel:</p>
       <ul>
         <li><strong>Nepalese comfort dishes:</strong> Warming curries and slow-cooked favourites that pair wonderfully with a relaxed Sunday pace</li>
@@ -45,8 +45,8 @@ export default function SundayRoastGuidePage() {
         <li><strong>British pub classics:</strong> Familiar favourites that satisfy when you're after a hearty Sunday lunch in Cambridge</li>
       </ul>
       
-      <h2>Why Choose Old Crown on Sundays</h2>
-      <p>Set in England's largest thatched pub, our cosy interiors and spacious terrace garden make for an easy Sunday. We're family-friendly, dog-friendly, and just minutes from Cambridge and Girton College – ideal for relaxed gatherings.</p>
+      <h2>Why Choose The White Horse on Sundays</h2>
+      <p>Set in England's largest thatched pub, our cosy interiors and spacious terrace garden make for an easy Sunday. We're family-friendly, dog-friendly, and just minutes from Cambridge and Waterbeach College – ideal for relaxed gatherings.</p>
       
       <h2>Planning Your Visit</h2>
       <p>We recommend booking, especially for larger groups or peak Sunday times. Check our hours and menu before visiting.</p>
@@ -54,8 +54,8 @@ export default function SundayRoastGuidePage() {
     image: Images.blog.sundayRoast,
     category: "Food & Dining",
     author: {
-      name: "Old Crown Team",
-      bio: "The team behind Old Crown Girton's historic thatched pub and Nepalese kitchen."
+      name: "The White Horse Team",
+      bio: "The team behind The White Horse Waterbeach's historic thatched pub and Nepalese kitchen."
     },
     publishedDate: "2024-12-15T13:00:00+00:00",
     modifiedDate: "2024-12-15T13:00:00+00:00",
@@ -77,10 +77,10 @@ export default function SundayRoastGuidePage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/perfect-sunday-roast-guide#blogposting",
+          "@id": "https://whitehorsepub.co/blog/perfect-sunday-roast-guide#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/perfect-sunday-roast-guide",
+          "url": "https://whitehorsepub.co/blog/perfect-sunday-roast-guide",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -93,17 +93,17 @@ export default function SundayRoastGuidePage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/perfect-sunday-roast-guide"
+            "@id": "https://whitehorsepub.co/blog/perfect-sunday-roast-guide"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -113,8 +113,8 @@ export default function SundayRoastGuidePage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": [
             {
@@ -204,7 +204,7 @@ export default function SundayRoastGuidePage() {
               <MotionDiv className="absolute inset-0" layoutId={`post:${post.slug}:image`}>
                 <Image
                   src={post.image}
-                  alt="Sunday lunch in Cambridge alternatives at Old Crown Girton"
+                  alt="Sunday lunch in Cambridge alternatives at The White Horse Waterbeach"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1024px"

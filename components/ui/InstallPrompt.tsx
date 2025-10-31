@@ -78,7 +78,7 @@ const InstallPrompt = ({ onInstall, onDismiss }: InstallPromptProps) => {
               
               <div className="flex-1 min-w-0">
                 <h3 className="text-lg font-semibold text-stout-700 mb-1">
-                  Install Old Crown App
+                  Install The White Horse App
                 </h3>
                 <p className="text-sm text-brand-600 mb-4 leading-relaxed">
                   Get the full restaurant experience! Fast access to our menu, table booking, and offline browsing.

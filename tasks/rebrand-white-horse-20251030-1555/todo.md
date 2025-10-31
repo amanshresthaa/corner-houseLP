@@ -11,7 +11,7 @@
 - [ ] Update service worker header and any global strings (e.g., `public/sw.js`).
 
 ## Pages & Components
-- [ ] Replace legacy copy in core components (`Hero`, `Footer`, About, etc.) referencing Old Crown/Girton.
+- [ ] Replace legacy copy in core components (`Hero`, `Footer`, About, etc.) referencing The White Horse/Waterbeach.
 - [ ] Rewrite events, blog, legal, offline/not-found pages with Waterbeach/White Horse details.
 - [ ] Check CTA labels, aria text, structured data helpers for phone/email/map updates.
 
@@ -24,4 +24,4 @@
 - [ ] Capture results of manual QA in `verification.md` after DevTools pass.
 
 ## Questions/Notes
-- Pending: confirm any intentional historical references to "Old Crown" should remain (assume replace unless quoting external source).
+- Pending: confirm any intentional historical references to "The White Horse" should remain (assume replace unless quoting external source).

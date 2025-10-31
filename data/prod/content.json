@@ -1,16 +1,16 @@
 {
   "global": {
     "site": {
-      "name": "Old Crown",
-      "title": "Old Crown - Authentic Nepalese Cuisine & Pub Classics",
-      "description": "Experience the finest Nepalese cuisine and traditional British pub food at Old Crown. Book your table today for an unforgettable dining experience.",
+      "name": "The White Horse",
+      "title": "The White Horse - Authentic Nepalese Cuisine & Pub Classics",
+      "description": "Experience the finest Nepalese cuisine and traditional British pub food at The White Horse. Book your table today for an unforgettable dining experience.",
       "keywords": ["nepalese", "restaurant", "pub", "oldcrown", "cuisine", "dining", "british", "food"],
       "version": "1.0.0",
       "buildTime": "2024",
       "environment": "production"
     },
     "contact": {
-      "phone": "+44 1223 277217",
+      "phone": "+44 1223 375578",
       "email": "info@oldcrown.co.uk",
       "address": {
         "street": "123 Crown Street",
@@ -53,7 +53,7 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "Welcome to Old Crown",
+        "title": "Welcome to The White Horse",
         "subtitle": "Authentic Nepalese Cuisine & Traditional Pub Classics",
         "description": "Experience the rich flavors of Nepal combined with traditional British pub food in our cozy, welcoming restaurant. Perfect for family dinners, romantic evenings, or drinks with friends.",
         "cta": {
@@ -63,7 +63,7 @@
       },
       "sections": {
         "features": {
-          "title": "Why Choose Old Crown?",
+          "title": "Why Choose The White Horse?",
           "items": [
             {
               "title": "Authentic Nepalese Cuisine",
@@ -88,8 +88,8 @@
     "events": {
       "hero": {
         "title": "What's On & Community Events",
-        "subtitle": "Experience Girton pub culture — lively quiz nights, Nepalese sharing plates, and big-screen sports. Call to reserve or enquire about group space.",
-        "description": "Discover local pub nights rooted in Girton village life: expect warm welcomes, proper pints, authentic Nepalese dishes to share, and the best place to catch live sports in Cambridge."
+        "subtitle": "Experience Waterbeach pub culture — lively quiz nights, Nepalese sharing plates, and big-screen sports. Call to reserve or enquire about group space.",
+        "description": "Discover local pub nights rooted in Waterbeach village life: expect warm welcomes, proper pints, authentic Nepalese dishes to share, and the best place to catch live sports in Cambridge."
       },
       "regularEvents": [
         {
@@ -129,13 +129,13 @@
         "title": "Book Your Event",
         "description": "Planning a private event? Get in touch to discuss your requirements.",
         "phone": "01223277217",
-        "email": "events@oldcrowngirton.com"
+        "email": "hellothewhitehorsewaterbeach@gmail.com"
       }
     },
     "menu": {
       "hero": {
         "title": "Our Menu: Authentic Nepalese & Traditional British Cuisine",
-        "subtitle": "Discover the unique flavors of Nepal alongside your favorite pub classics at Girton's historic thatched pub. Every dish made fresh with authentic recipes and quality ingredients.",
+        "subtitle": "Discover the unique flavors of Nepal alongside your favorite pub classics at Waterbeach's historic thatched pub. Every dish made fresh with authentic recipes and quality ingredients.",
         "cta": {
           "book": "Book Online",
           "order": "Order Takeaway: 01223277217"
@@ -151,8 +151,8 @@
     "testimonials": {
       "title": "What Our Customers Say",
       "items": [
-        { "name": "Amelia Hart", "text": "If you're planning Sunday lunch Girton families will love, The Old Crown is our go-to. The largest thatched pub in the country feels properly historic, staff are warm, and portions are generous. Kids run off energy in the expansive garden and terrace while we relax. The Nepalese specials are full of flavor, and roasts are spot on. Free pub parking behind the building makes it easy for multi-generational meetups.", "rating": 5 },
-        { "name": "Tom Evans", "text": "Found the winner among pubs near Girton College. The Old Crown shows live sport, serves proper pints, and the Nepalese menu is affordable for student budgets. We cycle over via the path off Huntingdon Road, lock up easily, and grab Nepalese takeaway when revision runs late. Friendly staff and a big garden make it an easy hangout before heading back to halls.", "rating": 5 }
+        { "name": "Amelia Hart", "text": "If you're planning Sunday lunch Waterbeach families will love, The White Horse is our go-to. The largest thatched pub in the country feels properly historic, staff are warm, and portions are generous. Kids run off energy in the expansive garden and terrace while we relax. The Nepalese specials are full of flavor, and roasts are spot on. Free pub parking behind the building makes it easy for multi-generational meetups.", "rating": 5 },
+        { "name": "Tom Evans", "text": "Found the winner among pubs near Waterbeach College. The White Horse shows live sport, serves proper pints, and the Nepalese menu is affordable for student budgets. We cycle over via the path off Huntingdon Road, lock up easily, and grab Nepalese takeaway when revision runs late. Friendly staff and a big garden make it an easy hangout before heading back to halls.", "rating": 5 }
       ]
     },
     "faq": {
@@ -229,12 +229,12 @@
     "terms": {
       "title": "Terms of Service",
       "effectiveDate": "10 August 2025",
-      "contact": "legal@oldcrowngirton.com"
+      "contact": "hellothewhitehorsewaterbeach@gmail.com"
     },
     "privacy": {
       "title": "Privacy Policy",
       "effectiveDate": "10 August 2025",
-      "contact": "privacy@oldcrowngirton.com"
+      "contact": "hellothewhitehorsewaterbeach@gmail.com"
     }
   },
   "debug": {

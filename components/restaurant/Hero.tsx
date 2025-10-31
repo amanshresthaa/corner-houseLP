@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
 import Image from 'next/image';
-import heroBg from '@cimages/Slideshow/OldCrownGirtonBuilding.png';
+import heroBg from '@cimages/Slideshow/WhiteHorseWaterbeachBuilding.png';
 import { getContactInfo } from '@/lib/restaurantData';
 import { useParsedData } from '@/hooks/useParsedData';
 import { useContent } from '@/hooks/useContent';
@@ -14,7 +14,6 @@ import Link from '@/lib/debugLink';
 export default function Hero() {
   const contact = getContactInfo();
   const phoneDisplay = contact.phone.display ?? contact.phone.primary;
-  const phoneHref = contact.phone.tel ?? `tel:${(contact.phone.primary || '').replace(/[^+\d]/g, '')}`;
   const { hours, isLoading: hoursLoading } = useOpeningHours();
   
   // Generate hours snippet from actual restaurant data
@@ -44,20 +43,67 @@ export default function Hero() {
   const labelCallForTakeaway = marketing?.buttons?.callForTakeaway || 'Call for Takeaway';
   
   // Hero content with fallbacks
-  const heroTitle = heroContent?.title || 'Girton\'s Historic Thatched Pub with Himalayan Flavour';
+  const heroTitle = heroContent?.title || 'Waterbeach\'s Historic Thatched Pub with Himalayan Flavour';
   const heroDescription = heroContent?.description || 'A welcoming village hub just outside Cambridge – authentic Nepalese dishes alongside trusted British pub comfort in a distinctive thatched setting.';
-  const primaryCTA = heroContent?.cta?.primary || labelBookOnline;
-  const secondaryCTA = heroContent?.cta?.secondary || 'View Menu';
-  const altText = content?.global?.accessibility?.altTexts?.heroBanner || 'Old Crown Girton Building';
+  const heroCTA = heroContent?.cta || {};
+  const primaryCTA = heroCTA.primary || labelBookOnline;
+  const secondaryCTA = heroCTA.secondary || 'View Menu';
+  const primaryHref = heroCTA.primaryHref || '/book-a-table';
+  const secondaryHref = heroCTA.secondaryHref || '/menu#starters';
+  const primaryExternal = heroCTA.primaryExternal ?? (
+    primaryHref.startsWith('http') || primaryHref.startsWith('tel:') || primaryHref.startsWith('mailto:')
+  );
+  const secondaryExternal = heroCTA.secondaryExternal ?? secondaryHref.startsWith('http');
+  const altText = content?.global?.accessibility?.altTexts?.heroBanner || 'The White Horse Waterbeach Building';
   
   // Feature tags from content or fallback
   const features = content?.pages?.home?.sections?.features?.items || [
     { title: 'Authentic Nepalese + Pub Classics' },
     { title: 'Family & Dog Friendly' },
-    { title: 'Near Girton College' },
+    { title: 'Near Waterbeach College' },
     { title: 'Garden • Live Sports' },
     { title: 'Community Events' }
   ];
+
+  const renderCTAButton = (href: string, label: string, className: string, isExternal?: boolean) => {
+    const safeLabel = label || 'Learn more';
+    const destination = href || '/';
+    const isTel = destination.startsWith('tel:');
+    const isMail = destination.startsWith('mailto:');
+    const isInternal = !isExternal && (destination.startsWith('/') || destination.startsWith('#'));
+    const isAbsolute = isExternal || destination.startsWith('http');
+
+    const content = (
+      <>
+        {(isTel ? '📞 ' : '')}
+        {safeLabel}
+      </>
+    );
+
+    if (isInternal) {
+      return (
+        <Link
+          href={destination}
+          className={className}
+          aria-label={safeLabel}
+        >
+          {content}
+        </Link>
+      );
+    }
+
+    return (
+      <a
+        href={destination}
+        className={className}
+        aria-label={safeLabel}
+        target={isAbsolute && !isTel && !isMail ? '_blank' : undefined}
+        rel={isAbsolute && !isTel && !isMail ? 'noopener noreferrer' : undefined}
+      >
+        {content}
+      </a>
+    );
+  };
   
   return (
   <section className="relative h-[60vh] sm:h-[65vh] md:h-screen flex items-center justify-center">
@@ -78,9 +124,13 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div variants={mv.fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10% 0%' }}>
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-50 mb-6 leading-snug md:leading-tight">
-            <span className="block text-accent-400">Girton’s Historic Thatched Pub</span>
-            <span className="block text-neutral-50 text-xl sm:text-2xl md:text-3xl lg:text-4xl">with Himalayan Flavour</span>
+          {heroContent?.subtitle && (
+            <p className="text-sm sm:text-base md:text-lg text-accent-200 uppercase tracking-[0.35em] mb-4">
+              {heroContent.subtitle}
+            </p>
+          )}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-neutral-50 mb-6 leading-snug md:leading-tight">
+            <span className="text-balance">{heroTitle}</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-neutral-200 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -102,22 +152,25 @@ export default function Hero() {
               whileTap={mv.button.tap}
               className="w-full sm:w-auto"
             >
-              <Link
-                href="/book-a-table"
-                className="inline-flex w-full items-center justify-center rounded-lg bg-brand-600 py-3 px-6 text-base font-bold text-neutral-50 shadow-lg transition-all duration-200 hover:bg-accent-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-400 sm:py-4 sm:px-8 sm:text-lg"
-                aria-label={primaryCTA}
-              >
-                {primaryCTA}
-              </Link>
+              {renderCTAButton(
+                primaryHref,
+                primaryCTA,
+                'inline-flex w-full items-center justify-center rounded-lg bg-brand-600 py-3 px-6 text-base font-bold text-neutral-50 shadow-lg transition-all duration-200 hover:bg-accent-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-400 sm:py-4 sm:px-8 sm:text-lg',
+                primaryExternal
+              )}
             </motion.div>
-            <motion.a
-              href={phoneHref}
+            <motion.div
               whileHover={mv.button.hover}
               whileTap={mv.button.tap}
-              className="bg-crimson-600 hover:bg-crimson-700 text-neutral-50 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg shadow-lg transition-all duration-200 w-full sm:w-auto"
+              className="w-full sm:w-auto"
             >
-              📞 {labelCallForTakeaway}
-            </motion.a>
+              {renderCTAButton(
+                secondaryHref || contact.phone.tel,
+                secondaryCTA || labelCallForTakeaway,
+                'inline-flex w-full items-center justify-center rounded-lg bg-crimson-600 hover:bg-crimson-700 text-neutral-50 font-bold py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-lg shadow-lg transition-all duration-200',
+                secondaryExternal || (secondaryHref?.startsWith('tel:') ?? false)
+              )}
+            </motion.div>
           </div>
 
           {/* Quick Info */}

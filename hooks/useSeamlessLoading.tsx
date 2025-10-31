@@ -291,7 +291,7 @@ const preloadFonts = (): Promise<void> => {
 const preloadCriticalImages = (): Promise<void[]> => {
   const criticalImageUrls = [
     // Hero/slideshow images - first slide is critical
-    '/images/slideshow/OldCrownGirtonBuilding.png',
+    '/images/slideshow/WhiteHorseWaterbeachBuilding.png',
     '/images/slideshow/interior/the-old-crown-pub-restaurant-interior-dining.jpg',
     '/images/slideshow/garden/family-friendly-pub-garden-with-picnic-tables.jpeg',
     '/images/slideshow/cars/electric-vehicle-charging-bays.png'

@@ -9,14 +9,14 @@ import dynamic from 'next/dynamic';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "About Old Crown Girton - Largest Thatched Pub | Nepalese Restaurant Cambridge",
-  description: "Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Discover our unique blend of heritage and hospitality.",
-  keywords: ["Old Crown Girton", "largest thatched pub", "Nepalese restaurant Cambridge", "Girton pub", "historic pub", "British pub classics"],
+  title: "About The White Horse Waterbeach - Largest Thatched Pub | Nepalese Restaurant Cambridge",
+  description: "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Discover our unique blend of heritage and hospitality.",
+  keywords: ["The White Horse Waterbeach", "largest thatched pub", "Nepalese restaurant Cambridge", "Waterbeach pub", "historic pub", "British pub classics"],
   canonicalUrlRelative: "/about",
   openGraph: {
-    title: "About Old Crown Girton - Historic Thatched Pub & Nepalese Kitchen",
-    description: "Discover England's largest thatched pub in Girton serving authentic Nepalese cuisine and British pub classics.",
-    url: "https://oldcrowngirton.com/about",
+    title: "About The White Horse Waterbeach - Historic Thatched Pub & Nepalese Kitchen",
+    description: "Discover England's largest thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics.",
+    url: "https://whitehorsepub.co/about",
   },
 });
 
@@ -45,8 +45,8 @@ export default async function AboutPage() {
       <RestaurantLayout>
         {renderSchemaTags()}
         <SchemaInjector type="breadcrumb" data={[
-          { name: 'Home', url: 'https://oldcrowngirton.com/' },
-          { name: 'About', url: 'https://oldcrowngirton.com/about' }
+          { name: 'Home', url: 'https://whitehorsepub.co/' },
+          { name: 'About', url: 'https://whitehorsepub.co/about' }
         ]} page="about" />
         
         {/* Hero Section with motion animation */}

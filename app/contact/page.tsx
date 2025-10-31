@@ -10,14 +10,14 @@ const ADDRESS_LINE = getFormattedAddress();
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Contact Old Crown Girton - Book Table | Directions | Opening Hours",
-  description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}. Free parking available.`,
-  keywords: ["Old Crown Girton contact", "book table Girton pub", "Girton pub phone number", "Old Crown directions", "Cambridge pub booking", "Girton restaurant address"],
+  title: "Contact The White Horse Waterbeach - Book Table | Directions | Opening Hours",
+  description: `Contact The White Horse Waterbeach for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}. Free parking available.`,
+  keywords: ["The White Horse Waterbeach contact", "book table Waterbeach pub", "Waterbeach pub phone number", "The White Horse directions", "Cambridge pub booking", "Waterbeach restaurant address"],
   canonicalUrlRelative: "/contact",
   openGraph: {
-    title: "Contact Old Crown Girton - Book Table | Directions",
-    description: `Contact Old Crown Girton for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}.`,
-    url: "https://oldcrowngirton.com//contact",
+    title: "Contact The White Horse Waterbeach - Book Table | Directions",
+    description: `Contact The White Horse Waterbeach for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}.`,
+    url: "https://whitehorsepub.co//contact",
   },
 });
 
@@ -110,7 +110,7 @@ export default async function ContactPage() {
                 <InteractiveMap 
                   className="bg-neutral-50 rounded-xl shadow-lg overflow-hidden"
                   height="400px"
-                  title="Old Crown Girton Location"
+                  title="The White Horse Waterbeach Location"
                 />
               </section>
             </FadeIn>

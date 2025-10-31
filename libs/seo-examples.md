@@ -11,15 +11,15 @@ This document shows how to use the `getSEOTags` and `renderSchemaTags` functions
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
-  title: "About Us - Historic Thatched Pub in Girton",
-  description: "Learn about our historic thatched pub serving authentic Nepalese cuisine in Girton, Cambridge.",
+  title: "About Us - Historic Thatched Pub in Waterbeach",
+  description: "Learn about our historic thatched pub serving authentic Nepalese cuisine in Waterbeach, Cambridge.",
   canonicalUrlRelative: "/about"
 });
 
 export default function AboutPage() {
   return (
     <div>
-      <h1>About The Old Crown Girton</h1>
+      <h1>About The White Horse Waterbeach</h1>
       {/* Page content */}
     </div>
   );
@@ -33,9 +33,9 @@ export default function AboutPage() {
 import { getSEOTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
-  title: "Menu - Nepalese Restaurant & British Pub Food | Old Crown Girton",
+  title: "Menu - Nepalese Restaurant & British Pub Food | The White Horse Waterbeach",
   description: "Discover our authentic Nepalese dishes and traditional British pub classics. Fresh ingredients, family recipes.",
-  keywords: ["Nepalese menu Cambridge", "pub food Girton", "momo dumplings", "curry Cambridge", "Sunday roast"],
+  keywords: ["Nepalese menu Cambridge", "pub food Waterbeach", "momo dumplings", "curry Cambridge", "Sunday roast"],
   canonicalUrlRelative: "/menu"
 });
 
@@ -56,8 +56,8 @@ export default function MenuPage() {
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
-  title: "Contact & Reservations - Old Crown Girton",
-  description: "Book a table, get directions, or contact The Old Crown Girton. Call our team for reservations.",
+  title: "Contact & Reservations - The White Horse Waterbeach",
+  description: "Book a table, get directions, or contact The White Horse Waterbeach. Call our team for reservations.",
   canonicalUrlRelative: "/contact"
 });
 
@@ -90,13 +90,13 @@ export async function generateMetadata({ params }: BlogPostProps) {
   // In real app, fetch post data here
   const post = {
     title: "Authentic Momo Dumplings: A Taste of Nepal",
-    description: "Learn about the history and preparation of traditional Nepalese momo dumplings at The Old Crown Girton.",
+    description: "Learn about the history and preparation of traditional Nepalese momo dumplings at The White Horse Waterbeach.",
     publishedDate: "2024-03-15",
     author: "Chef Raj Gurung"
   };
 
   return getSEOTags({
-    title: `${post.title} | Old Crown Girton Blog`,
+    title: `${post.title} | The White Horse Waterbeach Blog`,
     description: post.description,
     canonicalUrlRelative: `/blog/${params.slug}`,
     openGraph: {
@@ -120,17 +120,17 @@ export default function BlogPost({ params }: BlogPostProps) {
     },
     publisher: {
       "@type": "Organization",
-      name: "The Old Crown Girton",
+      name: "The White Horse Waterbeach",
       logo: {
         "@type": "ImageObject",
-        url: "https://oldcrowngirton.com/icon.png"
+        url: "https://whitehorsepub.co/icon.png"
       }
     },
     datePublished: "2024-03-15",
     dateModified: "2024-03-15",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://oldcrowngirton.com/blog/authentic-momo-dumplings-nepalese-cuisine"
+      "@id": "https://whitehorsepub.co/blog/authentic-momo-dumplings-nepalese-cuisine"
     }
   };
 
@@ -153,8 +153,8 @@ export default function BlogPost({ params }: BlogPostProps) {
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
-  title: "Events & Live Music - Old Crown Girton",
-  description: "Join us for live music, quiz nights, and special events at The Old Crown Girton. Check our events calendar.",
+  title: "Events & Live Music - The White Horse Waterbeach",
+  description: "Join us for live music, quiz nights, and special events at The White Horse Waterbeach. Check our events calendar.",
   canonicalUrlRelative: "/events"
 });
 
@@ -170,19 +170,19 @@ export default function EventsPage() {
       endDate: "2024-04-01T22:00:00+01:00",
       location: {
         "@type": "Place",
-        name: "The Old Crown Girton",
+        name: "The White Horse Waterbeach",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "89 High Street",
-          addressLocality: "Girton",
-          postalCode: "CB3 0QQ",
+          streetAddress: "12 Green Side",
+          addressLocality: "Waterbeach",
+          postalCode: "CB25 9HP",
           addressCountry: "GB"
         }
       },
       organizer: {
         "@type": "Organization",
-        name: "The Old Crown Girton",
-        url: "https://oldcrowngirton.com"
+        name: "The White Horse Waterbeach",
+        url: "https://whitehorsepub.co"
       },
       offers: {
         "@type": "Offer",

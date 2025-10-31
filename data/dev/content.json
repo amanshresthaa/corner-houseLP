@@ -1,8 +1,8 @@
 {
   "global": {
     "site": {
-      "name": "Old Crown [DEV]",
-      "title": "Old Crown - Development Environment",
+      "name": "The White Horse [DEV]",
+      "title": "The White Horse - Development Environment",
       "description": "Authentic Nepalese cuisine and pub classics - Development",
       "keywords": [
         "nepalese",
@@ -16,7 +16,7 @@
       "environment": "development"
     },
     "contact": {
-      "phone": "+44 1223 277217",
+      "phone": "+44 1223 375578",
       "email": "dev@oldcrown.co.uk",
       "address": {
         "street": "123 Dev Street",
@@ -59,7 +59,7 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "Welcome to Old Crown [DEV]",
+        "title": "Welcome to The White Horse [DEV]",
         "subtitle": "Development Environment - Authentic Nepalese Cuisine & Pub Classics",
         "description": "Experience the rich flavors of Nepal combined with traditional British pub food in our cozy restaurant. [DEV MODE]",
         "cta": {
@@ -69,7 +69,7 @@
       },
       "sections": {
         "features": {
-          "title": "Why Choose Old Crown? [DEV]",
+          "title": "Why Choose The White Horse? [DEV]",
           "items": [
             {
               "title": "Authentic Nepalese Cuisine [DEV]",

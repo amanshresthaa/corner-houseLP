@@ -60,11 +60,11 @@ export interface BlogContentStructure {
 export const BLOG_FALLBACK_CONTENT: BlogContentStructure = {
   posts: {},
   metadata: {
-    siteName: 'Old Crown Girton',
-    baseUrl: 'https://oldcrowngirton.com',
+    siteName: 'The White Horse Waterbeach',
+    baseUrl: 'https://whitehorsepub.co',
     defaultAuthor: {
-      name: 'Old Crown Team',
-      bio: 'The passionate team behind Old Crown Girton\'s unique dining experience.',
+      name: 'The White Horse Team',
+      bio: 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
     },
   },
   ui: {

@@ -46,34 +46,40 @@ export default function CallToActionSection({
    * Get button styling based on variant using design system tokens
    */
   const getButtonClasses = (variant: CTAButton['variant']): string => {
-    const baseClasses = 'font-bold py-4 px-8 rounded-lg text-base focus:outline-none focus:ring-4 focus:ring-offset-2 transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105';
+    const baseClasses =
+      'inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 text-base font-semibold transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 hover:-translate-y-0.5';
     
     switch (variant) {
       case 'accent':
-        return `${baseClasses} bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 focus:ring-brand-300`;
+        return `${baseClasses} border border-brand-200 bg-white text-brand-800 shadow-lg focus:ring-brand-300 hover:bg-neutral-50`;
       case 'brand':
-        return `${baseClasses} bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 focus:ring-white/30`;
+        return `${baseClasses} border border-white/20 bg-brand-900 text-white shadow-xl focus:ring-white/30 hover:bg-brand-950`;
       case 'crimson':
-        return `${baseClasses} bg-white hover:bg-neutral-50 text-crimson-700 border-2 border-crimson-200 focus:ring-crimson-300`;
+        return `${baseClasses} border border-crimson-200 bg-white text-crimson-700 shadow-lg focus:ring-crimson-300 hover:bg-neutral-50`;
       default:
-        return `${baseClasses} bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 focus:ring-brand-300`;
+        return `${baseClasses} border border-brand-200 bg-white text-brand-800 shadow-lg focus:ring-brand-300 hover:bg-neutral-50`;
     }
-  };  return (
-    <section className={`bg-white py-16 ${className}`}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-brand-600 to-brand-800 rounded-2xl p-8 md:p-12 shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 border-2 border-brand-700">
-          <div className="text-center">
-            <h2 className="font-display font-bold text-white mb-4 h2 drop-shadow-lg text-3xl md:text-4xl">
+  };
+
+  return (
+    <section className={`bg-neutral-100 py-12 sm:py-14 ${className}`}>
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-brand-100 bg-white p-7 shadow-xl transition-all duration-300 hover:-translate-y-2 md:p-10">
+          <div className="flex flex-col items-center gap-5 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-brand-700">
+              Exclusive
+            </span>
+            <h2 className="text-3xl font-display font-bold text-foreground-strong md:text-4xl">
               🎉 {headline}
             </h2>
-            <p className="text-neutral-100 mb-8 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="max-w-2xl text-lg leading-relaxed text-brand-700">
               {description}
             </p>
-            
-            <div className="flex flex-wrap gap-4 justify-center">
+
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {buttons.map((button, index) => {
                 const isExternal = button.external || button.href.startsWith('http');
-                const buttonProps = isExternal 
+                const buttonProps = isExternal
                   ? {
                       target: '_blank' as const,
                       rel: 'noopener noreferrer' as const,
@@ -87,12 +93,12 @@ export default function CallToActionSection({
                   <div key={button.key || button.text || index}>
                     <Link
                       href={button.href}
-                      className={`${getButtonClasses(button.variant)}`}
+                      className={getButtonClasses(button.variant)}
                       {...buttonProps}
                     >
                       {button.text}
                       {isExternal && (
-                        <span className="ml-1 text-xs" aria-hidden="true">
+                        <span className="text-xs" aria-hidden="true">
                           ↗
                         </span>
                       )}

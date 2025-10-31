@@ -3,8 +3,8 @@ import { OfflineStatus, OfflineFeatures, OfflineActions, OfflineBackground } fro
 
 // SEO Metadata with noindex
 export const metadata = getSEOTags({
-  title: "Offline - Old Crown Girton",
-  description: "You are currently offline. Old Crown Girton content will be available when your connection is restored.",
+  title: "Offline - The White Horse Waterbeach",
+  description: "You are currently offline. The White Horse Waterbeach content will be available when your connection is restored.",
   canonicalUrlRelative: "/offline",
   robots: {
     index: false,

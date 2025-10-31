@@ -195,10 +195,10 @@ export const ConfigSchema = z.object({
   cms: z.object({ enabled: z.boolean().default(false) }).default({ enabled: false }),
   metadata: z
     .object({
-      appName: z.string().default("Old Crown"),
-      domainName: z.string().default("localhost"),
+      appName: z.string().default("The White Horse"),
+      domainName: z.string().default("whitehorsepub.co"),
     })
-    .default({ appName: "Old Crown", domainName: "localhost" }),
+    .default({ appName: "The White Horse", domainName: "whitehorsepub.co" }),
 });
 
 // Content Management Schemas
@@ -251,6 +251,10 @@ export const HeroSchema = z.object({
   cta: z.object({
     primary: z.string(),
     secondary: z.string().optional(),
+    primaryHref: z.string().optional(),
+    secondaryHref: z.string().optional(),
+    primaryExternal: z.boolean().optional(),
+    secondaryExternal: z.boolean().optional(),
   }).optional(),
 });
 

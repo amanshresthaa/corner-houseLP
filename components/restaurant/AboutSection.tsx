@@ -22,11 +22,11 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold text-stout-700 mb-6">
-              Welcome to <span className="text-accent">Old Crown</span>
+              Welcome to <span className="text-accent">The White Horse</span>
             </h2>
             
             <div className="prose prose-lg text-brand-600 space-y-4">
-              <p>Girton’s historic thatched pub just outside Cambridge – blending community heritage with a warmly spiced Nepalese kitchen and familiar British pub comfort.</p>
+              <p>Waterbeach’s historic thatched pub just outside Cambridge – blending community heritage with a warmly spiced Nepalese kitchen and familiar British pub comfort.</p>
               <p>Garden space for long summer evenings, cosy interior for winter gatherings, and a welcoming spot for locals, families, students, professionals & visitors.</p>
               <p>Our dual identity means you can explore aromatic Himalayan-inspired dishes while friends opt for classic favourites – shared tables, shared experiences.</p>
             </div>
@@ -44,7 +44,7 @@ export default function AboutSection() {
                 <li>Distinctive thatched setting & village feel</li>
                 <li>Authentic Nepalese flavour + pub classics</li>
                 <li>Inclusive for mixed groups & families</li>
-                <li>Close to Girton College / north Cambridge</li>
+                <li>Close to Waterbeach College / north Cambridge</li>
                 <li>Garden & seasonal community events</li>
               </ul>
             </motion.div>
@@ -61,7 +61,7 @@ export default function AboutSection() {
             <div className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/restaurant-interior.jpg"
-                alt="Old Crown restaurant interior"
+                alt="The White Horse restaurant interior"
                 fill
                 className="object-cover"
                 placeholder="blur"

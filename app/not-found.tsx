@@ -3,8 +3,8 @@ import { NotFoundContent, NotFoundActions, NotFoundBackground } from './not-foun
 
 // SEO Metadata with noindex
 export const metadata = getSEOTags({
-  title: "Page Not Found - Old Crown Girton",
-  description: "The page you're looking for doesn't exist. Visit Old Crown Girton homepage to find information about our historic thatched pub in Cambridge.",
+  title: "Page Not Found - The White Horse Waterbeach",
+  description: "The page you're looking for doesn't exist. Visit The White Horse Waterbeach homepage to find information about our historic thatched pub in Cambridge.",
   canonicalUrlRelative: "/not-found",
   robots: {
     index: false,

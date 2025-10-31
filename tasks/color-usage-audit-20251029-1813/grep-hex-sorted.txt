@@ -22,9 +22,9 @@ Binary file Everythingyouneed/whitehorseimages/white-horse-pub-exterior-wide-fro
 Binary file src/assets/images/components/Slideshow/cars/car-meet-up.avif matches
 Binary file src/assets/images/components/Slideshow/cars/car-meet-up.jpeg matches
 Binary file src/assets/images/components/Slideshow/cars/electric-vehicle-charging-bays.png matches
-Binary file src/assets/images/components/Slideshow/exterior/large-gravel-car-park-at-the-old-crown-pub.avif matches
-Binary file src/assets/images/components/Slideshow/exterior/large-gravel-car-park-at-the-old-crown-pub.jpeg matches
-Binary file src/assets/images/components/Slideshow/exterior/the-old-crown-pub-exterior-and-beer-garden.jpeg matches
+Binary file src/assets/images/components/Slideshow/exterior/large-gravel-car-park-at-the-the-white-horse-pub.avif matches
+Binary file src/assets/images/components/Slideshow/exterior/large-gravel-car-park-at-the-the-white-horse-pub.jpeg matches
+Binary file src/assets/images/components/Slideshow/exterior/the-the-white-horse-pub-exterior-and-beer-garden.jpeg matches
 Binary file src/assets/images/components/Slideshow/garden/childrens-wooden-play-area-with-slide-in-pub-garden.avif matches
 Binary file src/assets/images/components/Slideshow/garden/childrens-wooden-play-area-with-slide-in-pub-garden.jpeg matches
 Binary file src/assets/images/components/Slideshow/garden/family-friendly-pub-garden-with-picnic-tables.avif matches
@@ -40,7 +40,7 @@ Binary file src/assets/images/components/Slideshow/interior/cosy-pub-bar-area-wi
 Binary file src/assets/images/components/Slideshow/interior/premier-league-sky-tv-sports.jpeg matches
 Binary file src/assets/images/components/Slideshow/interior/stylish-pub-restaurant-dining-area-interior.avif matches
 Binary file src/assets/images/components/Slideshow/interior/stylish-pub-restaurant-dining-area-interior.jpeg matches
-Binary file src/assets/images/components/Slideshow/interior/the-old-crown-pub-restaurant-interior-dining.jpg matches
+Binary file src/assets/images/components/Slideshow/interior/the-the-white-horse-pub-restaurant-interior-dining.jpg matches
 Binary file src/assets/images/components/Slideshow/seasonal/christmas-slide.png matches
 Everythingyouneed/color-palette-uses-and-guideline.md:100:        "800": "#143016",
 Everythingyouneed/color-palette-uses-and-guideline.md:101:        "900": "#0F2411"

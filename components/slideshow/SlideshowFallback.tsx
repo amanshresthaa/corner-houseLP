@@ -27,7 +27,7 @@ const SlideshowFallback: React.FC = () => {
         </button>
         <a
           className="px-4 py-2 rounded-lg border border-white/40 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          href="mailto:hello@oldcrowngirton.co.uk?subject=Slideshow%20support"
+          href="mailto:hellothewhitehorsewaterbeach@gmail.com?subject=Slideshow%20support"
         >
           Contact support
         </a>

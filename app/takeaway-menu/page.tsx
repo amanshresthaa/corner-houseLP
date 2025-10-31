@@ -4,26 +4,26 @@ import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
 
-const TAKEAWAY_MENU_PATH = "/takeaway-menu/old-crown-takeaway-menu.jpg";
+const TAKEAWAY_MENU_PATH = "/takeaway-menu/the-white-horse-takeaway-menu.jpg";
 
 export const metadata = getSEOTags({
-  title: "Takeaway Menu Download | Old Crown Girton",
+  title: "Takeaway Menu Download | The White Horse Waterbeach",
   description:
-    "Download The Old Crown Girton takeaway menu and order authentic Nepalese and British pub favourites for collection in Girton, Cambridge.",
+    "Download The White Horse Waterbeach takeaway menu and order authentic Nepalese and British pub favourites for collection in Waterbeach, Cambridge.",
   keywords: [
     "takeaway menu Cambridge",
-    "Old Crown Girton takeaway",
-    "Girton takeaway",
+    "The White Horse Waterbeach takeaway",
+    "Waterbeach takeaway",
     "download takeaway menu",
     "Nepalese takeaway Cambridge",
-    "pub takeaway Girton",
+    "pub takeaway Waterbeach",
   ],
   canonicalUrlRelative: "/takeaway-menu",
   openGraph: {
-    title: "Download the Old Crown Girton Takeaway Menu",
+    title: "Download the The White Horse Waterbeach Takeaway Menu",
     description:
-      "Access our latest takeaway menu and place your collection order direct with the Old Crown Girton team.",
-    url: "https://oldcrowngirton.com/takeaway-menu",
+      "Access our latest takeaway menu and place your collection order direct with the The White Horse Waterbeach team.",
+    url: "https://whitehorsepub.co/takeaway-menu",
   },
 });
 
@@ -34,10 +34,10 @@ export default function TakeawayMenuPage() {
     {
       "@context": "https://schema.org",
       "@type": "Menu",
-      name: "Old Crown Girton Takeaway Menu",
+      name: "The White Horse Waterbeach Takeaway Menu",
       description:
-        "Downloadable takeaway menu featuring Nepalese specialties and British pub classics from The Old Crown Girton.",
-      url: `https://oldcrowngirton.com${TAKEAWAY_MENU_PATH}`,
+        "Downloadable takeaway menu featuring Nepalese specialties and British pub classics from The White Horse Waterbeach.",
+      url: `https://whitehorsepub.co${TAKEAWAY_MENU_PATH}`,
       offers: {
         "@type": "Offer",
         priceCurrency: "GBP",
@@ -45,7 +45,7 @@ export default function TakeawayMenuPage() {
       },
       provider: {
         "@type": "Restaurant",
-        name: "The Old Crown Girton",
+        name: "The White Horse Waterbeach",
         telephone: contact.phone.primary,
         address: {
           "@type": "PostalAddress",
@@ -77,12 +77,12 @@ export default function TakeawayMenuPage() {
           </FadeIn>
           <FadeInUp>
             <h1 id="takeaway-menu-heading" className="text-3xl md:text-5xl font-display font-bold leading-tight">
-              Download the Old Crown Girton Takeaway Menu
+              Download the The White Horse Waterbeach Takeaway Menu
             </h1>
           </FadeInUp>
           <FadeInUp>
             <p className="text-lg md:text-xl text-neutral-100 max-w-3xl mx-auto leading-relaxed">
-              Explore Nepalese signatures and British pub favourites from the comfort of home. Download the PDF to browse dishes, note allergens, and call us to place your order for collection in Girton.
+              Explore Nepalese signatures and British pub favourites from the comfort of home. Download the PDF to browse dishes, note allergens, and call us to place your order for collection in Waterbeach.
             </p>
           </FadeInUp>
           <FadeInUp>
@@ -91,7 +91,7 @@ export default function TakeawayMenuPage() {
                 href={TAKEAWAY_MENU_PATH}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700 transition-colors duration-200"
                 aria-label="Download the takeaway menu"
-                download="old-crown-takeaway-menu.jpg"
+                download="the-white-horse-takeaway-menu.jpg"
               >
                 <span aria-hidden="true" role="img">⬇️</span>
                 Download Menu
@@ -122,7 +122,7 @@ export default function TakeawayMenuPage() {
                 Everything you need for an effortless collection
               </h2>
               <p className="text-lg text-brand-600 leading-relaxed">
-                Whether you&apos;re planning a cosy night in or a family feast, the Old Crown Girton takeaway menu makes it simple to bring our kitchen home.
+                Whether you&apos;re planning a cosy night in or a family feast, the The White Horse Waterbeach takeaway menu makes it simple to bring our kitchen home.
               </p>
             </div>
           </FadeIn>

@@ -255,7 +255,7 @@ Everythingyouneed/color-palette-uses-and-guideline.md:396:            This palet
 Everythingyouneed/color-palette-uses-and-guideline.md:397:            The <strong style={{ color: theme.primary }}>Royal Crimson</strong> and <strong style={{ color: palette.secondary.shades["500"] }}>Sapphire Blue</strong> directly 
 Everythingyouneed/color-palette-uses-and-guideline.md:398:            reference Nepal's national flag, while <strong style={{ color: palette.gold.shades["500"] }}>Temple Gold</strong> evokes 
 components/slideshow/slides-old.ts:66:    image: '/images/slideshow/kids-playground-slide-blue.jpg',
-components/slideshow/slides-old.ts:67:    alt: 'Children\'s wooden play area with blue slide at Old Crown Girton',
+components/slideshow/slides-old.ts:67:    alt: 'Children\'s wooden play area with blue slide at The White Horse Waterbeach',
 components/slideshow/slides-old.ts:89:    headline: 'Green Space for Relaxed Gatherings',
 components/slideshow/slides-old.ts:91:    badges: ['Green Space', 'Relaxed Vibes'],
 components/slideshow/Slide.tsx:99:  const baseBtn = 'text-white font-bold rounded-xl shadow-xl shadow-black/25 ring-1 ring-white/10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60';
@@ -463,7 +463,7 @@ components/optimization/CLSOptimizedComponents.tsx:273:                      <di
 components/optimization/CLSOptimizedComponents.tsx:276:                      <div className="bg-gray-200 h-10 w-10 rounded-full"></div>
 components/optimization/CLSOptimizedComponents.tsx:277:                      <div className="bg-gray-200 h-4 w-24 rounded"></div>
 components/optimization/CLSOptimizedComponents.tsx:297:      className="bg-white shadow-sm sticky top-0 z-50"
-components/optimization/CLSOptimizedComponents.tsx:312:          <span className="text-xl font-bold text-gray-900">Old Crown Girton</span>
+components/optimization/CLSOptimizedComponents.tsx:312:          <span className="text-xl font-bold text-gray-900">The White Horse Waterbeach</span>
 components/optimization/CLSOptimizedComponents.tsx:316:          <a href="#home" className="text-gray-700 hover:text-amber-600 transition-colors">Home</a>
 components/optimization/CLSOptimizedComponents.tsx:317:          <a href="#menu" className="text-gray-700 hover:text-amber-600 transition-colors">Menu</a>
 components/optimization/CLSOptimizedComponents.tsx:318:          <a href="#about" className="text-gray-700 hover:text-amber-600 transition-colors">About</a>
@@ -716,7 +716,7 @@ components/slides/SportsSlide.tsx:33:        <p className="mt-3 text-sm md:text-
 components/slides/SportsSlide.tsx:41:          <Link href="/book" className="inline-block bg-accent-600 hover:bg-accent-700 text-white px-4 py-2 rounded-md font-medium">
 components/slides/SportsSlide.tsx:44:          <Link href="/events" className="inline-block border border-white/20 text-white px-4 py-2 rounded-md">
 components/slides/SportsSlide.tsx:49:  <p className="mt-4 text-xs text-gray-300">Image caption: Live match viewing — Premier League, rugby and more.</p>
-components/slides/SportsSlide.tsx:50:  <p className="mt-2 text-xs text-gray-400">Photo: The Old Crown, Girton</p>
+components/slides/SportsSlide.tsx:50:  <p className="mt-2 text-xs text-gray-400">Photo: The White Horse, Waterbeach</p>
 components/restaurant/sections/QuickLinksSection.tsx:44:    <section className={`bg-white py-12 lazy-section ${className}`}>
 components/simple/BasicTest.tsx:5:    <span className="italic text-green-600">
 app/wakes-menu/page.tsx:129:        className="relative bg-gradient-to-br from-brand-700 via-crimson-600 to-cardamom-700 text-white py-16 md:py-24"
@@ -799,7 +799,7 @@ components/ServiceWorkerUpdateNotification.tsx:16:      className="fixed bottom-
 components/ServiceWorkerUpdateNotification.tsx:21:        className="bg-white text-accent-500 px-3 py-1 rounded text-sm font-medium hover:bg-gray-50 transition-colors"
 components/menu/MenuHero.tsx:13:        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Menu — Nepalese & Pub Classics</h1>
 components/menu/MenuHero.tsx:16:          <a href="https://togo.uk.com/makebookingv2.aspx?venueid=2640&nv=true" target="_blank" rel="noopener noreferrer" className="bg-accent text-white font-semibold py-2 px-4 rounded-md text-sm">
-components/menu/MenuHero.tsx:19:          <a href="tel:01223 277217" className="bg-crimson-500 text-white font-semibold py-2 px-4 rounded-md text-sm">
+components/menu/MenuHero.tsx:19:          <a href="tel:01223 375578" className="bg-crimson-500 text-white font-semibold py-2 px-4 rounded-md text-sm">
 components/menu/NutritionModal.tsx:124:      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60"
 components/menu/NutritionModal.tsx:130:        className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto"
 components/Testimonials11.tsx:177:      <figure className="relative h-full p-6 bg-white rounded-lg shadow-lg border border-accent-200/20">

@@ -9,7 +9,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Christmas Menu", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ],
@@ -21,7 +21,7 @@
       "layout": "full-bleed-carousel",
       "elements": [
         { "type": "image", "alt": "Featured experiences slideshow covering seasonal menus, events, and venue highlights" },
-        { "type": "headline", "text": "The Old Crown Girton: Historic Thatched Pub & Authentic Nepalese Restaurant" },
+        { "type": "headline", "text": "The White Horse Waterbeach: Historic Thatched Pub & Authentic Nepalese Restaurant" },
         { "type": "subheadline", "text": "Minutes from Cambridge, blending Nepalese cuisine with British pub classics in England’s largest thatched pub." },
         { "type": "buttons", "items": ["Book Online", "View Menu"] },
         { "type": "carousel_indicators" }
@@ -39,12 +39,12 @@
     },
     {
       "id": "about",
-      "name": "Welcome to Old Crown",
+      "name": "Welcome to The White Horse",
       "layout": "two-column image-right",
       "elements": [
-        { "type": "section_title", "text": "Welcome to Old Crown" },
-        { "type": "paragraph", "text": "Girton’s historic thatched pub just outside Cambridge – blending community heritage with a warmly spiced Nepalese kitchen and familiar British pub comfort." },
-        { "type": "image", "align": "right", "alt": "Old Crown restaurant interior" },
+        { "type": "section_title", "text": "Welcome to The White Horse" },
+        { "type": "paragraph", "text": "Waterbeach’s historic thatched pub just outside Cambridge – blending community heritage with a warmly spiced Nepalese kitchen and familiar British pub comfort." },
+        { "type": "image", "align": "right", "alt": "The White Horse restaurant interior" },
         {
           "type": "feature_box",
           "title": "Why Guests Visit",
@@ -52,7 +52,7 @@
             "Distinctive thatched setting & village feel",
             "Authentic Nepalese flavour + pub classics",
             "Inclusive for mixed groups & families",
-            "Close to Girton College / north Cambridge",
+            "Close to Waterbeach College / north Cambridge",
             "Garden events, takeaway & free parking"
           ]
         },
@@ -103,7 +103,7 @@
       "elements": [
         { "type": "title", "text": "Takeaway Available" },
         { "type": "copy", "text": "Enjoy our Nepalese cuisine from home. Call to place your collection order." },
-        { "type": "primary_cta", "label": "Call to Order: 01223 277217" },
+        { "type": "primary_cta", "label": "Call to Order: 01223 375578" },
         { "type": "secondary_actions", "items": ["Download Takeaway Menu", "Book a Table", "Email the Team"] }
       ]
     },
@@ -112,7 +112,7 @@
       "name": "Contact & Location",
       "layout": "two-column",
       "elements": [
-        { "type": "contact_panel", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com"] },
+        { "type": "contact_panel", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com"] },
         {
           "type": "opening_times",
           "groups": [
@@ -128,7 +128,7 @@
       "name": "Closing CTA Ribbon",
       "layout": "band",
       "elements": [
-        { "type": "title", "text": "Ready to experience Old Crown Girton?" },
+        { "type": "title", "text": "Ready to experience The White Horse Waterbeach?" },
         { "type": "buttons", "items": ["View Menu", "What’s On", "Book Online"] }
       ]
     },
@@ -138,10 +138,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge mixing authentic Nepalese cuisine with British pub comforts." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Home", "Menu", "About", "Events", "Press", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -158,7 +158,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Christmas Menu", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -214,10 +214,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Home", "Menu", "Menu Information", "Takeaway Menu", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -234,7 +234,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Christmas Menu", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -255,7 +255,7 @@
       "layout": "alert-banner",
       "elements": [
         { "type": "icon", "value": "warning" },
-        { "type": "copy", "text": "Severe allergies? Call +44 1223 277217 before visiting to discuss safety protocols." }
+        { "type": "copy", "text": "Severe allergies? Call +44 1223 375578 before visiting to discuss safety protocols." }
       ]
     },
     {
@@ -296,9 +296,9 @@
       "layout": "centered-panel",
       "elements": [
         { "type": "section_title", "text": "Still Have Questions?" },
-        { "type": "contact_option", "label": "Call Us", "value": "+44 1223 277217" },
-        { "type": "contact_option", "label": "Email Us", "value": "oldcrown@lapeninns.com" },
-        { "type": "paragraph", "text": "Location: 89 High Street, Girton, Cambridge CB3 0QQ" }
+        { "type": "contact_option", "label": "Call Us", "value": "+44 1223 375578" },
+        { "type": "contact_option", "label": "Email Us", "value": "hellothewhitehorsewaterbeach@gmail.com" },
+        { "type": "paragraph", "text": "Location: 12 Green Side, Waterbeach, Cambridge CB25 9HP" }
       ]
     },
     {
@@ -315,10 +315,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Menu", "Menu Information", "Takeaway Menu", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -335,7 +335,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "Takeaway", "About", "Events", "Press", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -346,10 +346,10 @@
       "layout": "gradient-hero",
       "elements": [
         { "type": "badge", "text": "Takeaway Menu" },
-        { "type": "headline", "text": "Download the Old Crown Girton Takeaway Menu" },
+        { "type": "headline", "text": "Download the The White Horse Waterbeach Takeaway Menu" },
         { "type": "subheadline", "text": "Browse Nepalese signatures and British pub favourites, then call to place your order for collection." },
-        { "type": "buttons", "items": ["Download Menu", "Call to Order"], "links": ["/takeaway-menu/old-crown-takeaway-menu.jpg", "tel:+441223277217"] },
-        { "type": "support_text", "text": "Need help? Email oldcrown@lapeninns.com for the latest copy." }
+        { "type": "buttons", "items": ["Download Menu", "Call to Order"], "links": ["/takeaway-menu/the-white-horse-takeaway-menu.jpg", "tel:+441223375578"] },
+        { "type": "support_text", "text": "Need help? Email hellothewhitehorsewaterbeach@gmail.com for the latest copy." }
       ]
     },
     {
@@ -368,10 +368,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Menu", "Takeaway Menu", "Order Takeaway", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Kitchen takeaway hours follow kitchen schedule; confirm when calling." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -404,7 +404,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Christmas Menu", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -414,7 +414,7 @@
       "name": "About Hero",
       "layout": "gradient-hero",
       "elements": [
-        { "type": "headline", "text": "About Old Crown Girton" },
+        { "type": "headline", "text": "About The White Horse Waterbeach" },
         { "type": "subheadline", "text": "A unique blend of authentic Nepalese cuisine and traditional British pub culture." }
       ]
     },
@@ -423,7 +423,7 @@
       "name": "Our Story",
       "layout": "timeline",
       "elements": [
-        { "type": "intro", "text": "Located in Girton, England’s largest thatched pub pairs Nepalese dishes with pub favourites." },
+        { "type": "intro", "text": "Located in Waterbeach, England’s largest thatched pub pairs Nepalese dishes with pub favourites." },
         { "type": "timeline_item", "title": "Historic Beginnings", "description": "Village hub for centuries; the thatched building anchors community life." },
         { "type": "timeline_item", "title": "Culinary Evolution", "description": "Experimental eras including gastropub influences enrich the menu." },
         { "type": "timeline_item", "title": "Today", "description": "Nepalese-British fusion celebrating Cambridge’s multicultural community." }
@@ -437,7 +437,7 @@
         { "type": "title", "text": "Ready to Book?" },
         { "type": "copy", "text": "Experience the perfect blend of Nepalese hospitality and British pub tradition." },
         { "type": "button", "labels": ["Book Online"], "links": ["/book-a-table"] },
-        { "type": "contact_details", "fields": ["89 High St, Girton, Cambridge CB3 0QQ", "See footer for full hours"] }
+        { "type": "contact_details", "fields": ["12 Green Side, Waterbeach, Cambridge CB25 9HP", "See footer for full hours"] }
       ]
     },
     {
@@ -446,10 +446,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Home", "Menu", "Events", "Press", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -466,7 +466,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Christmas Menu", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -476,7 +476,7 @@
       "name": "Events Hero",
       "layout": "gradient-hero",
       "elements": [
-        { "type": "headline", "text": "Events at The Old Crown, Girton" },
+        { "type": "headline", "text": "Events at The White Horse, Waterbeach" },
         { "type": "subheadline", "text": "Your hub for sport, celebrations & community." },
         { "type": "chips", "items": ["Celebrations", "Live Sports", "Community Events"] }
       ]
@@ -530,7 +530,7 @@
         { "type": "tile", "title": "Anniversaries", "description": "Celebrate with bold flavours and cosy interiors." },
         { "type": "tile", "title": "Student Socials", "description": "Ideal for societies and quiz nights." },
         { "type": "tile", "title": "Corporate Gatherings", "description": "Relaxed yet polished space for teams." },
-        { "type": "tile", "title": "Community Events", "description": "Girton’s hub for local groups." },
+        { "type": "tile", "title": "Community Events", "description": "Waterbeach’s hub for local groups." },
         { "type": "tile", "title": "Wakes & Memorials", "description": "Compassionate service with private hire options." }
       ]
     },
@@ -550,10 +550,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "events@oldcrowngirton.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Events", "Curry & Carols", "Private Hire", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -570,7 +570,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "Events", "Press", "Christmas Menu", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -581,9 +581,9 @@
       "layout": "gradient-hero",
       "elements": [
         { "type": "badge", "text": "Menu Now Live" },
-        { "type": "headline", "text": "Curry & Carols 2025 at The Old Crown Girton" },
+        { "type": "headline", "text": "Curry & Carols 2025 at The White Horse Waterbeach" },
         { "type": "subheadline", "text": "Two sparkling nights of Nepalese curry, mulled cheer, and live carols under the thatched roof." },
-        { "type": "buttons", "items": ["Register Interest", "Read the Evening Standard feature"], "links": ["mailto:oldcrown@lapeninns.com", "https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html"] },
+        { "type": "buttons", "items": ["Register Interest", "Read the Evening Standard feature"], "links": ["mailto:hellothewhitehorsewaterbeach@gmail.com", "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html"] },
         { "type": "badges", "items": ["16 & 17 December", "£35 per guest", "Live Choir"] }
       ]
     },
@@ -614,7 +614,7 @@
       "elements": [
         { "type": "image_placeholder", "text": "Photography coming soon" },
         { "type": "list", "items": ["Dates: 16 & 17 December 2025", "Price: £35 per guest", "Ideal for: work dos, choirs, families" ] },
-        { "type": "buttons", "items": ["Email the team", "Explore dining bookings"], "links": ["mailto:oldcrown@lapeninns.com?subject=Curry%20and%20Carols%202025%20Interest", "/book-a-table"] }
+        { "type": "buttons", "items": ["Email the team", "Explore dining bookings"], "links": ["mailto:hellothewhitehorsewaterbeach@gmail.com?subject=Curry%20and%20Carols%202025%20Interest", "/book-a-table"] }
       ]
     },
     {
@@ -624,7 +624,7 @@
       "elements": [
         { "type": "title", "text": "Questions while you wait?" },
         { "type": "copy", "text": "Chat through dietary needs, group sizes, or corporate hire ideas." },
-        { "type": "contact_options", "items": ["📞 +44 1223 277217", "✉️ oldcrown@lapeninns.com"] }
+        { "type": "contact_options", "items": ["📞 +44 1223 375578", "✉️ hellothewhitehorsewaterbeach@gmail.com"] }
       ]
     },
     {
@@ -633,10 +633,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Events", "Curry & Carols", "Curry & Carols Menu", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -653,7 +653,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Christmas Menu", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -675,7 +675,7 @@
       "elements": [
         { "type": "title", "text": "Food Hygiene Rating: 5 (Very Good)" },
         { "type": "copy", "text": "Inspection completed 18 February 2025." },
-        { "type": "button", "labels": ["View rating"], "links": ["https://ratings.food.gov.uk/business/1750898/old-crown-girton"] }
+        { "type": "button", "labels": ["View rating"], "links": ["https://ratings.food.gov.uk/business/1750898/the-white-horse-girton"] }
       ]
     },
     {
@@ -684,9 +684,9 @@
       "layout": "feature-banner",
       "elements": [
         { "type": "label", "text": "Country pub of the week" },
-        { "type": "headline", "text": "Evening Standard spotlights The Old Crown, Girton" },
+        { "type": "headline", "text": "Evening Standard spotlights The White Horse, Waterbeach" },
         { "type": "quote", "text": "The changes keep locals coming back." },
-        { "type": "cta", "label": "Read the review", "link": "https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html" }
+        { "type": "cta", "label": "Read the review", "link": "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html" }
       ]
     },
     {
@@ -704,7 +704,7 @@
       "layout": "two-column",
       "elements": [
         { "type": "list", "title": "Press Kit & Quick Facts", "items": ["England's largest thatched pub", "Authentic Nepalese cuisine", "Family & dog friendly", "Garden & private dining"] },
-        { "type": "contact_panel", "fields": ["Email: oldcrown@lapeninns.com", "Phone: 01223 277217", "Address: 89 High Street, Girton, Cambridge CB3 0QQ"], "buttons": ["Email Press Team", "Contact Page"], "notes": "Imagery available on request." }
+        { "type": "contact_panel", "fields": ["Email: hellothewhitehorsewaterbeach@gmail.com", "Phone: 01223 375578", "Address: 12 Green Side, Waterbeach, Cambridge CB25 9HP"], "buttons": ["Email Press Team", "Contact Page"], "notes": "Imagery available on request." }
       ]
     },
     {
@@ -713,10 +713,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["Press: oldcrown@lapeninns.com", "Media phone: 01223 277217", "Address: 89 High Street, Girton"] },
+        { "type": "column", "title": "Contact", "fields": ["Press: hellothewhitehorsewaterbeach@gmail.com", "Media phone: 01223 375578", "Address: 12 Green Side, Waterbeach"] },
         { "type": "column", "title": "Quick Links", "items": ["Press Kit", "Media Highlights", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -733,7 +733,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Blog", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -743,7 +743,7 @@
       "name": "Blog Hero",
       "layout": "content-block",
       "elements": [
-        { "type": "headline", "text": "Stories from Old Crown Girton" },
+        { "type": "headline", "text": "Stories from The White Horse Waterbeach" },
         { "type": "subheadline", "text": "Discover heritage, cuisine, and community from England’s largest thatched pub." }
       ]
     },
@@ -782,10 +782,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Blog", "Press", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -802,7 +802,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Blog", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -821,8 +821,8 @@
       "layout": "article-hero",
       "elements": [
         { "type": "badge", "text": "Press & Media" },
-        { "type": "headline", "text": "Evening Standard Spotlights The Old Crown, Girton" },
-        { "type": "meta", "items": ["By Old Crown Team", "19 December 2024", "2 min read"] },
+        { "type": "headline", "text": "Evening Standard Spotlights The White Horse, Waterbeach" },
+        { "type": "meta", "items": ["By The White Horse Team", "19 December 2024", "2 min read"] },
         { "type": "image", "alt": "Thatched pub exterior" }
       ]
     },
@@ -841,7 +841,7 @@
       "elements": [
         { "type": "title", "text": "Read the Evening Standard review" },
         { "type": "copy", "text": "Full piece available on the Evening Standard website." },
-        { "type": "button", "labels": ["Read the Evening Standard review"], "links": ["https://www.standard.co.uk/going-out/bars/old-crown-girton-hotel-pub-review-b1249473.html"] }
+        { "type": "button", "labels": ["Read the Evening Standard review"], "links": ["https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html"] }
       ]
     },
     {
@@ -850,10 +850,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Blog", "Press", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -870,7 +870,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "Christmas Menu", "Events", "Press", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -883,7 +883,7 @@
         { "type": "headline", "text": "Christmas Menu 2025" },
         { "type": "subheadline", "text": "Pick a starter, main, side, and dessert – mulled wine or drink included." },
         { "type": "chips", "items": ["Set menu £44.99", "Festive dining", "Mulled welcome"] },
-        { "type": "buttons", "items": ["Request Booking", "Download Menu"], "links": ["mailto:oldcrown@lapeninns.com?subject=Christmas%20Menu%202025", "/christmas-menu.pdf"] }
+        { "type": "buttons", "items": ["Request Booking", "Download Menu"], "links": ["mailto:hellothewhitehorsewaterbeach@gmail.com?subject=Christmas%20Menu%202025", "/christmas-menu.pdf"] }
       ]
     },
     {
@@ -923,7 +923,7 @@
       "layout": "two-column",
       "elements": [
         { "type": "copy", "text": "Contact the events team for availability, custom timings, or private space." },
-        { "type": "contact_options", "items": ["📞 01223 277217", "✉️ events@oldcrowngirton.com"] }
+        { "type": "contact_options", "items": ["📞 01223 375578", "✉️ hellothewhitehorsewaterbeach@gmail.com"] }
       ]
     },
     {
@@ -932,10 +932,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "events@oldcrowngirton.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Christmas Menu", "Curry & Carols", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Holiday trading hours shared on enquiry." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -952,7 +952,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "Events", "Curry & Carols", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -965,7 +965,7 @@
         { "type": "badge", "text": "Menu Now Live" },
         { "type": "headline", "text": "Curry & Carols Menu 2025" },
         { "type": "subheadline", "text": "Share starters, choose warming mains, finish with festive desserts while live carols fill the room." },
-        { "type": "buttons", "items": ["Register Interest", "Contact the Team"], "links": ["mailto:oldcrown@lapeninns.com?subject=Curry%20and%20Carols%20Menu", "/contact"] }
+        { "type": "buttons", "items": ["Register Interest", "Contact the Team"], "links": ["mailto:hellothewhitehorsewaterbeach@gmail.com?subject=Curry%20and%20Carols%20Menu", "/contact"] }
       ]
     },
     {
@@ -1004,7 +1004,7 @@
       "layout": "centered-panel",
       "elements": [
         { "type": "title", "text": "Ready to reserve your table?" },
-        { "type": "buttons", "items": ["Email the team", "Call to enquire"], "links": ["mailto:oldcrown@lapeninns.com?subject=Curry%20and%20Carols%20Booking", "tel:+441223277217"] }
+        { "type": "buttons", "items": ["Email the team", "Call to enquire"], "links": ["mailto:hellothewhitehorsewaterbeach@gmail.com?subject=Curry%20and%20Carols%20Booking", "tel:+441223375578"] }
       ]
     },
     {
@@ -1013,10 +1013,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Curry & Carols", "Menu", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Event seating opens 18:00; service 19:00–22:00." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -1033,7 +1033,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "Wakes Menu", "Events", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -1074,7 +1074,7 @@
       "layout": "centered-panel",
       "elements": [
         { "type": "copy", "text": "Compassionate team ready to support planning." },
-        { "type": "buttons", "items": ["Email the team", "Call to discuss"], "links": ["mailto:oldcrown@lapeninns.com?subject=Wakes%20Menu%20Enquiry", "tel:+441223277217"] }
+        { "type": "buttons", "items": ["Email the team", "Call to discuss"], "links": ["mailto:hellothewhitehorsewaterbeach@gmail.com?subject=Wakes%20Menu%20Enquiry", "tel:+441223375578"] }
       ]
     },
     {
@@ -1083,10 +1083,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Wakes Menu", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Private hire timings arranged on enquiry." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -1103,7 +1103,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -1123,7 +1123,7 @@
       "layout": "two-column",
       "elements": [
         { "type": "section_title", "text": "Contact Information" },
-        { "type": "contact_panel", "fields": ["Phone: 01223 277217", "Address: 89 High Street, Girton, Cambridge, CB3 0QQ"] },
+        { "type": "contact_panel", "fields": ["Phone: 01223 375578", "Address: 12 Green Side, Waterbeach, Cambridge, CB25 9HP"] },
         { "type": "hours_card", "title": "Opening Hours", "content": "Hours drawn from restaurant data component." },
         { "type": "feature_list", "items": ["Outdoor terrace", "Free parking", "Dog-friendly", "Accessible", "Free WiFi", "Private dining"] }
       ]
@@ -1133,7 +1133,7 @@
       "name": "Interactive Map",
       "layout": "map",
       "elements": [
-        { "type": "map", "title": "Old Crown Girton Location", "features": ["Embedded map", "Directions", "Zoom controls"] }
+        { "type": "map", "title": "The White Horse Waterbeach Location", "features": ["Embedded map", "Directions", "Zoom controls"] }
       ]
     },
     {
@@ -1142,10 +1142,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Menu", "Events", "Press", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -1162,7 +1162,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -1199,10 +1199,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Privacy Policy", "Terms of Service", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }
@@ -1219,7 +1219,7 @@
       "name": "Navbar / Header",
       "layout": "top-fixed",
       "elements": [
-        { "type": "logo", "position": "left", "label": "Old Crown Girton / Logo" },
+        { "type": "logo", "position": "left", "label": "The White Horse Waterbeach / Logo" },
         { "type": "nav_links", "position": "center", "items": ["Home", "Menu", "About", "Events", "Press", "Contact"] },
         { "type": "button", "position": "right", "labels": ["Call for Takeaway", "Book Online", "Order Takeaway"] }
       ]
@@ -1256,10 +1256,10 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["89 High Street, Girton, Cambridge, CB3 0QQ", "+44 1223 277217", "oldcrown@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Terms of Service", "Privacy Policy", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
-        { "type": "legal", "content": "© 2025 Old Crown Girton — Privacy Policy / Terms of Service" },
+        { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
         { "type": "social_icons", "position": "bottom-left" }
       ]
     }

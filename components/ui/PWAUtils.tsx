@@ -301,7 +301,7 @@ export const useOfflineStorage = () => {
 
   const openDB = (): Promise<IDBDatabase> => {
     return new Promise((resolve, reject) => {
-      const request = indexedDB.open('OldCrownDB', 1);
+      const request = indexedDB.open('WhiteHorseDB', 1);
 
       request.onerror = () => reject(request.error);
       request.onsuccess = () => resolve(request.result);

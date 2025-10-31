@@ -117,7 +117,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </button>
               </div>
               <p className="mt-2 text-brand-600">
-                Reserve your table at Old Crown. We&apos;ll call you within 1 hour to confirm.
+                Reserve your table at The White Horse. We&apos;ll call you within 1 hour to confirm.
               </p>
             </div>
 

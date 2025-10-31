@@ -8,9 +8,9 @@
 ## Duplicate Usage Hot Spots
 Using ripgrep on key fields (phone, email, address, postcode, booking URLs) shows several hard-coded instances outside the shared helpers:
 
-- **Legal/Content Pages**: `app/privacy-policy/page.tsx`, `app/tos/page.tsx`, and `app/wakes-menu/page.tsx` embed `oldcrown@lapeninns.com` directly in JSX. Their supporting hooks (`usePrivacyContent`, `useTOSContent`) also default to the same literal when fallbacks trigger.
+- **Legal/Content Pages**: `app/privacy-policy/page.tsx`, `app/tos/page.tsx`, and `app/wakes-menu/page.tsx` embed `hellothewhitehorsewaterbeach@gmail.com` directly in JSX. Their supporting hooks (`usePrivacyContent`, `useTOSContent`) also default to the same literal when fallbacks trigger.
 - **Marketing Landing Pages**: `app/curry-and-carols-menu/page.tsx`, `app/wakes-menu/page.tsx`, `app/events/curry-and-carols/page.tsx`, and `app/press/page.tsx` sprinkle phone/email/address strings in CTA buttons and contact cards.
-- **Navigation + CTA Components**: components such as `components/restaurant/TakeawayBanner.tsx`, `components/restaurant/LocationSection.tsx`, `components/StickyCallButton.tsx`, and `components/menu/MenuHero.tsx` recently migrated to the helpers for phones but still have inline mailto/tel fallback strings in certain branches (e.g., `mailto:oldcrown@lapeninns.com`).
+- **Navigation + CTA Components**: components such as `components/restaurant/TakeawayBanner.tsx`, `components/restaurant/LocationSection.tsx`, `components/StickyCallButton.tsx`, and `components/menu/MenuHero.tsx` recently migrated to the helpers for phones but still have inline mailto/tel fallback strings in certain branches (e.g., `mailto:hellothewhitehorsewaterbeach@gmail.com`).
 - **Content Hooks**: `app/privacy-policy/_content/usePrivacyContent.ts` and `app/tos/_content/useTOSContent.ts` ship JSON-driven copy but bake fallback literals into the JS. Those fallbacks should defer to `restaurantData` so even error states stay current.
 - **Tests & Fixtures**: Several MSW handlers and Jest tests hard-code restaurant identifiers. These can remain (they assert rendered content) but we should be aware that updates will require syncing expected strings.
 

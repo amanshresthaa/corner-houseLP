@@ -40,7 +40,7 @@ const legacyMenuData = {
 
 const legacyRestaurantData = {
   name: "The Himalayan Spice",
-  phone: "+44 1223 277217",
+  phone: "+44 1223 375578",
   email: "info@himalayanspice.example.com",
   address: {
     street: "123 Main Street",
@@ -108,7 +108,7 @@ describe('Backward Compatibility', () => {
       
       expect(restaurant).toBeDefined();
       expect(restaurant.name).toBe("The Himalayan Spice");
-      expect(restaurant.phone).toBe("+44 1223 277217");
+      expect(restaurant.phone).toBe("+44 1223 375578");
     });
 
     it('should maintain getMarketingContent interface', async () => {

@@ -12,10 +12,10 @@ function snapshot(): ConfigProps {
   // config should use the data loader directly server-side.
   const isProd = process.env.NODE_ENV === "production";
   return {
-    appName: "Old Crown Girton",
+    appName: "The White Horse",
     appDescription:
-      "Historic thatched pub in Girton serving authentic Nepalese cuisine and British pub classics. Voted #1 restaurant in Girton on TripAdvisor.",
-    domainName: "oldcrowngirton.com",
+      "Village coaching inn on Waterbeach green serving Nepalese feasts, Sunday roasts, and cask ales from brunch through last orders.",
+    domainName: "whitehorsepub.co",
     crisp: { id: "", onlyShowOnRoutes: ["/"] },
     stripe: {
       plans: [
@@ -32,10 +32,10 @@ function snapshot(): ConfigProps {
     aws: { bucket: undefined, bucketUrl: undefined, cdn: undefined },
     mailgun: {
       subdomain: "mg",
-      fromNoReply: `Old Crown <noreply@mg.oldcrowngirton.com>`,
-      fromAdmin: `Old Crown <info@mg.oldcrowngirton.com>`,
-      supportEmail: "oldcrown@lapeninns.com",
-      forwardRepliesTo: "oldcrown@lapeninns.com",
+      fromNoReply: `The White Horse <hellothewhitehorsewaterbeach@gmail.com>`,
+      fromAdmin: `The White Horse <hellothewhitehorsewaterbeach@gmail.com>`,
+      supportEmail: "hellothewhitehorsewaterbeach@gmail.com",
+      forwardRepliesTo: "hellothewhitehorsewaterbeach@gmail.com",
     },
     colors: { theme: "light", main: themes["light"]["primary"] },
     auth: { loginUrl: "/book-a-table", callbackUrl: "/" },

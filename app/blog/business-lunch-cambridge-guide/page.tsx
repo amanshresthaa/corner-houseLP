@@ -9,14 +9,14 @@ import { Images } from '@/src/lib/images';
 
 // SEO Metadata
 export const metadata = getSEOTags({
-  title: "Business Lunch Cambridge | Corporate Dining at Old Crown Girton",
-  description: "Discover Cambridge's perfect business lunch venue at Old Crown Girton. Quiet atmosphere, quality Nepalese and British cuisine, convenient parking, and professional service near Science Park.",
-  keywords: ["business lunch Cambridge", "corporate dining Cambridge", "best gastropubs Cambridge", "business lunch spots Cambridge", "professional dining Girton", "meeting venue Cambridge"],
+  title: "Business Lunch Cambridge | Corporate Dining at The White Horse Waterbeach",
+  description: "Discover Cambridge's perfect business lunch venue at The White Horse Waterbeach. Quiet atmosphere, quality Nepalese and British cuisine, convenient parking, and professional service near Science Park.",
+  keywords: ["business lunch Cambridge", "corporate dining Cambridge", "best gastropubs Cambridge", "business lunch spots Cambridge", "professional dining Waterbeach", "meeting venue Cambridge"],
   canonicalUrlRelative: "/blog/business-lunch-cambridge-guide",
   openGraph: {
-    title: "Business Lunch Cambridge | Corporate Dining at Old Crown Girton",
+    title: "Business Lunch Cambridge | Corporate Dining at The White Horse Waterbeach",
     description: "Experience Cambridge's ideal business lunch venue with quality cuisine, professional atmosphere, and convenient location.",
-    url: "https://oldcrowngirton.com/blog/business-lunch-cambridge-guide",
+    url: "https://whitehorsepub.co/blog/business-lunch-cambridge-guide",
     type: "article",
   },
 });
@@ -26,11 +26,11 @@ export default function BusinessLunchGuidePage() {
   const postalAddress = getPostalAddressSchema();
   const post = {
     title: "The Ultimate Business Lunch Destination in Cambridge",
-    excerpt: "Discover why Old Crown Girton has become the go-to choice for professionals seeking the perfect balance of quality cuisine, professional atmosphere, and convenient location.",
+    excerpt: "Discover why The White Horse Waterbeach has become the go-to choice for professionals seeking the perfect balance of quality cuisine, professional atmosphere, and convenient location.",
     content: `
-      <p>In the competitive world of Cambridge business, finding the right venue for a professional lunch can make all the difference between closing a deal and missing an opportunity. Old Crown Girton has quietly established itself as Cambridge's premier business lunch destination, offering the perfect blend of professional atmosphere, exceptional cuisine, and practical convenience.</p>
+      <p>In the competitive world of Cambridge business, finding the right venue for a professional lunch can make all the difference between closing a deal and missing an opportunity. The White Horse Waterbeach has quietly established itself as Cambridge's premier business lunch destination, offering the perfect blend of professional atmosphere, exceptional cuisine, and practical convenience.</p>
       
-      <h2>Why Professionals Choose Old Crown Girton</h2>
+      <h2>Why Professionals Choose The White Horse Waterbeach</h2>
       <p>Located just minutes from Cambridge Science Park and easily accessible from the M11, our historic thatched pub provides a refreshing alternative to sterile corporate restaurants. The combination of our authentic Nepalese cuisine and traditional British offerings creates conversation starters that help break the ice and build relationships.</p>
       
       <p>Our spacious dining areas offer the privacy needed for confidential discussions, while our attentive but unobtrusive service ensures your meeting flows smoothly. The WiFi is reliable, parking is ample and free, and our location away from the busy city centre means you can focus on business without distractions.</p>
@@ -41,7 +41,7 @@ export default function BusinessLunchGuidePage() {
       <p>Portion sizes are carefully considered for midday dining - substantial enough to satisfy without causing afternoon lethargy. Our extensive drinks menu includes premium wines, craft beers, and excellent coffee to complement any business discussion.</p>
       
       <h2>Practical Benefits for Cambridge Professionals</h2>
-      <p>Time is money in business, and Old Crown Girton respects both. Our dedicated business lunch service ensures prompt, professional attention without rushing. Tables can be reserved in advance with specific requirements noted, and our team understands the importance of discretion and timing in business environments.</p>
+      <p>Time is money in business, and The White Horse Waterbeach respects both. Our dedicated business lunch service ensures prompt, professional attention without rushing. Tables can be reserved in advance with specific requirements noted, and our team understands the importance of discretion and timing in business environments.</p>
       
       <p>The journey from central Cambridge takes just 15 minutes, making it easily accessible for clients traveling from London or other regional centres. Our large car park eliminates parking stress, and the peaceful village setting provides a welcome change of pace from urban meeting rooms.</p>
       
@@ -53,7 +53,7 @@ export default function BusinessLunchGuidePage() {
       <h2>Booking Your Business Lunch</h2>
       <p>To ensure the best experience for your business lunch, we recommend booking at least 24 hours in advance. Our team can arrange specific seating areas for privacy, prepare any necessary AV equipment, and coordinate timing to meet your schedule requirements.</p>
       
-      <p>Whether you're impressing a new client, negotiating a partnership, or celebrating a successful project with your team, Old Crown Girton provides the professional yet welcoming environment that makes business dining truly effective.</p>
+      <p>Whether you're impressing a new client, negotiating a partnership, or celebrating a successful project with your team, The White Horse Waterbeach provides the professional yet welcoming environment that makes business dining truly effective.</p>
     `,
     image: Images.blog.businessLunch,
     category: "Business Dining",
@@ -81,10 +81,10 @@ export default function BusinessLunchGuidePage() {
         {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": "https://oldcrowngirton.com/blog/business-lunch-cambridge-guide#blogposting",
+          "@id": "https://whitehorsepub.co/blog/business-lunch-cambridge-guide#blogposting",
           "headline": post.title,
           "description": post.excerpt,
-          "url": "https://oldcrowngirton.com/blog/business-lunch-cambridge-guide",
+          "url": "https://whitehorsepub.co/blog/business-lunch-cambridge-guide",
           "datePublished": post.publishedDate,
           "dateModified": post.modifiedDate,
           "author": {
@@ -97,17 +97,17 @@ export default function BusinessLunchGuidePage() {
             "name": identity.displayName,
             "logo": {
               "@type": "ImageObject",
-              "url": "https://oldcrowngirton.com/icon.png"
+              "url": "https://whitehorsepub.co/icon.png"
             },
             "address": postalAddress
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://oldcrowngirton.com/blog/business-lunch-cambridge-guide"
+            "@id": "https://whitehorsepub.co/blog/business-lunch-cambridge-guide"
           },
           "image": {
             "@type": "ImageObject",
-            "url": `https://oldcrowngirton.com/${post.image}`,
+            "url": `https://whitehorsepub.co/${post.image}`,
             "width": 1200,
             "height": 630
           },
@@ -117,8 +117,8 @@ export default function BusinessLunchGuidePage() {
           "inLanguage": "en-GB",
           "isPartOf": {
             "@type": "Blog",
-            "name": "Old Crown Girton Blog",
-            "url": "https://oldcrowngirton.com/blog"
+            "name": "The White Horse Waterbeach Blog",
+            "url": "https://whitehorsepub.co/blog"
           },
           "about": [
             {
@@ -147,10 +147,10 @@ export default function BusinessLunchGuidePage() {
             },
             {
               "@type": "Question",
-              "name": "How far is Old Crown Girton from Cambridge Science Park?",
+              "name": "How far is The White Horse Waterbeach from Cambridge Science Park?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Old Crown Girton is just 10 minutes drive from Cambridge Science Park, with ample free parking and easy access from the A14 and M11."
+                "text": "The White Horse Waterbeach is just 10 minutes drive from Cambridge Science Park, with ample free parking and easy access from the A14 and M11."
               }
             },
             {
@@ -208,7 +208,7 @@ export default function BusinessLunchGuidePage() {
               <MotionDiv className="absolute inset-0" layoutId={`post:${post.slug}:image`}>
                 <Image
                   src={post.image}
-                  alt="Professional business lunch meeting at Old Crown Girton with quality dining and networking atmosphere"
+                  alt="Professional business lunch meeting at The White Horse Waterbeach with quality dining and networking atmosphere"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1024px"
