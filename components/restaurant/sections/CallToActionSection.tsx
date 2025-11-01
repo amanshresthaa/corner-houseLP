@@ -78,31 +78,56 @@ export default function CallToActionSection({
 
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {buttons.map((button, index) => {
-                const isExternal = button.external || button.href.startsWith('http');
-                const buttonProps = isExternal
-                  ? {
-                      target: '_blank' as const,
-                      rel: 'noopener noreferrer' as const,
-                      'aria-label': `${button.text} (opens in new tab)`
-                    }
-                  : {
-                      'aria-label': button.text
-                    };
+                const href = button.href || '#';
+                const isInternalLink = typeof href === 'string' && href.startsWith('/') && !button.external;
+                const opensNewTab = Boolean(button.external || (typeof href === 'string' && href.startsWith('http')));
+                const ariaLabel = opensNewTab ? `${button.text} (opens in new tab)` : button.text;
+
+                if (isInternalLink) {
+                  return (
+                    <div key={button.key || button.text || index}>
+                      <Link
+                        href={href}
+                        className={getButtonClasses(button.variant)}
+                        aria-label={ariaLabel}
+                        {...(opensNewTab
+                          ? {
+                              target: '_blank' as const,
+                              rel: 'noopener noreferrer' as const,
+                            }
+                          : {})}
+                      >
+                        {button.text}
+                        {opensNewTab && (
+                          <span className="text-xs" aria-hidden="true">
+                            ↗
+                          </span>
+                        )}
+                      </Link>
+                    </div>
+                  );
+                }
 
                 return (
                   <div key={button.key || button.text || index}>
-                    <Link
-                      href={button.href}
+                    <a
+                      href={href}
                       className={getButtonClasses(button.variant)}
-                      {...buttonProps}
+                      aria-label={ariaLabel}
+                      {...(opensNewTab
+                        ? {
+                            target: '_blank' as const,
+                            rel: 'noopener noreferrer' as const,
+                          }
+                        : {})}
                     >
                       {button.text}
-                      {isExternal && (
+                      {opensNewTab && (
                         <span className="text-xs" aria-hidden="true">
                           ↗
                         </span>
                       )}
-                    </Link>
+                    </a>
                   </div>
                 );
               })}
