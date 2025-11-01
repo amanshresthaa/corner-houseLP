@@ -50,10 +50,15 @@ describe('RestaurantHoursCard', () => {
     jest.clearAllMocks();
   });
 
-  it('renders sections and keeps weekly list expanded by default', async () => {
+  const variants: Array<{ variant: 'light' | 'dark'; context: string }> = [
+    { variant: 'light', context: 'menu page (light variant)' },
+    { variant: 'dark', context: 'home page (dark variant)' },
+  ];
+
+  it.each(variants)('keeps weekly list expanded by default on the $context', async ({ variant }) => {
     const user = userEvent.setup();
 
-    render(<RestaurantHoursCard />);
+    render(<RestaurantHoursCard variant={variant} />);
 
     expect(screen.getByRole('heading', { name: /restaurant & bar opening time/i })).toBeInTheDocument();
     expect(screen.getByText(/bar hours/i)).toBeInTheDocument();
@@ -61,7 +66,8 @@ describe('RestaurantHoursCard', () => {
 
     const buttons = screen.getAllByRole('button', { name: /show less/i });
     expect(buttons).toHaveLength(2);
-    expect(screen.getAllByText(/monday/i).length).toBeGreaterThan(0);
+    expect(screen.queryAllByRole('button', { name: /show all hours/i })).toHaveLength(0);
+    expect(screen.getAllByText(/monday/i)).toHaveLength(2);
 
     await user.click(buttons[0]);
     expect(buttons[0]).toHaveTextContent(/show all hours/i);
