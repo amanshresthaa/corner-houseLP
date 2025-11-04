@@ -38,7 +38,8 @@
     },
     "map": {
       "google": "https://www.google.com/maps/dir/?api=1&destination=52.2662426,0.1913944&travelmode=driving",
-      "apple": "https://maps.apple.com/?daddr=52.2662426,0.1913944&dirflg=d"
+      "apple": "https://maps.apple.com/?daddr=52.2662426,0.1913944&dirflg=d",
+      "embed": "https://www.google.com/maps?&q=The%20White%20Horse%20Waterbeach%2C%2012%20Greenside%2C%20Waterbeach%2C%20Cambridge%20CB25%209HP&z=15&output=embed"
     },
     "timezone": "Europe/London"
   },

@@ -25,7 +25,9 @@ export default function InteractiveMap({
   const googleHref = address.map.google ?? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
   const appleHref = address.map.apple ?? `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
   const appleNative = `maps://?daddr=${lat},${lng}&dirflg=d`;
-  const embedSrc = address.map.embed ?? `https://www.google.com/maps/embed/v1/place?key=&q=${lat},${lng}`;
+  // Prefer a fixed-place embed (address label). Fallback to coordinates.
+  const searchQuery = encodeURIComponent(`${identity.displayName}, ${address.street}, ${address.area}, ${address.city} ${address.postcode}`);
+  const embedSrc = address.map.embed || `https://www.google.com/maps?&q=${searchQuery}&z=15&output=embed`;
 
   const handleMapClick = () => {
     const isiOS = typeof navigator !== 'undefined' && /iPhone|iPad|iPod/i.test(navigator.userAgent);
