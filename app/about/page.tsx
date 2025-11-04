@@ -1,22 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Image from "next/image";
 import Link from "next/link";
+import contentConfig from '@/config/content.json';
 
-export const metadata = getSEOTags({
-  title: "About The White Horse, Waterbeach | Our Story & Mission",
-  description:
-    "A friendly village pub opposite the green. Cask ales, live sport, and an authentic Nepalese kitchen — revived for the community in 2025.",
-  canonicalUrlRelative: "/about",
-  openGraph: {
-    title: "About The White Horse – Our Story",
-    description:
-      "Why we exist, what we stand for, and how we blend village pub comfort with authentic Nepalese flavour.",
-    url: "https://whitehorsepub.co/about",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.about?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/about',
+    openGraph: seo.openGraph,
+  });
+}
 
 export default function AboutPage() {
   return (
@@ -65,13 +65,13 @@ function Hero() {
             href="/book-a-table"
             className="bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
           >
-            Book Online
+            {contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'}
           </Link>
           <Link
             href="/takeaway-menu"
             className="bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
           >
-            Order Takeaway
+            {contentConfig.global?.ui?.buttons?.orderTakeaway || 'Order Takeaway'}
           </Link>
         </div>
       </div>

@@ -8,11 +8,11 @@
     "environmentBanner": true
   },
   "api": {
-    "baseUrl": "https://staging.oldcrown.co.uk",
-    "menuEndpoint": "https://staging.oldcrown.co.uk/api/menu",
-    "marketingEndpoint": "https://staging.oldcrown.co.uk/api/marketing",
-    "restaurantEndpoint": "https://staging.oldcrown.co.uk/api/restaurant",
-    "contentEndpoint": "https://staging.oldcrown.co.uk/api/content"
+    "baseUrl": "https://staging.whitehorsepub.co",
+    "menuEndpoint": "https://staging.whitehorsepub.co/api/menu",
+    "marketingEndpoint": "https://staging.whitehorsepub.co/api/marketing",
+    "restaurantEndpoint": "https://staging.whitehorsepub.co/api/restaurant",
+    "contentEndpoint": "https://staging.whitehorsepub.co/api/content"
   },
   "cms": { 
     "enabled": true,
@@ -21,7 +21,7 @@
   },
   "metadata": {
     "appName": "The White Horse [STAGING]",
-    "domainName": "staging.oldcrown.co.uk",
+    "domainName": "staging.whitehorsepub.co",
     "environment": "staging"
   },
   "performance": {

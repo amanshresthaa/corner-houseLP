@@ -2,6 +2,7 @@ import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/MotionWrappers";
 import Link from "@/lib/debugLink";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { getContactInfo } from "@/lib/restaurantData";
 
 const BASE_COURSES = [
@@ -39,25 +40,17 @@ const OPTIONAL_EXTRAS = [
 const contact = getContactInfo();
 const eventsEmail = contact.email.events ?? contact.email.primary;
 
-export const metadata = getSEOTags({
-  title: "Wakes Buffet | Celebration of Life Catering | The White Horse Waterbeach",
-  description:
-    "Plan a calm celebration of life with our £10-per-guest wakes buffet: one sandwich, chicken wings, and a samosa, plus optional chicken pakora with tea or coffee.",
-  keywords: [
-    "wakes menu Cambridge",
-    "celebration of life catering",
-    "The White Horse Waterbeach wakes",
-    "funeral reception menu",
-    "sandwich buffet Cambridge",
-  ],
-  canonicalUrlRelative: "/wakes-menu",
-  openGraph: {
-    title: "Wakes Buffet at The White Horse Waterbeach",
-    description:
-      "£10 per guest for a sandwich, chicken wings, and a samosa, with the option to add chicken pakora and hot drinks for £2.50.",
-    url: "https://whitehorsepub.co/wakes-menu",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.wakesMenu?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/wakes-menu',
+    openGraph: seo.openGraph,
+  });
+}
 
 export default function WakesMenuPage() {
   const structuredData = [

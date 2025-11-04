@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Metadata } from 'next';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+import contentConfig from '@/config/content.json';
 import ClientLayout from '@/components/LayoutClient';
 import { LoadingProvider } from '@/contexts/LoadingContext';
 import GlobalLoadingIndicator from '@/components/GlobalLoadingIndicator';
@@ -17,35 +19,39 @@ const darkTheme = themes.dark.colors;
 
 const LAYOUT_CONTACT = getContactInfo();
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://whitehorsepub.co/'),
-  title: 'The White Horse Waterbeach | Historic Thatched Pub & Nepalese Restaurant',
-  description: `Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Book: ${LAYOUT_CONTACT.phone.display}`,
-  manifest: '/manifest.webmanifest',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: lightTheme.background },
-    { media: '(prefers-color-scheme: dark)', color: darkTheme.background },
-  ],
-  icons: {
-    icon: [
-      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon-48.png', sizes: '48x48', type: 'image/png' },
-      { url: '/icon-64.png', sizes: '64x64', type: 'image/png' },
-      { url: '/icon-72.png', sizes: '72x72', type: 'image/png' },
-      { url: '/icon-96.png', sizes: '96x96', type: 'image/png' },
-      { url: '/icon-128.png', sizes: '128x128', type: 'image/png' },
-      { url: '/icon-144.png', sizes: '144x144', type: 'image/png' },
-      { url: '/icon-152.png', sizes: '152x152', type: 'image/png' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-384.png', sizes: '384x384', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' }
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContentSmart();
+  const site = content.global?.site || {} as any;
+  return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://whitehorsepub.co/'),
+    title: site.title || 'The White Horse Waterbeach',
+    description: site.description || `Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Book: ${LAYOUT_CONTACT.phone.display}`,
+    manifest: '/manifest.webmanifest',
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: lightTheme.background },
+      { media: '(prefers-color-scheme: dark)', color: darkTheme.background },
     ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
-    ]
-  }
-};
+    icons: {
+      icon: [
+        { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/icon-48.png', sizes: '48x48', type: 'image/png' },
+        { url: '/icon-64.png', sizes: '64x64', type: 'image/png' },
+        { url: '/icon-72.png', sizes: '72x72', type: 'image/png' },
+        { url: '/icon-96.png', sizes: '96x96', type: 'image/png' },
+        { url: '/icon-128.png', sizes: '128x128', type: 'image/png' },
+        { url: '/icon-144.png', sizes: '144x144', type: 'image/png' },
+        { url: '/icon-152.png', sizes: '152x152', type: 'image/png' },
+        { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+        { url: '/icon-384.png', sizes: '384x384', type: 'image/png' },
+        { url: '/icon-512.png', sizes: '512x512', type: 'image/png' }
+      ],
+      apple: [
+        { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
+      ]
+    }
+  } as Metadata;
+}
 
 // Minimal inline scripts injected into the server HTML to ensure tests
 // that dispatch `open-booking-modal` before React hydration still
@@ -62,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <PerformanceProvider>
           {/* Skip link for keyboard users */}
-          <a href="#main-content" className="accessibility-skip-link">Skip to main content</a>
+          <a href="#main-content" className="accessibility-skip-link">{contentConfig.global?.accessibility?.ariaLabels?.skipToContent || 'Skip to main content'}</a>
           <script dangerouslySetInnerHTML={{ __html: QUEUE_SCRIPT }} />
           <script dangerouslySetInnerHTML={{ __html: FALLBACK_SCRIPT }} />
 

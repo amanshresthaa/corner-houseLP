@@ -8,12 +8,13 @@ import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
 import { getRestaurantIdentity, getPostalAddressSchema, getContactInfo } from '@/lib/restaurantData';
 import CallToActionSection from '@/components/restaurant/sections/CallToActionSection';
+import contentConfig from '@/config/content.json';
 // Dynamic imports for Menu page sections - optimized for performance
 const MenuInteractive = dynamic(() => import('./_components/MenuInteractive'), {
 	ssr: true,
 	loading: () => (
 		<div className="min-h-96 bg-white flex items-center justify-center">
-			<div className="text-lg text-neutral-500">Loading menu...</div>
+			<div className="text-lg text-neutral-500">{contentConfig?.pages?.menu?.messages?.loading || contentConfig?.global?.ui?.labels?.loading || 'Loading…'}</div>
 		</div>
 	)
 });
@@ -22,19 +23,16 @@ const RestaurantHoursCard = dynamic(() => import('@/components/restaurant/Restau
 
 export const revalidate = 300;
 
-export const metadata: Metadata = {
-	title: 'Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach',
-	description: 'Explore our searchable menu featuring authentic Nepalese cuisine, momo, dal bhat & curries, plus traditional British pub classics. Advanced search and dietary filters available. Takeaway available.',
-	keywords: 'searchable menu Cambridge, Nepalese menu Cambridge, authentic Nepalese food Waterbeach, momo Cambridge, dal bhat, curry takeaway Cambridge, pub food menu Waterbeach, dietary filters menu, nutrition information',
-	openGraph: {
-		title: 'Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach',
-		description: 'Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Waterbeach\'s historic thatched pub',
-		url: 'https://whitehorsepub.co//menu',
-		siteName: 'The White Horse Waterbeach',
-		locale: 'en_GB',
-		type: 'website',
-	},
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContentSmart();
+  const seo = (content.pages?.menu as any)?.seo || {};
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    openGraph: seo.openGraph,
+  } as Metadata;
+}
 
 export default async function MenuPage({ searchParams }: { searchParams?: { category?: string } }) {
 	// Detect priority category from search params or URL hash (for server-side optimization)
@@ -54,8 +52,8 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const telHref = contact.phone.tel;
 	const phoneDisplay = contact.phone.display;
 
-	const labels = m.buttons || {};
-	const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline || 'Book Online';
+		const labels = m.buttons || {};
+		const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline;
 	const labelOrderTakeaway = labels.orderTakeaway || menuContent.hero.cta.order || `Order Takeaway: ${phoneDisplay}`;
 	const allergenNotice = menuContent.sections.allergenNotice;
 	const menuDescription = menuContent.sections.description;

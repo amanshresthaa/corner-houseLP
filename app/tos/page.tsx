@@ -1,20 +1,21 @@
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
-export const metadata = getSEOTags({
-  title: "Terms of Service | The White Horse Waterbeach - Restaurant Booking & Service Conditions",
-  description: "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations, cancellations and dining policies for our Cambridge pub.",
-  keywords: ["The White Horse Waterbeach terms", "restaurant booking terms", "pub terms of service Cambridge", "dining terms conditions"],
-  canonicalUrlRelative: "/tos",
-  openGraph: {
-    title: "Terms of Service | The White Horse Waterbeach",
-    description: "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations and dining policies.",
-    url: "https://whitehorsepub.co//tos",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.tos?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/tos',
+    openGraph: seo.openGraph,
+  });
+}
 
 export default function TOS() {
   const contact = getContactInfo();

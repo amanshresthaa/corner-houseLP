@@ -8,7 +8,7 @@
         "nepalese",
         "restaurant",
         "pub",
-        "oldcrown",
+        "whitehorse",
         "staging"
       ],
       "version": "staging-1.0.0",
@@ -17,7 +17,7 @@
     },
     "contact": {
       "phone": "+44 1223 375578",
-      "email": "staging@oldcrown.co.uk",
+      "email": "staging@whitehorsepub.co",
       "address": {
         "street": "123 Staging Street",
         "city": "Test City",

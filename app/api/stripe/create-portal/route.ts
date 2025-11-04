@@ -1,11 +1,9 @@
 import { NextResponse, NextRequest } from "next/server";
+import contentConfig from '@/config/content.json';
 
 export async function POST(_req: NextRequest) {
-  return NextResponse.json(
-    {
-      error:
-        "Supabase-powered billing is disabled. Please contact the venue directly for account or billing support.",
-    },
-    { status: 503 }
-  );
+  const message =
+    contentConfig?.global?.ui?.messages?.billingDisabled ||
+    'Billing portal is currently unavailable.';
+  return NextResponse.json({ error: message }, { status: 503 });
 }

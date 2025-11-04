@@ -1,21 +1,23 @@
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import MenuInfoCollapse from '@/components/menu/MenuInfoCollapse';
 import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
+import contentConfig from '@/config/content.json';
 
-export const metadata = getSEOTags({
-  title: "Menu Information & Dietary Requirements | The White Horse Waterbeach - Allergens, Dietary Options & Food Safety",
-  description: "Comprehensive allergen information, dietary requirements, and menu transparency for The White Horse Waterbeach. We comply with UK Food Information Regulations 2014 and Natasha's Law.",
-  keywords: ["The White Horse Waterbeach allergens", "dietary requirements Cambridge", "gluten free restaurant", "vegetarian Waterbeach", "food allergies", "menu information", "Natasha's Law compliance"],
-  canonicalUrlRelative: "/menu-information",
-  openGraph: {
-    title: "Menu Information & Dietary Requirements | The White Horse Waterbeach",
-    description: "Complete allergen information and dietary options at The White Horse Waterbeach. Safe dining for all dietary requirements.",
-    url: "https://whitehorsepub.co//menu-information",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.menuInformation?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/menu-information',
+    openGraph: seo.openGraph,
+  });
+}
 
 const buildFaqItems = (phoneDisplay: string) => ([
   {
@@ -579,14 +581,14 @@ export default function MenuInformationPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="text-center">
-                    <h3 className="font-semibold text-brand-700 mb-2">Call Us</h3>
+                    <h3 className="font-semibold text-brand-700 mb-2">{contentConfig.global?.ui?.buttons?.callNow || 'Call Now'}</h3>
                     <p className="text-neutral-600 mb-1">Speak directly with our team</p>
                     <Link href={phoneHref} className="text-lg font-bold text-brand-600 hover:text-brand-700">
                       {phoneDisplay}
                     </Link>
                   </div>
                   <div className="text-center">
-                    <h3 className="font-semibold text-brand-700 mb-2">Email Us</h3>
+                    <h3 className="font-semibold text-brand-700 mb-2">{contentConfig.global?.ui?.buttons?.emailUs || 'Email Us'}</h3>
                     <p className="text-neutral-600 mb-1">Send us your dietary requirements</p>
                     <Link href={`mailto:${primaryEmail}`} className="text-lg font-bold text-brand-600 hover:text-brand-700">
                       {primaryEmail}

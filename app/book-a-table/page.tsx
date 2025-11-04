@@ -2,23 +2,22 @@ import RestaurantLayout from '@/components/restaurant/Layout';
 import BookingForm from '@/components/restaurant/BookingForm';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { getContactInfo, getHours } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 
 const CONTACT = getContactInfo();
 
-export const metadata = getSEOTags({
-  title: 'Book a Table | The White Horse Waterbeach Restaurant Reservations',
-  description:
-    `Reserve a table at The White Horse Waterbeach in Cambridge. Submit our quick booking request form or call ${CONTACT.phone.display} for immediate assistance.`,
-  canonicalUrlRelative: '/book-a-table',
-  openGraph: {
-    title: 'Book a Table at The White Horse Waterbeach',
-    description:
-      `Request a reservation at The White Horse Waterbeach. Confirmations within an hour during opening times or call ${CONTACT.phone.display} for urgent enquiries.`,
-    url: 'https://whitehorsepub.co/book-a-table',
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.bookTable?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/book-a-table',
+    openGraph: seo.openGraph,
+  });
+}
 
 const reduceMotionStyles = `
   @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,7 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import Link from '@/lib/debugLink';
 // PressFeatureBanner removed to keep page focused on essential, verified information
 import { getContactInfo, getAddress, getPostalAddressSchema, getRestaurantIdentity } from '@/lib/restaurantData';
@@ -26,23 +27,17 @@ const MEDIA_CONTACT = {
   address: `${ADDRESS.street}, ${ADDRESS.area}, ${ADDRESS.city}, ${ADDRESS.postcode}`,
 };
 
-export const metadata = getSEOTags({
-  title: "Press Kit | The White Horse Waterbeach",
-  description: "Official press information, quick facts, and media contact for The White Horse, Waterbeach — a revitalised community hub blending a traditional pub with authentic Nepalese cuisine.",
-  keywords: [
-    "The White Horse Waterbeach press",
-    "press kit",
-    "media contact",
-    "Nepalese restaurant",
-    "Waterbeach thatched pub",
-  ],
-  canonicalUrlRelative: "/press",
-  openGraph: {
-    title: "Press Kit | The White Horse Waterbeach",
-    description: "Official press information, quick facts, and media contact for The White Horse Waterbeach.",
-    url: "https://whitehorsepub.co//press",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.press?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/press',
+    openGraph: seo.openGraph,
+  });
+}
 
 export default function PressPage() {
   return (

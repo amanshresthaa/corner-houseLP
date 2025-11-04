@@ -7,12 +7,16 @@ interface InteractiveMapProps {
   className?: string;
   height?: string;
   title?: string;
+  directionLabel?: string;
+  hintLabel?: string;
 }
 
 export default function InteractiveMap({ 
   className = "h-[600px] bg-neutral-50 rounded-xl shadow-lg overflow-hidden",
   height = "100%",
-  title = "The White Horse Waterbeach Location"
+  title = "The White Horse Waterbeach Location",
+  directionLabel = 'Get Directions',
+  hintLabel = 'Click for directions'
 }: InteractiveMapProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -90,7 +94,7 @@ export default function InteractiveMap({
         {/* Direction Indicator (static) */}
         <div className="absolute top-4 right-4 bg-brand-700 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 text-sm font-medium">
           <span className="text-lg">🧭</span>
-          <span>Get Directions</span>
+          <span>{directionLabel}</span>
         </div>
 
         {/* Center Pin Indicator (static) */}
@@ -100,7 +104,7 @@ export default function InteractiveMap({
 
         {/* Click Hint (always visible, no motion) */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg text-sm text-neutral-700 font-medium">
-          Click for directions to {identity.displayName}
+          {hintLabel} to {identity.displayName}
         </div>
 
         {/* Focus Ring */}

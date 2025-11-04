@@ -10,18 +10,18 @@ const ADDRESS_LINE = getFormattedAddress();
 const ADDRESS = getAddress();
 const IDENTITY = getRestaurantIdentity();
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Contact The White Horse Waterbeach - Book Table | Directions | Opening Hours",
-  description: `Contact The White Horse Waterbeach for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}. Free parking available.`,
-  keywords: ["The White Horse Waterbeach contact", "book table Waterbeach pub", "Waterbeach pub phone number", "The White Horse directions", "Cambridge pub booking", "Waterbeach restaurant address"],
-  canonicalUrlRelative: "/contact",
-  openGraph: {
-    title: "Contact The White Horse Waterbeach - Book Table | Directions",
-    description: `Contact The White Horse Waterbeach for bookings, directions & enquiries. Located at ${ADDRESS_LINE}. Phone: ${CONTACT.phone.display}.`,
-    url: "https://whitehorsepub.co//contact",
-  },
-});
+// SEO Metadata from content.json
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages?.contact as any)?.seo || {};
+  return getSEOTags({
+    title: seo.title || 'Contact The White Horse Waterbeach',
+    description: seo.description || 'Contact us for bookings, directions & enquiries.',
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/contact',
+    openGraph: seo.openGraph,
+  });
+}
 
 // Dynamic imports for Contact page sections
 const ContactInfoSection = dynamic(() => import("@/components/restaurant/sections/ContactInfoSection"));
@@ -86,7 +86,7 @@ export default async function ContactPage() {
                   aria-label={`Email ${IDENTITY.displayName} at ${CONTACT.email.primary}`}
                   style={{ touchAction: 'manipulation' }}
                 >
-                  📧 Email Us
+                  📧 {content.global?.ui?.buttons?.emailUs || 'Email Us'}
                 </a>
                 <a
                   href={ADDRESS.map.google || '#'}
@@ -96,7 +96,7 @@ export default async function ContactPage() {
                   aria-label={`Get directions to ${IDENTITY.displayName}`}
                   style={{ touchAction: 'manipulation' }}
                 >
-                  🧭 Directions
+                  🧭 {content.global?.ui?.buttons?.getDirections || 'Get Directions'}
                 </a>
               </div>
             </div>
@@ -141,9 +141,11 @@ export default async function ContactPage() {
                 <h2 id="map-heading" className="mb-6 text-center text-2xl font-display font-bold text-brand-700">Find Us</h2>
                 <div className="rounded-3xl bg-brand-50 p-4 shadow-lg shadow-brand-900/10">
                   <InteractiveMap
-                    title="The White Horse Waterbeach Location"
+                    title={`${IDENTITY.displayName} Location`}
                     className="h-[420px] w-full overflow-hidden rounded-2xl border border-brand-200/40"
                     height="400px"
+                    directionLabel={content.global?.ui?.buttons?.getDirections || 'Get Directions'}
+                    hintLabel={content.global?.ui?.labels?.clickForDirections || 'Click for directions'}
                   />
                 </div>
               </section>

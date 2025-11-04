@@ -1,31 +1,23 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/MotionWrappers";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
 
 const TAKEAWAY_MENU_PATH = "/takeaway-menu/the-white-horse-takeaway-menu.jpg";
 
-export const metadata = getSEOTags({
-  title: "Takeaway Menu Download | The White Horse Waterbeach",
-  description:
-    "Download The White Horse Waterbeach takeaway menu and order authentic Nepalese and British pub favourites for collection in Waterbeach, Cambridge.",
-  keywords: [
-    "takeaway menu Cambridge",
-    "The White Horse Waterbeach takeaway",
-    "Waterbeach takeaway",
-    "download takeaway menu",
-    "Nepalese takeaway Cambridge",
-    "pub takeaway Waterbeach",
-  ],
-  canonicalUrlRelative: "/takeaway-menu",
-  openGraph: {
-    title: "Download the The White Horse Waterbeach Takeaway Menu",
-    description:
-      "Access our latest takeaway menu and place your collection order direct with the The White Horse Waterbeach team.",
-    url: "https://whitehorsepub.co/takeaway-menu",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.takeawayMenu?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/takeaway-menu',
+    openGraph: seo.openGraph,
+  });
+}
 
 export default function TakeawayMenuPage() {
   const contact = getContactInfo();

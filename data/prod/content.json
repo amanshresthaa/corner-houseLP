@@ -4,14 +4,14 @@
       "name": "The White Horse",
       "title": "The White Horse - Authentic Nepalese Cuisine & Pub Classics",
       "description": "Experience the finest Nepalese cuisine and traditional British pub food at The White Horse. Book your table today for an unforgettable dining experience.",
-      "keywords": ["nepalese", "restaurant", "pub", "oldcrown", "cuisine", "dining", "british", "food"],
+      "keywords": ["nepalese", "restaurant", "pub", "whitehorse", "cuisine", "dining", "british", "food"],
       "version": "1.0.0",
       "buildTime": "2024",
       "environment": "production"
     },
     "contact": {
       "phone": "+44 1223 375578",
-      "email": "info@oldcrown.co.uk",
+      "email": "info@whitehorsepub.co",
       "address": {
         "street": "123 Crown Street",
         "city": "London",

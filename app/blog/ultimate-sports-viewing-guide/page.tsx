@@ -1,24 +1,24 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Images } from '@/src/lib/images';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Watch Live Sports at The White Horse Waterbeach | Best Sports Pub Near Cambridge",
-  description: "Experience live sports at The White Horse Waterbeach with crystal-clear large screens, Premier League football, rugby, cricket. The perfect sports pub near Cambridge with great atmosphere.",
-  keywords: ["watch football Cambridge", "sports pub Waterbeach", "live sports Cambridge", "Premier League pub Cambridge", "rugby viewing Cambridge", "pubs showing football"],
-  canonicalUrlRelative: "/blog/ultimate-sports-viewing-guide",
-  openGraph: {
-    title: "Watch Live Sports at The White Horse Waterbeach | Best Sports Pub Cambridge",
-    description: "Experience live sports in Cambridge's most atmospheric sports pub. Crystal-clear screens, great food, and unbeatable match-day atmosphere.",
-    url: "https://whitehorsepub.co/blog/ultimate-sports-viewing-guide",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

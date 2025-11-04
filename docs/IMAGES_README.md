@@ -7,8 +7,7 @@ Overview
 
 Structure (physical folders)
 - Public brand assets
-  - `public/images/brand/Oldcrowngirtonlogo.png`
-  - `public/images/brand/WhiteHorseLogo.png`
+  - `public/images/brand/whitehorse-logo.png` (primary)
   - `public/images/slideshow/WhiteHorseWaterbeachBuilding.png`
 - Venue photos (slideshow set)
   - `public/images/slideshow/{interior,exterior,garden}/*.{jpg,jpeg,png}`

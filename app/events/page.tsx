@@ -1,18 +1,25 @@
 import type { Metadata } from "next";
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getContactInfo } from "@/lib/restaurantData";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 
-export const metadata: Metadata = {
-  title: "Events & What's On | The White Horse Waterbeach",
-  description:
-    "Live sports, regular happenings, and a weekly guide. Multiple screens, great food, family & dog-friendly.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.events?.seo || {};
+  return {
+    title: seo.title,
+    description: seo.description,
+  } as Metadata;
+}
 
-export default function EventsPage() {
+export default async function EventsPage() {
   const contact = getContactInfo();
   const eventsEmail = contact.email.events ?? contact.email.primary;
   const enquireHref = contact.enquiryUrl || `mailto:${eventsEmail}`;
-  const downloadHref = "/wakes-menu"; // Fallback while keeping static CTA label
+  const downloadHref = "/wakes-menu";
+  const content = await getContentSmart();
+  const e = (content.pages as any)?.events || {};
+  const hero = e.hero || {};
 
   // Regular events section removed per request
 
@@ -39,13 +46,13 @@ export default function EventsPage() {
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 md:py-16">
             <div className="space-y-4 text-center">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/90">
-                What’s On
+                {hero.badgeLabel || 'What\’s On'}
               </span>
               <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight">
-                Events &amp; What’s On
+                {hero.title || 'Events & What\’s On'}
               </h1>
               <p className="max-w-2xl mx-auto text-base md:text-lg text-white/90 leading-relaxed">
-                Your home for live sport, community gatherings, and proper pub culture — with great food and a warm welcome every day.
+                {hero.subtitle || 'Your home for live sport, community gatherings, and proper pub culture — with great food and a warm welcome every day.'}
               </p>
               <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:items-center justify-center">
                 <a
@@ -53,18 +60,18 @@ export default function EventsPage() {
                   className="btn btn-ghost text-white"
                   aria-label="Book for big games"
                 >
-                  Book for Big Games
+                  {hero.buttons?.book || 'Book for Big Games'}
                 </a>
                 <a
                   href="/menu"
                   className="btn btn-outline border-white text-white hover:bg-white/10"
                   aria-label="View our menu"
                 >
-                  View Menu
+                  {hero.buttons?.viewMenu || 'View Menu'}
                 </a>
               </div>
               <div className="flex flex-wrap justify-center gap-2 pt-2">
-                {['Live Sport', 'Multiple Screens', 'Great Food'].map((t) => (
+                {(hero.badges || ['Live Sport', 'Multiple Screens', 'Great Food']).map((t: string) => (
                   <span key={t} className="badge badge-outline border-white/40 text-white/90">{t}</span>
                 ))}
               </div>

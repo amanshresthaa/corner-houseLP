@@ -1,6 +1,7 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/MotionWrappers";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
@@ -141,25 +142,16 @@ const ASSURANCE_POINTS = [
   },
 ] as const;
 
-export const metadata = getSEOTags({
-  title: "Curry & Carols Menu 2025 | The White Horse Waterbeach – Festive Nepalese Banquet",
-  description:
-    "Discover the full Curry & Carols 2025 menu at The White Horse Waterbeach. Share starters, choose from warming curries, and finish with mince pies while live carols fill the room.",
-  keywords: [
-    "Curry and Carols menu",
-    "The White Horse Waterbeach Christmas menu",
-    "festive Nepalese menu Cambridge",
-    "Christmas curry night Cambridge",
-    "Curry and carols Cambridge 2025",
-  ],
-  canonicalUrlRelative: "/curry-and-carols-menu",
-  openGraph: {
-    title: "Curry & Carols Menu 2025 | The White Horse Waterbeach",
-    description:
-      "Preview the festive Nepalese banquet served during Curry & Carols at The White Horse Waterbeach—two joyful evenings of food, mulled cheer, and live carols.",
-    url: `${BASE_URL}/curry-and-carols-menu`,
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.events?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/events',
+    openGraph: seo.openGraph,
+  });
+}
 
 const buildStructuredData = (sections: MenuSection[], contact: ReturnType<typeof getContactInfo>) => [
   {

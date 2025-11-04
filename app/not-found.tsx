@@ -1,16 +1,18 @@
 import { getSEOTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { NotFoundContent, NotFoundActions, NotFoundBackground } from './not-found/_components';
 
-// SEO Metadata with noindex
-export const metadata = getSEOTags({
-  title: "Page Not Found - The White Horse Waterbeach",
-  description: "The page you're looking for doesn't exist. Visit The White Horse Waterbeach homepage to find information about our historic thatched pub in Cambridge.",
-  canonicalUrlRelative: "/not-found",
-  robots: {
-    index: false,
-    follow: false,
-  },
-});
+// SEO Metadata with noindex sourced from content.json
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const nf = content.pages?.notFound || {};
+  return getSEOTags({
+    title: nf.title || 'Page Not Found',
+    description: nf.description || 'The page you\'re looking for does not exist.',
+    canonicalUrlRelative: '/not-found',
+    robots: { index: false, follow: false },
+  });
+}
 
 export default function Custom404() {
   return (

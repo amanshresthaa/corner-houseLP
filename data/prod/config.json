@@ -8,11 +8,11 @@
     "environmentBanner": false
   },
   "api": {
-    "baseUrl": "https://oldcrown.co.uk",
-    "menuEndpoint": "https://oldcrown.co.uk/api/menu",
-    "marketingEndpoint": "https://oldcrown.co.uk/api/marketing",
-    "restaurantEndpoint": "https://oldcrown.co.uk/api/restaurant",
-    "contentEndpoint": "https://oldcrown.co.uk/api/content"
+    "baseUrl": "https://whitehorsepub.co",
+    "menuEndpoint": "https://whitehorsepub.co/api/menu",
+    "marketingEndpoint": "https://whitehorsepub.co/api/marketing",
+    "restaurantEndpoint": "https://whitehorsepub.co/api/restaurant",
+    "contentEndpoint": "https://whitehorsepub.co/api/content"
   },
   "cms": { 
     "enabled": true,
@@ -21,7 +21,7 @@
   },
   "metadata": {
     "appName": "The White Horse",
-    "domainName": "oldcrown.co.uk",
+    "domainName": "whitehorsepub.co",
     "environment": "production"
   },
   "performance": {

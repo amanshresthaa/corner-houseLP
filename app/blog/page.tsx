@@ -1,22 +1,22 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import Link from '@/lib/debugLink';
 import { Images } from '@/src/lib/images';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import { BlogHero, BlogFeatured, FilterableBlogSection } from './_components';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Blog | The White Horse Waterbeach - Local Stories, Food & Community News | Cambridge",
-  description: "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news from Cambridge's historic thatched pub.",
-  keywords: ["The White Horse Waterbeach blog", "Cambridge pub blog", "Waterbeach village stories", "Nepalese cuisine recipes", "Cambridge local news", "pub history blog"],
-  canonicalUrlRelative: "/blog",
-  openGraph: {
-    title: "Blog | The White Horse Waterbeach - Local Stories & Community News",
-    description: "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news.",
-    url: "https://whitehorsepub.co//blog",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 
 
 

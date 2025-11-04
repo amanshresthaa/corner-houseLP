@@ -30,7 +30,7 @@ test.describe('Responsive Home Page', () => {
 
   test('validates keyboard navigation through header elements', async ({ page }) => {
     // Start from logo and tab through navigation
-    await page.getByRole('link', { name: /old crown/i }).focus();
+    await page.getByRole('link', { name: /white horse/i }).focus();
     
     // Tab through main navigation links
     await page.keyboard.press('Tab');

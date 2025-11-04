@@ -2,7 +2,7 @@
 // Grouped by domain to keep usage consistent and avoid scattered string paths.
 
 const brandImages = {
-  logo: '/images/brand/WhiteHorseLogo.png',
+  logo: '/images/brand/whitehorse-logo.png',
   building: '/images/slideshow/WhiteHorseWaterbeachBuilding.png',
 } as const;
 

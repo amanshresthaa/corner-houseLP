@@ -1,24 +1,24 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Images } from '@/src/lib/images';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "England's Largest Thatched Pub | Historic The White Horse Waterbeach Cambridge",
-  description: "Discover the fascinating history of The White Horse Waterbeach, claimed to be England's largest thatched pub. Explore centuries of heritage, architectural significance, and historic Cambridge pub culture.",
-  keywords: ["largest thatched pub England", "historic pubs Cambridge", "The White Horse Waterbeach history", "thatched roof pub Cambridge", "historic Waterbeach", "Cambridge pub heritage"],
-  canonicalUrlRelative: "/blog/largest-thatched-pub-history",
-  openGraph: {
-    title: "England's Largest Thatched Pub | Historic The White Horse Waterbeach",
-    description: "Explore the remarkable history of The White Horse Waterbeach, England's largest thatched pub, from medieval origins to modern Nepalese cuisine.",
-    url: "https://whitehorsepub.co/blog/largest-thatched-pub-history",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

@@ -93,7 +93,7 @@ export function NavbarLogo({ altText }: { altText: string }) {
       className="flex items-center gap-2 px-2 py-1 text-brand-700"
     >
       <Image
-        src="/images/brand/WhiteHorseLogo.png"
+        src="/images/brand/whitehorse-logo.png"
         alt={altText}
         width={60}
         height={45}
@@ -101,7 +101,7 @@ export function NavbarLogo({ altText }: { altText: string }) {
         priority
       />
       <span className="text-lg font-semibold text-brand-700">
-        OLD CROWN
+        WHITE HORSE
       </span>
     </Link>
   );

@@ -1,16 +1,18 @@
 import { getSEOTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { OfflineStatus, OfflineFeatures, OfflineActions, OfflineBackground } from './_components';
 
-// SEO Metadata with noindex
-export const metadata = getSEOTags({
-  title: "Offline - The White Horse Waterbeach",
-  description: "You are currently offline. The White Horse Waterbeach content will be available when your connection is restored.",
-  canonicalUrlRelative: "/offline",
-  robots: {
-    index: false,
-    follow: false,
-  },
-});
+// SEO Metadata with noindex sourced from content.json
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const off = content.pages?.offline || {};
+  return getSEOTags({
+    title: off.title || 'Offline',
+    description: off.description || 'You are currently offline.',
+    canonicalUrlRelative: '/offline',
+    robots: { index: false, follow: false },
+  });
+}
 
 export default function OfflinePage() {
   return (

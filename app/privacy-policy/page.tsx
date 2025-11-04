@@ -1,20 +1,21 @@
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 
-export const metadata = getSEOTags({
-  title: "Privacy Policy | The White Horse Waterbeach - Data Protection & GDPR Compliance",
-  description: "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage. GDPR compliant data protection policy.",
-  keywords: ["The White Horse Waterbeach privacy policy", "restaurant data protection", "GDPR compliance Cambridge", "pub privacy policy"],
-  canonicalUrlRelative: "/privacy-policy",
-  openGraph: {
-    title: "Privacy Policy | The White Horse Waterbeach",
-    description: "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage.",
-    url: "https://whitehorsepub.co//privacy-policy",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.privacyPolicy?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/privacy-policy',
+    openGraph: seo.openGraph,
+  });
+}
 
 export default function PrivacyPolicy() {
   const contact = getContactInfo();

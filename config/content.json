@@ -109,6 +109,7 @@
         "orderTakeaway": "Order Takeaway",
         "callNow": "Call Now",
         "getDirections": "Get Directions",
+        "emailUs": "Email Us",
         "loadMore": "Load More",
         "showMore": "Show More",
         "showLess": "Show Less",
@@ -156,6 +157,8 @@
         "connectionError": "Connection error. Please check your internet connection.",
         "tryAgainLater": "Please try again later.",
         "fetchFailed": "Failed to fetch performance data",
+        "checkoutDisabled": "Supabase-powered checkout is currently disabled. Please contact the venue directly to complete your booking.",
+        "billingDisabled": "Supabase-powered billing is disabled. Please contact the venue directly for account or billing support.",
         "cacheOptimizationSuccess": "Cache optimization completed successfully",
         "cacheOptimizationFailed": "Cache optimization failed",
         "cacheWarmingSuccess": "Cache warming initiated successfully",
@@ -497,6 +500,19 @@
       }
     },
     "contact": {
+      "seo": {
+        "title": "Contact The White Horse Waterbeach - Book Table | Directions | Opening Hours",
+        "description": "Contact The White Horse Waterbeach for bookings, directions & enquiries. Find our address, phone and opening hours.",
+        "keywords": [
+          "The White Horse Waterbeach contact",
+          "book table Waterbeach pub",
+          "Waterbeach pub phone number",
+          "The White Horse directions",
+          "Cambridge pub booking",
+          "Waterbeach restaurant address"
+        ],
+        "canonicalUrlRelative": "/contact"
+      },
       "hero": {
         "title": "Contact Us",
         "subtitle": "Get in touch for bookings, enquiries, or just to say hello"
@@ -587,6 +603,19 @@
       }
     },
     "menu": {
+      "seo": {
+        "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
+        "description": "Explore our searchable menu featuring authentic Nepalese cuisine, momo, dal bhat & curries, plus traditional British pub classics. Advanced search and dietary filters available. Takeaway available.",
+        "keywords": "searchable menu Cambridge, Nepalese menu Cambridge, authentic Nepalese food Waterbeach, momo Cambridge, dal bhat, curry takeaway Cambridge, pub food menu Waterbeach, dietary filters menu, nutrition information",
+        "openGraph": {
+          "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
+          "description": "Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Waterbeach's historic thatched pub",
+          "url": "https://whitehorsepub.co//menu",
+          "siteName": "The White Horse Waterbeach",
+          "locale": "en_GB",
+          "type": "website"
+        }
+      },
       "hero": {
         "title": "Our Menu: Authentic Nepalese & Traditional British Cuisine",
         "subtitle": "Discover the unique flavors of Nepal alongside your favorite pub classics at Waterbeach's historic thatched pub. Every dish made fresh with authentic recipes and quality ingredients.",
@@ -598,6 +627,9 @@
       "sections": {
         "description": "Experience the perfect fusion of authentic Nepalese flavors and beloved British pub classics.",
         "allergenNotice": "Please inform us of any allergies or dietary requirements when ordering."
+      },
+      "messages": {
+        "loading": "Loading menu..."
       }
     },
     "signin": {
@@ -622,6 +654,51 @@
     "dashboard": {
       "title": "Dashboard",
       "subtitle": "Welcome to your account"
+    },
+    "about": {
+      "seo": {
+        "title": "About The White Horse, Waterbeach | Our Story & Mission",
+        "description": "A friendly village pub opposite the green. Cask ales, live sport, and an authentic Nepalese kitchen — revived for the community in 2025.",
+        "canonicalUrlRelative": "/about",
+        "openGraph": {
+          "title": "About The White Horse – Our Story",
+          "description": "Why we exist, what we stand for, and how we blend village pub comfort with authentic Nepalese flavour.",
+          "url": "https://whitehorsepub.co/about"
+        }
+      },
+      "hero": {
+        "title": "A village pub with Nepalese soul",
+        "subtitle": "Opposite the Waterbeach green, we pair classic pub comfort with an authentic Nepalese kitchen — modern, relaxed, and welcoming."
+      },
+      "story": {
+        "title": "Our Story",
+        "introduction": "From historic coaching inn to a unique Nepalese-British fusion, we\u2019re proudly community-first.",
+        "timeline": [
+          { "period": "1890s", "title": "Origins", "description": "Coaching inn serving travelers and villagers alike." },
+          { "period": "2025", "title": "Reborn", "description": "Revived with authentic Nepalese kitchen and village pub spirit." }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Book?",
+        "description": "Experience the perfect blend of Nepalese hospitality and British pub tradition.",
+        "button": "Book Online",
+        "contact": {
+          "address": "12 Greenside, Waterbeach, Cambridge CB25 9HP",
+          "hours": "See footer for full hours"
+        }
+      }
+    },
+    "bookTable": {
+      "seo": {
+        "title": "Book a Table | The White Horse Waterbeach Restaurant Reservations",
+        "description": "Reserve a table at The White Horse Waterbeach in Cambridge. Submit our quick booking request form or call us for immediate assistance.",
+        "canonicalUrlRelative": "/book-a-table",
+        "openGraph": {
+          "title": "Book a Table at The White Horse Waterbeach",
+          "description": "Request a reservation at The White Horse Waterbeach. Confirmations within an hour during opening times.",
+          "url": "https://whitehorsepub.co/book-a-table"
+        }
+      }
     },
     "offline": {
       "title": "You're Offline",
@@ -651,6 +728,179 @@
       "buttons": {
         "home": "Go Home",
         "menu": "View Menu"
+      }
+    },
+    "blog": {
+      "defaultSeo": {
+        "title": "Blog | The White Horse Waterbeach - Local Stories, Food & Community News | Cambridge",
+        "description": "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news from Cambridge's historic thatched pub.",
+        "keywords": [
+          "The White Horse Waterbeach blog",
+          "Cambridge pub blog",
+          "Waterbeach village stories",
+          "Nepalese cuisine recipes",
+          "Cambridge local news",
+          "pub history blog"
+        ],
+        "canonicalUrlRelative": "/blog",
+        "openGraph": {
+          "title": "Blog | The White Horse Waterbeach - Local Stories & Community News",
+          "description": "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news.",
+          "url": "https://whitehorsepub.co//blog"
+        }
+      }
+    },
+    "press": {
+      "seo": {
+        "title": "Press Kit | The White Horse Waterbeach",
+        "description": "Official press information, quick facts, and media contact for The White Horse, Waterbeach — a revitalised community hub blending a traditional pub with authentic Nepalese cuisine.",
+        "keywords": [
+          "The White Horse Waterbeach press",
+          "press kit",
+          "media contact",
+          "Nepalese restaurant",
+          "Waterbeach thatched pub"
+        ],
+        "canonicalUrlRelative": "/press",
+        "openGraph": {
+          "title": "Press Kit | The White Horse Waterbeach",
+          "description": "Official press information, quick facts, and media contact for The White Horse Waterbeach.",
+          "url": "https://whitehorsepub.co//press"
+        }
+      }
+    },
+    "privacyPolicy": {
+      "seo": {
+        "title": "Privacy Policy | The White Horse Waterbeach - Data Protection & GDPR Compliance",
+        "description": "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage. GDPR compliant data protection policy.",
+        "keywords": [
+          "The White Horse Waterbeach privacy policy",
+          "restaurant data protection",
+          "GDPR compliance Cambridge",
+          "pub privacy policy"
+        ],
+        "canonicalUrlRelative": "/privacy-policy",
+        "openGraph": {
+          "title": "Privacy Policy | The White Horse Waterbeach",
+          "description": "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage.",
+          "url": "https://whitehorsepub.co//privacy-policy"
+        }
+      }
+    },
+    "tos": {
+      "seo": {
+        "title": "Terms of Service | The White Horse Waterbeach - Restaurant Booking & Service Conditions",
+        "description": "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations, cancellations and dining policies for our Cambridge pub.",
+        "keywords": [
+          "The White Horse Waterbeach terms",
+          "restaurant booking terms",
+          "pub terms of service Cambridge",
+          "dining terms conditions"
+        ],
+        "canonicalUrlRelative": "/tos",
+        "openGraph": {
+          "title": "Terms of Service | The White Horse Waterbeach",
+          "description": "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations and dining policies.",
+          "url": "https://whitehorsepub.co//tos"
+        }
+      }
+    },
+    "events": {
+      "seo": {
+        "title": "Events & What's On | The White Horse Waterbeach",
+        "description": "Live sports, regular happenings, and a weekly guide. Multiple screens, great food, family & dog-friendly.",
+        "canonicalUrlRelative": "/events"
+      },
+      "hero": {
+        "badgeLabel": "What’s On",
+        "title": "Events & What’s On",
+        "subtitle": "Your home for live sport, community gatherings, and proper pub culture — with great food and a warm welcome every day.",
+        "buttons": {
+          "book": "Book for Big Games",
+          "viewMenu": "View Menu"
+        },
+        "badges": ["Live Sport", "Multiple Screens", "Great Food"]
+      }
+    },
+    "menuInformation": {
+      "seo": {
+        "title": "Menu Information & Dietary Requirements | The White Horse Waterbeach - Allergens, Dietary Options & Food Safety",
+        "description": "Comprehensive allergen information, dietary requirements, and menu transparency for The White Horse Waterbeach. We comply with UK Food Information Regulations 2014 and Natasha's Law.",
+        "keywords": [
+          "The White Horse Waterbeach allergens",
+          "dietary requirements Cambridge",
+          "gluten free restaurant",
+          "vegetarian Waterbeach",
+          "food allergies",
+          "menu information",
+          "Natasha's Law compliance"
+        ],
+        "canonicalUrlRelative": "/menu-information",
+        "openGraph": {
+          "title": "Menu Information & Dietary Requirements | The White Horse Waterbeach",
+          "description": "Complete allergen information and dietary options at The White Horse Waterbeach. Safe dining for all dietary requirements.",
+          "url": "https://whitehorsepub.co//menu-information"
+        }
+      }
+    },
+    "wakesMenu": {
+      "seo": {
+        "title": "Wakes Buffet | Celebration of Life Catering | The White Horse Waterbeach",
+        "description": "Plan a calm celebration of life with our £10-per-guest wakes buffet: one sandwich, chicken wings, and a samosa, plus optional chicken pakora with tea or coffee.",
+        "keywords": [
+          "wakes menu Cambridge",
+          "celebration of life catering",
+          "The White Horse Waterbeach wakes",
+          "funeral reception menu",
+          "sandwich buffet Cambridge"
+        ],
+        "canonicalUrlRelative": "/wakes-menu",
+        "openGraph": {
+          "title": "Wakes Buffet at The White Horse Waterbeach",
+          "description": "£10 per guest for a sandwich, chicken wings, and a samosa, with the option to add chicken pakora and hot drinks for £2.50.",
+          "url": "https://whitehorsepub.co/wakes-menu"
+        }
+      }
+    },
+    "takeawayMenu": {
+      "seo": {
+        "title": "Takeaway Menu Download | The White Horse Waterbeach",
+        "description": "Download The White Horse Waterbeach takeaway menu and order authentic Nepalese and British pub favourites for collection in Waterbeach, Cambridge.",
+        "keywords": [
+          "takeaway menu Cambridge",
+          "The White Horse Waterbeach takeaway",
+          "Waterbeach takeaway",
+          "download takeaway menu",
+          "Nepalese takeaway Cambridge",
+          "pub takeaway Waterbeach"
+        ],
+        "canonicalUrlRelative": "/takeaway-menu",
+        "openGraph": {
+          "title": "Download the The White Horse Waterbeach Takeaway Menu",
+          "description": "Access our latest takeaway menu and place your collection order direct with the The White Horse Waterbeach team.",
+          "url": "https://whitehorsepub.co/takeaway-menu"
+        }
+      }
+    },
+    "christmasMenu": {
+      "seo": {
+        "title": "Christmas Menu 2025 | The White Horse Waterbeach – Festive Dining in Cambridge",
+        "description": "Enjoy The White Horse Waterbeach's 2025 Christmas menu. Pick a starter, main, side and dessert, with mulled wine or another drink of their choice included. Chef's set menu costs £44.99 per guest.",
+        "keywords": [
+          "Cambridge Christmas menu",
+          "Christmas menu",
+          "The White Horse Waterbeach Christmas",
+          "Waterbeach festive dining",
+          "best Christmas menu 2025",
+          "Christmas dining Cambridge",
+          "festive menu Waterbeach"
+        ],
+        "canonicalUrlRelative": "/christmas-menu",
+        "openGraph": {
+          "title": "The White Horse Waterbeach Christmas Menu 2025 – Reserve Your Festive Table",
+          "description": "Celebrate in Cambridge with the The White Horse Waterbeach Christmas menu. Choose your courses or book the chef's set menu with mulled wine or another drink of their choice included for £44.99 per guest.",
+          "url": "https://whitehorsepub.co/christmas-menu"
+        }
       }
     }
   },

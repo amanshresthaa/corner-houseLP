@@ -300,7 +300,7 @@ export const useRestaurantSchema = () => {
         absoluteUrl(typeof imgGardenPicnic === 'string' ? imgGardenPicnic : (imgGardenPicnic as any)),
         absoluteUrl(typeof imgCarPark === 'string' ? imgCarPark : (imgCarPark as any)),
       ],
-      logo: absoluteUrl('/images/brand/WhiteHorseLogo.png'),
+      logo: absoluteUrl('/images/brand/whitehorse-logo.png'),
       sameAs: [
         'https://www.facebook.com/whitehorsewaterbeach',
         'https://www.instagram.com/whitehorsewaterbeach'

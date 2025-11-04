@@ -1,5 +1,17 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
@@ -8,19 +20,7 @@ import { Images } from '@/src/lib/images';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import ErrorFallback from '@/components/ErrorFallback';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "The Journey of Nepalese Cuisine to Waterbeach Village | The White Horse Waterbeach Blog",
-  description: "Discover how authentic Nepalese flavors found their home in Cambridge's historic thatched pub, creating a unique dining experience that bridges cultures.",
-  keywords: ["Nepalese cuisine Cambridge", "The White Horse Waterbeach history", "authentic Nepalese food", "Cambridge pub food", "cultural fusion dining"],
-  canonicalUrlRelative: "/blog/nepalese-cuisine-journey",
-  openGraph: {
-    title: "The Journey of Nepalese Cuisine to Waterbeach Village",
-    description: "Discover how authentic Nepalese flavors found their home in Cambridge's historic thatched pub, creating a unique dining experience.",
-    url: "https://whitehorsepub.co/blog/nepalese-cuisine-journey",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

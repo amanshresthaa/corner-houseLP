@@ -8,7 +8,7 @@
         "nepalese",
         "restaurant",
         "pub",
-        "oldcrown",
+        "whitehorse",
         "dev"
       ],
       "version": "dev-1.0.0",
@@ -17,7 +17,7 @@
     },
     "contact": {
       "phone": "+44 1223 375578",
-      "email": "dev@oldcrown.co.uk",
+      "email": "dev@whitehorsepub.co",
       "address": {
         "street": "123 Dev Street",
         "city": "Test City",

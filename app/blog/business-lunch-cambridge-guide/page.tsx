@@ -1,5 +1,17 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
@@ -7,19 +19,7 @@ import dynamic from 'next/dynamic';
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 import { Images } from '@/src/lib/images';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Business Lunch Cambridge | Corporate Dining at The White Horse Waterbeach",
-  description: "Discover Cambridge's perfect business lunch venue at The White Horse Waterbeach. Quiet atmosphere, quality Nepalese and British cuisine, convenient parking, and professional service near Science Park.",
-  keywords: ["business lunch Cambridge", "corporate dining Cambridge", "best gastropubs Cambridge", "business lunch spots Cambridge", "professional dining Waterbeach", "meeting venue Cambridge"],
-  canonicalUrlRelative: "/blog/business-lunch-cambridge-guide",
-  openGraph: {
-    title: "Business Lunch Cambridge | Corporate Dining at The White Horse Waterbeach",
-    description: "Experience Cambridge's ideal business lunch venue with quality cuisine, professional atmosphere, and convenient location.",
-    url: "https://whitehorsepub.co/blog/business-lunch-cambridge-guide",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 export default function BusinessLunchGuidePage() {
   const identity = getRestaurantIdentity();

@@ -110,7 +110,7 @@ export default function manifest(): MetadataRoute.Manifest {
     related_applications: [
       {
         platform: 'play',
-        url: 'https://play.google.com/store/apps/details?id=com.oldcrown.restaurant',
+        url: 'https://play.google.com/store/apps/details?id=com.whitehorse.restaurant',
       },
       {
         platform: 'itunes',

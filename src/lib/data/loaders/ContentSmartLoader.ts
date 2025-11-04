@@ -13,7 +13,7 @@ import fs from "fs/promises";
 import path from "path";
 import { ContentSchema, type Content } from '../schemas';
 import { BaseSmartLoader, type SmartLoadConfig } from './BaseSmartLoader';
-import { getConfigData } from '../loader';
+import { getConfigData, getContentData as getContentDataFromFs } from '../loader';
 import type { AppEnv } from '../env';
 
 class ContentSmartLoaderClass extends BaseSmartLoader<Content> {
@@ -31,10 +31,9 @@ class ContentSmartLoaderClass extends BaseSmartLoader<Content> {
   }
 
   protected async loadFromFilesystem(env: AppEnv): Promise<Content> {
-    const configPath = this.getConfigPath("content.json");
-    const raw = await fs.readFile(configPath, "utf8");
-    const parsed = JSON.parse(raw);
-    return await this.validateAndParse(parsed);
+    // Reuse the canonical filesystem loader to ensure env overrides
+    // and merging behavior remain consistent across the app.
+    return await getContentDataFromFs(env);
   }
 
   protected async tryLoadFromAPI(env: AppEnv, config: SmartLoadConfig): Promise<Content | null> {

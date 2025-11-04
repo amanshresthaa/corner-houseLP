@@ -1,24 +1,24 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Images } from '@/src/lib/images';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Local Suppliers & Fresh Ingredients at The White Horse Waterbeach | Cambridge Local Food",
-  description: "Discover how The White Horse Waterbeach sources fresh, local ingredients from Cambridgeshire suppliers. From farm-to-table vegetables to authentic Nepalese spices, taste the local difference.",
-  keywords: ["local food Cambridge", "farm to table Waterbeach", "local suppliers Cambridge", "fresh ingredients Cambridge", "sustainable dining Waterbeach", "Cambridgeshire produce"],
-  canonicalUrlRelative: "/blog/local-suppliers-fresh-ingredients",
-  openGraph: {
-    title: "Local Suppliers & Fresh Ingredients at The White Horse Waterbeach",
-    description: "Discover our commitment to local sourcing and fresh ingredients. Supporting Cambridgeshire suppliers while delivering exceptional flavors.",
-    url: "https://whitehorsepub.co/blog/local-suppliers-fresh-ingredients",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

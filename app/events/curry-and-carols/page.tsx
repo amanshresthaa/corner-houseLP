@@ -1,6 +1,7 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/MotionWrappers";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
@@ -23,26 +24,16 @@ const MENU_PREVIEW = [
   },
 ] as const;
 
-export const metadata = getSEOTags({
-  title: "Curry & Carols 2025 | The White Horse Waterbeach – Menu Now Live",
-  description:
-    "Curry & Carols returns to The White Horse Waterbeach on 16 & 17 December 2025. £35 per guest for a festive Nepalese banquet with live carols—preview the full menu and register your interest.",
-  keywords: [
-    "Curry and Carols",
-    "The White Horse Waterbeach events",
-    "Christmas events Cambridge",
-    "Waterbeach festive dining",
-    "Curry night Cambridge",
-    "Carols night Cambridge",
-  ],
-  canonicalUrlRelative: "/events/curry-and-carols",
-  openGraph: {
-    title: "Curry & Carols at The White Horse Waterbeach – December 2025",
-    description:
-      "Two festive evenings of Nepalese curry and live carols on 16 & 17 December 2025. £35 per guest – menu now live so you can plan your festive feast before booking.",
-    url: "https://whitehorsepub.co/events/curry-and-carols",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.events?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/events',
+    openGraph: seo.openGraph,
+  });
+}
 
 export default function CurryAndCarolsPage() {
   const contact = getContactInfo();

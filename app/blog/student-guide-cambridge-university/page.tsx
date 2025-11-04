@@ -1,24 +1,24 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { Images } from '@/src/lib/images';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Student Guide to The White Horse Waterbeach | Best Cambridge University Pub Near Waterbeach College",
-  description: "Discover the ultimate student guide to The White Horse Waterbeach - affordable dining, student deals, perfect location near Waterbeach College, and unique Nepalese cuisine for Cambridge University students.",
-  keywords: ["student deals Cambridge", "Cambridge University pub", "student discounts Cambridge pubs", "cheap eats Cambridge", "Waterbeach College pub", "best pubs for students Cambridge"],
-  canonicalUrlRelative: "/blog/student-guide-cambridge-university",
-  openGraph: {
-    title: "Student Guide to The White Horse Waterbeach | Best Cambridge University Pub",
-    description: "The ultimate student guide to affordable dining and great atmosphere at Cambridge's most unique pub near Waterbeach College.",
-    url: "https://whitehorsepub.co/blog/student-guide-cambridge-university",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

@@ -6,6 +6,7 @@ import { getContactInfo, getAddress, getRestaurantIdentity } from "@/lib/restaur
 import { useParsedData } from "@/hooks/useParsedData";
 import { MarketingDataSchema, MarketingDataParsed } from "@/lib/schemas";
 import config from "@/config";
+import contentConfig from '@/config/content.json';
 import { usePathname } from "next/navigation";
 import Link from '@/lib/debugLink';
 
@@ -143,9 +144,9 @@ export default function StickyCallButton({ phone }: StickyCallButtonProps) {
 								const href = isiOS ? appleHref : googleHref; // DOM-facing href (https) so tests can read it
 
 									return (
-										<a
-											href={href}
-									aria-label={`Get directions to ${STATIC_IDENTITY.displayName}`}
+            										<a
+            												href={href}
+            										aria-label={`${contentConfig?.global?.ui?.buttons?.getDirections || 'Get Directions'} to ${STATIC_IDENTITY.displayName}`}
 											data-testid="directions-sticky"
 											className="group relative inline-flex items-center justify-center rounded-full h-14 w-14 sm:h-16 sm:w-16 shadow-xl bg-gradient-to-br from-secondary-500 to-secondary-600 text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-secondary-300 hover:from-secondary-600 hover:to-secondary-700 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
 											onClick={(e) => {
@@ -178,7 +179,7 @@ export default function StickyCallButton({ phone }: StickyCallButtonProps) {
 											>
 												🧭
 											</motion.span>
-											<span className="sr-only">Directions</span>
+            												<span className="sr-only">{contentConfig?.global?.ui?.buttons?.getDirections || 'Get Directions'}</span>
 										</a>
 									);
 								})()}

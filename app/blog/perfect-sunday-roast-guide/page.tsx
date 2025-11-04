@@ -1,24 +1,24 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Images } from '@/src/lib/images';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Sunday Roast in Cambridge: Where to Go + Roast Alternatives | The White Horse Waterbeach",
-  description: "We don't currently serve a traditional Sunday roast. Discover Cambridge Sunday roast options and our Sunday roast alternatives at The White Horse Waterbeach's historic thatched pub.",
-  keywords: ["Sunday roast Waterbeach", "Sunday lunch Cambridge", "best Sunday roast Cambridge", "Sunday roast alternatives", "pub Sunday roast CB3", "family Sunday lunch"],
-  canonicalUrlRelative: "/blog/perfect-sunday-roast-guide",
-  openGraph: {
-    title: "Sunday Roast in Cambridge: Where to Go + Alternatives",
-    description: "We don't serve a traditional Sunday roast — explore Cambridge options and our comforting Sunday alternatives.",
-    url: "https://whitehorsepub.co/blog/perfect-sunday-roast-guide",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

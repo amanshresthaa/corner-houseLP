@@ -11,7 +11,7 @@ import { useSearchParams } from "next/navigation";
 import Link from '@/lib/debugLink';
 import Image from "next/image";
 import ButtonSignin from "./ButtonSignin";
-import logo from "@/public/images/brand/WhiteHorseLogo.png";
+import logo from "@/public/images/brand/whitehorse-logo.png";
 import config from "@/config";
 
 const links: {

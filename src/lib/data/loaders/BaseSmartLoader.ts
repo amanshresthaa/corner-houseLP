@@ -196,8 +196,12 @@ export abstract class BaseSmartLoader<T> {
     const cacheKey = createCacheKey(this.resourceName, env);
     
     try {
-      // Try to get stale data by using a very high TTL
-      const staleData = await globalCache.get(cacheKey, null as any, {
+      // Try to get stale data by using a very high TTL and a no-op loader
+      // PerformanceCacheManager.get requires a function; we intentionally
+      // throw inside the loader so the cache, if present, is returned as stale.
+      const staleData = await globalCache.get(cacheKey, async () => {
+        throw new Error('stale-only loader invoked');
+      }, {
         ttl: Number.MAX_SAFE_INTEGER, // Effectively no TTL check
         enableCompression: false
       });

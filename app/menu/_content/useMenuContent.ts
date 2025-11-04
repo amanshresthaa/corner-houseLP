@@ -91,20 +91,51 @@ export function useMenuContent(): MenuContent | null {
   useEffect(() => {
     async function loadContent() {
       try {
-        // Load content directly from local file since API endpoint was removed
+        // Prefer centralized content.json when available
+        let baseContent: any = null;
+        try {
+          const { default: centralized } = await import('@/config/content.json');
+          const menu = (centralized as any)?.pages?.menu;
+          if (menu?.hero) {
+            const contact = getContactInfo();
+            baseContent = {
+              meta: { title: menu.hero.title, description: menu.sections?.description },
+              hero: {
+                title: menu.hero.title,
+                subtitle: menu.hero.subtitle,
+                buttons: {
+                  bookOnline: {
+                    label: menu.hero?.cta?.book || 'Book Online',
+                    url: '/book-a-table',
+                    target: '_self',
+                    style: 'primary'
+                  },
+                  orderTakeaway: {
+                    label: menu.hero?.cta?.order || `Call ${contact.phone.display}`,
+                    url: contact.phone.tel,
+                    style: 'secondary'
+                  }
+                }
+              }
+            };
+          }
+        } catch {}
+
+        // Load local fallback and merge hero/buttons if centralized exists
         const { default: fallbackContent } = await import('./menu-content.json');
         const validatedFallback = validateMenuContent(fallbackContent);
         const contact = getContactInfo();
+        const merged = baseContent ? { ...validatedFallback, ...baseContent } : validatedFallback;
 
         // Ensure CTA buttons use canonical contact details
-        if (validatedFallback.hero?.buttons?.orderTakeaway) {
-          validatedFallback.hero.buttons.orderTakeaway.url = contact.phone.tel;
-          const existingLabel = validatedFallback.hero.buttons.orderTakeaway.label;
-          validatedFallback.hero.buttons.orderTakeaway.label = existingLabel
+        if (merged.hero?.buttons?.orderTakeaway) {
+          merged.hero.buttons.orderTakeaway.url = contact.phone.tel;
+          const existingLabel = merged.hero.buttons.orderTakeaway.label;
+          merged.hero.buttons.orderTakeaway.label = existingLabel
             ? existingLabel.replace(/01223277217/g, contact.phone.display)
             : `Call ${contact.phone.display}`;
         }
-        setContent(validatedFallback);
+        setContent(validateMenuContent(merged));
       } catch (error) {
         console.error('Menu content loading error:', error);
         setContent(null);

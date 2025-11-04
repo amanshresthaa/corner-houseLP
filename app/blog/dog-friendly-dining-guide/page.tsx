@@ -1,24 +1,24 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Images } from '@/src/lib/images';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Dog-Friendly Dining at The White Horse Waterbeach | Cambridge's Best Pet-Welcome Pub",
-  description: "Discover Cambridge's most welcoming dog-friendly pub restaurant. Our guide to dining with your four-legged family at The White Horse Waterbeach's spacious terrace and bar area.",
-  keywords: ["dog friendly pub Cambridge", "pet friendly restaurant Waterbeach", "dogs welcome Cambridge", "The White Horse Waterbeach dogs", "beer garden dogs Cambridge", "family pub Cambridge"],
-  canonicalUrlRelative: "/blog/dog-friendly-dining-guide",
-  openGraph: {
-    title: "Dog-Friendly Dining at The White Horse Waterbeach | Cambridge's Best Pet-Welcome Pub",
-    description: "Discover Cambridge's most welcoming dog-friendly pub restaurant with spacious terrace, water bowls, and staff who love meeting furry customers.",
-    url: "https://whitehorsepub.co/blog/dog-friendly-dining-guide",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

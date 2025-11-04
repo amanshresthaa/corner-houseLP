@@ -1,5 +1,17 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
@@ -8,24 +20,7 @@ import { Images } from '@/src/lib/images';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import ErrorFallback from '@/components/ErrorFallback';
 
-export const metadata = getSEOTags({
-  title: "Evening Standard Names The White Horse Waterbeach Country Pub of the Week",
-  description: "The Evening Standard celebrates The White Horse Waterbeach as Country Pub of the Week, praising our Nepalese cooking, village welcome, and ever-evolving menu.",
-  keywords: [
-    "Evening Standard review",
-    "Country pub of the week",
-    "The White Horse Waterbeach press",
-    "Cambridge pub press feature",
-    "Nepalese food Cambridge review"
-  ],
-  canonicalUrlRelative: "/blog/evening-standard-country-pub-of-the-week",
-  openGraph: {
-    title: "The White Horse Waterbeach Featured as Country Pub of the Week",
-    description: "David Ellis spotlights The White Horse Waterbeach in the Evening Standard, applauding our Nepalese cooking and vibrant village pub atmosphere.",
-    url: "https://whitehorsepub.co/blog/evening-standard-country-pub-of-the-week",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 

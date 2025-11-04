@@ -1,6 +1,7 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/MotionWrappers";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
+import { getContentSmart } from '@/src/lib/data/server-loader';
 import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
@@ -8,27 +9,17 @@ import ChristmasMusicPlayer from "./_components/ChristmasMusicPlayer";
 
 const CHRISTMAS_CONTACT = getContactInfo();
 
-export const metadata = getSEOTags({
-  title: "Christmas Menu 2025 | The White Horse Waterbeach – Festive Dining in Cambridge",
-  description:
-    "Enjoy The White Horse Waterbeach's 2025 Christmas menu. Pick a starter, main, side and dessert, with mulled wine or another drink of their choice included. Chef's set menu costs £44.99 per guest.",
-  keywords: [
-    "Cambridge Christmas menu",
-    "Christmas menu",
-    "The White Horse Waterbeach Christmas",
-    "Waterbeach festive dining",
-    "best Christmas menu 2025",
-    "Christmas dining Cambridge",
-    "festive menu Waterbeach",
-  ],
-  canonicalUrlRelative: "/christmas-menu",
-  openGraph: {
-    title: "The White Horse Waterbeach Christmas Menu 2025 – Reserve Your Festive Table",
-    description:
-      "Celebrate in Cambridge with the The White Horse Waterbeach Christmas menu. Choose your courses or book the chef's set menu with mulled wine or another drink of their choice included for £44.99 per guest.",
-    url: "https://whitehorsepub.co/christmas-menu",
-  },
-});
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.christmasMenu?.seo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/christmas-menu',
+    openGraph: seo.openGraph,
+  });
+}
 
 const slugify = (value: string) =>
   value

@@ -18,11 +18,7 @@ async function ensureSharp() {
 
 function findDefaultSource() {
   const candidates = [
-    'public/images/brand/WhiteHorseLogo.png',
-    'public/images/brand/Oldcrowngirtonlogo.png',
-    'public/logos/WhiteHorseLogo.png',
-    'public/images/Oldcrowngirtonlogo.png',
-    'Oldcrowngirtonlogo.png',
+    'public/images/brand/whitehorse-logo.png',
   ];
   for (const p of candidates) {
     if (fs.existsSync(p)) return p;

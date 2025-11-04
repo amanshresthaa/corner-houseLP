@@ -64,7 +64,7 @@ export default function MenuNav({ sections }: Props) {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/brand/WhiteHorseLogo.png"
+                src="/images/brand/whitehorse-logo.png"
                 alt="The White Horse Waterbeach Logo"
                 width={60}
                 height={45}

@@ -196,7 +196,7 @@ const TestimonialsSection: React.FC = () => {
             </p>
             <div className="flex items-center justify-center gap-4 md:gap-6 mt-2 md:mt-0 flex-wrap w-full">
               <a 
-                href="https://www.google.com/maps/place/Old+Crown+Waterbeach/@52.2425913,0.0814946,17z/data=!3m1!4b1!4m6!3m5!1s0x47d876dbade6e2af:0xeba590b4974cfa4!8m2!3d52.2425913!4d0.0814946!16s%2Fg%2F1w6r7jkz"
+                href="https://www.google.com/maps/search/?api=1&query=The+White+Horse+Waterbeach"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
@@ -214,7 +214,7 @@ const TestimonialsSection: React.FC = () => {
               </div>
               
               <a 
-                href="https://www.tripadvisor.co.uk/Restaurant_Review-g3135834-d17412510-Reviews-Old_Crown_Waterbeach-Waterbeach_Cambridgeshire_England.html"
+                href="https://www.tripadvisor.co.uk/Search?q=The%20White%20Horse%20Waterbeach"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"

@@ -1,5 +1,17 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+export async function generateMetadata() {
+  const content = await getContentSmart();
+  const seo = (content.pages as any)?.blog?.defaultSeo || {};
+  return getSEOTags({
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/blog',
+    openGraph: seo.openGraph,
+  });
+}
 import { getRestaurantIdentity, getPostalAddressSchema } from '@/lib/restaurantData';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
@@ -7,19 +19,7 @@ import dynamic from 'next/dynamic';
 const MotionDiv = dynamic(() => import('@/components/motion/DynamicMotion').then(mod => mod.MotionDiv), { ssr: false });
 import { Images } from '@/src/lib/images';
 
-// SEO Metadata
-export const metadata = getSEOTags({
-  title: "Authentic Momo Dumplings Cambridge | Best Nepalese Restaurant The White Horse Waterbeach",
-  description: "Discover authentic Nepalese momo dumplings at The White Horse Waterbeach. Cambridge's best Nepalese restaurant serving traditional Himalayan momo, dal bhat, and curry in historic thatched pub setting.",
-  keywords: ["momo dumplings Cambridge", "Nepalese restaurant Cambridge", "authentic Nepalese food", "best curry Cambridge", "Himalayan food Cambridge", "Nepalese food Cambridge"],
-  canonicalUrlRelative: "/blog/authentic-momo-dumplings-nepalese-cuisine",
-  openGraph: {
-    title: "Authentic Momo Dumplings Cambridge | Best Nepalese Restaurant",
-    description: "Experience authentic Nepalese momo dumplings and traditional Himalayan cuisine at Cambridge's most unique restaurant.",
-    url: "https://whitehorsepub.co/blog/authentic-momo-dumplings-nepalese-cuisine",
-    type: "article",
-  },
-});
+// SEO handled by generateMetadata()
 
 export default function MomoDumplingsPage() {
   const identity = getRestaurantIdentity();
