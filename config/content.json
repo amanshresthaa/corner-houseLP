@@ -463,11 +463,11 @@
     "about": {
       "hero": {
         "title": "About The White Horse Waterbeach",
-        "subtitle": "A unique blend of authentic Nepalese cuisine and traditional British pub culture"
+        "subtitle": "England’s largest thatched pub reborn — a Waterbeach village hub where authentic Nepalese cuisine meets British pub comfort."
       },
       "story": {
         "title": "Our Story",
-        "introduction": "Located in the picturesque village of Waterbeach, just minutes from Cambridge, The White Horse Waterbeach is set in England's largest thatched pub. We serve authentic Nepalese cuisine alongside traditional British pub classics for a warm, welcoming village experience. While we don't currently serve a traditional Sunday roast in Cambridge, our Nepalese dishes and pub favourites make comforting Sunday roast alternatives.",
+        "introduction": "Opposite the Waterbeach village green, our thatched 1890 coaching inn was saved from redevelopment and relaunched on 6 February 2025. Today we blend a lively British pub with an authentic Nepalese kitchen — momo steamers, Bhutuwa chicken and Pokhareli fish curry alongside cask ales, big‑screen sports and relaxed garden gatherings.",
         "timeline": [
           {
             "period": "Historic Beginnings",
@@ -477,12 +477,12 @@
           {
             "period": "Culinary Evolution",
             "title": "Culinary Evolution",
-            "description": "Under various managements, The White Horse experimented with different culinary directions, including a period as an upscale gastropub. Each era added to our rich tapestry while maintaining our essential village pub character."
+            "description": "Through different eras — from classic pub fare to gastropub — we’ve added new layers while staying a true village local."
           },
           {
             "period": "Today",
             "title": "The Nepalese-British Fusion",
-            "description": "Under current management, we've discovered our unique identity: combining authentic Nepalese cuisine with traditional British pub classics. This fusion represents Cambridge's multicultural community while honoring our heritage."
+            "description": "Reopened in February 2025, we embraced a distinctive model: an authentic Nepalese kitchen within a proper village pub. Two complementary experiences — destination dining and a welcoming local — preserving heritage while introducing vibrant Himalayan flavours."
           }
         ]
       },
@@ -899,4 +899,3 @@
     }
   }
 }
-
