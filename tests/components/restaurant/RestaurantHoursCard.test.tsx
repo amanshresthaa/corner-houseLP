@@ -55,7 +55,7 @@ describe('RestaurantHoursCard', () => {
     { variant: 'dark', context: 'home page (dark variant)' },
   ];
 
-  it.each(variants)('keeps weekly list expanded by default on the $context', async ({ variant }) => {
+  it.each(variants)('shows weekly list collapsed by default on the $context', async ({ variant }) => {
     const user = userEvent.setup();
 
     render(<RestaurantHoursCard variant={variant} />);
@@ -64,15 +64,22 @@ describe('RestaurantHoursCard', () => {
     expect(screen.getByText(/bar hours/i)).toBeInTheDocument();
     expect(screen.getByText(/kitchen hours/i)).toBeInTheDocument();
 
-    const buttons = screen.getAllByRole('button', { name: /show less/i });
-    expect(buttons).toHaveLength(2);
-    expect(screen.queryAllByRole('button', { name: /show all hours/i })).toHaveLength(0);
-    expect(screen.getAllByText(/monday/i)).toHaveLength(2);
+    // Expect both sections collapsed initially
+    const expandButtons = screen.getAllByRole('button', { name: /show all hours/i });
+    expect(expandButtons).toHaveLength(2);
+    expect(screen.queryAllByRole('button', { name: /show less/i })).toHaveLength(0);
+    expect(screen.queryAllByText(/monday/i)).toHaveLength(0);
 
-    await user.click(buttons[0]);
-    expect(buttons[0]).toHaveTextContent(/show all hours/i);
+    // Toggle first section open then closed
+    await user.click(expandButtons[0]);
+    expect(expandButtons[0]).toHaveTextContent(/show less/i);
+    expect(screen.getAllByText(/monday/i).length).toBeGreaterThanOrEqual(1);
 
-    await user.click(buttons[0]);
-    expect(buttons[0]).toHaveTextContent(/show less/i);
+    await user.click(expandButtons[0]);
+    expect(expandButtons[0]).toHaveTextContent(/show all hours/i);
+    // After collapsing again, Monday from first section should hide; the second remains closed
+    // We can't easily disambiguate duplicates here; ensure at most one remains if any transient render
+    // But ideally none should be visible
+    expect(screen.queryAllByText(/monday/i)).toHaveLength(0);
   });
 });
