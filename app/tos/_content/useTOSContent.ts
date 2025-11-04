@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
+import { useContent } from '@/hooks/data/useContent';
 
 const FALLBACK_CONTACT = getContactInfo();
 const FALLBACK_EMAIL = FALLBACK_CONTACT.email.primary;
@@ -27,37 +28,16 @@ interface TOSContent {
 }
 
 export function useTOSContent(): TOSContent | null {
-  const [content, setContent] = useState<TOSContent | null>(null);
-
-  useEffect(() => {
-    async function loadContent() {
-      try {
-        // Load content directly from local file since API endpoint was removed
-        const { default: fallbackContent } = await import('./tos-content.json');
-        setContent(processContent(fallbackContent));
-      } catch (error) {
-        // Use inline fallback as last resort
-        setContent({
-          meta: {
-            effectiveDate: "10 August 2025",
-            title: "Terms of Service",
-            contactEmail: FALLBACK_EMAIL,
-            businessName: FALLBACK_BUSINESS_NAME
-          },
-          introduction: "These Terms govern your use of this website.",
-          policies: {
-            cancellation: "24 hours notice required for groups of 6 or more.",
-            deposit: "Deposits may apply for private events."
-          },
-          sections: {}
-        });
-      }
-    }
-
-    loadContent();
-  }, []);
-
-  return content;
+  const { data } = useContent();
+  return useMemo(() => {
+    const page: any = (data as any)?.pages?.tos;
+    if (!page) return null;
+    const processed = processContent(page);
+    // Fill meta defaults with canonical contact
+    processed.meta.contactEmail = processed.meta.contactEmail || FALLBACK_EMAIL;
+    processed.meta.businessName = processed.meta.businessName || FALLBACK_BUSINESS_NAME;
+    return processed;
+  }, [data]);
 }
 
 // Process content by substituting template variables

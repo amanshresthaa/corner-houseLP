@@ -3,7 +3,12 @@
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
-import type { GalleryImage } from '@/app/_content/home-sections';
+type GalleryImage = {
+  src: string;
+  alt: string;
+  caption: string;
+  orientation?: 'portrait' | 'landscape';
+};
 
 interface HomeGallerySectionProps {
   title: string;

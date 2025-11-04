@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
+import { useContent } from '@/hooks/data/useContent';
 
 interface OfflineContent {
   meta: {
@@ -33,56 +34,40 @@ interface OfflineContent {
 }
 
 export function useOfflineContent(): OfflineContent | null {
-  const [content, setContent] = useState<OfflineContent | null>(null);
-
-  useEffect(() => {
-    async function loadContent() {
-      try {
-        // Load content directly from local file since API endpoint was removed
-        const { default: fallbackContent } = await import('./offline-content.json');
-        setContent(fallbackContent);
-      } catch (error) {
-        // Use inline fallback as last resort
-        setContent({
-          meta: {
-            title: "You're Offline",
-            description: "Offline functionality page"
-          },
-          ui: {
-            title: "You're Offline",
-            description: "It looks like you've lost your internet connection.",
-            connectionStatus: {
-              offline: "Offline",
-              connecting: "Reconnecting...",
-              online: "Connected"
-            },
-            buttons: {
-              home: "Go Home",
-              tryAgain: "Try Again",
-              goBack: "Go Back"
-            }
-          },
-          features: {
-            title: "Available Offline:",
-            availableFeatures: [
-              "Previously viewed menu items",
-              "Restaurant information",
-              "Contact details"
-            ]
-          },
-          messaging: {
-            statusMessages: {
-              offline: "You are currently offline",
-              reconnecting: "Attempting to reconnect...",
-              online: "Connection restored"
-            }
-          }
-        });
-      }
-    }
-
-    loadContent();
-  }, []);
-
-  return content;
+  const { data } = useContent();
+  return useMemo(() => {
+    const page: any = data?.pages?.offline;
+    if (!page) return null;
+    return {
+      meta: {
+        title: page.meta?.title || "You're Offline",
+        description: page.meta?.description || 'Offline functionality page'
+      },
+      ui: {
+        title: page.ui?.title || page.title || "You're Offline",
+        description: page.ui?.description || page.description || 'It looks like you\'ve lost your internet connection.',
+        connectionStatus: {
+          offline: page.ui?.connectionStatus?.offline || 'Offline',
+          connecting: page.ui?.connectionStatus?.connecting || 'Reconnecting...',
+          online: page.ui?.connectionStatus?.online || 'Connected',
+        },
+        buttons: {
+          home: page.ui?.buttons?.home || 'Go Home',
+          tryAgain: page.ui?.buttons?.tryAgain || 'Try Again',
+          goBack: page.ui?.buttons?.goBack || 'Go Back',
+        },
+      },
+      features: {
+        title: page.features?.title || 'Available Offline:',
+        availableFeatures: page.features?.availableFeatures || page.features?.items || [],
+      },
+      messaging: {
+        statusMessages: {
+          offline: page.messaging?.statusMessages?.offline || 'You are currently offline',
+          reconnecting: page.messaging?.statusMessages?.reconnecting || 'Attempting to reconnect...',
+          online: page.messaging?.statusMessages?.online || 'Connection restored',
+        },
+      },
+    } as OfflineContent;
+  }, [data]);
 }

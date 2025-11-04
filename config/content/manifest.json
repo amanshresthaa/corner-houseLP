@@ -27,8 +27,8 @@
         "pages/contact.json",
         "pages/events.json",
         "pages/menu.json",
-        "pages/signin.json",
-        "pages/dashboard.json",
+        "pages/privacy.json",
+        "pages/tos.json",
         "pages/offline.json",
         "pages/notFound.json"
       ],
@@ -71,18 +71,6 @@
       ],
       "dependencies": ["core"],
       "condition": "isAdminOrApiPage",
-      "size": "small"
-    },
-    "legal": {
-      "priority": 5,
-      "loadStrategy": "lazy",
-      "cacheDuration": 3600000,
-      "description": "Legal content (terms, privacy) loaded on legal pages",
-      "files": [
-        "legal/terms.json",
-        "legal/privacy.json"
-      ],
-      "dependencies": ["core"],
       "size": "small"
     }
   },

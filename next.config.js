@@ -4,6 +4,9 @@ const crypto = require('crypto');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_USE_MODULAR_CONTENT: 'true',
+  },
   eslint: {
     // ESLint warnings are mostly design token standardization and unused imports
     // Kept disabled for production builds to ensure deployment stability

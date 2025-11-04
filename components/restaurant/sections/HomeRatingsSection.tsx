@@ -2,7 +2,14 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
-import type { RatingStat } from '@/app/_content/home-sections';
+type RatingStat = {
+  source: string;
+  rating: string;
+  reviews?: string;
+  url?: string;
+  highlight?: string;
+  quote?: string;
+};
 import Link from '@/lib/debugLink';
 
 interface HomeRatingsSectionProps {

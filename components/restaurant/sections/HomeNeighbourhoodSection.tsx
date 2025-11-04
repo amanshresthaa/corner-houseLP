@@ -2,7 +2,13 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
-import type { NeighbourhoodSpot } from '@/app/_content/home-sections';
+type NeighbourhoodSpot = {
+  category?: string;
+  name: string;
+  description?: string;
+  distance?: string;
+  url?: string;
+};
 
 interface HomeNeighbourhoodSectionProps {
   title: string;

@@ -2,7 +2,21 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
-import type { PressItem, RecognitionItem } from '@/app/_content/home-sections';
+type PressItem = {
+  publication: string;
+  headline: string;
+  summary?: string;
+  url?: string;
+  quote?: string;
+};
+
+type RecognitionItem = {
+  title: string;
+  label?: string;
+  url?: string;
+  body?: string;
+  year?: string | number;
+};
 
 interface HomeRecognitionSectionProps {
   title: string;

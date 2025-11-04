@@ -367,6 +367,66 @@ export const EventSchema = z.object({
   endDate: z.string().optional(),
 });
 
+// TOS & Privacy page schemas (optional pages)
+const TOSMetaSchema = z.object({
+  effectiveDate: z.string(),
+  title: z.string(),
+  contactEmail: z.string().email().optional(),
+  businessName: z.string().optional(),
+});
+
+const TOSPoliciesSchema = z.object({
+  cancellation: z.string(),
+  deposit: z.string(),
+});
+
+const TOSSectionSchema = z.object({
+  title: z.string(),
+  content: z.string().optional(),
+  items: z.array(z.string()).optional(),
+});
+
+export const TOSPageSchema = z.object({
+  meta: TOSMetaSchema,
+  introduction: z.string(),
+  policies: TOSPoliciesSchema,
+  sections: z.record(TOSSectionSchema),
+});
+
+// Allow server content.json to only include SEO for TOS
+const TOSLooseSchema = z.object({
+  seo: PageSeoSchema.optional(),
+}).passthrough();
+
+const PrivacyMetaSchema = z.object({
+  effectiveDate: z.string(),
+  title: z.string(),
+  contactEmail: z.string().email().optional(),
+});
+
+const PrivacySectionItemsSchema = z.union([
+  z.array(z.string()),
+  z.array(z.object({ term: z.string(), description: z.string() })),
+]);
+
+const PrivacySectionSchema = z.object({
+  title: z.string(),
+  content: z.string().optional(),
+  items: PrivacySectionItemsSchema.optional(),
+  intro: z.string().optional(),
+});
+
+export const PrivacyPageSchema = z.object({
+  meta: PrivacyMetaSchema,
+  introduction: z.string(),
+  sections: z.record(PrivacySectionSchema),
+});
+
+// Allow server content.json to only include SEO for Privacy Policy
+const PrivacyLooseSchema = z.object({
+  seo: PageSeoSchema.optional(),
+}).passthrough();
+
 export const FormValidationSchema = z.object({
   required: z.string(),
   email: z.string(),
@@ -481,6 +541,10 @@ export const ContentSchema = z.object({
         allergenNotice: z.string(),
       }),
     }),
+    tos: z.union([TOSPageSchema, TOSLooseSchema]).optional(),
+    privacy: PrivacyPageSchema.optional(),
+    // SSR SEO-only privacy policy entry tolerated for server-side metadata
+    privacyPolicy: PrivacyLooseSchema.optional(),
     signin: z.record(z.string(), z.any()).optional(),
     dashboard: z.record(z.string(), z.any()).optional(),
     offline: z.record(z.string(), z.any()),

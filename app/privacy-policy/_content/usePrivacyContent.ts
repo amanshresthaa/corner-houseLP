@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { getContactInfo } from '@/lib/restaurantData';
+import { useContent } from '@/hooks/data/useContent';
 
 const FALLBACK_EMAIL = getContactInfo().email.primary;
 
@@ -21,30 +22,19 @@ interface PrivacyContent {
 }
 
 export function usePrivacyContent(): PrivacyContent | null {
-  const [content, setContent] = useState<PrivacyContent | null>(null);
-
-  useEffect(() => {
-    async function loadContent() {
-      try {
-        // Load content directly from local file since API endpoint was removed
-        const { default: fallbackContent } = await import('./privacy-content.json');
-        setContent(fallbackContent);
-      } catch (error) {
-        // Use inline fallback as last resort
-        setContent({
-          meta: {
-            effectiveDate: "10 August 2025",
-            title: "Privacy Policy",
-            contactEmail: FALLBACK_EMAIL
-          },
-          introduction: "We respect your privacy and handle personal information responsibly.",
-          sections: {}
-        });
-      }
-    }
-
-    loadContent();
-  }, []);
-
-  return content;
+  const { data } = useContent();
+  return useMemo(() => {
+    const page: any = (data as any)?.pages?.privacy;
+    if (!page) return null;
+    const meta = page.meta || {};
+    return {
+      meta: {
+        effectiveDate: meta.effectiveDate || '10 August 2025',
+        title: meta.title || 'Privacy Policy',
+        contactEmail: meta.contactEmail || FALLBACK_EMAIL,
+      },
+      introduction: page.introduction || '',
+      sections: page.sections || {},
+    } as PrivacyContent;
+  }, [data]);
 }

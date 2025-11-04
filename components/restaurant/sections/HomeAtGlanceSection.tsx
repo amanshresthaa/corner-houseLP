@@ -2,7 +2,8 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
-import type { AtGlanceCard } from '@/app/_content/home-sections';
+type AtGlanceDetail = { label: string; value: string; href?: string; ariaLabel?: string };
+type AtGlanceCard = { icon?: string; title: string; description?: string; details?: AtGlanceDetail[] };
 import Link from '@/lib/debugLink';
 
 interface HomeAtGlanceSectionProps {

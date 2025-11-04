@@ -700,56 +700,8 @@
         }
       }
     },
-    "offline": {
-      "title": "You're Offline",
-      "subtitle": "Connection Lost",
-      "description": "It looks like you've lost your internet connection. Don't worry - you can still access some features.",
-      "availableFeatures": [
-        "Previously viewed menu items",
-        "Restaurant information",
-        "Contact details"
-      ],
-      "buttons": {
-        "home": "Go Home",
-        "tryAgain": "Try Again",
-        "goBack": "Go Back"
-      }
-    },
-    "notFound": {
-      "title": "Page Not Found",
-      "subtitle": "Oops! This page seems to have wandered off",
-      "description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
-      "suggestions": [
-        "Check the URL for typos",
-        "Use the navigation menu",
-        "Visit our homepage",
-        "Contact us for help"
-      ],
-      "buttons": {
-        "home": "Go Home",
-        "menu": "View Menu"
-      }
-    },
-    "blog": {
-      "defaultSeo": {
-        "title": "Blog | The White Horse Waterbeach - Local Stories, Food & Community News | Cambridge",
-        "description": "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news from Cambridge's historic thatched pub.",
-        "keywords": [
-          "The White Horse Waterbeach blog",
-          "Cambridge pub blog",
-          "Waterbeach village stories",
-          "Nepalese cuisine recipes",
-          "Cambridge local news",
-          "pub history blog"
-        ],
-        "canonicalUrlRelative": "/blog",
-        "openGraph": {
-          "title": "Blog | The White Horse Waterbeach - Local Stories & Community News",
-          "description": "Discover stories from The White Horse Waterbeach: Nepalese cuisine recipes, Waterbeach village history, local events coverage, and community news.",
-          "url": "https://whitehorsepub.co//blog"
-        }
-      }
-    },
+    "offline": {},
+    "notFound": {},
     "press": {
       "seo": {
         "title": "Press Kit | The White Horse Waterbeach",

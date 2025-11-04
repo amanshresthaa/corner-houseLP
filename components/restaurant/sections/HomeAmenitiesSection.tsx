@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
-import type { AmenityItem } from '@/app/_content/home-sections';
+type AmenityItem = { icon?: string; text: string };
 
 interface HomeAmenitiesSectionProps {
   title: string;

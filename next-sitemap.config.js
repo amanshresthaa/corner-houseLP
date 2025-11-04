@@ -12,8 +12,6 @@ module.exports = {
     "/icon.*",
     "/apple-icon.png",
     "/favicon.ico",
-    "/blog",
-    "/blog/*",
     "/christmas-menu",
     "/curry-and-carols-menu",
     "/takeaway-menu",

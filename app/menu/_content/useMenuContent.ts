@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { getContactInfo } from '@/lib/restaurantData';
+import { useContent } from '@/hooks/data/useContent';
 
 // Simple URL validation function
 function validateHref(url: string, context?: string): string {
@@ -86,64 +87,64 @@ function validateMenuContent(content: any): MenuContent {
 }
 
 export function useMenuContent(): MenuContent | null {
-  const [content, setContent] = useState<MenuContent | null>(null);
+  const { data } = useContent();
 
-  useEffect(() => {
-    async function loadContent() {
-      try {
-        // Prefer centralized content.json when available
-        let baseContent: any = null;
-        try {
-          const { default: centralized } = await import('@/config/content.json');
-          const menu = (centralized as any)?.pages?.menu;
-          if (menu?.hero) {
-            const contact = getContactInfo();
-            baseContent = {
-              meta: { title: menu.hero.title, description: menu.sections?.description },
-              hero: {
-                title: menu.hero.title,
-                subtitle: menu.hero.subtitle,
-                buttons: {
-                  bookOnline: {
-                    label: menu.hero?.cta?.book || 'Book Online',
-                    url: '/book-a-table',
-                    target: '_self',
-                    style: 'primary'
-                  },
-                  orderTakeaway: {
-                    label: menu.hero?.cta?.order || `Call ${contact.phone.display}`,
-                    url: contact.phone.tel,
-                    style: 'secondary'
-                  }
-                }
-              }
-            };
+  return useMemo(() => {
+    const contact = getContactInfo();
+    const menu: any = data?.pages?.menu;
+    if (!menu?.hero) return null;
+
+    const centralized: MenuContent = {
+      meta: {
+        title: menu.hero?.title ?? 'Menu — Nepalese & Pub Classics',
+        description: menu.sections?.description ?? 'Our Nepalese kitchen is led by the Gautam family.'
+      },
+      hero: {
+        title: menu.hero?.title ?? 'Menu — Nepalese & Pub Classics',
+        subtitle: menu.hero?.subtitle ?? 'Curated menu — quick to scan. Book or order takeaway.',
+        buttons: {
+          bookOnline: {
+            label: (menu.hero?.cta?.book as string) || 'Book Online',
+            url: '/book-a-table',
+            target: '_self',
+            style: 'primary'
+          },
+          orderTakeaway: {
+            label: (menu.hero?.cta?.order as string) || `Call ${contact.phone.display}`,
+            url: contact.phone.tel,
+            style: 'secondary'
           }
-        } catch {}
-
-        // Load local fallback and merge hero/buttons if centralized exists
-        const { default: fallbackContent } = await import('./menu-content.json');
-        const validatedFallback = validateMenuContent(fallbackContent);
-        const contact = getContactInfo();
-        const merged = baseContent ? { ...validatedFallback, ...baseContent } : validatedFallback;
-
-        // Ensure CTA buttons use canonical contact details
-        if (merged.hero?.buttons?.orderTakeaway) {
-          merged.hero.buttons.orderTakeaway.url = contact.phone.tel;
-          const existingLabel = merged.hero.buttons.orderTakeaway.label;
-          merged.hero.buttons.orderTakeaway.label = existingLabel
-            ? existingLabel.replace(/01223277217/g, contact.phone.display)
-            : `Call ${contact.phone.display}`;
         }
-        setContent(validateMenuContent(merged));
-      } catch (error) {
-        console.error('Menu content loading error:', error);
-        setContent(null);
+      },
+      interactive: {
+        search: {
+          placeholder: 'Search menu items...',
+          toggleLabel: 'Search & Filter',
+          hideLabel: 'Hide Search',
+          clearLabel: 'Clear All',
+          activeLabel: 'Active'
+        },
+        navigation: {
+          allSectionsLabel: 'All',
+          menuCategoriesLabel: 'Menu categories',
+          noItemsMessage: 'No items in this section match current filters'
+        },
+        results: {
+          showingPrefix: 'Showing',
+          itemsSuffix: 'items',
+          matchingText: 'matching',
+          withFiltersText: 'with applied filters'
+        }
+      },
+      ui: {
+        loading: {
+          message: 'Loading menu...',
+          error: 'Failed to load menu content'
+        }
       }
-    }
+    };
 
-    loadContent();
-  }, []);
-
-  return content;
+    // Apply URL validation to protect anchors
+    return validateMenuContent(centralized);
+  }, [data]);
 }

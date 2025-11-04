@@ -168,7 +168,23 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 			<RestaurantLayout>
 				{/* Hero Section with motion animation */}
 				<section aria-label="Menu introduction">
-					<MenuHero />
+					<MenuHero 
+						hero={{
+							title: menuContent?.hero?.title,
+							subtitle: menuContent?.hero?.subtitle,
+							buttons: {
+								bookOnline: {
+									label: (menuContent?.hero?.cta?.book as string) || 'Book Online',
+									url: '/book-a-table',
+									target: '_self',
+								},
+								orderTakeaway: {
+									label: (menuContent?.hero?.cta?.order as string) || `Call ${phoneDisplay}`,
+									url: contact?.phone?.tel,
+								},
+							},
+						}}
+					/>
 				</section>
 
 			{/* Main menu content with progressive disclosure */}
