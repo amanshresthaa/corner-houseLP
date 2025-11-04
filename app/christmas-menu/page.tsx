@@ -183,7 +183,7 @@ const FULL_CHRISTMAS_MENU: FestiveMenu = {
   ],
   footer: {
     experience: "Celebrate Christmas at The White Horse in Waterbeach.",
-    location: "12 Green Side, Waterbeach, Cambridge CB25 9HP",
+    location: "12 Greenside, Waterbeach, Cambridge CB25 9HP",
     contactLabel: "whitehorsepub.co",
     contactWebsite: "https://whitehorsepub.co",
     contactPhone: CHRISTMAS_CONTACT.phone.display,

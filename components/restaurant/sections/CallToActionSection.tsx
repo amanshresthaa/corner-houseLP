@@ -17,6 +17,7 @@ interface CallToActionSectionProps {
   description: string;
   buttons: CTAButton[];
   className?: string;
+  noBackground?: boolean;
 }
 
 /**
@@ -36,7 +37,8 @@ export default function CallToActionSection({
   headline, 
   description, 
   buttons, 
-  className = '' 
+  className = '',
+  noBackground = false,
 }: CallToActionSectionProps) {
   if (!headline || !buttons || buttons.length === 0) {
     return null;
@@ -62,7 +64,7 @@ export default function CallToActionSection({
   };
 
   return (
-    <section className={`bg-neutral-100 py-12 sm:py-14 ${className}`}>
+    <section className={`${noBackground ? '' : 'bg-neutral-100'} py-12 sm:py-14 ${className}`}>
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-brand-100 bg-white p-7 shadow-xl transition-all duration-300 hover:-translate-y-2 md:p-10">
           <div className="flex flex-col items-center gap-5 text-center">

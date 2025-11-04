@@ -56,7 +56,7 @@ export default function RegularEventsSection({
           <motion.div 
             key={index}
             variants={itemVariant as any}
-            className="bg-surface-base rounded-xl shadow-lg p-6"
+            className="card bg-white rounded-xl shadow-md border border-brand-100 p-6"
             itemScope
             itemType="https://schema.org/Event"
           >
@@ -69,13 +69,13 @@ export default function RegularEventsSection({
               
               <div className="flex-1">
                 <h3 
-                  className="text-xl font-display font-bold text-brand-700 mb-2" 
+                  className="text-xl font-display font-bold text-brand-800 mb-2" 
                   itemProp="name"
                 >
                   {event.title}
                 </h3>
                 
-                <p className="text-brand-600 mb-2" itemProp="description">
+                <p className="text-brand-700 mb-2" itemProp="description">
                   {event.description}
                 </p>
                 
@@ -94,13 +94,11 @@ export default function RegularEventsSection({
                   </p>
                 )}
 
-                <p className="text-sm font-medium text-accent-500" itemProp="eventSchedule">
-                  {event.frequency}
-                </p>
+                <span className="badge badge-outline" itemProp="eventSchedule">{event.frequency}</span>
               </div>
             </div>
           </motion.div>
-        );
+      );
       }).filter(Boolean)}
     </motion.div>
   );

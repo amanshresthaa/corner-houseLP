@@ -22,7 +22,7 @@
 ### **📮 ADDRESS**
 ```
 The White Horse
-12 Green Side
+12 Greenside
 Waterbeach
 Cambridge
 CB25 9HP
@@ -30,7 +30,7 @@ United Kingdom
 ```
 
 **Structured Format:**
-- Street: `12 Green Side`
+- Street: `12 Greenside`
 - Locality: `Waterbeach`
 - Postal Code: `CB25 9HP`
 - City: `Cambridge`

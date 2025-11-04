@@ -3,10 +3,12 @@ import { getContentSmart } from '@/src/lib/data/server-loader';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
-import { getContactInfo, getFormattedAddress } from '@/lib/restaurantData';
+import { getContactInfo, getFormattedAddress, getAddress, getRestaurantIdentity } from '@/lib/restaurantData';
 
 const CONTACT = getContactInfo();
 const ADDRESS_LINE = getFormattedAddress();
+const ADDRESS = getAddress();
+const IDENTITY = getRestaurantIdentity();
 
 // SEO Metadata
 export const metadata = getSEOTags({
@@ -68,13 +70,43 @@ export default async function ContactPage() {
               <p className="text-base md:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
                 {contactContent.hero.subtitle}
               </p>
+              {/* Quick Actions CTA inside hero */}
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                  href={CONTACT.phone.tel}
+                  className="btn bg-white text-brand-800 hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
+                  aria-label={`Call ${IDENTITY.displayName} at ${CONTACT.phone.display}`}
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  📞 Call {CONTACT.phone.display}
+                </a>
+                <a
+                  href={`mailto:${CONTACT.email.primary}`}
+                  className="btn btn-outline border-white text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
+                  aria-label={`Email ${IDENTITY.displayName} at ${CONTACT.email.primary}`}
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  📧 Email Us
+                </a>
+                <a
+                  href={ADDRESS.map.google || '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost text-white hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
+                  aria-label={`Get directions to ${IDENTITY.displayName}`}
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  🧭 Directions
+                </a>
+              </div>
             </div>
           </FadeIn>
         </section>
 
         {/* Main contact content with progressive disclosure */}
-        <main className="bg-white py-16">
+        <main className="bg-white py-12">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Quick Actions are now inside the hero */}
             <FadeIn>
               <section className="grid grid-cols-1 gap-8 pb-16 lg:grid-cols-2" aria-labelledby="contact-info-heading">
                 <div>
@@ -105,12 +137,12 @@ export default async function ContactPage() {
             </FadeIn>
 
             <FadeIn>
-              <section className="pt-16" aria-labelledby="map-heading">
+              <section className="pt-12" aria-labelledby="map-heading">
                 <h2 id="map-heading" className="mb-6 text-center text-2xl font-display font-bold text-brand-700">Find Us</h2>
                 <div className="rounded-3xl bg-brand-50 p-4 shadow-lg shadow-brand-900/10">
                   <InteractiveMap
                     title="The White Horse Waterbeach Location"
-                    className="h-[400px] w-full overflow-hidden rounded-2xl border border-brand-200/40"
+                    className="h-[420px] w-full overflow-hidden rounded-2xl border border-brand-200/40"
                     height="400px"
                   />
                 </div>

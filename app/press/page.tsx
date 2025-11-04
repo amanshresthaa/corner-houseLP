@@ -2,104 +2,17 @@ import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import Link from '@/lib/debugLink';
-import PressFeatureBanner, { PressFeatureContent } from '@/components/restaurant/sections/PressFeatureBanner';
+// PressFeatureBanner removed to keep page focused on essential, verified information
 import { getContactInfo, getAddress, getPostalAddressSchema, getRestaurantIdentity } from '@/lib/restaurantData';
 
-type PressArticle = {
-  id: string;
-  title: string;
-  summary: string;
-  source: string;
-  date: string;
-  href: string;
-  ctaLabel: string;
-  isExternal?: boolean;
-  tags?: string[];
-};
-
-const HERO_PRESS_FEATURE: PressFeatureContent = {
-  label: "In the press",
-  eyebrow: "Country pub of the week",
-  title: "Evening Standard spotlights The White Horse, Waterbeach",
-  summary: "David Ellis praises our welcoming village pub, authentic Nepalese cooking, and ever-evolving menu in the Evening Standard's Country Pub of the Week column.",
-  quote: "The changes keep locals coming back.",
-  quoteAttribution: "David Ellis, Evening Standard",
-  cta: {
-    text: "Read the review",
-    href: "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html",
-  },
-};
-
-const FOOD_HYGIENE_CARD = {
-  ratingValue: "5",
-  ratingLabel: "Very Good",
-  inspectedOn: "18 February 2025",
-  href: "https://ratings.food.gov.uk/business/1750898/the-white-horse-girton?utm_source=chatgpt.com",
-};
-
-const PRESS_ARTICLES: PressArticle[] = [
-  {
-    id: "evening-standard-country-pub",
-    title: "Evening Standard: Country Pub of the Week",
-    summary: "David Ellis highlights our Nepalese kitchen, warm village welcome, and ever-evolving pub menu.",
-    source: "Evening Standard",
-    date: "19 December 2024",
-    href: "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html",
-    ctaLabel: "Full Evening Standard feature",
-    isExternal: true,
-    tags: ["Press Feature"],
-  },
-  {
-    id: "cambs-edition-royal-makeover",
-    title: "Cambs Edition: The White Horse’s Royal Makeover",
-    summary: "Cambridge Edition charts the revitalised interiors, bold Nepalese flavours, and the team leading the transformation.",
-    source: "Cambridge Edition",
-    date: "20 September 2024",
-    href: "https://cambsedition.co.uk/food-drink/the-the-white-horse-a-royal-makeover/?utm_source=chatgpt.com",
-    ctaLabel: "Read Cambs Edition feature",
-    isExternal: true,
-    tags: ["Lifestyle"],
-  },
-  {
-    id: "cambridge-independent-reopening",
-    title: "Cambridge Independent: Revamped The White Horse Reopens",
-    summary: "Local press covers our launch party, refreshed spaces, and renewed community focus after the refurbishment.",
-    source: "Cambridge Independent",
-    date: "21 March 2018",
-    href: "https://www.cambridgeindependent.co.uk/lifestyle/revamped-the-white-horse-in-girton-celebrates-reopening-with-launch-party-9052915/?utm_source=chatgpt.com",
-    ctaLabel: "Read Cambridge Independent story",
-    isExternal: true,
-    tags: ["Community"],
-  },
-  {
-    id: "camra-guide",
-    title: "CAMRA Guide: The White Horse Pub Profile",
-    summary: "Cambridge CAMRA’s guide spotlights our historic building, expansive garden, and multi-space dining experience.",
-    source: "Cambridge & District CAMRA",
-    date: "CAMRA listing",
-    href: "https://pubs.cambridge-camra.org.uk/viewnode.php?id=1636&utm_source=chatgpt.com",
-    ctaLabel: "View CAMRA listing",
-    isExternal: true,
-    tags: ["Heritage"],
-  },
-  {
-    id: "visit-south-cambs",
-    title: "Visit South Cambs: Hospitality Spotlight",
-    summary: "South Cambridgeshire’s visitor guide features The White Horse Waterbeach as a must-visit hospitality destination.",
-    source: "Visit South Cambs",
-    date: "Updated 11 September 2025",
-    href: "https://visitsouthcambs.co.uk/hospitality/the-white-horse-girton/?utm_source=chatgpt.com",
-    ctaLabel: "View Visit South Cambs listing",
-    isExternal: true,
-    tags: ["Tourism"],
-  },
-];
-
+// Concise quick facts derived from the authoritative Markdown dossier
 const PRESS_FACTS = [
-  "England's largest thatched pub, located just outside Cambridge in Waterbeach village.",
-  "Authentic Nepalese cuisine paired with British pub classics from our award-winning kitchen team.",
-  "Family-friendly, dog-welcoming venue with spacious garden, private dining areas, and live sports.",
-  "Featured as the Evening Standard's \"Country Pub of the Week\".",
+  "Address: 12 Greenside, Waterbeach, Cambridge, CB25 9HP",
+  "Phone: 01223 375578 • Email: hellothewhitehorsewaterbeach@gmail.com",
+  "Ownership: Lapen Inns",
+  "Dual identity: Traditional village pub + authentic Nepalese restaurant",
+  "Amenities: Live sports (Sky & TNT), large garden, outdoor seating, dog-friendly (bar area), family-friendly, pool table, takeaway, wheelchair access",
+  "Cask ales: Greene King IPA, Timothy Taylor Landlord",
 ];
 
 const CONTACT = getContactInfo();
@@ -114,19 +27,19 @@ const MEDIA_CONTACT = {
 };
 
 export const metadata = getSEOTags({
-  title: "Press & Media | The White Horse Waterbeach - Evening Standard Feature & Media Resources",
-  description: "Explore press coverage of The White Horse Waterbeach, including our Evening Standard feature, media highlights, and press enquiry information for journalists.",
+  title: "Press Kit | The White Horse Waterbeach",
+  description: "Official press information, quick facts, and media contact for The White Horse, Waterbeach — a revitalised community hub blending a traditional pub with authentic Nepalese cuisine.",
   keywords: [
     "The White Horse Waterbeach press",
-    "Cambridge pub media coverage",
-    "Evening Standard country pub of the week",
-    "Nepalese restaurant press kit",
-    "Waterbeach thatched pub media resources",
+    "press kit",
+    "media contact",
+    "Nepalese restaurant",
+    "Waterbeach thatched pub",
   ],
   canonicalUrlRelative: "/press",
   openGraph: {
-    title: "Press & Media | The White Horse Waterbeach",
-    description: "Discover media coverage, press resources, and contact details for The White Horse Waterbeach's historic thatched pub.",
+    title: "Press Kit | The White Horse Waterbeach",
+    description: "Official press information, quick facts, and media contact for The White Horse Waterbeach.",
     url: "https://whitehorsepub.co//press",
   },
 });
@@ -146,8 +59,8 @@ export default function PressPage() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "@id": "https://whitehorsepub.co//press#webpage",
-            "name": "Press & Media - The White Horse Waterbeach",
-            "description": "Media coverage, press resources, and contact information for The White Horse Waterbeach.",
+            "name": "Press Kit - The White Horse Waterbeach",
+            "description": "Official press information, quick facts, and media contact for The White Horse Waterbeach.",
             "url": "https://whitehorsepub.co//press",
             "isPartOf": {
               "@type": "WebSite",
@@ -191,136 +104,28 @@ export default function PressPage() {
                 <ol className="flex justify-center items-center gap-2 text-sm text-brand-100">
                   <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li className="text-brand-50 font-medium">Press &amp; Media</li>
+                  <li className="text-brand-50 font-medium">Press Kit</li>
                 </ol>
               </nav>
               <h1 id="press-hero-heading" className="text-2xl md:text-3xl font-display font-bold text-white mb-3 leading-tight">
-                Press &amp; Media
+                Press Kit
               </h1>
               <p className="text-base md:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
-                Explore recent media coverage, grab key facts, and contact our team for interviews, imagery, and story angles about England&apos;s largest thatched pub.
+                At-a-glance facts and media contact for The White Horse, Waterbeach — a revitalised community hub blending a traditional village pub with authentic Nepalese cuisine.
               </p>
             </div>
           </FadeIn>
         </section>
 
-		<main className="bg-white pb-16">
-		  <FadeIn>
-			<section className="bg-neutral-50 py-16" aria-labelledby="food-hygiene-heading">
-			  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="card bg-brand-700 text-white shadow-xl border border-brand-600">
-                  <div className="card-body gap-6 md:gap-8">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
-                      <div className="flex items-start md:items-center gap-5">
-                        <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full bg-white text-brand-700 font-display text-3xl font-bold">
-                          {FOOD_HYGIENE_CARD.ratingValue}
-                        </div>
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.2em] text-brand-200 font-semibold">
-                            Food Standards Agency
-                          </p>
-                          <h2 id="food-hygiene-heading" className="text-xl md:text-2xl font-display font-bold leading-snug">
-                            Food Hygiene Rating: {FOOD_HYGIENE_CARD.ratingValue} ({FOOD_HYGIENE_CARD.ratingLabel})
-                          </h2>
-                          <p className="mt-2 text-brand-100 text-sm md:text-base leading-relaxed">
-                            Official inspection completed on {FOOD_HYGIENE_CARD.inspectedOn}. View the full report for detailed hygiene, structure, and management scores.
-                          </p>
-                        </div>
-                      </div>
-                      <a
-                        href={FOOD_HYGIENE_CARD.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-outline border-white text-white hover:bg-white/10 hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
-                        aria-label="View The White Horse Waterbeach Food Standards Agency hygiene rating (opens in new tab)"
-                        style={{ touchAction: 'manipulation' }}
-                      >
-                        View rating ↗
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </FadeIn>
+		<main className="bg-white pb-4">
+          {/* Hygiene card removed: not present in the provided Markdown and out of scope for press kit */}
+
+          {/* External press feature banner removed to keep page minimal and source-aligned */}
+
+          {/* Media highlights removed: keep only essential, verified information */}
 
 		  <FadeIn>
-			<div className="pt-16">
-			  <PressFeatureBanner content={HERO_PRESS_FEATURE} />
-			</div>
-		  </FadeIn>
-
-		  <FadeIn>
-			<section className="py-16" aria-labelledby="press-highlights-heading">
-			  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-                  <div>
-                    <h2 id="press-highlights-heading" className="text-2xl md:text-3xl font-display font-bold text-brand-700">
-                      Media Highlights
-                    </h2>
-                    <p className="mt-2 text-brand-600 max-w-2xl">
-                      Recent coverage and background features worth sharing with your readers.
-                    </p>
-                  </div>
-                  <div>
-                    <span className="badge badge-accent badge-outline text-sm">Updated December 2024</span>
-                  </div>
-                </div>
-
-                <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
-                  {PRESS_ARTICLES.map((article) => {
-                    const Tag = article.isExternal ? 'a' : Link;
-                    const tagProps = article.isExternal
-                      ? {
-                          href: article.href,
-                          target: "_blank",
-                          rel: "noopener noreferrer",
-                        }
-                      : { href: article.href };
-
-                    return (
-                      <article
-                        key={article.id}
-                        className="card bg-brand-50 text-brand-700 shadow-md border border-brand-100 transition-all duration-200 hover:shadow-xl focus-within:shadow-xl"
-                      >
-                        <div className="card-body space-y-4">
-                          <div className="flex flex-wrap items-center gap-2 text-sm text-brand-500">
-                            <span className="badge badge-outline">{article.source}</span>
-                            <time dateTime={article.date} className="text-brand-400">
-                              {article.date}
-                            </time>
-                            {article.tags?.map((tag) => (
-                              <span key={tag} className="badge badge-sm badge-primary badge-outline">
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                          <h3 className="text-xl font-semibold leading-snug">
-                            {article.title}
-                          </h3>
-                          <p className="text-sm text-brand-600 leading-relaxed">
-                            {article.summary}
-                          </p>
-                          <Tag
-                            {...tagProps}
-                            className="btn btn-ghost justify-start px-0 text-brand-700 hover:text-brand-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                            aria-label={`${article.ctaLabel} (${article.source})`}
-                            style={{ touchAction: 'manipulation' }}
-                          >
-                            {article.ctaLabel}
-                            <span aria-hidden="true" className="ml-2">↗</span>
-                          </Tag>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-          </FadeIn>
-
-		  <FadeIn>
-			<section className="bg-brand-50 py-16" aria-labelledby="press-kit-heading">
+			<section className="bg-brand-50 pt-16 pb-6" aria-labelledby="press-kit-heading">
 			  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
                   <div>

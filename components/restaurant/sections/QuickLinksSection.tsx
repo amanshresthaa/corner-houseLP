@@ -73,7 +73,7 @@ export default function QuickLinksSection({ links, className = '' }: QuickLinksS
                 <Link
                   key={index}
                   href={sanitizeHref(link.link)}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent-100 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent-100 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-900"
                   aria-label={`${link.title}: ${link.linkText}`}
                 >
                   {link.linkText}

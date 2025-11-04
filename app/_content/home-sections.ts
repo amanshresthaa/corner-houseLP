@@ -82,7 +82,7 @@ export const HOME_AT_A_GLANCE: AtGlanceCard[] = [
     details: [
       {
         label: 'Address',
-        value: '12 Green Side, Waterbeach, Cambridge CB25 9HP',
+        value: '12 Greenside, Waterbeach, Cambridge CB25 9HP',
         href: 'https://www.google.com/maps?q=52.2662426,0.1913944',
         ariaLabel: 'Open Google Maps directions to The White Horse Waterbeach'
       },

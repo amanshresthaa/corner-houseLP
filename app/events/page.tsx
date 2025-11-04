@@ -1,277 +1,207 @@
+import type { Metadata } from "next";
 import RestaurantLayout from "@/components/restaurant/Layout";
-import { FadeIn, BouncyEmoji, MotionLinkButton } from "@/components/animations/MotionWrappers";
+import { getContactInfo } from "@/lib/restaurantData";
+
+export const metadata: Metadata = {
+  title: "Events & What's On | The White Horse Waterbeach",
+  description:
+    "Live sports, regular happenings, and a weekly guide. Multiple screens, great food, family & dog-friendly.",
+};
 
 export default function EventsPage() {
+  const contact = getContactInfo();
+  const eventsEmail = contact.email.events ?? contact.email.primary;
+  const enquireHref = contact.enquiryUrl || `mailto:${eventsEmail}`;
+  const downloadHref = "/wakes-menu"; // Fallback while keeping static CTA label
+
+  // Regular events section removed per request
+
+  const matchDayFeatures = [
+    {
+      icon: "📺",
+      title: "Multiple Screens",
+      body: "Great views from bar and snug.",
+    },
+    { icon: "🔊", title: "Match Audio", body: "Commentary on for key fixtures." },
+    { icon: "🍺", title: "Fresh Pints", body: "Lagers, cask ales & 0%." },
+    { icon: "🍔", title: "Match Fuel", body: "Pub classics + Nepalese favourites." },
+    { icon: "🪑", title: "Table Bookings", body: "Groups welcome for big games." },
+  ];
+
+  // Weekly Guide section removed per request
+
   return (
     <RestaurantLayout>
-      <div className="min-h-screen bg-brand-50">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-10 md:py-16">
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="max-w-4xl mx-auto">
-              <FadeIn>
-                <h1 className="text-2xl md:text-3xl font-display font-bold text-white mb-3 leading-tight">
-                  Events at The White Horse, Waterbeach
-                </h1>
-                <p className="text-base md:text-lg text-brand-100 mb-6 max-w-2xl mx-auto leading-relaxed">
-                  Your Hub for Sport, Celebrations & Community!
-                </p>
-                <div className="flex flex-wrap justify-center gap-3">
-                  <span className="px-3 py-1.5 bg-white/20 rounded-full backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-colors duration-200 text-white text-sm">
-                    <span aria-hidden="true">🎉</span> <span className="sr-only">Celebrations</span>
-                    <span className="ml-2 md:inline hidden">Celebrations</span>
-                  </span>
-                  <span className="px-3 py-1.5 bg-white/20 rounded-full backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-colors duration-200 text-white text-sm">
-                    <span aria-hidden="true">⚽</span> <span className="sr-only">Live Sports</span>
-                    <span className="ml-2 md:inline hidden">Live Sports</span>
-                  </span>
-                  <span className="px-3 py-1.5 bg-white/20 rounded-full backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-colors duration-200 text-white text-sm">
-                    <span aria-hidden="true">👥</span> <span className="sr-only">Community Events</span>
-                    <span className="ml-2 md:inline hidden">Community Events</span>
-                  </span>
+      <div className="bg-white">
+        {/* 1. Hero Section */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 text-white">
+          <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
+          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+            <div className="space-y-4 text-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/90">
+                What’s On
+              </span>
+              <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight">
+                Events &amp; What’s On
+              </h1>
+              <p className="max-w-2xl mx-auto text-base md:text-lg text-white/90 leading-relaxed">
+                Your home for live sport, community gatherings, and proper pub culture — with great food and a warm welcome every day.
+              </p>
+              <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:items-center justify-center">
+                <a
+                  href={enquireHref}
+                  className="btn btn-ghost text-white"
+                  aria-label="Book for big games"
+                >
+                  Book for Big Games
+                </a>
+                <a
+                  href="/menu"
+                  className="btn btn-outline border-white text-white hover:bg-white/10"
+                  aria-label="View our menu"
+                >
+                  View Menu
+                </a>
+              </div>
+              <div className="flex flex-wrap justify-center gap-2 pt-2">
+                {['Live Sport', 'Multiple Screens', 'Great Food'].map((t) => (
+                  <span key={t} className="badge badge-outline border-white/40 text-white/90">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Decorative sports emoji */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-10 select-none">
+            <div className="absolute -top-6 left-8 text-7xl">⚽</div>
+            <div className="absolute top-10 right-16 text-8xl">🏉</div>
+            <div className="absolute bottom-8 left-1/4 text-8xl">🏎️</div>
+            <div className="absolute bottom-12 right-1/3 text-7xl">🎾</div>
+            <div className="absolute top-1/2 left-10 text-7xl">🏏</div>
+          </div>
+        </section>
+
+        {/* 2. Live Sports Banner */}
+        <section className="relative bg-neutral-50">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
+            <div className="relative overflow-hidden rounded-2xl card bg-brand-700 text-white shadow-xl border border-brand-600">
+              <div className="relative z-10 grid gap-6 p-8 md:p-10 lg:grid-cols-3">
+                <div className="lg:col-span-2 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <span className="badge badge-accent badge-outline gap-2">
+                      <span className="relative inline-flex h-2 w-2">
+                        <span className="absolute inline-flex h-2 w-2 rounded-full bg-current opacity-75 animate-ping" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-current" />
+                      </span>
+                      LIVE
+                    </span>
+                    <span className="badge badge-outline">Sky Sports</span>
+                    <span className="badge badge-outline">TNT Sports</span>
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-display font-bold">
+                    Big matches. Bigger atmosphere.
+                  </h2>
+                  <p className="text-white/90">
+                    Premier League, Rugby, Cricket, Tennis, F1 and more — shown across multiple screens so you never miss the moments that matter.
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-2" aria-label="Sports we show">
+                    {[
+                      { e: "⚽", t: "Premier League" },
+                      { e: "🏉", t: "Rugby" },
+                      { e: "🏏", t: "Cricket" },
+                      { e: "🎾", t: "Tennis" },
+                      { e: "🏎️", t: "F1" },
+                    ].map((s) => (
+                      <span key={s.t} className="badge badge-outline">
+                        <span aria-hidden="true" className="mr-1">{s.e}</span>
+                        {s.t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </FadeIn>
+                <div className="flex items-center justify-start lg:justify-end gap-3">
+                  <a href={enquireHref} className="btn btn-outline border-white text-white hover:bg-white/10">Book for Big Games</a>
+                </div>
+              </div>
+              <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
+                <span className="text-9xl md:text-[12rem] lg:text-[16rem] font-extrabold tracking-tighter text-white/10 select-none">
+                  LIVE
+                </span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Main Content */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Introduction */}
-          <section className="py-16">
-            <div className="text-center mb-12">
-              <p className="text-lg text-brand-600 max-w-3xl mx-auto leading-relaxed">
-                Looking for the perfect venue to host your next gathering, or simply catch the big game with friends? The White Horse offers a unique and memorable setting for all occasions, blending the charm of a historic thatched pub with the excitement of live sports and an incredible culinary experience.
+        {/* Regular Events section removed per request */}
+
+        {/* 4. Match Day Experience Section */}
+        <section className="bg-brand-900 text-white">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 grid gap-10 lg:grid-cols-2">
+            {/* Left column */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-display font-bold">
+                Match Day at The White Horse
+              </h2>
+              <p className="mt-3 text-white/80">
+                Settle in with friends, follow every moment, and enjoy great food and drink while you watch. We’re built for sport — without losing the charm of a village pub.
               </p>
-            </div>
-          </section>
-
-          {/* Curry & Carols Highlight */}
-          <section className="py-16" aria-labelledby="events-curry-carols-highlight-heading">
-            <FadeIn>
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-700 via-crimson-600 to-cardamom-700 p-8 md:p-12 text-white shadow-2xl border border-white/10">
-                <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
-                <div className="relative space-y-6 text-center max-w-3xl mx-auto">
-                  <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/30 rounded-full backdrop-blur text-sm font-semibold tracking-wide uppercase touch-manipulation">
-                    <span aria-hidden="true" role="img">🎄</span>
-                    Curry &amp; Carols Returns
-                  </span>
-                  <h2 id="events-curry-carols-highlight-heading" className="text-2xl md:text-4xl font-display font-bold leading-tight">
-                    Two magical evenings of Curry &amp; Carols this December
-                  </h2>
-                  <p className="text-base md:text-lg text-neutral-100 leading-relaxed">
-                    Join us on <strong>16 &amp; 17 December 2025</strong> for a £35 per guest Nepalese banquet, mulled pairings, and live carols under our thatched roof. Seats release soon—secure early access now.
-                  </p>
-                  <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <MotionLinkButton
-                      href="/events/curry-and-carols"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700 touch-manipulation"
-                      ariaLabel="Explore Curry and Carols event details"
-                    >
-                      <span aria-hidden="true" role="img">✨</span>
-                      Discover Curry &amp; Carols
-                    </MotionLinkButton>
-                  </div>
-                  <p className="text-sm text-neutral-100/90">
-                    <span className="font-semibold">£35 per guest</span> · Live carols both nights
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
-          </section>
-
-          {/* Live Sports Section */}
-          <section className="py-16">
-            <FadeIn>
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 border border-brand-100 hover:shadow-2xl focus-within:shadow-2xl">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-accent-100 rounded-full mb-4">
-                  <span className="text-3xl" aria-hidden="true">🎯</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-700 mb-4">
-                  Catch All the Live Action on Sky TV!
-                </h2>
-                <h3 className="text-xl text-accent-600 font-semibold">
-                  Your Home for Live Sports in Cambridge
-                </h3>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <p className="text-brand-600 mb-6 leading-relaxed">
-                    Never miss a moment of the game at The White Horse! We&apos;re proud to show a wide range of live sports on Sky TV across our screens, bringing you all the thrilling action from football, rugby, cricket, and more. Gather your mates, grab a refreshing pint from our selection of real ales, and immerse yourself in the electric atmosphere. Whether it&apos;s a tense derby or an international showdown, our pub is the perfect spot to cheer on your favourite team.
-                  </p>
-
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <span className="text-accent-500 text-xl mt-1" aria-hidden="true">📺</span>
-                      <div>
-                        <strong className="text-brand-700">Sky TV:</strong> Access to all the major sporting events, including Premier League football and international rugby.
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-accent-500 text-xl mt-1" aria-hidden="true">🎉</span>
-                      <div>
-                        <strong className="text-brand-700">Great Atmosphere:</strong> Experience the excitement with fellow fans in a welcoming environment.
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-accent-500 text-xl mt-1" aria-hidden="true">🍽️</span>
-                      <div>
-                        <strong className="text-brand-700">Delicious Food & Drink:</strong> Fuel your cheers with our unique Nepalese dishes or classic pub favourites, alongside a fantastic range of beers, wines, and spirits from our extensive bar.
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-accent-500 text-xl mt-1" aria-hidden="true">🌳</span>
-                      <div>
-                        <strong className="text-brand-700">Large Garden & Terrace:</strong> Enjoy the game outdoors on a sunny day, or step out for a breather between halves.
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-accent-500 text-xl mt-1" aria-hidden="true">🐕</span>
-                      <div>
-                        <strong className="text-brand-700">Dog-Friendly:</strong> Your furry friends are welcome to join you in our garden areas while you watch the match!
-                      </div>
+              <div className="mt-6 space-y-3">
+                {matchDayFeatures.map((f) => (
+                  <div key={f.title} className="flex items-start gap-3 rounded-lg border border-brand-100 bg-white p-4 text-brand-900">
+                    <div className="text-xl" aria-hidden="true">{f.icon}</div>
+                    <div>
+                      <div className="font-semibold text-brand-900">{f.title}</div>
+                      <div className="text-sm text-brand-700">{f.body}</div>
                     </div>
                   </div>
-                </div>
-
-                <div className="bg-accent-50 rounded-xl p-6 border border-accent-200">
-                  <h4 className="font-bold text-brand-700 mb-4">📱 Stay Updated</h4>
-                  <p className="text-brand-600 mb-4">
-                    Check our social media or call us for the latest fixtures and upcoming matches! Looking for a specific game? Give us a call, and we&apos;ll do our best to accommodate!
-                  </p>
-                  <div className="flex gap-3">
-                    <a href="#" className="text-accent-600 hover:text-accent-700 font-medium">📘 Facebook</a>
-                    <a href="#" className="text-accent-600 hover:text-accent-700 font-medium">📸 Instagram</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </FadeIn>
-          </section>
-
-          {/* Private Events Section */}
-          <section className="py-16">
-            <FadeIn>
-              <div className="bg-gradient-to-r from-brand-50 to-accent-50 rounded-2xl p-8 md:p-12 border border-brand-200">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-100 rounded-full mb-4">
-                  <span className="text-3xl" aria-hidden="true">🎊</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-700 mb-4">
-                  Host Your Unforgettable Event at The White Horse
-                </h2>
-              </div>
-
-              <p className="text-lg text-brand-600 text-center mb-8 max-w-3xl mx-auto leading-relaxed">
-                Beyond sports, The White Horse is a versatile and picturesque venue, ideal for celebrating life&apos;s special moments, hosting business gatherings, or bringing people together. Our unique setting, combined with exceptional food and service, ensures your event will be truly memorable.
-              </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                {[
-                  { icon: '🏛️', title: 'Thatched Historic Building', body: "Step into history! Our iconic, largest thatched pub in the country offers a stunning and memorable backdrop for photos and gatherings, adding a touch of unique British charm to any event." },
-                  { icon: '🍛', title: 'Unique Nepalese + British Menus', body: 'Ditch the ordinary! Treat your guests to a standout culinary experience with our acclaimed authentic Nepalese cuisine alongside beloved British pub classics. We can tailor menus to suit your preferences and dietary needs.' },
-                  { icon: '🌳', title: 'Large Garden & Terrace', body: 'Perfect for summer socials, family events, or simply enjoying the fresh air. Our expansive outdoor spaces and large beer garden provide a beautiful setting for mingling and relaxation.' },
-                  { icon: '🚗', title: 'Easy Parking & Quick Links', body: "Conveniently located just outside the city centre with ample free parking. We&apos;re easily accessible for guests coming from Cambridge and the surrounding villages." },
-                  { icon: '💰', title: 'No Heavy Deposit Required', body: "We believe in making event planning stress-free. For most bookings, you won&apos;t need a heavy deposit, making it easier to arrange your gathering." },
-                  { icon: '👨‍👩‍👧‍👦', title: 'Family-Friendly Venue', body: 'We welcome families with children and can provide a kids menu upon request, making us an ideal choice for family celebrations.' },
-                ].map((card) => (
-                  <article key={card.title} className="bg-white rounded-xl p-6 shadow-lg transition-transform duration-300 hover:shadow-2xl focus-within:shadow-2xl">
-                    <div className="text-2xl mb-3" aria-hidden="true">{card.icon}</div>
-                    <h3 className="font-bold text-brand-700 mb-2">{card.title}</h3>
-                    <p className="text-sm text-brand-600">{card.body}</p>
-                  </article>
                 ))}
               </div>
             </div>
-            </FadeIn>
-          </section>
-
-          {/* Occasions Section */}
-          <section className="py-16">
-            <FadeIn>
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 transition-all duration-300 border border-brand-200 hover:shadow-2xl focus-within:shadow-2xl">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl md:text-3xl font-display font-bold text-brand-700 mb-4">
-                  Perfect for Any Occasion
-                </h3>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">
-                    <span className="text-2xl" aria-hidden="true">🎂</span>
-                    <div>
-                      <strong className="text-brand-700">Birthday Celebrations:</strong> Make a birthday extra special in our unique setting.
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">
-                    <span className="text-2xl" aria-hidden="true">💍</span>
-                    <div>
-                      <strong className="text-brand-700">Anniversaries:</strong> Celebrate milestones with delicious food and a charming atmosphere.
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">
-                    <span className="text-2xl" aria-hidden="true">🎓</span>
-                    <div>
-                      <strong className="text-brand-700">Student Society Socials & Events:</strong> Perfect for student gatherings and pub quizzes with student discounts available.
-                    </div>
-                  </div>
+            {/* Right column */}
+            <div className="relative overflow-hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-md text-brand-900">
+              <div aria-hidden="true" className="absolute -right-4 -top-6 text-[10rem] opacity-10 select-none">📺</div>
+              <div className="relative space-y-4">
+                <div className="inline-flex items-center gap-2 rounded-md border border-brand-100 bg-neutral-50 px-3 py-1">
+                  <span aria-hidden="true">📺</span>
+                  <span className="text-sm text-brand-700">TVs across bar & snug</span>
                 </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">
-                    <span className="text-2xl" aria-hidden="true">💼</span>
-                    <div>
-                      <strong className="text-brand-700">Corporate Gatherings & Business Lunches:</strong> Impress clients or reward your team in a relaxed, sophisticated environment.
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">
-                    <span className="text-2xl" aria-hidden="true">🤝</span>
-                    <div>
-                      <strong className="text-brand-700">Community Events:</strong> We love being a hub for Waterbeach! Talk to us about hosting your local group&apos;s next meet-up or event.
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-brand-50 rounded-lg hover:bg-brand-100 transition-colors duration-200 border border-brand-200">
-                    <span className="text-2xl" aria-hidden="true">🕊️</span>
-                    <div>
-                      <strong className="text-brand-700">Wakes & Memorial Gatherings:</strong> We offer compassionate service during times of remembrance with private hire options available.
-                    </div>
-                  </div>
+                <div>
+                  <div className="text-sm text-brand-700/80">We show</div>
+                  <ul className="mt-1 flex flex-wrap gap-2 text-sm">
+                    {["Premier League", "FA Cup", "Champions League", "Rugby", "Cricket", "Tennis", "F1"].map((s) => (
+                      <li key={s} className="badge badge-outline">{s}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="badge badge-outline">Sky Sports</span>
+                  <span className="badge badge-outline">TNT Sports</span>
                 </div>
               </div>
             </div>
-            </FadeIn>
-          </section>
+          </div>
+        </section>
 
-          {/* Call to Action */}
-          <section className="text-center">
-            <div className="bg-brand-600 rounded-2xl p-8 md:p-12 shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 border-2 border-brand-700">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 text-white drop-shadow-lg flex items-center justify-center gap-2">
-                <BouncyEmoji>🎈</BouncyEmoji> Ready to Plan Your Event?
-              </h3>
-              <p className="text-lg mb-8 max-w-2xl mx-auto text-white/95 leading-relaxed">
-                Our friendly team can&apos;t wait to help you create a truly special occasion! Reach out to check availability, discuss your ideas, or just say hello. We love making every event memorable.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <MotionLinkButton href="/contact" ariaLabel="Book your event now" className="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-700 font-bold rounded-xl shadow-lg hover:bg-brand-100 hover:text-brand-800 transition-transform duration-150 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-400 border-2 border-brand-100">
-                  <span className="mr-2 inline-block" aria-hidden="true">📞</span> Book Your Event Now
-                </MotionLinkButton>
-
-                <MotionLinkButton href="/menu#starters" ariaLabel="View our menus" className="inline-flex items-center justify-center px-8 py-4 bg-brand-100 text-brand-800 font-bold rounded-xl shadow-lg border-2 border-brand-200 hover:bg-brand-200 hover:border-brand-400 hover:text-brand-900 transition-transform duration-150 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-400">
-                  <span className="mr-2 inline-block" aria-hidden="true">🍽️</span> View Our Menus
-                </MotionLinkButton>
-
-                <MotionLinkButton href="/contact" ariaLabel="Contact us" className="inline-flex items-center justify-center px-8 py-4 bg-brand-700 text-white font-bold rounded-xl shadow-lg border-2 border-brand-300 hover:bg-brand-800 hover:text-white transition-transform duration-150 backdrop-blur-sm focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200">
-                  <span className="mr-2 inline-block" aria-hidden="true">💬</span> Contact Us
-                </MotionLinkButton>
-              </div>
-            </div>
-          </section>
-        </div>
+        {/* Weekly Guide section removed per request */}
+        {/* 6. Private Events CTA (design-system component) */}
+        <section>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20">
+            {/* Using shared CTA section for consistency */}
+            {(() => {
+              const CTA = require('@/components/restaurant/sections/CallToActionSection').default;
+              return (
+                <CTA
+                  headline="Host Private Events & Group Bookings"
+                  description="From celebrations and society socials to team gatherings — we’ve got flexible spaces, great food, and a friendly team to help plan it."
+                  buttons={[
+                    { text: 'Enquire About Private Events', href: enquireHref, variant: 'brand' },
+                    { text: 'Download Events Pack', href: downloadHref, variant: 'accent' },
+                  ]}
+                  noBackground
+                />
+              );
+            })()}
+          </div>
+        </section>
       </div>
     </RestaurantLayout>
   );

@@ -398,7 +398,7 @@
             "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Family and dog friendly venue voted #1 restaurant in Waterbeach.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "12 Green Side",
+              "streetAddress": "12 Greenside",
               "addressLocality": "Waterbeach",
               "addressRegion": "Cambridgeshire",
               "postalCode": "CB25 9HP",
@@ -491,7 +491,7 @@
         "description": "Experience the perfect blend of Nepalese hospitality and British pub tradition.",
         "button": "Book Online",
         "contact": {
-          "address": "12 Green Side, Waterbeach, Cambridge CB25 9HP",
+          "address": "12 Greenside, Waterbeach, Cambridge CB25 9HP",
           "hours": "See footer for full hours"
         }
       }
@@ -510,7 +510,7 @@
         },
         "location": {
           "title": "Location",
-          "address": "12 Green Side, Waterbeach, Cambridge, CB25 9HP",
+          "address": "12 Greenside, Waterbeach, Cambridge, CB25 9HP",
           "description": "Just 3 miles from Cambridge city centre"
         }
       },

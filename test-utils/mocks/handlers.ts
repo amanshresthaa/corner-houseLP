@@ -37,7 +37,7 @@ const mockRestaurantData = {
     bookingUrl: "https://whitehorsepub.co/book-a-table"
   },
   address: {
-    street: "12 Green Side",
+    street: "12 Greenside",
     area: "Waterbeach",
     city: "Cambridge",
     state: "Cambridgeshire",

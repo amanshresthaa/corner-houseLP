@@ -25,7 +25,7 @@ describe('ContactInfoSection', () => {
   const mockLocation = {
     title: 'Location',
     description: 'Just 3 miles from Cambridge',
-    address: '12 Green Side, Waterbeach, Cambridge, CB25 9HP'
+    address: '12 Greenside, Waterbeach, Cambridge, CB25 9HP'
   };
 
   const mockEmail = {
@@ -43,7 +43,7 @@ describe('ContactInfoSection', () => {
     // Check location section
     expect(screen.getByText('Location')).toBeInTheDocument();
     expect(screen.getByText('Just 3 miles from Cambridge')).toBeInTheDocument();
-    expect(screen.getByText('12 Green Side')).toBeInTheDocument();
+    expect(screen.getByText('12 Greenside')).toBeInTheDocument();
     expect(screen.getByText('CB25 9HP')).toBeInTheDocument();
     
     // Check email section

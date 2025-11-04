@@ -112,7 +112,7 @@
       "name": "Contact & Location",
       "layout": "two-column",
       "elements": [
-        { "type": "contact_panel", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com"] },
+        { "type": "contact_panel", "fields": ["12 Greenside, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com"] },
         {
           "type": "opening_times",
           "groups": [
@@ -138,7 +138,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge mixing authentic Nepalese cuisine with British pub comforts." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["12 Greenside, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "hellothewhitehorsewaterbeach@gmail.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Home", "Menu", "About", "Events", "Press", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -437,7 +437,7 @@
         { "type": "title", "text": "Ready to Book?" },
         { "type": "copy", "text": "Experience the perfect blend of Nepalese hospitality and British pub tradition." },
         { "type": "button", "labels": ["Book Online"], "links": ["/book-a-table"] },
-        { "type": "contact_details", "fields": ["12 Green Side, Waterbeach, Cambridge CB25 9HP", "See footer for full hours"] }
+        { "type": "contact_details", "fields": ["12 Greenside, Waterbeach, Cambridge CB25 9HP", "See footer for full hours"] }
       ]
     },
     {
@@ -704,7 +704,7 @@
       "layout": "two-column",
       "elements": [
         { "type": "list", "title": "Press Kit & Quick Facts", "items": ["England's largest thatched pub", "Authentic Nepalese cuisine", "Family & dog friendly", "Garden & private dining"] },
-        { "type": "contact_panel", "fields": ["Email: hellothewhitehorsewaterbeach@gmail.com", "Phone: 01223 375578", "Address: 12 Green Side, Waterbeach, Cambridge CB25 9HP"], "buttons": ["Email Press Team", "Contact Page"], "notes": "Imagery available on request." }
+        { "type": "contact_panel", "fields": ["Email: hellothewhitehorsewaterbeach@gmail.com", "Phone: 01223 375578", "Address: 12 Greenside, Waterbeach, Cambridge CB25 9HP"], "buttons": ["Email Press Team", "Contact Page"], "notes": "Imagery available on request." }
       ]
     },
     {
@@ -1266,4 +1266,3 @@
   ]
 }
 ```
-

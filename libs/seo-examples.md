@@ -173,7 +173,7 @@ export default function EventsPage() {
         name: "The White Horse Waterbeach",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "12 Green Side",
+          streetAddress: "12 Greenside",
           addressLocality: "Waterbeach",
           postalCode: "CB25 9HP",
           addressCountry: "GB"

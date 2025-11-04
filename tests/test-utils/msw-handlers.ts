@@ -100,7 +100,7 @@ export const mockRestaurant: Restaurant = {
     bookingUrl: 'https://whitehorsepub.co/book-a-table',
   },
   address: {
-    street: '12 Green Side',
+    street: '12 Greenside',
     city: 'Cambridge',
     state: 'Cambridgeshire',
     zip: 'CB25 9HP',
