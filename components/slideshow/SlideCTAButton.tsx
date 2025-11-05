@@ -3,6 +3,7 @@
 import React from "react";
 import EmojiIcon from "@/components/common/EmojiIcon";
 import Link from '@/lib/debugLink';
+import content from '@/config/content.json';
 
 type SlideCTAButtonProps = {
   href?: string;
@@ -10,33 +11,38 @@ type SlideCTAButtonProps = {
   className?: string;
   children?: React.ReactNode;
   ariaLabel?: string;
-  variant: "book" | "menu" | "call-takeaway" | "call-booking" | "learn-more";
+  variant: "book" | "menu" | "takeaway" | "call-takeaway" | "call-booking" | "learn-more";
 };
 
 const buttonVariants = {
   book: {
     emoji: "🍽️",
-    text: "Book Online",
+    text: content.global?.ui?.buttons?.bookOnline || "Book Online",
     ariaLabel: "Book a table online"
   },
   menu: {
     emoji: "📖",
-    text: "View Menu",
+    text: content.global?.ui?.buttons?.viewMenu || "View Menu",
     ariaLabel: "View the menu"
+  },
+  takeaway: {
+    emoji: "🥡",
+    text: content.global?.ui?.buttons?.orderTakeaway || "Order Takeaway",
+    ariaLabel: "Order takeaway online"
   },
   "call-takeaway": {
     emoji: "📞", 
-    text: "Call for Takeaway",
+    text: content.global?.ui?.buttons?.callTakeaway || content.global?.ui?.buttons?.callNow || "Call Takeaway",
     ariaLabel: "Call to place takeaway order"
   },
   "call-booking": {
     emoji: "📞",
-    text: "Call for Booking", 
+    text: content.global?.ui?.buttons?.callToBook || content.global?.ui?.buttons?.callNow || "Call to Book", 
     ariaLabel: "Call to make a booking"
   },
   "learn-more": {
     emoji: "ℹ️",
-    text: "Learn More",
+    text: content.global?.ui?.buttons?.showMore || "Learn More",
     ariaLabel: "Learn more about this experience"
   }
 };
@@ -51,13 +57,28 @@ export function SlideCTAButton({
   variant,
   ariaLabel 
 }: SlideCTAButtonProps) {
-  const config = buttonVariants[variant];
-  const finalAriaLabel = ariaLabel || config.ariaLabel;
+  const baseConfig = buttonVariants[variant];
+  const isExternalHttp = typeof href === 'string' && href.startsWith('http');
+  const isTakeaway = isExternalHttp && href!.includes('touchtakeaway.net');
+
+  // Override label for Touchtakeaway links to be explicit
+  const effective = ((): { emoji: string; text: string; ariaLabel: string } => {
+    if (variant === 'menu' && isTakeaway) {
+      return { 
+        emoji: '🥡', 
+        text: content.global?.ui?.buttons?.orderTakeaway || 'Order Takeaway', 
+        ariaLabel: 'Order takeaway online' 
+      };
+    }
+    return baseConfig;
+  })();
+
+  const finalAriaLabel = ariaLabel || effective.ariaLabel;
   
-  const content = (
+  const buttonContent = (
     <>
-      <EmojiIcon emoji={config.emoji} className="mr-2" />
-      {config.text}
+      <EmojiIcon emoji={effective.emoji} className="mr-2" />
+      {effective.text}
     </>
   );
   
@@ -74,7 +95,7 @@ export function SlideCTAButton({
           target={href.startsWith('http') ? "_blank" : undefined}
           rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
         >
-          {content}
+          {buttonContent}
         </a>
       );
     }
@@ -86,7 +107,7 @@ export function SlideCTAButton({
         aria-label={finalAriaLabel}
         onClick={onClick}
       >
-        {content}
+        {buttonContent}
       </Link>
     );
   }
@@ -97,7 +118,7 @@ export function SlideCTAButton({
       aria-label={finalAriaLabel}
       onClick={onClick}
     >
-      {content}
+      {buttonContent}
     </button>
   );
 }

@@ -4,7 +4,7 @@ import { getContentSmart } from '@/src/lib/data/server-loader';
 import Link from '@/lib/debugLink';
 import { Images } from '@/src/lib/images';
 import { FadeIn } from '@/components/animations/MotionWrappers';
-import { BlogHero, BlogFeatured, FilterableBlogSection } from './_components';
+import { BlogHero, FilterableBlogSection } from './_components';
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -20,132 +20,11 @@ export async function generateMetadata() {
 
 
 
-// Featured and recent blog posts data
-const featuredPost = {
-  id: "authentic-momo-dumplings-nepalese-cuisine",
-  title: "A Guide to Authentic Momo Dumplings and Nepalese Cuisine at The White Horse Waterbeach",
-  excerpt: "Discover the art of authentic Nepalese momo dumplings and explore the rich flavors of Himalayan cuisine at Cambridge's most unique restaurant destination.",
-  image: Images.blog.momo,
-  category: "Nepalese Cuisine",
-  author: "Raj Gurung",
-  publishedDate: "2024-11-15",
-  readTime: "9 min read",
-  slug: "authentic-momo-dumplings-nepalese-cuisine"
-};
+// No posts available after removals
+const blogPosts: any[] = [];
 
-const blogPosts = [
-  {
-    id: "evening-standard-country-pub-of-the-week",
-    title: "Evening Standard Spotlights The White Horse, Waterbeach",
-    excerpt: "The Evening Standard names us Country Pub of the Week, celebrating our Nepalese cooking, village welcome, and ever-evolving menu.",
-    image: Images.blog.thatchedExterior,
-    category: "Press & Media",
-    author: "The White Horse Team",
-    publishedDate: "2024-12-19",
-    readTime: "2 min read",
-    slug: "evening-standard-country-pub-of-the-week"
-  },
-  {
-    id: "business-lunch-cambridge-guide",
-    title: "The Ultimate Business Lunch Destination in Cambridge",
-    excerpt: "Discover why The White Horse Waterbeach has become the go-to choice for professionals seeking the perfect balance of quality cuisine, professional atmosphere, and convenient location.",
-    image: Images.blog.businessLunch,
-    category: "Business Dining",
-    author: "Emma Sutton",
-    publishedDate: "2024-11-25",
-    readTime: "8 min read",
-    slug: "business-lunch-cambridge-guide"
-  },
-  {
-    id: "dog-friendly-dining-guide",
-    title: "The Ultimate Dog-Friendly Dining Experience at The White Horse Waterbeach",
-    excerpt: "Discover why The White Horse Waterbeach has become Cambridge's favourite destination for dining with four-legged family members.",
-    image: Images.blog.dogFriendly,
-    category: "Dog-Friendly",
-    author: "Sarah Mitchell",
-    publishedDate: "2024-12-20",
-    readTime: "6 min read",
-    slug: "dog-friendly-dining-guide"
-  },
-  {
-    id: "student-guide-cambridge-university",
-    title: "A Cambridge Student's Guide to The White Horse Waterbeach",
-    excerpt: "Discover why The White Horse Waterbeach has become the go-to destination for Cambridge University students seeking affordable quality dining, unique experiences, and the perfect study break.",
-    image: Images.blog.studentGuide,
-    category: "Student Life",
-    author: "James Mitchell",
-    publishedDate: "2024-11-20",
-    readTime: "7 min read",
-    slug: "student-guide-cambridge-university"
-  },
-  {
-    id: "perfect-sunday-roast-guide",
-    title: "Sunday Roast in Cambridge: Where to Go + Our Alternatives",
-    excerpt: "We don't currently serve a traditional Sunday roast. Explore Cambridge options and what to try at our thatched pub instead.",
-    image: Images.blog.sundayRoast,
-    category: "Food & Dining",
-    author: "The White Horse Team",
-    publishedDate: "2024-12-15",
-    readTime: "7 min read",
-    slug: "perfect-sunday-roast-guide"
-  },
-  {
-    id: "largest-thatched-pub-history",
-    title: "The Remarkable History of England's Largest Thatched Pub",
-    excerpt: "Journey through centuries of history at The White Horse Waterbeach, from its medieval origins to its current status as a unique dining destination.",
-    image: Images.blog.thatchedExterior,
-    category: "History & Heritage",
-    author: "Dr. Margaret Whitfield",
-    publishedDate: "2024-12-10",
-    readTime: "9 min read",
-    slug: "largest-thatched-pub-history"
-  },
-  {
-    id: "ultimate-sports-viewing-guide",
-    title: "The Ultimate Sports Viewing Experience at The White Horse Waterbeach",
-    excerpt: "Discover why The White Horse Waterbeach has become Cambridge's premier destination for watching live sports with unbeatable atmosphere and crystal-clear viewing.",
-    image: Images.blog.sportsViewing,
-    category: "Sports & Entertainment",
-    author: "Tom Richardson",
-    publishedDate: "2024-12-05",
-    readTime: "8 min read",
-    slug: "ultimate-sports-viewing-guide"
-  },
-  {
-    id: "local-suppliers-fresh-ingredients",
-    title: "Supporting Local: Our Commitment to Fresh Ingredients and Community Suppliers",
-    excerpt: "Discover how The White Horse Waterbeach's partnership with local suppliers creates exceptional flavors while supporting the Cambridgeshire community.",
-    image: Images.blog.localIngredients,
-    category: "Local Sourcing",
-    author: "Emma Sutton",
-    publishedDate: "2024-11-30",
-    readTime: "10 min read",
-    slug: "local-suppliers-fresh-ingredients"
-  },
-  {
-    id: "nepalese-cuisine-journey",
-    title: "The Journey of Nepalese Cuisine to Waterbeach Village",
-    excerpt: "Discover how authentic Nepalese flavors found their home in Cambridge's historic thatched pub, creating a unique dining experience.",
-    image: Images.blog.nepaleseHero,
-    category: "Cuisine",
-    author: "The White Horse Team",
-    publishedDate: "2024-08-15",
-    readTime: "5 min read",
-    slug: "nepalese-cuisine-journey"
-  }
-];
-
-const categories = [
-  { name: "All Posts", count: 9, slug: "all" },
-  { name: "Press & Media", count: 1, slug: "press-media" },
-  { name: "Food & Dining", count: 2, slug: "food-dining" },
-  { name: "Nepalese Cuisine", count: 2, slug: "nepalese-cuisine" },
-  { name: "Business Dining", count: 1, slug: "business-dining" },
-  { name: "Student Life", count: 1, slug: "student-life" },
-  { name: "History & Heritage", count: 1, slug: "history" },
-  { name: "Sports & Entertainment", count: 1, slug: "sports" },
-  { name: "Local Sourcing", count: 1, slug: "local-sourcing" },
-  { name: "Dog-Friendly", count: 1, slug: "dog-friendly" }
+const categories: any[] = [
+  { name: "All Posts", count: 0, slug: "all" },
 ];
 
 export default function BlogPage() {
@@ -172,14 +51,7 @@ export default function BlogPage() {
 
         {/* Main blog content with progressive disclosure */}
         <main className="space-y-0">
-          <FadeIn>
-            <section className="py-16 bg-white" aria-labelledby="featured-post-heading">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 id="featured-post-heading" className="text-3xl font-display font-bold text-brand-700 mb-8 text-center">Featured Story</h2>
-                <BlogFeatured post={featuredPost} />
-              </div>
-            </section>
-          </FadeIn>
+          {/* Featured section removed after post removals */}
 
           <FadeIn>
             <FilterableBlogSection posts={blogPosts} categories={categories} />

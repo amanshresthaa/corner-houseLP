@@ -16,7 +16,6 @@ export default async function EventsPage() {
   const contact = getContactInfo();
   const eventsEmail = contact.email.events ?? contact.email.primary;
   const enquireHref = contact.enquiryUrl || `mailto:${eventsEmail}`;
-  const downloadHref = "/wakes-menu";
   const content = await getContentSmart();
   const e = (content.pages as any)?.events || {};
   const hero = e.hero || {};
@@ -201,7 +200,6 @@ export default async function EventsPage() {
                   description="From celebrations and society socials to team gatherings — we’ve got flexible spaces, great food, and a friendly team to help plan it."
                   buttons={[
                     { text: 'Enquire About Private Events', href: enquireHref, variant: 'brand' },
-                    { text: 'Download Events Pack', href: downloadHref, variant: 'accent' },
                   ]}
                   noBackground
                 />

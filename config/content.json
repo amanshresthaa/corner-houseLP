@@ -113,6 +113,8 @@
         "viewMenu": "View Menu",
         "orderTakeaway": "Order Takeaway",
         "callNow": "Call Now",
+        "callToBook": "Call to Book",
+        "callTakeaway": "Call Takeaway",
         "getDirections": "Get Directions",
         "emailUs": "Email Us",
         "loadMore": "Load More",
@@ -179,6 +181,9 @@
         "message": "Enter your message",
         "modalContent": "Modal content goes here"
       }
+    },
+    "links": {
+      "takeaway": "https://whitehorsecb25.touchtakeaway.net/menu"
     },
     "accessibility": {
       "ariaLabels": {
@@ -978,6 +983,7 @@
             "Gift cards available"
           ],
           "ctas": {
+            "menuUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
             "callTel": "tel:+441223375578",
             "secondaryUrl": "https://lapeninns.com/gift-cards"
           },

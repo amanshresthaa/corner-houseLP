@@ -61,11 +61,12 @@ interface ClientHomeContentProps {
     };
   } | null;
   ariaLabels?: Record<string, string>;
+  links?: Record<string, string>;
 }
 
 const hasItems = <T,>(items?: T[] | null): items is T[] => Array.isArray(items) && items.length > 0;
 
-export default function ClientHomeContent({ sections, slideshow, ariaLabels }: ClientHomeContentProps) {
+export default function ClientHomeContent({ sections, slideshow, ariaLabels, links }: ClientHomeContentProps) {
   const quickLinks = hasItems(sections.quickLinks) ? sections.quickLinks : [];
   const pressTicker = sections.pressTicker && hasItems(sections.pressTicker.items)
     ? sections.pressTicker
@@ -117,6 +118,7 @@ export default function ClientHomeContent({ sections, slideshow, ariaLabels }: C
             settings={slideshow?.settings}
             regionLabel={ariaLabels?.slideshowRegion ?? slideshow?.settings?.regionLabel}
             sectionLabel={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel}
+            takeawayUrl={links?.takeaway}
           />
         </section>
 

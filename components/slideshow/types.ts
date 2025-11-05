@@ -23,6 +23,7 @@ export type Slide = {
     bookUrl?: string;
     callTel?: string;
     menuUrl?: string;
+    takeawayUrl?: string;
     secondaryUrl?: string;
   };
 };

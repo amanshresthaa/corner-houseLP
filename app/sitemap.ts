@@ -46,12 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const eventPages = [
     createEntry({ path: '/events', priority: 0.82, changeFrequency: 'weekly', lastModified: lastWeek }),
-    createEntry({
-      path: '/events/curry-and-carols',
-      priority: 0.88,
-      changeFrequency: 'weekly',
-      lastModified: currentDate,
-    }),
   ];
 
   const groupedEntries = [...corePages, ...eventPages];

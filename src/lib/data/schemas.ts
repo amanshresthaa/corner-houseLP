@@ -286,6 +286,7 @@ export const SlideCTASchema = z.object({
   bookUrl: z.string().optional(),
   callTel: z.string().optional(),
   menuUrl: z.string().optional(),
+  takeawayUrl: z.string().optional(),
   secondaryUrl: z.string().optional(),
 });
 
@@ -471,6 +472,7 @@ export const ContentSchema = z.object({
     }),
     navigation: NavigationSchema,
     ui: UISchema,
+    links: z.record(z.string(), z.string()).optional(),
     accessibility: AccessibilitySchema,
   }),
   pages: z.object({

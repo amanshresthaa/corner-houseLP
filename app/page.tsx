@@ -64,6 +64,7 @@ export default async function Page() {
     : null;
 
   const ariaLabels = content.global?.accessibility?.ariaLabels ?? {};
+  const links = (content.global as any)?.links ?? {};
   const schemaEntries = Array.isArray(homeContent.seo?.schemas) ? homeContent.seo?.schemas : [];
 
   return (
@@ -78,6 +79,7 @@ export default async function Page() {
         sections={sections}
         slideshow={slideshowContent}
         ariaLabels={ariaLabels}
+        links={links}
       />
     </>
   );
