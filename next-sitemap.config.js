@@ -13,7 +13,7 @@ module.exports = {
     "/apple-icon.png",
     "/favicon.ico",
     "/christmas-menu",
-    "/takeaway-menu",
+    "/takeaway",
     "/sitemap-*.xml",
     "/sitemap.xml",
   ],

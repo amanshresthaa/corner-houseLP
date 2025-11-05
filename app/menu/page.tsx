@@ -148,10 +148,10 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 				key: 'menu-cta-order',
 			},
 			{
-				text: 'View Takeaway Menu',
-				href: '/takeaway-menu',
+				text: 'Order Takeaway',
+				href: '/takeaway',
 				variant: 'crimson' as const,
-				key: 'menu-cta-takeaway-menu',
+				key: 'menu-cta-takeaway',
 			},
 		],
 	};

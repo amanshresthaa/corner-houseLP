@@ -6,6 +6,7 @@ import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Image from "next/image";
 import Link from "next/link";
 import contentConfig from '@/config/content.json';
+import siteConfig from '@/config';
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -29,10 +30,13 @@ export default function AboutPage() {
       {renderSchemaTags()}
       <SchemaInjector
         type="breadcrumb"
-        data={[
-          { name: "Home", url: "https://whitehorsepub.co/" },
-          { name: "About", url: "https://whitehorsepub.co/about" },
-        ]}
+        data={(() => {
+          const base = (process.env.NEXT_PUBLIC_SITE_URL || `https://${siteConfig.domainName}/`).replace(/\/$/, '/');
+          return [
+            { name: "Home", url: `${base}` },
+            { name: "About", url: `${base}about` },
+          ];
+        })()}
         page="about"
       />
 
@@ -68,7 +72,7 @@ function Hero() {
             {contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'}
           </Link>
           <Link
-            href="/takeaway-menu"
+            href="/takeaway"
             className="bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
           >
             {contentConfig.global?.ui?.buttons?.orderTakeaway || 'Order Takeaway'}
@@ -181,7 +185,7 @@ function WhatWeDo() {
     {
       title: "Takeaway",
       text: "Enjoy our Nepalese kitchen at home with a full takeaway menu.",
-      cta: { label: "Order Takeaway", href: "/takeaway-menu" },
+      cta: { label: "Order Takeaway", href: "/takeaway" },
     },
     {
       title: "Who we serve",

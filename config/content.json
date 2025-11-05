@@ -799,11 +799,11 @@
           "curry takeaway Cambridge",
           "01223 375578"
         ],
-        "canonicalUrlRelative": "/takeaway-menu",
+        "canonicalUrlRelative": "/takeaway",
         "openGraph": {
-          "title": "Download the The White Horse Waterbeach Takeaway Menu",
-          "description": "Access our latest takeaway menu and place your collection order direct with the The White Horse Waterbeach team.",
-          "url": "https://whitehorsepub.co/takeaway-menu"
+          "title": "Order Takeaway from The White Horse Waterbeach",
+          "description": "Order online for quick pickup or call us if you prefer.",
+          "url": "/takeaway"
         }
       }
     },
@@ -862,7 +862,7 @@
         },
         {
           "question": "Do you offer takeaway?",
-          "answer": "Yes, we offer takeaway for both our authentic Nepalese dishes and British pub classics. Call 01223 375578 to place your order."
+          "answer": "Yes! Order online for quick pickup 🥡 or call if you prefer."
         },
         {
           "question": "Is parking available?",
@@ -946,7 +946,7 @@
           "ctas": {
             "menuUrl": "/menu",
             "callTel": "tel:+441223375578",
-            "secondaryUrl": "/takeaway-menu"
+            "secondaryUrl": "/takeaway"
           }
         },
         {
@@ -975,8 +975,8 @@
           },
           "alt": "Bar counter with handpulls and warm lighting at The White Horse",
           "eyebrow": "Community Calendar",
-          "headline": "Live sports, quiz night and takeaway Fridays keep Waterbeach buzzing",
-          "copy": "Catch Premier League fixtures on Sky & TNT, tackle the Wednesday quiz or pick up Nepalese takeaway for the family every Friday night.",
+          "headline": "Live sport, quiz night & Friday takeaway",
+          "copy": "Order online 🥡 for Friday takeaway, or call if you'd like to chat.",
           "badges": [
             "Quiz night Wednesday",
             "Takeaway every Friday",

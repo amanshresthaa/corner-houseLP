@@ -3,9 +3,10 @@ import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/Moti
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import { getContentSmart } from '@/src/lib/data/server-loader';
 import Link from "@/lib/debugLink";
+import siteConfig from '@/config';
 import { getContactInfo } from "@/lib/restaurantData";
 
-const TAKEAWAY_MENU_PATH = "/takeaway-menu/the-white-horse-takeaway-menu.jpg";
+// Download asset removed; page now focuses on online ordering
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -14,22 +15,28 @@ export async function generateMetadata() {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
-    canonicalUrlRelative: seo.canonicalUrlRelative || '/takeaway-menu',
+    canonicalUrlRelative: seo.canonicalUrlRelative || '/takeaway',
     openGraph: seo.openGraph,
   });
 }
 
-export default function TakeawayMenuPage() {
+export default async function TakeawayMenuPage() {
   const contact = getContactInfo();
+  const content = await getContentSmart();
+  const links = (content.global as any)?.links || {};
+  const ui = (content.global as any)?.ui || {};
+  const orderHref = links?.takeaway as string | undefined;
+  const orderLabel = ui?.buttons?.orderTakeaway || 'Order Takeaway';
 
+  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || `https://${siteConfig.domainName}/`).replace(/\/$/, '/');
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "Menu",
       name: "The White Horse Waterbeach Takeaway Menu",
       description:
-        "Downloadable takeaway menu featuring Nepalese specialties and British pub classics from The White Horse Waterbeach.",
-      url: `https://whitehorsepub.co${TAKEAWAY_MENU_PATH}`,
+        "Takeaway menu featuring Nepalese specialties and British pub classics from The White Horse Waterbeach.",
+      url: orderHref || `${baseUrl}takeaway`,
       offers: {
         "@type": "Offer",
         priceCurrency: "GBP",
@@ -69,25 +76,28 @@ export default function TakeawayMenuPage() {
           </FadeIn>
           <FadeInUp>
             <h1 id="takeaway-menu-heading" className="text-3xl md:text-5xl font-display font-bold leading-tight">
-              Download the The White Horse Waterbeach Takeaway Menu
+              🥡 Order Takeaway from The White Horse Waterbeach
             </h1>
           </FadeInUp>
           <FadeInUp>
             <p className="text-lg md:text-xl text-neutral-100 max-w-3xl mx-auto leading-relaxed">
-              Explore Nepalese signatures and British pub favourites from the comfort of home. Download the PDF to browse dishes, note allergens, and call us to place your order for collection in Waterbeach.
+              Explore Nepalese signatures and British pub favourites from the comfort of home. 🥡 Order online for quick pickup, or call if you prefer.
             </p>
           </FadeInUp>
           <FadeInUp>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href={TAKEAWAY_MENU_PATH}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700 transition-colors duration-200"
-                aria-label="Download the takeaway menu"
-                download="the-white-horse-takeaway-menu.jpg"
-              >
-                <span aria-hidden="true" role="img">⬇️</span>
-                Download Menu
-              </a>
+              {orderHref && (
+                <a
+                  href={orderHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
+                  aria-label={orderLabel}
+                >
+                  <span aria-hidden="true" role="img">🥡</span>
+                  {orderLabel}
+                </a>
+              )}
               <MotionLinkButton
                 href={contact.phone.tel}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
@@ -98,11 +108,6 @@ export default function TakeawayMenuPage() {
               </MotionLinkButton>
             </div>
           </FadeInUp>
-          <FadeIn>
-            <p className="text-sm text-neutral-100/80">
-              PDF not downloading? Email <Link href={`mailto:${contact.email.primary}`} className="underline font-semibold">{contact.email.primary}</Link> and we&apos;ll send the latest copy.
-            </p>
-          </FadeIn>
         </div>
       </section>
 
@@ -123,7 +128,7 @@ export default function TakeawayMenuPage() {
               {[{
                 icon: "🕒",
                 title: "Order & collection times",
-                description: "Call ahead to confirm kitchen opening times— pickups are usually ready within 25 minutes.",
+                description: "Order online to see available times — pickups are usually ready within ~25 minutes.",
               }, {
                 icon: "🚗",
                 title: "Easy parking outside",
@@ -131,7 +136,7 @@ export default function TakeawayMenuPage() {
               }, {
                 icon: "⚠️",
                 title: "Allergens & dietary notes",
-                description: "All dishes are labelled in the PDF. Let us know about allergies when you call so the kitchen can advise on safe options.",
+                description: "All dishes are clearly labelled online. Let us know about allergies when you order so the kitchen can advise on safe options.",
               }].map(card => (
                 <article
                   key={card.title}
