@@ -593,6 +593,88 @@ details[open] summary svg {
 @media (min-width: 1920px) { :root { --content-max: 80ch; --page-max: 1840px; } }
 @media (min-width: 2560px) { :root { --content-max: 82ch; --page-max: 2000px; } }
 
+/* Blueprint button utility — extends DaisyUI .btn */
+@layer components {
+  .blueprint-btn {
+    position: relative;
+    color: #fff;
+    /* Use project palette; plain background */
+    background-color: var(--color-brand-600);
+    border: none;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-brand-200) 30%, transparent), 0 4px 10px rgba(0,0,0,0.08);
+    overflow: visible; /* allow corner note to straddle edge visibly */
+  }
+  .blueprint-btn:hover { filter: saturate(1.08) brightness(1.02); }
+  .blueprint-btn:active { filter: saturate(1.0) brightness(0.98); }
+  .blueprint-btn:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-brand-300) 55%, transparent);
+    outline-offset: 2px;
+  }
+  /* Corner ticks using four pseudo elements (two here, two on helper element) */
+  .blueprint-btn::before,
+  .blueprint-btn::after {
+    content: "";
+    position: absolute;
+    width: 12px; height: 12px;
+    border-color: rgba(255,255,255,0.8);
+    pointer-events: none;
+  }
+  .blueprint-btn::before { /* top-left */
+    top: 6px; left: 6px;
+    border-left: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    color: rgba(255,255,255,0.8);
+  }
+  .blueprint-btn::after { /* bottom-right */
+    right: 6px; bottom: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    color: rgba(255,255,255,0.8);
+  }
+  /* Helper element to render the other two ticks */
+  .blueprint-corners::before,
+  .blueprint-corners::after {
+    content: "";
+    position: absolute;
+    width: 12px; height: 12px;
+    border-color: rgba(255,255,255,0.8);
+    pointer-events: none;
+  }
+  .blueprint-corners::before { /* top-right */
+    top: 6px; right: 6px;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    color: rgba(255,255,255,0.8);
+  }
+  .blueprint-corners::after { /* bottom-left */
+    left: 6px; bottom: 6px;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    color: rgba(255,255,255,0.8);
+  }
+  /* Small top-right note */
+  .blueprint-corner-note {
+    position: absolute;
+    top: 0; /* straddle the top edge */
+    right: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    /* Pink-like palette from repo (badge for contrast) */
+    background-color: var(--color-secondary-500);
+    color: var(--color-neutral-50);
+    font-weight: 700;
+    padding: 0.15rem 0.4rem;
+    border-radius: 9999px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    outline: 1px solid color-mix(in srgb, var(--color-secondary-300) 60%, transparent);
+    text-transform: none; /* keep case */
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    transform: translateY(-50%); /* half inside, half outside the top border */
+    }
+}
+
 /* Print optimization */
 @media print {
   * { background: transparent !important; color: black !important; box-shadow: none !important; text-shadow: none !important; }

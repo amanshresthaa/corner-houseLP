@@ -144,26 +144,51 @@ export function NavLinks({
         </span>
       )}
       <ul className={listClass}>
-        {links.map((link) => (
-          <li key={link.key}>
-            <Link
-              href={link.href}
-              onClick={onNavigate}
-              className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
-            >
-              {link.isSeasonal ? (
-                <>
-                  <span aria-hidden="true" className="text-lg leading-none">
-                    🎄
-                  </span>
-                  <span className="font-semibold">{link.label}</span>
-                </>
+        {links.map((link) => {
+          const isOrderTakeaway =
+            /order\s*takeaway/i.test(link.label) ||
+            (typeof link.href === 'string' && /touchtakeaway\./i.test(link.href));
+
+          return (
+            <li key={link.key}>
+              {isOrderTakeaway ? (
+                <Link
+                  href={link.href}
+                  onClick={onNavigate}
+                  className={
+                    isVertical
+                      ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
+                      : 'btn blueprint-btn relative text-white font-semibold'
+                  }
+                  aria-label={`${link.label} – 10% + free delivery*`}
+                >
+                  {/* corner helpers */}
+                  <span aria-hidden className="blueprint-corners" />
+                  <span className="relative z-[1]">{link.label}</span>
+                  {/* top-right note (hidden on very small widths) */}
+                  <span aria-hidden className="blueprint-corner-note hidden xs:block">10% + free delivery*</span>
+                </Link>
               ) : (
-                link.label
+                <Link
+                  href={link.href}
+                  onClick={onNavigate}
+                  className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
+                >
+                  {link.isSeasonal ? (
+                    <>
+                      <span aria-hidden="true" className="text-lg leading-none">
+                        🎄
+                      </span>
+                      <span className="font-semibold">{link.label}</span>
+                    </>
+                  ) : (
+                    link.label
+                  )}
+                </Link>
               )}
-            </Link>
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
