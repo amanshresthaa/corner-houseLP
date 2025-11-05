@@ -22,7 +22,7 @@
 
 ## Recommendations
 
-- Update all Events page CTAs related to “Book” and “Enquire” to use `/book-a-table`.
+- Update Events page “Book for Big Games” CTAs to `/book-a-table`.
+- Update “Enquire About Private Events” to deep-link the Contact page: `/contact#contact-info-heading`.
 - Do not change generic mailto links that are not booking intentions (e.g., “Email the team”).
 - Verify via Chrome DevTools that CTAs navigate correctly and no console errors occur.
-

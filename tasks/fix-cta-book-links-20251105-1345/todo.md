@@ -8,7 +8,7 @@
 
 - [x] Update events hero “Book for Big Games” to `/book-a-table`
 - [x] Update banner “Book for Big Games” to `/book-a-table`
-- [x] Update “Enquire About Private Events” to `/book-a-table`
+- [x] Update “Enquire About Private Events” to `/contact#contact-info-heading`
 - [x] Grep for any other booking/enquiry CTAs on events page
 
 ## QA

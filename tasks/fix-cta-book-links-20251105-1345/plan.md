@@ -2,12 +2,12 @@
 
 ## Objective
 
-Ensure all booking-intent CTAs (Book, Enquire about private events) navigate to `/book-a-table`.
+Ensure all booking-intent CTAs for “Book” navigate to `/book-a-table`, and the “Enquire About Private Events” CTA navigates to the relevant section on the Contact page.
 
 ## Success Criteria
 
 - [ ] “Book for Big Games” (events hero + banner) go to `/book-a-table`.
-- [ ] “Enquire About Private Events” goes to `/book-a-table`.
+- [ ] “Enquire About Private Events” goes to `/contact#contact-info-heading`.
 - [ ] No regressions on other CTAs.
 
 ## Architecture
@@ -19,11 +19,11 @@ Ensure all booking-intent CTAs (Book, Enquire about private events) navigate to 
 
 - Events page hero button → `/book-a-table`.
 - Events page banner button → `/book-a-table`.
-- Private events CTA button → `/book-a-table`.
+- Private events CTA button → `/contact#contact-info-heading` (relevant section on Contact page).
 
 ## Data Flow
 
-- Static link to `/book-a-table` for reliable navigation and sitemap alignment.
+- Static link to `/book-a-table` for booking flows; static deep-link `/contact#contact-info-heading` for private events enquiries.
 
 ## Testing Strategy
 
@@ -32,9 +32,8 @@ Ensure all booking-intent CTAs (Book, Enquire about private events) navigate to 
 
 ## Edge Cases
 
-- If `contact.enquiryUrl` changes, events page still uses `/book-a-table`.
+- If `contact.enquiryUrl` changes, events page CTAs remain stable: booking → `/book-a-table`; private events → `/contact#contact-info-heading`.
 
 ## Rollout
 
 - Direct patch; no feature flags required.
-
