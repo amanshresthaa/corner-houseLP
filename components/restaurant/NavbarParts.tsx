@@ -146,45 +146,82 @@ export function NavLinks({
       <ul className={listClass}>
         {links.map((link) => {
           const isOrderTakeaway =
-            /order\s*takeaway/i.test(link.label) ||
+            /order\s*(takeaway|online)/i.test(link.label) ||
             (typeof link.href === 'string' && /touchtakeaway\./i.test(link.href));
+
+          const hrefStr = typeof link.href === 'string' ? link.href : undefined;
+          const isExternal = !!hrefStr && /^https?:\/\//i.test(hrefStr);
 
           return (
             <li key={link.key}>
               {isOrderTakeaway ? (
-                <Link
-                  href={link.href}
-                  onClick={onNavigate}
-                  className={
-                    isVertical
-                      ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
-                      : 'btn blueprint-btn relative text-white font-semibold'
-                  }
-                  aria-label={`${link.label} – 10% + free delivery*`}
-                >
-                  {/* corner helpers */}
-                  <span aria-hidden className="blueprint-corners" />
-                  <span className="relative z-[1]">{link.label}</span>
-                  {/* top-right note (hidden on very small widths) */}
-                  <span aria-hidden className="blueprint-corner-note hidden xs:block">10% + free delivery*</span>
-                </Link>
+                isExternal ? (
+                  <a
+                    href={hrefStr}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={onNavigate}
+                    className={
+                      isVertical
+                        ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
+                        : 'btn blueprint-btn relative text-white font-semibold'
+                    }
+                    aria-label={`${link.label} – delivery available (free up to 3 miles), 10% off collection`}
+                  >
+                    <span aria-hidden className="blueprint-corners" />
+                    <span className="relative z-[1]">{link.label}</span>
+                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (≤3mi free)</span>
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={onNavigate}
+                    className={
+                      isVertical
+                        ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
+                        : 'btn blueprint-btn relative text-white font-semibold'
+                    }
+                    aria-label={`${link.label} – delivery available (free up to 3 miles), 10% off collection`}
+                  >
+                    <span aria-hidden className="blueprint-corners" />
+                    <span className="relative z-[1]">{link.label}</span>
+                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (≤3mi free)</span>
+                  </Link>
+                )
               ) : (
-                <Link
-                  href={link.href}
-                  onClick={onNavigate}
-                  className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
-                >
-                  {link.isSeasonal ? (
-                    <>
-                      <span aria-hidden="true" className="text-lg leading-none">
-                        🎄
-                      </span>
-                      <span className="font-semibold">{link.label}</span>
-                    </>
-                  ) : (
-                    link.label
-                  )}
-                </Link>
+                isExternal ? (
+                  <a
+                    href={hrefStr}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={onNavigate}
+                    className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
+                  >
+                    {link.isSeasonal ? (
+                      <>
+                        <span aria-hidden="true" className="text-lg leading-none">🎄</span>
+                        <span className="font-semibold">{link.label}</span>
+                      </>
+                    ) : (
+                      link.label
+                    )}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={onNavigate}
+                    className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
+                  >
+                    {link.isSeasonal ? (
+                      <>
+                        <span aria-hidden="true" className="text-lg leading-none">🎄</span>
+                        <span className="font-semibold">{link.label}</span>
+                      </>
+                    ) : (
+                      link.label
+                    )}
+                  </Link>
+                )
               )}
             </li>
           );

@@ -28,7 +28,7 @@ export default function TakeawayBanner() {
           <a
             href={phoneHref}
             className="inline-flex items-center gap-2 rounded-full bg-brand-900 px-9 py-4 text-lg font-semibold text-white shadow-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100"
-            aria-label={`Call to order takeaway at ${phoneDisplay}`}
+            aria-label={`Call to order at ${phoneDisplay}`}
           >
             <EmojiIcon emoji="📞" className="text-xl" />
             Call to order: {phoneDisplay}

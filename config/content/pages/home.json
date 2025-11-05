@@ -2,7 +2,7 @@
   "hero": {
     "title": "Reborn White Horse Waterbeach \u2013 Nepalese soul, village heart",
     "subtitle": "England\u2019s largest thatched pub reopened February 2025 with Himalayan cooking, Sky Sports and garden cabins for every gathering.",
-    "description": "Call or email to reserve for Nepalese feasts, Sunday roasts or takeaway nights opposite Waterbeach village green.",
+    "description": "Call or email to reserve for Nepalese feasts, Sunday roasts or collection & delivery nights opposite Waterbeach village green.",
     "cta": {
       "primary": "Call +44 1223 375578",
       "secondary": "View Menu",
@@ -29,7 +29,7 @@
         {
           "icon": "\ud83c\udf89",
           "title": "Weekly traditions",
-          "description": "Sky & TNT Sports and takeaway Fridays"
+          "description": "Sky & TNT Sports and collection & delivery all day"
         },
         {
           "icon": "\ud83d\udc3e",
@@ -58,8 +58,8 @@
         "linkText": "See events \u2192"
       },
       {
-        "title": "Menus & Takeaway",
-        "description": "Browse Nepalese signatures, Sunday masala roasts and Friday takeaway favourites.",
+        "title": "Menus, Collection & Delivery",
+        "description": "Browse Nepalese signatures, Sunday masala roasts and collection & delivery favourites.",
         "link": "/menu",
         "linkText": "Explore menus \u2192"
       },
@@ -72,7 +72,7 @@
     ],
     "cta": {
       "headline": "Ready to gather at Waterbeach\u2019s thatched pub?",
-      "description": "Call or email for table bookings, group enquiries or takeaway collections \u2013 we\u2019ll look after the details.",
+      "description": "Call or email for table bookings, group enquiries or collection & delivery \u2013 we\u2019ll look after the details.",
       "buttons": [
       {
         "text": "Call +44 1223 375578",

@@ -58,7 +58,7 @@ function Hero() {
     <section className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-10 md:py-16" aria-labelledby="about-hero">
       <div className="absolute inset-0 bg-black/10" />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 id="about-hero" className="text-2xl md:text-3xl font-display font-bold text-white mb-3 leading-tight">
+        <h1 id="about-hero" className="h2 text-white mb-3 leading-tight">
           A village pub with Nepalese soul
         </h1>
         <p className="text-base md:text-lg text-brand-100 mb-6 max-w-2xl mx-auto leading-relaxed">
@@ -75,7 +75,7 @@ function Hero() {
             href="/takeaway"
             className="bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
           >
-            {contentConfig.global?.ui?.buttons?.orderTakeaway || 'Order Takeaway'}
+            {contentConfig.global?.ui?.buttons?.orderTakeaway || 'Order Online'}
           </Link>
         </div>
       </div>
@@ -88,7 +88,7 @@ function OriginStory() {
   return (
     <section className="py-14" aria-labelledby="origin">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 id="origin" className="text-2xl font-display font-bold text-stout-700">
+        <h2 id="origin" className="h3 text-stout-700">
           Our origin
         </h2>
         <div className="mt-6 grid gap-8 lg:grid-cols-12 lg:items-start">
@@ -147,13 +147,13 @@ function MissionVisionValues() {
   return (
     <section className="bg-brand-900 text-neutral-50 py-12" aria-labelledby="mvv">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 id="mvv" className="text-2xl font-display font-bold">
+        <h2 id="mvv" className="h3">
           Mission, vision & values
         </h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((c, i) => (
             <article key={i} className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg">
-              <h3 className="text-lg font-semibold text-white">{c.title}</h3>
+              <h3 className="h5 text-white font-semibold">{c.title}</h3>
               {c.text ? (
                 <p className="text-neutral-200 mt-1">{c.text}</p>
               ) : (
@@ -183,9 +183,9 @@ function WhatWeDo() {
       cta: { label: "View Menu", href: "/menu" },
     },
     {
-      title: "Takeaway",
-      text: "Enjoy our Nepalese kitchen at home with a full takeaway menu.",
-      cta: { label: "Order Takeaway", href: "/takeaway" },
+      title: "Collection & Delivery",
+      text: "Enjoy our Nepalese kitchen at home  order online for collection or delivery.",
+      cta: { label: "Order Online", href: "/takeaway" },
     },
     {
       title: "Who we serve",
@@ -197,14 +197,14 @@ function WhatWeDo() {
   return (
     <section className="py-14 bg-neutral-50" aria-labelledby="what-we-do">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 id="what-we-do" className="text-2xl font-display font-bold text-stout-700">
+        <h2 id="what-we-do" className="h3 text-stout-700">
           What we do
         </h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it, i) => (
             <article key={i} className="card bg-white shadow-lg ring-1 ring-brand-100">
               <div className="card-body">
-                <h3 className="card-title text-lg">{it.title}</h3>
+                <h3 className="card-title h5">{it.title}</h3>
                 <p className="text-brand-800">{it.text}</p>
                 <Link href={it.cta.href} className="btn btn-sm mt-3 bg-brand-700 text-white hover:bg-brand-600">
                   {it.cta.label}
@@ -245,7 +245,7 @@ function ProofCredibility() {
   return (
     <section className="py-14 bg-brand-900 text-neutral-50" aria-labelledby="proof">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 id="proof" className="text-2xl font-display font-bold">
+        <h2 id="proof" className="h3">
           Proof & credibility
         </h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -273,7 +273,7 @@ function CallToAction() {
     <section className="bg-brand-100 py-14" aria-labelledby="about-cta">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl border-2 border-brand-700 bg-gradient-to-r from-brand-600 to-brand-800 p-8 text-center text-white shadow-xl">
-          <h2 id="about-cta" className="text-3xl md:text-4xl font-display font-bold drop-shadow">
+          <h2 id="about-cta" className="h2 drop-shadow">
             Ready to visit The White Horse?
           </h2>
           <p className="mt-3 text-white/95">Book a table, or pop in for a pint and a bite.</p>

@@ -45,10 +45,10 @@ export default async function EventsPage() {
           <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 md:py-16">
             <div className="space-y-4 text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/90">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 eyebrow text-white/90">
                 {hero.badgeLabel || 'What\’s On'}
               </span>
-              <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight">
+              <h1 className="h2 tracking-tight">
                 {hero.title || 'Events & What\’s On'}
               </h1>
               <p className="max-w-2xl mx-auto text-base md:text-lg text-white/90 leading-relaxed">
@@ -104,7 +104,7 @@ export default async function EventsPage() {
                     <span className="badge badge-outline">Sky Sports</span>
                     <span className="badge badge-outline">TNT Sports</span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-display font-bold">
+                  <h2 className="h3">
                     Big matches. Bigger atmosphere.
                   </h2>
                   <p className="text-white/90">
@@ -130,7 +130,7 @@ export default async function EventsPage() {
                 </div>
               </div>
               <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
-                <span className="text-9xl md:text-[12rem] lg:text-[16rem] font-extrabold tracking-tighter text-white/10 select-none">
+                <span className="hero font-extrabold tracking-tighter text-white/10 select-none">
                   LIVE
                 </span>
               </div>
@@ -145,7 +145,7 @@ export default async function EventsPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 grid gap-10 lg:grid-cols-2">
             {/* Left column */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-display font-bold">
+              <h2 className="h3">
                 Match Day at The White Horse
               </h2>
               <p className="mt-3 text-white/80">
@@ -165,7 +165,7 @@ export default async function EventsPage() {
             </div>
             {/* Right column */}
             <div className="relative overflow-hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-md text-brand-900">
-              <div aria-hidden="true" className="absolute -right-4 -top-6 text-[10rem] opacity-10 select-none">📺</div>
+              <div aria-hidden="true" className="absolute -right-4 -top-6 hero opacity-10 select-none">📺</div>
               <div className="relative space-y-4">
                 <div className="inline-flex items-center gap-2 rounded-md border border-brand-100 bg-neutral-50 px-3 py-1">
                   <span aria-hidden="true">📺</span>

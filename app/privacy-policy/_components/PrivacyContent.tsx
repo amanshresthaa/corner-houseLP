@@ -70,7 +70,7 @@ export default function PrivacyContent() {
         
         return (
           <section key={sectionKey}>
-            <h2 className="text-xl font-bold mt-6">
+            <h2 className="h4 font-bold mt-6">
               {index + 1}. {section.title}
             </h2>
             {section.intro && (

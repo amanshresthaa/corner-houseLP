@@ -86,7 +86,7 @@ const Testimonials3 = () => {
       <div className="py-24 px-8 max-w-7xl mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <div className="mb-8">
-            <h2 className="sm:text-5xl text-4xl font-extrabold text-brand-700 font-display">
+            <h2 className="h2 text-brand-700">
               212 makers are already shipping faster!
             </h2>
           </div>

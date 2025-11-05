@@ -432,6 +432,22 @@ progress::-webkit-progress-value {
 }
 
 @layer utilities {
+  /* Semantic typography utilities, mapped to fluid tokens */
+  .h1 { @apply text-fluid-h1 font-display font-bold; }
+  .h2 { @apply text-fluid-h2 font-display font-bold; }
+  .h3 { @apply text-fluid-h3 font-display font-semibold; }
+  .h4 { @apply text-fluid-h4 font-display font-semibold; }
+  .h5 { @apply text-fluid-h5 font-display font-medium; }
+  .h6 { @apply text-fluid-h6 font-display font-medium; }
+
+  .lead { @apply text-fluid-lead; }
+  .lead-subtle { @apply text-fluid-lead text-foreground-subtle; }
+  .eyebrow { @apply text-fluid-eyebrow font-semibold uppercase tracking-[0.28em]; }
+  .meta { @apply text-meta text-foreground-subtle; }
+  .hero { @apply text-fluid-hero font-display font-extrabold tracking-tight; }
+
+  /* Back-compat helpers to normalize small badges */
+  .badge-text { @apply text-xs md:text-sm; }
   /* Backdrop blur utilities */
   .backdrop-blur-xs {
     backdrop-filter: blur(2px);

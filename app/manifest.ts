@@ -60,7 +60,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'The White Horse Restaurant - Authentic Nepalese Cuisine',
     short_name: 'The White Horse',
     description:
-      'Authentic Nepalese cuisine and traditional pub classics in Waterbeach, Cambridge. Book a table, order takeaway, or explore our award-winning menu.',
+      'Authentic Nepalese cuisine and traditional pub classics in Waterbeach, Cambridge. Book a table, order online, or explore our award-winning menu.',
     start_url: '/',
     display: 'standalone',
     theme_color: light.primaryAccent,

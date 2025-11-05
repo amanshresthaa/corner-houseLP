@@ -28,6 +28,17 @@ const nextConfig = {
     config.ignoreWarnings = [
       { module: /node_modules/, message: /punycode/ },
     ];
+    // Ensure server chunk files resolve from the correct folder
+    if (isServer && !dev) {
+      // Next.js normally emits server chunks to `.next/server/chunks/`
+      // Make sure the runtime points there by setting the filename template
+      config.output = {
+        ...config.output,
+        chunkFilename: 'chunks/[id].js',
+        hotUpdateChunkFilename: 'chunks/[id].hot-update.js',
+      };
+    }
+
     // Enhanced code splitting configuration
     if (!isServer && !dev) {
       config.optimization.splitChunks = {

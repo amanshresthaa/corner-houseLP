@@ -29,6 +29,53 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        // Fluid, semantic tokens mapped to existing globals in app/globals.css
+        'fluid-base': [
+          'clamp(0.9375rem, 0.85rem + 0.4vw, 1.0625rem)',
+          { lineHeight: 'var(--lh-body)' }
+        ],
+        'fluid-h1': [
+          'clamp(1.75rem, 4vw, 3.5rem)',
+          { lineHeight: '1.15' }
+        ],
+        'fluid-h2': [
+          'clamp(1.5rem, 3.5vw, 2.75rem)',
+          { lineHeight: '1.2' }
+        ],
+        'fluid-h3': [
+          'clamp(1.25rem, 2.8vw, 2rem)',
+          { lineHeight: '1.25' }
+        ],
+        'fluid-h4': [
+          'clamp(1.125rem, 2.2vw, 1.5rem)',
+          { lineHeight: '1.3' }
+        ],
+        'fluid-h5': [
+          'clamp(1rem, 1.8vw, 1.25rem)',
+          { lineHeight: '1.35' }
+        ],
+        'fluid-h6': [
+          'clamp(0.95rem, 1.4vw, 1.125rem)',
+          { lineHeight: '1.4' }
+        ],
+        'fluid-lead': [
+          'clamp(1.05rem, 2.4vw, 1.45rem)',
+          { lineHeight: '1.6' }
+        ],
+        'fluid-eyebrow': [
+          'clamp(0.75rem, 1.6vw, 0.9375rem)',
+          { letterSpacing: '0.28em' }
+        ],
+        'fluid-hero': [
+          'clamp(2.25rem, 8vw, 6rem)',
+          { lineHeight: '1.05' }
+        ],
+        'meta': [
+          'clamp(0.75rem, 1.2vw, 0.875rem)',
+          { lineHeight: '1.4' }
+        ],
+      },
       // Additional fine‑grained breakpoints (preserve Tailwind defaults)
       screens: {
         xxs: '320px',   // Smallest phones

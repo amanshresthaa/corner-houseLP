@@ -10,7 +10,7 @@ export default function LargeGroupsCard({ href }: Props) {
   return (
     <div className="card border border-neutral-100 bg-white shadow-lg h-full">
       <div className="card-body space-y-3">
-        <h3 className="text-lg font-semibold text-brand-800">Contact the Team</h3>
+        <h3 className="h5 text-brand-800 font-semibold">Contact the Team</h3>
         <p className="text-sm text-neutral-600">
           Questions about a booking, accessibility, allergies, or special requests? Get in touch and we’ll help plan your visit.
         </p>

@@ -196,7 +196,7 @@ const FALLBACK_HOURS: DetailedHours = {
   display: {
     kitchen: {
       weekdays: 'Mon-Thu: Lunch 12:00-15:00 • Dinner 17:00-22:00',
-      friday: 'Fri: Kitchen 12:00-22:00 (takeaway available)',
+      friday: 'Fri: Kitchen 12:00-22:00',
       saturday: 'Sat: Kitchen 12:00-22:00',
       sunday: 'Sun: Brunch 10:00-12:00 • Roasts to 16:00 • Curry evening',
     },
@@ -209,7 +209,7 @@ const FALLBACK_HOURS: DetailedHours = {
   },
   notes: [
     'Live sports shown on Sky & TNT.',
-    'Takeaway collection available on Fridays.',
+    'Collection & delivery available daily.',
     'Kitchen closes 15 minutes before listed times.',
   ],
   timezone: 'Europe/London',

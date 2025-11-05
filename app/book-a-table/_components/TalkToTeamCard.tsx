@@ -10,7 +10,7 @@ export default function TalkToTeamCard({ telHref, displayNumber }: Props) {
   return (
     <div className="card border border-neutral-100 bg-white shadow-lg h-full">
       <div className="card-body space-y-2">
-        <h3 className="text-lg font-semibold text-brand-800">Talk to the Team</h3>
+        <h3 className="h5 text-brand-800 font-semibold">Talk to the Team</h3>
         <p className="text-sm text-neutral-600">Have questions before booking? Give us a quick call.</p>
         <a
           href={telHref}
@@ -22,4 +22,3 @@ export default function TalkToTeamCard({ telHref, displayNumber }: Props) {
     </div>
   );
 }
-

@@ -43,7 +43,7 @@ export default function MenuHero({ hero: heroFromProps }: MenuHeroProps) {
     <section className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-10 md:py-16">
       <div className="absolute inset-0 bg-black/10"></div>
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-2xl md:text-3xl font-display font-bold text-white mb-3 leading-tight">{hero.title}</h1>
+        <h1 className="h2 text-white mb-3 leading-tight">{hero.title}</h1>
         <p className="text-base md:text-lg text-brand-100 mb-6 max-w-2xl mx-auto leading-relaxed">{hero.subtitle}</p>
         <div className="flex flex-wrap justify-center gap-3">
           <a

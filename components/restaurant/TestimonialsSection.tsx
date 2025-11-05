@@ -196,7 +196,7 @@ const TestimonialsSection: React.FC = () => {
             </p>
             <div className="flex items-center justify-center gap-4 md:gap-6 mt-2 md:mt-0 flex-wrap w-full">
               <a 
-                href="https://www.google.com/maps/search/?api=1&query=The+White+Horse+Waterbeach"
+                href="https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
@@ -214,7 +214,7 @@ const TestimonialsSection: React.FC = () => {
               </div>
               
               <a 
-                href="https://www.tripadvisor.co.uk/Search?q=The%20White%20Horse%20Waterbeach"
+                href="https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
@@ -226,6 +226,68 @@ const TestimonialsSection: React.FC = () => {
                 <span className="text-sm text-neutral-600 ml-2">(400+)</span>
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* SEO-friendly review snippets */}
+        <div className="mt-10 grid gap-6 rounded-2xl border border-brand-100 bg-white p-6 shadow-xl md:grid-cols-3">
+          <div>
+            <h3 className="mb-2 font-display text-xl font-bold text-stout-700">Overall Experience</h3>
+            <p className="text-brand-700">
+              The White Horse in Waterbeach is praised as an
+              <strong className="font-semibold"> excellent pub</strong> with
+              <strong className="font-semibold"> fantastic food, great value, and quick service</strong>.
+              Reviewers highlight the <strong className="font-semibold">nice atmosphere</strong> and
+              <strong className="font-semibold"> reasonable pricing</strong>, making it a must-visit for locals and
+              travellers passing through.
+            </p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-display text-xl font-bold text-stout-700">Food &amp; Drink</h3>
+            <p className="text-brand-700">
+              Guests consistently rave about the <strong className="font-semibold">absolutely amazing</strong> and
+              <strong className="font-semibold"> yummy food</strong>. The pub offers a unique blend of
+              traditional pub classics and authentic <strong className="font-semibold">Nepalese food Cambridge</strong>
+              diners seek out — dishes are often described as <strong className="font-semibold">tasty</strong> and
+              <strong className="font-semibold"> beautifully presented</strong>.
+            </p>
+          </div>
+          <div>
+            <h3 className="mb-2 font-display text-xl font-bold text-stout-700">Service &amp; Atmosphere</h3>
+            <p className="text-brand-700">
+              Staff are described as <strong className="font-semibold">very attentive</strong>,
+              <strong className="font-semibold"> friendly</strong>, and providing <strong className="font-semibold">excellent service</strong>
+              with <strong className="font-semibold">no long wait</strong>. A relaxed setting that’s
+              <strong className="font-semibold"> dog-friendly pub</strong> territory, good for children, with live music and a
+              <strong className="font-semibold"> pub with outdoor seating</strong> feel thanks to the spacious garden.
+            </p>
+          </div>
+        </div>
+
+        {/* From Google Reviews (static highlights) */}
+        <div className="mt-8 rounded-2xl border border-brand-100 bg-white p-6 shadow-xl">
+          <div className="mb-4 flex items-center justify-between">
+            <h3 className="font-display text-xl font-bold text-stout-700">From Google Reviews</h3>
+            <a
+              href="https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+              aria-label="Open The White Horse on Google Maps to read more reviews"
+            >
+              Read more on Google
+            </a>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <blockquote className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-brand-800">
+              “Excellent pub, very reasonable pricing. The staff are very attentive and look after you while you're there. The food is absolutely amazing and I highly recommend dining here...”
+            </blockquote>
+            <blockquote className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-brand-800">
+              “Yummy food, friendly staff, no long wait. Doggo friendly. Lovely way to spend Mothers Day!”
+            </blockquote>
+            <blockquote className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-brand-800">
+              “Very nice restaurant to stop and have food. Excellent service and food was amazing!”
+            </blockquote>
           </div>
         </div>
 

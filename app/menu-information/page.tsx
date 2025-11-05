@@ -469,7 +469,7 @@ export default function MenuInformationPage() {
           <div className="absolute inset-0 bg-black/10"></div>
           <FadeIn>
             <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h1 id="menu-info-hero-heading" className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
+              <h1 id="menu-info-hero-heading" className="h2 text-white mb-4 leading-tight">
                 Menu Information & Dietary Requirements
               </h1>
               <p className="text-lg md:text-xl text-brand-100 max-w-3xl mx-auto leading-relaxed mb-8">
@@ -541,7 +541,7 @@ export default function MenuInformationPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 12.5c-.77.833.192 2.5 1.732 2.5z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">Allergen Safety</h3>
+                  <h3 className="h5 text-neutral-900 mb-2 font-semibold">Allergen Safety</h3>
                   <p className="text-sm text-neutral-600">14 major allergens clearly identified and cross-contamination prevention protocols</p>
                 </div>
                 <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 text-center">
@@ -550,7 +550,7 @@ export default function MenuInformationPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">Dietary Options</h3>
+                  <h3 className="h5 text-neutral-900 mb-2 font-semibold">Dietary Options</h3>
                   <p className="text-sm text-neutral-600">Vegetarian, vegan, gluten-free, and religious dietary requirements accommodated</p>
                 </div>
                 <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 text-center">
@@ -559,7 +559,7 @@ export default function MenuInformationPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">Legal Compliance</h3>
+                  <h3 className="h5 text-neutral-900 mb-2 font-semibold">Legal Compliance</h3>
                   <p className="text-sm text-neutral-600">Full compliance with UK Food Information Regulations and Natasha's Law</p>
                 </div>
               </div>
@@ -572,7 +572,7 @@ export default function MenuInformationPage() {
               {/* Contact Information */}
               <div className="mt-12 bg-brand-50 rounded-lg p-8">
                 <div className="text-center mb-6">
-                  <h2 className="text-2xl font-display font-bold text-brand-700 mb-2">
+                  <h2 className="h3 text-brand-700 mb-2">
                     Still Have Questions?
                   </h2>
                   <p className="text-neutral-700">

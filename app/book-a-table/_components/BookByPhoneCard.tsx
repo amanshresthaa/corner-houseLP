@@ -12,7 +12,7 @@ export default function BookByPhoneCard({ telHref, displayNumber, email }: Props
     <div className="card h-full border border-neutral-100 bg-white shadow-xl shadow-brand-900/10">
       <div className="card-body h-full flex flex-col space-y-6">
         <div>
-          <h2 className="text-2xl font-display font-semibold text-brand-800">Book by Phone</h2>
+          <h2 className="h3 text-brand-800 font-semibold">Book by Phone</h2>
           <p className="mt-2 text-sm text-neutral-600 sm:text-base">
             We’re currently taking reservations by phone. Call us and we’ll confirm your booking straight away during opening hours.
           </p>

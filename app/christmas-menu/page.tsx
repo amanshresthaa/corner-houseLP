@@ -376,7 +376,7 @@ export default async function ChristmasMenuPage() {
               </div>
             </FadeIn>
             <FadeInUp>
-              <h1 id="christmas-hero-heading" className="text-3xl md:text-5xl font-display font-bold leading-tight">
+              <h1 id="christmas-hero-heading" className="h2 leading-tight">
                 Christmas Menu 2025 at The White Horse Waterbeach
               </h1>
             </FadeInUp>
@@ -464,7 +464,7 @@ export default async function ChristmasMenuPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="max-w-3xl mx-auto text-center space-y-4">
-                <h2 id="full-christmas-menu-heading" className="text-3xl md:text-4xl font-display font-bold text-brand-800">
+                <h2 id="full-christmas-menu-heading" className="h3 text-brand-800">
                   {FULL_CHRISTMAS_MENU.title}
                 </h2>
                 <p className="text-lg text-brand-600 leading-relaxed">
@@ -483,7 +483,7 @@ export default async function ChristmasMenuPage() {
                     <header className="mb-4">
                       <h3
                         id={`section-${section.id}-title`}
-                        className="text-xl font-semibold text-brand-700"
+                        className="h5 font-semibold text-brand-700"
                       >
                         {section.name}
                       </h3>
@@ -497,7 +497,7 @@ export default async function ChristmasMenuPage() {
                           key={item.id}
                           className="rounded-lg border border-neutral-200 bg-neutral-50/80 p-4"
                         >
-                          <h4 className="text-base font-semibold text-brand-800 leading-tight">
+                          <h4 className="h5 font-semibold text-brand-800 leading-tight">
                             {item.name}
                           </h4>
                           <p className="mt-1 text-sm text-brand-600 leading-relaxed">
@@ -512,7 +512,7 @@ export default async function ChristmasMenuPage() {
             </FadeInUp>
             <FadeIn>
               <div className="mt-12 rounded-2xl border border-brand-100 bg-brand-50/70 p-8 shadow-md">
-                <h3 className="text-lg font-semibold text-brand-800 mb-4">Good to know</h3>
+                <h3 className="h5 text-brand-800 mb-4 font-semibold">Good to know</h3>
                 <dl className="grid gap-6 sm:grid-cols-2">
                   <div>
                     <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Experience</dt>
@@ -562,7 +562,7 @@ export default async function ChristmasMenuPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="max-w-3xl space-y-4">
-                <h2 id="chefs-christmas-heading" className="text-3xl md:text-4xl font-display font-bold text-brand-800">
+                <h2 id="chefs-christmas-heading" className="h3 text-brand-800">
                   Chef&rsquo;s Christmas Selections
                 </h2>
                 <p className="text-lg text-brand-600 leading-relaxed">
@@ -578,7 +578,7 @@ export default async function ChristmasMenuPage() {
                       key={item.id}
                       className="rounded-2xl border border-brand-100 bg-neutral-50/80 p-6 shadow-sm"
                     >
-                      <h3 className="text-lg font-semibold text-brand-800 leading-tight">{item.name}</h3>
+                      <h3 className="h5 text-brand-800 leading-tight font-semibold">{item.name}</h3>
                       <p className="mt-2 text-brand-600 leading-relaxed">{item.description}</p>
                     </li>
                   ))}
@@ -626,7 +626,7 @@ export default async function ChristmasMenuPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="max-w-3xl mx-auto text-center space-y-4">
-                <h2 id="festive-highlights-heading" className="text-3xl md:text-4xl font-display font-bold text-brand-800">
+                <h2 id="festive-highlights-heading" className="h3 text-brand-800">
                   Why guests love our Christmas menu
                 </h2>
                 <p className="text-lg text-brand-600 leading-relaxed">
@@ -644,7 +644,7 @@ export default async function ChristmasMenuPage() {
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent-100 text-2xl" aria-hidden="true">
                       {card.icon}
                     </div>
-                    <h3 className="text-xl font-semibold text-brand-700 mb-3">{card.title}</h3>
+                    <h3 className="h5 text-brand-700 mb-3 font-semibold">{card.title}</h3>
                     <p className="text-brand-600 leading-relaxed">{card.body}</p>
                   </article>
                 ))}
@@ -658,7 +658,7 @@ export default async function ChristmasMenuPage() {
             <FadeIn>
               <div className="grid gap-10 lg:grid-cols-2">
                 <div className="space-y-6">
-                  <h2 id="festive-support-heading" className="text-3xl md:text-4xl font-display font-bold text-brand-800">
+                  <h2 id="festive-support-heading" className="h3 text-brand-800">
                     Plan your visit with us
                   </h2>
                   <p className="text-lg text-brand-600 leading-relaxed">
@@ -693,7 +693,7 @@ export default async function ChristmasMenuPage() {
                       <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-2xl" aria-hidden="true">
                         {point.icon}
                       </div>
-                      <h3 className="text-lg font-semibold text-brand-700">{point.title}</h3>
+                      <h3 className="h5 text-brand-700 font-semibold">{point.title}</h3>
                       <p className="text-brand-600 leading-relaxed">{point.description}</p>
                     </div>
                   ))}

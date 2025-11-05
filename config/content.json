@@ -49,7 +49,7 @@
           },
           {
             "href": "https://whitehorsecb25.touchtakeaway.net/menu",
-            "label": "Order Takeaway"
+            "label": "Order Online"
           },
           {
             "href": "/press",
@@ -119,10 +119,12 @@
       "buttons": {
         "bookOnline": "Book Online",
         "viewMenu": "View Menu",
-        "orderTakeaway": "Order Takeaway",
+        "orderTakeaway": "Order Online",
+        "orderCollection": "Order for Collection",
+        "orderDelivery": "Order for Delivery",
         "callNow": "Call Now",
         "callToBook": "Call to Book",
-        "callTakeaway": "Call Takeaway",
+        "callTakeaway": "Call to Order",
         "getDirections": "Get Directions",
         "emailUs": "Email Us",
         "loadMore": "Load More",
@@ -253,7 +255,7 @@
           {
             "icon": "📺",
             "title": "Community calendar",
-            "description": "Sky & TNT Sports schedule and takeaway Fridays."
+            "description": "Sky & TNT Sports schedule and Friday collection & delivery."
           },
             {
               "icon": "🐾",
@@ -375,7 +377,7 @@
         ],
         "cta": {
           "headline": "Visit The White Horse - Your Waterbeach Community Hub",
-          "description": "Experience authentic Nepalese cuisine in a friendly British pub setting. Call to book or order takeaway.",
+          "description": "Experience authentic Nepalese cuisine in a friendly British pub setting. Call to book or order for collection & delivery.",
           "buttons": [
             {
               "text": "View Menu",
@@ -449,7 +451,9 @@
             "hasMenu": "https://whitehorsepub.co/menu",
             "sameAs": [
               "https://www.facebook.com/whitehorsewaterbeach",
-              "https://www.instagram.com/thewhitehorsewaterbeach"
+              "https://www.instagram.com/thewhitehorsewaterbeach",
+              "https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html",
+              "https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP"
             ],
             "openingHoursSpecification": [
               {
@@ -543,14 +547,14 @@
       },
       "hero": {
         "title": "Contact Us",
-        "subtitle": "Get in touch for bookings, takeaway orders, or enquiries"
+        "subtitle": "Get in touch for bookings, collection & delivery orders, or enquiries"
       },
       "contactInfo": {
         "title": "Get in Touch",
         "phone": {
           "title": "Phone",
           "number": "+44 1223 375578",
-          "description": "Call us for table bookings, takeaway orders, and general enquiries"
+          "description": "Call us for table bookings, collection & delivery orders, and general enquiries"
         },
         "location": {
           "title": "Location",
@@ -637,7 +641,7 @@
       "seo": {
         "title": "Menu | Authentic Nepalese Cuisine & British Pub Classics | The White Horse Waterbeach",
         "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call +44 1223 375578.",
-        "keywords": "authentic Nepalese menu Cambridge, Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo Cambridge, dal bhat, tandoori king prawns, curry Waterbeach, Baltis, Jalfrezis, pub classics, cask ales, takeaway Cambridge, Greene King IPA, Timothy Taylor Landlord",
+        "keywords": "authentic Nepalese menu Cambridge, Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo Cambridge, dal bhat, tandoori king prawns, curry Waterbeach, Baltis, Jalfrezis, pub classics, cask ales, collection & delivery Cambridge, takeaway Cambridge, Greene King IPA, Timothy Taylor Landlord",
         "openGraph": {
           "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
           "description": "Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Waterbeach's historic thatched pub",
@@ -652,7 +656,7 @@
         "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to Sunday roasts and well-kept cask ales.",
         "cta": {
           "book": "Book Online",
-          "order": "Order Takeaway: +44 1223 375578"
+          "order": "Order for Collection or Delivery: +44 1223 375578"
         }
       },
       "sections": {
@@ -799,17 +803,17 @@
     "takeawayMenu": {
       "seo": {
         "title": "Takeaway Menu | The White Horse Waterbeach - Authentic Nepalese & Pub Food Collection",
-        "description": "Order authentic Nepalese takeaway from The White Horse Waterbeach. Bhutuwa chicken, Pokhareli fish curry, curries, and British pub classics for collection. Call +44 1223 375578 to order.",
+        "description": "Order authentic Nepalese dishes from The White Horse Waterbeach for collection or delivery. Bhutuwa chicken, Pokhareli fish curry, curries, and British pub classics. Call +44 1223 375578 to order.",
         "keywords": [
           "takeaway Waterbeach",
-          "Nepalese takeaway Cambridge",
+          "Nepalese collection & delivery Cambridge",
           "The White Horse takeaway",
-          "curry takeaway Cambridge",
+          "curry collection & delivery Cambridge",
           "+44 1223 375578"
         ],
         "canonicalUrlRelative": "/takeaway",
         "openGraph": {
-          "title": "Order Takeaway from The White Horse Waterbeach",
+          "title": "Order Collection & Delivery from The White Horse Waterbeach",
           "description": "Order online for quick pickup or call us if you prefer.",
           "url": "/takeaway"
         }
@@ -982,10 +986,10 @@
           },
           "alt": "Bar counter with handpulls and warm lighting at The White Horse",
           "eyebrow": "Community Calendar",
-          "headline": "Live sport & Friday takeaway",
-          "copy": "Order online 🥡 for Friday takeaway, or call if you'd like to chat.",
+          "headline": "Live sport & daily collection & delivery",
+          "copy": "Order online 🛍️ for collection or delivery any day, or call if you'd like to chat.",
           "badges": [
-            "Takeaway every Friday",
+            "Order online daily",
             "Gift cards available"
           ],
           "ctas": {

@@ -8,7 +8,7 @@
     "phone": {
       "title": "Phone",
       "number": "+44 1223 375578",
-      "description": "Order takeaway online 🥡, or call for table bookings and group enquiries"
+      "description": "Order for collection or delivery online 🛍️, or call for table bookings and group enquiries"
     },
     "location": {
       "title": "Location",
@@ -26,7 +26,7 @@
       { "icon": "🍺", "text": "CAMRA-kept cask ales & Gurkha lager" },
       { "icon": "📺", "text": "Sky & TNT Sports across the bar" },
       { "icon": "🔥", "text": "Heated garden cabins and terrace seating" },
-      { "icon": "🥡", "text": "Friday Nepalese takeaway" },
+      { "icon": "🛍️", "text": "Daily Nepalese collection & delivery" },
       { "icon": "🐕", "text": "Dog-friendly bar with water bowls and treats" },
       { "icon": "🅿️", "text": "Free roadside parking along Green Side" }
     ]

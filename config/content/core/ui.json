@@ -2,7 +2,9 @@
   "buttons": {
     "bookOnline": "Book Online",
     "viewMenu": "View Menu",
-    "orderTakeaway": "Order Takeaway",
+    "orderTakeaway": "Order Online",
+    "orderCollection": "Order for Collection",
+    "orderDelivery": "Order for Delivery",
     "callNow": "Call Now",
     "getDirections": "Get Directions",
     "loadMore": "Load More",

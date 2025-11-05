@@ -132,6 +132,12 @@ export const renderSchemaTags = (schemas?: Array<Record<string, any>>): ReactEle
     priceRange: "££",
     acceptsReservations: true,
     hasMenu: `https://${config.domainName}/menu`,
+    sameAs: [
+      'https://www.facebook.com/whitehorsewaterbeach',
+      'https://www.instagram.com/whitehorsewaterbeach',
+      'https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html',
+      'https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP'
+    ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.5",

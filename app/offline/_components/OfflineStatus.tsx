@@ -43,7 +43,7 @@ export default function OfflineStatus() {
       </div>
 
       {/* Title and description */}
-      <h1 className="text-3xl font-bold text-brand-800 mb-4 font-display">
+      <h1 className="h2 text-brand-800 mb-4">
         {content.ui.title}
       </h1>
       

@@ -105,7 +105,7 @@ export default function ChristmasMusicPlayer() {
               ? "Christmas music is playing."
               : "Starting music..."}
       </p>
-      <p className="text-[11px] text-white/60">
+      <p className="meta text-white/60">
         Track: “Jingle Bells” by Kevin MacLeod (CC BY 3.0) via{" "}
         <a
           href="https://www.chosic.com/free-music/all/"

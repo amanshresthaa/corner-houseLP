@@ -22,7 +22,7 @@ export default function OfflineFeatures() {
 
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200 mb-8">
-      <h2 className="text-lg font-semibold text-brand-700 mb-4">
+      <h2 className="h5 text-brand-700 mb-4 font-semibold">
         {content.features.title}
       </h2>
       

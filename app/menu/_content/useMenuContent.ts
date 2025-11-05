@@ -101,7 +101,7 @@ export function useMenuContent(): MenuContent | null {
       },
       hero: {
         title: menu.hero?.title ?? 'Menu — Nepalese & Pub Classics',
-        subtitle: menu.hero?.subtitle ?? 'Curated menu — quick to scan. Book or order takeaway.',
+        subtitle: menu.hero?.subtitle ?? 'Curated menu — quick to scan. Book or order online.',
         buttons: {
           bookOnline: {
             label: (menu.hero?.cta?.book as string) || 'Book Online',

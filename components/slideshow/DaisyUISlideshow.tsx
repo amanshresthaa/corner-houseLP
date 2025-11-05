@@ -542,17 +542,17 @@ const DaisyUISlideshow = ({
               <div className="relative z-10 w-full px-[clamp(1.25rem,4vw,4rem)] py-[clamp(2.75rem,7vw,5.75rem)]">
                 <div className="mx-auto flex w-full max-w-[min(70rem,94vw)] flex-col items-center gap-y-[clamp(0.875rem,2vw,2.25rem)] text-center text-white">
                   {slide.eyebrow && (
-                    <p className="text-[clamp(0.75rem,1.8vw,1.0625rem)] font-semibold uppercase tracking-[0.32em] text-accent-300">
+                    <p className="eyebrow text-accent-300">
                       {slide.eyebrow}
                     </p>
                   )}
                   {slide.headline && (
-                    <h2 className="text-balance font-display text-[clamp(2.15rem,5vw,3.65rem)] font-bold leading-[1.08]">
+                    <h2 className="text-balance h1">
                       {slide.headline}
                     </h2>
                   )}
                   {slide.copy && (
-                    <p className="mx-auto max-w-[65ch] text-pretty text-[clamp(1.05rem,2.4vw,1.45rem)] leading-relaxed text-white/90">
+                    <p className="mx-auto max-w-[65ch] text-pretty lead text-white">
                       {slide.copy}
                     </p>
                   )}
@@ -561,7 +561,7 @@ const DaisyUISlideshow = ({
                       {slide.badges.map((badge) => (
                         <span
                           key={badge}
-                          className="rounded-full border border-white/30 bg-white/15 px-3.5 py-1.5 text-[clamp(0.75rem,1.6vw,0.9375rem)] font-medium text-white/95 backdrop-blur-sm"
+                          className="rounded-full border border-white/30 bg-white/15 px-3.5 py-1.5 text-fluid-eyebrow font-medium text-white/95 backdrop-blur-sm"
                         >
                           {badge}
                         </span>

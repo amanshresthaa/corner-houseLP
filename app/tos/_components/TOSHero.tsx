@@ -19,7 +19,7 @@ export default function TOSHero() {
           </svg>
           Back
         </Link>
-        <h1 className="text-2xl sm:text-3xl font-extrabold pt-3 sm:pt-4">Terms of Service</h1>
+        <h1 className="h2 font-extrabold pt-3 sm:pt-4">Terms of Service</h1>
       </div>
     </div>
   );

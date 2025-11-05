@@ -27,13 +27,13 @@ const buttonVariants = {
   },
   takeaway: {
     emoji: "🥡",
-    text: content.global?.ui?.buttons?.orderTakeaway || "Order Takeaway",
-    ariaLabel: "Order takeaway online"
+    text: content.global?.ui?.buttons?.orderTakeaway || "Order Online",
+    ariaLabel: "Order online"
   },
   "call-takeaway": {
     emoji: "📞", 
-    text: content.global?.ui?.buttons?.callTakeaway || content.global?.ui?.buttons?.callNow || "Call Takeaway",
-    ariaLabel: "Call to place takeaway order"
+    text: content.global?.ui?.buttons?.callTakeaway || content.global?.ui?.buttons?.callNow || "Call to Order",
+    ariaLabel: "Call to place an order"
   },
   "call-booking": {
     emoji: "📞",
@@ -66,8 +66,8 @@ export function SlideCTAButton({
     if (variant === 'menu' && isTakeaway) {
       return { 
         emoji: '🥡', 
-        text: content.global?.ui?.buttons?.orderTakeaway || 'Order Takeaway', 
-        ariaLabel: 'Order takeaway online' 
+        text: content.global?.ui?.buttons?.orderTakeaway || 'Order Online', 
+        ariaLabel: 'Order online' 
       };
     }
     return baseConfig;

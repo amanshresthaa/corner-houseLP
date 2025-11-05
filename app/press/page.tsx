@@ -125,7 +125,7 @@ export default async function PressPage() {
                   <li className="text-brand-50 font-medium">Press Kit</li>
                 </ol>
               </nav>
-              <h1 id="press-hero-heading" className="text-2xl md:text-3xl font-display font-bold text-white mb-3 leading-tight">
+              <h1 id="press-hero-heading" className="h2 text-white mb-3 leading-tight">
                 Press Kit
               </h1>
               <p className="text-base md:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
@@ -149,7 +149,7 @@ export default async function PressPage() {
               <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="flex items-end justify-between gap-4 mb-6">
                   <div>
-                    <h2 id="media-coverage-heading" className="text-2xl md:text-3xl font-display font-bold text-neutral-900">
+                    <h2 id="media-coverage-heading" className="h2 text-neutral-900">
                       Media Coverage
                     </h2>
                     <p className="mt-2 text-neutral-600">Independent articles about The White Horse Waterbeach.</p>
@@ -174,7 +174,7 @@ export default async function PressPage() {
                             <span className="text-neutral-500" aria-label={`Domain ${domain}`}>{domain}</span>
                           </div>
 
-                          <h3 className="text-lg font-semibold text-neutral-900 leading-snug">
+                          <h3 className="h5 text-neutral-900 leading-snug font-semibold">
                             <a
                               href={href}
                               target="_blank"
@@ -220,7 +220,7 @@ export default async function PressPage() {
               <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                 <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
                   <div>
-                    <h2 id="press-kit-heading" className="text-2xl md:text-3xl font-display font-bold text-white">
+                    <h2 id="press-kit-heading" className="h2 text-white">
                       Press Kit &amp; Quick Facts
                     </h2>
                     <p className="mt-3 text-brand-100 leading-relaxed">
@@ -236,9 +236,9 @@ export default async function PressPage() {
                     </ul>
                   </div>
 
-                  <div className="bg-white rounded-2xl shadow-lg border border-brand-100 p-6 sm:p-8 space-y-6">
+                    <div className="bg-white rounded-2xl shadow-lg border border-brand-100 p-6 sm:p-8 space-y-6">
                     <div>
-                      <h3 className="text-xl font-semibold text-brand-700">Talk to the team</h3>
+                      <h3 className="h5 text-brand-700 font-semibold">Talk to the team</h3>
                       <p className="mt-2 text-sm text-brand-600 leading-relaxed">
                         We aim to reply to press enquiries within one working day. Please include your deadline, outlet, and angle so we can connect you with the right spokesperson.
                       </p>
@@ -311,7 +311,7 @@ export default async function PressPage() {
                             </div>
                             <div>
                               <p className="text-xs uppercase tracking-[0.2em] text-brand-200 font-semibold">Food Standards Agency</p>
-                              <h2 id="food-hygiene-heading" className="text-xl md:text-2xl font-display font-bold leading-snug">
+                              <h2 id="food-hygiene-heading" className="h4 leading-snug">
                                 Food Hygiene Rating: {FSA.ratingValue} {ratingText ? `(${ratingText})` : ''}
                               </h2>
                               <p className="mt-2 text-brand-100 text-sm md:text-base leading-relaxed">

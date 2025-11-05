@@ -62,7 +62,7 @@ export default function BlogPage() {
               <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-gradient-to-r from-brand-600 to-brand-800 rounded-2xl p-8 md:p-12 shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 border-2 border-brand-700">
                   <div className="text-center">
-                    <h2 id="newsletter-heading" className="text-3xl md:text-4xl font-display font-bold text-white mb-4 drop-shadow-lg">
+                    <h2 id="newsletter-heading" className="h2 text-white mb-4 drop-shadow-lg">
                       📰 Stay Updated
                     </h2>
                     <p className="text-lg text-neutral-100 mb-8 max-w-2xl mx-auto leading-relaxed">

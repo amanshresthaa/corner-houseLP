@@ -39,7 +39,7 @@ export default function NotFoundContent() {
       </div>
 
       {/* Title and description */}
-      <h1 className="text-3xl font-bold text-brand-800 mb-4 font-display">
+      <h1 className="h2 text-brand-800 mb-4">
         {content.ui.title}
       </h1>
       
@@ -53,7 +53,7 @@ export default function NotFoundContent() {
 
       {/* Suggestions */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200 mb-8">
-        <h2 className="text-lg font-semibold text-brand-700 mb-4">
+        <h2 className="h5 text-brand-700 mb-4 font-semibold">
           {content.ui.suggestionsTitle}
         </h2>
         

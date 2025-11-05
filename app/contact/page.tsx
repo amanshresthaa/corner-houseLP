@@ -64,7 +64,7 @@ export default async function ContactPage() {
           <div className="absolute inset-0 bg-black/10"></div>
           <FadeIn>
             <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h1 id="contact-hero-heading" className="text-2xl md:text-3xl font-display font-bold text-white mb-3 leading-tight">
+              <h1 id="contact-hero-heading" className="h2 text-white mb-3 leading-tight">
                 {contactContent.hero.title}
               </h1>
               <p className="text-base md:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
@@ -110,7 +110,7 @@ export default async function ContactPage() {
             <FadeIn>
               <section className="grid grid-cols-1 gap-8 pb-16 lg:grid-cols-2" aria-labelledby="contact-info-heading">
                 <div>
-                  <h2 id="contact-info-heading" className="text-2xl font-display font-bold text-brand-700 mb-6">Contact Information</h2>
+                  <h2 id="contact-info-heading" className="h3 text-brand-700 mb-6">Contact Information</h2>
                   <ContactInfoSection
                     phone={phoneInfo}
                     location={locationInfo}
@@ -120,7 +120,7 @@ export default async function ContactPage() {
 
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-2xl font-semibold text-brand-700 mb-6">
+                    <h2 className="h3 text-brand-700 mb-6 font-semibold">
                       {contactContent.hours.title}
                     </h2>
                     <RestaurantHoursCard />
@@ -138,7 +138,7 @@ export default async function ContactPage() {
 
             <FadeIn>
               <section className="pt-12" aria-labelledby="map-heading">
-                <h2 id="map-heading" className="mb-6 text-center text-2xl font-display font-bold text-brand-700">Find Us</h2>
+                <h2 id="map-heading" className="mb-6 text-center h3 text-brand-700">Find Us</h2>
                 <div className="rounded-3xl bg-brand-50 p-4 shadow-lg shadow-brand-900/10">
                   <InteractiveMap
                     title={`${IDENTITY.displayName} Location`}

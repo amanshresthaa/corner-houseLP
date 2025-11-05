@@ -56,7 +56,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 
 		const labels = m.buttons || {};
 		const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline;
-	const labelOrderTakeaway = labels.orderTakeaway || menuContent.hero.cta.order || `Order Takeaway: ${phoneDisplay}`;
+	const labelOrderTakeaway = labels.orderTakeaway || menuContent.hero.cta.order || `Order Online: ${phoneDisplay}`;
 	const allergenNotice = menuContent.sections.allergenNotice;
 	const menuDescription = menuContent.sections.description;
 	const formattedAddress = `${contact.address.street}, ${contact.address.area}, ${contact.address.city} ${contact.address.postcode}`;
@@ -151,7 +151,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 				key: 'menu-cta-order',
 			},
 			{
-				text: 'Order Takeaway',
+				text: 'Order Online',
 				href: '/takeaway',
 				variant: 'crimson' as const,
 				key: 'menu-cta-takeaway',
@@ -183,7 +183,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 								},
 								orderTakeaway: {
 									label: takeawayHref
-										? (content?.global?.ui?.buttons?.orderTakeaway as string) || 'Order Takeaway'
+										? (content?.global?.ui?.buttons?.orderTakeaway as string) || 'Order Online'
 										: `Call ${phoneDisplay}`,
 									url: (takeawayHref as string) || contact?.phone?.tel,
 								},
@@ -201,15 +201,15 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 					>
 						<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 							<header className="mb-12 text-center">
-								<span className="inline-flex items-center justify-center rounded-full border border-brand-200 bg-brand-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
-									Explore the menu
-								</span>
+                            <span className="inline-flex items-center justify-center rounded-full border border-brand-200 bg-brand-50 px-4 py-1 eyebrow text-brand-700">
+                                Explore the menu
+                            </span>
 								<h2
 									id="interactive-menu-heading"
-									className="mt-4 text-3xl font-display font-bold text-stout-800 md:text-4xl"
-								>
-									Interactive Menu Experience
-								</h2>
+                                className="mt-4 h2 text-stout-800"
+                            >
+                                Interactive Menu Experience
+                            </h2>
 								{menuDescription && (
 									<p className="mx-auto mt-4 max-w-3xl text-base text-neutral-600 md:text-lg">
 										{menuDescription}
@@ -233,7 +233,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 					className="bg-brand-900 py-20 sm:py-24 text-neutral-100"
 				>
 					<div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-						<h2 id="menu-info-cta-heading" className="text-3xl font-display font-bold text-white md:text-4xl">
+						<h2 id="menu-info-cta-heading" className="h2 text-white">
 							Need Dietary Information?
 						</h2>
 						<p className="mt-6 text-lg text-neutral-200">
@@ -271,7 +271,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 									<span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
 										Visit us soon
 									</span>
-									<h2 id="menu-hours-heading" className="text-3xl font-display font-bold text-stout-800 md:text-4xl">
+									<h2 id="menu-hours-heading" className="h2 text-stout-800">
 										Restaurant &amp; Bar Opening Time
 									</h2>
 									<p className="max-w-xl text-base text-neutral-700 md:text-lg">
