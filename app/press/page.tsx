@@ -9,7 +9,7 @@ import { getContactInfo, getAddress, getPostalAddressSchema, getRestaurantIdenti
 // Concise quick facts derived from the authoritative Markdown dossier
 const PRESS_FACTS = [
   "Address: 12 Greenside, Waterbeach, Cambridge, CB25 9HP",
-  "Phone: 01223 375578 • Email: hellothewhitehorsewaterbeach@gmail.com",
+  "Phone: +44 1223 375578 • Email: whitehorse@lapeninns.com",
   "Ownership: Lapen Inns",
   "Dual identity: Traditional village pub + authentic Nepalese restaurant",
   "Amenities: Live sports (Sky & TNT), large garden, outdoor seating, dog-friendly (bar area), family-friendly, pool table, takeaway, wheelchair access",

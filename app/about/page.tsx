@@ -285,10 +285,10 @@ function CallToAction() {
               Book Online
             </Link>
             <a
-              href="tel:01223375578"
+              href="tel:+441223375578"
               className="btn btn-lg bg-transparent border-2 border-white text-white hover:bg-white/10"
             >
-              Call 01223 375578
+              Call +44 1223 375578
             </a>
           </div>
         </div>

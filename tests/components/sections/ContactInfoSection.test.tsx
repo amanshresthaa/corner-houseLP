@@ -18,8 +18,8 @@ describe('ContactInfoSection', () => {
   const mockPhone = {
     title: 'Phone',
     description: 'Call us for bookings',
-    number: '01223277217',
-    href: 'tel:01223277217'
+    number: '+44 1223 375578',
+    href: 'tel:+441223375578'
   };
 
   const mockLocation = {
@@ -29,7 +29,7 @@ describe('ContactInfoSection', () => {
   };
 
   const mockEmail = {
-    address: 'hellothewhitehorsewaterbeach@gmail.com'
+    address: 'whitehorse@lapeninns.com'
   };
 
   it('renders phone and location information correctly', () => {
@@ -38,7 +38,7 @@ describe('ContactInfoSection', () => {
     // Check phone section
     expect(screen.getByText('Phone')).toBeInTheDocument();
     expect(screen.getByText('Call us for bookings')).toBeInTheDocument();
-    expect(screen.getByText('01223277217')).toBeInTheDocument();
+    expect(screen.getByText('+44 1223 375578')).toBeInTheDocument();
     
     // Check location section
     expect(screen.getByText('Location')).toBeInTheDocument();
@@ -48,21 +48,21 @@ describe('ContactInfoSection', () => {
     
     // Check email section
     expect(screen.getByText('Email')).toBeInTheDocument();
-    expect(screen.getByText('hellothewhitehorsewaterbeach@gmail.com')).toBeInTheDocument();
+    expect(screen.getByText('whitehorse@lapeninns.com')).toBeInTheDocument();
   });
 
   it('renders phone link with correct href', () => {
     render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
 
-    const phoneLink = screen.getByRole('link', { name: '01223277217' });
-    expect(phoneLink).toHaveAttribute('href', 'tel:01223277217');
+    const phoneLink = screen.getByRole('link', { name: '+44 1223 375578' });
+    expect(phoneLink).toHaveAttribute('href', 'tel:+441223375578');
   });
 
   it('renders email link with correct href', () => {
     render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
 
-    const emailLink = screen.getByRole('link', { name: /email restaurant at hellothewhitehorsewaterbeach@gmail.com/i });
-    expect(emailLink).toHaveAttribute('href', 'mailto:hellothewhitehorsewaterbeach@gmail.com');
+    const emailLink = screen.getByRole('link', { name: /email restaurant at whitehorse@lapeninns.com/i });
+    expect(emailLink).toHaveAttribute('href', 'mailto:whitehorse@lapeninns.com');
   });
 
   it('parses multi-line address correctly', () => {

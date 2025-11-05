@@ -13,7 +13,7 @@ const mockUseContent = useContent as jest.MockedFunction<typeof useContent>;
 // Mock config to prevent actual API calls
 jest.mock('@/config', () => ({
   crisp: { id: 'test-crisp-id' },
-  mailgun: { supportEmail: 'support@test.com' },
+  mailgun: { supportEmail: 'whitehorse@lapeninns.com' },
   appName: 'Test App',
 }));
 
@@ -148,8 +148,8 @@ const accessibleContentData = {
     },
   },
   legal: {
-    terms: { title: 'Terms of Service', effectiveDate: '2025-01-01', contact: 'legal@test.com' },
-    privacy: { title: 'Privacy Policy', effectiveDate: '2025-01-01', contact: 'privacy@test.com' },
+    terms: { title: 'Terms of Service', effectiveDate: '2025-01-01', contact: 'whitehorse@lapeninns.com' },
+    privacy: { title: 'Privacy Policy', effectiveDate: '2025-01-01', contact: 'whitehorse@lapeninns.com' },
   },
 };
 

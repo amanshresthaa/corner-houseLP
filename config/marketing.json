@@ -12,7 +12,7 @@
     {
       "id": "takeaway-friday",
       "title": "Takeaway Fridays",
-      "body": "Call 01223 375578 for Bhutuwa chicken, momo and Gurkha lager to enjoy at home."
+      "body": "Call +44 1223 375578 for Bhutuwa chicken, momo and Gurkha lager to enjoy at home."
     },
     {
       "id": "sunday-masala",
@@ -27,6 +27,6 @@
   "buttons": {
     "bookOnline": "Book Online",
     "viewMenu": "View Menu",
-    "callTakeaway": "Call 01223 375578"
+    "callTakeaway": "Call +44 1223 375578"
   }
 }

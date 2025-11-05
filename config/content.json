@@ -3,7 +3,7 @@
     "site": {
       "name": "The White Horse",
       "title": "The White Horse Waterbeach - Village Pub & Authentic Nepalese Restaurant",
-      "description": "A friendly neighbourhood pub opposite Waterbeach village green, serving authentic Nepalese cuisine and British pub classics. Cask ales, live sports, large garden. Dog & family-friendly. Call: 01223 375578",
+      "description": "A friendly neighbourhood pub opposite Waterbeach village green, serving authentic Nepalese cuisine and British pub classics. Cask ales, live sports, large garden. Dog & family-friendly. Call: +44 1223 375578",
       "keywords": [
         "pub Waterbeach",
         "Nepalese restaurant Cambridge",
@@ -222,7 +222,7 @@
         "subtitle": "Opposite the village green: authentic Nepalese cuisine meets traditional British pub comfort.",
         "description": "Your friendly neighbourhood pub in the heart of Waterbeach. Enjoy authentic Nepalese dishes alongside British pub classics, cask ales, live sports, and a warm welcome for families and dogs. Saved from redevelopment and relaunched February 2025 by Lapen Inns.",
         "cta": {
-          "primary": "Call 01223 375578",
+          "primary": "Call +44 1223 375578",
           "secondary": "View Menu",
           "primaryHref": "tel:+441223375578",
           "secondaryHref": "/menu#starters"
@@ -381,7 +381,7 @@
               "variant": "brand"
             },
             {
-              "text": "Call 01223 375578",
+              "text": "Call +44 1223 375578",
               "href": "tel:+441223375578",
               "variant": "crimson"
             }
@@ -423,7 +423,7 @@
               "longitude": 0.0731
             },
             "url": "https://whitehorsepub.co/",
-            "telephone": "+441223277217",
+            "telephone": "+441223375578",
             "priceRange": "££",
             "servesCuisine": [
               "Nepalese",
@@ -512,7 +512,7 @@
       "cta": {
         "title": "Visit The White Horse",
         "description": "Experience authentic Nepalese cuisine in a welcoming British pub setting.",
-        "button": "Call 01223 375578",
+        "button": "Call +44 1223 375578",
         "contact": {
           "address": "12 Greenside, Waterbeach, Cambridge CB25 9HP",
           "hours": "See footer for opening hours"
@@ -522,13 +522,13 @@
     "contact": {
       "seo": {
         "title": "Contact The White Horse Waterbeach | Bookings, Directions & Opening Hours",
-        "description": "Contact The White Horse for table bookings and enquiries. Call 01223 375578. Located at 12 Greenside, Waterbeach, Cambridge CB25 9HP. Email: hellothewhitehorsewaterbeach@gmail.com",
+        "description": "Contact The White Horse for table bookings and enquiries. Call +44 1223 375578. Located at 12 Greenside, Waterbeach, Cambridge CB25 9HP. Email: whitehorse@lapeninns.com",
         "keywords": [
           "The White Horse contact",
           "Waterbeach pub phone",
           "book table Waterbeach",
           "Nepalese restaurant Cambridge contact",
-          "01223 375578",
+          "+44 1223 375578",
           "12 Greenside Waterbeach"
         ],
         "canonicalUrlRelative": "/contact"
@@ -541,7 +541,7 @@
         "title": "Get in Touch",
         "phone": {
           "title": "Phone",
-          "number": "01223375578",
+          "number": "+44 1223 375578",
           "description": "Call us for table bookings, takeaway orders, and general enquiries"
         },
         "location": {
@@ -628,7 +628,7 @@
     "menu": {
       "seo": {
         "title": "Menu | Authentic Nepalese Cuisine & British Pub Classics | The White Horse Waterbeach",
-        "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call 01223 375578.",
+        "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call +44 1223 375578.",
         "keywords": "authentic Nepalese menu Cambridge, Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo Cambridge, dal bhat, tandoori king prawns, curry Waterbeach, Baltis, Jalfrezis, pub classics, cask ales, takeaway Cambridge, Greene King IPA, Timothy Taylor Landlord",
         "openGraph": {
           "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
@@ -644,7 +644,7 @@
         "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to Sunday roasts and well-kept cask ales.",
         "cta": {
           "book": "Book Online",
-          "order": "Order Takeaway: 01223 375578"
+          "order": "Order Takeaway: +44 1223 375578"
         }
       },
       "sections": {
@@ -661,7 +661,7 @@
       "form": {
         "email": {
           "label": "Email",
-          "placeholder": "your.email@example.com"
+          "placeholder": "whitehorse@lapeninns.com"
         },
         "buttons": {
           "google": "Sign in with Google",
@@ -681,7 +681,7 @@
     "bookTable": {
       "seo": {
         "title": "Book a Table | The White Horse Waterbeach - Restaurant Reservations",
-        "description": "Reserve a table at The White Horse Waterbeach. Call 01223 375578 for bookings. Authentic Nepalese cuisine and British pub classics in a family-friendly setting.",
+        "description": "Reserve a table at The White Horse Waterbeach. Call +44 1223 375578 for bookings. Authentic Nepalese cuisine and British pub classics in a family-friendly setting.",
         "canonicalUrlRelative": "/book-a-table",
         "openGraph": {
           "title": "Book a Table at The White Horse Waterbeach",
@@ -695,7 +695,7 @@
     "press": {
       "seo": {
         "title": "Press & Media | The White Horse Waterbeach - Media Contact & Press Kit",
-        "description": "Official press information for The White Horse, Waterbeach. A revitalized community pub serving authentic Nepalese cuisine. Relaunched February 2025 by Lapen Inns. Media enquiries: hellothewhitehorsewaterbeach@gmail.com",
+        "description": "Official press information for The White Horse, Waterbeach. A revitalized community pub serving authentic Nepalese cuisine. Relaunched February 2025 by Lapen Inns. Media enquiries: whitehorse@lapeninns.com",
         "keywords": [
           "The White Horse Waterbeach press",
           "press kit",
@@ -772,7 +772,7 @@
     "wakesMenu": {
       "seo": {
         "title": "Celebration of Life Menu | Wakes & Memorial Gatherings | The White Horse Waterbeach",
-        "description": "A calm and dignified setting for celebration of life gatherings. Buffet menu £10 per guest with large rear garden space available. Call 01223 375578 to arrange.",
+        "description": "A calm and dignified setting for celebration of life gatherings. Buffet menu £10 per guest with large rear garden space available. Call +44 1223 375578 to arrange.",
         "keywords": [
           "wakes menu Cambridge",
           "celebration of life catering",
@@ -791,13 +791,13 @@
     "takeawayMenu": {
       "seo": {
         "title": "Takeaway Menu | The White Horse Waterbeach - Authentic Nepalese & Pub Food Collection",
-        "description": "Order authentic Nepalese takeaway from The White Horse Waterbeach. Bhutuwa chicken, Pokhareli fish curry, curries, and British pub classics for collection. Call 01223 375578 to order.",
+        "description": "Order authentic Nepalese takeaway from The White Horse Waterbeach. Bhutuwa chicken, Pokhareli fish curry, curries, and British pub classics for collection. Call +44 1223 375578 to order.",
         "keywords": [
           "takeaway Waterbeach",
           "Nepalese takeaway Cambridge",
           "The White Horse takeaway",
           "curry takeaway Cambridge",
-          "01223 375578"
+          "+44 1223 375578"
         ],
         "canonicalUrlRelative": "/takeaway",
         "openGraph": {
@@ -810,7 +810,7 @@
     "christmasMenu": {
       "seo": {
         "title": "Christmas Menu 2025 | The White Horse Waterbeach - Festive Dining in Waterbeach",
-        "description": "Celebrate Christmas 2025 at The White Horse Waterbeach. Chef's festive set menu £44.99 per guest including mulled wine or drink of choice. Book your festive table: 01223 375578",
+        "description": "Celebrate Christmas 2025 at The White Horse Waterbeach. Chef's festive set menu £44.99 per guest including mulled wine or drink of choice. Book your festive table: +44 1223 375578",
         "keywords": [
           "Cambridge Christmas menu",
           "Christmas menu",
@@ -854,7 +854,7 @@
       "items": [
         {
           "question": "Do you accept bookings?",
-          "answer": "Yes, we accept bookings by phone. Call us on 01223 375578 to reserve your table. We recommend booking in advance, especially for weekends."
+          "answer": "Yes, we accept bookings by phone. Call us on +44 1223 375578 to reserve your table. We recommend booking in advance, especially for weekends."
         },
         {
           "question": "Are you family-friendly?",
@@ -1066,12 +1066,12 @@
     "terms": {
       "title": "Terms of Service",
       "effectiveDate": "10 August 2025",
-      "contact": "hellothewhitehorsewaterbeach@gmail.com"
+      "contact": "whitehorse@lapeninns.com"
     },
     "privacy": {
       "title": "Privacy Policy",
       "effectiveDate": "10 August 2025",
-      "contact": "hellothewhitehorsewaterbeach@gmail.com"
+      "contact": "whitehorse@lapeninns.com"
     }
   }
 }

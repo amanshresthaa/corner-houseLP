@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { getContactInfo } from "@/lib/restaurantData";
 
 const SlideshowFallback: React.FC = () => {
   const handleRetry = () => {
@@ -10,6 +11,9 @@ const SlideshowFallback: React.FC = () => {
       console.warn('Unable to reload page for slideshow retry', error);
     }
   };
+
+  const contact = getContactInfo();
+  const supportMailto = `mailto:${contact.email.primary}?subject=Slideshow%20support`;
 
   return (
     <section className="relative w-full h-[52svh] sm:h-[58svh] md:h-[65svh] flex flex-col items-center justify-center gap-4 bg-neutral-900 text-neutral-100 rounded-3xl border border-neutral-700 p-8 text-center">
@@ -27,7 +31,7 @@ const SlideshowFallback: React.FC = () => {
         </button>
         <a
           className="px-4 py-2 rounded-lg border border-white/40 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          href="mailto:hellothewhitehorsewaterbeach@gmail.com?subject=Slideshow%20support"
+          href={supportMailto}
         >
           Contact support
         </a>

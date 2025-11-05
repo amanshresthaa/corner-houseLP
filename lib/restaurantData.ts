@@ -157,21 +157,21 @@ const FALLBACK_ADDRESS: NormalizedAddress = {
 const FALLBACK_CONTACT_BASE: ContactFallback = {
   phone: {
     primary: '+44 1223 375578',
-    display: '01223 375578',
+    display: '+44 1223 375578',
     tel: sanitizeTel('+44 1223 375578'),
     whatsapp: '+44 1223 375578',
   },
   email: {
-    primary: 'hellothewhitehorsewaterbeach@gmail.com',
-    bookings: 'hellothewhitehorsewaterbeach@gmail.com',
-    events: 'hellothewhitehorsewaterbeach@gmail.com',
-    press: 'hellothewhitehorsewaterbeach@gmail.com',
-    support: 'hellothewhitehorsewaterbeach@gmail.com',
+    primary: 'whitehorse@lapeninns.com',
+    bookings: 'whitehorse@lapeninns.com',
+    events: 'whitehorse@lapeninns.com',
+    press: 'whitehorse@lapeninns.com',
+    support: 'whitehorse@lapeninns.com',
   },
   website: 'https://whitehorsepub.co',
   bookingUrl: undefined,
   orderUrl: undefined,
-  enquiryUrl: 'mailto:hellothewhitehorsewaterbeach@gmail.com',
+  enquiryUrl: 'mailto:whitehorse@lapeninns.com',
 };
 
 const FALLBACK_HOURS: DetailedHours = {

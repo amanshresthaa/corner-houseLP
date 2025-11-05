@@ -9,7 +9,7 @@ import { http, HttpResponse } from 'msw';
 const mockRestaurantData = {
   name: "The White Horse Waterbeach",
   phone: "+44 1223 375578",
-  email: "hellothewhitehorsewaterbeach@gmail.com",
+  email: "whitehorse@lapeninns.com",
   description: "Historic thatched pub serving Nepalese cuisine in Waterbeach.",
   identity: {
     name: "The White Horse Waterbeach",
@@ -24,14 +24,14 @@ const mockRestaurantData = {
   contact: {
     phone: {
       primary: "+44 1223 375578",
-      display: "01223 375578",
+      display: "+44 1223 375578",
       tel: "tel:+441223375578",
       whatsapp: "+44 1223 375578"
     },
     email: {
-      primary: "hellothewhitehorsewaterbeach@gmail.com",
-      bookings: "hellothewhitehorsewaterbeach@gmail.com",
-      events: "hellothewhitehorsewaterbeach@gmail.com"
+      primary: "whitehorse@lapeninns.com",
+      bookings: "whitehorse@lapeninns.com",
+      events: "whitehorse@lapeninns.com"
     },
     website: "https://whitehorsepub.co",
     bookingUrl: "https://whitehorsepub.co/book-a-table"

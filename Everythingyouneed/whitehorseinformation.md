@@ -12,8 +12,8 @@
 ---
 
 ### **📞 CONTACT DETAILS**
-- **Phone**: `01223 375578` (tel:01223375578)
-- **Email**: `hellothewhitehorsewaterbeach@gmail.com`
+- **Phone**: `+44 1223 375578` (tel:+441223375578)
+- **Email**: `whitehorse@lapeninns.com`
 - **Website**: `https://whitehorsepub.co`
 - **Booking**: Via phone or email (no online booking system mentioned)
 

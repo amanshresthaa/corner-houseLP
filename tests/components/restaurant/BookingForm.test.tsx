@@ -52,7 +52,7 @@ describe('BookingForm', () => {
 
     await user.type(screen.getByLabelText(/Full Name/), 'Test User');
     await user.type(screen.getByLabelText(/Phone Number/), '01234 567890');
-    await user.type(screen.getByLabelText(/Email Address/), 'test@example.com');
+    await user.type(screen.getByLabelText(/Email Address/), 'whitehorse@lapeninns.com');
     await user.type(screen.getByLabelText(/Special Requests/), 'Window seat');
 
     // Select date & time
@@ -65,7 +65,7 @@ describe('BookingForm', () => {
     expect(handleComplete.mock.calls[0][0]).toMatchObject({
       name: 'Test User',
       phone: '01234 567890',
-      email: 'test@example.com',
+      email: 'whitehorse@lapeninns.com',
       message: 'Window seat',
       time: '19:00'
     });

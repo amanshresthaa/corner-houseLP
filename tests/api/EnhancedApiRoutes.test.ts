@@ -56,7 +56,7 @@ jest.mock('@/src/lib/data/loaders/RestaurantSmartLoader', () => ({
       data: {
         name: "The Himalayan Spice",
         phone: "+44 1223 375578",
-        email: "info@himalayanspice.example.com",
+        email: "whitehorse@lapeninns.com",
         address: {
           street: "123 Main Street",
           city: "London",

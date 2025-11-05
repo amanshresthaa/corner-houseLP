@@ -12,15 +12,15 @@
   "contact": {
     "phone": {
       "primary": "+44 1223 375578",
-      "display": "01223 375578",
+      "display": "+44 1223 375578",
       "tel": "tel:+441223375578",
       "whatsapp": "+44 1223 375578"
     },
     "email": {
-      "primary": "hellothewhitehorsewaterbeach@gmail.com",
-      "bookings": "hellothewhitehorsewaterbeach@gmail.com",
-      "events": "hellothewhitehorsewaterbeach@gmail.com",
-      "press": "hellothewhitehorsewaterbeach@gmail.com"
+      "primary": "whitehorse@lapeninns.com",
+      "bookings": "whitehorse@lapeninns.com",
+      "events": "whitehorse@lapeninns.com",
+      "press": "whitehorse@lapeninns.com"
     },
     "website": "https://whitehorsepub.co"
   },
@@ -116,5 +116,5 @@
   },
   "name": "The White Horse",
   "phone": "+44 1223 375578",
-  "email": "hellothewhitehorsewaterbeach@gmail.com"
+  "email": "whitehorse@lapeninns.com"
 }

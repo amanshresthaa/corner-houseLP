@@ -54,8 +54,8 @@ export function generateRestaurantSchema(): RestaurantSchema {
     name: identity.name,
     description: seo.description || identity.description,
     url: (seo as any)?.og?.url || "https://whitehorsepub.co/",
-    telephone: contact?.phone.primary || "+441223 277217",
-    email: contact?.email.primary || "hellothewhitehorsewaterbeach@gmail.com",
+    telephone: contact?.phone.primary,
+    email: contact?.email.primary,
     address: {
       "@type": "PostalAddress",
       streetAddress: contact?.address.street || "High Street",

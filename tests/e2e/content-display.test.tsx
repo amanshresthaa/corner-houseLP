@@ -95,8 +95,8 @@ const mockContentData = {
     },
   },
   legal: {
-    terms: { title: 'Terms', effectiveDate: '2025-01-01', contact: 'legal@test.com' },
-    privacy: { title: 'Privacy', effectiveDate: '2025-01-01', contact: 'privacy@test.com' },
+    terms: { title: 'Terms', effectiveDate: '2025-01-01', contact: 'whitehorse@lapeninns.com' },
+    privacy: { title: 'Privacy', effectiveDate: '2025-01-01', contact: 'whitehorse@lapeninns.com' },
   },
 };
 

@@ -17,8 +17,8 @@ Replace the content at `/press` with essential information about The White Horse
 - II. Quick Facts: Verified/reconciled essentials including:
   - Property Name: The White Horse
   - Location: 12 Greenside, Waterbeach, Cambridge, CB25 9HP
-  - Phone (Verified): 01223 375578
-  - Email (Verified): Hellothewhitehorsewaterbeach@gmail.com
+  - Phone (Verified): +44 1223 375578
+  - Email (Verified): whitehorse@lapeninns.com
   - Website: https://whitehorsepub.co/
   - Ownership: Lapen Inns
   - Bar hours and Restaurant times
@@ -38,4 +38,3 @@ Replace the content at `/press` with essential information about The White Horse
 - Remove external press articles, review banners, and hygiene card.
 - Retain the hero + press kit sections, rewriting copy with concise brand boilerplate from Markdown.
 - Populate Quick Facts from Markdown (address shown as "12 Greenside...") while keeping contact data wired to centralized helpers.
-

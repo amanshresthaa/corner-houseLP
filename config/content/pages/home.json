@@ -4,7 +4,7 @@
     "subtitle": "England\u2019s largest thatched pub reopened February 2025 with Himalayan cooking, Sky Sports and garden cabins for every gathering.",
     "description": "Call or email to reserve for Nepalese feasts, Sunday roasts or takeaway nights opposite Waterbeach village green.",
     "cta": {
-      "primary": "Call 01223 375578",
+      "primary": "Call +44 1223 375578",
       "secondary": "View Menu",
       "primaryHref": "tel:+441223375578",
       "secondaryHref": "/menu",
@@ -74,18 +74,18 @@
       "headline": "Ready to gather at Waterbeach\u2019s thatched pub?",
       "description": "Call or email for table bookings, group enquiries or takeaway collections \u2013 we\u2019ll look after the details.",
       "buttons": [
-        {
-          "text": "Call 01223 375578",
-          "href": "tel:+441223375578",
-          "variant": "brand",
-          "external": true
-        },
-        {
-          "text": "Email the team",
-          "href": "mailto:hellothewhitehorsewaterbeach@gmail.com",
-          "variant": "accent",
-          "external": true
-        },
+      {
+        "text": "Call +44 1223 375578",
+        "href": "tel:+441223375578",
+        "variant": "brand",
+        "external": true
+      },
+      {
+        "text": "Email the team",
+        "href": "mailto:whitehorse@lapeninns.com",
+        "variant": "accent",
+        "external": true
+      },
         {
           "text": "View upcoming events",
           "href": "/events",

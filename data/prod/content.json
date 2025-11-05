@@ -11,7 +11,7 @@
     },
     "contact": {
       "phone": "+44 1223 375578",
-      "email": "info@whitehorsepub.co",
+      "email": "whitehorse@lapeninns.com",
       "address": {
         "street": "123 Crown Street",
         "city": "London",
@@ -128,8 +128,8 @@
       "contact": {
         "title": "Book Your Event",
         "description": "Planning a private event? Get in touch to discuss your requirements.",
-        "phone": "01223277217",
-        "email": "hellothewhitehorsewaterbeach@gmail.com"
+        "phone": "+44 1223 375578",
+        "email": "whitehorse@lapeninns.com"
       }
     },
     "menu": {
@@ -138,7 +138,7 @@
         "subtitle": "Discover the unique flavors of Nepal alongside your favorite pub classics at Waterbeach's historic thatched pub. Every dish made fresh with authentic recipes and quality ingredients.",
         "cta": {
           "book": "Book Online",
-          "order": "Order Takeaway: 01223277217"
+          "order": "Order Takeaway: +44 1223 375578"
         }
       },
       "sections": {
@@ -229,12 +229,12 @@
     "terms": {
       "title": "Terms of Service",
       "effectiveDate": "10 August 2025",
-      "contact": "hellothewhitehorsewaterbeach@gmail.com"
+      "contact": "whitehorse@lapeninns.com"
     },
     "privacy": {
       "title": "Privacy Policy",
       "effectiveDate": "10 August 2025",
-      "contact": "hellothewhitehorsewaterbeach@gmail.com"
+      "contact": "whitehorse@lapeninns.com"
     }
   },
   "debug": {

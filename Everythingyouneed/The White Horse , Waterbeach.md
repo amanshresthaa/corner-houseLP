@@ -31,10 +31,10 @@ Table 1: Essential Information (Verified & Reconciled)
 Category	Details	Source(s)
 Property Name	The White Horse	1
 Location	12 Greenside, Waterbeach, Cambridge, CB25 9HP	1
-Phone (Verified)	01223 375578	1
-    Note: A secondary number, 01223 505053, is listed on CAMRA but the official website confirms the primary number.	2
-Email (Verified)	Hellothewhitehorsewaterbeach@gmail.com	7
-    Note: A slight variation, hellothewhitehorse@gmail.com, is listed elsewhere.	2
+Phone (Verified)	+44 1223 375578	1
+    Note: Only the official contact number +44 1223 375578 should be used.	2
+Email (Verified)	whitehorse@lapeninns.com	7
+    Note: A slight variation, whitehorse@lapeninns.com, is listed elsewhere.	2
 Website	https://whitehorsepub.co/
 3
 Ownership	Lapen Inns	4

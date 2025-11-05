@@ -174,7 +174,7 @@ export default function BookingForm({
           onChange={handleChange}
           autoComplete="email"
           className="w-full rounded-lg border border-neutral-300 px-3 py-2 transition-colors focus:border-transparent focus:ring-2 focus:ring-accent/50"
-          placeholder={formLabels?.email || 'your@email.com'}
+          placeholder={formLabels?.email || 'whitehorse@lapeninns.com'}
         />
       </div>
 
