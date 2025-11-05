@@ -15,7 +15,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function EventsPage() {
   const contact = getContactInfo();
   const eventsEmail = contact.email.events ?? contact.email.primary;
-  const enquireHref = contact.enquiryUrl || `mailto:${eventsEmail}`;
+  // Route all booking/enquiry CTAs to the canonical booking page
+  const enquireHref = '/book-a-table';
   const content = await getContentSmart();
   const e = (content.pages as any)?.events || {};
   const hero = e.hero || {};
@@ -55,7 +56,7 @@ export default async function EventsPage() {
               </p>
               <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:items-center justify-center">
                 <a
-                  href={enquireHref}
+                  href="/book-a-table"
                   className="btn btn-ghost text-white"
                   aria-label="Book for big games"
                 >
@@ -125,7 +126,7 @@ export default async function EventsPage() {
                   </div>
                 </div>
                 <div className="flex items-center justify-start lg:justify-end gap-3">
-                  <a href={enquireHref} className="btn btn-outline border-white text-white hover:bg-white/10">Book for Big Games</a>
+                  <a href="/book-a-table" className="btn btn-outline border-white text-white hover:bg-white/10">Book for Big Games</a>
                 </div>
               </div>
               <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
@@ -199,7 +200,7 @@ export default async function EventsPage() {
                   headline="Host Private Events & Group Bookings"
                   description="From celebrations and society socials to team gatherings — we’ve got flexible spaces, great food, and a friendly team to help plan it."
                   buttons={[
-                    { text: 'Enquire About Private Events', href: enquireHref, variant: 'brand' },
+                    { text: 'Enquire About Private Events', href: '/contact#contact-info-heading', variant: 'brand' },
                   ]}
                   noBackground
                 />
