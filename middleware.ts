@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getProductionConfig } from './src/lib/config/production';
 import { cdnOptimizationMiddleware } from './src/lib/cdnStrategy';
 
-type CreateMiddlewareClientFn = typeof import('@supabase/auth-helpers-nextjs')['createMiddlewareClient'];
+// Define a minimal local type to avoid coupling to optional package types
+type CreateMiddlewareClientFn = (args: { req: any; res: any }) => {
+  auth: { getSession: () => Promise<unknown> };
+};
 
 const loggedSupabaseWarnings = new Set<'missing-env' | 'unsupported-runtime' | 'import-error'>();
 let supabaseClientLoader: Promise<CreateMiddlewareClientFn | null> | null = null;
@@ -32,9 +35,10 @@ async function loadSupabaseMiddlewareClient(): Promise<CreateMiddlewareClientFn 
   if (supabaseClientLoader) {
     return supabaseClientLoader;
   }
-
-  supabaseClientLoader = import('@supabase/auth-helpers-nextjs')
-    .then((mod) => mod.createMiddlewareClient)
+  // Use a computed specifier so bundlers don't resolve an optional dependency
+  const spec = ['@supabase', 'auth-helpers-nextjs'].join('/');
+  supabaseClientLoader = import(spec)
+    .then((mod: any) => mod.createMiddlewareClient as CreateMiddlewareClientFn)
     .catch((error): CreateMiddlewareClientFn | null => {
       if (!loggedSupabaseWarnings.has('import-error')) {
         console.warn('Supabase middleware disabled: package could not be loaded.', error);

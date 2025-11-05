@@ -7,6 +7,7 @@ import MenuHero from './_components/MenuHero';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
 import { getRestaurantIdentity, getPostalAddressSchema, getContactInfo } from '@/lib/restaurantData';
+import siteConfig from '@/config';
 import CallToActionSection from '@/components/restaurant/sections/CallToActionSection';
 import contentConfig from '@/config/content.json';
 // Dynamic imports for Menu page sections - optimized for performance
@@ -51,6 +52,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const postalAddress = getPostalAddressSchema();
 	const telHref = contact.phone.tel;
 	const phoneDisplay = contact.phone.display;
+	const takeawayHref = (content.global as any)?.links?.takeaway as string | undefined;
 
 		const labels = m.buttons || {};
 		const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline;
@@ -77,10 +79,11 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	};
 	
 	// Enhanced structured data with optimized menu
+	const siteBase = (process.env.NEXT_PUBLIC_SITE_URL || `https://${siteConfig.domainName}/`).replace(/\/$/, '/');
 	const structuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'Menu',
-		'@id': 'https://whitehorsepub.co//menu#menu',
+		'@id': `${siteBase}menu#menu`,
 		name: menuContent.hero.title,
 		description: `${menuContent.sections.description} Browse with advanced search and filtering.`,
 		inLanguage: 'en-GB',
@@ -179,8 +182,10 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 									target: '_self',
 								},
 								orderTakeaway: {
-									label: (menuContent?.hero?.cta?.order as string) || `Call ${phoneDisplay}`,
-									url: contact?.phone?.tel,
+									label: takeawayHref
+										? (content?.global?.ui?.buttons?.orderTakeaway as string) || 'Order Takeaway'
+										: `Call ${phoneDisplay}`,
+									url: (takeawayHref as string) || contact?.phone?.tel,
 								},
 							},
 						}}
