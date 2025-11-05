@@ -1,22 +1,27 @@
 {
   "global": {
     "site": {
-      "name": "The White Horse Waterbeach",
-      "title": "Historic Thatched Pub & Nepalese Restaurant",
-      "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Book: 01223277217",
+      "name": "The White Horse",
+      "title": "The White Horse Waterbeach - Village Pub & Authentic Nepalese Restaurant",
+      "description": "A friendly neighbourhood pub opposite Waterbeach village green, serving authentic Nepalese cuisine and British pub classics. Cask ales, live sports, large garden. Dog & family-friendly. Call: 01223 375578",
       "keywords": [
         "pub Waterbeach",
         "Nepalese restaurant Cambridge",
+        "authentic Nepalese cuisine Waterbeach",
         "family friendly pub Cambridge",
         "dog friendly pub Waterbeach",
-        "Sunday roast Cambridge",
-        "historic thatched pub",
-        "Waterbeach College pub",
-        "takeaway Cambridge"
+        "cask ales Cambridge",
+        "live sports pub Waterbeach",
+        "village green pub",
+        "Lapen Inns",
+        "takeaway Cambridge",
+        "Pokhareli fish curry",
+        "Bhutuwa chicken",
+        "momo Cambridge"
       ],
       "branding": {
-        "tagline": "A unique blend of authentic Nepalese cuisine and traditional British pub culture",
-        "slogan": "Where heritage meets hospitality"
+        "tagline": "Where authentic Himalayan flavour meets quintessential British pub spirit",
+        "slogan": "A Waterbeach beacon - your community hub since 1890"
       }
     },
     "navigation": {
@@ -208,9 +213,9 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "The White Horse Waterbeach - England's Largest Thatched Pub",
-        "subtitle": "Reopened February 2025 with Himalayan cooking, British pub comfort and village-green hospitality.",
-        "description": "Minutes from Cambridge, our 1890 coaching inn now pairs momo steamers and Sunday roasts with Sky Sports, free parking and a genuine family-and-dog friendly welcome.",
+        "title": "The White Horse, Waterbeach - A Revitalised Community Hub",
+        "subtitle": "Opposite the village green: authentic Nepalese cuisine meets traditional British pub comfort.",
+        "description": "Your friendly neighbourhood pub in the heart of Waterbeach. Enjoy authentic Nepalese dishes alongside British pub classics, cask ales, live sports, and a warm welcome for families and dogs. Saved from redevelopment and relaunched February 2025 by Lapen Inns.",
         "cta": {
           "primary": "Call 01223 375578",
           "secondary": "View Menu",
@@ -263,17 +268,17 @@
         },
         "about": {
           "title": "Welcome to The White Horse",
-          "tagline": "A Waterbeach coaching inn reborn with Himalayan hospitality",
+          "tagline": "A Waterbeach village hub reborn with Himalayan hospitality",
           "description": [
-            "Opposite the Waterbeach village green, our thatched 1890 coaching inn was saved from redevelopment and relaunched on 6 February 2025 by the Lapen Inns family.",
-            "We now blend a lively British pub with a Nepalese restaurant: momo steamers, Bhutuwa chicken and Pokhareli fish curry sit happily beside Sunday roasts, cask ales and Sky Sports match days.",
-            "Families, students, commuters and canine companions gather here for quiz nights, takeaway Fridays and sunny afternoons in the garden cabins."
+            "Opposite Waterbeach village green, The White Horse is a relaxed, contemporary pub and restaurant saved from redevelopment and relaunched February 6, 2025 by Lapen Inns.",
+            "We blend the charm of a traditional British pub with an extensive menu of authentic Nepalese cuisine: Bhutuwa chicken, Pokhareli fish curry, and Rara king prawns sit happily beside Sunday roasts, well-kept cask ales, and live sports.",
+            "Families, locals, and visitors gather here for quiz nights, quality food, and a genuine welcome that extends to your four-legged friends in our large rear garden."
           ],
           "features": [
-            "England's largest thatched pub with free village parking",
-            "Authentic Nepalese menu crafted by Subodh Gautam and family",
-            "Heated garden cabins, terrace seating and Sky & TNT Sports",
-            "Dog friendly bar with water bowls and treats on hand"
+            "Authentic Nepalese cuisine prepared with traditional recipes by Ravi Acharya and Purna Man Bajrachaya",
+            "Traditional British pub with cask ales: Greene King IPA and Timothy Taylor Landlord",
+            "Live sports on Sky Sports and TNT Sports with large garden and outdoor seating",
+            "Dog-friendly bar with water bowls and treats on hand"
           ],
           "image": {
             "src": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg",
@@ -282,71 +287,71 @@
         },
         "signatureDishes": {
           "title": "Signature Nepalese Dishes",
-          "subtitle": "Stories behind the plates locals rave about",
+          "subtitle": "Press-lauded favourites from our authentic Himalayan kitchen",
           "items": [
             {
               "name": "Bhutuwa Chicken",
-              "description": "Owner Subodh Gautam's favourite: wok-fired chicken tossed with chilli, garlic and ginger, best shared with warm naan.",
+              "description": "Owner Subodh Gautam's personal favourite: thick, flavourful sauce enriched with fried crushed garlic and crushed chilli. A must-try, best enjoyed with naan bread.",
               "image": "/images/white-horse/dishes/rich-red-curry-in-balti-bowl-portrait.jpeg"
             },
             {
               "name": "Pokhareli Fish Curry",
-              "description": "Press-lauded chalk stream fish simmered with Himalayan spices, tomato, fenugreek and mustard seed heat.",
+              "description": "One of our best-sellers: tender fish in authentic Nepalese spices, a customer favourite since our February 2025 relaunch.",
               "image": "/images/white-horse/dishes/creamy-curry-in-ceramic-bowl-portrait.jpeg"
             },
             {
               "name": "Rara King Prawn",
-              "description": "Tiger prawns finished on a sizzling platter with Nepalese masala, a Waterbeach bestseller since reopening.",
+              "description": "Tiger prawns in rich Himalayan masala - another best-seller that showcases the authentic flavours of Nepal.",
               "image": "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg"
             }
           ]
         },
         "reviews": {
           "title": "What Guests Say",
-          "subtitle": "Real sentiments from guides, reviewers and our own team",
+          "subtitle": "Community reception and independent reviews",
           "items": [
             {
-              "quote": "\"Authentic ingredients and a rich, flavourful experience.\"",
-              "source": "Visit South Cambs hospitality guide, 2025",
-              "platform": "Visit South Cambs"
+              "quote": "\"The locals were more excited than I am - they thought it would be turned into flats. The regulars turned up and they were all very welcoming.\"",
+              "source": "Subodh Gautam, Owner - Ely Standard, February 2025",
+              "rating": 5
             },
             {
-              "quote": "\"Historic pub meets modern culinary flair - a true Cambridge gem.\"",
-              "source": "Google Reviews, February 2025",
-              "platform": "Google"
+              "quote": "\"A little gem. Very welcoming with friendly and attentive staff. The garden is very nice and there's ample parking. You can stay as long as you like - a very nice relaxed feel.\"",
+              "source": "The Cambridge Foodies review, June 2023",
+              "rating": 5
             },
             {
-              "quote": "\"The locals were more excited than I am - they thought it would be flats, but the regulars turned up and were so welcoming.\"",
-              "source": "Subodh Gautam speaking to Ely Standard, Feb 2025",
-              "platform": "Ely Standard"
+              "quote": "\"Really friendly staff, huge garden, convenient location, and plentiful and properly attended beer taps.\"",
+              "source": "The Endless British Pub Crawl, April 2009",
+              "rating": 5
             }
           ]
         },
         "pressFeature": {
           "label": "In the press",
-          "eyebrow": "Ely Standard feature",
-          "title": "Waterbeach celebrates as The White Horse relaunches with Nepalese soul",
-          "summary": "Ely Standard shares how the Gautam family kept the village pub thriving with Himalayan cooking, Sky Sports and a revived garden.",
-          "quote": "\"The locals were more excited than I am - they thought it would be flats, but the regulars turned up and were so welcoming.\"",
-          "quoteAttribution": "Subodh Gautam, owner",
+          "eyebrow": "Ely Standard & Cambridge News",
+          "title": "Village pub saved from redevelopment as Nepalese restaurant",
+          "summary": "Local media celebrates how Lapen Inns rescued The White Horse, bringing authentic Himalayan cuisine to Waterbeach while preserving the community pub.",
+          "quote": "\"The locals were more excited than I am - they thought it would be turned into flats. The regulars turned up and they were all very welcoming.\"",
+          "quoteAttribution": "Subodh Gautam, Owner - Ely Standard",
           "cta": {
-            "text": "Read the article",
+            "text": "Read the coverage",
             "href": "https://www.elystandard.co.uk/news/24942044.white-horse-waterbeach-reopens-nepalese-restaurant/",
             "ariaLabel": "Read Ely Standard coverage (opens in new tab)"
           }
         },
         "quickLinks": [
           {
-            "title": "Community & Events",
-            "description": "Quiz nights, seasonal gatherings & live sports – see what's coming up.",
+            "title": "Weekly Quiz & Events",
+            "description": "Wednesday quiz nights, live sports viewing, and seasonal community gatherings.",
             "link": "/events",
             "linkText": "View Events →"
           },
           {
-            "title": "Heritage & Story",
-            "description": "Discover how our thatched village pub evolved into a Nepalese + British hub.",
+            "title": "Our Story",
+            "description": "How we saved a village pub and brought authentic Nepalese cuisine to Waterbeach.",
             "link": "/about",
-            "linkText": "Explore Heritage →"
+            "linkText": "Read Our Story →"
           },
           {
             "title": "Our Menu",
@@ -356,8 +361,8 @@
           }
         ],
         "cta": {
-          "headline": "Ready to Experience Waterbeach's Thatched Nepalese Pub?",
-          "description": "Reserve a table, explore the menu or plan an event – we'd love to host you.",
+          "headline": "Visit The White Horse - Your Waterbeach Community Hub",
+          "description": "Experience authentic Nepalese cuisine in a friendly British pub setting. Call to book or order takeaway.",
           "buttons": [
             {
               "text": "View Menu",
@@ -371,8 +376,8 @@
               "variant": "brand"
             },
             {
-              "text": "Book Online",
-              "href": "/book-a-table",
+              "text": "Call 01223 375578",
+              "href": "tel:+441223375578",
               "variant": "crimson"
             }
           ]
@@ -464,65 +469,75 @@
       }
     },
     "about": {
+      "seo": {
+        "title": "About The White Horse, Waterbeach | Our Story & Mission",
+        "description": "A friendly village pub opposite the green. Cask ales, live sport, and an authentic Nepalese kitchen — revived for the community in 2025.",
+        "canonicalUrlRelative": "/about",
+        "openGraph": {
+          "title": "About The White Horse – Our Story",
+          "description": "Why we exist, what we stand for, and how we blend village pub comfort with authentic Nepalese flavour.",
+          "url": "https://whitehorsepub.co/about"
+        }
+      },
       "hero": {
-        "title": "About The White Horse Waterbeach",
-        "subtitle": "England’s largest thatched pub reborn — a Waterbeach village hub where authentic Nepalese cuisine meets British pub comfort."
+        "title": "About The White Horse",
+        "subtitle": "A friendly village pub opposite Waterbeach green - saved, revitalized, and serving authentic Nepalese cuisine alongside British pub classics."
       },
       "story": {
         "title": "Our Story",
-        "introduction": "Opposite the Waterbeach village green, our thatched 1890 coaching inn was saved from redevelopment and relaunched on 6 February 2025. Today we blend a lively British pub with an authentic Nepalese kitchen — momo steamers, Bhutuwa chicken and Pokhareli fish curry alongside cask ales, big‑screen sports and relaxed garden gatherings.",
+        "introduction": "Opposite the Waterbeach village green, The White Horse was saved from potential redevelopment and relaunched on February 6, 2025 by Lapen Inns. Today we blend a traditional British pub atmosphere with an extensive menu of authentic Nepalese cuisine - Bhutuwa chicken, Pokhareli fish curry, and momo alongside cask ales, live sports, and Sunday roasts in our relaxed, contemporary setting.",
         "timeline": [
           {
-            "period": "Historic Beginnings",
-            "title": "The Village Heart",
-            "description": "For centuries, The White Horse has been at the heart of Waterbeach village life. Our historic thatched building - recognized as the largest thatched pub in the country - has witnessed countless community gatherings and celebrations."
+            "period": "1890s",
+            "title": "Historic Village Pub",
+            "description": "The White Horse has been at the heart of Waterbeach village life for over a century, serving as a beloved community gathering place opposite the village green."
           },
           {
-            "period": "Culinary Evolution",
-            "title": "Culinary Evolution",
-            "description": "Through different eras — from classic pub fare to gastropub — we’ve added new layers while staying a true village local."
+            "period": "Recent History",
+            "title": "Evolution & Adaptation",
+            "description": "Through the years, the pub evolved - from classic pub fare to Thai food in 2009, then British/Italian gastropub offerings. This history of culinary reinvention demonstrates our commitment to serving the community with exciting, quality food."
           },
           {
-            "period": "Today",
-            "title": "The Nepalese-British Fusion",
-            "description": "Reopened in February 2025, we embraced a distinctive model: an authentic Nepalese kitchen within a proper village pub. Two complementary experiences — destination dining and a welcoming local — preserving heritage while introducing vibrant Himalayan flavours."
+            "period": "February 2025",
+            "title": "A New Chapter: The Lapen Inns Revival",
+            "description": "Acquired by Lapen Inns (led by Subodh Gautam, Diwakar Subedi, Ravi Acharya, and Purna Man Bajrachaya), The White Horse was rescued from closure. Officially reopened January 31, 2025, with our Nepalese menu launching February 6. We preserve the core essence of a community pub while introducing authentic Himalayan cuisine - creating two robust revenue streams and a unique dining destination."
           }
         ]
       },
       "cta": {
-        "title": "Ready to Book?",
-        "description": "Experience the perfect blend of Nepalese hospitality and British pub tradition.",
-        "button": "Book Online",
+        "title": "Visit The White Horse",
+        "description": "Experience authentic Nepalese cuisine in a welcoming British pub setting.",
+        "button": "Call 01223 375578",
         "contact": {
           "address": "12 Greenside, Waterbeach, Cambridge CB25 9HP",
-          "hours": "See footer for full hours"
+          "hours": "See footer for opening hours"
         }
       }
     },
     "contact": {
       "seo": {
-        "title": "Contact The White Horse Waterbeach - Book Table | Directions | Opening Hours",
-        "description": "Contact The White Horse Waterbeach for bookings, directions & enquiries. Find our address, phone and opening hours.",
+        "title": "Contact The White Horse Waterbeach | Bookings, Directions & Opening Hours",
+        "description": "Contact The White Horse for table bookings and enquiries. Call 01223 375578. Located at 12 Greenside, Waterbeach, Cambridge CB25 9HP. Email: hellothewhitehorsewaterbeach@gmail.com",
         "keywords": [
-          "The White Horse Waterbeach contact",
-          "book table Waterbeach pub",
-          "Waterbeach pub phone number",
-          "The White Horse directions",
-          "Cambridge pub booking",
-          "Waterbeach restaurant address"
+          "The White Horse contact",
+          "Waterbeach pub phone",
+          "book table Waterbeach",
+          "Nepalese restaurant Cambridge contact",
+          "01223 375578",
+          "12 Greenside Waterbeach"
         ],
         "canonicalUrlRelative": "/contact"
       },
       "hero": {
         "title": "Contact Us",
-        "subtitle": "Get in touch for bookings, enquiries, or just to say hello"
+        "subtitle": "Get in touch for bookings, takeaway orders, or enquiries"
       },
       "contactInfo": {
         "title": "Get in Touch",
         "phone": {
           "title": "Phone",
-          "number": "01223277217",
-          "description": "Call us for bookings and enquiries"
+          "number": "01223375578",
+          "description": "Call us for table bookings, takeaway orders, and general enquiries"
         },
         "location": {
           "title": "Location",
@@ -565,48 +580,51 @@
       }
     },
     "events": {
+      "seo": {
+        "title": "Events & What's On | The White Horse Waterbeach - Quiz Nights, Live Sports & Community Events",
+        "description": "Join us for weekly quiz nights every Wednesday, watch live sports on Sky & TNT Sports, and enjoy seasonal community events. Family and dog-friendly pub in Waterbeach.",
+        "canonicalUrlRelative": "/events"
+      },
       "hero": {
-        "title": "What's On & Community Events",
-        "subtitle": "Recurring favourites plus seasonal highlights reflecting Waterbeach village life & Cambridge academic rhythm. Call to reserve or enquire about group space."
+        "badgeLabel": "What’s On",
+        "title": "Events & What's On",
+        "subtitle": "Weekly quiz nights, live sports, and seasonal gatherings - your community hub for every occasion",
+        "buttons": {
+          "book": "Book for Big Games",
+          "viewMenu": "View Menu"
+        },
+        "badges": [
+          "Live Sport",
+          "Multiple Screens",
+          "Great Food"
+        ]
       },
       "regularEvents": [
         {
           "title": "Weekly Pub Quiz",
-          "description": "Community teams, students & locals — general knowledge + themed rounds.",
-          "frequency": "Thursday 8:00 PM",
+          "description": "Test your knowledge every Wednesday evening. A classic pub tradition bringing the community together for friendly competition.",
+          "frequency": "Wednesday Evening",
           "icon": "🧠"
         },
         {
-          "title": "Curry & Community Night",
-          "description": "Celebrate our Nepalese kitchen: featured dish & mild family option.",
-          "frequency": "Wednesday Evening",
-          "icon": "🌶️"
-        },
-        {
-          "title": "Live Sports Highlights",
-          "description": "Key football & rugby fixtures on screen – garden when weather allows.",
-          "frequency": "Major fixtures schedule",
+          "title": "Live Sports on Big Screens",
+          "description": "Watch major sporting events on Sky Sports and TNT Sports. The premier local venue for football, rugby, and more.",
+          "frequency": "Major fixtures - check with us",
           "icon": "⚽"
         },
         {
-          "title": "Seasonal Garden Social",
-          "description": "Long summer evenings with relaxed sharing plates. (Seasonal)",
-          "frequency": "Summer Series",
+          "title": "Community Gatherings",
+          "description": "From family meals to celebrations, our large rear garden and welcoming atmosphere make us perfect for group events.",
+          "frequency": "Year-round",
           "icon": "🌿"
         }
-      ],
-      "contact": {
-        "title": "Book Your Event",
-        "description": "Planning a private event? Get in touch to discuss your requirements.",
-        "phone": "01223277217",
-        "email": "hellothewhitehorsewaterbeach@gmail.com"
-      }
+      ]
     },
     "menu": {
       "seo": {
-        "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
-        "description": "Explore our searchable menu featuring authentic Nepalese cuisine, momo, dal bhat & curries, plus traditional British pub classics. Advanced search and dietary filters available. Takeaway available.",
-        "keywords": "searchable menu Cambridge, Nepalese menu Cambridge, authentic Nepalese food Waterbeach, momo Cambridge, dal bhat, curry takeaway Cambridge, pub food menu Waterbeach, dietary filters menu, nutrition information",
+        "title": "Menu | Authentic Nepalese Cuisine & British Pub Classics | The White Horse Waterbeach",
+        "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call 01223 375578.",
+        "keywords": "authentic Nepalese menu Cambridge, Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo Cambridge, dal bhat, tandoori king prawns, curry Waterbeach, Baltis, Jalfrezis, pub classics, cask ales, takeaway Cambridge, Greene King IPA, Timothy Taylor Landlord",
         "openGraph": {
           "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
           "description": "Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Waterbeach's historic thatched pub",
@@ -617,15 +635,15 @@
         }
       },
       "hero": {
-        "title": "Our Menu: Authentic Nepalese & Traditional British Cuisine",
-        "subtitle": "Discover the unique flavors of Nepal alongside your favorite pub classics at Waterbeach's historic thatched pub. Every dish made fresh with authentic recipes and quality ingredients.",
+        "title": "Our Menu: Authentic Nepalese Cuisine & British Pub Classics",
+        "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to Sunday roasts and well-kept cask ales.",
         "cta": {
           "book": "Book Online",
-          "order": "Order Takeaway: 01223277217"
+          "order": "Order Takeaway: 01223 375578"
         }
       },
       "sections": {
-        "description": "Experience the perfect fusion of authentic Nepalese flavors and beloved British pub classics.",
+        "description": "Experience authentic Nepalese cuisine prepared by talented chefs Ravi Acharya and Purna Man Bajrachaya, alongside traditional British pub favourites.",
         "allergenNotice": "Please inform us of any allergies or dietary requirements when ordering."
       },
       "messages": {
@@ -655,43 +673,10 @@
       "title": "Dashboard",
       "subtitle": "Welcome to your account"
     },
-    "about": {
-      "seo": {
-        "title": "About The White Horse, Waterbeach | Our Story & Mission",
-        "description": "A friendly village pub opposite the green. Cask ales, live sport, and an authentic Nepalese kitchen — revived for the community in 2025.",
-        "canonicalUrlRelative": "/about",
-        "openGraph": {
-          "title": "About The White Horse – Our Story",
-          "description": "Why we exist, what we stand for, and how we blend village pub comfort with authentic Nepalese flavour.",
-          "url": "https://whitehorsepub.co/about"
-        }
-      },
-      "hero": {
-        "title": "A village pub with Nepalese soul",
-        "subtitle": "Opposite the Waterbeach green, we pair classic pub comfort with an authentic Nepalese kitchen — modern, relaxed, and welcoming."
-      },
-      "story": {
-        "title": "Our Story",
-        "introduction": "From historic coaching inn to a unique Nepalese-British fusion, we\u2019re proudly community-first.",
-        "timeline": [
-          { "period": "1890s", "title": "Origins", "description": "Coaching inn serving travelers and villagers alike." },
-          { "period": "2025", "title": "Reborn", "description": "Revived with authentic Nepalese kitchen and village pub spirit." }
-        ]
-      },
-      "cta": {
-        "title": "Ready to Book?",
-        "description": "Experience the perfect blend of Nepalese hospitality and British pub tradition.",
-        "button": "Book Online",
-        "contact": {
-          "address": "12 Greenside, Waterbeach, Cambridge CB25 9HP",
-          "hours": "See footer for full hours"
-        }
-      }
-    },
     "bookTable": {
       "seo": {
-        "title": "Book a Table | The White Horse Waterbeach Restaurant Reservations",
-        "description": "Reserve a table at The White Horse Waterbeach in Cambridge. Submit our quick booking request form or call us for immediate assistance.",
+        "title": "Book a Table | The White Horse Waterbeach - Restaurant Reservations",
+        "description": "Reserve a table at The White Horse Waterbeach. Call 01223 375578 for bookings. Authentic Nepalese cuisine and British pub classics in a family-friendly setting.",
         "canonicalUrlRelative": "/book-a-table",
         "openGraph": {
           "title": "Book a Table at The White Horse Waterbeach",
@@ -704,14 +689,15 @@
     "notFound": {},
     "press": {
       "seo": {
-        "title": "Press Kit | The White Horse Waterbeach",
-        "description": "Official press information, quick facts, and media contact for The White Horse, Waterbeach — a revitalised community hub blending a traditional pub with authentic Nepalese cuisine.",
+        "title": "Press & Media | The White Horse Waterbeach - Media Contact & Press Kit",
+        "description": "Official press information for The White Horse, Waterbeach. A revitalized community pub serving authentic Nepalese cuisine. Relaunched February 2025 by Lapen Inns. Media enquiries: hellothewhitehorsewaterbeach@gmail.com",
         "keywords": [
           "The White Horse Waterbeach press",
           "press kit",
           "media contact",
-          "Nepalese restaurant",
-          "Waterbeach thatched pub"
+          "Nepalese restaurant Waterbeach",
+          "Lapen Inns",
+          "village pub Cambridge"
         ],
         "canonicalUrlRelative": "/press",
         "openGraph": {
@@ -723,8 +709,8 @@
     },
     "privacyPolicy": {
       "seo": {
-        "title": "Privacy Policy | The White Horse Waterbeach - Data Protection & GDPR Compliance",
-        "description": "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage. GDPR compliant data protection policy.",
+        "title": "Privacy Policy | The White Horse Waterbeach - Data Protection & GDPR",
+        "description": "Privacy policy for The White Horse Waterbeach. GDPR-compliant data protection policy for restaurant bookings and website usage.",
         "keywords": [
           "The White Horse Waterbeach privacy policy",
           "restaurant data protection",
@@ -741,8 +727,8 @@
     },
     "tos": {
       "seo": {
-        "title": "Terms of Service | The White Horse Waterbeach - Restaurant Booking & Service Conditions",
-        "description": "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations, cancellations and dining policies for our Cambridge pub.",
+        "title": "Terms of Service | The White Horse Waterbeach - Booking Terms & Conditions",
+        "description": "Terms of service for The White Horse Waterbeach covering table bookings, reservations, and dining policies.",
         "keywords": [
           "The White Horse Waterbeach terms",
           "restaurant booking terms",
@@ -757,27 +743,10 @@
         }
       }
     },
-    "events": {
-      "seo": {
-        "title": "Events & What's On | The White Horse Waterbeach",
-        "description": "Live sports, regular happenings, and a weekly guide. Multiple screens, great food, family & dog-friendly.",
-        "canonicalUrlRelative": "/events"
-      },
-      "hero": {
-        "badgeLabel": "What’s On",
-        "title": "Events & What’s On",
-        "subtitle": "Your home for live sport, community gatherings, and proper pub culture — with great food and a warm welcome every day.",
-        "buttons": {
-          "book": "Book for Big Games",
-          "viewMenu": "View Menu"
-        },
-        "badges": ["Live Sport", "Multiple Screens", "Great Food"]
-      }
-    },
     "menuInformation": {
       "seo": {
-        "title": "Menu Information & Dietary Requirements | The White Horse Waterbeach - Allergens, Dietary Options & Food Safety",
-        "description": "Comprehensive allergen information, dietary requirements, and menu transparency for The White Horse Waterbeach. We comply with UK Food Information Regulations 2014 and Natasha's Law.",
+        "title": "Menu Information & Allergens | The White Horse Waterbeach - Dietary Requirements & Food Safety",
+        "description": "Allergen information and dietary requirements for The White Horse Waterbeach menu. Please inform our staff of any allergies when ordering. Compliant with UK Food Information Regulations 2014.",
         "keywords": [
           "The White Horse Waterbeach allergens",
           "dietary requirements Cambridge",
@@ -797,8 +766,8 @@
     },
     "wakesMenu": {
       "seo": {
-        "title": "Wakes Buffet | Celebration of Life Catering | The White Horse Waterbeach",
-        "description": "Plan a calm celebration of life with our £10-per-guest wakes buffet: one sandwich, chicken wings, and a samosa, plus optional chicken pakora with tea or coffee.",
+        "title": "Celebration of Life Menu | Wakes & Memorial Gatherings | The White Horse Waterbeach",
+        "description": "A calm and dignified setting for celebration of life gatherings. Buffet menu £10 per guest with large rear garden space available. Call 01223 375578 to arrange.",
         "keywords": [
           "wakes menu Cambridge",
           "celebration of life catering",
@@ -816,15 +785,14 @@
     },
     "takeawayMenu": {
       "seo": {
-        "title": "Takeaway Menu Download | The White Horse Waterbeach",
-        "description": "Download The White Horse Waterbeach takeaway menu and order authentic Nepalese and British pub favourites for collection in Waterbeach, Cambridge.",
+        "title": "Takeaway Menu | The White Horse Waterbeach - Authentic Nepalese & Pub Food Collection",
+        "description": "Order authentic Nepalese takeaway from The White Horse Waterbeach. Bhutuwa chicken, Pokhareli fish curry, curries, and British pub classics for collection. Call 01223 375578 to order.",
         "keywords": [
-          "takeaway menu Cambridge",
-          "The White Horse Waterbeach takeaway",
-          "Waterbeach takeaway",
-          "download takeaway menu",
+          "takeaway Waterbeach",
           "Nepalese takeaway Cambridge",
-          "pub takeaway Waterbeach"
+          "The White Horse takeaway",
+          "curry takeaway Cambridge",
+          "01223 375578"
         ],
         "canonicalUrlRelative": "/takeaway-menu",
         "openGraph": {
@@ -836,8 +804,8 @@
     },
     "christmasMenu": {
       "seo": {
-        "title": "Christmas Menu 2025 | The White Horse Waterbeach – Festive Dining in Cambridge",
-        "description": "Enjoy The White Horse Waterbeach's 2025 Christmas menu. Pick a starter, main, side and dessert, with mulled wine or another drink of their choice included. Chef's set menu costs £44.99 per guest.",
+        "title": "Christmas Menu 2025 | The White Horse Waterbeach - Festive Dining in Waterbeach",
+        "description": "Celebrate Christmas 2025 at The White Horse Waterbeach. Chef's festive set menu £44.99 per guest including mulled wine or drink of choice. Book your festive table: 01223 375578",
         "keywords": [
           "Cambridge Christmas menu",
           "Christmas menu",
@@ -859,7 +827,7 @@
   "components": {
     "testimonials": {
       "title": "What Our Customers Say",
-      "subtitle": "Don't just take our word for it",
+      "subtitle": "Community reception and guest reviews",
       "items": [
         {
           "name": "Sarah Johnson",
@@ -881,7 +849,7 @@
       "items": [
         {
           "question": "Do you accept bookings?",
-          "answer": "Yes, we accept bookings online or by phone. We recommend booking in advance, especially for weekends and special events."
+          "answer": "Yes, we accept bookings by phone. Call us on 01223 375578 to reserve your table. We recommend booking in advance, especially for weekends."
         },
         {
           "question": "Are you family-friendly?",
@@ -889,7 +857,7 @@
         },
         {
           "question": "Do you offer takeaway?",
-          "answer": "Yes, we offer takeaway for both our Nepalese and British menu items. Call us on 01223277217 to place your order."
+          "answer": "Yes, we offer takeaway for both our authentic Nepalese dishes and British pub classics. Call 01223 375578 to place your order."
         },
         {
           "question": "Is parking available?",
@@ -922,12 +890,12 @@
             "primary": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg"
           },
           "alt": "Thatched exterior of The White Horse Waterbeach on a bright day",
-          "eyebrow": "Village Hub Reborn",
-          "headline": "Waterbeach's thatched landmark is alive with Nepalese flavour",
-          "copy": "Saved from redevelopment and relaunched February 2025, The White Horse pairs a historic coaching inn with Himalayan cooking and proper cask ales.",
+          "eyebrow": "Community Hub Reborn",
+          "headline": "Village pub saved from redevelopment, relaunched with authentic Nepalese cuisine",
+          "copy": "Opposite Waterbeach village green, The White Horse was rescued by Lapen Inns in February 2025. We blend traditional British pub comfort with an extensive menu of Himalayan flavours.",
           "badges": [
-            "Open daily",
-            "Families & dogs welcome",
+            "Relaunched February 2025",
+            "Saved from closure",
             "Opposite Waterbeach green"
           ],
           "ctas": {
@@ -942,12 +910,12 @@
             "primary": "/images/white-horse/interior/bar-counter-cozy-lighting-taps-and-shelves-landscape.jpeg"
           },
           "alt": "Copper-topped bar at The White Horse with cask ales and spirits",
-          "eyebrow": "Two Pubs in One",
-          "headline": "Authentic Nepalese kitchen meets favourite British bar",
-          "copy": "Share momo, Bhutuwa chicken or Sunday roasts while friends enjoy Sky Sports, cask ales and cocktails — one roof, every occasion.",
+          "eyebrow": "A Tale of Two Pubs",
+          "headline": "Authentic Nepalese restaurant meets traditional British pub",
+          "copy": "Enjoy Bhutuwa chicken, Pokhareli fish curry, and momo alongside Sunday roasts, cask ales, and live sports. One roof, two complementary experiences - destination dining and your welcoming local.",
           "badges": [
-            "Nepalese classics",
-            "CAMRA-kept cask ales",
+            "Greene King IPA & Timothy Taylor Landlord",
+            "Authentic Nepalese kitchen",
             "Sky & TNT Sports"
           ],
           "ctas": {
@@ -962,13 +930,13 @@
             "primary": "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg"
           },
           "alt": "Nepalese sizzling mixed grill served with lemon at The White Horse",
-          "eyebrow": "Signature Dishes",
-          "headline": "Bhutuwa chicken, Pokhareli fish & Rara king prawns lead the menu",
-          "copy": "Press-lauded dishes cooked by the Gautam family showcase Himalayan spice alongside comforting pub favourites and Sunday roasts.",
+          "eyebrow": "Press-Lauded Favourites",
+          "headline": "Bhutuwa chicken, Pokhareli fish curry & Rara king prawns",
+          "copy": "Our best-sellers showcase authentic Himalayan cooking by talented chefs Ravi Acharya and Purna Man Bajrachaya. Traditional recipes, rich flavours, genuine hospitality.",
           "badges": [
-            "Takeaway Friday",
-            "Vegetarian & gluten-free options",
-            "Spice levels for everyone"
+            "Authentic traditional recipes",
+            "Best-sellers since reopening",
+            "Mild to spicy options"
           ],
           "ctas": {
             "menuUrl": "/menu",
@@ -982,7 +950,7 @@
             "primary": "/images/white-horse/garden/patio-terrace-wicker-chairs-and-parasols-portrait.jpeg"
           },
           "alt": "Terrace with wicker chairs and parasols at The White Horse",
-          "eyebrow": "Beer Garden & Cabins",
+          "eyebrow": "Large Rear Garden",
           "headline": "Garden cabins, terrace seating & summer-ready parasols",
           "copy": "Gather on the village green with heated cabins, picnic benches and community events from brunch to curry evenings.",
           "badges": [
