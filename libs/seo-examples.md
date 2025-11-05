@@ -154,7 +154,7 @@ import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 
 export const metadata = getSEOTags({
   title: "Events & Live Music - The White Horse Waterbeach",
-  description: "Join us for live music, quiz nights, and special events at The White Horse Waterbeach. Check our events calendar.",
+  description: "Join us for live music and special events at The White Horse Waterbeach. Check our events calendar.",
   canonicalUrlRelative: "/events"
 });
 
@@ -164,8 +164,8 @@ export default function EventsPage() {
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      name: "Quiz Night",
-      description: "Weekly quiz night with prizes and great food",
+      name: "Midweek Social",
+      description: "Relaxed midweek gathering with great food and drinks",
       startDate: "2024-04-01T19:00:00+01:00",
       endDate: "2024-04-01T22:00:00+01:00",
       location: {

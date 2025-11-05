@@ -88,16 +88,10 @@
     "events": {
       "hero": {
         "title": "What's On & Community Events",
-        "subtitle": "Experience Waterbeach pub culture — lively quiz nights, Nepalese sharing plates, and big-screen sports. Call to reserve or enquire about group space.",
+        "subtitle": "Experience Waterbeach pub culture — Nepalese sharing plates and big-screen sports. Call to reserve or enquire about group space.",
         "description": "Discover local pub nights rooted in Waterbeach village life: expect warm welcomes, proper pints, authentic Nepalese dishes to share, and the best place to catch live sports in Cambridge."
       },
       "regularEvents": [
-        {
-          "title": "Weekly Pub Quiz",
-          "description": "Community teams, students & locals — general knowledge + themed rounds. Friendly atmosphere, small prizes and team tables.",
-          "frequency": "Thursday 8:00 PM",
-          "icon": "🧠"
-        },
         {
           "title": "Nepalese Curry & Sharing Night",
           "description": "Enjoy authentic Nepalese dishes — sharing plates and family-friendly options alongside classic pub sides.",

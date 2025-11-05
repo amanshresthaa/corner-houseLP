@@ -25,7 +25,7 @@ interface EventsUpdatesSectionProps {
  */
 export default function EventsUpdatesSection({ 
   title = "Stay Updated",
-  description = "Follow for fixture announcements, seasonal dates & last‑minute quiz availability.",
+  description = "Follow for fixture announcements, seasonal dates & last‑minute table availability.",
   className = '' 
 }: EventsUpdatesSectionProps) {
   return (

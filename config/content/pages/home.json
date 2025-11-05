@@ -29,7 +29,7 @@
         {
           "icon": "\ud83c\udf89",
           "title": "Weekly traditions",
-          "description": "Quiz night Wednesdays, Sky & TNT Sports and takeaway Fridays"
+          "description": "Sky & TNT Sports and takeaway Fridays"
         },
         {
           "icon": "\ud83d\udc3e",
@@ -53,7 +53,7 @@
     "quickLinks": [
       {
         "title": "What\u2019s On Weekly",
-        "description": "See quiz night line-ups, Sky & TNT fixtures and seasonal garden gatherings.",
+        "description": "See Sky & TNT fixtures and seasonal garden gatherings.",
         "link": "/events",
         "linkText": "See events \u2192"
       },

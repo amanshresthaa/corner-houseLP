@@ -34,10 +34,10 @@ describe('RegularEventsSection', () => {
 
   const mockEvents: TestEvent[] = [
     {
-      title: 'Weekly Pub Quiz',
-      description: 'Community teams, students & locals — general knowledge + themed rounds.',
-      frequency: 'Thursday 8:00 PM',
-      icon: '🧠',
+      title: 'Takeaway Friday',
+      description: 'Call ahead for Nepalese favourites ready for collection before the weekend.',
+      frequency: 'Friday Evening',
+      icon: '🥡',
       startDate: '2025-08-14T20:00:00+01:00',
       endDate: undefined
     } as TestEvent,
@@ -62,17 +62,17 @@ describe('RegularEventsSection', () => {
     render(<RegularEventsSection events={mockEvents} />);
     
     // Check all titles are rendered
-    expect(screen.getByText('Weekly Pub Quiz')).toBeInTheDocument();
+    expect(screen.getByText('Takeaway Friday')).toBeInTheDocument();
     expect(screen.getByText('Curry & Community Night')).toBeInTheDocument();
     expect(screen.getByText('Live Sports Highlights')).toBeInTheDocument();
     
     // Check all descriptions are rendered
-    expect(screen.getByText(/Community teams, students & locals/)).toBeInTheDocument();
+    expect(screen.getByText(/Call ahead for Nepalese favourites/)).toBeInTheDocument();
     expect(screen.getByText(/Celebrate our Nepalese kitchen/)).toBeInTheDocument();
     expect(screen.getByText(/Key football & rugby fixtures/)).toBeInTheDocument();
     
     // Check all frequencies are rendered
-    expect(screen.getByText('Thursday 8:00 PM')).toBeInTheDocument();
+    expect(screen.getByText('Friday Evening')).toBeInTheDocument();
     expect(screen.getByText('Wednesday Evening')).toBeInTheDocument();
     expect(screen.getByText('Major fixtures schedule')).toBeInTheDocument();
   });
@@ -80,7 +80,7 @@ describe('RegularEventsSection', () => {
   it('renders icons when provided', () => {
     render(<RegularEventsSection events={mockEvents} />);
     
-    expect(screen.getByText('🧠')).toBeInTheDocument();
+    expect(screen.getByText('🥡')).toBeInTheDocument();
     expect(screen.getByText('🌶️')).toBeInTheDocument();
     expect(screen.getByText('⚽')).toBeInTheDocument();
   });
@@ -180,7 +180,7 @@ describe('RegularEventsSection', () => {
     render(<RegularEventsSection events={eventsWithoutIcons} />);
     
     // Events should still render without icons
-    expect(screen.getByText('Weekly Pub Quiz')).toBeInTheDocument();
+    expect(screen.getByText('Takeaway Friday')).toBeInTheDocument();
     expect(screen.getByText('Curry & Community Night')).toBeInTheDocument();
     expect(screen.getByText('Live Sports Highlights')).toBeInTheDocument();
   });
@@ -189,7 +189,7 @@ describe('RegularEventsSection', () => {
     render(<RegularEventsSection events={mockEvents} />);
     
     const eventTitles = screen.getAllByRole('heading', { level: 3 });
-    expect(eventTitles[0]).toHaveTextContent('Weekly Pub Quiz');
+    expect(eventTitles[0]).toHaveTextContent('Takeaway Friday');
     expect(eventTitles[1]).toHaveTextContent('Curry & Community Night');
     expect(eventTitles[2]).toHaveTextContent('Live Sports Highlights');
   });

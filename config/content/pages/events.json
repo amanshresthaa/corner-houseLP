@@ -5,12 +5,6 @@
   },
   "regularEvents": [
     {
-      "title": "Weekly Pub Quiz",
-      "description": "Community teams, students and locals tackling general knowledge with Nepalese bar snacks.",
-      "frequency": "Wednesday 8:00 PM",
-      "icon": "🧠"
-    },
-    {
       "title": "Takeaway Friday",
       "description": "Phone ahead for Bhutuwa chicken, momo and Gurkha lager to collect before the weekend.",
       "frequency": "Every Friday from 5:00 PM",

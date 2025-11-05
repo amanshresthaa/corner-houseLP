@@ -298,7 +298,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 									<li className="rounded-2xl border border-brand-100 bg-white p-4 shadow-sm">
 										<p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Stay for longer</p>
 										<p className="mt-2 text-neutral-700">
-											Quiz night every Wednesday, dog-friendly snug, and heated garden huts for year-round gatherings.
+											Dog-friendly snug, live sports, and heated garden huts for year-round gatherings.
 										</p>
 									</li>
 									<li className="rounded-2xl border border-brand-100 bg-white p-4 shadow-sm">

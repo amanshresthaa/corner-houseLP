@@ -44,6 +44,14 @@
             "label": "Events"
           },
           {
+            "href": "/book-a-table",
+            "label": "Book a Table"
+          },
+          {
+            "href": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "label": "Order Takeaway"
+          },
+          {
             "href": "/press",
             "label": "Press"
           },
@@ -242,11 +250,11 @@
               "title": "Authentic Nepalese kitchen",
               "description": "Gautam family recipes like Bhutuwa chicken and Pokhareli fish curry."
             },
-            {
-              "icon": "📺",
-              "title": "Community calendar",
-              "description": "Quiz night Wednesdays, Sky & TNT Sports, takeaway Fridays."
-            },
+          {
+            "icon": "📺",
+            "title": "Community calendar",
+            "description": "Sky & TNT Sports schedule and takeaway Fridays."
+          },
             {
               "icon": "🐾",
               "title": "Families & dogs welcome",
@@ -277,7 +285,7 @@
           "description": [
             "Opposite Waterbeach village green, The White Horse is a relaxed, contemporary pub and restaurant saved from redevelopment and relaunched February 6, 2025 by Lapen Inns.",
             "We blend the charm of a traditional British pub with an extensive menu of authentic Nepalese cuisine: Bhutuwa chicken, Pokhareli fish curry, and Rara king prawns sit happily beside Sunday roasts, well-kept cask ales, and live sports.",
-            "Families, locals, and visitors gather here for quiz nights, quality food, and a genuine welcome that extends to your four-legged friends in our large rear garden."
+            "Families, locals, and visitors gather here for quality food, live sport, and a genuine welcome that extends to your four-legged friends in our large rear garden."
           ],
           "features": [
             "Authentic Nepalese cuisine prepared with traditional recipes by Ravi Acharya and Purna Man Bajrachaya",
@@ -347,8 +355,8 @@
         },
         "quickLinks": [
           {
-            "title": "Weekly Quiz & Events",
-            "description": "Wednesday quiz nights, live sports viewing, and seasonal community gatherings.",
+            "title": "Events & What's On",
+            "description": "Live sports viewing and seasonal community gatherings.",
             "link": "/events",
             "linkText": "View Events →"
           },
@@ -586,14 +594,14 @@
     },
     "events": {
       "seo": {
-        "title": "Events & What's On | The White Horse Waterbeach - Quiz Nights, Live Sports & Community Events",
-        "description": "Join us for weekly quiz nights every Wednesday, watch live sports on Sky & TNT Sports, and enjoy seasonal community events. Family and dog-friendly pub in Waterbeach.",
+        "title": "Events & What's On | The White Horse Waterbeach - Live Sports & Community Events",
+        "description": "Watch live sports on Sky & TNT Sports and enjoy seasonal community events. Family and dog-friendly pub in Waterbeach.",
         "canonicalUrlRelative": "/events"
       },
       "hero": {
         "badgeLabel": "What’s On",
         "title": "Events & What's On",
-        "subtitle": "Weekly quiz nights, live sports, and seasonal gatherings - your community hub for every occasion",
+        "subtitle": "Live sports and seasonal gatherings - your community hub for every occasion",
         "buttons": {
           "book": "Book for Big Games",
           "viewMenu": "View Menu"
@@ -606,10 +614,10 @@
       },
       "regularEvents": [
         {
-          "title": "Weekly Pub Quiz",
-          "description": "Test your knowledge every Wednesday evening. A classic pub tradition bringing the community together for friendly competition.",
-          "frequency": "Wednesday Evening",
-          "icon": "🧠"
+          "title": "Takeaway Friday",
+          "description": "Call ahead for Nepalese favourites ready for collection before the weekend.",
+          "frequency": "Friday Evening",
+          "icon": "🥡"
         },
         {
           "title": "Live Sports on Big Screens",
@@ -960,7 +968,6 @@
           "copy": "Gather on the village green with heated cabins, picnic benches and community events from brunch to curry evenings.",
           "badges": [
             "Heated cabins",
-            "Quiz night Wednesdays",
             "Free village parking"
           ],
           "ctas": {
@@ -975,10 +982,9 @@
           },
           "alt": "Bar counter with handpulls and warm lighting at The White Horse",
           "eyebrow": "Community Calendar",
-          "headline": "Live sport, quiz night & Friday takeaway",
+          "headline": "Live sport & Friday takeaway",
           "copy": "Order online 🥡 for Friday takeaway, or call if you'd like to chat.",
           "badges": [
-            "Quiz night Wednesday",
             "Takeaway every Friday",
             "Gift cards available"
           ],

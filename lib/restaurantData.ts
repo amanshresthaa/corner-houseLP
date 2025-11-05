@@ -208,7 +208,7 @@ const FALLBACK_HOURS: DetailedHours = {
     },
   },
   notes: [
-    'Quiz night every Wednesday evening.',
+    'Live sports shown on Sky & TNT.',
     'Takeaway collection available on Fridays.',
     'Kitchen closes 15 minutes before listed times.',
   ],

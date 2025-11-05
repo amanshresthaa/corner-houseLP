@@ -11,6 +11,7 @@ jest.mock('framer-motion', () => ({
     section: ({ children, ...props }: any) => <section {...props}>{children}</section>,
     a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
   },
+  useReducedMotion: () => false,
 }));
 
 // Mock Next.js Link component
@@ -28,7 +29,7 @@ describe('QuickLinksSection', () => {
   const mockLinks = [
     {
       title: 'Community & Events',
-      description: 'Quiz nights, seasonal gatherings & live sports – see what\'s coming up.',
+      description: 'Seasonal gatherings & live sports – see what\'s coming up.',
       link: '/events',
       linkText: 'View Events →'
     },
@@ -55,7 +56,7 @@ describe('QuickLinksSection', () => {
     expect(screen.getByText('Our Menu')).toBeInTheDocument();
 
     // Check descriptions
-    expect(screen.getByText(/Quiz nights, seasonal gatherings/)).toBeInTheDocument();
+    expect(screen.getByText(/Seasonal gatherings & live sports/)).toBeInTheDocument();
     expect(screen.getByText(/Discover how our thatched village pub/)).toBeInTheDocument();
     expect(screen.getByText(/Authentic Nepalese dishes/)).toBeInTheDocument();
 
