@@ -166,11 +166,11 @@ export function NavLinks({
                         ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
                         : 'btn blueprint-btn relative text-white font-semibold'
                     }
-                    aria-label={`${link.label} – delivery available (free up to 3 miles), 10% off collection`}
+                    aria-label={`${link.label} – delivery available (min £20, free up to 3 miles), 10% off collection`}
                   >
                     <span aria-hidden className="blueprint-corners" />
                     <span className="relative z-[1]">{link.label}</span>
-                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (≤3mi free)</span>
+                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (min £20, ≤3mi free)</span>
                   </a>
                 ) : (
                   <Link
@@ -181,11 +181,11 @@ export function NavLinks({
                         ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
                         : 'btn blueprint-btn relative text-white font-semibold'
                     }
-                    aria-label={`${link.label} – delivery available (free up to 3 miles), 10% off collection`}
+                    aria-label={`${link.label} – delivery available (min £20, free up to 3 miles), 10% off collection`}
                   >
                     <span aria-hidden className="blueprint-corners" />
                     <span className="relative z-[1]">{link.label}</span>
-                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (≤3mi free)</span>
+                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (min £20, ≤3mi free)</span>
                   </Link>
                 )
               ) : (

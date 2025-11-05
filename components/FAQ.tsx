@@ -15,7 +15,7 @@ interface FAQItemProps {
 // Fallback FAQ data if content management is not available
 const fallbackFaqList: FAQItemProps[] = [
   { question: 'Do I need to book in advance?', answer: 'Walk-ins welcome; book for Thu–Sat evenings or groups of 6+.' },
-  { question: 'Do you offer collection & delivery?', answer: 'Yes. Collection gets 10% off; delivery is free up to 3 miles, then £2/mile.' },
+  { question: 'Do you offer collection & delivery?', answer: 'Yes. Collection gets 10% off; delivery has a £20 minimum, is free up to 3 miles, then £2/mile.' },
   { question: 'Can you cater for allergies?', answer: 'Inform staff before ordering; we identify common allergens & advise alternatives.' },
   { question: 'Is the pub dog friendly?', answer: 'Dogs welcome in bar area & garden if well-behaved.' },
   { question: 'Do you host private events?', answer: 'Yes. Enquire for area reservations or tailored menus for milestones & meet-ups.' },

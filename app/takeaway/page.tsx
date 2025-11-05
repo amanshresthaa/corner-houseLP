@@ -86,7 +86,7 @@ export default async function TakeawayMenuPage() {
           </FadeInUp>
           <FadeInUp>
             <p className="text-sm md:text-base text-accent-100 max-w-3xl mx-auto">
-              <strong>Promos:</strong> 10% off Collection · Free delivery up to 3 miles, then £2/mile thereafter.
+              <strong>Promos:</strong> 10% off Collection · Delivery minimum £20 · Free up to 3 miles, then £2/mile thereafter.
             </p>
           </FadeInUp>
           <FadeInUp>
