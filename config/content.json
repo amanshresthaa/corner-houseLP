@@ -326,18 +326,45 @@
           "subtitle": "Community reception and independent reviews",
           "items": [
             {
-              "quote": "\"The locals were more excited than I am - they thought it would be turned into flats. The regulars turned up and they were all very welcoming.\"",
-              "source": "Subodh Gautam, Owner - Ely Standard, February 2025",
+              "quote": "Tasty Nepalese food with quick service; staff were polite, friendly and informative.",
+              "source": "5★ — 20 Aug 2025 (Tripadvisor)",
+              "platform": "Tripadvisor",
               "rating": 5
             },
             {
-              "quote": "\"A little gem. Very welcoming with friendly and attentive staff. The garden is very nice and there's ample parking. You can stay as long as you like - a very nice relaxed feel.\"",
-              "source": "The Cambridge Foodies review, June 2023",
+              "quote": "A local gem with amazing food and a warm welcome.",
+              "source": "5★ — 23 Aug 2025 (Tripadvisor)",
+              "platform": "Tripadvisor",
               "rating": 5
             },
             {
-              "quote": "\"Really friendly staff, huge garden, convenient location, and plentiful and properly attended beer taps.\"",
-              "source": "The Endless British Pub Crawl, April 2009",
+              "quote": "Team helped tailor spice levels; large group visit was a hit.",
+              "source": "5★ — 07 Aug 2025 (Tripadvisor)",
+              "platform": "Tripadvisor",
+              "rating": 5
+            },
+            {
+              "quote": "Welcoming pub; the Rum Rum Chicken stood out and service was friendly.",
+              "source": "4★ — 16 Jul 2025 (Tripadvisor)",
+              "platform": "Tripadvisor",
+              "rating": 4
+            },
+            {
+              "quote": "Excellent pub, very reasonable pricing… very attentive staff… food is absolutely amazing.",
+              "source": "5★ (Google Reviews)",
+              "platform": "Google",
+              "rating": 5
+            },
+            {
+              "quote": "Yummy food, friendly staff, no long wait. Dog-friendly. Lovely way to spend Mother's Day!",
+              "source": "5★ (Google Reviews)",
+              "platform": "Google",
+              "rating": 5
+            },
+            {
+              "quote": "Excellent service and food was amazing!",
+              "source": "5★ (Google Reviews)",
+              "platform": "Google",
               "rating": 5
             }
           ]
