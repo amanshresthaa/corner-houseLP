@@ -950,6 +950,27 @@
           "required": true
         },
         {
+          "id": "slide-sharing-table",
+          "image": {
+            "primary": "/images/slideshow/shared-table-nepalese-feast-landscape.png"
+          },
+          "alt": "Long rustic table layered with Nepalese sharing plates, salads, pickles, and drinks ready for a crowd inside the pub.",
+          "eyebrow": "Gather the crew around a table full of colour.",
+          "headline": "Feasts Made for Sharing",
+          "copy": "Mix momo, samosa, onion bhaji, crispy squid, and crunchy salads for the ultimate White Horse feast — ideal for family-style dining or laid-back celebrations.",
+          "badges": [
+            "Nepalese feasts",
+            "Family-style",
+            "Vibrant & fresh"
+          ],
+          "ctas": {
+            "menuUrl": "/menu#nepalese",
+            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "callTel": "tel:+441223375578"
+          },
+          "required": true
+        },
+        {
           "id": "slide-pouring-character",
           "image": {
             "primary": "/images/slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png"

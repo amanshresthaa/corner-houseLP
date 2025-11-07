@@ -10,7 +10,7 @@ Structure (physical folders)
   - `public/images/brand/whitehorse-logo.png` (primary)
   - `public/images/slideshow/whitehorsebuilding.png`
 - Venue photos (slideshow set)
-  - `public/images/slideshow/*.png` (six curated hero assets sourced from `Everythingyouneed/Slideshowimage/`)
+  - `public/images/slideshow/*.png` (seven curated hero assets sourced from `Everythingyouneed/Slideshowimage/`)
   - Referenced via the registry, content JSON, or static imports
 - Dish photos
   - `public/images/food/*.jpeg`
@@ -43,6 +43,7 @@ Required slideshow photos (current canonical set)
   - `fresh-mixed-salad-cherry-tomatoes-portrait.png`
   - `steamed-momo-with-spicy-sauce-portrait.png`
   - `warm-chicken-salad-with-cherry-tomatoes-portrait.png`
+  - `shared-table-nepalese-feast-landscape.png`
 
 Notes
 - Legacy placeholder slideshow images were removed to prevent accidental reuse.

@@ -19,6 +19,7 @@ const homeImages = {
   momoPlate: '/images/white-horse/dishes/steamed-momo-with-spicy-sauce-portrait.jpeg',
   goatCurry: '/images/white-horse/dishes/rich-red-curry-in-balti-bowl-portrait.jpeg',
   saladBowl: '/images/white-horse/dishes/fresh-mixed-salad-cherry-tomatoes-portrait.jpeg',
+  sharedTableFeast: '/images/slideshow/shared-table-nepalese-feast-landscape.png',
 } as const;
 
 const dishesImages = {
@@ -92,6 +93,7 @@ export const ImageAlts: { [K in keyof ImageRegistry]?: Record<string, string> } 
     momoPlate: 'Steamed momo dumplings with Nepalese tomato-timmur chutney',
     goatCurry: 'Bhutuwa chicken-style curry simmered in chilli, garlic and ginger',
     saladBowl: 'Fresh mixed salad with cherry tomatoes served in the garden',
+    sharedTableFeast: 'Long wooden table filled with Nepalese sharing plates, salads, and drinks ready for guests',
   },
   dishes: {
     bhutuwaChicken: 'Bhutuwa chicken glazed in chilli, garlic and ginger',

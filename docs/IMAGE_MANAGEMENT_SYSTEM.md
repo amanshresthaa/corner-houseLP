@@ -6,7 +6,7 @@ Overview
 - Preloading and optimization for slideshow via `components/slideshow/useImagePreloader.ts` with device-size heuristics and decode safeguards.
 
 Directory Structure
-- `public/images/slideshow/` — six curated PNGs (exterior welcome, bar interior, garden, salads, momo) used by the hero/slideshow
+- `public/images/slideshow/` — seven curated PNGs (exterior welcome, bar interior, garden, salads, momo, sharing table) used by the hero/slideshow
 - `public/images/brand` — logos and identity marks
 - `public/images/food` — dish photography (used assets only)
 - `public/images/blog` — per-article content (future)
