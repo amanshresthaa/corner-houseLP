@@ -198,7 +198,7 @@ export function CLSOptimizedTestimonials() {
 
   const testimonials = [
     {
-      text: "The most authentic Nepalese food in Cambridge. The momos are incredible!",
+      text: "The most authentic Nepalese food in Cambridge. The momo are incredible!",
       author: "Sarah M.",
       rating: 5,
       avatar: "/images/avatars/sarah.jpg"

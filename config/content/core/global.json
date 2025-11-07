@@ -49,8 +49,10 @@
       ],
       "copyright": "© 2025 The White Horse Waterbeach. All rights reserved.",
       "socialMedia": {
-        "facebook": { "url": "https://facebook.com", "label": "Follow us on Facebook" },
-        "instagram": { "url": "https://instagram.com", "label": "Follow us on Instagram" }
+        "facebook": {
+          "url": "https://www.facebook.com/people/The-White-Horse/61572172781807/",
+          "label": "Follow us on Facebook"
+        }
       }
     },
     "breadcrumbs": {

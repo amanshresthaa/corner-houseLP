@@ -31,7 +31,7 @@ export const server = setupServer(
           ]
         },
         footer: {
-          copyright: "© 2024 The White Horse Waterbeach. All rights reserved."
+          copyright: "© 2025 The White Horse Waterbeach. All rights reserved."
         }
       },
       meta: {

@@ -151,8 +151,11 @@ export const mockRestaurant: Restaurant = {
     timezone: 'Europe/London',
   },
   social: {
-    facebook: { url: 'https://www.facebook.com/whitehorsewaterbeach', handle: '@whitehorsewaterbeach' },
-    instagram: { url: 'https://www.instagram.com/whitehorsewaterbeach', handle: '@whitehorsewaterbeach' },
+    facebook: {
+      url: 'https://www.facebook.com/people/The-White-Horse/61572172781807/',
+      handle: '@thewhitehorsewaterbeach',
+      label: 'Follow us on Facebook',
+    },
   },
   booking: {
     online: true,

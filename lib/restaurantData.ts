@@ -216,6 +216,10 @@ const FALLBACK_HOURS: DetailedHours = {
 };
 
 const FALLBACK_SOCIAL: SocialCollection = {
+  facebook: {
+    url: 'https://www.facebook.com/people/The-White-Horse/61572172781807/',
+    label: 'Follow us on Facebook',
+  },
   tripadvisor: {
     url: 'https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html',
   },

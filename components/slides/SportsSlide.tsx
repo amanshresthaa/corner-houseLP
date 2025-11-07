@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import sportsImage from '@cimages/Slideshow/interior/premier-league-sky-tv-sports.jpeg';
+import sportsImage from '@cimages/Slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png';
 import Link from '@/lib/debugLink';
 import React from 'react';
 
@@ -13,7 +13,7 @@ export const SportsSlide: React.FC = () => {
       <figure className="relative w-full h-[420px] sm:h-[520px]">
         <Image
           src={sportsImage}
-          alt="Crowd watching live Premier League football on a big screen inside a Waterbeach pub"
+          alt="Warm wood bar with pendant lighting, glass racks, and polished beer taps ready for matchday service"
           fill
           sizes="(max-width: 640px) 100vw, 50vw"
           className="object-cover filter brightness-[0.55]"
@@ -21,7 +21,7 @@ export const SportsSlide: React.FC = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent pointer-events-none" />
         <figcaption id="sports-slide-desc" className="sr-only">
-          A lively interior scene showing fans watching a live Premier League match on a large screen, enjoying pints and cheering — ideal for matchday gatherings in Waterbeach, Cambridge.
+          Cosy pub bar with polished taps, copper shelving and hanging glassware — the setting for live sports, cocktails and crisp pints in Waterbeach.
         </figcaption>
       </figure>
 
@@ -46,7 +46,7 @@ export const SportsSlide: React.FC = () => {
           </Link>
         </div>
 
-  <p className="mt-4 text-xs text-gray-300">Image caption: Live match viewing — Premier League, rugby and more.</p>
+  <p className="mt-4 text-xs text-gray-300">Image caption: The White Horse bar — polished taps, cocktails, and matchday energy.</p>
   <p className="mt-2 text-xs text-gray-400">Photo: The White Horse, Waterbeach</p>
       </div>
     </section>

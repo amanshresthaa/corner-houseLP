@@ -291,10 +291,10 @@ const preloadFonts = (): Promise<void> => {
 const preloadCriticalImages = (): Promise<void[]> => {
   const criticalImageUrls = [
     // Hero/slideshow images - first slide is critical
-    '/images/slideshow/WhiteHorseWaterbeachBuilding.png',
-    '/images/slideshow/interior/the-old-crown-pub-restaurant-interior-dining.jpg',
-    '/images/slideshow/garden/family-friendly-pub-garden-with-picnic-tables.jpeg',
-    '/images/slideshow/cars/electric-vehicle-charging-bays.png'
+    '/images/slideshow/whitehorsebuilding.png',
+    '/images/slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png',
+    '/images/slideshow/beer-garden-picnic-benches-and-sky-portrait.png',
+    '/images/slideshow/steamed-momo-with-spicy-sauce-portrait.png'
     // Add other critical above-fold images
   ];
 

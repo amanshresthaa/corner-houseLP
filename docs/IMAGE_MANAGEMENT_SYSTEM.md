@@ -2,13 +2,11 @@ Restaurant_BP Image Management System
 
 Overview
 - Centralized, type-safe image registry at `src/lib/images.ts` groups assets by domain: brand, venue, dishes, and blog.
-- Semantic physical organization under `public/images/` with subfolders: `slideshow/{interior,garden,exterior}`, `brand`, `food`, and `blog`.
+- Semantic physical organization under `public/images/` with curated slideshow assets stored flat in `slideshow/` plus `brand`, `food`, and `blog`.
 - Preloading and optimization for slideshow via `components/slideshow/useImagePreloader.ts` with device-size heuristics and decode safeguards.
 
 Directory Structure
-- `public/images/slideshow/interior` — indoor dining spaces
-- `public/images/slideshow/garden` — outdoor garden areas
-- `public/images/slideshow/exterior` — facade, parking, and building
+- `public/images/slideshow/` — six curated PNGs (exterior welcome, bar interior, garden, salads, momo) used by the hero/slideshow
 - `public/images/brand` — logos and identity marks
 - `public/images/food` — dish photography (used assets only)
 - `public/images/blog` — per-article content (future)
@@ -58,4 +56,3 @@ Scalability
 Notes
 - Only actively used dish/brand images were moved; a full backup snapshot was saved under `artifacts/backup/` with a timestamp.
 - For full WebP primary with JPEG fallback, rely on Next image formats and optionally pre-generate WebP with `images:optimize`.
-

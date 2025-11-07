@@ -8,10 +8,10 @@ Overview
 Structure (physical folders)
 - Public brand assets
   - `public/images/brand/whitehorse-logo.png` (primary)
-  - `public/images/slideshow/WhiteHorseWaterbeachBuilding.png`
+  - `public/images/slideshow/whitehorsebuilding.png`
 - Venue photos (slideshow set)
-  - `public/images/slideshow/{interior,exterior,garden}/*.{jpg,jpeg,png}`
-  - Referenced via the registry or static imports
+  - `public/images/slideshow/*.png` (six curated hero assets sourced from `Everythingyouneed/Slideshowimage/`)
+  - Referenced via the registry, content JSON, or static imports
 - Dish photos
   - `public/images/food/*.jpeg`
 
@@ -29,25 +29,20 @@ How to use
 
 Adding new images
 1) Place the image under the appropriate public folder:
-   - Venue: `public/images/slideshow/{interior|exterior|garden}/`
+   - Venue/slideshow: `public/images/slideshow/` (keep descriptive filenames; re-introduce subfolders only if necessary and update docs)
    - Dish: `public/images/food/`
    - Brand: `public/images/brand/`
 2) Add a stable mapping in `src/lib/images.ts`.
 3) Use the new key in the UI.
 
 Required slideshow photos (current canonical set)
-- Place images in the categorized folders:
-  - `interior/the-old-crown-pub-restaurant-interior-dining.jpg`
-  - `interior/stylish-pub-restaurant-dining-area-interior.jpeg`
-  - `interior/cosy-pub-bar-area-with-games-machine.jpeg`
-  - `interior/comfy-bar-lounge-with-armchairs-and-tv.jpeg`
-  - `interior/premier-league-sky-tv-sports.jpeg`
-  - `garden/family-friendly-pub-garden-with-picnic-tables.jpeg`
-  - `garden/spacious-beer-garden-and-outdoor-seating.jpeg`
-  - `garden/sunny-pub-garden-patio-seating-wellingborough-terrace.jpeg`
-  - `garden/childrens-wooden-play-area-with-slide-in-pub-garden.jpeg`
-  - `exterior/the-old-crown-pub-exterior-and-beer-garden.jpeg`
-  - `exterior/large-gravel-car-park-at-the-old-crown-pub.jpeg`
+- Current curated PNG set (all at `public/images/slideshow/`):
+  - `whitehorsebuilding.png`
+  - `bar-counter-cozy-lighting-taps-and-shelves-landscape.png`
+  - `beer-garden-picnic-benches-and-sky-portrait.png`
+  - `fresh-mixed-salad-cherry-tomatoes-portrait.png`
+  - `steamed-momo-with-spicy-sauce-portrait.png`
+  - `warm-chicken-salad-with-cherry-tomatoes-portrait.png`
 
 Notes
 - Legacy placeholder slideshow images were removed to prevent accidental reuse.
@@ -60,7 +55,7 @@ Removed placeholders
 URL conventions
 - Dishes keep a stable virtual path (legacy compatible):
   - `/images/dishes/:path*` → `/images/food/:path*`
-- Slideshow images are served directly from categorized folders under `/images/slideshow/...`.
+- Slideshow images are served directly from `/images/slideshow/<filename>` (flat structure for the curated set).
 
 Future (optional) physical re‑org
 - If/when you want, we can physically move binaries into the virtualized structure; no code changes required thanks to the registry and rewrites.

@@ -118,7 +118,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
             <ul className="text-sm text-indiagreen-700 space-y-1">
               <li>• Traditional Nepalese vegetable curries</li>
               <li>• Stuffed tandoori mushrooms</li>
-              <li>• Vegetable momos (Nepalese dumplings)</li>
+              <li>• Vegetable momo (Nepalese dumplings)</li>
               <li>• Dal dishes and lentil curries</li>
               <li>• Paneer-based dishes</li>
               <li>• Vegetable biryanis and pilafs</li>
@@ -129,7 +129,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
             <h4 className="font-semibold text-marigold-800 mb-2">Vegan Options:</h4>
             <ul className="text-sm text-marigold-700 space-y-1">
               <li>• Plant-based Nepalese curries</li>
-              <li>• Vegetable momos (dairy-free version)</li>
+              <li>• Vegetable momo (dairy-free version)</li>
               <li>• Coconut-based curries</li>
               <li>• Vegan naans and breads</li>
               <li>• Mixed vegetable dishes</li>

@@ -539,20 +539,20 @@ const DaisyUISlideshow = ({
                   <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/40 backdrop-blur-[2px]" aria-hidden="true" />
                 </div>
               )}
-              <div className="relative z-10 w-full px-[clamp(1.25rem,4vw,4rem)] py-[clamp(2.75rem,7vw,5.75rem)]">
-                <div className="mx-auto flex w-full max-w-[min(70rem,94vw)] flex-col items-center gap-y-[clamp(0.875rem,2vw,2.25rem)] text-center text-white">
+              <div className="relative z-10 flex w-full min-h-[clamp(22rem,60vh,42rem)] items-center justify-center px-[clamp(1.25rem,4vw,4rem)] py-[clamp(2rem,6vw,4.5rem)]">
+                <div className="mx-auto flex w-full max-w-[min(70rem,92vw)] flex-col items-center justify-center gap-y-[clamp(1rem,2.8vw,3rem)] text-center text-white">
                   {slide.eyebrow && (
-                    <p className="eyebrow text-accent-300">
+                    <p className="slideshow-eyebrow">
                       {slide.eyebrow}
                     </p>
                   )}
                   {slide.headline && (
-                    <h2 className="text-balance h1">
+                    <h2 className="slideshow-headline">
                       {slide.headline}
                     </h2>
                   )}
                   {slide.copy && (
-                    <p className="mx-auto max-w-[65ch] text-pretty lead text-white">
+                    <p className="slideshow-copy">
                       {slide.copy}
                     </p>
                   )}

@@ -446,6 +446,30 @@ progress::-webkit-progress-value {
   .meta { @apply text-meta text-foreground-subtle; }
   .hero { @apply text-fluid-hero font-display font-extrabold tracking-tight; }
 
+  .slideshow-eyebrow {
+    @apply uppercase font-semibold;
+    color: var(--color-accent-200);
+    font-size: clamp(0.75rem, 1.5vw, 1.1rem);
+    letter-spacing: 0.3em;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .slideshow-headline {
+    @apply font-display font-bold text-white;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: clamp(1.15, calc(1.05 + 0.35vw), 1.3);
+    text-wrap: balance;
+  }
+
+  .slideshow-copy {
+    @apply text-white/95 text-pretty;
+    font-size: clamp(1rem, 2.2vw, 1.6rem);
+    line-height: 1.6;
+    max-width: 65ch;
+    text-wrap: pretty;
+  }
+
   /* Back-compat helpers to normalize small badges */
   .badge-text { @apply text-xs md:text-sm; }
   /* Backdrop blur utilities */

@@ -101,12 +101,8 @@
         "copyright": "© 2025 The White Horse Waterbeach. All rights reserved.",
         "socialMedia": {
           "facebook": {
-            "url": "https://facebook.com",
+            "url": "https://www.facebook.com/people/The-White-Horse/61572172781807/",
             "label": "Follow us on Facebook"
-          },
-          "instagram": {
-            "url": "https://instagram.com",
-            "label": "Follow us on Instagram"
           }
         }
       },
@@ -252,11 +248,11 @@
               "title": "Authentic Nepalese kitchen",
               "description": "Gautam family recipes like Bhutuwa chicken and Pokhareli fish curry."
             },
-          {
-            "icon": "📺",
-            "title": "Community calendar",
-            "description": "Sky & TNT Sports schedule and Friday collection & delivery."
-          },
+            {
+              "icon": "📺",
+              "title": "Community calendar",
+              "description": "Sky & TNT Sports schedule and Friday collection & delivery."
+            },
             {
               "icon": "🐾",
               "title": "Families & dogs welcome",
@@ -305,19 +301,24 @@
           "subtitle": "Press-lauded favourites from our authentic Himalayan kitchen",
           "items": [
             {
-              "name": "Bhutuwa Chicken",
-              "description": "Owner Subodh Gautam's personal favourite: thick, flavourful sauce enriched with fried crushed garlic and crushed chilli. A must-try, best enjoyed with naan bread.",
-              "image": "/images/white-horse/dishes/rich-red-curry-in-balti-bowl-portrait.jpeg"
+              "name": "Lasun Kukhura Khursani (LKK) Chicken",
+              "description": "Garlicky chilli wok-fried chicken finished with toasted cumin and coriander, a fiery LKK favourite for spice lovers.",
+              "image": "/images/white-horse/dishes/signature-lkk-chicken.png"
             },
             {
-              "name": "Pokhareli Fish Curry",
-              "description": "One of our best-sellers: tender fish in authentic Nepalese spices, a customer favourite since our February 2025 relaunch.",
-              "image": "/images/white-horse/dishes/creamy-curry-in-ceramic-bowl-portrait.jpeg"
+              "name": "Himali Lamb",
+              "description": "Himalayan green curry of slow-braised lamb enriched with mint-yoghurt and fenugreek for a fragrant, velvety sauce.",
+              "image": "/images/white-horse/dishes/signature-himali-lamb.png"
             },
             {
-              "name": "Rara King Prawn",
-              "description": "Tiger prawns in rich Himalayan masala - another best-seller that showcases the authentic flavours of Nepal.",
-              "image": "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg"
+              "name": "Khasi Ko Masu (Goat Curry)",
+              "description": "Traditional goat curry simmered low-and-slow with roasted spices and tomato, delivering deep warmth without overwhelming heat.",
+              "image": "/images/white-horse/dishes/signature-goat-curry.png"
+            },
+            {
+              "name": "House Mixed Grill",
+              "description": "Sizzling platter stacked with wings, tikka, seekh kebab and lemon-splashed king prawn—ideal for sharing from the tandoor.",
+              "image": "/images/white-horse/dishes/signature-house-mixed-grill.png"
             }
           ]
         },
@@ -477,8 +478,7 @@
             },
             "hasMenu": "https://whitehorsepub.co/menu",
             "sameAs": [
-              "https://www.facebook.com/whitehorsewaterbeach",
-              "https://www.instagram.com/thewhitehorsewaterbeach",
+              "https://www.facebook.com/people/The-White-Horse/61572172781807/",
               "https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html",
               "https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP"
             ],
@@ -929,102 +929,125 @@
       },
       "slides": [
         {
-          "id": "slide-relaunch-beacon",
+          "id": "slide-welcome-whitehorse",
           "image": {
-            "primary": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg"
+            "primary": "/images/slideshow/whitehorsebuilding.png"
           },
-          "alt": "Thatched exterior of The White Horse Waterbeach on a bright day",
-          "eyebrow": "Community Hub Reborn",
-          "headline": "Village pub saved from redevelopment, relaunched with authentic Nepalese cuisine",
-          "copy": "Opposite Waterbeach village green, The White Horse was rescued by Lapen Inns in February 2025. We blend traditional British pub comfort with an extensive menu of Himalayan flavours.",
+          "alt": "Exterior of The White Horse country pub on a sunny day with chalkboards by the door and a wide forecourt.",
+          "eyebrow": "Your village pub for cosy pints, fresh plates & big-sky evenings.",
+          "headline": "Welcome to The White Horse",
+          "copy": "A friendly, independent local where characterful interiors meet a spacious garden, and the menu ranges from comforting classics to bright, modern bites.",
           "badges": [
-            "Relaunched February 2025",
-            "Saved from closure",
-            "Opposite Waterbeach green"
+            "Village pub",
+            "Family friendly",
+            "Book a table"
           ],
           "ctas": {
+            "bookUrl": "/book-a-table",
             "callTel": "tel:+441223375578",
             "secondaryUrl": "/about"
           },
           "required": true
         },
         {
-          "id": "slide-dual-identity",
+          "id": "slide-pouring-character",
           "image": {
-            "primary": "/images/white-horse/interior/bar-counter-cozy-lighting-taps-and-shelves-landscape.jpeg"
+            "primary": "/images/slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png"
           },
-          "alt": "Copper-topped bar at The White Horse with cask ales and spirits",
-          "eyebrow": "A Tale of Two Pubs",
-          "headline": "Authentic Nepalese restaurant meets traditional British pub",
-          "copy": "Enjoy Bhutuwa chicken, Pokhareli fish curry, and momo alongside Sunday roasts, cask ales, and live sports. One roof, two complementary experiences - destination dining and your welcoming local.",
+          "alt": "Warm wood bar with glass racks and a row of beer taps in a cosy pub interior.",
+          "eyebrow": "Cask ales, craft lagers & small-batch spirits.",
+          "headline": "Pouring Character",
+          "copy": "From perfectly kept pints to classic cocktails, our bar team knows their way around a pour. Pull up a stool and settle in.",
           "badges": [
-            "Greene King IPA & Timothy Taylor Landlord",
-            "Authentic Nepalese kitchen",
-            "Sky & TNT Sports"
+            "Cask ales",
+            "Craft lager",
+            "Small-batch spirits"
           ],
           "ctas": {
-            "menuUrl": "/menu",
-            "callTel": "tel:+441223375578",
-            "secondaryUrl": "/press"
-          }
-        },
-        {
-          "id": "slide-signature-dishes",
-          "image": {
-            "primary": "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg"
-          },
-          "alt": "Nepalese sizzling mixed grill served with lemon at The White Horse",
-          "eyebrow": "Press-Lauded Favourites",
-          "headline": "Bhutuwa chicken, Pokhareli fish curry & Rara king prawns",
-          "copy": "Our best-sellers showcase authentic Himalayan cooking by talented chefs Ravi Acharya and Purna Man Bajrachaya. Traditional recipes, rich flavours, genuine hospitality.",
-          "badges": [
-            "Authentic traditional recipes",
-            "Best-sellers since reopening",
-            "Mild to spicy options"
-          ],
-          "ctas": {
-            "menuUrl": "/menu",
-            "callTel": "tel:+441223375578",
-            "secondaryUrl": "/takeaway"
-          }
-        },
-        {
-          "id": "slide-garden-terrace",
-          "image": {
-            "primary": "/images/white-horse/garden/patio-terrace-wicker-chairs-and-parasols-portrait.jpeg"
-          },
-          "alt": "Terrace with wicker chairs and parasols at The White Horse",
-          "eyebrow": "Large Rear Garden",
-          "headline": "Garden cabins, terrace seating & summer-ready parasols",
-          "copy": "Gather on the village green with heated cabins, picnic benches and community events from brunch to curry evenings.",
-          "badges": [
-            "Heated cabins",
-            "Free village parking"
-          ],
-          "ctas": {
+            "menuUrl": "/menu#drinks",
             "callTel": "tel:+441223375578",
             "secondaryUrl": "/events"
           }
         },
         {
-          "id": "slide-community-calendar",
+          "id": "slide-garden-evenings",
           "image": {
-            "primary": "/images/white-horse/interior/bar-counter-front-view-taps-and-bottles-landscape.jpeg"
+            "primary": "/images/slideshow/beer-garden-picnic-benches-and-sky-portrait.png"
           },
-          "alt": "Bar counter with handpulls and warm lighting at The White Horse",
-          "eyebrow": "Community Calendar",
-          "headline": "Live sport & daily collection & delivery",
-          "copy": "Order online 🛍️ for collection or delivery any day, or call if you'd like to chat.",
+          "alt": "Large pub garden at dusk with string lights and wooden picnic tables.",
+          "eyebrow": "Big garden energy – gather, relax, and watch the sky turn indigo.",
+          "headline": "Evenings Under the Lights",
+          "copy": "From golden hour to starlight, our garden is your go-to for after-work drinks, weekend catch-ups, and easy outdoor dining.",
           "badges": [
-            "Order online daily",
-            "Gift cards available"
+            "String lights",
+            "Picnic tables",
+            "Alfresco dining"
           ],
           "ctas": {
-            "menuUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "bookUrl": "/book-a-table",
             "callTel": "tel:+441223375578",
-            "secondaryUrl": "https://lapeninns.com/gift-cards"
+            "secondaryUrl": "/events"
+          }
+        },
+        {
+          "id": "slide-fresh-starts",
+          "image": {
+            "primary": "/images/slideshow/fresh-mixed-salad-cherry-tomatoes-portrait.png"
           },
-          "required": true
+          "alt": "Bowl of mixed green salad with cherry tomatoes and cucumber on a white plate.",
+          "eyebrow": "Crunchy greens, bright flavours, made to order.",
+          "headline": "Fresh Starts",
+          "copy": "A simple, satisfying bowl—crisp leaves, juicy tomatoes, cool cucumber and a zesty house dressing. Perfect on its own or alongside a pint.",
+          "badges": [
+            "Light bite",
+            "Fresh greens",
+            "Vegetarian-friendly"
+          ],
+          "ctas": {
+            "menuUrl": "/menu#starters",
+            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "callTel": "tel:+441223375578"
+          }
+        },
+        {
+          "id": "slide-hand-pleated-momo",
+          "image": {
+            "primary": "/images/slideshow/steamed-momo-with-spicy-sauce-portrait.png"
+          },
+          "alt": "Row of steamed dumplings with bright orange dipping sauce on a rectangular plate.",
+          "eyebrow": "Steamed, delicate, and dunked in our bold chilli sauce.",
+          "headline": "Hand-Pleated momo",
+          "copy": "Comfort in one bite - soft wrappers, savoury filling, and a creamy kick on the side. A favourite for sharing or not.",
+          "badges": [
+            "House momo",
+            "Chilli dip",
+            "Shareable"
+          ],
+          "ctas": {
+            "menuUrl": "/menu#nepalese",
+            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "callTel": "tel:+441223375578"
+          }
+        },
+        {
+          "id": "slide-hearty-healthy",
+          "image": {
+            "primary": "/images/slideshow/warm-chicken-salad-with-cherry-tomatoes-portrait.png"
+          },
+          "alt": "Mixed green salad topped with warm seared chicken pieces and cherry tomatoes.",
+          "eyebrow": "Warm chicken salad with crunch and zing.",
+          "headline": "Hearty & Healthy",
+          "copy": "Tender seared chicken tossed through fresh greens and a lively dressing - big on flavour, light on fuss.",
+          "badges": [
+            "Warm salad",
+            "Protein packed",
+            "Pub lunch"
+          ],
+          "ctas": {
+            "menuUrl": "/menu#lunch",
+            "callTel": "tel:+441223375578",
+            "secondaryUrl": "/book-a-table"
+          }
         }
       ]
     }

@@ -3,7 +3,7 @@
 
 const brandImages = {
   logo: '/images/brand/whitehorse-logo.png',
-  building: '/images/slideshow/WhiteHorseWaterbeachBuilding.png',
+  building: '/images/slideshow/whitehorsebuilding.png',
 } as const;
 
 const homeImages = {
@@ -16,7 +16,7 @@ const homeImages = {
   splitLevelSeating: '/images/white-horse/interior/split-level-seating-wood-and-tile-floors-portrait.jpeg',
   gardenPatio: '/images/white-horse/garden/patio-terrace-wicker-chairs-and-parasols-portrait.jpeg',
   beerGarden: '/images/white-horse/garden/beer-garden-picnic-benches-and-sky-portrait.jpeg',
-  momoPlate: '/images/white-horse/dishes/steamed-momos-with-spicy-sauce-portrait.jpeg',
+  momoPlate: '/images/white-horse/dishes/steamed-momo-with-spicy-sauce-portrait.jpeg',
   goatCurry: '/images/white-horse/dishes/rich-red-curry-in-balti-bowl-portrait.jpeg',
   saladBowl: '/images/white-horse/dishes/fresh-mixed-salad-cherry-tomatoes-portrait.jpeg',
 } as const;
@@ -25,7 +25,7 @@ const dishesImages = {
   bhutuwaChicken: '/images/white-horse/dishes/rich-red-curry-in-balti-bowl-portrait.jpeg',
   pokhareliFish: '/images/white-horse/dishes/creamy-curry-in-ceramic-bowl-portrait.jpeg',
   raraKingPrawn: '/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg',
-  momoDumplings: '/images/white-horse/dishes/steamed-momos-with-spicy-sauce-portrait.jpeg',
+  momoDumplings: '/images/white-horse/dishes/steamed-momo-with-spicy-sauce-portrait.jpeg',
   sundayMasalaRoast: '/images/white-horse/dishes/warm-chicken-salad-with-cherry-tomatoes-portrait.jpeg',
   gardenSizzlerSalad: '/images/white-horse/dishes/fresh-mixed-salad-cherry-tomatoes-portrait.jpeg',
   tomatoChutney: '/images/white-horse/dishes/tomato-chili-chutney-garnished-portrait.jpeg',
@@ -77,7 +77,7 @@ export type ImageRegistry = typeof Images;
 export const ImageAlts: { [K in keyof ImageRegistry]?: Record<string, string> } = {
   brand: {
     logo: 'The White Horse Waterbeach logo',
-    building: 'The White Horse exterior overlooking Waterbeach green',
+    building: 'Exterior of The White Horse country pub with chalkboards at the entrance',
   },
   home: {
     heroExteriorDay: 'Thatched exterior of The White Horse Waterbeach on a bright day',

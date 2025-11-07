@@ -73,8 +73,7 @@ jest.mock('@/src/lib/data/loaders/RestaurantSmartLoader', () => ({
           sunday: { open: "12:00", close: "21:00" }
         },
         social: {
-          facebook: "https://facebook.com/himalayanspice",
-          instagram: "https://instagram.com/himalayanspice"
+          facebook: "https://www.facebook.com/people/The-White-Horse/61572172781807/"
         }
       },
       cached: false,

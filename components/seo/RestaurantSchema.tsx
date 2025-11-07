@@ -2,10 +2,10 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import imgExteriorGarden from '@cimages/Slideshow/exterior/the-old-crown-pub-exterior-and-beer-garden.jpeg';
-import imgCarPark from '@cimages/Slideshow/exterior/large-gravel-car-park-at-the-old-crown-pub.jpeg';
-import imgInteriorDining from '@cimages/Slideshow/interior/the-old-crown-pub-restaurant-interior-dining.jpg';
-import imgGardenPicnic from '@cimages/Slideshow/garden/family-friendly-pub-garden-with-picnic-tables.jpeg';
+import imgExteriorWelcome from '@cimages/Slideshow/whitehorsebuilding.png';
+import imgBarPouring from '@cimages/Slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png';
+import imgGardenEvenings from '@cimages/Slideshow/beer-garden-picnic-benches-and-sky-portrait.png';
+import imgSignatureDish from '@cimages/Slideshow/steamed-momo-with-spicy-sauce-portrait.png';
 import { getRestaurantIdentity, getContactInfo, getHours, getMenu, getTestimonials } from '@/lib/restaurantData';
 
 // Schema.org types for restaurant
@@ -295,15 +295,14 @@ export const useRestaurantSchema = () => {
       currenciesAccepted: 'GBP',
       hasMenu: 'https://whitehorsepub.co/menu',
       image: [
-        absoluteUrl(typeof imgExteriorGarden === 'string' ? imgExteriorGarden : (imgExteriorGarden as any)),
-        absoluteUrl(typeof imgInteriorDining === 'string' ? imgInteriorDining : (imgInteriorDining as any)),
-        absoluteUrl(typeof imgGardenPicnic === 'string' ? imgGardenPicnic : (imgGardenPicnic as any)),
-        absoluteUrl(typeof imgCarPark === 'string' ? imgCarPark : (imgCarPark as any)),
+        absoluteUrl(typeof imgExteriorWelcome === 'string' ? imgExteriorWelcome : (imgExteriorWelcome as any)),
+        absoluteUrl(typeof imgBarPouring === 'string' ? imgBarPouring : (imgBarPouring as any)),
+        absoluteUrl(typeof imgGardenEvenings === 'string' ? imgGardenEvenings : (imgGardenEvenings as any)),
+        absoluteUrl(typeof imgSignatureDish === 'string' ? imgSignatureDish : (imgSignatureDish as any)),
       ],
       logo: absoluteUrl('/images/brand/whitehorse-logo.png'),
       sameAs: [
-        'https://www.facebook.com/whitehorsewaterbeach',
-        'https://www.instagram.com/whitehorsewaterbeach',
+        'https://www.facebook.com/people/The-White-Horse/61572172781807/',
         'https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html',
         'https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP'
       ],

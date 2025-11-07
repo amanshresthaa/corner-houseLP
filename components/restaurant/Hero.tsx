@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
 import Image from 'next/image';
-import heroBg from '@cimages/Slideshow/WhiteHorseWaterbeachBuilding.png';
+import heroBg from '@cimages/Slideshow/whitehorsebuilding.png';
 import { getContactInfo } from '@/lib/restaurantData';
 import { useParsedData } from '@/hooks/useParsedData';
 import { useContent } from '@/hooks/useContent';
@@ -54,7 +54,9 @@ export default function Hero() {
     primaryHref.startsWith('http') || primaryHref.startsWith('tel:') || primaryHref.startsWith('mailto:')
   );
   const secondaryExternal = heroCTA.secondaryExternal ?? secondaryHref.startsWith('http');
-  const altText = content?.global?.accessibility?.altTexts?.heroBanner || 'The White Horse Waterbeach Building';
+  const altText =
+    content?.global?.accessibility?.altTexts?.heroBanner ||
+    'Exterior of The White Horse country pub on a sunny day with chalkboards by the door';
   
   // Feature tags from content or fallback
   const features = content?.pages?.home?.sections?.features?.items || [
