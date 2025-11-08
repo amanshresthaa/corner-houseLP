@@ -4,6 +4,7 @@ import React from "react";
 import EmojiIcon from "@/components/common/EmojiIcon";
 import Link from '@/lib/debugLink';
 import content from '@/config/content.json';
+import { isOnlineDeliveryHref } from '@/utils/onlineDelivery';
 
 type SlideCTAButtonProps = {
   href?: string;
@@ -58,12 +59,14 @@ export function SlideCTAButton({
   ariaLabel 
 }: SlideCTAButtonProps) {
   const baseConfig = buttonVariants[variant];
-  const isExternalHttp = typeof href === 'string' && href.startsWith('http');
-  const isTakeaway = isExternalHttp && href!.includes('touchtakeaway.net');
+  const hrefStr = typeof href === 'string' ? href : undefined;
+  const isHttpHref = Boolean(hrefStr && hrefStr.startsWith('http'));
+  const isTelHref = Boolean(hrefStr && hrefStr.startsWith('tel:'));
+  const isOnlineDelivery = isOnlineDeliveryHref(hrefStr);
 
-  // Override label for Touchtakeaway links to be explicit
+  // Override label for online delivery links to be explicit
   const effective = ((): { emoji: string; text: string; ariaLabel: string } => {
-    if (variant === 'menu' && isTakeaway) {
+    if (variant === 'menu' && isOnlineDelivery) {
       return { 
         emoji: '🥡', 
         text: content.global?.ui?.buttons?.orderTakeaway || 'Order Online', 
@@ -83,17 +86,18 @@ export function SlideCTAButton({
   );
   
   if (href) {
-    const isExternal = href.startsWith('http') || href.startsWith('tel:');
+    const renderAsAnchor = isHttpHref || isTelHref || isOnlineDelivery;
+    const shouldOpenNewTab = isHttpHref || isOnlineDelivery;
     
-    if (isExternal) {
+    if (renderAsAnchor) {
       return (
         <a
           href={href}
           className={className}
           aria-label={finalAriaLabel}
           onClick={onClick}
-          target={href.startsWith('http') ? "_blank" : undefined}
-          rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+          target={shouldOpenNewTab ? "_blank" : undefined}
+          rel={shouldOpenNewTab ? "noopener noreferrer" : undefined}
         >
           {buttonContent}
         </a>

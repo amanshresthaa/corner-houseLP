@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ContactCTA, NavLinks, NavbarLogo, useNavContent } from './NavbarParts';
+import SeasonalPromoBanner from '@/components/seasonal/SeasonalPromoBanner';
 
 const MOBILE_NAV_ID = 'mobile-nav';
 
@@ -22,13 +23,15 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav
-      aria-label={navLabel}
-      className="fixed inset-x-0 top-0 z-50 border-b bg-white shadow-sm"
-    >
-      <div className="mx-auto w-full max-w-7xl px-4 py-2 md:px-6">
-        <div className="flex items-center justify-between gap-3">
-          <NavbarLogo altText={logoAlt} />
+    <header className="sticky top-0 z-50 w-full">
+      <SeasonalPromoBanner />
+      <nav
+        aria-label={navLabel}
+        className="border-b bg-white shadow-sm"
+      >
+        <div className="mx-auto w-full max-w-7xl px-4 py-2 md:px-6">
+          <div className="flex items-center justify-between gap-3">
+            <NavbarLogo altText={logoAlt} />
 
           <div className="hidden flex-1 md:flex md:justify-center">
             <NavLinks
@@ -88,32 +91,32 @@ export default function Navbar() {
               )}
             </button>
           </div>
-        </div>
-      </div>
-
-      <div
-        id={MOBILE_NAV_ID}
-        className={`md:hidden border-t border-base-200 bg-white ${
-          isMenuOpen ? 'block' : 'hidden'
-        }`}
-      >
-        <div className="mx-auto w-full max-w-7xl px-4 py-3 md:px-6">
-          <NavLinks
-            links={links}
-            error={error}
-            errorLabel={errorLabel}
-            orientation="vertical"
-            onNavigate={closeMenu}
-          />
-          <div className="mt-3">
-            <ContactCTA
-              label={contactLabel}
-              onClick={closeMenu}
-              fullWidth
-            />
           </div>
         </div>
-      </div>
-    </nav>
+        <div
+          id={MOBILE_NAV_ID}
+          className={`md:hidden border-t border-base-200 bg-white ${
+            isMenuOpen ? 'block' : 'hidden'
+          }`}
+        >
+          <div className="mx-auto w-full max-w-7xl px-4 py-3 md:px-6">
+            <NavLinks
+              links={links}
+              error={error}
+              errorLabel={errorLabel}
+              orientation="vertical"
+              onNavigate={closeMenu}
+            />
+            <div className="mt-3">
+              <ContactCTA
+                label={contactLabel}
+                onClick={closeMenu}
+                fullWidth
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
   );
 }

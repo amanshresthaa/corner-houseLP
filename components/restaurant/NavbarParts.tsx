@@ -8,6 +8,7 @@ import { useContent } from '@/hooks/useContent';
 import { NavDataSchema, NavDataParsed } from '@/lib/schemas';
 import { sanitizeHref, createHrefKey, isValidHref, logHrefIssue } from '@/utils/href';
 import type { HrefType } from '@/utils/href';
+import { isOnlineDeliveryHref } from '@/utils/onlineDelivery';
 
 export interface SanitizedNavLink {
   key: string;
@@ -145,12 +146,16 @@ export function NavLinks({
       )}
       <ul className={listClass}>
         {links.map((link) => {
+          const hrefStr = typeof link.href === 'string' ? link.href : undefined;
+          const isOnlineDeliveryLink = isOnlineDeliveryHref(hrefStr);
+
           const isOrderTakeaway =
             /order\s*(takeaway|online)/i.test(link.label) ||
-            (typeof link.href === 'string' && /touchtakeaway\./i.test(link.href));
+            isOnlineDeliveryLink;
 
-          const hrefStr = typeof link.href === 'string' ? link.href : undefined;
           const isExternal = !!hrefStr && /^https?:\/\//i.test(hrefStr);
+          const openInNewTab = isExternal || isOnlineDeliveryLink;
+          const newTabRel = openInNewTab ? 'noopener noreferrer' : undefined;
 
           return (
             <li key={link.key}>
@@ -176,6 +181,8 @@ export function NavLinks({
                   <Link
                     href={link.href}
                     onClick={onNavigate}
+                    target={openInNewTab ? '_blank' : undefined}
+                    rel={newTabRel}
                     className={
                       isVertical
                         ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'

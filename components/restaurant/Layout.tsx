@@ -15,13 +15,12 @@ export default async function RestaurantLayout({ children, noMotion = false }: L
     <div className="min-h-screen bg-neutral">
       {noMotion ? <NavbarStatic /> : <Navbar />}
       <main 
-        className="overflow-x-hidden relative" 
+        className="relative overflow-x-hidden" 
         id="main-content"
         tabIndex={-1}
         style={{
-          minHeight: 'calc(100vh - 64px)', // Account for navbar height
+          minHeight: '100vh',
           isolation: 'isolate', // Create new stacking context
-          paddingTop: '64px', // Add padding for fixed navbar
         }}
       >
         {children}
