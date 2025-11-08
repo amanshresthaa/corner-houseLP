@@ -13,6 +13,8 @@ type BannerSpec = typeof seasonalPromoBanner;
 
 const SeasonalPromoBannerComponent = ({ className = '' }: SeasonalPromoBannerProps) => {
   const { meta, dataset, surface, layout, badge, icon, copy, cta } = seasonalPromoBanner as BannerSpec;
+  const badgeGroupClasses = layout?.badgeGroup || 'flex flex-wrap items-center justify-center gap-2 text-brand-900';
+  const badgeClassName = badge?.classes?.trim();
 
   const isLive = !meta?.status || meta.status === 'live';
   const hasCta = Boolean(cta?.href && cta?.label);
@@ -56,17 +58,21 @@ const SeasonalPromoBannerComponent = ({ className = '' }: SeasonalPromoBannerPro
       className={surfaceClasses || undefined}
     >
       <div className={layout?.container} data-testid="seasonal-promo-banner">
-        {badge?.text ? (
-          <span className={badge.classes}>
-            {badge.srLabel ? <span className="sr-only">{badge.srLabel}</span> : null}
-            <span aria-hidden="true">{badge.text}</span>
-          </span>
+        {badge?.text || icon?.emoji ? (
+          <div className={badgeGroupClasses}>
+            {badge?.text ? (
+              <span className={badgeClassName || undefined}>
+                {badge.srLabel ? <span className="sr-only">{badge.srLabel}</span> : null}
+                <span aria-hidden="true">{badge.text}</span>
+              </span>
+            ) : null}
+            {icon?.emoji ? (
+              <EmojiIcon emoji={icon.emoji} size="lg" label={icon.srLabel} />
+            ) : null}
+          </div>
         ) : null}
 
         <div className={layout?.primaryGroup}>
-          {icon?.emoji ? (
-            <EmojiIcon emoji={icon.emoji} size="lg" label={icon.srLabel} />
-          ) : null}
           <p className={layout?.messageText}>{copy.message}</p>
         </div>
 

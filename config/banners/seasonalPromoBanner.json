@@ -31,7 +31,8 @@
       "viewBox": "0 0 24 24",
       "path": "M5 12h14m-6-6 6 6-6 6",
       "strokeWidth": 2
-    }
+    },
+    "badgeGroup": "flex flex-wrap items-center justify-center gap-2 text-brand-900"
   },
   "badge": {
     "text": "Delivery Service",
