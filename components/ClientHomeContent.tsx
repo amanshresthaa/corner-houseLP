@@ -110,7 +110,6 @@ export default function ClientHomeContent({ sections, slideshow, ariaLabels, lin
       <Navbar />
       <main
         id="main-content"
-        className="pt-12 sm:pt-16"
       >
         <section aria-label={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel ?? 'Restaurant showcase'}>
           <Showcase

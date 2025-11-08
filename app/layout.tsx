@@ -13,9 +13,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import themeTokens from '../theme/colors';
 import { getContactInfo } from '@/lib/restaurantData';
 
-const { themes } = themeTokens;
-const lightTheme = themes.light.colors;
-const darkTheme = themes.dark.colors;
+const DEFAULT_THEME_COLOR = themeTokens.themes.light.colors.surface;
 
 const LAYOUT_CONTACT = getContactInfo();
 
@@ -27,10 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: site.title || 'The White Horse Waterbeach',
     description: site.description || `Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Book: ${LAYOUT_CONTACT.phone.display}`,
     manifest: '/manifest.webmanifest',
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: lightTheme.background },
-      { media: '(prefers-color-scheme: dark)', color: darkTheme.background },
-    ],
+    themeColor: DEFAULT_THEME_COLOR,
     icons: {
       icon: [
         { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
@@ -64,6 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <meta name="theme-color" content={DEFAULT_THEME_COLOR} />
       </head>
       <body>
         <PerformanceProvider>
