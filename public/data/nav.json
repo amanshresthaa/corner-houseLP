@@ -5,7 +5,7 @@
     { "href": "/about", "label": "About" },
     { "href": "/events", "label": "Events" },
     { "href": "/book-a-table", "label": "Book a Table" },
-    { "href": "https://whitehorsecb25.touchtakeaway.net/menu", "label": "Order Online" },
+    { "href": "https://whitehorsecb25.touchtakeaway.net/store/2", "label": "Order Online" },
     { "href": "/press", "label": "Press" },
     { "href": "/contact", "label": "Contact" }
   ]

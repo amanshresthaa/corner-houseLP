@@ -48,7 +48,7 @@
             "label": "Book a Table"
           },
           {
-            "href": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "href": "https://whitehorsecb25.touchtakeaway.net/store/2",
             "label": "Order Online"
           },
           {
@@ -189,7 +189,7 @@
       }
     },
     "links": {
-      "takeaway": "https://whitehorsecb25.touchtakeaway.net/menu"
+      "takeaway": "https://whitehorsecb25.touchtakeaway.net/store/2"
     },
     "accessibility": {
       "ariaLabels": {
@@ -965,7 +965,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#nepalese",
-            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/store/2",
             "callTel": "tel:+441223375578"
           },
           "required": true
@@ -1026,7 +1026,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#starters",
-            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/store/2",
             "callTel": "tel:+441223375578"
           }
         },
@@ -1046,7 +1046,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#nepalese",
-            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/menu",
+            "takeawayUrl": "https://whitehorsecb25.touchtakeaway.net/store/2",
             "callTel": "tel:+441223375578"
           }
         },
