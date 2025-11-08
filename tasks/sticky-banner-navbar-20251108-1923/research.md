@@ -16,6 +16,7 @@
 - `RestaurantLayout` and `SeamlessLayout` both place `<Navbar />` at the top of the page, meaning a single Navbar change will propagate to most routes, as well as `ClientHomeContent` for the homepage.
 - Safe-area helpers already exist in `app/globals.css` (`.safe-area-top { padding-top: env(safe-area-inset-top); }`), and the marketing `Header` component uses that class to keep content out of the notch.
 - Global metadata in `app/layout.tsx` currently sets `themeColor` using the light/dark palette tokens, which controls the color that fills the OS notch/status area in many browsers.
+- `app/globals.css` already ships compatibility helpers for sticky/fixed navs (see `.navbar-fixed` and `.sticky` utilities), so adopting a fixed stack aligns with existing cross-browser mitigation work.
 
 ## External Resources
 - [MDN – `position: sticky`](https://developer.mozilla.org/docs/Web/CSS/position) confirms sticky elements respect the nearest scrolling ancestor and require a `top` offset.

@@ -4,16 +4,16 @@
 
 **Tool Used**: Chrome DevTools (MCP)
 
-- Desktop (1440×900) on `/` and `/menu`: banner + navbar remained pinned while scrolling through hero, menu grid, and footer content. Safe-area padding rendered white above the banner with no bleed through underlying gradients.
-- Mobile emulation (375×812): sticky behavior persisted, the mobile menu button stayed reachable, and the notch padding remained white around the status bar cutout.
-- Console: only pre-existing dev warnings/errors (service worker registration failures, manifest file-handler warning, `PerformanceObserver` buffered flag warning, and `400` responses from PWA assets). No new errors tied to the navbar changes.
-- Checked `meta[name="theme-color"]` which now reports `#FFFFFF`, guaranteeing white notch/status tint regardless of theme.
+- Desktop (1440×900) on `/` and `/menu`: the fixed nav stack (`nav[data-navbar-stack]`) stayed at `top: 0` while scrolling thousands of pixels; `getBoundingClientRect().top` remained `0` and `--navbar-stack-offset` settled at `237px`, keeping the hero/menu grids fully visible.
+- Mobile emulation (375×812): the fixed stack + mobile drawer behaved correctly, safe-area padding kept the notch white, and the burger button focus order was unaffected.
+- Console: only pre-existing dev warnings/errors (service worker registration failures, manifest file-handler warning, `PerformanceObserver` buffered flag warning, and `400` responses from PWA assets). No new issues triggered by the navbar work.
+- Verified `meta[name="theme-color"]` outputs `#FFFFFF` post-reload so the notch tint is forced to white before hydration.
 
 ## Test Scenarios
 
-- [x] Scroll test on `/` desktop: banner and navbar stay sticky with no overlap.
-- [x] Scroll test on `/menu` desktop/mobile: sticky stack remains anchored and does not obscure menu interactions.
-- [x] Verified header background color stays `rgb(255, 255, 255)` via DevTools computed styles.
+- [x] Scroll test on `/` desktop: fixed stack remains at `top: 0` and `--navbar-stack-offset` updates live when the banner height changes.
+- [x] Scroll test on `/menu` desktop/mobile: fixed stack + dropdown keep content padded; no overlap with menu filters.
+- [x] Verified CSS variables via DevTools (`--navbar-stack-offset = 237px`) and header background remains `rgb(255, 255, 255)`.
 - [x] Confirmed `meta[name="theme-color"]` is emitted with `#FFFFFF` after reload.
 - [ ] Automated regression suite – blocked by pre-existing lint violations outside the touched files (see notes).
 
@@ -25,7 +25,7 @@
 
 ## Known Issues / Notes
 
-- `npm run lint` currently fails due to legacy violations across unrelated files (hooks misuse, unescaped entities, etc.). `npx next lint --file components/restaurant/Navbar.tsx --file app/layout.tsx` passes for the edited files.
+- `npm run lint` currently fails due to legacy violations across unrelated files (hooks misuse, unescaped entities, etc.). Targeted run `npx next lint --file components/restaurant/Navbar.tsx --file components/restaurant/Layout.tsx --file components/restaurant/SeamlessLayout.tsx --file components/ClientHomeContent.tsx --file app/layout.tsx` passes for the edited files.
 - Service worker registration warnings/errors appear in DevTools console in development mode; unchanged by this work.
 
 ## Sign-off

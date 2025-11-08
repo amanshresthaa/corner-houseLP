@@ -6,6 +6,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --navbar-offset: 0px;
+  --navbar-stack-offset: 0px;
+}
+
 /* Anti-flicker loading system - Enhanced */
 .loading-phase-critical {
   opacity: 1;

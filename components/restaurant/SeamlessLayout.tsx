@@ -41,6 +41,7 @@ function SeamlessLayoutContent({ children, noMotion }: SeamlessLayoutProps) {
         style={{
           minHeight: '100vh',
           isolation: 'isolate', // Create new stacking context
+          paddingTop: 'var(--navbar-stack-offset, 0px)',
         }}
       >
         {children}

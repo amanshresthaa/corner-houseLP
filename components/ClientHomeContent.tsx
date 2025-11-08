@@ -110,6 +110,7 @@ export default function ClientHomeContent({ sections, slideshow, ariaLabels, lin
       <Navbar />
       <main
         id="main-content"
+        style={{ paddingTop: 'var(--navbar-stack-offset, 0px)' }}
       >
         <section aria-label={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel ?? 'Restaurant showcase'}>
           <Showcase

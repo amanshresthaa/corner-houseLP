@@ -7,6 +7,11 @@
 ## Navbar Styling
 - [x] Ensure `<nav>` and the mobile drawer keep the white background/border treatment without duplication.
 
+## Offset Tracking
+- [x] Measure the fixed banner+nav height with `useLayoutEffect` + `ResizeObserver` and push it into `--navbar-offset` / `--navbar-stack-offset`.
+- [x] Seed default CSS custom properties in `app/globals.css`.
+- [x] Consume the CSS variables in `RestaurantLayout`, `SeamlessLayout`, and `ClientHomeContent` so content is padded below the fixed stack.
+
 ## Notch/Metadata
 - [x] Force `themeColor` metadata to `#ffffff` for all schemes to keep the notch background white.
 

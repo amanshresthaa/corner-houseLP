@@ -21,6 +21,7 @@ export default async function RestaurantLayout({ children, noMotion = false }: L
         style={{
           minHeight: '100vh',
           isolation: 'isolate', // Create new stacking context
+          paddingTop: 'var(--navbar-stack-offset, 0px)',
         }}
       >
         {children}

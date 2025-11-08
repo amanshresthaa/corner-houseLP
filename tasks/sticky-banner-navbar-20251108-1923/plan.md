@@ -14,27 +14,29 @@ Keep the seasonal promo banner and primary navbar pinned to the top of every pag
 ## Architecture & Approach
 
 ### Components Affected
-- `components/restaurant/Navbar.tsx`: wrap the banner+nav stack in a single sticky, white background container and pass extra sticky/spacing classes to `SeasonalPromoBanner`.
-- `app/globals.css` (only if needed) to guarantee `.safe-area-top` background stays white; ideally handled via Tailwind utilities on the header itself.
-- `app/layout.tsx`: force the `themeColor` metadata to `#ffffff` for all schemes.
+- `components/restaurant/Navbar.tsx`: convert the stack to a `fixed inset-x-0 top-0` container, keep `SeasonalPromoBanner` as the first child, and add a `useLayoutEffect` + `ResizeObserver` that records the combined height in CSS custom props (`--navbar-offset`, `--navbar-stack-offset`).
+- `components/restaurant/Layout.tsx`, `components/restaurant/SeamlessLayout.tsx`, and `components/ClientHomeContent.tsx`: consume the custom props to pad their `<main>` elements so content never sits behind the fixed header.
+- `app/globals.css`: seed default values for the navbar custom properties to avoid flashes before JS runs.
+- `app/layout.tsx`: force the `themeColor` metadata to `#ffffff` for all schemes (already in place from the first iteration).
 
 ### Data / Props
 - `SeasonalPromoBanner` already takes `className`; use it to add `w-full`, `bg-white`, and border overrides that align with the nav.
 
 ### State & Interaction
-- Stickiness is purely CSS; no new React state required. Ensure stacking context/z-index keep the header above content.
+- Stickiness is driven by CSS `position: fixed`; a `useLayoutEffect` keeps CSS variables in sync via `ResizeObserver` so height adjustments propagate instantly (e.g., when the promo banner toggles or the mobile drawer opens).
 
 ## Implementation Steps
-1. **Navbar wrapper adjustments**
-   - Add `bg-white`, `safe-area-top`, and `backdrop-blur` classes to the `<header>` wrapper and ensure it remains `sticky top-0 z-50`.
-   - Wrap banner+nav content in a `div` that shares the white background so the notch padding matches.
-   - Pass a `className` to `SeasonalPromoBanner` to enforce full-width layout and ensure its border transitions cleanly into the nav below.
-2. **Nav refinements**
-   - Ensure the `<nav>` element also uses `bg-white` and, if the banner already provides a border, switch the nav border to `border-t` so there is only one dividing line.
-   - Double-check mobile menu background so it matches the sticky header.
-3. **Theme-color metadata**
-   - Update `app/layout.tsx` to set `themeColor` to white for both media queries (or collapse to a single string) so browsers paint the notch/status bar white regardless of theme tokens.
-4. **Optional CSS helper** (only if the Tailwind classes cannot express the safe-area background): add a `.safe-area-top-bg-white` helper in `globals.css`.
+1. **Fixed nav stack**
+   - Replace the wrapper with a `nav` element that has `className="fixed inset-x-0 top-0 z-50 … safe-area-top"`, keeping `SeasonalPromoBanner` as the first child so it inherits the fixed positioning alongside the nav controls.
+   - Ensure the stack background stays white/opaque (for the notch) while the banner still uses its DaisyUI alert styling; add light dividers where needed.
+2. **Dynamic offset tracking**
+   - Inside `Navbar`, attach a `useLayoutEffect` with a `ResizeObserver` + `window.resize` listener to measure `offsetHeight` of the stack and write the value to `--navbar-offset` / `--navbar-stack-offset`. Clean up listeners on unmount and reset the variables to `0px`.
+   - Seed both variables with default `0px` values in `app/globals.css` so SSR-rendered content doesn’t jump.
+3. **Layout consumption**
+   - Update `RestaurantLayout`, `SeamlessLayout`, and the homepage `ClientHomeContent` to add `padding-top: var(--navbar-stack-offset, 0px)` on their `<main>` tags.
+   - Confirm the mobile drawer and any other absolutely positioned children still align now that their ancestor is fixed.
+4. **Theme-color metadata**
+   - (Already completed) keep `DEFAULT_THEME_COLOR` at `#ffffff` and ensure `<meta name="theme-color">` is emitted during SSR so the notch background is white before hydration.
 
 ## Edge Cases
 - Long promo banner text: ensure sticky stack still works on 2-line banner; nav should remain accessible (maybe add `divide-y` to keep separation clear).
