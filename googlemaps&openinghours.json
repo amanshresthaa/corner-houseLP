@@ -1,0 +1,131 @@
+[
+  {
+    "name": "The Queen Elizabeth Pub (King’s Lynn)",
+    "google_maps_url": "https://www.google.com/maps/place/32+Gayton+Rd,+King%27s+Lynn+PE30+4EL,+UK",
+    "rating": "4.8 / 5 (71 reviews)",
+    "opening_hours": {
+      "Monday": "12:00 – 22:00",
+      "Tuesday": "12:00 – 22:00",
+      "Wednesday": "12:00 – 22:00",
+      "Thursday": "12:00 – 22:00",
+      "Friday": "12:00 – 23:00",
+      "Saturday": "12:00 – 23:00",
+      "Sunday": "12:00 – 22:00"
+    },
+    "meal_times": {
+      "Monday-Saturday": "12:00–15:00 & 17:00–22:00",
+      "Sunday": "12:00–16:00 (roast) & 17:00–21:00 (Nepalese)"
+    }
+  },
+  {
+    "name": "The Corner House (Cambridge)",
+    "google_maps_url": "https://www.google.com/maps/place/231+Newmarket+Rd,+Cambridge+CB5+8JE,+UK",
+    "rating": "4.4 / 5 (802 reviews)",
+    "opening_hours": {
+      "Sunday": "12:00 – 22:00",
+      "Monday": "12:00 – 22:00",
+      "Tuesday": "12:00 – 22:00",
+      "Wednesday": "12:00 – 22:00",
+      "Thursday": "12:00 – 22:00",
+      "Friday": "12:00 – 23:00",
+      "Saturday": "12:00 – 23:00"
+    }
+  },
+  {
+    "name": "Old Crown (Girton)",
+    "google_maps_url": "https://maps.google.com/",
+    "rating": "4.5 / 5 (764 reviews)",
+    "opening_hours": {
+      "Monday": "Closed",
+      "Tuesday": "12:00 – 22:30",
+      "Wednesday": "12:00 – 22:30",
+      "Thursday": "12:00 – 22:30",
+      "Friday": "12:00 – 23:00",
+      "Saturday": "12:00 – 23:00",
+      "Sunday": "12:00 – 22:30"
+    }
+  },
+  {
+    "name": "The White Horse (Waterbeach)",
+    "google_maps_url": "https://maps.google.com/maps/dir/?entry=wc",
+    "rating": "4.4 / 5 (440 reviews)",
+    "opening_hours": {
+      "Monday": "12:00 – 22:00",
+      "Tuesday": "12:00 – 22:00",
+      "Wednesday": "12:00 – 22:00",
+      "Thursday": "12:00 – 22:00",
+      "Friday": "12:00 – 22:00",
+      "Saturday": "12:00 – 22:00",
+      "Sunday": "12:00 – 22:00"
+    }
+  },
+  {
+    "name": "Prince of Wales (Bromham)",
+    "google_maps_url": "https://support.google.com/maps/answer/3092445?hl=en&co=GENIE.Platform%3DDesktop",
+    "opening_hours": {
+      "Monday": "12:00 – 23:00",
+      "Tuesday": "12:00 – 23:00",
+      "Wednesday": "12:00 – 23:00",
+      "Thursday": "12:00 – 23:00",
+      "Friday": "12:00 – 23:00",
+      "Saturday": "12:00 – 23:00",
+      "Sunday": "12:00 – 22:00"
+    },
+    "meal_times": {
+      "Monday-Friday": "12:00–15:00 & 17:00–22:00",
+      "Saturday": "12:00–22:00",
+      "Sunday": "12:00–21:00"
+    }
+  },
+  {
+    "name": "The Bell (Sawtry)",
+    "google_maps_url": "https://support.google.com/maps/answer/3092445?hl=en&co=GENIE.Platform%3DAndroid",
+    "opening_hours": {
+      "Monday": "14:00 – 22:00",
+      "Tuesday": "14:00 – 22:00",
+      "Wednesday": "14:00 – 22:00",
+      "Thursday": "14:00 – 22:00",
+      "Friday": "14:00 – 23:00",
+      "Saturday": "12:00 – 23:00",
+      "Sunday": "12:00 – 22:00"
+    }
+  },
+  {
+    "name": "The Railway (Whittlesey)",
+    "google_maps_url": "https://maps.google.com/maps",
+    "rating": "4.8 / 5",
+    "opening_hours": {
+      "Monday": "12:00 – 22:00",
+      "Tuesday": "12:00 – 22:00",
+      "Wednesday": "12:00 – 22:00",
+      "Thursday": "12:00 – 22:00",
+      "Friday": "12:00 – 23:00",
+      "Saturday": "12:00 – 23:00",
+      "Sunday": "12:00 – 22:00"
+    },
+    "meal_times": {
+      "Monday-Thursday": "16:00–22:00",
+      "Friday-Saturday": "15:00–22:00",
+      "Sunday": "12:00–21:00"
+    }
+  },
+  {
+    "name": "Barley Mow (Hartford)",
+    "google_maps_url": "google.com/maps/place/",
+    "rating": "4.3 / 5 (708 reviews)",
+    "opening_hours": {
+      "Monday": "Closed",
+      "Tuesday": "12:00 – 23:00",
+      "Wednesday": "12:00 – 23:00",
+      "Thursday": "12:00 – 23:00",
+      "Friday": "12:00 – 23:00",
+      "Saturday": "12:00 – 23:00",
+      "Sunday": "12:00 – 22:00"
+    },
+    "meal_times": {
+      "Tuesday-Friday": "12:00–15:00 & 17:00–22:00",
+      "Saturday": "12:00–22:00",
+      "Sunday": "12:00–21:00"
+    }
+  }
+]

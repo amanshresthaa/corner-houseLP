@@ -1,6 +1,7 @@
 {
   "links": [
     { "href": "/", "label": "Home" },
+    { "href": "/christmas-menu", "label": "Christmas Menu" },
     { "href": "/menu", "label": "Menu" },
     { "href": "/about", "label": "About" },
     { "href": "/events", "label": "Events" },

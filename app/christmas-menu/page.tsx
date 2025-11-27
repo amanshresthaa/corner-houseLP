@@ -1,25 +1,14 @@
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/MotionWrappers";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
-import { getContentSmart } from '@/src/lib/data/server-loader';
+import { getContentSmart } from "@/src/lib/data/server-loader";
 import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
 import ChristmasMusicPlayer from "./_components/ChristmasMusicPlayer";
 
-const CHRISTMAS_CONTACT = getContactInfo();
-
-export async function generateMetadata() {
-  const content = await getContentSmart();
-  const seo = (content.pages as any)?.christmasMenu?.seo || {};
-  return getSEOTags({
-    title: seo.title,
-    description: seo.description,
-    keywords: seo.keywords,
-    canonicalUrlRelative: seo.canonicalUrlRelative || '/christmas-menu',
-    openGraph: seo.openGraph,
-  });
-}
+const CHRISTMAS_MENU_PDF_PATH = "/documents/white-horse-christmas-menu.pdf";
+const CHRISTMAS_MENU_PDF_FILENAME = "white-horse-christmas-menu.pdf";
 
 const slugify = (value: string) =>
   value
@@ -43,62 +32,54 @@ type MenuSectionData = {
 type FestiveMenu = {
   title: string;
   description: string;
-  sections: MenuSectionData[];
-  footer: {
-    experience: string;
-    location: string;
-    contactLabel: string;
-    contactWebsite: string;
-    contactPhone: string;
-    notes: string;
-  };
-};
-
-type ChefSelections = {
-  title: string;
-  description: string;
-  items: MenuItemData[];
-  drink: {
-    offer: string;
-    included: boolean;
-  };
   price: {
     value: string;
+    display: string;
   };
+  notes: string[];
+  sections: MenuSectionData[];
 };
 
-const FULL_CHRISTMAS_MENU: FestiveMenu = {
-  title: "Choose Your Christmas Meal",
+const CHRISTMAS_MENU: FestiveMenu = {
+  title: "Christmas Menu 2025",
   description:
-    "Pick one dish from each section. Every guest receives mulled wine or another drink of their choice.",
+    "Four courses of Himalayan-inspired festive dishes for £39.99 per person at The White Horse Waterbeach.",
+  price: {
+    value: "39.99",
+    display: "£39.99 per person",
+  },
+  notes: [
+    "Seafood dishes carry a £3 supplement.",
+    "Choose one rice or bread to accompany your meal.",
+  ],
   sections: [
     {
       id: slugify("Starters"),
       name: "Starters",
       items: [
         {
-          id: slugify("Sha Phaley Delight"),
-          name: "Sha Phaley Delight",
+          id: slugify("Vegetable Chop"),
+          name: "Vegetable Chop",
           description:
-            "Crispy fried pastry filled with minced meat, egg and cheese. Served with tomato chutney.",
+            "Nepali street snack of potatoes, peas, beans and carrots blended with Himalayan herbs, breaded and fried crisp.",
         },
         {
-          id: slugify("Turkey's Nepalese Christmas Choyela"),
-          name: "Turkey's Nepalese Christmas Choyela",
+          id: slugify("Chicken Sekuwa Satey"),
+          name: "Chicken Sekuwa Satey",
           description:
-            "Roasted turkey mixed with Nepali spices, mustard oil and fresh herbs.",
+            "Marinated chicken grilled with Himalayan herbs, served with tangy tomato chutney.",
         },
         {
-          id: slugify("Tandoori Broccoli"),
-          name: "Tandoori Broccoli",
+          id: slugify("Stuffed Turkey Kofta Kebab"),
+          name: "Stuffed Turkey Kofta Kebab",
           description:
-            "Grilled broccoli in spiced yogurt with mint sauce and tamarind chutney.",
+            "Minced turkey seasoned with festive spices, stuffed with cheese and butter, pan-fried until golden.",
         },
         {
-          id: slugify("Banana Dumpling"),
-          name: "Banana Dumpling",
+          id: slugify("Lamb Sekuwa"),
+          name: "Lamb Sekuwa",
           description:
-            "Warm dumpling with a sweet banana filling.",
+            "Juicy lamb pieces marinated in traditional Himalayan herbs and slow-cooked in a clay oven for smoky depth.",
         },
       ],
     },
@@ -107,28 +88,34 @@ const FULL_CHRISTMAS_MENU: FestiveMenu = {
       name: "Mains",
       items: [
         {
-          id: slugify("Zesty Lemon Sea Bass & Creamy Mash"),
-          name: "Zesty Lemon Sea Bass & Creamy Mash",
+          id: slugify("Honey Hunter Chicken"),
+          name: "Honey Hunter Chicken",
           description:
-            "Tender grilled sea bass infused with fresh lemon zest and herbs, served alongside smooth, buttery mashed potatoes.",
+            "Gurung-inspired chicken cooked with honey and aromatic herbs for a celebratory sweetness.",
         },
         {
-          id: slugify("Chicken Pistachio Korma"),
-          name: "Chicken Pistachio Korma",
+          id: slugify("Sherpa Lamb"),
+          name: "Sherpa Lamb",
           description:
-            "Chicken tikka simmered in a creamy pistachio sauce.",
+            "Tender lamb slow-cooked with baby potatoes, Himalayan spices and seasonal herbs.",
         },
         {
-          id: slugify("Himalayan Christmas Sizzler"),
-          name: "Himalayan Christmas Sizzler",
+          id: slugify("Seasonal Tawa Mixed Vegetables"),
+          name: "Seasonal Tawa Mixed Vegetables",
           description:
-            "Turkey breast served sizzling in wine and cream sauce with a hint of oyster and bright vegetables.",
+            "Garden vegetables in a rich, spiced tomato sauce for a hearty vegetarian main.",
         },
         {
-          id: slugify("Santa's Vegetarian Feast"),
-          name: "Santa's Vegetarian Feast",
+          id: slugify("Pan-Fried Tilapia"),
+          name: "Pan-Fried Tilapia",
           description:
-            "Baby corn, potatoes, mushrooms, kidney beans and carrots cooked with butter and herbs.",
+            "Marinated tilapia fillet pan-fried to a delicate crisp with festive herbs. Seafood supplement applies.",
+        },
+        {
+          id: slugify("Tawa King Prawn"),
+          name: "Tawa King Prawn (£3 Supplement)",
+          description:
+            "Succulent king prawns cooked with peppers, onions and spiced tomato sauce - rich and indulgent.",
         },
       ],
     },
@@ -137,15 +124,31 @@ const FULL_CHRISTMAS_MENU: FestiveMenu = {
       name: "Sides",
       items: [
         {
-          id: slugify("Fragrant Pilau Rice"),
-          name: "Fragrant Pilau Rice",
-          description: "Basmati rice cooked with gentle spices and ghee.",
+          id: slugify("Makai Saag"),
+          name: "Makai Saag",
+          description: "Baby corn and fresh spinach sautéed with Himalayan spices.",
         },
         {
-          id: slugify("Mini Festive Naan"),
-          name: "Mini Festive Naan",
-          description: "Soft naan bread baked fresh for the table.",
+          id: slugify("Aloo Dum"),
+          name: "Aloo Dum",
+          description: "Baby potatoes simmered in a hearty tomato sauce.",
         },
+        {
+          id: slugify("Three Beans Stir Fry"),
+          name: "Three Beans Stir Fry",
+          description: "Stir-fried mangetout, green beans and sugar snaps with mustard seeds and curry leaves.",
+        },
+      ],
+    },
+    {
+      id: slugify("Rice and Breads"),
+      name: "Rice & Breads",
+      description: "Choose one to complement your meal.",
+      items: [
+        { id: slugify("Steamed Rice"), name: "Steamed Rice", description: "Fluffy, simply seasoned basmati." },
+        { id: slugify("Pilau Rice"), name: "Pilau Rice", description: "Fragrant rice cooked with gentle spices." },
+        { id: slugify("Butter Naan"), name: "Butter Naan", description: "Soft tandoor-baked naan with butter gloss." },
+        { id: slugify("Roti"), name: "Roti", description: "Light wholewheat flatbread." },
       ],
     },
     {
@@ -153,118 +156,109 @@ const FULL_CHRISTMAS_MENU: FestiveMenu = {
       name: "Desserts",
       items: [
         {
-          id: slugify("Classic Christmas Pudding"),
-          name: "Classic Christmas Pudding",
-          description: "Rich spiced pudding served warm.",
+          id: slugify("Lalmohan Yogurt"),
+          name: "Lalmohan Yogurt",
+          description: "Golden fried milk dumplings in syrup with chilled yogurt.",
         },
         {
-          id: slugify("Nepalese Spiced Rice Pudding"),
-          name: "Nepalese Spiced Rice Pudding",
-          description:
-            "Creamy rice pudding with light Nepalese spices.",
-        },
-        {
-          id: slugify("Vegan Rhubarb & Ginger Bravos"),
-          name: "Vegan Rhubarb & Ginger Bravos",
-          description:
-            "Tangy rhubarb dessert with ginger, fully plant-based.",
+          id: slugify("Jeri Yogurt"),
+          name: "Jeri Yogurt",
+          description: "Crispy spirals of sweet jeri paired with creamy yogurt - a festive Nepali favourite.",
         },
       ],
     },
   ],
-  footer: {
-    experience: "Celebrate Christmas at The White Horse in Waterbeach.",
-    location: "12 Greenside, Waterbeach, Cambridge CB25 9HP",
-    contactLabel: "whitehorsepub.co",
-    contactWebsite: "https://whitehorsepub.co",
-    contactPhone: CHRISTMAS_CONTACT.phone.display,
-    notes:
-      "Our regular menu stays available alongside these dishes. Items may change if ingredients run out.",
-  },
 };
 
-const CHEF_SELECTIONS: ChefSelections = {
-  title: "Chef's Christmas Selections",
-  description:
-    "Enjoy a set menu chosen by our chefs with four courses and mulled wine or another drink of their choice included.",
-  items: [
-    {
-      id: slugify("Turkey's Nepalese Christmas Choyela"),
-      name: "Turkey's Nepalese Christmas Choyela",
-      description:
-        "Roasted turkey tossed with Nepali spices, mustard oil and fresh herbs.",
-    },
-    {
-      id: slugify("Himalayan Christmas Sizzler"),
-      name: "Himalayan Christmas Sizzler",
-      description:
-        "Turkey breast served sizzling with wine and cream sauce, a hint of oyster and bright vegetables.",
-    },
-    {
-      id: slugify("Fragrant Pilau Rice"),
-      name: "Fragrant Pilau Rice",
-      description: "Basmati rice cooked with gentle spices and ghee.",
-    },
-    {
-      id: slugify("Nepalese Spiced Rice Pudding"),
-      name: "Nepalese Spiced Rice Pudding",
-      description:
-        "Creamy rice pudding with gentle spice to finish the meal.",
-    },
-  ],
-  drink: {
-    offer:
-      "Enjoy a glass of mulled wine or choose another drink when you arrive.",
-    included: true,
-  },
-  price: {
-    value: "44.99",
-  },
-};
-
-const highlightCards = [
+const HIGHLIGHT_CARDS = [
   {
     icon: "🎄",
-    title: "A cosy Cambridge Christmas",
-    body: "Our dining room is dressed with trees, lights and a glowing fire so it feels warm the moment you walk in.",
-  },
-  {
-    icon: "🍽️",
-    title: "Comfort food with spice",
-    body: "Classic British comfort dishes sit beside bold Nepalese flavours so everyone finds something they love.",
-  },
-  {
-    icon: "🥂",
-    title: "Toasts made easy",
-    body: "Start with mulled wine or another drink of their choice, and let our bar team keep the glasses full all night.",
+    title: "Festive Nepali flavours",
+    body: "Seasonal dishes built on Himalayan herbs, balanced with cosy pub comfort.",
   },
   {
     icon: "👨‍👩‍👧",
-    title: "Space for every group",
-    body: "Bring family, friends or work mates—we can seat small tables or large gatherings with ease.",
+    title: "Made for gatherings",
+    body: "Tables for couples, families and teams with space to celebrate together.",
   },
-] as const;
-
-const assurancePoints = [
   {
-    icon: "✅",
-    title: "Dietary friendly",
-    description: "Tell us about allergies or preferences and we will offer safe swaps without fuss.",
+    icon: "🥘",
+    title: "Vegetarian friendly",
+    body: "Plenty of meat-free options plus clear notes on seafood supplements.",
   },
   {
     icon: "📞",
-    title: "Friendly planning support",
-    description: "Call or email and we will help with bookings, deposits and timings.",
-  },
-  {
-    icon: "🎁",
-    title: "Ready for parties",
-    description: "Need a private room or team celebration? We can set up the space, music and menu.",
+    title: "Easy to book",
+    body: "Reserve online, call, or email the team - we will help plan the details.",
   },
 ] as const;
 
+const SUPPORT_POINTS = [
+  {
+    icon: "✅",
+    title: "Allergies welcomed",
+    description: "Tell us your requirements - we offer safe swaps and clear guidance.",
+  },
+  {
+    icon: "🕯️",
+    title: "Cosy dining room",
+    description: "Warm lighting, festive decor and plenty of space to linger over dessert.",
+  },
+  {
+    icon: "📍",
+    title: "Central to Waterbeach",
+    description: "Right on the green at 12 Greenside with easy access from Cambridge.",
+  },
+];
+
+const FALLBACK_DESCRIPTION =
+  "Celebrate Christmas in Waterbeach with a £39.99 four-course menu featuring Himalayan-inspired starters, mains, sides, breads and desserts.";
+
+export async function generateMetadata() {
+  try {
+    const content = await getContentSmart();
+    const seo = (content as any)?.pages?.christmasMenu?.seo || {};
+
+    return getSEOTags({
+      title: seo.title ?? "Christmas Menu 2025 | The White Horse Waterbeach",
+      description: seo.description ?? FALLBACK_DESCRIPTION,
+      keywords:
+        seo.keywords ?? [
+          "White Horse Waterbeach Christmas menu",
+          "Cambridge Christmas dinner",
+          "Waterbeach festive menu",
+          "Nepalese Christmas menu",
+        ],
+      canonicalUrlRelative: seo.canonicalUrlRelative ?? "/christmas-menu",
+      openGraph: {
+        title: seo.openGraph?.title ?? "Christmas Menu 2025 at The White Horse Waterbeach",
+        description: seo.openGraph?.description ?? FALLBACK_DESCRIPTION,
+        url: seo.openGraph?.url ?? "https://whitehorsepub.co/christmas-menu",
+        images: seo.openGraph?.images,
+      },
+    });
+  } catch (error) {
+    return getSEOTags({
+      title: "Christmas Menu 2025 | The White Horse Waterbeach",
+      description: FALLBACK_DESCRIPTION,
+      keywords: [
+        "White Horse Waterbeach Christmas menu",
+        "Cambridge Christmas dinner",
+        "Waterbeach festive menu",
+        "Nepalese Christmas menu",
+      ],
+      canonicalUrlRelative: "/christmas-menu",
+      openGraph: {
+        title: "Christmas Menu 2025 at The White Horse Waterbeach",
+        description: FALLBACK_DESCRIPTION,
+        url: "https://whitehorsepub.co/christmas-menu",
+      },
+    });
+  }
+}
+
 export default async function ChristmasMenuPage() {
-  const contact = CHRISTMAS_CONTACT;
+  const contact = getContactInfo();
   const telHref = contact.phone.tel;
   const phoneDisplay = contact.phone.display.replace(/\s+/g, "\u00a0");
   const googleMapLink = contact.address.map.google ?? contact.address.map.embed ?? "#";
@@ -274,55 +268,28 @@ export default async function ChristmasMenuPage() {
       "@context": "https://schema.org",
       "@type": "Menu",
       name: "The White Horse Waterbeach Christmas Menu 2025",
-      description: FULL_CHRISTMAS_MENU.description,
+      description: CHRISTMAS_MENU.description,
       url: "https://whitehorsepub.co/christmas-menu",
-      hasMenuSection: [
-        ...FULL_CHRISTMAS_MENU.sections.map((section) => ({
-          "@type": "MenuSection",
-          name: section.name,
-          description: section.description,
-          hasMenuItem: section.items.map((item) => ({
-            "@type": "MenuItem",
-            name: item.name,
-            description: item.description,
-            offers: {
-              "@type": "Offer",
-              availability: "https://schema.org/InStoreOnly",
-            },
-          })),
+      hasMenuSection: CHRISTMAS_MENU.sections.map((section) => ({
+        "@type": "MenuSection",
+        name: section.name,
+        description: section.description,
+        hasMenuItem: section.items.map((item) => ({
+          "@type": "MenuItem",
+          name: item.name,
+          description: item.description,
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStoreOnly",
+          },
         })),
-        {
-          "@type": "MenuSection",
-          name: CHEF_SELECTIONS.title,
-          description: CHEF_SELECTIONS.description,
-          hasMenuItem: [
-            ...CHEF_SELECTIONS.items.map((item) => ({
-              "@type": "MenuItem",
-              name: item.name,
-              description: item.description,
-              offers: {
-                "@type": "Offer",
-                availability: "https://schema.org/InStoreOnly",
-              },
-            })),
-            {
-              "@type": "MenuItem",
-              name: "Festive drink on arrival",
-              description: CHEF_SELECTIONS.drink.offer,
-              offers: {
-                "@type": "Offer",
-                availability: "https://schema.org/InStoreOnly",
-              },
-            },
-          ],
-        },
-      ],
+      })),
       offers: [
         {
           "@type": "Offer",
-          price: CHEF_SELECTIONS.price.value,
+          price: CHRISTMAS_MENU.price.value,
           priceCurrency: "GBP",
-          description: "Chef's Christmas Selections per person with mulled wine or another drink of their choice included.",
+          description: "Per person Christmas menu price at The White Horse Waterbeach.",
           availability: "https://schema.org/InStoreOnly",
           url: "https://whitehorsepub.co/christmas-menu",
         },
@@ -382,37 +349,46 @@ export default async function ChristmasMenuPage() {
             </FadeInUp>
             <FadeInUp>
               <p className="text-lg md:text-xl text-neutral-100 max-w-3xl mx-auto leading-relaxed">
-                Join us for a warm festive meal in Waterbeach. Pick your favourites from each course and enjoy mulled wine or another drink of their choice the moment you arrive.
+                {CHRISTMAS_MENU.description}
               </p>
             </FadeInUp>
             <FadeInUp>
               <div
                 className="flex flex-wrap justify-center gap-3 text-base font-semibold"
                 role="list"
-                aria-label="Festive inclusions"
+                aria-label="Festive highlights"
               >
                 <span
                   className="inline-flex items-center gap-2 rounded-full border border-accent-200 bg-accent-500 px-4 py-2 text-neutral-900 shadow-sm"
                   role="listitem"
                 >
                   <span aria-hidden="true" role="img">
-                    🍷
+                    💷
                   </span>
-                  Mulled wine or another drink of their choice included
+                  {CHRISTMAS_MENU.price.display}
                 </span>
                 <span
                   className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-2 text-white shadow-sm backdrop-blur"
                   role="listitem"
                 >
                   <span aria-hidden="true" role="img">
-                    💷
+                    🐟
                   </span>
-                  Chef&rsquo;s set menu &pound;44.99&nbsp;per&nbsp;guest
+                  {CHRISTMAS_MENU.notes[0]}
                 </span>
               </div>
             </FadeInUp>
             <FadeInUp>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <MotionLinkButton
+                  href={CHRISTMAS_MENU_PDF_PATH}
+                  download={CHRISTMAS_MENU_PDF_FILENAME}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700"
+                  ariaLabel="Download the Christmas menu PDF"
+                >
+                  <span aria-hidden="true" role="img">⬇️</span>
+                  Download Christmas Menu
+                </MotionLinkButton>
                 <MotionLinkButton
                   href="/book-a-table"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-brand-800 font-semibold shadow-lg hover:bg-brand-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-700"
@@ -427,7 +403,7 @@ export default async function ChristmasMenuPage() {
                   ariaLabel="Book your table via call"
                 >
                   <span aria-hidden="true" role="img">📞</span>
-                  Book Your Table via Call
+                  Book by Phone
                 </MotionLinkButton>
               </div>
             </FadeInUp>
@@ -436,11 +412,6 @@ export default async function ChristmasMenuPage() {
                 <ChristmasMusicPlayer />
               </div>
             </FadeInUp>
-            <FadeInUp>
-              <p className="text-sm font-semibold uppercase tracking-wide text-white/90">
-                Seats are limited &mdash; book today.
-              </p>
-            </FadeInUp>
             <FadeIn>
               <div className="flex flex-wrap justify-center gap-3 text-sm text-neutral-100/90">
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20">
@@ -448,12 +419,12 @@ export default async function ChristmasMenuPage() {
                   Waterbeach, Cambridge
                 </span>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20">
-                  <span aria-hidden="true" role="img">🎉</span>
-                  Festive lunches &amp; dinners
+                  <span aria-hidden="true" role="img">👨‍👩‍👧</span>
+                  Great for groups and families
                 </span>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20">
                   <span aria-hidden="true" role="img">✨</span>
-                  Mulled wine or another drink of their choice included
+                  Himalayan flavours with festive warmth
                 </span>
               </div>
             </FadeIn>
@@ -465,16 +436,31 @@ export default async function ChristmasMenuPage() {
             <FadeIn>
               <div className="max-w-3xl mx-auto text-center space-y-4">
                 <h2 id="full-christmas-menu-heading" className="h3 text-brand-800">
-                  {FULL_CHRISTMAS_MENU.title}
+                  {CHRISTMAS_MENU.title}
                 </h2>
                 <p className="text-lg text-brand-600 leading-relaxed">
-                  {FULL_CHRISTMAS_MENU.description}
+                  {CHRISTMAS_MENU.description}
                 </p>
+                <div className="flex flex-wrap justify-center gap-2 text-sm font-semibold text-brand-700">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1">
+                    <span aria-hidden="true" role="img">💷</span>
+                    {CHRISTMAS_MENU.price.display}
+                  </span>
+                  {CHRISTMAS_MENU.notes.map((note) => (
+                    <span
+                      key={note}
+                      className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1"
+                    >
+                      <span aria-hidden="true" role="img">ℹ️</span>
+                      {note}
+                    </span>
+                  ))}
+                </div>
               </div>
             </FadeIn>
             <FadeInUp>
-              <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-                {FULL_CHRISTMAS_MENU.sections.map((section) => (
+              <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+                {CHRISTMAS_MENU.sections.map((section) => (
                   <article
                     key={section.id}
                     className="flex h-full flex-col rounded-2xl border border-brand-100 bg-white/80 p-6 shadow-lg"
@@ -510,115 +496,69 @@ export default async function ChristmasMenuPage() {
                 ))}
               </div>
             </FadeInUp>
-            <FadeIn>
-              <div className="mt-12 rounded-2xl border border-brand-100 bg-brand-50/70 p-8 shadow-md">
-                <h3 className="h5 text-brand-800 mb-4 font-semibold">Good to know</h3>
-                <dl className="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Experience</dt>
-                    <dd className="text-brand-700 leading-relaxed">{FULL_CHRISTMAS_MENU.footer.experience}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Location</dt>
-                    <dd className="text-brand-700 leading-relaxed">
-                      <address className="not-italic">
-                        {FULL_CHRISTMAS_MENU.footer.location}
-                      </address>
-                      <Link
-                        href={googleMapLink}
-                        className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 underline"
-                      >
-                        Open in Maps
-                      </Link>
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Contact</dt>
-                    <dd className="text-brand-700 leading-relaxed">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <Link href={FULL_CHRISTMAS_MENU.footer.contactWebsite} className="font-semibold underline">
-                          {FULL_CHRISTMAS_MENU.footer.contactLabel}
-                        </Link>
-                        <span aria-hidden="true" className="text-brand-500">•</span>
-                        <Link href={telHref} className="font-semibold underline">
-                          {phoneDisplay}
-                        </Link>
-                      </div>
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Notes</dt>
-                    <dd className="text-brand-700 leading-relaxed">
-                      {FULL_CHRISTMAS_MENU.footer.notes}
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-            </FadeIn>
           </div>
         </section>
 
-        <section className="bg-white py-16 md:py-20" aria-labelledby="chefs-christmas-heading">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-white py-14 md:py-16" aria-labelledby="christmas-details-heading">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
-              <div className="max-w-3xl space-y-4">
-                <h2 id="chefs-christmas-heading" className="h3 text-brand-800">
-                  Chef&rsquo;s Christmas Selections
+              <div className="flex flex-col gap-3">
+                <h2 id="christmas-details-heading" className="h3 text-brand-800">
+                  Good to know before you book
                 </h2>
-                <p className="text-lg text-brand-600 leading-relaxed">
-                  {CHEF_SELECTIONS.description}
+                <p className="text-brand-600 leading-relaxed">
+                  Reserve online, download the menu, or call us - we will make sure your festive meal is seamless.
                 </p>
               </div>
             </FadeIn>
-            <div className="mt-10 grid gap-8 lg:grid-cols-[2fr,1fr]">
-              <FadeInUp>
-                <ul className="space-y-4" role="list" aria-label="Chef&rsquo;s selection dishes">
-                  {CHEF_SELECTIONS.items.map((item) => (
-                    <li
-                      key={item.id}
-                      className="rounded-2xl border border-brand-100 bg-neutral-50/80 p-6 shadow-sm"
-                    >
-                      <h3 className="h5 text-brand-800 leading-tight font-semibold">{item.name}</h3>
-                      <p className="mt-2 text-brand-600 leading-relaxed">{item.description}</p>
-                    </li>
-                  ))}
-                </ul>
-              </FadeInUp>
-              <FadeInUp>
-                <aside className="rounded-2xl border border-brand-100 bg-brand-50/80 p-8 shadow-lg">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">Per person</p>
-                  <p className="mt-2 text-3xl font-display font-bold text-brand-800">
-                    &pound;{CHEF_SELECTIONS.price.value}
-                  </p>
-                  <p className="mt-4 text-brand-700 leading-relaxed">
-                  {CHEF_SELECTIONS.drink.offer}
-                </p>
-                {CHEF_SELECTIONS.drink.included && (
-                  <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent-200 bg-accent-500 px-3 py-1 text-sm font-semibold text-neutral-900">
-                    <span aria-hidden="true" role="img">🍷</span>
-                    Mulled wine or another drink of their choice comes with every menu
-                  </p>
-                )}
-                <div className="mt-6 space-y-3">
-                  <MotionLinkButton
-                    href="/book-a-table"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-700 px-5 py-3 text-white hover:bg-brand-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300 focus-visible:ring-offset-brand-50"
-                    ariaLabel="Book the Chef&rsquo;s Christmas set menu online"
-                  >
-                    <span aria-hidden="true" role="img">🥂</span>
-                    Book the festive set menu
-                  </MotionLinkButton>
+            <FadeInUp>
+              <dl className="mt-8 grid gap-6 sm:grid-cols-2">
+                <div className="rounded-xl border border-brand-100 bg-brand-50/70 p-5 shadow-sm">
+                  <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Price</dt>
+                  <dd className="mt-2 text-brand-800 text-lg font-semibold">{CHRISTMAS_MENU.price.display}</dd>
+                  <dd className="mt-1 text-brand-600 text-sm">Supplements: {CHRISTMAS_MENU.notes[0]}</dd>
+                </div>
+                <div className="rounded-xl border border-brand-100 bg-white p-5 shadow-sm">
+                  <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Location</dt>
+                  <dd className="mt-2 text-brand-700 leading-relaxed">
+                    <address className="not-italic">
+                      {contact.address.street}, {contact.address.area}, {contact.address.postcode}
+                    </address>
                     <Link
-                      href={telHref}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-brand-200 px-5 py-3 text-brand-700 hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
+                      href={googleMapLink}
+                      className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 underline"
                     >
-                      <span aria-hidden="true" role="img">☎️</span>
-                      Call our team
+                      Open in Maps
                     </Link>
-                  </div>
-                </aside>
-              </FadeInUp>
-            </div>
+                  </dd>
+                </div>
+                <div className="rounded-xl border border-brand-100 bg-white p-5 shadow-sm">
+                  <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Contact</dt>
+                  <dd className="mt-2 text-brand-700 leading-relaxed">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Link href={contact.website ?? "https://whitehorsepub.co"} className="font-semibold underline">
+                        whitehorsepub.co
+                      </Link>
+                      <span aria-hidden="true" className="text-brand-500">•</span>
+                      <Link href={telHref} className="font-semibold underline">
+                        {phoneDisplay}
+                      </Link>
+                    </div>
+                    <div className="mt-2 text-sm text-brand-600">
+                      <Link href={`mailto:${contact.email.bookings}`} className="underline font-semibold">
+                        {contact.email.bookings}
+                      </Link>
+                    </div>
+                  </dd>
+                </div>
+                <div className="rounded-xl border border-brand-100 bg-brand-50/70 p-5 shadow-sm">
+                  <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Booking options</dt>
+                  <dd className="mt-2 text-brand-700 leading-relaxed">
+                    Book online, call us, or download the PDF and share with your group before confirming.
+                  </dd>
+                </div>
+              </dl>
+            </FadeInUp>
           </div>
         </section>
 
@@ -630,13 +570,13 @@ export default async function ChristmasMenuPage() {
                   Why guests love our Christmas menu
                 </h2>
                 <p className="text-lg text-brand-600 leading-relaxed">
-                  We mix easy-going The White Horse hospitality with bold Nepalese flavour so your festive meal feels relaxed and special.
+                  Warm pub hospitality meets bold Nepalese flavours on the green at Waterbeach.
                 </p>
               </div>
             </FadeIn>
             <FadeInUp>
               <div className="mt-12 grid gap-8 sm:grid-cols-2">
-                {highlightCards.map((card) => (
+                {HIGHLIGHT_CARDS.map((card) => (
                   <article
                     key={card.title}
                     className="h-full rounded-2xl border border-brand-100 bg-neutral-50 p-8 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl focus-within:shadow-2xl"
@@ -653,7 +593,7 @@ export default async function ChristmasMenuPage() {
           </div>
         </section>
 
-        <section className="bg-white py-16 md:py-20" aria-labelledby="festive-support-heading">
+        <section className="bg-white pb-20" aria-labelledby="festive-support-heading">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="grid gap-10 lg:grid-cols-2">
@@ -685,7 +625,7 @@ export default async function ChristmasMenuPage() {
                   </p>
                 </div>
                 <div className="space-y-5">
-                  {assurancePoints.map((point) => (
+                  {SUPPORT_POINTS.map((point) => (
                     <div
                       key={point.title}
                       className="rounded-xl border border-brand-100 bg-brand-50/60 p-6 shadow-md"
