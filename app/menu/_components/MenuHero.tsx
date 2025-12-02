@@ -46,14 +46,23 @@ export default function MenuHero({ hero: heroFromProps }: MenuHeroProps) {
         <h1 className="h2 text-white mb-3 leading-tight">{hero.title}</h1>
         <p className="text-base md:text-lg text-brand-100 mb-6 max-w-2xl mx-auto leading-relaxed">{hero.subtitle}</p>
         <div className="flex flex-wrap justify-center gap-3">
+          {(() => {
+            const isExternal = hero.buttons.bookOnline.target === '_blank' || hero.buttons.bookOnline.url.startsWith('http');
+            const ariaLabel = isExternal ? `${hero.buttons.bookOnline.label} (opens in new tab)` : hero.buttons.bookOnline.label;
+            return (
           <a
             href={hero.buttons.bookOnline.url}
-            target={hero.buttons.bookOnline.target}
-            rel="noopener noreferrer"
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
             className="bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
+            aria-label={ariaLabel}
+            style={{ touchAction: 'manipulation' }}
           >
             {hero.buttons.bookOnline.label}
+            {isExternal && <span aria-hidden className="ml-1 text-xs">↗</span>}
           </a>
+            );
+          })()}
           <a
             href={hero.buttons.orderTakeaway.url}
             className="bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"

@@ -189,7 +189,8 @@
       }
     },
     "links": {
-      "takeaway": "/online-delivery"
+      "takeaway": "/online-delivery",
+      "bookOnline": "https://www.nabatable.com/restaurants/white-horse-pub-waterbeach/book"
     },
     "accessibility": {
       "ariaLabels": {

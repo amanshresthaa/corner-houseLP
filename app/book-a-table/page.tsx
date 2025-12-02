@@ -41,7 +41,7 @@ export default async function BookATablePage() {
     url: 'https://whitehorsepub.co/book-a-table',
     telephone: contact.phone.primary,
     email: contact.email.bookings || contact.email.primary,
-    acceptsReservations: 'Telephone',
+    acceptsReservations: contact.bookingUrl ? [contact.bookingUrl, 'Telephone'] : 'Telephone',
     address: {
       '@type': 'PostalAddress',
       streetAddress: `${contact.address.street}, ${contact.address.area}`,
@@ -74,7 +74,7 @@ export default async function BookATablePage() {
             </h1>
             <p className="mt-4 max-w-3xl text-base text-neutral-100 sm:text-lg">
               Secure your table for authentic Nepalese dishes, Sunday roasts, garden gatherings, and
-              milestone celebrations. Please call us to book and we’ll confirm your reservation on the call during opening hours.
+              milestone celebrations. Book online in moments or call us and we’ll confirm your reservation during opening hours.
             </p>
             <div className="mt-8 grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -113,6 +113,7 @@ export default async function BookATablePage() {
                   telHref={contact.phone.tel}
                   displayNumber={contact.phone.display}
                   email={contact.email.bookings ?? contact.email.primary}
+                  bookingUrl={contact.bookingUrl}
                 />
               </div>
             </FadeIn>

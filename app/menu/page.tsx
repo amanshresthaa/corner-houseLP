@@ -53,6 +53,8 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const telHref = contact.phone.tel;
 	const phoneDisplay = contact.phone.display;
 	const takeawayHref = (content.global as any)?.links?.takeaway as string | undefined;
+	const bookingUrl = contact.bookingUrl ?? '/book-a-table';
+	const bookingExternal = bookingUrl.startsWith('http');
 
 		const labels = m.buttons || {};
 		const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline;
@@ -140,7 +142,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 		buttons: [
 			{
 				text: 'Book a Table',
-				href: '/book-a-table',
+				href: bookingUrl,
 				variant: 'brand' as const,
 				key: 'menu-cta-book-table',
 			},
@@ -171,20 +173,20 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 			<RestaurantLayout>
 				{/* Hero Section with motion animation */}
 				<section aria-label="Menu introduction">
-					<MenuHero 
-						hero={{
-							title: menuContent?.hero?.title,
-							subtitle: menuContent?.hero?.subtitle,
-							buttons: {
-								bookOnline: {
-									label: (menuContent?.hero?.cta?.book as string) || 'Book Online',
-									url: '/book-a-table',
-									target: '_self',
-								},
-								orderTakeaway: {
-									label: takeawayHref
-										? (content?.global?.ui?.buttons?.orderTakeaway as string) || 'Order Online'
-										: `Call ${phoneDisplay}`,
+				<MenuHero 
+					hero={{
+						title: menuContent?.hero?.title,
+						subtitle: menuContent?.hero?.subtitle,
+						buttons: {
+							bookOnline: {
+								label: (menuContent?.hero?.cta?.book as string) || 'Book Online',
+								url: bookingUrl,
+								target: bookingExternal ? '_blank' : '_self',
+							},
+							orderTakeaway: {
+								label: takeawayHref
+									? (content?.global?.ui?.buttons?.orderTakeaway as string) || 'Order Online'
+									: `Call ${phoneDisplay}`,
 									url: (takeawayHref as string) || contact?.phone?.tel,
 								},
 							},
@@ -316,13 +318,30 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 								</ul>
 
 								<div className="flex flex-col gap-3 sm:flex-row">
-									<Link
-										href="/book-a-table"
+							{(() => {
+								const isExternal = bookingUrl.startsWith('http');
+								const ariaLabel = isExternal ? `${labelBookOnline} now (opens in new tab)` : `${labelBookOnline} now`;
+								return isExternal ? (
+									<a
+										href={bookingUrl}
+										target="_blank"
+										rel="noopener noreferrer"
 										className="inline-flex w-full items-center justify-center rounded-lg bg-brand-600 px-6 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-brand-500 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-50 sm:w-auto"
-										aria-label={`${labelBookOnline} now`}
+										aria-label={ariaLabel}
+										style={{ touchAction: 'manipulation' }}
+									>
+										Book now <span aria-hidden className="ml-1 text-xs">↗</span>
+									</a>
+								) : (
+									<Link
+										href={bookingUrl}
+										className="inline-flex w-full items-center justify-center rounded-lg bg-brand-600 px-6 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-brand-500 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-50 sm:w-auto"
+										aria-label={ariaLabel}
 									>
 										Book now
 									</Link>
+								);
+							})()}
 									<a
 										href={telHref}
 										className="inline-flex w-full items-center justify-center rounded-lg bg-stout-800 px-6 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-stout-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-stout-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-50 sm:w-auto"

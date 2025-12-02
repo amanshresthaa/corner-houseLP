@@ -14,9 +14,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function EventsPage() {
   const contact = getContactInfo();
-  const eventsEmail = contact.email.events ?? contact.email.primary;
-  // Route all booking/enquiry CTAs to the canonical booking page
-  const enquireHref = '/book-a-table';
+  // Route booking CTAs to Nabatable when available, otherwise internal booking page
+  const enquireHref = contact.bookingUrl ?? '/book-a-table';
+  const bookingExternal = enquireHref.startsWith('http');
+  const bookingAria = bookingExternal ? 'Book for big games (opens in new tab)' : 'Book for big games';
   const content = await getContentSmart();
   const e = (content.pages as any)?.events || {};
   const hero = e.hero || {};
@@ -56,11 +57,12 @@ export default async function EventsPage() {
               </p>
               <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:items-center justify-center">
                 <a
-                  href="/book-a-table"
+                  href={enquireHref}
                   className="btn btn-ghost text-white"
-                  aria-label="Book for big games"
+                  aria-label={bookingAria}
+                  {...(bookingExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
-                  {hero.buttons?.book || 'Book for Big Games'}
+                  {hero.buttons?.book || 'Book for Big Games'} {bookingExternal && <span aria-hidden className="text-xs">↗</span>}
                 </a>
                 <a
                   href="/menu"
@@ -126,7 +128,14 @@ export default async function EventsPage() {
                   </div>
                 </div>
                 <div className="flex items-center justify-start lg:justify-end gap-3">
-                  <a href="/book-a-table" className="btn btn-outline border-white text-white hover:bg-white/10">Book for Big Games</a>
+                  <a
+                    href={enquireHref}
+                    className="btn btn-outline border-white text-white hover:bg-white/10"
+                    aria-label={bookingAria}
+                    {...(bookingExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    Book for Big Games {bookingExternal && <span aria-hidden className="text-xs">↗</span>}
+                  </a>
                 </div>
               </div>
               <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">

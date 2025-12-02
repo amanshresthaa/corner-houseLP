@@ -41,6 +41,7 @@ export default function Hero() {
   const heroContent = content?.pages?.home?.hero;
   const labelBookOnline = marketing?.buttons?.bookOnline || content?.global?.ui?.buttons?.bookOnline || 'Book Online';
   const labelCallForTakeaway = marketing?.buttons?.callForTakeaway || 'Call for Takeaway';
+  const bookingUrl = contact.bookingUrl;
   
   // Hero content with fallbacks
   const heroTitle = heroContent?.title || 'Waterbeach\'s Historic Thatched Pub with Himalayan Flavour';
@@ -48,10 +49,13 @@ export default function Hero() {
   const heroCTA = heroContent?.cta || {};
   const primaryCTA = heroCTA.primary || labelBookOnline;
   const secondaryCTA = heroCTA.secondary || 'View Menu';
-  const primaryHref = heroCTA.primaryHref || '/book-a-table';
+
+  const defaultPrimaryHref = heroCTA.primaryHref || '/book-a-table';
+  const shouldUseBookingUrl = bookingUrl && (!heroCTA.primaryHref || heroCTA.primaryHref === '/book-a-table');
+  const primaryHref = shouldUseBookingUrl ? bookingUrl : defaultPrimaryHref;
   const secondaryHref = heroCTA.secondaryHref || '/menu#starters';
   const primaryExternal = heroCTA.primaryExternal ?? (
-    primaryHref.startsWith('http') || primaryHref.startsWith('tel:') || primaryHref.startsWith('mailto:')
+    shouldUseBookingUrl || primaryHref.startsWith('http') || primaryHref.startsWith('tel:') || primaryHref.startsWith('mailto:')
   );
   const secondaryExternal = heroCTA.secondaryExternal ?? secondaryHref.startsWith('http');
   const altText =

@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import contentConfig from '@/config/content.json';
 import siteConfig from '@/config';
+import { getContactInfo } from '@/lib/restaurantData';
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -54,6 +55,10 @@ export default function AboutPage() {
 
 // 1) Hero / Opening
 function Hero() {
+  const contact = getContactInfo();
+  const bookingUrl = contact.bookingUrl ?? '/book-a-table';
+  const bookingExternal = bookingUrl.startsWith('http');
+  const bookingAria = bookingExternal ? `${contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'} (opens in new tab)` : (contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online');
   return (
     <section className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-10 md:py-16" aria-labelledby="about-hero">
       <div className="absolute inset-0 bg-black/10" />
@@ -65,12 +70,27 @@ function Hero() {
           Opposite the Waterbeach green, we pair classic pub comfort with an authentic Nepalese kitchen — modern, relaxed, and welcoming.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link
-            href="/book-a-table"
-            className="bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
-          >
-            {contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'}
-          </Link>
+          {bookingExternal ? (
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
+              aria-label={bookingAria}
+              style={{ touchAction: 'manipulation' }}
+            >
+              {contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'}
+              <span aria-hidden className="ml-1 text-xs">↗</span>
+            </a>
+          ) : (
+            <Link
+              href={bookingUrl}
+              className="bg-white hover:bg-neutral-50 text-brand-800 border-2 border-brand-200 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
+              aria-label={bookingAria}
+            >
+              {contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'}
+            </Link>
+          )}
           <Link
             href="/takeaway"
             className="bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
@@ -269,6 +289,10 @@ function ProofCredibility() {
 
 // 7) Call to Action
 function CallToAction() {
+  const contact = getContactInfo();
+  const bookingUrl = contact.bookingUrl ?? '/book-a-table';
+  const bookingExternal = bookingUrl.startsWith('http');
+  const bookingAria = bookingExternal ? 'Book online (opens in new tab)' : 'Book online';
   return (
     <section className="bg-brand-100 py-14" aria-labelledby="about-cta">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -278,17 +302,31 @@ function CallToAction() {
           </h2>
           <p className="mt-3 text-white/95">Book a table, or pop in for a pint and a bite.</p>
           <div className="mt-6 flex justify-center gap-3">
-            <Link
-              href="/book-a-table"
-              className="btn btn-lg bg-white text-brand-700 font-bold rounded-xl shadow-lg hover:bg-brand-50 border-2 border-brand-100"
-            >
-              Book Online
-            </Link>
+            {bookingExternal ? (
+              <a
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-lg bg-white text-brand-700 font-bold rounded-xl shadow-lg hover:bg-brand-50 border-2 border-brand-100"
+                aria-label={bookingAria}
+                style={{ touchAction: 'manipulation' }}
+              >
+                Book Online <span aria-hidden className="text-xs">↗</span>
+              </a>
+            ) : (
+              <Link
+                href={bookingUrl}
+                className="btn btn-lg bg-white text-brand-700 font-bold rounded-xl shadow-lg hover:bg-brand-50 border-2 border-brand-100"
+                aria-label={bookingAria}
+              >
+                Book Online
+              </Link>
+            )}
             <a
-              href="tel:+441223375578"
+              href={contact.phone.tel}
               className="btn btn-lg bg-transparent border-2 border-white text-white hover:bg-white/10"
             >
-              Call +44 1223 375578
+              Call {contact.phone.display}
             </a>
           </div>
         </div>

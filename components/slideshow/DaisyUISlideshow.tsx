@@ -12,6 +12,7 @@ interface DaisyUISlideshowProps {
   sessionSize?: number;
   regionLabel?: string;
   takeawayUrl?: string;
+  bookOnlineUrl?: string;
 }
 
 type ScrollBehaviorOption = 'auto' | 'instant' | 'smooth';
@@ -20,6 +21,9 @@ type SlideBuckets = {
   required: SlideType[];
   optional: SlideType[];
 };
+
+const CTA_SEQUENCE = ['takeaway', 'call-booking', 'book'] as const;
+type CTASequenceVariant = typeof CTA_SEQUENCE[number];
 
 const resolveImageSrc = (image: SlideType['image']) => {
   if (!image) return null;
@@ -126,118 +130,62 @@ const getInitialSessionSlides = (allSlides: SlideType[], targetCount: number) =>
 const CTA_BASE_CLASS =
   'inline-flex items-center justify-center gap-2 text-white font-semibold rounded-xl shadow-xl shadow-black/25 ring-1 ring-white/10 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/40 min-h-[2.75rem] sm:min-h-[3rem] whitespace-normal';
 
-const getCTAConfig = (slide: SlideType, slideIndex: number, fallbackTakeawayUrl?: string) => {
-  const ctas = slide.ctas ?? {};
-  const hasMenu = Boolean(ctas.menuUrl);
-  const hasCall = Boolean(ctas.callTel);
-  const hasBook = Boolean(ctas.bookUrl);
-  const hasSecondary = Boolean(ctas.secondaryUrl);
-  const takeawayHref = ctas.takeawayUrl || fallbackTakeawayUrl;
-  const hasTakeaway = Boolean(takeawayHref);
-
-  // If a centralized or per-slide takeaway URL exists, always include it as one of the two CTAs
-  if (hasTakeaway) {
-    // Choose a complementary secondary based on what's available
-    const secondaryVariant = hasCall ? 'call-booking' as const : (hasBook ? 'book' as const : (hasMenu ? 'menu' as const : 'learn-more' as const));
-    const secondaryHref = hasCall ? ctas.callTel : (hasBook ? ctas.bookUrl : (hasMenu ? ctas.menuUrl : ctas.secondaryUrl));
-    return {
-      primaryButton: {
-        variant: 'takeaway' as const,
-        href: takeawayHref,
-        className: `${CTA_BASE_CLASS} bg-accent hover:bg-accent/90`
-      },
-      secondaryButton: secondaryHref ? {
-        variant: secondaryVariant,
-        href: secondaryHref,
-        className: `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`
-      } : {
-        variant: 'learn-more' as const,
-        href: undefined,
-        className: `${CTA_BASE_CLASS} bg-accent hover:bg-accent/90`
-      }
-    };
-  }
-
-  if (hasMenu && hasCall) {
-    return {
-      primaryButton: {
-        variant: 'menu' as const,
-        href: ctas.menuUrl,
-        className: `${CTA_BASE_CLASS} bg-accent hover:bg-accent/90`
-      },
-      secondaryButton: {
-        variant: 'call-booking' as const,
-        href: ctas.callTel,
-        className: `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`
-      }
-    };
-  }
-
-  const type = slideIndex % 3;
-
-  switch (type) {
-    case 0: // Book Online + Call for Takeaway
-      return {
-        primaryButton: {
-          variant: 'book' as const,
-          href: hasBook ? ctas.bookUrl : undefined,
-          className: `${CTA_BASE_CLASS} bg-accent hover:bg-accent/90`
-        },
-        secondaryButton: {
-          variant: 'call-takeaway' as const,
-          href: hasCall ? ctas.callTel : undefined,
-          className: `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`
-        }
-      };
-    case 1: // Call for Takeaway + Call for Booking / Secondary link
-      {
-        const secondaryVariant = hasSecondary
-          ? (hasMenu ? ('menu' as const) : ('learn-more' as const))
-          : ('call-booking' as const);
-        const secondaryHref = hasSecondary
-          ? ctas.secondaryUrl
-          : (hasCall ? ctas.callTel : undefined);
-
-        return {
-          primaryButton: {
-            variant: 'call-takeaway' as const,
-            href: hasCall ? ctas.callTel : undefined,
-            className: `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`
-          },
-          secondaryButton: {
-            variant: secondaryVariant,
-            href: secondaryHref,
-            className: `${CTA_BASE_CLASS} bg-accent hover:bg-accent/90`
-          }
-        };
-      }
-    case 2: // Call for Booking + Book Online
-      return {
-        primaryButton: {
-          variant: 'call-booking' as const,
-          href: hasCall ? ctas.callTel : undefined,
-          className: `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`
-        },
-        secondaryButton: {
-          variant: 'book' as const,
-          href: hasBook ? ctas.bookUrl : undefined,
-          className: `${CTA_BASE_CLASS} bg-accent hover:bg-accent/90`
-        }
-      };
+const resolveCTAClass = (variant: CTASequenceVariant) => {
+  switch (variant) {
+    case 'takeaway':
+      return `${CTA_BASE_CLASS} bg-accent-500 hover:bg-accent-600`;
+    case 'call-booking':
+      return `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`;
+    case 'book':
     default:
-      return {
-        primaryButton: {
-          variant: 'book' as const,
-          href: hasBook ? ctas.bookUrl : undefined,
-          className: `${CTA_BASE_CLASS} bg-accent hover:bg-accent/90`
-        },
-        secondaryButton: {
-          variant: 'call-takeaway' as const,
-          href: hasCall ? ctas.callTel : undefined,
-          className: `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`
-        }
-      };
+      return `${CTA_BASE_CLASS} bg-brand-600 hover:bg-brand-700`;
   }
+};
+
+const resolveHrefForVariant = (
+  variant: CTASequenceVariant,
+  ctas: SlideType['ctas'],
+  fallbackTakeawayUrl?: string,
+  fallbackBookUrl?: string
+) => {
+  switch (variant) {
+    case 'takeaway':
+      return ctas?.takeawayUrl || fallbackTakeawayUrl;
+    case 'call-booking':
+      return ctas?.callTel || ctas?.secondaryUrl;
+    case 'book':
+      return ctas?.bookUrl || fallbackBookUrl;
+    default:
+      return undefined;
+  }
+};
+
+const getCTAConfig = (
+  slide: SlideType,
+  slideIndex: number,
+  fallbackTakeawayUrl?: string,
+  fallbackBookUrl?: string
+) => {
+  const ctas = slide.ctas ?? {};
+
+  const primaryVariant: CTASequenceVariant = CTA_SEQUENCE[slideIndex % CTA_SEQUENCE.length];
+  const secondaryVariant: CTASequenceVariant = CTA_SEQUENCE[(slideIndex + 1) % CTA_SEQUENCE.length];
+
+  const primaryHref = resolveHrefForVariant(primaryVariant, ctas, fallbackTakeawayUrl, fallbackBookUrl);
+  const secondaryHref = resolveHrefForVariant(secondaryVariant, ctas, fallbackTakeawayUrl, fallbackBookUrl);
+
+  return {
+    primaryButton: {
+      variant: primaryVariant,
+      href: primaryHref,
+      className: resolveCTAClass(primaryVariant)
+    },
+    secondaryButton: {
+      variant: secondaryVariant,
+      href: secondaryHref,
+      className: resolveCTAClass(secondaryVariant)
+    }
+  };
 };
 
 const DEFAULT_SESSION_SIZE = 5;
@@ -251,6 +199,7 @@ const DaisyUISlideshow = ({
   sessionSize = DEFAULT_SESSION_SIZE,
   regionLabel = DEFAULT_REGION_LABEL,
   takeawayUrl,
+  bookOnlineUrl,
 }: DaisyUISlideshowProps) => {
   const normalizedSlides = useMemo(
     () => (Array.isArray(slides) ? slides.filter(Boolean) : []),
@@ -518,7 +467,7 @@ const DaisyUISlideshow = ({
       >
         {sessionSlides.map((slide, index) => {
           const imageSrc = resolveImageSrc(slide.image);
-          const { primaryButton, secondaryButton } = getCTAConfig(slide, index, takeawayUrl);
+          const { primaryButton, secondaryButton } = getCTAConfig(slide, index, takeawayUrl, bookOnlineUrl);
           const shouldRenderCTAs = Boolean(primaryButton.href || secondaryButton.href);
           return (
             <div
