@@ -3,7 +3,7 @@
     "name": "The White Horse",
     "displayName": "The White Horse Waterbeach",
     "tagline": "Village coaching inn with Nepalese soul",
-    "description": "Village coaching inn reborn on Waterbeach green serving Nepalese feasts, Sunday roasts, and pub favourites all day.",
+    "description": "Village coaching inn reborn on Waterbeach green serving Nepalese feasts and pub favourites all day.",
     "established": "1890",
     "type": "pub-restaurant",
     "cuisine": ["Nepalese", "British Classics", "Pub Favourites"],
@@ -68,7 +68,7 @@
         "weekdays": "Mon-Thu: Lunch 12:00-15:00 • Dinner 17:00-22:00",
         "friday": "Fri: Kitchen 12:00-22:00",
         "saturday": "Sat: Kitchen 12:00-22:00",
-        "sunday": "Sun: Brunch 10:00-12:00 • Roasts until 16:00 • Curry evening"
+        "sunday": "Sun: Brunch 10:00-12:00 • Nepalese menu 12:00-16:00 & 17:00-20:00"
       },
       "bar": {
         "weekdays": "Mon-Thu: Bar 12:00-22:00",

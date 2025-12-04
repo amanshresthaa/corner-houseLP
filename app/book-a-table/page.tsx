@@ -73,7 +73,7 @@ export default async function BookATablePage() {
               Book a Table at The White Horse Waterbeach
             </h1>
             <p className="mt-4 max-w-3xl text-base text-neutral-100 sm:text-lg">
-              Secure your table for authentic Nepalese dishes, Sunday roasts, garden gatherings, and
+              Secure your table for authentic Nepalese dishes, pub classics, garden gatherings, and
               milestone celebrations. Book online in moments or call us and we’ll confirm your reservation during opening hours.
             </p>
             <div className="mt-8 grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">

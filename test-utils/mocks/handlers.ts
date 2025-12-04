@@ -92,14 +92,14 @@ const mockRestaurantData = {
     "Family Friendly",
     "Student Offers",
     "Live Sport",
-    "Sunday Roast",
+    "Sunday Curry Evenings",
     "Private Hire",
     "Group Dining"
   ],
   menu: {
     highlights: [
       { name: "Fish & Chips", price: "£14.95", description: "Fresh cod with hand-cut chips" },
-      { name: "Sunday Roast", price: "£16.95", description: "Traditional roast with all the trimmings" },
+      { name: "House Mixed Grill", price: "£16.95", description: "Tandoor-grilled platter with wings, tikka, seekh kebab and king prawn" },
       { name: "Steak & Ale Pie", price: "£15.95", description: "Homemade with local ale" }
     ]
   },

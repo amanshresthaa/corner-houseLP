@@ -114,10 +114,10 @@ function MenuItems() {
       image: "/images/menu/momo.jpg"
     },
     {
-      name: "Sunday Roast",
-      description: "Classic British roast with all the trimmings",
-      price: "£14.95",
-      image: "/images/menu/roast.jpg"
+      name: "House Mixed Grill",
+      description: "Tandoor-grilled platter of wings, tikka, seekh kebab and king prawn",
+      price: "£16.95",
+      image: "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg"
     },
     {
       name: "Dal Bhat",
@@ -204,7 +204,7 @@ export function CLSOptimizedTestimonials() {
       avatar: "/images/avatars/sarah.jpg"
     },
     {
-      text: "Perfect Sunday roast in a historic setting. Couldn't ask for more!",
+      text: "Perfect cosy dinner in a historic setting. Couldn't ask for more!",
       author: "James T.",
       rating: 5,
       avatar: "/images/avatars/james.jpg"

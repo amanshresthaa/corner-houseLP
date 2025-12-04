@@ -56,7 +56,7 @@ United Kingdom
 | **Thursday** | 12:00 - 22:00 | Lunch 12:00-15:00, dinner 17:00-22:00 |
 | **Friday** | 12:00 - 23:00 | Kitchen 12:00-22:00; **Takeaway available** |
 | **Saturday** | 12:00 - 23:00 | Kitchen 12:00-22:00 |
-| **Sunday** | 10:00 - 20:00 | Brunch 10:00-12:00, roasts until 16:00, curry evening |
+| **Sunday** | 10:00 - 20:00 | Brunch 10:00-12:00, Nepalese menu 12:00-16:00 & 17:00-20:00 |
 
 ---
 
@@ -139,7 +139,7 @@ United Kingdom
 **Executive Chefs:**
 - **Ravi Acharya** - Group Executive Chef
 - **Purna Man Bajrachaya** - Group Executive Chef
-- Specialties: Momo baskets, Mixed grills, Sunday roasts
+- Specialties: Momo baskets, Mixed grills, Sunday curry evenings
 
 **Ownership:**
 - **Subodh Gautam** - Lapen Inns Founder
@@ -287,7 +287,7 @@ inside whitehorse folder
 ### **🗺️ NEIGHBORHOOD GUIDE**
 
 **Overview:**
-"Waterbeach pairs riverside adventures with Fenland heritage—start or finish at The White Horse for momo, roasts, and cask ales."
+"Waterbeach pairs riverside adventures with Fenland heritage—start or finish at The White Horse for momo, curries, and cask ales."
 
 **Nearby Attractions:**
 

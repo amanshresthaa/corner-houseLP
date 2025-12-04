@@ -145,7 +145,7 @@
     "testimonials": {
       "title": "What Our Customers Say",
       "items": [
-        { "name": "Amelia Hart", "text": "If you're planning Sunday lunch Waterbeach families will love, The White Horse is our go-to. The largest thatched pub in the country feels properly historic, staff are warm, and portions are generous. Kids run off energy in the expansive garden and terrace while we relax. The Nepalese specials are full of flavor, and roasts are spot on. Free pub parking behind the building makes it easy for multi-generational meetups.", "rating": 5 },
+        { "name": "Amelia Hart", "text": "If you're planning Sunday lunch Waterbeach families will love, The White Horse is our go-to. The largest thatched pub in the country feels properly historic, staff are warm, and portions are generous. Kids run off energy in the expansive garden and terrace while we relax. The Nepalese specials are full of flavor, and pub classics are spot on. Free pub parking behind the building makes it easy for multi-generational meetups.", "rating": 5 },
         { "name": "Tom Evans", "text": "Found the winner among pubs near Waterbeach College. The White Horse shows live sport, serves proper pints, and the Nepalese menu is affordable for student budgets. We cycle over via the path off Huntingdon Road, lock up easily, and grab Nepalese takeaway when revision runs late. Friendly staff and a big garden make it an easy hangout before heading back to halls.", "rating": 5 }
       ]
     },

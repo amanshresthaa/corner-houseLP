@@ -14,7 +14,7 @@ function snapshot(): ConfigProps {
   return {
     appName: "The White Horse",
     appDescription:
-      "Village coaching inn on Waterbeach green serving Nepalese feasts, Sunday roasts, and cask ales from brunch through last orders.",
+      "Village coaching inn on Waterbeach green serving Nepalese feasts, British pub classics, and cask ales from brunch through last orders.",
     domainName: "whitehorsepub.co",
     crisp: { id: "", onlyShowOnRoutes: ["/"] },
     stripe: {

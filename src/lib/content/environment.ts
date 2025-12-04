@@ -324,7 +324,7 @@ export class EnvironmentManager {
         {
           path: 'global.site.description',
           value:
-            'Village coaching inn on Waterbeach green serving Nepalese feasts, Sunday roasts, and cask ales from brunch through last orders. Call or email the team to book.',
+            'Village coaching inn on Waterbeach green serving Nepalese feasts, British pub classics, and cask ales from brunch through last orders. Call or email the team to book.',
           priority: 10,
           description: 'Production optimized description',
         },

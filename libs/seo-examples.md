@@ -35,7 +35,7 @@ import { getSEOTags } from "@/libs/seo";
 export const metadata = getSEOTags({
   title: "Menu - Nepalese Restaurant & British Pub Food | The White Horse Waterbeach",
   description: "Discover our authentic Nepalese dishes and traditional British pub classics. Fresh ingredients, family recipes.",
-  keywords: ["Nepalese menu Cambridge", "pub food Waterbeach", "momo dumplings", "curry Cambridge", "Sunday roast"],
+  keywords: ["Nepalese menu Cambridge", "pub food Waterbeach", "momo dumplings", "curry Cambridge"],
   canonicalUrlRelative: "/menu"
 });
 

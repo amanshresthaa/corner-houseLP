@@ -20,7 +20,7 @@ const reviews: Review[] = [
     id: "review_girton_local_02",
     platform: "google",
     stars: 5,
-    text: "If you're planning Sunday lunch Waterbeach families will love, The White Horse is our go-to. The largest thatched pub in the country feels properly historic, staff are warm, and portions are generous. Kids run off energy in the expansive garden and terrace while we relax. The Nepalese specials are full of flavor, and roasts are spot on. Free pub parking behind the building makes it easy for multi-generational meetups.",
+    text: "If you're planning Sunday lunch Waterbeach families will love, The White Horse is our go-to. The largest thatched pub in the country feels properly historic, staff are warm, and portions are generous. Kids run off energy in the expansive garden and terrace while we relax. The Nepalese specials are full of flavor, and pub classics are spot on. Free pub parking behind the building makes it easy for multi-generational meetups.",
     reviewer: { name: "Amelia Hart", initials: "AH", timeAgo: "2 weeks ago" }
   },
   {
@@ -101,10 +101,10 @@ const reviews: Review[] = [
     reviewer: { name: "Oliver Grant", initials: "OG", timeAgo: "1 week ago" }
   },
   {
-    id: "review_local_roast_01",
+    id: "review_local_sunday_01",
     platform: "google",
     stars: 5,
-    text: "For Sunday roast Waterbeach neighbours keep recommending, The White Horse consistently delivers. Crispy potatoes, rich gravy, and well-cooked meats, with Nepalese specials available for anyone fancying something different. The thatched building and garden give it a cosy village feel. Booking is easy, and parking behind the pub keeps family logistics simple.",
+    text: "For a relaxed Sunday meal Waterbeach neighbours keep recommending, The White Horse consistently delivers. Nepalese curries sit alongside comforting pub favourites so everyone finds a favourite. The thatched building and garden give it a cosy village feel. Booking is easy, and parking behind the pub keeps family logistics simple.",
     reviewer: { name: "Rebecca Lewis", initials: "RL", timeAgo: "2 weeks ago" }
   },
   {
