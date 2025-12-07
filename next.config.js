@@ -174,14 +174,7 @@ const nextConfig = {
   },
 
   async redirects() {
-    return [
-      // Marketing-friendly slug that always opens the Touchtakeaway ordering portal
-      {
-        source: '/online-delivery',
-        destination: 'https://whitehorsecb25.touchtakeaway.net/store/2',
-        permanent: true,
-      },
-    ];
+    return [];
   },
   
   // Bundle analysis environment variable

@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+import { getMapLinks } from '@/lib/restaurantData';
 import type { Menu, Marketing, Restaurant, AppConfig } from '@/src/lib/data/schemas';
 
 // Mock data builders
@@ -71,8 +72,8 @@ export const mockMarketing: Marketing = {
 
 export const mockRestaurant: Restaurant = {
   name: 'The White Horse Waterbeach',
-  phone: '+44 1223 375578',
-  email: 'whitehorse@lapeninns.com',
+  phone: '+44 1223 921122',
+  email: 'cornerhouse@lapeninns.com',
   description: 'Historic thatched pub serving Nepalese cuisine in Waterbeach.',
   identity: {
     name: 'The White Horse Waterbeach',
@@ -86,32 +87,29 @@ export const mockRestaurant: Restaurant = {
   },
   contact: {
     phone: {
-      primary: '+44 1223 375578',
-      display: '+44 1223 375578',
-      tel: 'tel:+441223375578',
-      whatsapp: '+44 1223 375578',
+      primary: '+44 1223 921122',
+      display: '+44 1223 921122',
+      tel: 'tel:+441223921122',
+      whatsapp: '+44 1223 921122',
     },
     email: {
-      primary: 'whitehorse@lapeninns.com',
-      bookings: 'whitehorse@lapeninns.com',
-      events: 'whitehorse@lapeninns.com',
+      primary: 'cornerhouse@lapeninns.com',
+      bookings: 'cornerhouse@lapeninns.com',
+      events: 'cornerhouse@lapeninns.com',
     },
     website: 'https://whitehorsepub.co',
     bookingUrl: 'https://whitehorsepub.co/book-a-table',
   },
   address: {
-    street: '12 Greenside',
+    street: '231 Newmarket Road',
     city: 'Cambridge',
     state: 'Cambridgeshire',
-    zip: 'CB25 9HP',
-    area: 'Waterbeach',
-    postcode: 'CB25 9HP',
+    zip: 'CB5 8JE',
+    area: 'Cambridge',
+    postcode: 'CB5 8JE',
     country: 'United Kingdom',
-    coordinates: { lat: 52.2425913, lng: 0.0814946 },
-    map: {
-      google: 'https://www.google.com/maps/dir/?api=1&destination=52.2425913,0.0814946&travelmode=driving',
-      apple: 'https://maps.apple.com/?daddr=52.2425913,0.0814946&dirflg=d',
-    },
+    coordinates: { lat: 52.20948, lng: 0.14335 },
+    map: getMapLinks(),
     timezone: 'Europe/London',
   },
   hours: {

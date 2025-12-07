@@ -6,7 +6,6 @@
     { "href": "/about", "label": "About" },
     { "href": "/events", "label": "Events" },
     { "href": "/book-a-table", "label": "Book a Table" },
-    { "href": "/online-delivery", "label": "Order Online" },
     { "href": "/press", "label": "Press" },
     { "href": "/contact", "label": "Contact" }
   ]

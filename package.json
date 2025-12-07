@@ -44,6 +44,8 @@
     "content:validate": "node scripts/validate-content.js validate",
     "content:audit": "node scripts/validate-content.js audit",
     "content:format": "node scripts/validate-content.js format",
+    "content:build": "node scripts/build-content.js",
+    "content:build:min": "node scripts/build-content.js prod --min",
     "performance:monitor": "node scripts/performance-monitor.js",
     "cache:stats": "node scripts/cache-management.js stats",
     "cache:optimize": "node scripts/cache-management.js optimize",

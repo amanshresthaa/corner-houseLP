@@ -10,9 +10,9 @@
       "body": "Gather with friends for Nepalese bar snacks and Sky Sports atmosphere."
     },
     {
-      "id": "order-online-daily",
-      "title": "Order Online (Daily)",
-      "body": "10% off Collection · Delivery minimum £20 · Free delivery up to 3 miles, then £2/mile. Call +44 1223 375578 or order online any day."
+      "id": "group-bookings",
+      "title": "Group Bookings & Cabins",
+      "body": "Reserve heated garden cabins or large tables for matchdays, quizzes, and celebrations. Call +44 1223 921122 to plan your visit."
     },
     {
       "id": "sunday-curry",
@@ -27,6 +27,6 @@
   "buttons": {
     "bookOnline": "Book Online",
     "viewMenu": "View Menu",
-    "callTakeaway": "Call +44 1223 375578"
+    "callTakeaway": "Call +44 1223 921122"
   }
 }

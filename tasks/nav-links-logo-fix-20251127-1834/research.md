@@ -6,7 +6,7 @@
 - Logo and various preload/service-worker flows reference `/images/logo.png` directly (e.g., `src/lib/serviceWorker.tsx`, `lib/criticalLoadingCSS.ts`, `public/sw.js`, CLS-optimized components).
 
 ## Current State / Findings
-- `public/data/nav.json` now contains `tel:+441223375578` and removed `/book-a-table` + `/online-delivery`; this drops the primary CTAs from the header.
+- `public/data/nav.json` now contains `tel:+441223921122` and removed `/book-a-table` + `/online-delivery`; this drops the primary CTAs from the header.
 - Seasonal link `/christmas-menu` was added but replaced existing CTAs instead of being additive.
 - `public/images/logo.png` was deleted, while multiple code paths still request that exact path → 404s and precache failures.
 

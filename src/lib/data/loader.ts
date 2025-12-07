@@ -19,6 +19,7 @@ import {
 import { resolveEnv, resolveContentEnvChain, type AppEnv } from "./env";
 import { globalCache, createCacheKey, PerformanceCacheManager } from "./cache";
 import type { ZodTypeAny } from "zod";
+import { composeContentFromModules } from "@/src/lib/content/composer";
 
 async function readJson<T>(p: string, schema: any, name: string): Promise<T> {
   const raw = await fs.readFile(p, "utf8");
@@ -87,7 +88,22 @@ function mergeContent(base: any, override: any): any {
   return cloneValue(override);
 }
 
+function shouldUseModularContent(): boolean {
+  // Monolith removed: always use modular content
+  return true;
+}
+
 async function loadContentFromFilesystem(env: AppEnv): Promise<Content> {
+  try {
+    return await composeContentFromModules(env);
+  } catch (error) {
+    // Without legacy fallback, fail fast so issues surface in logs/tests
+    console.error('Modular content composition failed:', error);
+    throw error;
+  }
+}
+
+async function loadLegacyContentFromFilesystem(env: AppEnv): Promise<Content> {
   const basePath = configPath("content.json");
   let merged = await readJsonRaw(basePath);
 

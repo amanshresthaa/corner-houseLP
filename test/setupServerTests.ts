@@ -73,8 +73,8 @@ export const server = setupServer(
       success: true,
       data: {
         name: "The White Horse Waterbeach",
-        phone: "+44 1223 375578",
-        address: "12 Greenside, Waterbeach, Cambridge, CB25 9HP",
+        phone: "+44 1223 921122",
+        address: "231 Newmarket Road, Cambridge CB5 8JE",
         hours: {
           monday: "12:00-23:00",
           tuesday: "12:00-23:00",

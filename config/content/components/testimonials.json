@@ -1,18 +1,36 @@
 {
-  "title": "What Our Customers Say",
-  "subtitle": "Don't just take our word for it",
+  "title": "What Guests Say",
+  "subtitle": "Real diners on food, service, and matchday atmosphere",
   "items": [
     {
-      "name": "Sarah Johnson",
-      "text": "Absolutely wonderful! The Nepalese dishes are authentic and delicious, and the traditional pub atmosphere is so welcoming. Perfect for families.",
+      "name": "Tony B.",
+      "text": "Superb Himali Lamb Curry; friendly staff helped us pick dishes. Great ales and plenty of sport on TV.",
       "rating": 5,
-      "location": "Cambridge"
+      "location": "Ipswich (TripAdvisor, Nov 2025)"
     },
     {
-      "name": "Mike Thompson",
-      "text": "Great food and fantastic service. The best of both worlds - proper pub classics and amazing curry. Highly recommended!",
+      "name": "Colin S.",
+      "text": "Fantastic night with friends — attentive team, good food and drinks, brilliant atmosphere for groups.",
       "rating": 5,
-      "location": "Waterbeach"
+      "location": "UK (TripAdvisor, Nov 2025)"
+    },
+    {
+      "name": "C.V.",
+      "text": "Old pub with a twist: excellent Nepalese curry, friendly service, and Sky Sports on — just the thing.",
+      "rating": 5,
+      "location": "Monmouthshire (TripAdvisor, Oct 2025)"
+    },
+    {
+      "name": "Frances D.",
+      "text": "Family-friendly pub; team handled dietary requests and the curries were lovely. Cozy, welcoming evening.",
+      "rating": 5,
+      "location": "UK (TripAdvisor, Jan 2025)"
+    },
+    {
+      "name": "Josh P.",
+      "text": "Second visit — same delicious curry and great value for Cambridge. Friendly team keeps us coming back.",
+      "rating": 5,
+      "location": "Cambridge (Google, Aug 2025)"
     }
   ]
 }

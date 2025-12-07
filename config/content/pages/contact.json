@@ -1,19 +1,37 @@
 {
+  "seo": {
+    "title": "Contact The Corner House Cambridge | Bookings, Directions & Opening Hours",
+    "description": "Call +44 1223 921122 or email cornerhouse@lapeninns.com for bookings, cabins, and takeaway. Find us at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
+    "keywords": [
+      "Corner House Cambridge contact",
+      "Newmarket Road pub phone",
+      "book table Cambridge pub",
+      "Nepalese restaurant Cambridge contact",
+      "+44 1223 921122",
+      "231 Newmarket Road Cambridge"
+    ],
+    "canonicalUrlRelative": "/contact"
+  },
   "hero": {
     "title": "Contact Us",
-    "subtitle": "Get in touch for bookings, enquiries, or just to say hello"
+    "subtitle": "Book a table or cabin, plan matchday, or order takeaway & delivery"
   },
   "contactInfo": {
     "title": "Get in Touch",
     "phone": {
-      "title": "Phone",
-      "number": "+44 1223 375578",
-      "description": "Order for collection or delivery online 🛍️, or call for table bookings and group enquiries"
+      "title": "Phone / WhatsApp",
+      "number": "+44 1223 921122",
+      "description": "Call for table bookings, cabins, takeaway, or quick matchday questions"
+    },
+    "email": {
+      "title": "Email",
+      "address": "cornerhouse@lapeninns.com",
+      "description": "General enquiries, reservations, and event requests"
     },
     "location": {
       "title": "Location",
-      "address": "12 Greenside, Waterbeach, Cambridge, CB25 9HP",
-      "description": "Opposite Waterbeach village green, minutes from Cambridge and the A14"
+      "address": "231 Newmarket Road, Cambridge, CB5 8JE",
+      "description": "Opposite Cambridge Retail Park; 10-minute walk from Abbey Stadium"
     }
   },
   "hours": {
@@ -23,12 +41,12 @@
   "features": {
     "title": "What We Offer",
     "items": [
-      { "icon": "🍺", "text": "CAMRA-kept cask ales & Gurkha lager" },
-      { "icon": "📺", "text": "Sky & TNT Sports across the bar" },
-      { "icon": "🔥", "text": "Heated garden cabins and terrace seating" },
-      { "icon": "🛍️", "text": "Daily Nepalese collection & delivery" },
-      { "icon": "🐕", "text": "Dog-friendly bar with water bowls and treats" },
-      { "icon": "🅿️", "text": "Free roadside parking along Green Side" }
+      { "icon": "📺", "text": "HD sports screens + outdoor projector" },
+      { "icon": "🔥", "text": "Heated garden cabins & covered beer garden" },
+      { "icon": "🥡", "text": "Takeaway & delivery via Uber Eats, Deliveroo, Just Eat" },
+      { "icon": "🅿️", "text": "Limited on-site parking; retail park parking opposite" },
+      { "icon": "♿", "text": "Wheelchair ramp access & accessible WC" },
+      { "icon": "📶", "text": "Free WiFi and family- & dog-friendly" }
     ]
   }
 }

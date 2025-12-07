@@ -3,9 +3,9 @@ import React from 'react';
 import BookByPhoneCard from '@/app/book-a-table/_components/BookByPhoneCard';
 
 describe('BookByPhoneCard', () => {
-  const telHref = 'tel:+441223375578';
-  const displayNumber = '+44 1223 375578';
-  const email = 'whitehorse@lapeninns.com';
+  const telHref = 'tel:+441223921122';
+  const displayNumber = '+44 1223 921122';
+  const email = 'cornerhouse@lapeninns.com';
 
   it('renders online booking CTA with correct attributes when bookingUrl is provided', () => {
     const bookingUrl = 'https://www.nabatable.com/restaurants/white-horse-pub-waterbeach/book';

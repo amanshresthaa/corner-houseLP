@@ -26,6 +26,7 @@ export interface ModuleConfig {
   files: string[];
   dependencies: string[];
   condition?: string;
+  mountPath?: string;
   size: 'small' | 'medium' | 'large';
 }
 
@@ -82,8 +83,8 @@ export interface UseModularContentOptions extends SWRConfiguration {
 // Content fetchers
 import { fetchWithResilience } from '@/src/lib/data/fetchWithResilience';
 
-const manifestFetcher = async (): Promise<ContentManifest> => {
-  const response = await fetchWithResilience('/api/content/manifest', {
+const manifestFetcher = async (env: string): Promise<ContentManifest> => {
+  const response = await fetchWithResilience(`/api/content/manifest?env=${env}`, {
     headers: { 'Accept': 'application/json' }
   });
 
@@ -94,10 +95,10 @@ const manifestFetcher = async (): Promise<ContentManifest> => {
   return response.json();
 };
 
-const moduleFetcher = async (moduleId: string): Promise<ContentModule> => {
+const moduleFetcher = async (moduleId: string, env: string): Promise<ContentModule> => {
   const startTime = performance.now();
   
-  const response = await fetchWithResilience(`/api/content/modules/${moduleId}`, {
+  const response = await fetchWithResilience(`/api/content/modules/${moduleId}?env=${env}`, {
     headers: { 'Accept': 'application/json' }
   });
 
@@ -164,8 +165,8 @@ export function useModularContent(options: UseModularContentOptions = {}): UseMo
 
   // Load manifest
   const { data: manifest, error: manifestError } = useSWR<ContentManifest, Error>(
-    enabled ? 'content-manifest' : null,
-    manifestFetcher,
+    enabled ? ['content-manifest', environment] : null,
+    ([, env]) => manifestFetcher(env as string),
     {
       revalidateOnFocus: false,
       dedupingInterval: 3600000, // 1 hour
@@ -215,12 +216,12 @@ export function useModularContent(options: UseModularContentOptions = {}): UseMo
 
   // Load individual modules
   const { data: moduleData, error: moduleError, mutate } = useSWR<Record<string, ContentModule>, Error>(
-    enabled && manifest ? ['content-modules', modulesToLoad] : null,
-    async () => {
+    enabled && manifest ? ['content-modules', environment, modulesToLoad] : null,
+    async ([, env]) => {
       const results: Record<string, ContentModule> = {};
       const loadPromises = modulesToLoad.map(async (moduleId) => {
         try {
-          const module = await moduleFetcher(moduleId);
+          const module = await moduleFetcher(moduleId, env as string);
           
           if (enablePerformanceTracking) {
             performanceState.loadTimes[moduleId] = Date.now() - module.loadedAt;
@@ -272,7 +273,7 @@ export function useModularContent(options: UseModularContentOptions = {}): UseMo
   // Load specific module on demand
   const loadModule = useCallback(async (moduleId: string): Promise<ContentModule> => {
     try {
-      const module = await moduleFetcher(moduleId);
+      const module = await moduleFetcher(moduleId, environment);
       
       // Update the module data
       await mutate(prev => ({

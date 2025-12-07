@@ -1,97 +1,287 @@
 {
   "hero": {
-    "title": "Reborn White Horse Waterbeach \u2013 Nepalese soul, village heart",
-    "subtitle": "England\u2019s largest thatched pub reopened February 2025 with Himalayan cooking, Sky Sports and garden cabins for every gathering.",
-    "description": "Call or email to reserve for Nepalese feasts or collection & delivery nights opposite Waterbeach village green.",
+    "title": "The Corner House, Cambridge – Sports Pub & Nepalese Kitchen",
+    "subtitle": "Matchday energy, heated garden cabins, and authentic Himalayan plates on Newmarket Road.",
+    "description": "1930s art-deco pub reborn as Cambridge’s home for HD sports, momos, and roasts. Settle into a snug, book a heated cabin, or grab a curry before the game.",
     "cta": {
-      "primary": "Call +44 1223 375578",
-      "secondary": "View Menu",
-      "primaryHref": "tel:+441223375578",
-      "secondaryHref": "/menu",
-      "secondaryExternal": false,
-      "primaryExternal": true
+      "primary": "Call +44 1223 921122",
+      "secondary": "Book a Table",
+      "primaryHref": "tel:+441223921122",
+      "secondaryHref": "/book-a-table"
     }
   },
   "sections": {
     "features": {
-      "title": "What Makes Us Special",
+      "title": "Why Cambridge Chooses The Corner House",
       "items": [
         {
-          "icon": "\ud83c\udf5b",
-          "title": "Nepalese + pub classics",
-          "description": "Gautam family recipes alongside comforting British favourites"
+          "icon": "📺",
+          "title": "Matchday HQ",
+          "description": "Wall-to-wall HD screens and an outdoor projector for big fixtures near Abbey Stadium."
         },
         {
-          "icon": "\ud83c\udfe1",
-          "title": "Village landmark",
-          "description": "England\u2019s largest thatched pub, preserved by Waterbeach community"
+          "icon": "🍛",
+          "title": "Authentic Nepalese kitchen",
+          "description": "Nepali-chef favourites like momos, Chicken Rum Rum, Himali Lamb, and goat curry."
         },
         {
-          "icon": "\ud83c\udf89",
-          "title": "Weekly traditions",
-          "description": "Sky & TNT Sports and collection & delivery all day"
+          "icon": "🔥",
+          "title": "Heated cabins & garden",
+          "description": "Book a private heated cabin or relax under lights in the covered beer garden year-round."
         },
         {
-          "icon": "\ud83d\udc3e",
-          "title": "Welcoming to all",
-          "description": "Families, mixed groups and well-behaved dogs share the same warm welcome"
+          "icon": "♿",
+          "title": "Welcoming for all",
+          "description": "Family- and dog-friendly with wheelchair ramp access, accessible WC, and kids’ tweaks on request."
+        }
+      ]
+    },
+    "pressTicker": {
+      "label": "Awards & Ratings",
+      "items": [
+        {
+          "title": "Tripadvisor Travelers’ Choice 2025",
+          "summary": "Rated 4.6★ with consistent praise for Nepalese flavours and friendly service.",
+          "ctaText": "See reviews",
+          "href": "/press"
+        },
+        {
+          "title": "Google Reviews 4.4★ (800+)",
+          "summary": "Locals love the curry-and-sports combo, heated cabins, and welcoming team.",
+          "ctaText": "View highlights",
+          "href": "/press"
+        },
+        {
+          "title": "CAMRA Most Improved City Pub (2020)",
+          "summary": "Recognised for quality beer and revitalised community pub experience.",
+          "ctaText": "Our story",
+          "href": "/about"
+        }
+      ]
+    },
+    "about": {
+      "title": "Welcome to The Corner House",
+      "tagline": "Pints, momos, and matchday energy on Newmarket Road",
+      "description": [
+        "A 1930s art-deco corner pub reinvented with a full Nepalese kitchen, proper pints, and HD sports just east of Cambridge city centre.",
+        "Grab sizzling mixed grills, Himali Lamb, or a Sunday roast before settling into our snugs, dining wing, or heated cabins.",
+        "Families, football fans, and food lovers all find a spot — with wheelchair access, friendly staff, and a cosy fire when it’s cold."
+      ],
+      "features": [
+        "Authentic Nepalese cuisine prepared by Nepali chefs",
+        "HD screens plus outdoor projector for big games",
+        "Heated private cabins and covered beer garden",
+        "Accessible, family- and dog-friendly throughout"
+      ],
+      "image": {
+        "src": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg",
+        "alt": "Corner House Cambridge exterior on Newmarket Road with pub signage and garden seating"
+      }
+    },
+    "signatureDishes": {
+      "title": "Signature Nepalese Dishes",
+      "subtitle": "Pub classics meet Himalayan favourites",
+      "items": [
+        {
+          "name": "Chicken Rum Rum",
+          "description": "House signature curry with tomato, ginger, and timmur pepper heat — medium and addictive.",
+          "image": "/images/white-horse/dishes/signature-lkk-chicken.png"
+        },
+        {
+          "name": "Himali Lamb",
+          "description": "Slow-braised lamb in warming Himalayan spices with a velvety, aromatic sauce.",
+          "image": "/images/white-horse/dishes/signature-himali-lamb.png"
+        },
+        {
+          "name": "Khasi Ko Masu (Goat Curry)",
+          "description": "Traditional goat curry simmered low-and-slow for deep flavour without overpowering heat.",
+          "image": "/images/white-horse/dishes/signature-goat-curry.png"
+        },
+        {
+          "name": "House Mixed Grill",
+          "description": "Sizzling platter of wings, tikka, seekh kebab, and king prawn — perfect for sharing in the bar or cabins.",
+          "image": "/images/white-horse/dishes/signature-house-mixed-grill.png"
+        }
+      ]
+    },
+    "reviews": {
+      "title": "What Guests Say",
+      "subtitle": "Real diners on food, service, and matchday atmosphere",
+      "items": [
+        {
+          "quote": "Superb Himali Lamb Curry and friendly staff who helped us navigate the Nepalese dishes.",
+          "source": "5★ — Tony B., TripAdvisor (Nov 2025)",
+          "platform": "TripAdvisor",
+          "rating": 5
+        },
+        {
+          "quote": "Perfect spot for a Cambridge reunion — attentive team, great drinks, brilliant atmosphere.",
+          "source": "5★ — Colin S., TripAdvisor (Nov 2025)",
+          "platform": "TripAdvisor",
+          "rating": 5
+        },
+        {
+          "quote": "Old pub with a twist. Nepalese curry was excellent and plenty of HD screens for the match.",
+          "source": "5★ — C.V., TripAdvisor (Oct 2025)",
+          "platform": "TripAdvisor",
+          "rating": 5
+        },
+        {
+          "quote": "Second time here — same delicious curry and very reasonable prices for Cambridge.",
+          "source": "5★ — Josh P., Google (Aug 2025)",
+          "platform": "Google",
+          "rating": 5
+        },
+        {
+          "quote": "Family-friendly pub; staff handled dietary requests and the fireplace made it extra cosy.",
+          "source": "5★ — Frances D., TripAdvisor (Jan 2025)",
+          "platform": "TripAdvisor",
+          "rating": 5
         }
       ]
     },
     "pressFeature": {
-      "label": "In the press",
-      "eyebrow": "Ely Standard",
-      "title": "Waterbeach celebrates The White Horse relaunch",
-      "summary": "Local media spotlight the February 2025 reopening, praising authentic Nepalese food, a revitalised pub interior and a renewed community mission.",
-      "quote": "The locals were more excited than I am\u2014they thought it would be flats, but the regulars turned up and were so welcoming.",
-      "quoteAttribution": "Subodh Gautam via Ely Standard",
+      "label": "In the spotlight",
+      "eyebrow": "Awards & Community",
+      "title": "Tripadvisor Travelers’ Choice 2025 & CAMRA Most Improved City Pub",
+      "summary": "From CAMRA recognition in 2020 to a Travelers’ Choice badge in 2025, The Corner House continues to blend great beer, bold Nepalese flavours, and a welcoming local vibe.",
+      "quote": "Keeping the local alive with pints, momos, and matchday buzz on Newmarket Road.",
+      "quoteAttribution": "Lapen Inns Hospitality",
       "cta": {
-        "text": "Read the coverage",
-        "href": "https://www.elystandard.co.uk/news/24942044.white-horse-waterbeach-reopens-nepalese-restaurant/"
+        "text": "Explore our story",
+        "href": "/about",
+        "ariaLabel": "Read about The Corner House story"
       }
     },
     "quickLinks": [
       {
-        "title": "What\u2019s On Weekly",
-        "description": "See Sky & TNT fixtures and seasonal garden gatherings.",
+        "title": "Events & What's On",
+        "description": "Live sport schedules, quiz nights, and garden projector screenings.",
         "link": "/events",
-        "linkText": "See events \u2192"
+        "linkText": "View Events →"
       },
       {
-        "title": "Menus, Collection & Delivery",
-        "description": "Browse Nepalese signatures and collection & delivery favourites.",
-        "link": "/menu",
-        "linkText": "Explore menus \u2192"
+        "title": "Our Story",
+        "description": "From a 1930s art-deco pub to Cambridge’s Nepalese sports hub.",
+        "link": "/about",
+        "linkText": "Read Our Story →"
       },
       {
-        "title": "Plan Your Visit",
-        "description": "Directions, parking tips and accessibility guidance opposite the village green.",
-        "link": "/contact",
-        "linkText": "Get directions \u2192"
+        "title": "Our Menu",
+        "description": "Momos, curries, grills, burgers, and Sunday roasts under one roof.",
+        "link": "/menu#starters",
+        "linkText": "View Menu →"
       }
     ],
     "cta": {
-      "headline": "Ready to gather at Waterbeach\u2019s thatched pub?",
-      "description": "Call or email for table bookings, group enquiries or collection & delivery \u2013 we\u2019ll look after the details.",
+      "headline": "Visit The Corner House",
+      "description": "Book a heated cabin, catch the match, or order Nepalese favourites for collection or delivery.",
       "buttons": [
-      {
-        "text": "Call +44 1223 375578",
-        "href": "tel:+441223375578",
-        "variant": "brand",
-        "external": true
-      },
-      {
-        "text": "Email the team",
-        "href": "mailto:whitehorse@lapeninns.com",
-        "variant": "accent",
-        "external": true
-      },
         {
-          "text": "View upcoming events",
-          "href": "/events",
+          "text": "Book a Table",
+          "href": "/book-a-table",
+          "variant": "accent",
+          "key": "bookOnline"
+        },
+        {
+          "text": "View Menu",
+          "href": "/menu#starters",
+          "variant": "brand"
+        },
+        {
+          "text": "Call +44 1223 921122",
+          "href": "tel:+441223921122",
           "variant": "crimson"
         }
       ]
     }
+  },
+  "seo": {
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "The Corner House Cambridge",
+        "url": "https://thecornerhousepub.co/",
+        "description": "Sports pub and Nepalese kitchen on Newmarket Road with heated cabins, HD screens, and friendly service.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://thecornerhousepub.co/menu?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "@id": "https://thecornerhousepub.co/#restaurant",
+        "name": "The Corner House Cambridge",
+        "image": "https://thecornerhousepub.co/opengraph-image.png",
+        "description": "1930s Cambridge pub serving authentic Nepalese dishes, pub classics, and Sunday roasts with HD sports and heated cabins.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "231 Newmarket Road",
+          "addressLocality": "Cambridge",
+          "addressRegion": "Cambridgeshire",
+          "postalCode": "CB5 8JE",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.20948,
+          "longitude": 0.14335
+        },
+        "url": "https://thecornerhousepub.co/",
+        "telephone": "+441223921122",
+        "priceRange": "££",
+        "servesCuisine": [
+          "Nepalese",
+          "Indian",
+          "British",
+          "Pub food"
+        ],
+        "acceptsReservations": true,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.4",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "800"
+        },
+        "hasMenu": "https://thecornerhousepub.co/menu",
+        "sameAs": [
+          "https://www.facebook.com/search/top?q=Corner%20House%20Cambridge",
+          "https://www.tripadvisor.co.uk/",
+          "https://www.google.com/maps/place/231+Newmarket+Rd,+Cambridge+CB5+8JE"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "12:00",
+            "closes": "22:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "12:00",
+            "closes": "23:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "12:00",
+            "closes": "22:00"
+          }
+        ]
+      }
+    ]
   }
 }

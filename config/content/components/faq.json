@@ -1,22 +1,38 @@
 {
   "title": "Frequently Asked Questions",
-  "subtitle": "Common questions about our restaurant",
+  "subtitle": "Common questions about The Corner House Cambridge",
   "items": [
     {
-      "question": "Do you accept bookings?",
-      "answer": "Yes, we accept bookings online or by phone. We recommend booking in advance, especially for weekends and special events."
+      "question": "How do I book a table or cabin?",
+      "answer": "Call +44 1223 921122, email cornerhouse@lapeninns.com, or use our Book a Table page. Book early for big matchdays or heated cabins."
     },
     {
-      "question": "Are you family-friendly?",
-      "answer": "Absolutely! We welcome families with children until 9pm. We have a children's menu and high chairs available."
+      "question": "Do you show live sports?",
+      "answer": "Yes — wall-to-wall HD screens indoors plus an outdoor projector for major fixtures. We’re a short walk from Abbey Stadium."
     },
     {
-      "question": "Do you offer collection & delivery?",
-      "answer": "Yes. Collection receives 10% off. Delivery has a £20 minimum, is free up to 3 miles, then £2 per mile. Call +44 1223 375578 or order online."
+      "question": "Do you offer takeaway or delivery?",
+      "answer": "Yes. Call for collection, or order delivery via Uber Eats, Deliveroo, or Just Eat when available."
     },
     {
       "question": "Is parking available?",
-      "answer": "Yes, we have free parking available for our customers."
+      "answer": "We have a small on-site car park (limited spaces). Additional paid parking is across the road at Cambridge Retail Park."
+    },
+    {
+      "question": "Are you family- and dog-friendly?",
+      "answer": "Absolutely. High chairs available; kids’ spice tweaks on request. Dogs are welcome in the bar and garden with water bowls provided."
+    },
+    {
+      "question": "Is the pub accessible?",
+      "answer": "Yes. Wheelchair ramp access via the rear and an accessible WC on the ground floor. Ask staff if you need assistance."
+    },
+    {
+      "question": "Can you handle dietary requirements?",
+      "answer": "Many Nepalese dishes are naturally gluten-free; vegetarian and vegan options are available. Tell us your allergies and we’ll guide you."
+    },
+    {
+      "question": "When is the kitchen open?",
+      "answer": "Mon–Fri 12:00–15:00 & 17:00–22:00, Sat 12:00–22:00, Sun 12:00–21:00. Bar stays open until 22:00 (23:00 Fri/Sat)."
     }
   ]
 }

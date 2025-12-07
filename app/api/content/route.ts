@@ -15,6 +15,9 @@ export const revalidate = isProd ? 2700 : 600; // 45min prod, 10min dev
 export async function GET(request: Request) {
   const env = resolveEnv();
   const cacheConfig = getEnvironmentCacheConfig('content', env);
+  const url = new URL(request.url);
+  const fieldsParam = url.searchParams.get('fields');
+  const fields = fieldsParam ? fieldsParam.split(',').map((f) => f.trim()).filter(Boolean) : [];
   
   // Check for conditional requests
   const ifNoneMatch = request.headers.get('if-none-match');
@@ -28,10 +31,13 @@ export async function GET(request: Request) {
     );
     
     const { result, timing } = await timedLoader();
+
+    const filteredData = fields.length > 0 ? pickPaths(result.data, fields) : result.data;
+    const filteredResult = { ...result, data: filteredData } as typeof result;
     
     // Create standardized response
     const apiResponse = StandardizedApiResponseBuilder.fromSmartLoadResult(
-      result,
+      filteredResult,
       '2.0.0' // Enhanced API version
     );
     
@@ -40,7 +46,7 @@ export async function GET(request: Request) {
     
     // Handle conditional requests for better caching
     if (ifNoneMatch || ifModifiedSince) {
-      const etag = StandardizedApiResponseBuilder.getETagFor(result.data, result.timestamp);
+      const etag = StandardizedApiResponseBuilder.getETagFor(filteredResult.data, filteredResult.timestamp);
       const lastModified = new Date(result.timestamp);
       
       if (ifNoneMatch === etag || 
@@ -78,6 +84,40 @@ export async function GET(request: Request) {
       { ttl: 60000, public: false } // 1 minute cache for errors
     );
   }
+}
+
+function pickPaths(obj: any, paths: string[]): any {
+  const result: any = {};
+  for (const rawPath of paths) {
+    if (!rawPath) continue;
+    const segments = rawPath.replace(/^\.+|\.+$/g, '').split('.');
+    let src: any = obj;
+    for (const seg of segments) {
+      if (src && typeof src === 'object' && seg in src) {
+        src = src[seg];
+      } else {
+        src = undefined;
+        break;
+      }
+    }
+    if (src === undefined) continue;
+    setDeep(result, segments, src);
+  }
+  return result;
+}
+
+function setDeep(target: any, segments: string[], value: any) {
+  let cur = target;
+  segments.forEach((seg, idx) => {
+    if (idx === segments.length - 1) {
+      cur[seg] = value;
+    } else {
+      if (!cur[seg] || typeof cur[seg] !== 'object') {
+        cur[seg] = {};
+      }
+      cur = cur[seg];
+    }
+  });
 }
 
 export async function HEAD(request: Request) {

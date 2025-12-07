@@ -4,8 +4,8 @@
 Ensure only one phone and one email exist across repo and centralize usage in code.
 
 ## Success Criteria
-- No other phone numbers present in repo except `+44 1223 375578` and `tel:+441223375578`.
-- No other email present except `whitehorse@lapeninns.com`.
+- No other phone numbers present in repo except `+44 1223 921122` and `tel:+441223921122`.
+- No other email present except `cornerhouse@lapeninns.com`.
 - Code paths derive contact from a single source (no hardcoded fallbacks).
 
 ## Architecture
@@ -22,7 +22,7 @@ Ensure only one phone and one email exist across repo and centralize usage in co
 
 ## Edge Cases
 - Content placeholders and test fixtures: replaced to meet "only one email" requirement.
-- tel: formatting normalized to `tel:+441223375578`.
+- tel: formatting normalized to `tel:+441223921122`.
 
 ## Testing
 - Grep scan for emails/phones.

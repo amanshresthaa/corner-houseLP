@@ -2,11 +2,10 @@ import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn, FadeInUp, MotionLinkButton } from "@/components/animations/MotionWrappers";
 import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import { getContentSmart } from '@/src/lib/data/server-loader';
-import Link from "@/lib/debugLink";
 import siteConfig from '@/config';
 import { getContactInfo } from "@/lib/restaurantData";
 
-// Download asset removed; page now focuses on online ordering
+// Download asset removed; page now focuses on phone ordering
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -23,20 +22,20 @@ export async function generateMetadata() {
 export default async function TakeawayMenuPage() {
   const contact = getContactInfo();
   const content = await getContentSmart();
-  const links = (content.global as any)?.links || {};
   const ui = (content.global as any)?.ui || {};
-  const orderHref = links?.takeaway as string | undefined;
-  const orderLabel = ui?.buttons?.orderTakeaway || 'Order Online';
+  const orderHref = contact.phone.tel;
+  const orderLabel = ui?.buttons?.callTakeaway || ui?.buttons?.callNow || 'Call to Order';
 
   const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || `https://${siteConfig.domainName}/`).replace(/\/$/, '/');
+  const pageUrl = `${baseUrl}takeaway`;
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "Menu",
-      name: "The White Horse Waterbeach Collection & Delivery",
+      name: "The White Horse Waterbeach Takeaway",
       description:
-        "Order authentic Nepalese specialties and British pub classics for collection or delivery from The White Horse Waterbeach.",
-      url: orderHref || `${baseUrl}takeaway`,
+        "Call to arrange authentic Nepalese specialties and British pub classics for collection from The White Horse Waterbeach.",
+      url: pageUrl,
       offers: {
         "@type": "Offer",
         priceCurrency: "GBP",
@@ -70,23 +69,23 @@ export default async function TakeawayMenuPage() {
           <FadeIn>
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/30 rounded-full backdrop-blur">
               <span aria-hidden="true" role="img">🛍️</span>
-              <span className="text-sm font-semibold tracking-wide uppercase">Collection & Delivery</span>
-              <span className="sr-only">Order for collection or delivery</span>
+              <span className="text-sm font-semibold tracking-wide uppercase">Call & Collect</span>
+              <span className="sr-only">Call to arrange collection</span>
             </span>
           </FadeIn>
           <FadeInUp>
             <h1 id="takeaway-menu-heading" className="h2 leading-tight">
-              🛍️ Order Online
+              Call to order takeaway
             </h1>
           </FadeInUp>
           <FadeInUp>
             <p className="text-lg md:text-xl text-neutral-100 max-w-3xl mx-auto leading-relaxed">
-              Explore Nepalese signatures and British pub favourites from the comfort of home. Order online for quick collection or delivery.
+              Explore Nepalese signatures and British pub favourites from the comfort of home. Call the team to place your order for quick collection.
             </p>
           </FadeInUp>
           <FadeInUp>
             <p className="text-sm md:text-base text-accent-100 max-w-3xl mx-auto">
-              <strong>Promos:</strong> 10% off Collection · Delivery minimum £20 · Free up to 3 miles, then £2/mile thereafter.
+              <strong>Heads up:</strong> We’ll confirm pickup times when you call; let us know any allergies so the kitchen can advise.
             </p>
           </FadeInUp>
           <FadeInUp>
@@ -94,8 +93,6 @@ export default async function TakeawayMenuPage() {
               {orderHref && (
                 <a
                   href={orderHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
                   aria-label={orderLabel}
                 >
@@ -104,12 +101,12 @@ export default async function TakeawayMenuPage() {
                 </a>
               )}
               <MotionLinkButton
-                href={contact.phone.tel}
+                href="/menu"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent-500 text-neutral-900 font-semibold shadow-lg hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-200 focus-visible:ring-offset-brand-700"
-                ariaLabel="Call to place an order"
+                ariaLabel="View the menu"
               >
-                <span aria-hidden="true" role="img">📞</span>
-                Call to Order
+                <span aria-hidden="true" role="img">📖</span>
+                View Menu
               </MotionLinkButton>
             </div>
           </FadeInUp>
@@ -121,10 +118,10 @@ export default async function TakeawayMenuPage() {
           <FadeIn>
             <div className="max-w-3xl space-y-4 mb-12">
               <h2 id="takeaway-details-heading" className="h3 text-brand-800">
-                Everything you need for effortless collection & delivery
+                Everything you need for effortless collection
               </h2>
               <p className="text-lg text-brand-600 leading-relaxed">
-                Whether you&apos;re planning a cosy night in or a family feast, ordering from The White Horse Waterbeach makes it simple to bring our kitchen home.
+                Whether you&apos;re planning a cosy night in or a family feast, calling ahead makes it simple to bring our kitchen home.
               </p>
             </div>
           </FadeIn>
@@ -133,7 +130,7 @@ export default async function TakeawayMenuPage() {
               {[{
                 icon: "🕒",
                 title: "Order & collection times",
-                description: "Order online to see available times — pickups are usually ready within ~25 minutes.",
+                description: "Call us to check available times — pickups are usually ready within ~25 minutes.",
               }, {
                 icon: "🚗",
                 title: "Easy parking outside",
@@ -141,7 +138,7 @@ export default async function TakeawayMenuPage() {
               }, {
                 icon: "⚠️",
                 title: "Allergens & dietary notes",
-                description: "All dishes are clearly labelled online. Let us know about allergies when you order so the kitchen can advise on safe options.",
+                description: "Ask about allergens when you call and our team will advise safe options.",
               }].map(card => (
                 <article
                   key={card.title}

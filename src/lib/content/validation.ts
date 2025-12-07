@@ -15,6 +15,7 @@ export const ModuleConfigSchema = z.object({
   files: z.array(z.string()),
   dependencies: z.array(z.string()),
   condition: z.string().optional(),
+  mountPath: z.string().optional(),
   size: z.enum(['small', 'medium', 'large']),
 });
 

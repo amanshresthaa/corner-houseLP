@@ -17,8 +17,8 @@ Tool Used: Chrome DevTools (MCP) — to run after starting the app.
 - [ ] Desktop viewport (1920px) tested
 
 ## Repo Scans
-- [x] Only email found: `whitehorse@lapeninns.com`
-- [x] Only phone found: `+44 1223 375578` and `tel:+441223375578`
+- [x] Only email found: `cornerhouse@lapeninns.com`
+- [x] Only phone found: `+44 1223 921122` and `tel:+441223921122`
 
 ## Known Issues
 - None

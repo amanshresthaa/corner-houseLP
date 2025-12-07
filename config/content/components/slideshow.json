@@ -1,0 +1,150 @@
+{
+  "settings": {
+    "autoplay": true,
+    "intervalMs": 5000,
+    "sessionSize": 5,
+    "regionLabel": "Featured experiences slideshow",
+    "sectionLabel": "Restaurant showcase"
+  },
+  "slides": [
+    {
+      "id": "slide-welcome-whitehorse",
+      "image": {
+        "primary": "/images/slideshow/whitehorsebuilding.png"
+      },
+      "alt": "Exterior of The White Horse country pub on a sunny day with chalkboards by the door and a wide forecourt.",
+      "eyebrow": "Your village pub for cosy pints, fresh plates & big-sky evenings.",
+      "headline": "Welcome to The White Horse",
+      "copy": "A friendly, independent local where characterful interiors meet a spacious garden, and the menu ranges from comforting classics to bright, modern bites.",
+      "badges": [
+        "Village pub",
+        "Family friendly",
+        "Book a table"
+      ],
+      "ctas": {
+        "bookUrl": "/book-a-table",
+        "callTel": "tel:+441223921122",
+        "secondaryUrl": "/about"
+      },
+      "required": true
+    },
+    {
+      "id": "slide-sharing-table",
+      "image": {
+        "primary": "/images/slideshow/shared-table-nepalese-feast-landscape.png"
+      },
+      "alt": "Long rustic table layered with Nepalese sharing plates, salads, pickles, and drinks ready for a crowd inside the pub.",
+      "eyebrow": "Gather the crew around a table full of colour.",
+      "headline": "Feasts Made for Sharing",
+      "copy": "Mix momo, samosa, onion bhaji, crispy squid, and crunchy salads for the ultimate White Horse feast — ideal for family-style dining or laid-back celebrations.",
+      "badges": [
+        "Nepalese feasts",
+        "Family-style",
+        "Vibrant & fresh"
+      ],
+      "ctas": {
+        "menuUrl": "/menu#nepalese",
+        "callTel": "tel:+441223921122"
+      },
+      "required": true
+    },
+    {
+      "id": "slide-pouring-character",
+      "image": {
+        "primary": "/images/slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png"
+      },
+      "alt": "Warm wood bar with glass racks and a row of beer taps in a cosy pub interior.",
+      "eyebrow": "Cask ales, craft lagers & small-batch spirits.",
+      "headline": "Pouring Character",
+      "copy": "From perfectly kept pints to classic cocktails, our bar team knows their way around a pour. Pull up a stool and settle in.",
+      "badges": [
+        "Cask ales",
+        "Craft lager",
+        "Small-batch spirits"
+      ],
+      "ctas": {
+        "menuUrl": "/menu#drinks",
+        "callTel": "tel:+441223921122",
+        "secondaryUrl": "/events"
+      }
+    },
+    {
+      "id": "slide-garden-evenings",
+      "image": {
+        "primary": "/images/slideshow/beer-garden-picnic-benches-and-sky-portrait.png"
+      },
+      "alt": "Large pub garden at dusk with string lights and wooden picnic tables.",
+      "eyebrow": "Big garden energy – gather, relax, and watch the sky turn indigo.",
+      "headline": "Evenings Under the Lights",
+      "copy": "From golden hour to starlight, our garden is your go-to for after-work drinks, weekend catch-ups, and easy outdoor dining.",
+      "badges": [
+        "String lights",
+        "Picnic tables",
+        "Alfresco dining"
+      ],
+      "ctas": {
+        "bookUrl": "/book-a-table",
+        "callTel": "tel:+441223921122",
+        "secondaryUrl": "/events"
+      }
+    },
+    {
+      "id": "slide-fresh-starts",
+      "image": {
+        "primary": "/images/slideshow/fresh-mixed-salad-cherry-tomatoes-portrait.png"
+      },
+      "alt": "Bowl of mixed green salad with cherry tomatoes and cucumber on a white plate.",
+      "eyebrow": "Crunchy greens, bright flavours, made to order.",
+      "headline": "Fresh Starts",
+      "copy": "A simple, satisfying bowl—crisp leaves, juicy tomatoes, cool cucumber and a zesty house dressing. Perfect on its own or alongside a pint.",
+      "badges": [
+        "Light bite",
+        "Fresh greens",
+        "Vegetarian-friendly"
+      ],
+      "ctas": {
+        "menuUrl": "/menu#starters",
+        "callTel": "tel:+441223921122"
+      }
+    },
+    {
+      "id": "slide-hand-pleated-momo",
+      "image": {
+        "primary": "/images/slideshow/steamed-momo-with-spicy-sauce-portrait.png"
+      },
+      "alt": "Row of steamed dumplings with bright orange dipping sauce on a rectangular plate.",
+      "eyebrow": "Steamed, delicate, and dunked in our bold chilli sauce.",
+      "headline": "Hand-Pleated momo",
+      "copy": "Comfort in one bite - soft wrappers, savoury filling, and a creamy kick on the side. A favourite for sharing or not.",
+      "badges": [
+        "House momo",
+        "Chilli dip",
+        "Shareable"
+      ],
+      "ctas": {
+        "menuUrl": "/menu#nepalese",
+        "callTel": "tel:+441223921122"
+      }
+    },
+    {
+      "id": "slide-hearty-healthy",
+      "image": {
+        "primary": "/images/slideshow/warm-chicken-salad-with-cherry-tomatoes-portrait.png"
+      },
+      "alt": "Mixed green salad topped with warm seared chicken pieces and cherry tomatoes.",
+      "eyebrow": "Warm chicken salad with crunch and zing.",
+      "headline": "Hearty & Healthy",
+      "copy": "Tender seared chicken tossed through fresh greens and a lively dressing - big on flavour, light on fuss.",
+      "badges": [
+        "Warm salad",
+        "Protein packed",
+        "Pub lunch"
+      ],
+      "ctas": {
+        "menuUrl": "/menu#lunch",
+        "callTel": "tel:+441223921122",
+        "secondaryUrl": "/book-a-table"
+      }
+    }
+  ]
+}

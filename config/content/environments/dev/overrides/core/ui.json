@@ -1,0 +1,7 @@
+{
+  "messages": {
+    "cacheHit": "[DEV] Content loaded from cache",
+    "cacheMiss": "[DEV] Content loaded from source",
+    "moduleLoaded": "[DEV] Module {name} loaded in {time}ms"
+  }
+}

@@ -5,15 +5,15 @@
 - **Official Name**: The White Horse
 - **Also Known As**: White Horse Pub (Waterbeach)
 - **Slug**: `the-white-horse`
-- **Location**: Waterbeach, Cambridge, Cambridgeshire
+- **Location**: Cambridge (Newmarket Road), Cambridgeshire
 - **Type**: Village coaching inn / pub restaurant
 - **Status**: Active - Reopened February 2025
 
 ---
 
 ### **📞 CONTACT DETAILS**
-- **Phone**: `+44 1223 375578` (tel:+441223375578)
-- **Email**: `whitehorse@lapeninns.com`
+- **Phone**: `+44 1223 921122` (tel:+441223921122)
+- **Email**: `cornerhouse@lapeninns.com`
 - **Website**: `https://whitehorsepub.co`
 - **Booking**: Via phone or email (no online booking system mentioned)
 
@@ -22,27 +22,26 @@
 ### **📮 ADDRESS**
 ```
 The White Horse
-12 Greenside
-Waterbeach
+231 Newmarket Road
 Cambridge
-CB25 9HP
+CB5 8JE
 United Kingdom
 ```
 
 **Structured Format:**
-- Street: `12 Greenside`
-- Locality: `Waterbeach`
-- Postal Code: `CB25 9HP`
+- Street: `231 Newmarket Road`
+- Locality: `Cambridge`
+- Postal Code: `CB5 8JE`
 - City: `Cambridge`
-- Neighborhood: `Waterbeach`
+- Neighborhood: `Newmarket Road / Abbey`
 
 ---
 
 ### **🗺️ COORDINATES & LOCATION**
-- **Latitude**: `52.2662426`
-- **Longitude**: `0.1913944`
-- **Map Link**: Opposite Waterbeach village green
-- **[Google Maps](https://www.google.com/maps?q=52.2662426,0.1913944)**
+- **Latitude**: `52.20948`
+- **Longitude**: `0.14335`
+- **Map Link**: Opposite Cambridge Retail Park on Newmarket Road
+- **[Google Maps](https://www.google.com/maps?q=52.20948,0.14335)**
 
 ---
 

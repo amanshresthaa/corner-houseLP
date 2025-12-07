@@ -16,9 +16,9 @@ Replace the content at `/press` with essential information about The White Horse
 - I. Hero & Positioning: Community-centric, dual identity (pub + Nepalese restaurant), relaxed & modern, family and dog-friendly, live sports.
 - II. Quick Facts: Verified/reconciled essentials including:
   - Property Name: The White Horse
-  - Location: 12 Greenside, Waterbeach, Cambridge, CB25 9HP
-  - Phone (Verified): +44 1223 375578
-  - Email (Verified): whitehorse@lapeninns.com
+  - Location: 231 Newmarket Road, Cambridge CB5 8JE
+  - Phone (Verified): +44 1223 921122
+  - Email (Verified): cornerhouse@lapeninns.com
   - Website: https://whitehorsepub.co/
   - Ownership: Lapen Inns
   - Bar hours and Restaurant times
@@ -28,7 +28,7 @@ Replace the content at `/press` with essential information about The White Horse
 
 ## Technical Constraints
 - Keep DaisyUI and existing layout patterns; avoid new dependencies (no markdown renderer introduced).
-- Prefer using `lib/restaurantData.ts` helpers where values already match the Markdown (phone/email/hours). Note: repo address is "12 Green Side"; Markdown lists "12 Greenside".
+- Prefer using `lib/restaurantData.ts` helpers where values already match the Markdown (phone/email/hours). Note: repo address is "231 Newmarket Road"; Markdown lists "231 Newmarket Road".
 
 ## Open Questions
 - Whether to globally change address spelling to "Greenside"? Out of scope; show Markdown value in press facts only.
@@ -37,4 +37,4 @@ Replace the content at `/press` with essential information about The White Horse
 ## Recommendations
 - Remove external press articles, review banners, and hygiene card.
 - Retain the hero + press kit sections, rewriting copy with concise brand boilerplate from Markdown.
-- Populate Quick Facts from Markdown (address shown as "12 Greenside...") while keeping contact data wired to centralized helpers.
+- Populate Quick Facts from Markdown (address shown as "231 Newmarket Road...") while keeping contact data wired to centralized helpers.

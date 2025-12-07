@@ -4,7 +4,6 @@ import React from "react";
 import EmojiIcon from "@/components/common/EmojiIcon";
 import Link from '@/lib/debugLink';
 import content from '@/config/content.json';
-import { isOnlineDeliveryHref } from '@/utils/onlineDelivery';
 
 type SlideCTAButtonProps = {
   href?: string;
@@ -12,7 +11,7 @@ type SlideCTAButtonProps = {
   className?: string;
   children?: React.ReactNode;
   ariaLabel?: string;
-  variant: "book" | "menu" | "takeaway" | "call-takeaway" | "call-booking" | "learn-more";
+  variant: "book" | "menu" | "call-takeaway" | "call-booking" | "learn-more";
 };
 
 const buttonVariants = {
@@ -26,15 +25,10 @@ const buttonVariants = {
     text: content.global?.ui?.buttons?.viewMenu || "View Menu",
     ariaLabel: "View the menu"
   },
-  takeaway: {
-    emoji: "🥡",
-    text: content.global?.ui?.buttons?.orderTakeaway || "Order Online",
-    ariaLabel: "Order online"
-  },
   "call-takeaway": {
     emoji: "📞", 
-    text: content.global?.ui?.buttons?.callTakeaway || content.global?.ui?.buttons?.callNow || "Call to Order",
-    ariaLabel: "Call to place an order"
+    text: content.global?.ui?.buttons?.callTakeaway || content.global?.ui?.buttons?.callNow || "Call Us",
+    ariaLabel: "Call us"
   },
   "call-booking": {
     emoji: "📞",
@@ -62,19 +56,7 @@ export function SlideCTAButton({
   const hrefStr = typeof href === 'string' ? href : undefined;
   const isHttpHref = Boolean(hrefStr && hrefStr.startsWith('http'));
   const isTelHref = Boolean(hrefStr && hrefStr.startsWith('tel:'));
-  const isOnlineDelivery = isOnlineDeliveryHref(hrefStr);
-
-  // Override label for online delivery links to be explicit
-  const effective = ((): { emoji: string; text: string; ariaLabel: string } => {
-    if (variant === 'menu' && isOnlineDelivery) {
-      return { 
-        emoji: '🥡', 
-        text: content.global?.ui?.buttons?.orderTakeaway || 'Order Online', 
-        ariaLabel: 'Order online' 
-      };
-    }
-    return baseConfig;
-  })();
+  const effective = baseConfig;
 
   const finalAriaLabel = ariaLabel || effective.ariaLabel;
   
@@ -86,8 +68,8 @@ export function SlideCTAButton({
   );
   
   if (href) {
-    const renderAsAnchor = isHttpHref || isTelHref || isOnlineDelivery;
-    const shouldOpenNewTab = isHttpHref || isOnlineDelivery;
+    const renderAsAnchor = isHttpHref || isTelHref;
+    const shouldOpenNewTab = isHttpHref;
     
     if (renderAsAnchor) {
       return (

@@ -30,11 +30,11 @@ Table 1: Essential Information (Verified & Reconciled)
 
 Category	Details	Source(s)
 Property Name	The White Horse	1
-Location	12 Greenside, Waterbeach, Cambridge, CB25 9HP	1
-Phone (Verified)	+44 1223 375578	1
-    Note: Only the official contact number +44 1223 375578 should be used.	2
-Email (Verified)	whitehorse@lapeninns.com	7
-    Note: A slight variation, whitehorse@lapeninns.com, is listed elsewhere.	2
+Location	231 Newmarket Road, Cambridge CB5 8JE	1
+Phone (Verified)	+44 1223 921122	1
+    Note: Only the official contact number +44 1223 921122 should be used.	2
+Email (Verified)	cornerhouse@lapeninns.com	7
+    Note: A slight variation, cornerhouse@lapeninns.com, is listed elsewhere.	2
 Website	https://whitehorsepub.co/
 3
 Ownership	Lapen Inns	4

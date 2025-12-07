@@ -53,21 +53,21 @@ export function generateRestaurantSchema(): RestaurantSchema {
     "@type": "Restaurant",
     name: identity.name,
     description: seo.description || identity.description,
-    url: (seo as any)?.og?.url || "https://whitehorsepub.co/",
+    url: (seo as any)?.og?.url || "https://thecornerhousepub.co/",
     telephone: contact?.phone.primary,
     email: contact?.email.primary,
     address: {
       "@type": "PostalAddress",
       streetAddress: contact?.address.street || "High Street",
-      addressLocality: contact?.address.area || "Waterbeach",
+      addressLocality: contact?.address.area || "Cambridge",
       addressRegion: contact?.address.city || "Cambridge",
-      postalCode: contact?.address.postcode || "CB25 9HP",
+      postalCode: contact?.address.postcode || "CB5 8JE",
       addressCountry: "GB"
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: contact?.address.coordinates?.lat || 52.2385,
-      longitude: contact?.address.coordinates?.lng || 0.0926
+      latitude: contact?.address.coordinates?.lat || 52.20948,
+      longitude: contact?.address.coordinates?.lng || 0.14335
     },
     openingHours: [
       "Mo-Th 12:00-22:00",

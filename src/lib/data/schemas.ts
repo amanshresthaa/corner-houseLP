@@ -286,7 +286,6 @@ export const SlideCTASchema = z.object({
   bookUrl: z.string().optional(),
   callTel: z.string().optional(),
   menuUrl: z.string().optional(),
-  takeawayUrl: z.string().optional(),
   secondaryUrl: z.string().optional(),
 });
 

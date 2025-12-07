@@ -161,7 +161,7 @@ describe('API Integration Tests', () => {
       const { req } = ApiTestHelper.createMockRequest('POST', '/api/lead', {
         body: {
           name: 'Test User',
-          email: 'whitehorse@lapeninns.com',
+          email: 'cornerhouse@lapeninns.com',
           message: 'Test message'
         }
       });
@@ -176,7 +176,7 @@ describe('API Integration Tests', () => {
       const { req } = ApiTestHelper.createMockRequest('POST', '/api/lead', {
         body: {
           name: 'Test User',
-          email: 'whitehorse@lapeninns.com',
+          email: 'cornerhouse@lapeninns.com',
           message: 'Test message'
         }
       });
@@ -264,7 +264,7 @@ describe('API Integration Tests', () => {
         const { req } = ApiTestHelper.createMockRequest('POST', '/api/contact', {
           body: {
             name: 'Test User',
-            email: 'whitehorse@lapeninns.com',
+            email: 'cornerhouse@lapeninns.com',
             message: 'Test contact message'
           }
         });
@@ -283,7 +283,7 @@ describe('API Integration Tests', () => {
         const { req } = ApiTestHelper.createMockRequest('POST', '/api/contact', {
           body: {
             name: 'Test User',
-            email: 'whitehorse@lapeninns.com',
+            email: 'cornerhouse@lapeninns.com',
             message: 'Test message'
           }
         });

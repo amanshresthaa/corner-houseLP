@@ -2,7 +2,6 @@
 
 import { useLayoutEffect, useRef, useState } from 'react';
 import { ContactCTA, NavLinks, NavbarLogo, useNavContent } from './NavbarParts';
-import SeasonalPromoBanner from '@/components/seasonal/SeasonalPromoBanner';
 
 const MOBILE_NAV_ID = 'mobile-nav';
 const NAVBAR_OFFSET_VAR = '--navbar-offset';
@@ -75,8 +74,7 @@ export default function Navbar() {
       className="fixed inset-x-0 top-0 z-50 flex w-full flex-col bg-white/95 shadow-sm backdrop-blur safe-area-top"
       data-navbar-stack
     >
-      <SeasonalPromoBanner className="w-full border-b border-brand-100/70" />
-      <div className="bg-white">
+      <div className="bg-white border-b border-brand-100/70">
         <div className="mx-auto w-full max-w-7xl px-4 py-2 md:px-6">
           <div className="flex items-center justify-between gap-3">
             <NavbarLogo altText={logoAlt} />

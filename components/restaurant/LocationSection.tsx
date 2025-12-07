@@ -22,7 +22,7 @@ export default function LocationSection() {
             Visit <span className="text-accent">{identity.displayName}</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
-            Located in the heart of Waterbeach village, we&apos;re easily accessible and just a short drive from Cambridge city centre.
+            Find us on Newmarket Road in Cambridge — a quick hop from the city centre, Abbey Stadium, and retail park parking.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function LocationSection() {
           <div className="lg:col-span-7">
             <InteractiveMap
               className="h-[500px] rounded-3xl border border-white/10 bg-white/10 shadow-xl backdrop-blur-sm overflow-hidden"
-              title="The White Horse Waterbeach Location"
+              title={`${identity.displayName} Location`}
             />
           </div>
         </div>

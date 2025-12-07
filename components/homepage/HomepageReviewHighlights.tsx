@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { getReviewLinks } from '@/lib/restaurantData';
 
 export interface ReviewHighlight {
   quote: string;
@@ -22,8 +23,9 @@ export default function HomepageReviewHighlights({ title, subtitle, items }: Hom
 
   const visibleItems = items.slice(0, 6);
 
-  const tripadvisorUrl = "https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html";
-  const googleUrl = "https://www.google.com/maps/search/?api=1&query=The+White+Horse+Waterbeach+CB25+9HP";
+  const reviewLinks = getReviewLinks();
+  const tripadvisorUrl = reviewLinks.tripadvisor || '#';
+  const googleUrl = reviewLinks.google || '#';
 
   return (
     <section className="bg-neutral-100 py-12 text-brand-800 sm:py-14" aria-labelledby="reviews-highlight-heading">

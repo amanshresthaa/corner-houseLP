@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic';
-import { getContactInfo, getAddress, getRestaurantIdentity } from "@/lib/restaurantData";
+import { getContactInfo, getAddress, getRestaurantIdentity, getMapLinks } from "@/lib/restaurantData";
 import { useParsedData } from "@/hooks/useParsedData";
 import { MarketingDataSchema, MarketingDataParsed } from "@/lib/schemas";
 import config from "@/config";
@@ -23,6 +23,7 @@ const formatTelHref = (raw?: string) =>
 const STATIC_CONTACT = getContactInfo();
 const STATIC_ADDRESS = getAddress();
 const STATIC_IDENTITY = getRestaurantIdentity();
+const STATIC_MAP = getMapLinks();
 
 interface StickyCallButtonProps {
 	/** Optional override phone */
@@ -137,8 +138,8 @@ export default function StickyCallButton({ phone }: StickyCallButtonProps) {
 							{(() => {
 								const lat = STATIC_ADDRESS.coordinates.lat.toString();
 								const lng = STATIC_ADDRESS.coordinates.lng.toString();
-								const googleHref = STATIC_ADDRESS.map.google || `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
-								const appleHref = STATIC_ADDRESS.map.apple || `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+							const googleHref = STATIC_MAP.google;
+							const appleHref = STATIC_MAP.apple;
 								const appleNative = `maps://?daddr=${lat},${lng}&dirflg=d`;
 								const isiOS = typeof navigator !== 'undefined' && /iPhone|iPad|iPod/i.test(navigator.userAgent);
 								const href = isiOS ? appleHref : googleHref; // DOM-facing href (https) so tests can read it

@@ -11,7 +11,6 @@ interface DaisyUISlideshowProps {
   interval?: number;
   sessionSize?: number;
   regionLabel?: string;
-  takeawayUrl?: string;
   bookOnlineUrl?: string;
 }
 
@@ -22,8 +21,7 @@ type SlideBuckets = {
   optional: SlideType[];
 };
 
-const CTA_SEQUENCE = ['takeaway', 'call-booking', 'book'] as const;
-type CTASequenceVariant = typeof CTA_SEQUENCE[number];
+type CTAButtonVariant = 'book' | 'menu' | 'call-booking';
 
 const resolveImageSrc = (image: SlideType['image']) => {
   if (!image) return null;
@@ -130,61 +128,49 @@ const getInitialSessionSlides = (allSlides: SlideType[], targetCount: number) =>
 const CTA_BASE_CLASS =
   'inline-flex items-center justify-center gap-2 text-white font-semibold rounded-xl shadow-xl shadow-black/25 ring-1 ring-white/10 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black/40 min-h-[2.75rem] sm:min-h-[3rem] whitespace-normal';
 
-const resolveCTAClass = (variant: CTASequenceVariant) => {
+const resolveCTAClass = (variant: CTAButtonVariant) => {
   switch (variant) {
-    case 'takeaway':
-      return `${CTA_BASE_CLASS} bg-accent-500 hover:bg-accent-600`;
     case 'call-booking':
       return `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`;
+    case 'menu':
+      return `${CTA_BASE_CLASS} bg-accent-500 hover:bg-accent-600`;
     case 'book':
     default:
       return `${CTA_BASE_CLASS} bg-brand-600 hover:bg-brand-700`;
   }
 };
 
-const resolveHrefForVariant = (
-  variant: CTASequenceVariant,
-  ctas: SlideType['ctas'],
-  fallbackTakeawayUrl?: string,
-  fallbackBookUrl?: string
-) => {
-  switch (variant) {
-    case 'takeaway':
-      return ctas?.takeawayUrl || fallbackTakeawayUrl;
-    case 'call-booking':
-      return ctas?.callTel || ctas?.secondaryUrl;
-    case 'book':
-      return ctas?.bookUrl || fallbackBookUrl;
-    default:
-      return undefined;
-  }
-};
-
 const getCTAConfig = (
   slide: SlideType,
-  slideIndex: number,
-  fallbackTakeawayUrl?: string,
   fallbackBookUrl?: string
 ) => {
   const ctas = slide.ctas ?? {};
 
-  const primaryVariant: CTASequenceVariant = CTA_SEQUENCE[slideIndex % CTA_SEQUENCE.length];
-  const secondaryVariant: CTASequenceVariant = CTA_SEQUENCE[(slideIndex + 1) % CTA_SEQUENCE.length];
+  const candidates: Array<{ variant: CTAButtonVariant; href?: string }> = [
+    { variant: 'book', href: ctas.bookUrl || fallbackBookUrl },
+    { variant: 'menu', href: ctas.menuUrl },
+    { variant: 'call-booking', href: ctas.callTel || ctas.secondaryUrl },
+  ];
 
-  const primaryHref = resolveHrefForVariant(primaryVariant, ctas, fallbackTakeawayUrl, fallbackBookUrl);
-  const secondaryHref = resolveHrefForVariant(secondaryVariant, ctas, fallbackTakeawayUrl, fallbackBookUrl);
+  const unique = candidates.filter((candidate, index, arr) => {
+    if (!candidate.href) return false;
+    return arr.findIndex((c) => c.href === candidate.href) === index;
+  });
+
+  const primary = unique[0] ?? { variant: 'book' as const, href: undefined };
+  const secondary = unique[1] ?? { variant: 'menu' as const, href: undefined };
 
   return {
     primaryButton: {
-      variant: primaryVariant,
-      href: primaryHref,
-      className: resolveCTAClass(primaryVariant)
+      variant: primary.variant,
+      href: primary.href,
+      className: resolveCTAClass(primary.variant),
     },
     secondaryButton: {
-      variant: secondaryVariant,
-      href: secondaryHref,
-      className: resolveCTAClass(secondaryVariant)
-    }
+      variant: secondary.variant,
+      href: secondary.href,
+      className: resolveCTAClass(secondary.variant),
+    },
   };
 };
 
@@ -198,7 +184,6 @@ const DaisyUISlideshow = ({
   interval = 5000,
   sessionSize = DEFAULT_SESSION_SIZE,
   regionLabel = DEFAULT_REGION_LABEL,
-  takeawayUrl,
   bookOnlineUrl,
 }: DaisyUISlideshowProps) => {
   const normalizedSlides = useMemo(
@@ -467,7 +452,7 @@ const DaisyUISlideshow = ({
       >
         {sessionSlides.map((slide, index) => {
           const imageSrc = resolveImageSrc(slide.image);
-          const { primaryButton, secondaryButton } = getCTAConfig(slide, index, takeawayUrl, bookOnlineUrl);
+          const { primaryButton, secondaryButton } = getCTAConfig(slide, bookOnlineUrl);
           const shouldRenderCTAs = Boolean(primaryButton.href || secondaryButton.href);
           return (
             <div

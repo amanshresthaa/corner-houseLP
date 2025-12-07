@@ -22,6 +22,7 @@ export interface ModuleConfig {
   files: string[];
   dependencies: string[];
   condition?: string;
+  mountPath?: string;
   size: 'small' | 'medium' | 'large';
 }
 

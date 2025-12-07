@@ -1,30 +1,60 @@
 {
   "site": {
-    "name": "The White Horse Waterbeach",
-    "title": "Historic Thatched Pub & Nepalese Restaurant", 
-    "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Book: +44 1223 375578",
+    "name": "The Corner House Cambridge",
+    "title": "The Corner House Cambridge - Sports Pub & Nepalese Kitchen on Newmarket Road",
+    "description": "1930s art-deco pub near Cambridge city centre serving authentic Nepalese curries, pub classics, and Sunday roasts with HD sports screens, heated garden cabins, and friendly table service. Call: +44 1223 921122.",
     "keywords": [
-      "pub Waterbeach",
-      "Nepalese restaurant Cambridge", 
+      "sports pub Cambridge",
+      "Nepalese restaurant Cambridge",
+      "momo Cambridge",
+      "goat curry Cambridge",
+      "HD screens pub Cambridge",
+      "beer garden Cambridge",
+      "heated cabins pub",
       "family friendly pub Cambridge",
-      "dog friendly pub Waterbeach",
-      "historic thatched pub",
-      "Waterbeach College pub",
-      "takeaway Cambridge"
+      "quiz night Cambridge pub",
+      "Lapen Inns",
+      "Newmarket Road pub",
+      "takeaway Cambridge",
+      "Deliveroo Cambridge Nepalese",
+      "Sunday roast Cambridge"
     ],
     "branding": {
-      "tagline": "A unique blend of authentic Nepalese cuisine and traditional British pub culture",
-      "slogan": "Where heritage meets hospitality"
+      "tagline": "Cambridge's go-to sports pub with Nepalese plates and cosy snugs.",
+      "slogan": "Pints, momos, and matchday energy on Newmarket Road since the 1930s."
     }
   },
   "navigation": {
     "header": {
       "links": [
-        { "href": "/", "label": "Home" },
-        { "href": "/menu", "label": "Menu" },
-        { "href": "/about", "label": "About" },
-        { "href": "/events", "label": "Events" },
-        { "href": "/contact", "label": "Contact" }
+        {
+          "href": "/",
+          "label": "Home"
+        },
+        {
+          "href": "/menu#starters",
+          "label": "Menu"
+        },
+        {
+          "href": "/about",
+          "label": "About"
+        },
+        {
+          "href": "/events",
+          "label": "Events"
+        },
+        {
+          "href": "/book-a-table",
+          "label": "Book a Table"
+        },
+        {
+          "href": "/press",
+          "label": "Press"
+        },
+        {
+          "href": "/contact",
+          "label": "Contact"
+        }
       ]
     },
     "footer": {
@@ -32,25 +62,47 @@
         {
           "title": "Quick Links",
           "links": [
-            { "href": "/menu", "label": "Menu" },
-            { "href": "/about", "label": "About" },
-            { "href": "/events", "label": "Events" },
-            { "href": "/contact", "label": "Contact" }
+            {
+              "href": "/menu#starters",
+              "label": "Menu"
+            },
+            {
+              "href": "/about",
+              "label": "About"
+            },
+            {
+              "href": "/events",
+              "label": "Events"
+            },
+            {
+              "href": "/contact",
+              "label": "Contact"
+            }
           ]
         },
         {
           "title": "Legal",
           "links": [
-            { "href": "/tos", "label": "Terms of Service" },
-            { "href": "/privacy-policy", "label": "Privacy Policy" }
+            {
+              "href": "/tos",
+              "label": "Terms of Service"
+            },
+            {
+              "href": "/privacy-policy",
+              "label": "Privacy Policy"
+            }
           ]
         }
       ],
-      "copyright": "© 2025 The White Horse Waterbeach. All rights reserved.",
+      "copyright": "© 2025 The Corner House Cambridge. All rights reserved.",
       "socialMedia": {
         "facebook": {
-          "url": "https://www.facebook.com/people/The-White-Horse/61572172781807/",
-          "label": "Follow us on Facebook"
+          "url": "https://www.facebook.com/search/top?q=Corner%20House%20Cambridge",
+          "label": "Find The Corner House Cambridge on Facebook"
+        },
+        "instagram": {
+          "url": "https://www.instagram.com/cornerhousepub",
+          "label": "Follow @cornerhousepub on Instagram"
         }
       }
     },
@@ -58,5 +110,8 @@
       "home": "Home",
       "separator": "/"
     }
+  },
+  "links": {
+    "bookOnline": "https://thecornerhousepub.co/book-a-table/"
   }
 }

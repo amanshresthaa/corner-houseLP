@@ -16,8 +16,8 @@ import fs from 'fs/promises';
 // Mock restaurant data for testing
 const mockRestaurantData = {
   name: "The Himalayan Spice",
-  phone: "+44 1223 375578",
-  email: "whitehorse@lapeninns.com",
+  phone: "+44 1223 921122",
+  email: "cornerhouse@lapeninns.com",
   address: {
     street: "123 Main Street",
     city: "London",
@@ -54,8 +54,8 @@ describe('RestaurantSmartLoader', () => {
       
       expect(result.data).toBeDefined();
       expect(result.data.name).toBe("The Himalayan Spice");
-      expect(result.data.phone).toBe("+44 1223 375578");
-      expect(result.data.email).toBe("whitehorse@lapeninns.com");
+      expect(result.data.phone).toBe("+44 1223 921122");
+      expect(result.data.email).toBe("cornerhouse@lapeninns.com");
       expect(result.data.address).toEqual({
         street: "123 Main Street",
         city: "London",
@@ -94,7 +94,7 @@ describe('RestaurantSmartLoader', () => {
       
       expect(restaurant).toBeDefined();
       expect(restaurant.name).toBe("The Himalayan Spice");
-      expect(restaurant.phone).toBe("+44 1223 375578");
+      expect(restaurant.phone).toBe("+44 1223 921122");
     });
   });
 

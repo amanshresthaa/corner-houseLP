@@ -207,7 +207,7 @@ const SUPPORT_POINTS = [
   {
     icon: "📍",
     title: "Central to Waterbeach",
-    description: "Right on the green at 12 Greenside with easy access from Cambridge.",
+    description: "Right on the green at 231 Newmarket Road with easy access from Cambridge.",
   },
 ];
 

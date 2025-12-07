@@ -1,32 +1,53 @@
 {
+  "seo": {
+    "title": "Events & What's On | The Corner House Cambridge - Live Sports, Quiz Night, Cabins",
+    "description": "HD sports on wall-to-wall screens and an outdoor projector, weekly quiz nights, cosy heated cabins, and flexible spaces for groups on Newmarket Road.",
+    "canonicalUrlRelative": "/events"
+  },
   "hero": {
-    "title": "What's On & Community Events",
-    "subtitle": "Recurring favourites plus seasonal highlights reflecting Waterbeach village life & Cambridge academic rhythm. Call to reserve or enquire about group space."
+    "badgeLabel": "What’s On",
+    "title": "Events & What's On",
+    "subtitle": "Matchdays, quiz nights, live music pop-ups, and private heated cabins for your crew",
+    "buttons": {
+      "book": "Book for Big Games",
+      "viewMenu": "View Menu"
+    },
+    "badges": [
+      "HD Screens",
+      "Heated Cabins",
+      "Quiz Night"
+    ]
   },
   "regularEvents": [
     {
-      "title": "Order Online (Daily)",
-      "description": "Order Bhutuwa chicken, momo and Gurkha lager for collection or delivery any day.",
-      "frequency": "Available daily",
-      "icon": "🛍️"
-    },
-    {
-      "title": "Live Sports Highlights",
-      "description": "Sky and TNT Sports fixtures on the big screens, with garden overflow when the sun's out.",
-      "frequency": "Major fixtures schedule",
+      "title": "Matchday Live",
+      "description": "Wall-to-wall HD screens indoors plus an outdoor projector for the biggest fixtures. Close to Abbey Stadium for pre- and post-match pints and curries.",
+      "frequency": "Every matchday & major tournaments",
       "icon": "⚽"
     },
     {
-      "title": "Sunday Curry Evenings",
-      "description": "Nepalese curries and tandoor specials served through the afternoon and evening — perfect for relaxed gatherings.",
-      "frequency": "Sundays 12:00 PM - 8:00 PM",
-      "icon": "🍛"
+      "title": "Weekly Quiz Night",
+      "description": "Gather a team for a friendly quiz with prizes, great pints, and Nepalese bar snacks.",
+      "frequency": "Weekly (check schedule)",
+      "icon": "🧠"
+    },
+    {
+      "title": "Live Music & Open Mic",
+      "description": "Occasional acoustic sets and open-mic evenings keep the front bar buzzing.",
+      "frequency": "Monthly pop-ups",
+      "icon": "🎸"
+    },
+    {
+      "title": "Heated Cabin Bookings",
+      "description": "Reserve a private, heated garden cabin for small groups — perfect for celebrations or matchday bases.",
+      "frequency": "Available year-round",
+      "icon": "🔥"
     }
   ],
   "contact": {
-    "title": "Book Your Event",
-    "description": "Planning a private event? Get in touch to discuss your requirements.",
-    "phone": "+44 1223 375578",
-    "email": "whitehorse@lapeninns.com"
+    "title": "Plan your visit",
+    "description": "Book a table or heated cabin for matchdays, quizzes, and group celebrations.",
+    "phone": "+44 1223 921122",
+    "email": "cornerhouse@lapeninns.com"
   }
 }

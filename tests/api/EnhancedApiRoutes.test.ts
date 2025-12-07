@@ -55,8 +55,8 @@ jest.mock('@/src/lib/data/loaders/RestaurantSmartLoader', () => ({
     loadSmart: jest.fn().mockResolvedValue({
       data: {
         name: "The Himalayan Spice",
-        phone: "+44 1223 375578",
-        email: "whitehorse@lapeninns.com",
+        phone: "+44 1223 921122",
+        email: "cornerhouse@lapeninns.com",
         address: {
           street: "123 Main Street",
           city: "London",

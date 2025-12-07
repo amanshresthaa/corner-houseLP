@@ -103,7 +103,7 @@
       "elements": [
         { "type": "title", "text": "Takeaway Available" },
         { "type": "copy", "text": "Enjoy our Nepalese cuisine from home. Call to place your collection order." },
-        { "type": "primary_cta", "label": "Call to Order: +44 1223 375578" },
+        { "type": "primary_cta", "label": "Call to Order: +44 1223 921122" },
         { "type": "secondary_actions", "items": ["Download Takeaway Menu", "Book a Table", "Email the Team"] }
       ]
     },
@@ -112,7 +112,7 @@
       "name": "Contact & Location",
       "layout": "two-column",
       "elements": [
-        { "type": "contact_panel", "fields": ["12 Greenside, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com"] },
+        { "type": "contact_panel", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com"] },
         {
           "type": "opening_times",
           "groups": [
@@ -138,7 +138,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge mixing authentic Nepalese cuisine with British pub comforts." },
-        { "type": "column", "title": "Contact", "fields": ["12 Greenside, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Home", "Menu", "About", "Events", "Press", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -214,7 +214,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Home", "Menu", "Menu Information", "Takeaway Menu", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -255,7 +255,7 @@
       "layout": "alert-banner",
       "elements": [
         { "type": "icon", "value": "warning" },
-        { "type": "copy", "text": "Severe allergies? Call +44 1223 375578 before visiting to discuss safety protocols." }
+        { "type": "copy", "text": "Severe allergies? Call +44 1223 921122 before visiting to discuss safety protocols." }
       ]
     },
     {
@@ -296,9 +296,9 @@
       "layout": "centered-panel",
       "elements": [
         { "type": "section_title", "text": "Still Have Questions?" },
-        { "type": "contact_option", "label": "Call Us", "value": "+44 1223 375578" },
-        { "type": "contact_option", "label": "Email Us", "value": "whitehorse@lapeninns.com" },
-        { "type": "paragraph", "text": "Location: 12 Green Side, Waterbeach, Cambridge CB25 9HP" }
+        { "type": "contact_option", "label": "Call Us", "value": "+44 1223 921122" },
+        { "type": "contact_option", "label": "Email Us", "value": "cornerhouse@lapeninns.com" },
+        { "type": "paragraph", "text": "Location: 231 Newmarket Road, Cambridge CB5 8JE" }
       ]
     },
     {
@@ -315,7 +315,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Menu", "Menu Information", "Takeaway Menu", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -348,8 +348,8 @@
         { "type": "badge", "text": "Takeaway Menu" },
         { "type": "headline", "text": "Download the The White Horse Waterbeach Takeaway Menu" },
         { "type": "subheadline", "text": "Browse Nepalese signatures and British pub favourites, then call to place your order for collection." },
-        { "type": "buttons", "items": ["Download Menu", "Call to Order"], "links": ["/takeaway-menu/the-white-horse-takeaway-menu.jpg", "tel:+441223375578"] },
-        { "type": "support_text", "text": "Need help? Email whitehorse@lapeninns.com for the latest copy." }
+        { "type": "buttons", "items": ["Download Menu", "Call to Order"], "links": ["/takeaway-menu/the-white-horse-takeaway-menu.jpg", "tel:+441223921122"] },
+        { "type": "support_text", "text": "Need help? Email cornerhouse@lapeninns.com for the latest copy." }
       ]
     },
     {
@@ -368,7 +368,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Menu", "Takeaway Menu", "Order Takeaway", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Kitchen takeaway hours follow kitchen schedule; confirm when calling." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -437,7 +437,7 @@
         { "type": "title", "text": "Ready to Book?" },
         { "type": "copy", "text": "Experience the perfect blend of Nepalese hospitality and British pub tradition." },
         { "type": "button", "labels": ["Book Online"], "links": ["/book-a-table"] },
-        { "type": "contact_details", "fields": ["12 Greenside, Waterbeach, Cambridge CB25 9HP", "See footer for full hours"] }
+        { "type": "contact_details", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "See footer for full hours"] }
       ]
     },
     {
@@ -446,7 +446,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Home", "Menu", "Events", "Press", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -550,7 +550,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Events", "Curry & Carols", "Private Hire", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -583,7 +583,7 @@
         { "type": "badge", "text": "Menu Now Live" },
         { "type": "headline", "text": "Curry & Carols 2025 at The White Horse Waterbeach" },
         { "type": "subheadline", "text": "Two sparkling nights of Nepalese curry, mulled cheer, and live carols under the thatched roof." },
-        { "type": "buttons", "items": ["Register Interest", "Read the Evening Standard feature"], "links": ["mailto:whitehorse@lapeninns.com", "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html"] },
+        { "type": "buttons", "items": ["Register Interest", "Read the Evening Standard feature"], "links": ["mailto:cornerhouse@lapeninns.com", "https://www.standard.co.uk/going-out/bars/the-white-horse-girton-hotel-pub-review-b1249473.html"] },
         { "type": "badges", "items": ["16 & 17 December", "£35 per guest", "Live Choir"] }
       ]
     },
@@ -614,7 +614,7 @@
       "elements": [
         { "type": "image_placeholder", "text": "Photography coming soon" },
         { "type": "list", "items": ["Dates: 16 & 17 December 2025", "Price: £35 per guest", "Ideal for: work dos, choirs, families" ] },
-        { "type": "buttons", "items": ["Email the team", "Explore dining bookings"], "links": ["mailto:whitehorse@lapeninns.com?subject=Curry%20and%20Carols%202025%20Interest", "/book-a-table"] }
+        { "type": "buttons", "items": ["Email the team", "Explore dining bookings"], "links": ["mailto:cornerhouse@lapeninns.com?subject=Curry%20and%20Carols%202025%20Interest", "/book-a-table"] }
       ]
     },
     {
@@ -624,7 +624,7 @@
       "elements": [
         { "type": "title", "text": "Questions while you wait?" },
         { "type": "copy", "text": "Chat through dietary needs, group sizes, or corporate hire ideas." },
-        { "type": "contact_options", "items": ["📞 +44 1223 375578", "✉️ whitehorse@lapeninns.com"] }
+        { "type": "contact_options", "items": ["📞 +44 1223 921122", "✉️ cornerhouse@lapeninns.com"] }
       ]
     },
     {
@@ -633,7 +633,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Events", "Curry & Carols", "Curry & Carols Menu", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -704,7 +704,7 @@
       "layout": "two-column",
       "elements": [
         { "type": "list", "title": "Press Kit & Quick Facts", "items": ["England's largest thatched pub", "Authentic Nepalese cuisine", "Family & dog friendly", "Garden & private dining"] },
-        { "type": "contact_panel", "fields": ["Email: whitehorse@lapeninns.com", "Phone: +44 1223 375578", "Address: 12 Greenside, Waterbeach, Cambridge CB25 9HP"], "buttons": ["Email Press Team", "Contact Page"], "notes": "Imagery available on request." }
+        { "type": "contact_panel", "fields": ["Email: cornerhouse@lapeninns.com", "Phone: +44 1223 921122", "Address: 231 Newmarket Road, Cambridge CB5 8JE"], "buttons": ["Email Press Team", "Contact Page"], "notes": "Imagery available on request." }
       ]
     },
     {
@@ -713,7 +713,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["Press: whitehorse@lapeninns.com", "Media phone: +44 1223 375578", "Address: 12 Green Side, Waterbeach"] },
+{ "type": "column", "title": "Contact", "fields": ["Press: cornerhouse@lapeninns.com", "Media phone: +44 1223 921122", "Address: 231 Newmarket Road, Cambridge"] },
         { "type": "column", "title": "Quick Links", "items": ["Press Kit", "Media Highlights", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -782,7 +782,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Blog", "Press", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -850,7 +850,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Blog", "Press", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -883,7 +883,7 @@
         { "type": "headline", "text": "Christmas Menu 2025" },
         { "type": "subheadline", "text": "Pick a starter, main, side, and dessert – mulled wine or drink included." },
         { "type": "chips", "items": ["Set menu £44.99", "Festive dining", "Mulled welcome"] },
-        { "type": "buttons", "items": ["Request Booking", "Download Menu"], "links": ["mailto:whitehorse@lapeninns.com?subject=Christmas%20Menu%202025", "/christmas-menu.pdf"] }
+        { "type": "buttons", "items": ["Request Booking", "Download Menu"], "links": ["mailto:cornerhouse@lapeninns.com?subject=Christmas%20Menu%202025", "/christmas-menu.pdf"] }
       ]
     },
     {
@@ -923,7 +923,7 @@
       "layout": "two-column",
       "elements": [
         { "type": "copy", "text": "Contact the events team for availability, custom timings, or private space." },
-        { "type": "contact_options", "items": ["📞 +44 1223 375578", "✉️ whitehorse@lapeninns.com"] }
+        { "type": "contact_options", "items": ["📞 +44 1223 921122", "✉️ cornerhouse@lapeninns.com"] }
       ]
     },
     {
@@ -932,7 +932,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Christmas Menu", "Curry & Carols", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Holiday trading hours shared on enquiry." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -965,7 +965,7 @@
         { "type": "badge", "text": "Menu Now Live" },
         { "type": "headline", "text": "Curry & Carols Menu 2025" },
         { "type": "subheadline", "text": "Share starters, choose warming mains, finish with festive desserts while live carols fill the room." },
-        { "type": "buttons", "items": ["Register Interest", "Contact the Team"], "links": ["mailto:whitehorse@lapeninns.com?subject=Curry%20and%20Carols%20Menu", "/contact"] }
+        { "type": "buttons", "items": ["Register Interest", "Contact the Team"], "links": ["mailto:cornerhouse@lapeninns.com?subject=Curry%20and%20Carols%20Menu", "/contact"] }
       ]
     },
     {
@@ -1004,7 +1004,7 @@
       "layout": "centered-panel",
       "elements": [
         { "type": "title", "text": "Ready to reserve your table?" },
-        { "type": "buttons", "items": ["Email the team", "Call to enquire"], "links": ["mailto:whitehorse@lapeninns.com?subject=Curry%20and%20Carols%20Booking", "tel:+441223375578"] }
+        { "type": "buttons", "items": ["Email the team", "Call to enquire"], "links": ["mailto:cornerhouse@lapeninns.com?subject=Curry%20and%20Carols%20Booking", "tel:+441223921122"] }
       ]
     },
     {
@@ -1013,7 +1013,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Curry & Carols", "Menu", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Event seating opens 18:00; service 19:00–22:00." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -1074,7 +1074,7 @@
       "layout": "centered-panel",
       "elements": [
         { "type": "copy", "text": "Compassionate team ready to support planning." },
-        { "type": "buttons", "items": ["Email the team", "Call to discuss"], "links": ["mailto:whitehorse@lapeninns.com?subject=Wakes%20Menu%20Enquiry", "tel:+441223375578"] }
+        { "type": "buttons", "items": ["Email the team", "Call to discuss"], "links": ["mailto:cornerhouse@lapeninns.com?subject=Wakes%20Menu%20Enquiry", "tel:+441223921122"] }
       ]
     },
     {
@@ -1083,7 +1083,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Wakes Menu", "Events", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Private hire timings arranged on enquiry." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -1123,7 +1123,7 @@
       "layout": "two-column",
       "elements": [
         { "type": "section_title", "text": "Contact Information" },
-        { "type": "contact_panel", "fields": ["Phone: +44 1223 375578", "Address: 12 Green Side, Waterbeach, Cambridge, CB25 9HP"] },
+        { "type": "contact_panel", "fields": ["Phone: +44 1223 921122", "Address: 231 Newmarket Road, Cambridge CB5 8JE"] },
         { "type": "hours_card", "title": "Opening Hours", "content": "Hours drawn from restaurant data component." },
         { "type": "feature_list", "items": ["Outdoor terrace", "Free parking", "Dog-friendly", "Accessible", "Free WiFi", "Private dining"] }
       ]
@@ -1142,7 +1142,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Menu", "Events", "Press", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar: Mon–Thu 12:00–22:00 · Fri–Sat 12:00–23:00 · Sun 12:00–22:00 | Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00 · Sat 12:00–22:00 · Sun 12:00–21:00" },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -1199,7 +1199,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Privacy Policy", "Terms of Service", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },
@@ -1256,7 +1256,7 @@
       "layout": "multi-column",
       "elements": [
         { "type": "column", "title": "About", "content": "Historic thatched pub near Cambridge blending Nepalese cuisine with British classics." },
-        { "type": "column", "title": "Contact", "fields": ["12 Green Side, Waterbeach, Cambridge, CB25 9HP", "+44 1223 375578", "whitehorse@lapeninns.com", "Directions"] },
+        { "type": "column", "title": "Contact", "fields": ["231 Newmarket Road, Cambridge CB5 8JE", "+44 1223 921122", "cornerhouse@lapeninns.com", "Directions"] },
         { "type": "column", "title": "Quick Links", "items": ["Terms of Service", "Privacy Policy", "Contact"] },
         { "type": "column", "title": "Hours", "content": "Bar & kitchen hours as per footer." },
         { "type": "legal", "content": "© 2025 The White Horse Waterbeach — Privacy Policy / Terms of Service" },

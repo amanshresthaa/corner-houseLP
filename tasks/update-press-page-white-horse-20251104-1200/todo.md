@@ -18,5 +18,5 @@
 - [ ] Manual QA via Chrome DevTools
 
 ## Notes/Assumptions
-- Address displayed as "12 Greenside" per Markdown; site address remains centrally configured as "12 Green Side" for now.
+- Address displayed as "231 Newmarket Road" per Markdown; site address remains centrally configured as "231 Newmarket Road" for now.
 

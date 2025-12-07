@@ -18,18 +18,18 @@ describe('ContactInfoSection', () => {
   const mockPhone = {
     title: 'Phone',
     description: 'Call us for bookings',
-    number: '+44 1223 375578',
-    href: 'tel:+441223375578'
+    number: '+44 1223 921122',
+    href: 'tel:+441223921122'
   };
 
   const mockLocation = {
     title: 'Location',
     description: 'Just 3 miles from Cambridge',
-    address: '12 Greenside, Waterbeach, Cambridge, CB25 9HP'
+    address: '231 Newmarket Road, Cambridge CB5 8JE'
   };
 
   const mockEmail = {
-    address: 'whitehorse@lapeninns.com'
+    address: 'cornerhouse@lapeninns.com'
   };
 
   it('renders phone and location information correctly', () => {
@@ -38,31 +38,31 @@ describe('ContactInfoSection', () => {
     // Check phone section
     expect(screen.getByText('Phone')).toBeInTheDocument();
     expect(screen.getByText('Call us for bookings')).toBeInTheDocument();
-    expect(screen.getByText('+44 1223 375578')).toBeInTheDocument();
+    expect(screen.getByText('+44 1223 921122')).toBeInTheDocument();
     
     // Check location section
     expect(screen.getByText('Location')).toBeInTheDocument();
     expect(screen.getByText('Just 3 miles from Cambridge')).toBeInTheDocument();
-    expect(screen.getByText('12 Greenside')).toBeInTheDocument();
-    expect(screen.getByText('CB25 9HP')).toBeInTheDocument();
+    expect(screen.getByText('231 Newmarket Road')).toBeInTheDocument();
+    expect(screen.getByText('CB5 8JE')).toBeInTheDocument();
     
     // Check email section
     expect(screen.getByText('Email')).toBeInTheDocument();
-    expect(screen.getByText('whitehorse@lapeninns.com')).toBeInTheDocument();
+    expect(screen.getByText('cornerhouse@lapeninns.com')).toBeInTheDocument();
   });
 
   it('renders phone link with correct href', () => {
     render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
 
-    const phoneLink = screen.getByRole('link', { name: '+44 1223 375578' });
-    expect(phoneLink).toHaveAttribute('href', 'tel:+441223375578');
+    const phoneLink = screen.getByRole('link', { name: '+44 1223 921122' });
+    expect(phoneLink).toHaveAttribute('href', 'tel:+441223921122');
   });
 
   it('renders email link with correct href', () => {
     render(<ContactInfoSection phone={mockPhone} location={mockLocation} email={mockEmail} />);
 
-    const emailLink = screen.getByRole('link', { name: /email restaurant at whitehorse@lapeninns.com/i });
-    expect(emailLink).toHaveAttribute('href', 'mailto:whitehorse@lapeninns.com');
+    const emailLink = screen.getByRole('link', { name: /email restaurant at cornerhouse@lapeninns.com/i });
+    expect(emailLink).toHaveAttribute('href', 'mailto:cornerhouse@lapeninns.com');
   });
 
   it('parses multi-line address correctly', () => {

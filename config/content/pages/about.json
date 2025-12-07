@@ -1,36 +1,51 @@
 {
+  "seo": {
+    "title": "About The Corner House Cambridge | Our Story & Mission",
+    "description": "1930s art-deco pub on Newmarket Road blending HD sports with authentic Nepalese cuisine, heated cabins, and a warm Cambridge welcome.",
+    "canonicalUrlRelative": "/about",
+    "openGraph": {
+      "title": "About The Corner House – Pints, Momos, and Matchday Energy",
+      "description": "How a historic Cambridge pub became the city’s go-to sports pub with a full Nepalese kitchen and cosy snugs.",
+      "url": "https://thecornerhousepub.co/about"
+    }
+  },
   "hero": {
-    "title": "About The White Horse Waterbeach",
-    "subtitle": "England's largest thatched pub, relaunched February 2025 with Himalayan hospitality and village spirit."
+    "title": "About The Corner House",
+    "subtitle": "Cambridge’s go-to sports pub with Nepalese plates and cosy snugs on Newmarket Road."
   },
   "story": {
     "title": "Our Story",
-    "introduction": "Opposite Waterbeach village green, The White Horse has anchored the community since its 1890 coaching inn days. Saved from redevelopment and revived by Lapen Inns on 6 February 2025, we now pair authentic Nepalese cooking with the warmth of a classic British pub.",
+    "introduction": "Built in the 1930s as a corner pub, The Corner House now pairs authentic Nepalese cooking with a lively sports bar atmosphere. After earning CAMRA’s Most Improved City Pub award in 2020, the pub entered a new chapter in late 2024 under Lapen Inns, installing a Nepalese kitchen while keeping real ale, HD screens, and the community spirit alive.",
     "timeline": [
       {
-        "period": "1890s",
-        "title": "Coaching Inn Origins",
-        "description": "Built for boat crews and railway travellers, the thatched White Horse quickly became Waterbeach's social hub."
+        "period": "1930s",
+        "title": "Art-deco corner pub opens",
+        "description": "The Corner House takes its place on Newmarket Road, becoming a local landmark with its distinctive facade and fireplaces."
       },
       {
-        "period": "2024",
-        "title": "Community Preservation",
-        "description": "Locals rallied to protect the pub from redevelopment, restoring its garden cabins, terrace and historic frontage."
+        "period": "2020",
+        "title": "CAMRA ‘Most Improved City Pub’",
+        "description": "Recognised by Cambridge & District CAMRA for revitalising beer quality and the community pub experience."
+      },
+      {
+        "period": "Late 2024",
+        "title": "Nepalese kitchen & sports hub relaunch",
+        "description": "Lapen Inns integrates a full Nepalese menu (momos, Himali Lamb, Chicken Rum Rum) with HD sports, heated garden cabins, and family-friendly service."
       },
       {
         "period": "2025",
-        "title": "Lapen Inns Relaunch",
-        "description": "On 6 February 2025 the Gautam family reopened the doors, introducing a Nepalese kitchen while keeping cask ales, Sky Sports and village events alive."
+        "title": "Travelers’ Choice & 5★ hygiene",
+        "description": "Tripadvisor Travelers’ Choice 2025 plus a 5-star food hygiene rating underscore consistent quality and care."
       }
     ]
   },
   "cta": {
-    "title": "Plan Your Visit",
-    "description": "Call or email to reserve a table, enquire about events or arrange collection or delivery from Waterbeach's revived thatched pub.",
-    "button": "Call +44 1223 375578",
+    "title": "Visit The Corner House",
+    "description": "Book a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites.",
+    "button": "Call +44 1223 921122",
     "contact": {
-      "address": "12 Greenside, Waterbeach, Cambridge CB25 9HP",
-      "hours": "Kitchen: Mon-Fri 12:00-15:00 & 17:00-22:00; Sat 12:00-22:00; Sun 10:00-20:00"
+      "address": "231 Newmarket Road, Cambridge CB5 8JE",
+      "hours": "Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00; Sat 12:00–22:00; Sun 12:00–21:00. Bar: Mon–Thu/Sun 12:00–22:00; Fri–Sat 12:00–23:00."
     }
   }
 }

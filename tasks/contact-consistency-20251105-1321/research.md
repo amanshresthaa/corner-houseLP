@@ -17,5 +17,5 @@
 - Centralize code paths on `getContactInfo()`; remove hardcoded fallbacks.
 - Normalize fallback contact in `lib/restaurantData.ts` to the single phone/email.
 - Bulk replace content/test literals to the canonical values:
-  - Phone: `+44 1223 375578` (display and tel sanitized to `tel:+441223375578`).
-  - Email: `whitehorse@lapeninns.com`.
+  - Phone: `+44 1223 921122` (display and tel sanitized to `tel:+441223921122`).
+  - Email: `cornerhouse@lapeninns.com`.

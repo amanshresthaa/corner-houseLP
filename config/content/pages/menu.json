@@ -1,14 +1,30 @@
 {
+  "seo": {
+    "title": "Menu | Authentic Nepalese Cuisine & British Pub Classics | The White Horse Waterbeach",
+    "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call +44 1223 921122.",
+    "keywords": "authentic Nepalese menu Cambridge, Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo Cambridge, dal bhat, tandoori king prawns, curry Waterbeach, Baltis, Jalfrezis, pub classics, cask ales, collection & delivery Cambridge, takeaway Cambridge, Greene King IPA, Timothy Taylor Landlord",
+    "openGraph": {
+      "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
+      "description": "Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Waterbeach's historic thatched pub",
+      "url": "https://whitehorsepub.co//menu",
+      "siteName": "The White Horse Waterbeach",
+      "locale": "en_GB",
+      "type": "website"
+    }
+  },
   "hero": {
-    "title": "Our Menu: Authentic Nepalese & Traditional British Cuisine",
-    "subtitle": "Bhutuwa chicken, Pokhareli fish curry, momo and British comfort plates served within Waterbeach's thatched coaching inn.",
+    "title": "Our Menu: Authentic Nepalese Cuisine & British Pub Classics",
+    "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to British favourites and well-kept cask ales.",
     "cta": {
       "book": "Book Online",
-      "order": "Order Online"
+      "order": "Order for Collection or Delivery: +44 1223 921122"
     }
   },
   "sections": {
-    "description": "Our Nepalese kitchen is led by the Gautam family, with dishes cooked to order and spice levels suited to every guest.",
+    "description": "Experience authentic Nepalese cuisine prepared by talented chefs Ravi Acharya and Purna Man Bajrachaya, alongside traditional British pub favourites.",
     "allergenNotice": "Please inform us of any allergies or dietary requirements when ordering."
+  },
+  "messages": {
+    "loading": "Loading menu..."
   }
 }

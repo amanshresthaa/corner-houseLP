@@ -12,16 +12,18 @@
     "currentPage": "Current page",
     "menuButton": "Menu button",
     "socialMedia": "Social media links",
-    "contactInfo": "Contact information"
+    "contactInfo": "Contact information",
+    "slideshowRegion": "Featured experiences slideshow",
+    "showcaseSection": "Restaurant showcase"
   },
   "altTexts": {
-    "logo": "The White Horse Waterbeach logo",
-    "heroBanner": "Historic thatched pub exterior",
-    "defaultImage": "Restaurant image",
+    "logo": "The Corner House Cambridge logo",
+    "heroBanner": "Art-deco Corner House pub exterior on Newmarket Road with signage and garden cabins",
+    "defaultImage": "The Corner House Cambridge interior with Nepalese dishes",
     "profilePicture": "Profile picture",
     "background": "Background image"
   },
   "descriptions": {
-    "siteDescription": "Historic thatched pub and Nepalese restaurant website"
+    "siteDescription": "Cambridge sports pub with Nepalese kitchen, HD screens, and heated garden cabins"
   }
 }

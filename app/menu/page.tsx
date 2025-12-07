@@ -52,13 +52,16 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const postalAddress = getPostalAddressSchema();
 	const telHref = contact.phone.tel;
 	const phoneDisplay = contact.phone.display;
-	const takeawayHref = (content.global as any)?.links?.takeaway as string | undefined;
 	const bookingUrl = contact.bookingUrl ?? '/book-a-table';
 	const bookingExternal = bookingUrl.startsWith('http');
 
 		const labels = m.buttons || {};
 		const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline;
-	const labelOrderTakeaway = labels.orderTakeaway || menuContent.hero.cta.order || `Order Online: ${phoneDisplay}`;
+	const callLabel =
+		labels.callTakeaway ||
+		labels.callUs ||
+		content.global.ui.buttons.callNow ||
+		`Call ${phoneDisplay}`;
 	const allergenNotice = menuContent.sections.allergenNotice;
 	const menuDescription = menuContent.sections.description;
 	const formattedAddress = `${contact.address.street}, ${contact.address.area}, ${contact.address.city} ${contact.address.postcode}`;
@@ -138,7 +141,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const defaultSelectedStarters = startersSection ? normalizeId(startersSection.id || startersSection.name) : null;
 	const menuServiceCta = {
 		headline: 'Plan Your Visit to The White Horse',
-		description: 'Reserve your table, arrange a takeaway, or download our full menu before you arrive.',
+		description: 'Reserve your table or chat with the team before you arrive.',
 		buttons: [
 			{
 				text: 'Book a Table',
@@ -147,16 +150,10 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 				key: 'menu-cta-book-table',
 			},
 			{
-				text: contact.orderUrl ? 'Order for Collection' : labelOrderTakeaway,
-				href: contact.orderUrl ?? contact.phone.tel,
+				text: callLabel,
+				href: contact.phone.tel,
 				variant: 'accent' as const,
-				key: 'menu-cta-order',
-			},
-			{
-				text: 'Order Online',
-				href: '/takeaway',
-				variant: 'crimson' as const,
-				key: 'menu-cta-takeaway',
+				key: 'menu-cta-call',
 			},
 		],
 	};
@@ -184,11 +181,9 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 								target: bookingExternal ? '_blank' : '_self',
 							},
 							orderTakeaway: {
-								label: takeawayHref
-									? (content?.global?.ui?.buttons?.orderTakeaway as string) || 'Order Online'
-									: `Call ${phoneDisplay}`,
-									url: (takeawayHref as string) || contact?.phone?.tel,
-								},
+								label: callLabel,
+								url: contact?.phone?.tel,
+							},
 							},
 						}}
 					/>

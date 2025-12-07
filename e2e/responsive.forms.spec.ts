@@ -132,7 +132,7 @@ test.describe('Responsive Forms', () => {
     const phoneField = modal.getByLabel(/phone/i);
     
     if (await nameField.isVisible()) await nameField.fill('Test User');
-    if (await phoneField.isVisible()) await phoneField.fill('+44 1223 375578');
+    if (await phoneField.isVisible()) await phoneField.fill('+44 1223 921122');
     
     // Submit form
     const submitButton = modal.getByRole('button', { name: /request|book|submit/i });

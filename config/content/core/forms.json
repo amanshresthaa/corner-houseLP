@@ -4,49 +4,22 @@
     "email": "Please enter a valid email address",
     "phone": "Please enter a valid phone number",
     "minLength": "Must be at least {min} characters",
-    "maxLength": "Must be no more than {max} characters",
-    "pattern": "Please enter a valid format",
-    "number": "Please enter a valid number",
-    "url": "Please enter a valid URL",
-    "date": "Please enter a valid date",
-    "time": "Please enter a valid time"
+    "maxLength": "Must be no more than {max} characters"
   },
   "messages": {
     "success": "Thank you! We'll get back to you soon.",
     "error": "Sorry, something went wrong. Please try again.",
-    "submitting": "Submitting...",
-    "submitting": "Submitting form...",
-    "validating": "Validating...",
-    "checkEmail": "Please check your email for confirmation",
-    "emailSent": "Email sent successfully",
-    "reservationConfirmed": "Reservation confirmed",
-    "contactReceived": "Thank you for contacting us. We'll get back to you soon."
+    "submitting": "Submitting..."
   },
   "labels": {
     "name": "Name",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "email": "Email Address",
+    "email": "Email",
     "phone": "Phone",
     "message": "Message",
     "subject": "Subject",
     "partySize": "Party Size",
     "date": "Date",
     "time": "Time",
-    "specialRequests": "Special Requests",
-    "newsletter": "Subscribe to newsletter",
-    "terms": "I agree to the terms and conditions",
-    "privacy": "I agree to the privacy policy"
-  },
-  "placeholders": {
-    "name": "Enter your full name",
-    "firstName": "Enter your first name",
-    "lastName": "Enter your last name",
-    "email": "whitehorse@lapeninns.com",
-    "phone": "+44 1223 375578",
-    "message": "Enter your message here...",
-    "subject": "What can we help you with?",
-    "company": "Your company name",
-    "specialRequests": "Any dietary requirements or special requests?"
+    "specialRequests": "Special Requests"
   }
 }

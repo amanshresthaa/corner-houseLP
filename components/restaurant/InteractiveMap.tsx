@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { getAddress, getRestaurantIdentity } from '@/lib/restaurantData';
+import { getAddress, getRestaurantIdentity, getMapLinks } from '@/lib/restaurantData';
 
 interface InteractiveMapProps {
   className?: string;
@@ -14,7 +14,7 @@ interface InteractiveMapProps {
 export default function InteractiveMap({ 
   className = "h-[600px] bg-neutral-50 rounded-xl shadow-lg overflow-hidden",
   height = "100%",
-  title = "The White Horse Waterbeach Location",
+  title,
   directionLabel = 'Get Directions',
   hintLabel = 'Click for directions'
 }: InteractiveMapProps) {
@@ -22,16 +22,17 @@ export default function InteractiveMap({
 
   const address = getAddress();
   const identity = getRestaurantIdentity();
+  const mapLinks = getMapLinks();
 
   const lat = address.coordinates.lat.toString();
   const lng = address.coordinates.lng.toString();
 
-  const googleHref = address.map.google ?? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`;
-  const appleHref = address.map.apple ?? `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+  const googleHref = mapLinks.google;
+  const appleHref = mapLinks.apple;
   const appleNative = `maps://?daddr=${lat},${lng}&dirflg=d`;
   // Prefer a fixed-place embed (address label). Fallback to coordinates.
   const searchQuery = encodeURIComponent(`${identity.displayName}, ${address.street}, ${address.area}, ${address.city} ${address.postcode}`);
-  const embedSrc = address.map.embed || `https://www.google.com/maps?&q=${searchQuery}&z=15&output=embed`;
+  const embedSrc = mapLinks.embed || `https://www.google.com/maps?&q=${searchQuery}&z=15&output=embed`;
 
   const handleMapClick = () => {
     const isiOS = typeof navigator !== 'undefined' && /iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -60,6 +61,8 @@ export default function InteractiveMap({
     }
   };
 
+  const mapTitle = title || `${identity.displayName} Location`;
+
   return (
     <div className={className}>
       <div 
@@ -84,7 +87,7 @@ export default function InteractiveMap({
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title={title}
+          title={mapTitle}
           className="pointer-events-none"
         />
 

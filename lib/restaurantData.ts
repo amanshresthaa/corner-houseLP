@@ -123,55 +123,56 @@ export interface MenuItem {
 }
 
 const FALLBACK_IDENTITY: NormalizedIdentity = {
-  name: 'The White Horse',
-  displayName: 'The White Horse Waterbeach',
-  tagline: 'Village coaching inn with Nepalese soul',
+  name: 'The Corner House',
+  displayName: 'The Corner House Cambridge',
+  tagline: "Cambridge's go-to sports pub with Nepalese plates and cosy snugs.",
   description:
-    'Village coaching inn reborn on Waterbeach green serving Nepalese feasts and pub favourites all day.',
-  established: '1890',
+    '1930s art-deco pub on Newmarket Road serving Nepalese dishes, pub classics, and HD sports with heated cabins.',
+  established: '1930s',
   type: 'pub-restaurant',
   cuisine: ['Nepalese', 'British Classics', 'Pub Favourites'],
-  slug: 'the-white-horse',
+  slug: 'the-corner-house-cambridge',
 };
 
 const FALLBACK_ADDRESS: NormalizedAddress = {
-  street: '12 Greenside',
-  area: 'Waterbeach',
+  street: '231 Newmarket Road',
+  area: 'Cambridge',
   city: 'Cambridge',
   state: 'Cambridgeshire',
-  postcode: 'CB25 9HP',
-  zip: 'CB25 9HP',
+  postcode: 'CB5 8JE',
+  zip: 'CB5 8JE',
   country: 'United Kingdom',
   coordinates: {
-    lat: 52.2662426,
-    lng: 0.1913944,
+    lat: 52.20948,
+    lng: 0.14335,
   },
   map: {
-    google: 'https://www.google.com/maps/dir/?api=1&destination=52.2662426,0.1913944&travelmode=driving',
-    apple: 'https://maps.apple.com/?daddr=52.2662426,0.1913944&dirflg=d',
-    embed: undefined,
+    google: 'https://www.google.com/maps/dir/?api=1&destination=52.20948,0.14335&travelmode=driving',
+    apple: 'https://maps.apple.com/?daddr=52.20948,0.14335&dirflg=d',
+    embed:
+      'https://www.google.com/maps?&q=The%20Corner%20House%20Cambridge%2C%20231%20Newmarket%20Road%2C%20Cambridge%20CB5%208JE&z=15&output=embed',
   },
   timezone: 'Europe/London',
 };
 
 const FALLBACK_CONTACT_BASE: ContactFallback = {
   phone: {
-    primary: '+44 1223 375578',
-    display: '+44 1223 375578',
-    tel: sanitizeTel('+44 1223 375578'),
-    whatsapp: '+44 1223 375578',
+    primary: '+44 1223 921122',
+    display: '+44 1223 921122',
+    tel: sanitizeTel('+44 1223 921122'),
+    whatsapp: '+44 1223 921122',
   },
   email: {
-    primary: 'whitehorse@lapeninns.com',
-    bookings: 'whitehorse@lapeninns.com',
-    events: 'whitehorse@lapeninns.com',
-    press: 'whitehorse@lapeninns.com',
-    support: 'whitehorse@lapeninns.com',
+    primary: 'cornerhouse@lapeninns.com',
+    bookings: 'cornerhouse@lapeninns.com',
+    events: 'cornerhouse@lapeninns.com',
+    press: 'cornerhouse@lapeninns.com',
+    support: 'cornerhouse@lapeninns.com',
   },
   website: 'https://whitehorsepub.co',
   bookingUrl: undefined,
   orderUrl: undefined,
-  enquiryUrl: 'mailto:whitehorse@lapeninns.com',
+  enquiryUrl: 'mailto:cornerhouse@lapeninns.com',
 };
 
 const FALLBACK_HOURS: DetailedHours = {
@@ -231,7 +232,7 @@ const FALLBACK_SOCIAL: SocialCollection = {
     url: 'https://visitsouthcambs.co.uk/hospitality/the-white-horse/',
   },
   google: {
-    url: 'https://www.google.com/maps?q=52.2662426,0.1913944',
+    url: 'https://www.google.com/maps?q=52.20948,0.14335',
   },
 };
 
@@ -241,7 +242,7 @@ const FALLBACK_BOOKING = {
   leadTimeMinutes: 0,
   partySizeLimit: 12,
   depositRequired: false,
-  cancellationPolicy: 'Please phone or email The White Horse team to amend or cancel your booking.',
+  cancellationPolicy: 'Please phone or email The Corner House team to amend or cancel your booking.',
 };
 
 const FALLBACK_META = {
@@ -597,6 +598,29 @@ export const getContactInfo = (): NormalizedContact => ({
 });
 
 export const getAddress = (): NormalizedAddress => cloneAddress(restaurantData.address);
+
+export const getMapLinks = () => {
+  const address = restaurantData.address;
+  const lat = address.coordinates.lat;
+  const lng = address.coordinates.lng;
+  return {
+    google: address.map.google ?? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=driving`,
+    apple: address.map.apple ?? `https://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`,
+    embed:
+      address.map.embed ??
+      `https://www.google.com/maps?&q=${encodeURIComponent(`${restaurantData.identity.displayName}, ${address.street}, ${address.area}, ${address.city} ${address.postcode}`)}&z=15&output=embed`,
+  } as const;
+};
+
+export const getReviewLinks = () => {
+  const social = restaurantData.social;
+  const maps = getMapLinks();
+  return {
+    facebook: social.facebook?.url,
+    tripadvisor: social.tripadvisor?.url,
+    google: social.google?.url ?? maps.google,
+  } as const;
+};
 
 export const getPostalAddressSchema = () => {
   const address = restaurantData.address;

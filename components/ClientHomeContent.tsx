@@ -118,7 +118,6 @@ export default function ClientHomeContent({ sections, slideshow, ariaLabels, lin
             settings={slideshow?.settings}
             regionLabel={ariaLabels?.slideshowRegion ?? slideshow?.settings?.regionLabel}
             sectionLabel={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel}
-            takeawayUrl={links?.takeaway}
             bookOnlineUrl={links?.bookOnline}
           />
         </section>

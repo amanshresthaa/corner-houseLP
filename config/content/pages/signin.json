@@ -1,13 +1,13 @@
 {
-  "title": "Sign-in to {appName}",
+  "title": "Sign in to The Corner House",
   "subtitle": "Access your account",
   "form": {
     "email": {
       "label": "Email",
-      "placeholder": "whitehorse@lapeninns.com"
+      "placeholder": "cornerhouse@lapeninns.com"
     },
     "buttons": {
-      "google": "Sign-up with Google",
+      "google": "Sign in with Google",
       "magicLink": "Send Magic Link",
       "divider": "OR"
     },

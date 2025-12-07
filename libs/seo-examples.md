@@ -173,9 +173,9 @@ export default function EventsPage() {
         name: "The White Horse Waterbeach",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "12 Greenside",
+          streetAddress: "231 Newmarket Road",
           addressLocality: "Waterbeach",
-          postalCode: "CB25 9HP",
+          postalCode: "CB5 8JE",
           addressCountry: "GB"
         }
       },

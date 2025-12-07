@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import config from "@/config";
-import { getRestaurantIdentity, getContactInfo, getAddress, getHours } from "@/lib/restaurantData";
+import { getRestaurantIdentity, getContactInfo, getAddress, getHours, getReviewLinks } from "@/lib/restaurantData";
 
 /**
  * Contract for getSEOTags inputs.
@@ -105,6 +105,8 @@ export const renderSchemaTags = (schemas?: Array<Record<string, any>>): ReactEle
     };
   });
 
+  const reviewLinks = getReviewLinks();
+
   const defaultSchema: Record<string, any> = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -132,11 +134,7 @@ export const renderSchemaTags = (schemas?: Array<Record<string, any>>): ReactEle
     priceRange: "££",
     acceptsReservations: true,
     hasMenu: `https://${config.domainName}/menu`,
-    sameAs: [
-      'https://www.facebook.com/people/The-White-Horse/61572172781807/',
-      'https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html',
-      'https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP'
-    ],
+    sameAs: [reviewLinks.facebook, reviewLinks.tripadvisor, reviewLinks.google].filter(Boolean),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.5",

@@ -6,7 +6,7 @@ import imgExteriorWelcome from '@cimages/Slideshow/whitehorsebuilding.png';
 import imgBarPouring from '@cimages/Slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png';
 import imgGardenEvenings from '@cimages/Slideshow/beer-garden-picnic-benches-and-sky-portrait.png';
 import imgSignatureDish from '@cimages/Slideshow/steamed-momo-with-spicy-sauce-portrait.png';
-import { getRestaurantIdentity, getContactInfo, getHours, getMenu, getTestimonials } from '@/lib/restaurantData';
+import { getRestaurantIdentity, getContactInfo, getHours, getMenu, getTestimonials, getReviewLinks } from '@/lib/restaurantData';
 
 // Schema.org types for restaurant
 interface RestaurantSchema {
@@ -154,6 +154,7 @@ interface PropertyValue {
 const buildBaseData = () => {
   const identity = getRestaurantIdentity();
   const contact = getContactInfo();
+  const reviewLinks = getReviewLinks();
   const hours = getHours();
   const menu = getMenu();
   
@@ -186,7 +187,7 @@ const buildBaseData = () => {
   });
   
   const paymentMethods = ['Cash', 'Credit Card', 'Debit Card', 'Contactless'];
-  return { identity, contact, menu, openingHours, paymentMethods };
+  return { identity, contact, menu, openingHours, paymentMethods, reviewLinks };
 };
 
 // Sample menu data for schema
@@ -293,7 +294,7 @@ export const useRestaurantSchema = () => {
       priceRange: '££',
       paymentAccepted: data.paymentMethods,
       currenciesAccepted: 'GBP',
-      hasMenu: 'https://whitehorsepub.co/menu',
+      hasMenu: data.contact.website ? `${data.contact.website.replace(/\/$/, '')}/menu` : undefined,
       image: [
         absoluteUrl(typeof imgExteriorWelcome === 'string' ? imgExteriorWelcome : (imgExteriorWelcome as any)),
         absoluteUrl(typeof imgBarPouring === 'string' ? imgBarPouring : (imgBarPouring as any)),
@@ -302,10 +303,10 @@ export const useRestaurantSchema = () => {
       ],
       logo: absoluteUrl('/images/brand/whitehorse-logo.png'),
       sameAs: [
-        'https://www.facebook.com/people/The-White-Horse/61572172781807/',
-        'https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html',
-        'https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP'
-      ],
+        data.reviewLinks.facebook,
+        data.reviewLinks.tripadvisor,
+        data.reviewLinks.google,
+      ].filter(Boolean),
       smokingAllowed: false,
       acceptsReservations: true,
       foundingDate: data.identity.established,

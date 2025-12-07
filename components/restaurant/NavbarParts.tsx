@@ -8,7 +8,6 @@ import { useContent } from '@/hooks/useContent';
 import { NavDataSchema, NavDataParsed } from '@/lib/schemas';
 import { sanitizeHref, createHrefKey, isValidHref, logHrefIssue } from '@/utils/href';
 import type { HrefType } from '@/utils/href';
-import { isOnlineDeliveryHref } from '@/utils/onlineDelivery';
 
 export interface SanitizedNavLink {
   key: string;
@@ -147,88 +146,46 @@ export function NavLinks({
       <ul className={listClass}>
         {links.map((link) => {
           const hrefStr = typeof link.href === 'string' ? link.href : undefined;
-          const isOnlineDeliveryLink = isOnlineDeliveryHref(hrefStr);
-
-          const isOrderTakeaway =
-            /order\s*(takeaway|online)/i.test(link.label) ||
-            isOnlineDeliveryLink;
-
           const isExternal = !!hrefStr && /^https?:\/\//i.test(hrefStr);
-          const openInNewTab = isExternal || isOnlineDeliveryLink;
+          const openInNewTab = isExternal;
           const newTabRel = openInNewTab ? 'noopener noreferrer' : undefined;
 
           return (
             <li key={link.key}>
-              {isOrderTakeaway ? (
-                isExternal ? (
-                  <a
-                    href={hrefStr}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={onNavigate}
-                    className={
-                      isVertical
-                        ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
-                        : 'btn blueprint-btn relative text-white font-semibold'
-                    }
-                    aria-label={`${link.label} – delivery available (min £20, free up to 3 miles), 10% off collection`}
-                  >
-                    <span aria-hidden className="blueprint-corners" />
-                    <span className="relative z-[1]">{link.label}</span>
-                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (min £20, ≤3mi free)</span>
-                  </a>
-                ) : (
-                  <Link
-                    href={link.href}
-                    onClick={onNavigate}
-                    target={openInNewTab ? '_blank' : undefined}
-                    rel={newTabRel}
-                    className={
-                      isVertical
-                        ? 'btn blueprint-btn justify-start w-full relative text-white font-semibold'
-                        : 'btn blueprint-btn relative text-white font-semibold'
-                    }
-                    aria-label={`${link.label} – delivery available (min £20, free up to 3 miles), 10% off collection`}
-                  >
-                    <span aria-hidden className="blueprint-corners" />
-                    <span className="relative z-[1]">{link.label}</span>
-                    <span aria-hidden className="blueprint-corner-note hidden xs:block">🏷️ 10% off · 🛵 delivery (min £20, ≤3mi free)</span>
-                  </Link>
-                )
+              {isExternal ? (
+                <a
+                  href={hrefStr}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onNavigate}
+                  className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
+                >
+                  {link.isSeasonal ? (
+                    <>
+                      <span aria-hidden="true" className="text-lg leading-none">🎄</span>
+                      <span className="font-semibold">{link.label}</span>
+                    </>
+                  ) : (
+                    link.label
+                  )}
+                </a>
               ) : (
-                isExternal ? (
-                  <a
-                    href={hrefStr}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={onNavigate}
-                    className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
-                  >
-                    {link.isSeasonal ? (
-                      <>
-                        <span aria-hidden="true" className="text-lg leading-none">🎄</span>
-                        <span className="font-semibold">{link.label}</span>
-                      </>
-                    ) : (
-                      link.label
-                    )}
-                  </a>
-                ) : (
-                  <Link
-                    href={link.href}
-                    onClick={onNavigate}
-                    className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
-                  >
-                    {link.isSeasonal ? (
-                      <>
-                        <span aria-hidden="true" className="text-lg leading-none">🎄</span>
-                        <span className="font-semibold">{link.label}</span>
-                      </>
-                    ) : (
-                      link.label
-                    )}
-                  </Link>
-                )
+                <Link
+                  href={link.href}
+                  onClick={onNavigate}
+                  className={link.isSeasonal ? seasonalLinkClass : defaultLinkClass}
+                  target={openInNewTab ? '_blank' : undefined}
+                  rel={newTabRel}
+                >
+                  {link.isSeasonal ? (
+                    <>
+                      <span aria-hidden="true" className="text-lg leading-none">🎄</span>
+                      <span className="font-semibold">{link.label}</span>
+                    </>
+                  ) : (
+                    link.label
+                  )}
+                </Link>
               )}
             </li>
           );

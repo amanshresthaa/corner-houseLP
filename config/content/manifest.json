@@ -1,76 +1,220 @@
 {
-  "version": "1.0.0",
-  "description": "Content module manifest for Restaurant_BP",
-  "lastUpdated": "2025-01-27T00:00:00Z",
+  "version": "1.1.0",
+  "description": "Content module manifest for The Corner House Cambridge (per-module, mount-path aligned)",
+  "lastUpdated": "2025-12-07T19:05:00Z",
   "modules": {
-    "core": {
+    "core/global": {
       "priority": 1,
       "loadStrategy": "always",
       "cacheDuration": 1800000,
-      "description": "Core content that should always be loaded",
-      "files": [
-        "core/global.json",
-        "core/ui.json", 
-        "core/accessibility.json"
-      ],
+      "files": ["core/global.json"],
       "dependencies": [],
+      "mountPath": "global",
       "size": "small"
     },
-    "pages": {
-      "priority": 2,
-      "loadStrategy": "lazy",
-      "cacheDuration": 600000,
-      "description": "Page-specific content loaded on demand",
-      "files": [
-        "pages/home.json",
-        "pages/about.json",
-        "pages/contact.json",
-        "pages/events.json",
-        "pages/menu.json",
-        "pages/privacy.json",
-        "pages/tos.json",
-        "pages/offline.json",
-        "pages/notFound.json"
-      ],
-      "dependencies": ["core"],
-      "size": "medium"
-    },
-    "components": {
-      "priority": 3,
-      "loadStrategy": "lazy",
-      "cacheDuration": 300000,
-      "description": "Component-specific content loaded when components are used",
-      "files": [
-        "components/testimonials.json",
-        "components/faq.json",
-        "components/menuHighlights.json"
-      ],
-      "dependencies": ["core"],
+    "core/ui": {
+      "priority": 1,
+      "loadStrategy": "always",
+      "cacheDuration": 1800000,
+      "files": ["core/ui.json"],
+      "dependencies": ["core/global"],
+      "mountPath": "global.ui",
       "size": "small"
     },
-    "forms": {
+    "core/accessibility": {
+      "priority": 1,
+      "loadStrategy": "always",
+      "cacheDuration": 1800000,
+      "files": ["core/accessibility.json"],
+      "dependencies": ["core/global"],
+      "mountPath": "global.accessibility",
+      "size": "small"
+    },
+    "core/forms": {
       "priority": 2,
       "loadStrategy": "conditional",
       "cacheDuration": 900000,
-      "description": "Form-related content loaded when forms are present",
-      "files": [
-        "core/forms.json"
-      ],
-      "dependencies": ["core"],
       "condition": "hasFormsOnPage",
+      "files": ["core/forms.json"],
+      "dependencies": ["core/global"],
+      "mountPath": "forms",
       "size": "small"
     },
-    "api": {
+
+    "pages/home": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 600000,
+      "files": ["pages/home.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.home",
+      "size": "medium"
+    },
+    "pages/about": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 600000,
+      "files": ["pages/about.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.about",
+      "size": "medium"
+    },
+    "pages/contact": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 600000,
+      "files": ["pages/contact.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.contact",
+      "size": "medium"
+    },
+    "pages/events": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 600000,
+      "files": ["pages/events.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.events",
+      "size": "medium"
+    },
+    "pages/menu": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 600000,
+      "files": ["pages/menu.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.menu",
+      "size": "medium"
+    },
+    "pages/privacy": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 600000,
+      "files": ["pages/privacy.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.privacy",
+      "size": "medium"
+    },
+    "pages/tos": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 600000,
+      "files": ["pages/tos.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.tos",
+      "size": "medium"
+    },
+    "pages/offline": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["pages/offline.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.offline",
+      "size": "small"
+    },
+    "pages/notFound": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["pages/notFound.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.notFound",
+      "size": "small"
+    },
+    "pages/signin": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["pages/signin.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.signin",
+      "size": "small"
+    },
+    "pages/dashboard": {
+      "priority": 2,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["pages/dashboard.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "pages.dashboard",
+      "size": "small"
+    },
+
+    "components/testimonials": {
+      "priority": 3,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["components/testimonials.json"],
+      "dependencies": ["core/global", "core/ui"],
+      "mountPath": "components.testimonials",
+      "size": "small"
+    },
+    "components/faq": {
+      "priority": 3,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["components/faq.json"],
+      "dependencies": ["core/global", "core/ui"],
+      "mountPath": "components.faq",
+      "size": "small"
+    },
+    "components/menuHighlights": {
+      "priority": 3,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["components/menuHighlights.json"],
+      "dependencies": ["core/global", "core/ui"],
+      "mountPath": "components.menuHighlights",
+      "size": "small"
+    },
+    "components/slideshow": {
+      "priority": 3,
+      "loadStrategy": "lazy",
+      "cacheDuration": 300000,
+      "files": ["components/slideshow.json"],
+      "dependencies": ["core/global", "core/ui", "core/accessibility"],
+      "mountPath": "components.slideshow",
+      "size": "medium"
+    },
+
+    "api/messages": {
       "priority": 4,
       "loadStrategy": "conditional",
       "cacheDuration": 600000,
-      "description": "API-related messages and error content",
-      "files": [
-        "api/messages.json",
-        "api/errors.json"
-      ],
-      "dependencies": ["core"],
+      "files": ["api/messages.json"],
+      "dependencies": ["core/global"],
+      "mountPath": "api.messages",
       "condition": "isAdminOrApiPage",
+      "size": "small"
+    },
+    "api/errors": {
+      "priority": 4,
+      "loadStrategy": "conditional",
+      "cacheDuration": 600000,
+      "files": ["api/errors.json"],
+      "dependencies": ["core/global"],
+      "mountPath": "api.errors",
+      "condition": "isAdminOrApiPage",
+      "size": "small"
+    },
+
+    "legal/terms": {
+      "priority": 4,
+      "loadStrategy": "lazy",
+      "cacheDuration": 900000,
+      "files": ["legal/terms.json"],
+      "dependencies": ["core/global"],
+      "mountPath": "legal.terms",
+      "size": "small"
+    },
+    "legal/privacy": {
+      "priority": 4,
+      "loadStrategy": "lazy",
+      "cacheDuration": 900000,
+      "files": ["legal/privacy.json"],
+      "dependencies": ["core/global"],
+      "mountPath": "legal.privacy",
       "size": "small"
     }
   },
@@ -84,32 +228,30 @@
   "environments": {
     "dev": {
       "inherits": "base",
-      "overrides": [
-        "environments/dev/overrides/"
-      ],
+      "overrides": ["environments/dev/overrides"],
       "debug": true,
-      "additionalModules": ["dev/debug.json"]
+      "additionalModules": [],
+      "excludeModules": []
     },
     "staging": {
       "inherits": "base",
-      "overrides": [
-        "environments/staging/overrides/"
-      ],
-      "debug": false
+      "overrides": ["environments/staging/overrides"],
+      "debug": false,
+      "additionalModules": [],
+      "excludeModules": []
     },
     "prod": {
-      "inherits": "base", 
-      "overrides": [
-        "environments/prod/overrides/"
-      ],
+      "inherits": "base",
+      "overrides": ["environments/prod/overrides"],
       "debug": false,
+      "additionalModules": [],
       "excludeModules": ["dev/*"]
     }
   },
   "performance": {
-    "preloadModules": ["core"],
-    "criticalModules": ["core/ui.json", "core/accessibility.json"],
-    "bundleModules": ["core/global.json", "core/ui.json"],
+    "preloadModules": ["core/global", "core/ui"],
+    "criticalModules": ["core/ui", "core/accessibility"],
+    "bundleModules": ["core/global", "core/ui"],
     "maxConcurrentLoads": 3,
     "enableCompression": true,
     "enableCDN": true

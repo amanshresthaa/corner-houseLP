@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { AutoMarquee } from './AutoMarquee';
+import { getReviewLinks } from '@/lib/restaurantData';
 
 interface Review {
   id: string;
@@ -159,6 +160,7 @@ const reviews: Review[] = [
 ];
 
 const TestimonialsSection: React.FC = () => {
+  const reviewLinks = getReviewLinks();
   const renderStars = (count: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <span key={i} className="text-yellow-400 text-lg md:text-xl drop-shadow-sm">
@@ -196,7 +198,7 @@ const TestimonialsSection: React.FC = () => {
             </p>
             <div className="flex items-center justify-center gap-4 md:gap-6 mt-2 md:mt-0 flex-wrap w-full">
               <a 
-                href="https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP"
+                href={reviewLinks.google}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
@@ -213,8 +215,8 @@ const TestimonialsSection: React.FC = () => {
                 <div className="w-1 h-8 bg-gradient-to-b from-brand-200 via-accent-300 to-brand-200 rounded-full"></div>
               </div>
               
-              <a 
-                href="https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html"
+              <a
+                href={reviewLinks.tripadvisor}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
@@ -269,7 +271,7 @@ const TestimonialsSection: React.FC = () => {
           <div className="mb-4 flex items-center justify-between">
             <h3 className="font-display text-xl font-bold text-stout-700">From Google Reviews</h3>
             <a
-              href="https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP"
+              href={reviewLinks.google}
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:underline"

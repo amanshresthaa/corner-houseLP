@@ -59,6 +59,8 @@ function Hero() {
   const bookingUrl = contact.bookingUrl ?? '/book-a-table';
   const bookingExternal = bookingUrl.startsWith('http');
   const bookingAria = bookingExternal ? `${contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'} (opens in new tab)` : (contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online');
+  const callLabel = contentConfig.global?.ui?.buttons?.callNow || 'Call Us';
+  const callAria = `${callLabel} at ${contact.phone.display}`;
   return (
     <section className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-10 md:py-16" aria-labelledby="about-hero">
       <div className="absolute inset-0 bg-black/10" />
@@ -91,12 +93,13 @@ function Hero() {
               {contentConfig.global?.ui?.buttons?.bookOnline || 'Book Online'}
             </Link>
           )}
-          <Link
-            href="/takeaway"
+          <a
+            href={contact.phone.tel}
             className="bg-brand-900 hover:bg-brand-950 text-white border-2 border-white/20 font-bold py-3 px-6 rounded-lg text-sm transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105"
+            aria-label={callAria}
           >
-            {contentConfig.global?.ui?.buttons?.orderTakeaway || 'Order Online'}
-          </Link>
+            {callLabel}
+          </a>
         </div>
       </div>
     </section>
@@ -196,6 +199,7 @@ function MissionVisionValues() {
 
 // 4) What You Do / Offer
 function WhatWeDo() {
+  const contact = getContactInfo();
   const items = [
     {
       title: "Dine-in",
@@ -203,9 +207,9 @@ function WhatWeDo() {
       cta: { label: "View Menu", href: "/menu" },
     },
     {
-      title: "Collection & Delivery",
-      text: "Enjoy our Nepalese kitchen at home  order online for collection or delivery.",
-      cta: { label: "Order Online", href: "/takeaway" },
+      title: "Call ahead",
+      text: "Prefer takeaway? Phone the team and we’ll have your favourites boxed and ready.",
+      cta: { label: "Call Us", href: contact.phone.tel },
     },
     {
       title: "Who we serve",

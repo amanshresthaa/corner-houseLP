@@ -15,8 +15,8 @@ export async function generateMetadata() {
   const content = await getContentSmart();
   const seo = (content.pages?.contact as any)?.seo || {};
   return getSEOTags({
-    title: seo.title || 'Contact The White Horse Waterbeach',
-    description: seo.description || 'Contact us for bookings, directions & enquiries.',
+    title: seo.title || 'Contact The Corner House Cambridge',
+    description: seo.description || 'Contact us for bookings, cabins, directions, or matchday enquiries on Newmarket Road.',
     keywords: seo.keywords,
     canonicalUrlRelative: seo.canonicalUrlRelative || '/contact',
     openGraph: seo.openGraph,
@@ -41,7 +41,7 @@ export default async function ContactPage() {
   };
   const locationInfo = {
     ...contactContent.contactInfo.location,
-    address: `${canonicalContact.address.street}, ${canonicalContact.address.area}, ${canonicalContact.address.city}, ${canonicalContact.address.postcode}`,
+    address: ADDRESS_LINE,
   };
   const emailInfo = {
     address: canonicalContact.email.primary,

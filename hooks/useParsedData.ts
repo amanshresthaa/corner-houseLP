@@ -1,29 +1,54 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import type { ZodSchema } from 'zod';
-import { fetchJSON } from '@/lib/dataLoader';
+import { useContent } from './useContent';
 
-export function useParsedData<T>(path: string, schema: ZodSchema<T>) {
-  const [data, setData] = useState<T | null>(null);
-  const [error, setError] = useState<Error | null>(null);
-  const [loading, setLoading] = useState(true);
+type SupportedPath = 'nav.json' | 'footer.json' | 'marketing.json' | 'home.json';
 
-  useEffect(() => {
-    let alive = true;
-    setLoading(true);
-    fetchJSON<T>(path)
-      .then((d) => {
-        if (path === 'nav.json') {
-          console.log('Nav data loaded:', JSON.stringify(d, null, 2));
-        }
-        const parsed = schema.safeParse(d);
-        if (!parsed.success) throw new Error('Invalid schema for ' + path + ': ' + JSON.stringify(parsed.error.flatten()));
-        if (alive) setData(parsed.data);
-      })
-      .catch((e) => { if (alive) setError(e as Error); })
-      .finally(() => { if (alive) setLoading(false); });
-    return () => { alive = false; };
-  }, [path, schema]);
+export function useParsedData<T>(path: SupportedPath, schema: ZodSchema<T>) {
+  const { data: content, error: contentError, loading: contentLoading } = useContent();
 
-  return { data, error, loading };
+  const derived = useMemo(() => {
+    if (!content) return null;
+    switch (path) {
+      case 'nav.json': {
+        const links = content.global?.navigation?.header?.links || [];
+        return { links } as any;
+      }
+      case 'footer.json': {
+        const sections = content.global?.navigation?.footer?.sections || [];
+        return { sections } as any;
+      }
+      case 'marketing.json': {
+        const buttons = content.global?.ui?.buttons || {};
+        return { buttons } as any;
+      }
+      case 'home.json': {
+        const hero = content.pages?.home?.hero;
+        return {
+          heroHeadline: hero?.title || content.global?.site?.title || 'Welcome',
+          heroSubheadline: hero?.subtitle || hero?.description || content.global?.site?.description || '',
+          heroCtaLabel: hero?.cta?.primary || content.global?.ui?.buttons?.getStarted || 'Get Started',
+          heroImage: '/images/brand/placeholder.png'
+        } as any;
+      }
+      default:
+        return null;
+    }
+  }, [content, path]);
+
+  const parsed = useMemo(() => {
+    if (!derived) return null;
+    const result = schema.safeParse(derived);
+    if (!result.success) {
+      console.warn('Schema validation failed for', path, result.error.flatten());
+      return null;
+    }
+    return result.data;
+  }, [derived, path, schema]);
+
+  const error = contentError || (derived && !parsed ? new Error('Schema validation failed') : null);
+  const loading = contentLoading || (!parsed && !error);
+
+  return { data: parsed, error, loading };
 }

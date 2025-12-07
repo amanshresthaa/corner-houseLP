@@ -6,20 +6,19 @@ import Link from '@/lib/debugLink';
 // PressFeatureBanner removed to keep page focused on essential, verified information
 import { getContactInfo, getAddress, getPostalAddressSchema, getRestaurantIdentity } from '@/lib/restaurantData';
 
-// Concise quick facts derived from the authoritative Markdown dossier
+const CONTACT = getContactInfo();
+const ADDRESS = getAddress();
+const POSTAL_ADDRESS = getPostalAddressSchema();
+const IDENTITY = getRestaurantIdentity();
+// Concise quick facts derived from the authoritative Markdown dossier, now using centralized data
 const PRESS_FACTS = [
-  "Address: 12 Greenside, Waterbeach, Cambridge, CB25 9HP",
-  "Phone: +44 1223 375578 • Email: whitehorse@lapeninns.com",
+  `Address: ${ADDRESS.street}, ${ADDRESS.area}, ${ADDRESS.city} ${ADDRESS.postcode}`,
+  `Phone: ${CONTACT.phone.display} • Email: ${CONTACT.email.primary}`,
   "Ownership: Lapen Inns",
   "Dual identity: Traditional village pub + authentic Nepalese restaurant",
   "Amenities: Live sports (Sky & TNT), large garden, outdoor seating, dog-friendly (bar area), family-friendly, pool table, takeaway, wheelchair access",
   "Cask ales: Greene King IPA, Timothy Taylor Landlord",
 ];
-
-const CONTACT = getContactInfo();
-const ADDRESS = getAddress();
-const POSTAL_ADDRESS = getPostalAddressSchema();
-const IDENTITY = getRestaurantIdentity();
 const MEDIA_CONTACT = {
   email: CONTACT.email.press || CONTACT.email.primary,
   phoneDisplay: CONTACT.phone.display,

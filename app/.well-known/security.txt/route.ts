@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server';
  * Standard security contact information
  */
 export async function GET() {
-  const securityTxt = `Contact: mailto:whitehorse@lapeninns.com
+  const securityTxt = `Contact: mailto:cornerhouse@lapeninns.com
 Expires: 2025-12-31T23:59:59.000Z
 Preferred-Languages: en`;
 

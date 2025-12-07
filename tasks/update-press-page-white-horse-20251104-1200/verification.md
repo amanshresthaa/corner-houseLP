@@ -46,7 +46,7 @@
 
 ## Known Issues
 
-- [ ] Global address renders as "12 Green Side" in contact block (central config) while Quick Facts uses "12 Greenside" per Markdown. Out of scope for this task.
+- [ ] Global address renders as "231 Newmarket Road" in contact block (central config) while Quick Facts uses "231 Newmarket Road" per Markdown. Out of scope for this task.
 - [ ] Existing service worker/manifest warnings in console unrelated to this change.
 
 ## Sign-off

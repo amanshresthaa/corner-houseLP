@@ -9,7 +9,7 @@
 ## Content & Tests
 - [x] Replace all Gmail/whitehorsepub.co/dev/staging emails
 - [x] Replace all local-number and legacy numbers
-- [x] Normalize tel: to `tel:+441223375578`
+- [x] Normalize tel: to `tel:+441223921122`
 - [x] Update placeholders in content and BookingForm
 - [x] Update tests to use canonical email/phone
 

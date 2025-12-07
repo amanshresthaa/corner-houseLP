@@ -1,27 +1,28 @@
 {
   "global": {
     "site": {
-      "name": "The White Horse",
-      "title": "The White Horse Waterbeach - Village Pub & Authentic Nepalese Restaurant",
-      "description": "A friendly neighbourhood pub opposite Waterbeach village green, serving authentic Nepalese cuisine and British pub classics. Cask ales, live sports, large garden. Dog & family-friendly. Call: +44 1223 375578",
+      "name": "The Corner House Cambridge",
+      "title": "The Corner House Cambridge - Sports Pub & Nepalese Kitchen on Newmarket Road",
+      "description": "1930s art-deco pub near Cambridge city centre serving authentic Nepalese curries, pub classics, and Sunday roasts with HD sports screens, heated garden cabins, and friendly table service. Call: +44 1223 921122.",
       "keywords": [
-        "pub Waterbeach",
+        "sports pub Cambridge",
         "Nepalese restaurant Cambridge",
-        "authentic Nepalese cuisine Waterbeach",
+        "momo Cambridge",
+        "goat curry Cambridge",
+        "HD screens pub Cambridge",
+        "beer garden Cambridge",
+        "heated cabins pub",
         "family friendly pub Cambridge",
-        "dog friendly pub Waterbeach",
-        "cask ales Cambridge",
-        "live sports pub Waterbeach",
-        "village green pub",
+        "quiz night Cambridge pub",
         "Lapen Inns",
+        "Newmarket Road pub",
         "takeaway Cambridge",
-        "Pokhareli fish curry",
-        "Bhutuwa chicken",
-        "momo Cambridge"
+        "Deliveroo Cambridge Nepalese",
+        "Sunday roast Cambridge"
       ],
       "branding": {
-        "tagline": "Where authentic Himalayan flavour meets quintessential British pub spirit",
-        "slogan": "A Waterbeach beacon - your community hub since 1890"
+        "tagline": "Cambridge's go-to sports pub with Nepalese plates and cosy snugs.",
+        "slogan": "Pints, momos, and matchday energy on Newmarket Road since the 1930s."
       }
     },
     "navigation": {
@@ -46,10 +47,6 @@
           {
             "href": "/book-a-table",
             "label": "Book a Table"
-          },
-          {
-            "href": "/online-delivery",
-            "label": "Order Online"
           },
           {
             "href": "/press",
@@ -98,11 +95,15 @@
             ]
           }
         ],
-        "copyright": "© 2025 The White Horse Waterbeach. All rights reserved.",
+        "copyright": "© 2025 The Corner House Cambridge. All rights reserved.",
         "socialMedia": {
           "facebook": {
-            "url": "https://www.facebook.com/people/The-White-Horse/61572172781807/",
-            "label": "Follow us on Facebook"
+            "url": "https://www.facebook.com/search/top?q=Corner%20House%20Cambridge",
+            "label": "Find The Corner House Cambridge on Facebook"
+          },
+          "instagram": {
+            "url": "https://www.instagram.com/cornerhousepub",
+            "label": "Follow @cornerhousepub on Instagram"
           }
         }
       },
@@ -111,16 +112,16 @@
         "separator": "/"
       }
     },
+  "links": {
+    "bookOnline": "https://thecornerhousepub.co/book-a-table/"
+  },
     "ui": {
       "buttons": {
         "bookOnline": "Book Online",
         "viewMenu": "View Menu",
-        "orderTakeaway": "Order Online",
-        "orderCollection": "Order for Collection",
-        "orderDelivery": "Order for Delivery",
         "callNow": "Call Now",
         "callToBook": "Call to Book",
-        "callTakeaway": "Call to Order",
+        "callTakeaway": "Call Us",
         "getDirections": "Get Directions",
         "emailUs": "Email Us",
         "loadMore": "Load More",
@@ -177,7 +178,10 @@
         "cacheWarmingSuccess": "Cache warming initiated successfully",
         "cacheWarmingFailed": "Cache warming failed",
         "confirmationMessage": "We'll call you within 1 hour to confirm availability.",
-        "requiredFields": "Required fields"
+        "requiredFields": "Required fields",
+        "cacheHit": "[DEV] Content loaded from cache",
+        "cacheMiss": "[DEV] Content loaded from source",
+        "moduleLoaded": "[DEV] Module {name} loaded in {time}ms"
       },
       "placeholders": {
         "search": "Search...",
@@ -187,10 +191,6 @@
         "message": "Enter your message",
         "modalContent": "Modal content goes here"
       }
-    },
-    "links": {
-      "takeaway": "/online-delivery",
-      "bookOnline": "https://www.nabatable.com/restaurants/white-horse-pub-waterbeach/book"
     },
     "accessibility": {
       "ariaLabels": {
@@ -211,217 +211,236 @@
         "showcaseSection": "Restaurant showcase"
       },
       "altTexts": {
-        "logo": "The White Horse Waterbeach logo",
-        "heroBanner": "Historic thatched pub exterior",
-        "defaultImage": "Restaurant image",
+        "logo": "The Corner House Cambridge logo",
+        "heroBanner": "Art-deco Corner House pub exterior on Newmarket Road with signage and garden cabins",
+        "defaultImage": "The Corner House Cambridge interior with Nepalese dishes",
         "profilePicture": "Profile picture",
         "background": "Background image"
       },
       "descriptions": {
-        "siteDescription": "Historic thatched pub and Nepalese restaurant website"
+        "siteDescription": "Cambridge sports pub with Nepalese kitchen, HD screens, and heated garden cabins"
       }
+    }
+  },
+  "forms": {
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number",
+      "minLength": "Must be at least {min} characters",
+      "maxLength": "Must be no more than {max} characters"
+    },
+    "messages": {
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Sorry, something went wrong. Please try again.",
+      "submitting": "Submitting..."
+    },
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "subject": "Subject",
+      "partySize": "Party Size",
+      "date": "Date",
+      "time": "Time",
+      "specialRequests": "Special Requests"
     }
   },
   "pages": {
     "home": {
       "hero": {
-        "title": "The White Horse, Waterbeach - A Revitalised Community Hub",
-        "subtitle": "Opposite the village green: authentic Nepalese cuisine meets traditional British pub comfort.",
-        "description": "Your friendly neighbourhood pub in the heart of Waterbeach. Enjoy authentic Nepalese dishes alongside British pub classics, cask ales, live sports, and a warm welcome for families and dogs. Saved from redevelopment and relaunched February 2025 by Lapen Inns.",
+        "title": "The Corner House, Cambridge – Sports Pub & Nepalese Kitchen",
+        "subtitle": "Matchday energy, heated garden cabins, and authentic Himalayan plates on Newmarket Road.",
+        "description": "1930s art-deco pub reborn as Cambridge’s home for HD sports, momos, and roasts. Settle into a snug, book a heated cabin, or grab a curry before the game.",
         "cta": {
-          "primary": "Call +44 1223 375578",
-          "secondary": "View Menu",
-          "primaryHref": "tel:+441223375578",
-          "secondaryHref": "/menu#starters"
+          "primary": "Call +44 1223 921122",
+          "secondary": "Book a Table",
+          "primaryHref": "tel:+441223921122",
+          "secondaryHref": "/book-a-table"
         }
       },
       "sections": {
         "features": {
-          "title": "Why Waterbeach Chooses The White Horse",
+          "title": "Why Cambridge Chooses The Corner House",
           "items": [
             {
-              "icon": "🏡",
-              "title": "Village-green landmark",
-              "description": "1890 coaching inn saved from redevelopment and relaunched February 2025."
+              "icon": "📺",
+              "title": "Matchday HQ",
+              "description": "Wall-to-wall HD screens and an outdoor projector for big fixtures near Abbey Stadium."
             },
             {
               "icon": "🍛",
               "title": "Authentic Nepalese kitchen",
-              "description": "Gautam family recipes like Bhutuwa chicken and Pokhareli fish curry."
+              "description": "Nepali-chef favourites like momos, Chicken Rum Rum, Himali Lamb, and goat curry."
             },
             {
-              "icon": "📺",
-              "title": "Community calendar",
-              "description": "Sky & TNT Sports schedule and Friday collection & delivery."
+              "icon": "🔥",
+              "title": "Heated cabins & garden",
+              "description": "Book a private heated cabin or relax under lights in the covered beer garden year-round."
             },
             {
-              "icon": "🐾",
-              "title": "Families & dogs welcome",
-              "description": "Spacious garden cabins, free roadside parking, water bowls for four-legged regulars."
+              "icon": "♿",
+              "title": "Welcoming for all",
+              "description": "Family- and dog-friendly with wheelchair ramp access, accessible WC, and kids’ tweaks on request."
             }
           ]
         },
         "pressTicker": {
-          "label": "In the Press",
+          "label": "Awards & Ratings",
           "items": [
             {
-              "title": "Ely Standard: Waterbeach celebrates Nepalese relaunch",
-              "summary": "Local coverage of the February 2025 reopening that kept the village pub alive with Himalayan cooking.",
-              "ctaText": "Read article",
-              "href": "https://www.elystandard.co.uk/news/24942044.white-horse-waterbeach-reopens-nepalese-restaurant/"
+              "title": "Tripadvisor Travelers’ Choice 2025",
+              "summary": "Rated 4.6★ with consistent praise for Nepalese flavours and friendly service.",
+              "ctaText": "See reviews",
+              "href": "/press"
             },
             {
-              "title": "Cambridge News: Village pub rescued from redevelopment",
-              "summary": "Reports on the coaching inn's revival, pairing Sky Sports, cask ales and Nepalese feasts minutes from Cambridge.",
-              "ctaText": "See coverage",
-              "href": "https://www.cambridge-news.co.uk/whats-on/food-drink-news/cambridgeshire-village-pub-reopens-new-30923154"
+              "title": "Google Reviews 4.4★ (800+)",
+              "summary": "Locals love the curry-and-sports combo, heated cabins, and welcoming team.",
+              "ctaText": "View highlights",
+              "href": "/press"
+            },
+            {
+              "title": "CAMRA Most Improved City Pub (2020)",
+              "summary": "Recognised for quality beer and revitalised community pub experience.",
+              "ctaText": "Our story",
+              "href": "/about"
             }
           ]
         },
         "about": {
-          "title": "Welcome to The White Horse",
-          "tagline": "A Waterbeach village hub reborn with Himalayan hospitality",
+          "title": "Welcome to The Corner House",
+          "tagline": "Pints, momos, and matchday energy on Newmarket Road",
           "description": [
-            "Opposite Waterbeach village green, The White Horse is a relaxed, contemporary pub and restaurant saved from redevelopment and relaunched February 6, 2025 by Lapen Inns.",
-            "We blend the charm of a traditional British pub with an extensive menu of authentic Nepalese cuisine: Bhutuwa chicken, Pokhareli fish curry, and Rara king prawns sit happily beside British pub classics, well-kept cask ales, and live sports.",
-            "Families, locals, and visitors gather here for quality food, live sport, and a genuine welcome that extends to your four-legged friends in our large rear garden."
+            "A 1930s art-deco corner pub reinvented with a full Nepalese kitchen, proper pints, and HD sports just east of Cambridge city centre.",
+            "Grab sizzling mixed grills, Himali Lamb, or a Sunday roast before settling into our snugs, dining wing, or heated cabins.",
+            "Families, football fans, and food lovers all find a spot — with wheelchair access, friendly staff, and a cosy fire when it’s cold."
           ],
           "features": [
-            "Authentic Nepalese cuisine prepared with traditional recipes by Ravi Acharya and Purna Man Bajrachaya",
-            "Traditional British pub with cask ales: Greene King IPA and Timothy Taylor Landlord",
-            "Live sports on Sky Sports and TNT Sports with large garden and outdoor seating",
-            "Dog-friendly bar with water bowls and treats on hand"
+            "Authentic Nepalese cuisine prepared by Nepali chefs",
+            "HD screens plus outdoor projector for big games",
+            "Heated private cabins and covered beer garden",
+            "Accessible, family- and dog-friendly throughout"
           ],
           "image": {
             "src": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg",
-            "alt": "Thatched exterior of The White Horse Waterbeach facing the village green"
+            "alt": "Corner House Cambridge exterior on Newmarket Road with pub signage and garden seating"
           }
         },
         "signatureDishes": {
           "title": "Signature Nepalese Dishes",
-          "subtitle": "Press-lauded favourites from our authentic Himalayan kitchen",
+          "subtitle": "Pub classics meet Himalayan favourites",
           "items": [
             {
-              "name": "Lasun Kukhura Khursani (LKK) Chicken",
-              "description": "Garlicky chilli wok-fried chicken finished with toasted cumin and coriander, a fiery LKK favourite for spice lovers.",
+              "name": "Chicken Rum Rum",
+              "description": "House signature curry with tomato, ginger, and timmur pepper heat — medium and addictive.",
               "image": "/images/white-horse/dishes/signature-lkk-chicken.png"
             },
             {
               "name": "Himali Lamb",
-              "description": "Himalayan green curry of slow-braised lamb enriched with mint-yoghurt and fenugreek for a fragrant, velvety sauce.",
+              "description": "Slow-braised lamb in warming Himalayan spices with a velvety, aromatic sauce.",
               "image": "/images/white-horse/dishes/signature-himali-lamb.png"
             },
             {
               "name": "Khasi Ko Masu (Goat Curry)",
-              "description": "Traditional goat curry simmered low-and-slow with roasted spices and tomato, delivering deep warmth without overwhelming heat.",
+              "description": "Traditional goat curry simmered low-and-slow for deep flavour without overpowering heat.",
               "image": "/images/white-horse/dishes/signature-goat-curry.png"
             },
             {
               "name": "House Mixed Grill",
-              "description": "Sizzling platter stacked with wings, tikka, seekh kebab and lemon-splashed king prawn—ideal for sharing from the tandoor.",
+              "description": "Sizzling platter of wings, tikka, seekh kebab, and king prawn — perfect for sharing in the bar or cabins.",
               "image": "/images/white-horse/dishes/signature-house-mixed-grill.png"
             }
           ]
         },
         "reviews": {
           "title": "What Guests Say",
-          "subtitle": "Community reception and independent reviews",
+          "subtitle": "Real diners on food, service, and matchday atmosphere",
           "items": [
             {
-              "quote": "Tasty Nepalese food with quick service; staff were polite, friendly and informative.",
-              "source": "5★ — 20 Aug 2025 (Tripadvisor)",
-              "platform": "Tripadvisor",
+              "quote": "Superb Himali Lamb Curry and friendly staff who helped us navigate the Nepalese dishes.",
+              "source": "5★ — Tony B., TripAdvisor (Nov 2025)",
+              "platform": "TripAdvisor",
               "rating": 5
             },
             {
-              "quote": "A local gem with amazing food and a warm welcome.",
-              "source": "5★ — 23 Aug 2025 (Tripadvisor)",
-              "platform": "Tripadvisor",
+              "quote": "Perfect spot for a Cambridge reunion — attentive team, great drinks, brilliant atmosphere.",
+              "source": "5★ — Colin S., TripAdvisor (Nov 2025)",
+              "platform": "TripAdvisor",
               "rating": 5
             },
             {
-              "quote": "Team helped tailor spice levels; large group visit was a hit.",
-              "source": "5★ — 07 Aug 2025 (Tripadvisor)",
-              "platform": "Tripadvisor",
+              "quote": "Old pub with a twist. Nepalese curry was excellent and plenty of HD screens for the match.",
+              "source": "5★ — C.V., TripAdvisor (Oct 2025)",
+              "platform": "TripAdvisor",
               "rating": 5
             },
             {
-              "quote": "Welcoming pub; the Rum Rum Chicken stood out and service was friendly.",
-              "source": "4★ — 16 Jul 2025 (Tripadvisor)",
-              "platform": "Tripadvisor",
-              "rating": 4
-            },
-            {
-              "quote": "Excellent pub, very reasonable pricing… very attentive staff… food is absolutely amazing.",
-              "source": "5★ (Google Reviews)",
+              "quote": "Second time here — same delicious curry and very reasonable prices for Cambridge.",
+              "source": "5★ — Josh P., Google (Aug 2025)",
               "platform": "Google",
               "rating": 5
             },
             {
-              "quote": "Yummy food, friendly staff, no long wait. Dog-friendly. Lovely way to spend Mother's Day!",
-              "source": "5★ (Google Reviews)",
-              "platform": "Google",
-              "rating": 5
-            },
-            {
-              "quote": "Excellent service and food was amazing!",
-              "source": "5★ (Google Reviews)",
-              "platform": "Google",
+              "quote": "Family-friendly pub; staff handled dietary requests and the fireplace made it extra cosy.",
+              "source": "5★ — Frances D., TripAdvisor (Jan 2025)",
+              "platform": "TripAdvisor",
               "rating": 5
             }
           ]
         },
         "pressFeature": {
-          "label": "In the press",
-          "eyebrow": "Ely Standard & Cambridge News",
-          "title": "Village pub saved from redevelopment as Nepalese restaurant",
-          "summary": "Local media celebrates how Lapen Inns rescued The White Horse, bringing authentic Himalayan cuisine to Waterbeach while preserving the community pub.",
-          "quote": "\"The locals were more excited than I am - they thought it would be turned into flats. The regulars turned up and they were all very welcoming.\"",
-          "quoteAttribution": "Subodh Gautam, Owner - Ely Standard",
+          "label": "In the spotlight",
+          "eyebrow": "Awards & Community",
+          "title": "Tripadvisor Travelers’ Choice 2025 & CAMRA Most Improved City Pub",
+          "summary": "From CAMRA recognition in 2020 to a Travelers’ Choice badge in 2025, The Corner House continues to blend great beer, bold Nepalese flavours, and a welcoming local vibe.",
+          "quote": "Keeping the local alive with pints, momos, and matchday buzz on Newmarket Road.",
+          "quoteAttribution": "Lapen Inns Hospitality",
           "cta": {
-            "text": "Read the coverage",
-            "href": "https://www.elystandard.co.uk/news/24942044.white-horse-waterbeach-reopens-nepalese-restaurant/",
-            "ariaLabel": "Read Ely Standard coverage (opens in new tab)"
+            "text": "Explore our story",
+            "href": "/about",
+            "ariaLabel": "Read about The Corner House story"
           }
         },
         "quickLinks": [
           {
             "title": "Events & What's On",
-            "description": "Live sports viewing and seasonal community gatherings.",
+            "description": "Live sport schedules, quiz nights, and garden projector screenings.",
             "link": "/events",
             "linkText": "View Events →"
           },
           {
             "title": "Our Story",
-            "description": "How we saved a village pub and brought authentic Nepalese cuisine to Waterbeach.",
+            "description": "From a 1930s art-deco pub to Cambridge’s Nepalese sports hub.",
             "link": "/about",
             "linkText": "Read Our Story →"
           },
           {
             "title": "Our Menu",
-            "description": "Authentic Nepalese dishes alongside classic pub favorites.",
+            "description": "Momos, curries, grills, burgers, and Sunday roasts under one roof.",
             "link": "/menu#starters",
             "linkText": "View Menu →"
           }
         ],
         "cta": {
-          "headline": "Visit The White Horse - Your Waterbeach Community Hub",
-          "description": "Experience authentic Nepalese cuisine in a friendly British pub setting. Call to book or order for collection & delivery.",
+          "headline": "Visit The Corner House",
+          "description": "Book a heated cabin, catch the match, and enjoy Nepalese favourites with us.",
           "buttons": [
+            {
+              "text": "Book a Table",
+              "href": "/book-a-table",
+              "variant": "accent",
+              "key": "bookOnline"
+            },
             {
               "text": "View Menu",
               "href": "/menu#starters",
-              "variant": "accent",
-              "key": "viewMenu"
-            },
-            {
-              "text": "What's On",
-              "href": "/events",
               "variant": "brand"
             },
             {
-              "text": "Call +44 1223 375578",
-              "href": "tel:+441223375578",
+              "text": "Call +44 1223 921122",
+              "href": "tel:+441223921122",
               "variant": "crimson"
             }
           ]
@@ -432,56 +451,57 @@
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "The White Horse Waterbeach",
-            "url": "https://whitehorsepub.co/",
-            "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics.",
+            "name": "The Corner House Cambridge",
+            "url": "https://thecornerhousepub.co/",
+            "description": "Sports pub and Nepalese kitchen on Newmarket Road with heated cabins, HD screens, and friendly service.",
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://whitehorsepub.co/menu?search={search_term_string}",
+              "target": "https://thecornerhousepub.co/menu?search={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           },
           {
             "@context": "https://schema.org",
             "@type": "Restaurant",
-            "@id": "https://whitehorsepub.co/#restaurant",
-            "name": "The White Horse Waterbeach",
-            "image": "https://whitehorsepub.co/opengraph-image.png",
-            "description": "Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Family and dog friendly venue voted #1 restaurant in Waterbeach.",
+            "@id": "https://thecornerhousepub.co/#restaurant",
+            "name": "The Corner House Cambridge",
+            "image": "https://thecornerhousepub.co/opengraph-image.png",
+            "description": "1930s Cambridge pub serving authentic Nepalese dishes, pub classics, and Sunday roasts with HD sports and heated cabins.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "12 Greenside",
-              "addressLocality": "Waterbeach",
+              "streetAddress": "231 Newmarket Road",
+              "addressLocality": "Cambridge",
               "addressRegion": "Cambridgeshire",
-              "postalCode": "CB25 9HP",
+              "postalCode": "CB5 8JE",
               "addressCountry": "GB"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": 52.2462,
-              "longitude": 0.0731
+              "latitude": 52.20948,
+              "longitude": 0.14335
             },
-            "url": "https://whitehorsepub.co/",
-            "telephone": "+441223375578",
+            "url": "https://thecornerhousepub.co/",
+            "telephone": "+441223921122",
             "priceRange": "££",
             "servesCuisine": [
               "Nepalese",
+              "Indian",
               "British",
               "Pub food"
             ],
             "acceptsReservations": true,
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.6",
+              "ratingValue": "4.4",
               "bestRating": "5",
               "worstRating": "1",
-              "ratingCount": "150"
+              "ratingCount": "800"
             },
-            "hasMenu": "https://whitehorsepub.co/menu",
+            "hasMenu": "https://thecornerhousepub.co/menu",
             "sameAs": [
-              "https://www.facebook.com/people/The-White-Horse/61572172781807/",
-              "https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html",
-              "https://www.google.com/maps/place/The+White+Horse,+12+Green+Side,+Waterbeach+CB25+9HP"
+              "https://www.facebook.com/search/top?q=Corner%20House%20Cambridge",
+              "https://www.tripadvisor.co.uk/",
+              "https://www.google.com/maps/place/231+Newmarket+Rd,+Cambridge+CB5+8JE"
             ],
             "openingHoursSpecification": [
               {
@@ -490,15 +510,17 @@
                   "Monday",
                   "Tuesday",
                   "Wednesday",
-                  "Thursday",
-                  "Friday"
+                  "Thursday"
                 ],
                 "opens": "12:00",
                 "closes": "22:00"
               },
               {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Saturday",
+                "dayOfWeek": [
+                  "Friday",
+                  "Saturday"
+                ],
                 "opens": "12:00",
                 "closes": "23:00"
               },
@@ -515,160 +537,182 @@
     },
     "about": {
       "seo": {
-        "title": "About The White Horse, Waterbeach | Our Story & Mission",
-        "description": "A friendly village pub opposite the green. Cask ales, live sport, and an authentic Nepalese kitchen — revived for the community in 2025.",
+        "title": "About The Corner House Cambridge | Our Story & Mission",
+        "description": "1930s art-deco pub on Newmarket Road blending HD sports with authentic Nepalese cuisine, heated cabins, and a warm Cambridge welcome.",
         "canonicalUrlRelative": "/about",
         "openGraph": {
-          "title": "About The White Horse – Our Story",
-          "description": "Why we exist, what we stand for, and how we blend village pub comfort with authentic Nepalese flavour.",
-          "url": "https://whitehorsepub.co/about"
+          "title": "About The Corner House – Pints, Momos, and Matchday Energy",
+          "description": "How a historic Cambridge pub became the city’s go-to sports pub with a full Nepalese kitchen and cosy snugs.",
+          "url": "https://thecornerhousepub.co/about"
         }
       },
       "hero": {
-        "title": "About The White Horse",
-        "subtitle": "A friendly village pub opposite Waterbeach green - saved, revitalized, and serving authentic Nepalese cuisine alongside British pub classics."
+        "title": "About The Corner House",
+        "subtitle": "Cambridge’s go-to sports pub with Nepalese plates and cosy snugs on Newmarket Road."
       },
       "story": {
         "title": "Our Story",
-        "introduction": "Opposite the Waterbeach village green, The White Horse was saved from potential redevelopment and relaunched on February 6, 2025 by Lapen Inns. Today we blend a traditional British pub atmosphere with an extensive menu of authentic Nepalese cuisine - Bhutuwa chicken, Pokhareli fish curry, and momo alongside cask ales, live sports, and classic pub comforts in our relaxed, contemporary setting.",
+        "introduction": "Built in the 1930s as a corner pub, The Corner House now pairs authentic Nepalese cooking with a lively sports bar atmosphere. After earning CAMRA’s Most Improved City Pub award in 2020, the pub entered a new chapter in late 2024 under Lapen Inns, installing a Nepalese kitchen while keeping real ale, HD screens, and the community spirit alive.",
         "timeline": [
           {
-            "period": "1890s",
-            "title": "Historic Village Pub",
-            "description": "The White Horse has been at the heart of Waterbeach village life for over a century, serving as a beloved community gathering place opposite the village green."
+            "period": "1930s",
+            "title": "Art-deco corner pub opens",
+            "description": "The Corner House takes its place on Newmarket Road, becoming a local landmark with its distinctive facade and fireplaces."
           },
           {
-            "period": "Recent History",
-            "title": "Evolution & Adaptation",
-            "description": "Through the years, the pub evolved - from classic pub fare to Thai food in 2009, then British/Italian gastropub offerings. This history of culinary reinvention demonstrates our commitment to serving the community with exciting, quality food."
+            "period": "2020",
+            "title": "CAMRA ‘Most Improved City Pub’",
+            "description": "Recognised by Cambridge & District CAMRA for revitalising beer quality and the community pub experience."
           },
           {
-            "period": "February 2025",
-            "title": "A New Chapter: The Lapen Inns Revival",
-            "description": "Acquired by Lapen Inns (led by Subodh Gautam, Diwakar Subedi, Ravi Acharya, and Purna Man Bajrachaya), The White Horse was rescued from closure. Officially reopened January 31, 2025, with our Nepalese menu launching February 6. We preserve the core essence of a community pub while introducing authentic Himalayan cuisine - creating two robust revenue streams and a unique dining destination."
+            "period": "Late 2024",
+            "title": "Nepalese kitchen & sports hub relaunch",
+            "description": "Lapen Inns integrates a full Nepalese menu (momos, Himali Lamb, Chicken Rum Rum) with HD sports, heated garden cabins, and family-friendly service."
+          },
+          {
+            "period": "2025",
+            "title": "Travelers’ Choice & 5★ hygiene",
+            "description": "Tripadvisor Travelers’ Choice 2025 plus a 5-star food hygiene rating underscore consistent quality and care."
           }
         ]
       },
       "cta": {
-        "title": "Visit The White Horse",
-        "description": "Experience authentic Nepalese cuisine in a welcoming British pub setting.",
-        "button": "Call +44 1223 375578",
+        "title": "Visit The Corner House",
+        "description": "Book a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites.",
+        "button": "Call +44 1223 921122",
         "contact": {
-          "address": "12 Greenside, Waterbeach, Cambridge CB25 9HP",
-          "hours": "See footer for opening hours"
+          "address": "231 Newmarket Road, Cambridge CB5 8JE",
+          "hours": "Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00; Sat 12:00–22:00; Sun 12:00–21:00. Bar: Mon–Thu/Sun 12:00–22:00; Fri–Sat 12:00–23:00."
         }
       }
     },
     "contact": {
       "seo": {
-        "title": "Contact The White Horse Waterbeach | Bookings, Directions & Opening Hours",
-        "description": "Contact The White Horse for table bookings and enquiries. Call +44 1223 375578. Located at 12 Greenside, Waterbeach, Cambridge CB25 9HP. Email: whitehorse@lapeninns.com",
+        "title": "Contact The Corner House Cambridge | Bookings, Directions & Opening Hours",
+        "description": "Call +44 1223 921122 or email cornerhouse@lapeninns.com for bookings, cabins, and takeaway. Find us at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
         "keywords": [
-          "The White Horse contact",
-          "Waterbeach pub phone",
-          "book table Waterbeach",
+          "Corner House Cambridge contact",
+          "Newmarket Road pub phone",
+          "book table Cambridge pub",
           "Nepalese restaurant Cambridge contact",
-          "+44 1223 375578",
-          "12 Greenside Waterbeach"
+          "+44 1223 921122",
+          "231 Newmarket Road Cambridge"
         ],
         "canonicalUrlRelative": "/contact"
       },
       "hero": {
         "title": "Contact Us",
-        "subtitle": "Get in touch for bookings, collection & delivery orders, or enquiries"
+        "subtitle": "Book a table or cabin, plan matchday, or ask about group dining"
       },
       "contactInfo": {
         "title": "Get in Touch",
         "phone": {
-          "title": "Phone",
-          "number": "+44 1223 375578",
-          "description": "Call us for table bookings, collection & delivery orders, and general enquiries"
+          "title": "Phone / WhatsApp",
+          "number": "+44 1223 921122",
+          "description": "Call for table bookings, cabins, takeaway, or quick matchday questions"
+        },
+        "email": {
+          "title": "Email",
+          "address": "cornerhouse@lapeninns.com",
+          "description": "General enquiries, reservations, and event requests"
         },
         "location": {
           "title": "Location",
-          "address": "12 Greenside, Waterbeach, Cambridge, CB25 9HP",
-          "description": "Just 3 miles from Cambridge city centre"
+          "address": "231 Newmarket Road, Cambridge, CB5 8JE",
+          "description": "Opposite Cambridge Retail Park; 10-minute walk from Abbey Stadium"
         }
       },
       "hours": {
         "title": "Opening Hours",
         "note": "Hours are fetched dynamically from restaurant data"
       },
-      "features": {
-        "title": "What We Offer",
-        "items": [
-          {
-            "icon": "🌿",
-            "text": "Outdoor terrace"
-          },
+        "features": {
+          "title": "What We Offer",
+          "items": [
+            {
+              "icon": "📺",
+              "text": "HD sports screens + outdoor projector"
+            },
+            {
+              "icon": "🔥",
+              "text": "Heated garden cabins & covered beer garden"
+            },
+            {
+              "icon": "🧑‍🤝‍🧑",
+              "text": "Group-friendly tables and cosy snugs"
+            },
           {
             "icon": "🅿️",
-            "text": "Free parking"
-          },
-          {
-            "icon": "🐕",
-            "text": "Dog-friendly"
+            "text": "Limited on-site parking; retail park parking opposite"
           },
           {
             "icon": "♿",
-            "text": "Accessible"
+            "text": "Wheelchair ramp access & accessible WC"
           },
           {
             "icon": "📶",
-            "text": "Free WiFi"
-          },
-          {
-            "icon": "🎉",
-            "text": "Private dining"
+            "text": "Free WiFi and family- & dog-friendly"
           }
         ]
       }
     },
     "events": {
       "seo": {
-        "title": "Events & What's On | The White Horse Waterbeach - Live Sports & Community Events",
-        "description": "Watch live sports on Sky & TNT Sports and enjoy seasonal community events. Family and dog-friendly pub in Waterbeach.",
+        "title": "Events & What's On | The Corner House Cambridge - Live Sports, Quiz Night, Cabins",
+        "description": "HD sports on wall-to-wall screens and an outdoor projector, weekly quiz nights, cosy heated cabins, and flexible spaces for groups on Newmarket Road.",
         "canonicalUrlRelative": "/events"
       },
       "hero": {
         "badgeLabel": "What’s On",
         "title": "Events & What's On",
-        "subtitle": "Live sports and seasonal gatherings - your community hub for every occasion",
+        "subtitle": "Matchdays, quiz nights, live music pop-ups, and private heated cabins for your crew",
         "buttons": {
           "book": "Book for Big Games",
           "viewMenu": "View Menu"
         },
         "badges": [
-          "Live Sport",
-          "Multiple Screens",
-          "Great Food"
+          "HD Screens",
+          "Heated Cabins",
+          "Quiz Night"
         ]
       },
       "regularEvents": [
         {
-          "title": "Takeaway Friday",
-          "description": "Call ahead for Nepalese favourites ready for collection before the weekend.",
-          "frequency": "Friday Evening",
-          "icon": "🥡"
-        },
-        {
-          "title": "Live Sports on Big Screens",
-          "description": "Watch major sporting events on Sky Sports and TNT Sports. The premier local venue for football, rugby, and more.",
-          "frequency": "Major fixtures - check with us",
+          "title": "Matchday Live",
+          "description": "Wall-to-wall HD screens indoors plus an outdoor projector for the biggest fixtures. Close to Abbey Stadium for pre- and post-match pints and curries.",
+          "frequency": "Every matchday & major tournaments",
           "icon": "⚽"
         },
         {
-          "title": "Community Gatherings",
-          "description": "From family meals to celebrations, our large rear garden and welcoming atmosphere make us perfect for group events.",
-          "frequency": "Year-round",
-          "icon": "🌿"
+          "title": "Weekly Quiz Night",
+          "description": "Gather a team for a friendly quiz with prizes, great pints, and Nepalese bar snacks.",
+          "frequency": "Weekly (check schedule)",
+          "icon": "🧠"
+        },
+        {
+          "title": "Live Music & Open Mic",
+          "description": "Occasional acoustic sets and open-mic evenings keep the front bar buzzing.",
+          "frequency": "Monthly pop-ups",
+          "icon": "🎸"
+        },
+        {
+          "title": "Heated Cabin Bookings",
+          "description": "Reserve a private, heated garden cabin for small groups — perfect for celebrations or matchday bases.",
+          "frequency": "Available year-round",
+          "icon": "🔥"
         }
-      ]
+      ],
+      "contact": {
+        "title": "Plan your visit",
+        "description": "Book a table or heated cabin for matchdays, quizzes, and group celebrations.",
+        "phone": "+44 1223 921122",
+        "email": "cornerhouse@lapeninns.com"
+      }
     },
     "menu": {
       "seo": {
         "title": "Menu | Authentic Nepalese Cuisine & British Pub Classics | The White Horse Waterbeach",
-        "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call +44 1223 375578.",
+        "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call +44 1223 921122.",
         "keywords": "authentic Nepalese menu Cambridge, Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo Cambridge, dal bhat, tandoori king prawns, curry Waterbeach, Baltis, Jalfrezis, pub classics, cask ales, collection & delivery Cambridge, takeaway Cambridge, Greene King IPA, Timothy Taylor Landlord",
         "openGraph": {
           "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
@@ -680,13 +724,13 @@
         }
       },
       "hero": {
-        "title": "Our Menu: Authentic Nepalese Cuisine & British Pub Classics",
-        "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to British favourites and well-kept cask ales.",
-        "cta": {
-          "book": "Book Online",
-          "order": "Order for Collection or Delivery: +44 1223 375578"
-        }
-      },
+          "title": "Our Menu: Authentic Nepalese Cuisine & British Pub Classics",
+          "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to British favourites and well-kept cask ales.",
+          "cta": {
+            "book": "Book Online",
+            "order": "Call +44 1223 921122 to book or ask about dishes"
+          }
+        },
       "sections": {
         "description": "Experience authentic Nepalese cuisine prepared by talented chefs Ravi Acharya and Purna Man Bajrachaya, alongside traditional British pub favourites.",
         "allergenNotice": "Please inform us of any allergies or dietary requirements when ordering."
@@ -695,13 +739,161 @@
         "loading": "Loading menu..."
       }
     },
+    "privacy": {
+      "meta": {
+        "effectiveDate": "10 August 2025",
+        "title": "Privacy Policy",
+        "contactEmail": "cornerhouse@lapeninns.com"
+      },
+      "introduction": "We respect your privacy and handle personal information responsibly in line with applicable UK data protection laws (UK GDPR & Data Protection Act 2018). This policy explains what we collect, why we collect it, how it is used, and the rights available to you when you interact with The Corner House Cambridge.",
+      "sections": {
+        "whoWeAre": {
+          "title": "Who We Are",
+          "content": "**The Corner House Cambridge** – a 1930s art-deco pub with a Nepalese kitchen and sports lounge at 231 Newmarket Road, Cambridge, CB5 8JE. References to \"we\" / \"us\" / \"our\" mean The Corner House Cambridge."
+        },
+        "dataWeCollect": {
+          "title": "Data We Collect",
+          "items": [
+            "Contact details: name, email, phone (when you enquire or book)",
+            "Booking preferences: date, time, party size, special notes (e.g. dietary requirements)",
+            "Event/private hire details: occasion type, approximate numbers, requested facilities",
+            "Voluntary feedback: reviews, messages, survey responses",
+            "Technical data: IP address, device/browser type, pages viewed (via analytics / logs) via Plausible (privacy-friendly, no cookies for core metrics)",
+            "Cookie-related identifiers (see Section 8)"
+          ]
+        },
+        "howWeUse": {
+          "title": "How We Use Personal Data",
+          "items": [
+            "Process table & event enquiries / confirmations",
+            "Respond to questions & provide customer support",
+            "Improve website content & user experience",
+            "Send optional updates / newsletters (only with explicit consent)",
+            "Maintain security & prevent misuse",
+            "Comply with legal obligations (e.g. safety or regulatory queries)"
+          ]
+        },
+        "legalBases": {
+          "title": "Legal Bases for Processing",
+          "items": [
+            {
+              "term": "Contract",
+              "description": "handling your reservation / hire enquiry"
+            },
+            {
+              "term": "Legitimate Interests",
+              "description": "running and improving our business & site"
+            },
+            {
+              "term": "Consent",
+              "description": "marketing communications (you can withdraw any time)"
+            },
+            {
+              "term": "Legal Obligation",
+              "description": "safety, compliance & record keeping"
+            }
+          ]
+        },
+        "sharingDisclosure": {
+          "title": "Sharing & Disclosure",
+          "content": "We do not sell your data. Limited sharing occurs with trusted service providers strictly for operational purposes (e.g. booking / hosting platform, email service) under appropriate safeguards. We may disclose data if required by law or to protect our legal rights."
+        },
+        "dataRetention": {
+          "title": "Data Retention",
+          "content": "We retain data only as long as needed for the purposes stated or to meet legal/accounting requirements. Generic enquiry emails are typically retained for **12 months**. Booking records (for accounting / safety) may be stored up to 7 years per UK HMRC guidance. You may request deletion (see Your Rights) unless we must retain for legitimate reasons."
+        },
+        "security": {
+          "title": "Security",
+          "content": "We apply reasonable technical and organisational measures (access controls, least-privilege, encrypted transport). No system is 100% secure; please contact us if you suspect misuse."
+        },
+        "cookies": {
+          "title": "Cookies & Similar Technologies",
+          "content": "We use essential cookies for core site functionality and may use minimal analytics. Plausible analytics runs without tracking or storing personal data and does not use identifying cookies. If we introduce any optional marketing or performance cookies, a consent banner will list them before activation."
+        },
+        "yourRights": {
+          "title": "Your Rights (UK GDPR)",
+          "intro": "To exercise rights, email cornerhouse@lapeninns.com. You also have the right to complain to the ICO (Information Commissioner's Office) if you believe your rights are infringed.",
+          "items": [
+            "Access – request a copy of your personal data",
+            "Rectification – correct inaccurate data",
+            "Erasure – ask us to delete (where no overriding basis applies)",
+            "Restriction – limit processing under certain conditions",
+            "Objection – to processing based on legitimate interests / direct marketing",
+            "Portability – receive data you provided in a machine-readable format (where applicable)",
+            "Withdraw consent – for any consent-based processing at any time"
+          ]
+        },
+        "children": {
+          "title": "Children",
+          "content": "We do not knowingly collect data from children under 13. If you believe a child has provided data, please contact us to remove it."
+        },
+        "internationalTransfers": {
+          "title": "International Transfers",
+          "content": "Where providers process data outside the UK, we rely on adequacy decisions or approved safeguards (e.g. standard contractual clauses). Current third-party processors include: web hosting & infrastructure provider (managed server host in UK/EU), email service (transactional & inbound), Plausible (EU-based analytics). Any future additions will be updated here."
+        },
+        "updates": {
+          "title": "Updates to this Policy",
+          "content": "We may update this document. Material changes will be indicated by updating the \"Effective Date\". Continued use of the site constitutes acceptance."
+        },
+        "contact": {
+          "title": "Contact",
+          "content": "Questions or requests: cornerhouse@lapeninns.com"
+        }
+      }
+    },
+    "tos": {
+      "seo": {
+        "title": "Terms of Service | The Corner House Cambridge - Booking Terms & Conditions",
+        "description": "Terms of service for The Corner House Cambridge covering table bookings, reservations, and dining policies.",
+        "keywords": [
+          "The Corner House Cambridge terms",
+          "Cambridge pub booking terms",
+          "Nepalese restaurant Cambridge terms",
+          "dining terms conditions"
+        ],
+        "canonicalUrlRelative": "/tos",
+        "openGraph": {
+          "title": "Terms of Service | The Corner House Cambridge",
+          "description": "Terms of service for The Corner House Cambridge covering restaurant bookings, table reservations and dining policies.",
+          "url": "https://thecornerhousepub.co/tos"
+        }
+      }
+    },
+    "offline": {
+      "title": "You’re offline",
+      "message": "It looks like your connection dropped. Once you’re back online, reload to keep exploring The Corner House.",
+      "actions": {
+        "primary": {
+          "label": "Retry",
+          "href": "#retry"
+        },
+        "secondary": {
+          "label": "Back to Home",
+          "href": "/"
+        }
+      }
+    },
+    "notFound": {
+      "title": "Page not found",
+      "message": "We can’t find that page. Try heading back to the home page or jump to the menu.",
+      "actions": {
+        "primary": {
+          "label": "Go Home",
+          "href": "/"
+        },
+        "secondary": {
+          "label": "View Menu",
+          "href": "/menu"
+        }
+      }
+    },
     "signin": {
-      "title": "Sign in to The White Horse Waterbeach",
+      "title": "Sign in to The Corner House",
       "subtitle": "Access your account",
       "form": {
         "email": {
           "label": "Email",
-          "placeholder": "whitehorse@lapeninns.com"
+          "placeholder": "cornerhouse@lapeninns.com"
         },
         "buttons": {
           "google": "Sign in with Google",
@@ -716,197 +908,81 @@
     },
     "dashboard": {
       "title": "Dashboard",
-      "subtitle": "Welcome to your account"
-    },
-    "bookTable": {
-      "seo": {
-        "title": "Book a Table | The White Horse Waterbeach - Restaurant Reservations",
-        "description": "Reserve a table at The White Horse Waterbeach. Call +44 1223 375578 for bookings. Authentic Nepalese cuisine and British pub classics in a family-friendly setting.",
-        "canonicalUrlRelative": "/book-a-table",
-        "openGraph": {
-          "title": "Book a Table at The White Horse Waterbeach",
-          "description": "Request a reservation at The White Horse Waterbeach. Confirmations within an hour during opening times.",
-          "url": "https://whitehorsepub.co/book-a-table"
-        }
-      }
-    },
-    "offline": {},
-    "notFound": {},
-    "press": {
-      "seo": {
-        "title": "Press & Media | The White Horse Waterbeach - Media Contact & Press Kit",
-        "description": "Official press information for The White Horse, Waterbeach. A revitalized community pub serving authentic Nepalese cuisine. Relaunched February 2025 by Lapen Inns. Media enquiries: whitehorse@lapeninns.com",
-        "keywords": [
-          "The White Horse Waterbeach press",
-          "press kit",
-          "media contact",
-          "Nepalese restaurant Waterbeach",
-          "Lapen Inns",
-          "village pub Cambridge"
-        ],
-        "canonicalUrlRelative": "/press",
-        "openGraph": {
-          "title": "Press Kit | The White Horse Waterbeach",
-          "description": "Official press information, quick facts, and media contact for The White Horse Waterbeach.",
-          "url": "https://whitehorsepub.co//press"
-        }
-      }
-    },
-    "privacyPolicy": {
-      "seo": {
-        "title": "Privacy Policy | The White Horse Waterbeach - Data Protection & GDPR",
-        "description": "Privacy policy for The White Horse Waterbeach. GDPR-compliant data protection policy for restaurant bookings and website usage.",
-        "keywords": [
-          "The White Horse Waterbeach privacy policy",
-          "restaurant data protection",
-          "GDPR compliance Cambridge",
-          "pub privacy policy"
-        ],
-        "canonicalUrlRelative": "/privacy-policy",
-        "openGraph": {
-          "title": "Privacy Policy | The White Horse Waterbeach",
-          "description": "Privacy policy for The White Horse Waterbeach outlining data handling for restaurant bookings, enquiries and website usage.",
-          "url": "https://whitehorsepub.co//privacy-policy"
-        }
-      }
-    },
-    "tos": {
-      "seo": {
-        "title": "Terms of Service | The White Horse Waterbeach - Booking Terms & Conditions",
-        "description": "Terms of service for The White Horse Waterbeach covering table bookings, reservations, and dining policies.",
-        "keywords": [
-          "The White Horse Waterbeach terms",
-          "restaurant booking terms",
-          "pub terms of service Cambridge",
-          "dining terms conditions"
-        ],
-        "canonicalUrlRelative": "/tos",
-        "openGraph": {
-          "title": "Terms of Service | The White Horse Waterbeach",
-          "description": "Terms of service for The White Horse Waterbeach covering restaurant bookings, table reservations and dining policies.",
-          "url": "https://whitehorsepub.co//tos"
-        }
-      }
-    },
-    "menuInformation": {
-      "seo": {
-        "title": "Menu Information & Allergens | The White Horse Waterbeach - Dietary Requirements & Food Safety",
-        "description": "Allergen information and dietary requirements for The White Horse Waterbeach menu. Please inform our staff of any allergies when ordering. Compliant with UK Food Information Regulations 2014.",
-        "keywords": [
-          "The White Horse Waterbeach allergens",
-          "dietary requirements Cambridge",
-          "gluten free restaurant",
-          "vegetarian Waterbeach",
-          "food allergies",
-          "menu information",
-          "Natasha's Law compliance"
-        ],
-        "canonicalUrlRelative": "/menu-information",
-        "openGraph": {
-          "title": "Menu Information & Dietary Requirements | The White Horse Waterbeach",
-          "description": "Complete allergen information and dietary options at The White Horse Waterbeach. Safe dining for all dietary requirements.",
-          "url": "https://whitehorsepub.co//menu-information"
-        }
-      }
-    },
-    "wakesMenu": {
-      "seo": {
-        "title": "Celebration of Life Menu | Wakes & Memorial Gatherings | The White Horse Waterbeach",
-        "description": "A calm and dignified setting for celebration of life gatherings. Buffet menu £10 per guest with large rear garden space available. Call +44 1223 375578 to arrange.",
-        "keywords": [
-          "wakes menu Cambridge",
-          "celebration of life catering",
-          "The White Horse Waterbeach wakes",
-          "funeral reception menu",
-          "sandwich buffet Cambridge"
-        ],
-        "canonicalUrlRelative": "/wakes-menu",
-        "openGraph": {
-          "title": "Wakes Buffet at The White Horse Waterbeach",
-          "description": "£10 per guest for a sandwich, chicken wings, and a samosa, with the option to add chicken pakora and hot drinks for £2.50.",
-          "url": "https://whitehorsepub.co/wakes-menu"
-        }
-      }
-    },
-    "takeawayMenu": {
-      "seo": {
-        "title": "Takeaway Menu | The White Horse Waterbeach - Authentic Nepalese & Pub Food Collection",
-        "description": "Order authentic Nepalese dishes from The White Horse Waterbeach for collection or delivery. Bhutuwa chicken, Pokhareli fish curry, curries, and British pub classics. Call +44 1223 375578 to order.",
-        "keywords": [
-          "takeaway Waterbeach",
-          "Nepalese collection & delivery Cambridge",
-          "The White Horse takeaway",
-          "curry collection & delivery Cambridge",
-          "+44 1223 375578"
-        ],
-        "canonicalUrlRelative": "/takeaway",
-        "openGraph": {
-          "title": "Order Collection & Delivery from The White Horse Waterbeach",
-          "description": "Order online for quick pickup or call us if you prefer.",
-          "url": "/takeaway"
-        }
-      }
-    },
-    "christmasMenu": {
-      "seo": {
-        "title": "Christmas Menu 2025 | The White Horse Waterbeach - Festive Dining in Waterbeach",
-        "description": "Celebrate Christmas 2025 at The White Horse Waterbeach. Chef's festive set menu £44.99 per guest including mulled wine or drink of choice. Book your festive table: +44 1223 375578",
-        "keywords": [
-          "Cambridge Christmas menu",
-          "Christmas menu",
-          "The White Horse Waterbeach Christmas",
-          "Waterbeach festive dining",
-          "best Christmas menu 2025",
-          "Christmas dining Cambridge",
-          "festive menu Waterbeach"
-        ],
-        "canonicalUrlRelative": "/christmas-menu",
-        "openGraph": {
-          "title": "The White Horse Waterbeach Christmas Menu 2025 – Reserve Your Festive Table",
-          "description": "Celebrate in Cambridge with the The White Horse Waterbeach Christmas menu. Choose your courses or book the chef's set menu with mulled wine or another drink of their choice included for £44.99 per guest.",
-          "url": "https://whitehorsepub.co/christmas-menu"
-        }
-      }
+      "subtitle": "Welcome back"
     }
   },
   "components": {
     "testimonials": {
-      "title": "What Our Customers Say",
-      "subtitle": "Community reception and guest reviews",
+      "title": "What Guests Say",
+      "subtitle": "Real diners on food, service, and matchday atmosphere",
       "items": [
         {
-          "name": "Sarah Johnson",
-          "text": "Absolutely wonderful! The Nepalese dishes are authentic and delicious, and the traditional pub atmosphere is so welcoming. Perfect for families.",
+          "name": "Tony B.",
+          "text": "Superb Himali Lamb Curry; friendly staff helped us pick dishes. Great ales and plenty of sport on TV.",
           "rating": 5,
-          "location": "Cambridge"
+          "location": "Ipswich (TripAdvisor, Nov 2025)"
         },
         {
-          "name": "Mike Thompson",
-          "text": "Great food and fantastic service. The best of both worlds - proper pub classics and amazing curry. Highly recommended!",
+          "name": "Colin S.",
+          "text": "Fantastic night with friends — attentive team, good food and drinks, brilliant atmosphere for groups.",
           "rating": 5,
-          "location": "Waterbeach"
+          "location": "UK (TripAdvisor, Nov 2025)"
+        },
+        {
+          "name": "C.V.",
+          "text": "Old pub with a twist: excellent Nepalese curry, friendly service, and Sky Sports on — just the thing.",
+          "rating": 5,
+          "location": "Monmouthshire (TripAdvisor, Oct 2025)"
+        },
+        {
+          "name": "Frances D.",
+          "text": "Family-friendly pub; team handled dietary requests and the curries were lovely. Cozy, welcoming evening.",
+          "rating": 5,
+          "location": "UK (TripAdvisor, Jan 2025)"
+        },
+        {
+          "name": "Josh P.",
+          "text": "Second visit — same delicious curry and great value for Cambridge. Friendly team keeps us coming back.",
+          "rating": 5,
+          "location": "Cambridge (Google, Aug 2025)"
         }
       ]
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "subtitle": "Common questions about our restaurant",
+      "subtitle": "Common questions about The Corner House Cambridge",
       "items": [
         {
-          "question": "Do you accept bookings?",
-          "answer": "Yes, we accept bookings by phone. Call us on +44 1223 375578 to reserve your table. We recommend booking in advance, especially for weekends."
+          "question": "How do I book a table or cabin?",
+          "answer": "Call +44 1223 921122, email cornerhouse@lapeninns.com, or use our Book a Table page. Book early for big matchdays or heated cabins."
         },
         {
-          "question": "Are you family-friendly?",
-          "answer": "Absolutely! We welcome families with children until 9pm. We have a children's menu and high chairs available."
+          "question": "Do you show live sports?",
+          "answer": "Yes — wall-to-wall HD screens indoors plus an outdoor projector for major fixtures. We’re a short walk from Abbey Stadium."
         },
         {
-          "question": "Do you offer takeaway?",
-          "answer": "Yes! Order online for quick pickup 🥡 or call if you prefer."
+          "question": "Do you offer takeaway or delivery?",
+          "answer": "Yes. Call for collection, or order delivery via Uber Eats, Deliveroo, or Just Eat when available."
         },
         {
           "question": "Is parking available?",
-          "answer": "Yes, we have free parking available for our customers."
+          "answer": "We have a small on-site car park (limited spaces). Additional paid parking is across the road at Cambridge Retail Park."
+        },
+        {
+          "question": "Are you family- and dog-friendly?",
+          "answer": "Absolutely. High chairs available; kids’ spice tweaks on request. Dogs are welcome in the bar and garden with water bowls provided."
+        },
+        {
+          "question": "Is the pub accessible?",
+          "answer": "Yes. Wheelchair ramp access via the rear and an accessible WC on the ground floor. Ask staff if you need assistance."
+        },
+        {
+          "question": "Can you handle dietary requirements?",
+          "answer": "Many Nepalese dishes are naturally gluten-free; vegetarian and vegan options are available. Tell us your allergies and we’ll guide you."
+        },
+        {
+          "question": "When is the kitchen open?",
+          "answer": "Mon–Fri 12:00–15:00 & 17:00–22:00, Sat 12:00–22:00, Sun 12:00–21:00. Bar stays open until 22:00 (23:00 Fri/Sat)."
         }
       ]
     },
@@ -945,7 +1021,7 @@
           ],
           "ctas": {
             "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223375578",
+            "callTel": "tel:+441223921122",
             "secondaryUrl": "/about"
           },
           "required": true
@@ -966,8 +1042,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#nepalese",
-            "takeawayUrl": "/online-delivery",
-            "callTel": "tel:+441223375578"
+            "callTel": "tel:+441223921122"
           },
           "required": true
         },
@@ -987,7 +1062,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#drinks",
-            "callTel": "tel:+441223375578",
+            "callTel": "tel:+441223921122",
             "secondaryUrl": "/events"
           }
         },
@@ -1007,7 +1082,7 @@
           ],
           "ctas": {
             "bookUrl": "/book-a-table",
-            "callTel": "tel:+441223375578",
+            "callTel": "tel:+441223921122",
             "secondaryUrl": "/events"
           }
         },
@@ -1027,8 +1102,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#starters",
-            "takeawayUrl": "/online-delivery",
-            "callTel": "tel:+441223375578"
+            "callTel": "tel:+441223921122"
           }
         },
         {
@@ -1047,8 +1121,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#nepalese",
-            "takeawayUrl": "/online-delivery",
-            "callTel": "tel:+441223375578"
+            "callTel": "tel:+441223921122"
           }
         },
         {
@@ -1067,36 +1140,11 @@
           ],
           "ctas": {
             "menuUrl": "/menu#lunch",
-            "callTel": "tel:+441223375578",
+            "callTel": "tel:+441223921122",
             "secondaryUrl": "/book-a-table"
           }
         }
       ]
-    }
-  },
-  "forms": {
-    "validation": {
-      "required": "This field is required",
-      "email": "Please enter a valid email address",
-      "phone": "Please enter a valid phone number",
-      "minLength": "Must be at least {min} characters",
-      "maxLength": "Must be no more than {max} characters"
-    },
-    "messages": {
-      "success": "Thank you! We'll get back to you soon.",
-      "error": "Sorry, something went wrong. Please try again.",
-      "submitting": "Submitting..."
-    },
-    "labels": {
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
-      "message": "Message",
-      "subject": "Subject",
-      "partySize": "Party Size",
-      "date": "Date",
-      "time": "Time",
-      "specialRequests": "Special Requests"
     }
   },
   "api": {
@@ -1148,12 +1196,12 @@
     "terms": {
       "title": "Terms of Service",
       "effectiveDate": "10 August 2025",
-      "contact": "whitehorse@lapeninns.com"
+      "contact": "cornerhouse@lapeninns.com"
     },
     "privacy": {
       "title": "Privacy Policy",
       "effectiveDate": "10 August 2025",
-      "contact": "whitehorse@lapeninns.com"
+      "contact": "cornerhouse@lapeninns.com"
     }
   }
 }
