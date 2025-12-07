@@ -15,6 +15,13 @@ Principles
 - Semantic naming: use tokens by purpose (e.g. `--color-primary`, `--color-text`, `--color-bg`) rather than raw hex.
 - Single source of truth: update `theme/colors.js` to change brand colors across the app.
 - Theming: `themes.light` and `themes.dark` provide ready-made palettes.
+- Palette anchors (2025-12-07):
+  - Forest (brand/primary) `#1B4332`
+  - Sand (accent/CTA & warning) `#D4A574`
+  - Ocean (info/links) `#2C5F8D`
+  - Mint (success) `#52A67D`
+  - Clay (error) `#B85C3E`
+  - Warm neutral spine anchored at `#6B7280`
 
 Quick usage
 

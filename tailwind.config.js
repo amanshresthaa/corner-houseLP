@@ -90,14 +90,94 @@ module.exports = {
         uw3440: '3440px',
       },
       colors: {
-        // Midnight Majesty palette (50-950 scales)
+        // Design-first palette (forest / sand / ocean / mint / clay / warm neutral)
+        forest: {
+          50: 'var(--color-forest-50)',
+          100: 'var(--color-forest-100)',
+          200: 'var(--color-forest-200)',
+          300: 'var(--color-forest-300)',
+          400: 'var(--color-forest-400)',
+          500: 'var(--color-forest-500)',
+          600: 'var(--color-forest-600)',
+          700: 'var(--color-forest-700)',
+          800: 'var(--color-forest-800)',
+          900: 'var(--color-forest-900)',
+          950: 'var(--color-forest-950)',
+        },
+        sand: {
+          50: 'var(--color-sand-50)',
+          100: 'var(--color-sand-100)',
+          200: 'var(--color-sand-200)',
+          300: 'var(--color-sand-300)',
+          400: 'var(--color-sand-400)',
+          500: 'var(--color-sand-500)',
+          600: 'var(--color-sand-600)',
+          700: 'var(--color-sand-700)',
+          800: 'var(--color-sand-800)',
+          900: 'var(--color-sand-900)',
+          950: 'var(--color-sand-950)',
+        },
+        ocean: {
+          50: 'var(--color-ocean-50)',
+          100: 'var(--color-ocean-100)',
+          200: 'var(--color-ocean-200)',
+          300: 'var(--color-ocean-300)',
+          400: 'var(--color-ocean-400)',
+          500: 'var(--color-ocean-500)',
+          600: 'var(--color-ocean-600)',
+          700: 'var(--color-ocean-700)',
+          800: 'var(--color-ocean-800)',
+          900: 'var(--color-ocean-900)',
+          950: 'var(--color-ocean-950)',
+        },
+        mint: {
+          50: 'var(--color-mint-50)',
+          100: 'var(--color-mint-100)',
+          200: 'var(--color-mint-200)',
+          300: 'var(--color-mint-300)',
+          400: 'var(--color-mint-400)',
+          500: 'var(--color-mint-500)',
+          600: 'var(--color-mint-600)',
+          700: 'var(--color-mint-700)',
+          800: 'var(--color-mint-800)',
+          900: 'var(--color-mint-900)',
+          950: 'var(--color-mint-950)',
+        },
+        clay: {
+          50: 'var(--color-clay-50)',
+          100: 'var(--color-clay-100)',
+          200: 'var(--color-clay-200)',
+          300: 'var(--color-clay-300)',
+          400: 'var(--color-clay-400)',
+          500: 'var(--color-clay-500)',
+          600: 'var(--color-clay-600)',
+          700: 'var(--color-clay-700)',
+          800: 'var(--color-clay-800)',
+          900: 'var(--color-clay-900)',
+          950: 'var(--color-clay-950)',
+        },
+        neutral: {
+          50: 'var(--color-neutral-50)',
+          100: 'var(--color-neutral-100)',
+          200: 'var(--color-neutral-200)',
+          300: 'var(--color-neutral-300)',
+          400: 'var(--color-neutral-400)',
+          500: 'var(--color-neutral-500)',
+          600: 'var(--color-neutral-600)',
+          700: 'var(--color-neutral-700)',
+          800: 'var(--color-neutral-800)',
+          900: 'var(--color-neutral-900)',
+          950: 'var(--color-neutral-950)',
+        },
+
+        // Legacy aliases retained for compatibility (all mapped to new palette values)
         brand: {
           50: 'var(--color-brand-50)',
           100: 'var(--color-brand-100)',
           200: 'var(--color-brand-200)',
           300: 'var(--color-brand-300)',
           400: 'var(--color-brand-400)',
-          500: 'var(--color-brand-500)', // Midnight Navy anchor
+          500: 'var(--color-brand-500)',
           600: 'var(--color-brand-600)',
           700: 'var(--color-brand-700)',
           800: 'var(--color-brand-800)',
@@ -110,7 +190,7 @@ module.exports = {
           200: 'var(--color-accent-200)',
           300: 'var(--color-accent-300)',
           400: 'var(--color-accent-400)',
-          500: 'var(--color-accent-500)', // Golden Hour anchor
+          500: 'var(--color-accent-500)',
           600: 'var(--color-accent-600)',
           700: 'var(--color-accent-700)',
           800: 'var(--color-accent-800)',
@@ -122,7 +202,7 @@ module.exports = {
           200: 'var(--color-secondary-200)',
           300: 'var(--color-secondary-300)',
           400: 'var(--color-secondary-400)',
-          500: 'var(--color-secondary-500)', // Rhododendron anchor
+          500: 'var(--color-secondary-500)',
           600: 'var(--color-secondary-600)',
           700: 'var(--color-secondary-700)',
           800: 'var(--color-secondary-800)',
@@ -135,19 +215,20 @@ module.exports = {
           200: 'var(--color-crimson-200)',
           300: 'var(--color-crimson-300)',
           400: 'var(--color-crimson-400)',
-          500: 'var(--color-crimson-500)', // Rhododendron anchor
+          500: 'var(--color-crimson-500)',
           600: 'var(--color-crimson-600)',
           700: 'var(--color-crimson-700)',
           800: 'var(--color-crimson-800)',
+          900: 'var(--color-crimson-900)',
+          950: 'var(--color-crimson-950)',
         },
-
         indiagreen: {
           50: 'var(--color-indiagreen-50)',
           100: 'var(--color-indiagreen-100)',
           200: 'var(--color-indiagreen-200)',
           300: 'var(--color-indiagreen-300)',
           400: 'var(--color-indiagreen-400)',
-          500: 'var(--color-indiagreen-500)', // Evergreen anchor
+          500: 'var(--color-indiagreen-500)',
           600: 'var(--color-indiagreen-600)',
           700: 'var(--color-indiagreen-700)',
           800: 'var(--color-indiagreen-800)',
@@ -160,23 +241,20 @@ module.exports = {
           200: 'var(--color-marigold-200)',
           300: 'var(--color-marigold-300)',
           400: 'var(--color-marigold-400)',
-          500: 'var(--color-marigold-500)', // Golden Hour alias
+          500: 'var(--color-marigold-500)',
           600: 'var(--color-marigold-600)',
           700: 'var(--color-marigold-700)',
           800: 'var(--color-marigold-800)',
           900: 'var(--color-marigold-900)',
           950: 'var(--color-marigold-950)',
         },
-
-
-
         stout: {
           50: 'var(--color-stout-50)',
           100: 'var(--color-stout-100)',
           200: 'var(--color-stout-200)',
           300: 'var(--color-stout-300)',
           400: 'var(--color-stout-400)',
-          500: 'var(--color-stout-500)', // Obsidian Slate anchor
+          500: 'var(--color-stout-500)',
           600: 'var(--color-stout-600)',
           700: 'var(--color-stout-700)',
           800: 'var(--color-stout-800)',
@@ -189,7 +267,7 @@ module.exports = {
           200: 'var(--color-cardamom-200)',
           300: 'var(--color-cardamom-300)',
           400: 'var(--color-cardamom-400)',
-          500: 'var(--color-cardamom-500)', // Mountain Forest soft anchor
+          500: 'var(--color-cardamom-500)',
           600: 'var(--color-cardamom-600)',
           700: 'var(--color-cardamom-700)',
           800: 'var(--color-cardamom-800)',
@@ -222,20 +300,7 @@ module.exports = {
           900: 'var(--color-rose-900)',
           950: 'var(--color-rose-950)',
         },
-        neutral: {
-          50: 'var(--color-neutral-50)',
-          100: 'var(--color-neutral-100)',
-          200: 'var(--color-neutral-200)',
-          300: 'var(--color-neutral-300)',
-          400: 'var(--color-neutral-400)',
-          500: 'var(--color-neutral-500)',
-          600: 'var(--color-neutral-600)',
-          700: 'var(--color-neutral-700)',
-          800: 'var(--color-neutral-800)',
-          900: 'var(--color-neutral-900)',
-          950: 'var(--color-neutral-950)',
-        },
-        
+
         // Legacy Crown mappings for backward compatibility
         crown: {
           gold: 'var(--color-gold-500)',
@@ -261,6 +326,7 @@ module.exports = {
         success: 'var(--color-success)',
         warning: 'var(--color-warning)',
         error: 'var(--color-error)',
+        info: 'var(--color-info)',
       },
       fontFamily: {
         'display': ['var(--font-playfair)', 'Playfair Display', 'serif'], // For headings
@@ -270,7 +336,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern': "var(--grad-hero-pattern)",
-        gradient: "var(--grad-spectrum)",
+        gradient: "var(--grad-royal-midnight)",
         'skeleton-shimmer': "var(--grad-skeleton)",
       },
       animation: {

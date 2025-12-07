@@ -13,7 +13,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import themeTokens from '../theme/colors';
 import { getContactInfo } from '@/lib/restaurantData';
 
-const DEFAULT_THEME_COLOR = themeTokens.themes.light.colors.surface;
+const DEFAULT_THEME_COLOR = themeTokens.themes.light.colors.background;
 
 const LAYOUT_CONTACT = getContactInfo();
 
