@@ -1,15 +1,34 @@
-import RestaurantLayout from "@/components/restaurant/Layout";
-import { getContentSmart } from '@/src/lib/data/server-loader';
-import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import RestaurantLayout from '@/components/restaurant/Layout';
 import { FadeIn } from '@/components/animations/MotionWrappers';
-import dynamic from 'next/dynamic';
-import { getContactInfo, getFormattedAddress, getAddress, getRestaurantIdentity } from '@/lib/restaurantData';
+import { getSEOTags, renderSchemaTags } from '@/libs/seo';
+import { getContentSmart } from '@/src/lib/data/server-loader';
+import { getContactInfo, getAddress, getRestaurantIdentity } from '@/lib/restaurantData';
 import { BRAND } from '@/src/lib/constants/brand';
+import dynamic from 'next/dynamic';
 
 const CONTACT = getContactInfo();
-const ADDRESS_LINE = getFormattedAddress();
 const ADDRESS = getAddress();
 const IDENTITY = getRestaurantIdentity();
+const SITE_URL = `https://${BRAND.domain}`;
+
+const RestaurantHoursCard = dynamic(() => import('@/components/restaurant/RestaurantHoursCard'));
+const InteractiveMap = dynamic(() => import('@/components/restaurant/InteractiveMap'));
+
+const reduceMotionStyles = `
+  @media (prefers-reduced-motion: reduce) {
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    html:focus-within{scroll-behavior:auto!important}
+  }
+`;
+
+const fillBrandPlaceholders = (value?: string | null) => {
+  if (!value) return value ?? '';
+  return value
+    .replace(/{{brand\.domain}}/g, BRAND.domain)
+    .replace(/{{brand\.supportEmail}}/g, BRAND.supportEmail)
+    .replace(/{{brand\.fullName}}/g, BRAND.fullName)
+    .replace(/{{brand\.shortName}}/g, BRAND.shortName);
+};
 
 // SEO Metadata from content.json
 export async function generateMetadata() {
@@ -17,142 +36,214 @@ export async function generateMetadata() {
   const seo = (content.pages?.contact as any)?.seo || {};
   return getSEOTags({
     title: seo.title || `Contact ${BRAND.fullName}`,
-    description: seo.description || 'Contact us for bookings, cabins, directions, or matchday enquiries on Newmarket Road.',
+    description:
+      seo.description || 'Call, email, or get directions to our art-deco pub on Newmarket Road.',
     keywords: seo.keywords,
     canonicalUrlRelative: seo.canonicalUrlRelative || '/contact',
     openGraph: seo.openGraph,
   });
 }
 
-// Dynamic imports for Contact page sections
-const ContactInfoSection = dynamic(() => import("@/components/restaurant/sections/ContactInfoSection"));
-const RestaurantHoursCard = dynamic(() => import("@/components/restaurant/RestaurantHoursCard"));
-const ContactFeaturesSection = dynamic(() => import("@/components/restaurant/sections/ContactFeaturesSection"));
-const SocialMediaSection = dynamic(() => import("@/components/restaurant/sections/SocialMediaSection"));
-const InteractiveMap = dynamic(() => import("@/components/restaurant/InteractiveMap"));
-
 export default async function ContactPage() {
   const content = await getContentSmart();
-  const contactContent = content.pages.contact;
-  const canonicalContact = CONTACT;
-  const phoneInfo = {
-    ...contactContent.contactInfo.phone,
-    number: canonicalContact.phone.display,
-    href: canonicalContact.phone.tel,
+  const contactContent = content.pages?.contact ?? {};
+  const heroCopy = contactContent.hero ?? {};
+
+  const phoneDisplay = CONTACT.phone.display;
+  const phoneHref = CONTACT.phone.tel;
+  const primaryEmail = fillBrandPlaceholders(CONTACT.email.primary);
+  const bookingsEmail = fillBrandPlaceholders(CONTACT.email.bookings ?? CONTACT.email.primary);
+  const mapGoogle = ADDRESS.map.google ?? '#';
+  const mapApple = ADDRESS.map.apple ?? mapGoogle;
+
+  const reservationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Restaurant',
+    name: BRAND.fullName,
+    url: `${SITE_URL}/contact`,
+    telephone: phoneDisplay,
+    email: bookingsEmail || primaryEmail,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: `${ADDRESS.street}, ${ADDRESS.area}`,
+      addressLocality: ADDRESS.city,
+      postalCode: ADDRESS.postcode,
+      addressCountry: 'GB',
+    },
   };
-  const locationInfo = {
-    ...contactContent.contactInfo.location,
-    address: ADDRESS_LINE,
-  };
-  const emailInfo = {
-    address: canonicalContact.email.primary,
-  };
+
+  const heroBadges = [
+    { label: 'Call', value: phoneDisplay },
+    { label: 'Email', value: bookingsEmail || primaryEmail },
+    { label: 'Find us', value: `${ADDRESS.street}, ${ADDRESS.city}` },
+  ];
+
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
-        @media (prefers-reduced-motion: reduce) {
-          *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-          html:focus-within{scroll-behavior:auto!important}
-        }
-      ` }} />
+      <style dangerouslySetInnerHTML={{ __html: reduceMotionStyles }} />
       <RestaurantLayout>
-        {renderSchemaTags([
-          // ... existing schema markup remains the same
-        ])}
-        
-        {/* Hero Section with motion animation */}
-        <section className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-10 md:py-16" aria-labelledby="contact-hero-heading">
-          <div className="absolute inset-0 bg-black/10"></div>
-          <FadeIn>
-            <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h1 id="contact-hero-heading" className="h2 text-white mb-3 leading-tight">
-                {contactContent.hero.title}
-              </h1>
-              <p className="text-base md:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
-                {contactContent.hero.subtitle}
-              </p>
-              {/* Quick Actions CTA inside hero */}
-              <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-                <a
-                  href={CONTACT.phone.tel}
-                  className="btn bg-white text-brand-800 hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
-                  aria-label={`Call ${IDENTITY.displayName} at ${CONTACT.phone.display}`}
-                  style={{ touchAction: 'manipulation' }}
-                >
-                  📞 Call {CONTACT.phone.display}
-                </a>
-                <a
-                  href={`mailto:${CONTACT.email.primary}`}
-                  className="btn btn-outline border-white text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
-                  aria-label={`Email ${IDENTITY.displayName} at ${CONTACT.email.primary}`}
-                  style={{ touchAction: 'manipulation' }}
-                >
-                  📧 {content.global?.ui?.buttons?.emailUs || 'Email Us'}
-                </a>
-                <a
-                  href={ADDRESS.map.google || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-ghost text-white hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
-                  aria-label={`Get directions to ${IDENTITY.displayName}`}
-                  style={{ touchAction: 'manipulation' }}
-                >
-                  🧭 {content.global?.ui?.buttons?.getDirections || 'Get Directions'}
-                </a>
+        {renderSchemaTags([reservationSchema])}
+
+        <section className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 text-white">
+          <div className="absolute inset-0">
+            <div
+              className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.15),_transparent_55%)]"
+              aria-hidden
+            />
+            <div className="absolute -left-24 top-12 h-64 w-64 rounded-full bg-brand-700/20 blur-3xl" aria-hidden />
+          </div>
+          <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <FadeIn className="space-y-8 text-center">
+              <div className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.35em] text-white/80">
+                Concierge desk
               </div>
-            </div>
-          </FadeIn>
-        </section>
-
-        {/* Main contact content with progressive disclosure */}
-        <main className="bg-white py-12">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Quick Actions are now inside the hero */}
-            <FadeIn>
-              <section className="grid grid-cols-1 gap-8 pb-16 lg:grid-cols-2" aria-labelledby="contact-info-heading">
-                <div>
-                  <h2 id="contact-info-heading" className="h3 text-brand-700 mb-6">Contact Information</h2>
-                  <ContactInfoSection
-                    phone={phoneInfo}
-                    location={locationInfo}
-                    email={emailInfo}
-                  />
-                </div>
-
-                <div className="space-y-8">
-                  <div>
-                    <h2 className="h3 text-brand-700 mb-6 font-semibold">
-                      {contactContent.hours.title}
-                    </h2>
-                    <RestaurantHoursCard />
-                  </div>
-
-                  <ContactFeaturesSection
-                    title={contactContent.features.title}
-                    items={contactContent.features.items}
-                  />
-
-                  <SocialMediaSection />
-                </div>
-              </section>
-            </FadeIn>
-
-            <FadeIn>
-              <section className="pt-12" aria-labelledby="map-heading">
-                <h2 id="map-heading" className="mb-6 text-center h3 text-brand-700">Find Us</h2>
-                <div className="rounded-3xl bg-brand-50 p-4 shadow-lg shadow-brand-900/10">
-                  <InteractiveMap
-                    title={`${IDENTITY.displayName} Location`}
-                    className="h-[420px] w-full overflow-hidden rounded-2xl border border-brand-200/40"
-                    height="400px"
-                    directionLabel={content.global?.ui?.buttons?.getDirections || 'Get Directions'}
-                    hintLabel={content.global?.ui?.labels?.clickForDirections || 'Click for directions'}
-                  />
-                </div>
-              </section>
+              <div className="space-y-4">
+                <h1 className="font-display text-4xl font-bold leading-tight text-white sm:text-5xl">
+                  {heroCopy.title ?? `Contact ${IDENTITY.displayName}`}
+                </h1>
+                <p className="text-lg text-white/80 max-w-3xl mx-auto">
+                  {heroCopy.subtitle ?? 'Call, email, or get directions. We respond within one working day — faster during open hours.'}
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-3" aria-label="Contact highlights">
+                {heroBadges.map((chip) => (
+                  <span
+                    key={chip.label}
+                    className="badge badge-outline border-white/40 bg-white/5 text-white/85"
+                  >
+                    {chip.label}: {chip.value}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+                <a
+                  href={phoneHref}
+                  className="btn btn-lg border-none bg-white text-brand-900 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/80"
+                  aria-label={`Call ${IDENTITY.displayName} at ${phoneDisplay}`}
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  Call {phoneDisplay}
+                </a>
+                <a
+                  href={`mailto:${primaryEmail}`}
+                  className="btn btn-lg border-white/40 bg-transparent text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/70"
+                  aria-label={`Email ${IDENTITY.displayName}`}
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  Email our team
+                </a>
+                {mapGoogle && (
+                  <a
+                    href={mapGoogle}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-lg border-white/40 bg-transparent text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/70"
+                    aria-label={`Get directions to ${IDENTITY.displayName}`}
+                    style={{ touchAction: 'manipulation' }}
+                  >
+                    Get directions ↗
+                  </a>
+                )}
+              </div>
             </FadeIn>
           </div>
-        </main>
+        </section>
+
+        <section className="bg-gradient-to-b from-white via-brand-50/50 to-white">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <FadeIn className="space-y-10">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-xs uppercase tracking-[0.35em] text-brand-500">Always-on support</p>
+                <h2 className="mt-4 font-display text-3xl font-bold text-brand-900 sm:text-4xl">Talk to the Corner House team</h2>
+                <p className="mt-3 text-lg text-brand-600">Choose the quickest route — everything lands with the same concierge desk.</p>
+              </div>
+
+              <div className="grid gap-6 lg:grid-cols-2">
+                <article className="h-full rounded-[2rem] border border-brand-100 bg-white p-8 shadow-2xl">
+                  <div className="space-y-6">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Contact</p>
+                      <h3 className="mt-2 font-display text-2xl text-brand-900">We reply fast</h3>
+                      <p className="mt-2 text-brand-700">Call for same-day answers or email for itineraries, menus, and access notes.</p>
+                    </div>
+                    <div className="space-y-3">
+                      <a
+                        href={phoneHref}
+                        className="btn w-full rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
+                        aria-label={`Call ${IDENTITY.displayName}`}
+                        style={{ touchAction: 'manipulation' }}
+                      >
+                        Call {phoneDisplay}
+                      </a>
+                      <a
+                        href={`mailto:${bookingsEmail || primaryEmail}`}
+                        className="btn w-full rounded-full border border-brand-200 text-brand-900 hover:bg-brand-50"
+                        aria-label="Email the bookings team"
+                      >
+                        Email us
+                      </a>
+                    </div>
+                    <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-4 text-sm text-brand-800">
+                      <p className="font-semibold text-brand-900">Address</p>
+                      <p className="mt-1">{ADDRESS.street}, {ADDRESS.area}, {ADDRESS.city} {ADDRESS.postcode}</p>
+                      <p className="mt-2 text-brand-700">Opposite Cambridge Retail Park; step-free entry from Newmarket Road.</p>
+                    </div>
+                    <div>
+                      <RestaurantHoursCard
+                        variant="light"
+                        className="!bg-transparent !border-none !shadow-none p-0"
+                      />
+                      <p className="mt-2 text-sm text-brand-700">Walk-ins welcome daily; call for live wait times.</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article className="h-full rounded-[2rem] border border-brand-100 bg-white p-8 shadow-2xl">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Find us</p>
+                        <h3 className="font-display text-2xl text-brand-900">Directions & access</h3>
+                      </div>
+                      <span className="badge badge-outline border-brand-200 text-brand-700">CB5 8JE</span>
+                    </div>
+                    <InteractiveMap
+                      className="h-72 rounded-2xl border border-brand-100 overflow-hidden"
+                      height="100%"
+                      directionLabel="Get directions"
+                      hintLabel="Tap for directions"
+                    />
+                    <div className="flex flex-wrap gap-2">
+                      <a
+                        href={mapGoogle}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
+                        aria-label="Open Google Maps directions (opens in new tab)"
+                      >
+                        Google Maps ↗
+                      </a>
+                      <a
+                        href={mapApple}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
+                        aria-label="Open Apple Maps directions (opens in new tab)"
+                      >
+                        Apple Maps
+                      </a>
+                    </div>
+                    <ul className="space-y-2 text-sm text-brand-700">
+                      <li>• Free short-stay parking opposite the garden entrance.</li>
+                      <li>• 10-minute walk from Abbey Stadium and river paths.</li>
+                      <li>• Step-free entrance and buggy space available; call ahead to reserve quiet seating.</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
       </RestaurantLayout>
     </>
   );

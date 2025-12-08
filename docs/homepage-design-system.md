@@ -37,6 +37,30 @@ The About experience now mirrors the homepage rhythm. The navbar starts light, t
 
 When extending `/about`, follow this alternation (dark hero → light story → dark gallery …) so new sections don’t break the established rhythm.
 
+### /events Page Rhythm
+
+The refocused events destination mirrors the same cadence with three key experiences (match screenings, private hire/heated cabins, free Sunday pool). The order is locked to:
+
+1. **Hero – Dark:** gradient background (`from-brand-950 via-brand-900 to-brand-950`), badges for Sky/TNT + cabins + Sunday pool, and primary/secondary CTAs leading to bookings.
+2. **Experience Cards – Light:** three-up grid (`rounded-[2.5rem] border-brand-100 bg-white/95`) highlighting “Watch every match”, “Private hire & cabins”, and “Free Sunday pool”. Each card uses a single outline button.
+3. **Matchday Essentials – Dark:** two-column layout with glass cards (`bg-white/5 border-white/15`) describing screen coverage, broadcast partners, feature chips, and CTA buttons with white outlines.
+4. **Cabins & Private Hire – Light:** paired white cards for heated pods and whole-venue takeovers, each with bullet lists and dual CTAs (outline + ghost) following the light theme token set.
+5. **Sunday Pool Spotlight – Dark:** closing band reuses the hero gradient, explains the complimentary Sunday pool offer, and repeats solid/outline button pairing in white.
+
+Maintain this dark → light → dark → light → dark rhythm when inserting future events components (e.g., if a new highlight is added, introduce it as a light card block and push the subsequent section to dark).
+
+### /book-a-table Page Rhythm
+
+The booking destination now mirrors the homepage cadence with a five-piece stack so guests can skim essentials quickly. The order is:
+
+1. **Hero – Dark:** gradient hero (`from-brand-950 via-brand-900 to-brand-950`) with eyebrow chip, display heading, highlight badges, CTA pair (solid white primary, white-outline phone) plus glass fact cards.
+2. **Booking Essentials – Light:** gradient-to-white band containing intro copy and a grid of white shells (`rounded-[2.5rem] border-brand-100 bg-white/95 shadow-2xl`) wrapping the live Hours, Book by Phone, and Find Us cards.
+3. **Hosting & Experiences – Dark:** glass cards (`bg-white/5 border-white/15`) outline cabins, milestones, and booking assurances alongside a CTA pair (solid brand + white-outline contact link).
+4. **Concierge Support – Light:** dual-column white cards covering bespoke planning, response times, and concierge checklist with brand-outline buttons.
+5. **Same-day CTA – Dark:** closing glass CTA reminding guests about walk-ins/last-minute tables with solid brand call button + white-outline directions link.
+
+Keep this dark → light → dark → light → dark rhythm whenever introducing new booking content; add light-feature blocks in pairs if additional info is required and push the subsequent sections to maintain alternation.
+
 ## Components & Patterns
 
 ### Eyebrow + Badge Tokens

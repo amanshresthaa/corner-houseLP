@@ -55,7 +55,18 @@ export default function ContactInfoSection({
   // No motion: remove animation variants
 
   // Parse address into lines for better display
-  const addressLines = location.address.split(', ');
+  const commaSeparatedLines = location.address
+    .split(',')
+    .map((line) => line.trim())
+    .filter(Boolean);
+  const addressLines = commaSeparatedLines.length > 0 ? commaSeparatedLines.flatMap((line) => {
+    const postcodeMatch = line.match(/([A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2})$/i);
+    if (postcodeMatch && line !== postcodeMatch[0]) {
+      const streetOrCity = line.slice(0, line.length - postcodeMatch[0].length).trim();
+      return streetOrCity ? [streetOrCity, postcodeMatch[0]] : [postcodeMatch[0]];
+    }
+    return [line];
+  }) : [location.address];
   const phoneHref = phone.href || `tel:${phone.number.replace(/\s/g, '')}`;
 
   return (

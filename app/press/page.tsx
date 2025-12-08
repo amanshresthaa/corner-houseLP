@@ -20,7 +20,7 @@ const PRESS_FACTS = [
   `Phone: ${CONTACT.phone.display} • Email: ${CONTACT.email.primary}`,
   "Ownership: Lapen Inns Hospitality (since 2024 relaunch)",
   "Hybrid: Art-deco sports pub with Nepalese kitchen, heated cabins, and HD matchday screens",
-  "Awards: TripAdvisor Travelers’ Choice 2025 • CAMRA Most Improved City Pub 2020",
+  "Awards: TripAdvisor Travelers' Choice 2025 • CAMRA Most Improved City Pub 2020",
   "Amenities: Sky & TNT Sports, outdoor projector, family & dog friendly, shuffleboard, takeaway & delivery",
 ];
 const MEDIA_CONTACT = {
@@ -29,6 +29,7 @@ const MEDIA_CONTACT = {
   phoneTel: CONTACT.phone.tel,
   address: `${ADDRESS.street}, ${ADDRESS.area}, ${ADDRESS.city}, ${ADDRESS.postcode}`,
 };
+
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -42,30 +43,8 @@ export async function generateMetadata() {
   });
 }
 
-function getSourceFromTitle(title: string): { source: string; headline: string } {
-  if (!title) return { source: 'Source', headline: '' };
-  const parts = title.split(':');
-  if (parts.length >= 2) {
-    const source = parts[0].trim();
-    const headline = parts.slice(1).join(':').trim();
-    return { source, headline };
-  }
-  return { source: 'Source', headline: title };
-}
-
-function getDomainLabel(href: string): string {
-  try {
-    const u = new URL(href);
-    const host = u.hostname.replace(/^www\./, '');
-    return host;
-  } catch {
-    return 'external link';
-  }
-}
-
 export default async function PressPage() {
   const content = await getContentSmart();
-  const pressItems = (content?.pages as any)?.home?.sections?.pressTicker?.items || [];
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -114,229 +93,125 @@ export default async function PressPage() {
           }
         ])}
 
-        <section
-          className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-10 md:py-16"
-          aria-labelledby="press-hero-heading"
-        >
-          <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
+        <main className="bg-white text-brand-900">
           <FadeIn>
-            <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <nav aria-label="Breadcrumb" className="mb-4">
-                <ol className="flex justify-center items-center gap-2 text-sm text-brand-100">
-                  <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-                  <li aria-hidden="true">/</li>
-                  <li className="text-brand-50 font-medium">Press Kit</li>
-                </ol>
-              </nav>
-              <h1 id="press-hero-heading" className="h2 text-white mb-3 leading-tight">
-                Press Kit
-              </h1>
-              <p className="text-base md:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
-                At-a-glance facts and media contact for {BRAND.fullName} — an art-deco sports pub opposite Cambridge Retail Park with a Nepalese kitchen and heated garden cabins.
-              </p>
-            </div>
-          </FadeIn>
-        </section>
-
-		<main className="bg-white pb-4">
-          {/* Hygiene card removed: not present in the provided Markdown and out of scope for press kit */}
-
-          {/* External press feature banner removed to keep page minimal and source-aligned */}
-
-          {/* Media highlights removed: keep only essential, verified information */}
-
-          {/* (moved) Press Kit now follows Media Coverage to match dark/light alternation */}
-          {/* Media coverage list */}
-          <FadeIn>
-            <section className="py-12 md:py-16 bg-white" aria-labelledby="media-coverage-heading">
-              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="flex items-end justify-between gap-4 mb-6">
-                  <div>
-                    <h2 id="media-coverage-heading" className="h2 text-neutral-900">
-                      Media Coverage
-                    </h2>
-                    <p className="mt-2 text-neutral-600">Independent articles about {BRAND.fullName}.</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-                  {pressItems.map((item: any) => {
-                    const { source, headline } = getSourceFromTitle(item?.title ?? '');
-                    const summary = item?.summary ?? '';
-                    const href = item?.href ?? '#';
-                    const domain = getDomainLabel(href);
-                    const aria = item?.ariaLabel || `Open ${source} article in a new tab`;
-                    return (
-                      <article key={href} className="group relative rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-shadow focus-within:ring-2 focus-within:ring-brand-300">
-                        <div className="p-5 md:p-6">
-                          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-2">
-                            <span className="inline-flex items-center rounded-full border border-neutral-200 px-2 py-0.5 text-xs font-medium bg-neutral-50 text-neutral-700">
-                              {source}
-                            </span>
-                            <span aria-hidden="true" className="text-neutral-300">•</span>
-                            <span className="text-neutral-500" aria-label={`Domain ${domain}`}>{domain}</span>
-                          </div>
-
-                          <h3 className="h5 text-neutral-900 leading-snug font-semibold">
-                            <a
-                              href={href}
-                              target="_blank"
-                              rel="noopener noreferrer external"
-                              className="focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 rounded"
-                              aria-label={aria}
-                            >
-                              <span className="absolute inset-0" aria-hidden="true" />
-                              {headline || source}
-                            </a>
-                          </h3>
-                          {summary && (
-                            <p className="mt-2 text-neutral-700 leading-relaxed">{summary}</p>
-                          )}
-
-                          <div className="mt-4 flex items-center justify-between">
-                            <cite className="not-italic text-sm text-neutral-600" title={`Source: ${source}`}>Source: {source}</cite>
-                            <a
-                              href={href}
-                              target="_blank"
-                              rel="noopener noreferrer external"
-                              className="link link-hover text-brand-700"
-                              aria-label={`Read ${source} article (opens in new tab)`}
-                            >
-                              Read article →
-                            </a>
-                          </div>
-                        </div>
-                      </article>
-                    );
-                  })}
-                  {pressItems.length === 0 && (
-                    <p className="text-neutral-600">Press coverage coming soon.</p>
-                  )}
+            <section
+              className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 py-16 text-white"
+              aria-labelledby="press-hero-heading"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/40 via-transparent to-brand-700/20" aria-hidden="true" />
+              <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
+                  <ol className="flex items-center gap-2">
+                    <li>
+                      <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                    </li>
+                    <li aria-hidden="true">/</li>
+                    <li className="text-white">Press &amp; Media</li>
+                  </ol>
+                </nav>
+                <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+                  Press &amp; Media
+                </span>
+                <h1 id="press-hero-heading" className="mt-4 text-4xl font-display font-semibold leading-tight sm:text-5xl">
+                  Official press kit for {BRAND.fullName}
+                </h1>
+                <p className="mt-4 max-w-3xl text-base text-white/80 sm:text-lg">
+                  Story-ready facts, imagery access, and rapid contacts for The Corner House Cambridge—an art-deco sports pub with a Nepalese kitchen, heated cabins, and HD matchday screens opposite Cambridge Retail Park.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <a
+                    href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: ${BRAND.fullName}`}
+                    className="btn border-none bg-white text-brand-900 hover:bg-white/90"
+                    style={{ touchAction: 'manipulation' }}
+                  >
+                    Email press desk
+                  </a>
+                  <a
+                    href={MEDIA_CONTACT.phoneTel}
+                    className="btn btn-outline border-white/50 text-white hover:bg-white/10"
+                    style={{ touchAction: 'manipulation' }}
+                    aria-label={`Call ${MEDIA_CONTACT.phoneDisplay}`}
+                  >
+                    Call {MEDIA_CONTACT.phoneDisplay}
+                  </a>
                 </div>
               </div>
             </section>
           </FadeIn>
-          {/* Press Kit second (dark brand gradient to match palette) */}
+
           <FadeIn>
-            <section className="relative bg-gradient-to-br from-brand-600 to-brand-800 text-white py-16" aria-labelledby="press-kit-heading">
-              <div className="absolute inset-0 bg-black/5" aria-hidden="true" />
-              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+            <section className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 py-16 text-white" aria-labelledby="press-kit-heading">
+              <div className="absolute inset-0 bg-brand-900/40" aria-hidden="true" />
+              <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="grid gap-10 lg:grid-cols-2">
                   <div>
-                    <h2 id="press-kit-heading" className="h2 text-white">
-                      Press Kit &amp; Quick Facts
+                    <span className="inline-flex items-center rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
+                      Quick facts
+                    </span>
+                    <h2 id="press-kit-heading" className="mt-4 text-3xl font-display font-semibold">
+                      Press kit &amp; story starters
                     </h2>
-                    <p className="mt-3 text-brand-100 leading-relaxed">
-                      Need context for your story? Start with the essentials below or drop us a line for high-resolution imagery, quotes, and spokespeople availability.
+                    <p className="mt-3 text-white/80">
+                      Use the essentials below or reference our homepage design system for deeper dives into menu, events, and booking flows.
                     </p>
-                    <ul className="mt-6 space-y-3 text-brand-100">
+                    <ul className="mt-6 space-y-4 text-white/80">
                       {PRESS_FACTS.map((fact) => (
                         <li key={fact} className="flex items-start gap-3">
-                          <span aria-hidden="true" className="mt-1 text-brand-200">•</span>
+                          <span aria-hidden="true" className="mt-1 inline-flex h-2 w-2 rounded-full bg-white/70" />
                           <span>{fact}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                    <div className="bg-white rounded-2xl shadow-lg border border-brand-100 p-6 sm:p-8 space-y-6">
-                    <div>
-                      <h3 className="h5 text-brand-700 font-semibold">Talk to the team</h3>
-                      <p className="mt-2 text-sm text-brand-600 leading-relaxed">
-                        We aim to reply to press enquiries within one working day. Please include your deadline, outlet, and angle so we can connect you with the right spokesperson.
-                      </p>
-                    </div>
-                    <div className="space-y-2 text-sm text-brand-700">
-                      <p><strong>Email:</strong> <a href={`mailto:${MEDIA_CONTACT.email}`} className="link link-hover text-brand-600">{MEDIA_CONTACT.email}</a></p>
-                      <p><strong>Phone:</strong> <a href={MEDIA_CONTACT.phoneTel} className="link link-hover text-brand-600">{MEDIA_CONTACT.phoneDisplay}</a></p>
-                      <p><strong>Address:</strong> {MEDIA_CONTACT.address}</p>
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-3">
+                  <article className="rounded-[2.5rem] border border-white/15 bg-white/5 p-6 shadow-2xl backdrop-blur">
+                    <h3 className="text-2xl font-display">Talk to the team</h3>
+                    <p className="mt-3 text-white/80">
+                      Tell us your outlet, deadline, and angle so we can connect you with a spokesperson or chef quickly. We aim to reply within one working day.
+                    </p>
+                    <dl className="mt-6 space-y-3 text-sm">
+                      <div>
+                        <dt className="uppercase tracking-[0.35em] text-white/60">Email</dt>
+                        <dd>
+                          <a href={`mailto:${MEDIA_CONTACT.email}`} className="text-white underline-offset-4 hover:underline">
+                            {MEDIA_CONTACT.email}
+                          </a>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="uppercase tracking-[0.35em] text-white/60">Phone</dt>
+                        <dd>
+                          <a href={MEDIA_CONTACT.phoneTel} className="text-white underline-offset-4 hover:underline">
+                            {MEDIA_CONTACT.phoneDisplay}
+                          </a>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="uppercase tracking-[0.35em] text-white/60">Address</dt>
+                        <dd>{MEDIA_CONTACT.address}</dd>
+                      </div>
+                    </dl>
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                       <a
                         href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: ${BRAND.fullName}`}
-                        className="btn bg-brand-700 text-white hover:bg-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                        className="btn border-none bg-white text-brand-900 hover:bg-white/90"
                         style={{ touchAction: 'manipulation' }}
                       >
-                        Email Press Team
+                        Email press team
                       </a>
-                      <Link
-                        href="/contact"
-                        className="btn btn-outline border-brand-300 text-brand-700 hover:bg-brand-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                      <a
+                        href={MEDIA_CONTACT.phoneTel}
+                        className="btn btn-outline border-white/40 text-white hover:bg-white/10"
                         style={{ touchAction: 'manipulation' }}
                       >
-                        Contact Page
-                      </Link>
+                        Call us
+                      </a>
                     </div>
-                    <div className="border border-dashed border-brand-200 rounded-xl p-4 text-sm text-brand-600 bg-brand-50/60">
-                      <p className="font-medium text-brand-700 mb-1">Need imagery?</p>
-                      <p>
-                        We can supply exterior/interior photography and chef portraits sized for print or web. Mention your preferred format when you get in touch.
-                      </p>
+                    <div className="mt-6 rounded-2xl border border-dashed border-white/40 p-4 text-sm text-white/80">
+                      Need imagery? Mention preferred format (web, print, portrait, landscape) so we can send the right files on first reply.
                     </div>
-                  </div>
+                  </article>
                 </div>
-              </div>
-            </section>
-          </FadeIn>
-
-          {/* Food Hygiene Rating (light section) */}
-          <FadeIn>
-            <section className="py-16 bg-brand-50" aria-labelledby="food-hygiene-heading">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                {(() => {
-                  const FSA = {
-                    FHRSID: 1807077,
-                    businessName: BRAND.fullName,
-                    ratingValue: '5',
-                    ratingDate: '2025-02-26T00:00:00',
-                  } as const;
-                  const RATING_TEXT: Record<string, string> = {
-                    '0': 'Urgent Improvement Necessary',
-                    '1': 'Major Improvement Necessary',
-                    '2': 'Improvement Necessary',
-                    '3': 'Generally Satisfactory',
-                    '4': 'Good',
-                    '5': 'Very Good',
-                  };
-                  const date = new Date(FSA.ratingDate);
-                  const formatted = isNaN(date.getTime())
-                    ? 'Unknown date'
-                    : date.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
-                  const fsaHref = `https://ratings.food.gov.uk/business/${FSA.FHRSID}`;
-                  const ratingText = RATING_TEXT[FSA.ratingValue] ?? '';
-                  return (
-                    <div className="card bg-brand-700 text-white shadow-xl border border-brand-600">
-                      <div className="card-body gap-6 md:gap-8">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
-                          <div className="flex items-start md:items-center gap-5">
-                            <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full bg-white text-brand-700 font-display text-3xl font-bold">
-                              {FSA.ratingValue}
-                            </div>
-                            <div>
-                              <p className="text-xs uppercase tracking-[0.2em] text-brand-200 font-semibold">Food Standards Agency</p>
-                              <h2 id="food-hygiene-heading" className="h4 leading-snug">
-                                Food Hygiene Rating: {FSA.ratingValue} {ratingText ? `(${ratingText})` : ''}
-                              </h2>
-                              <p className="mt-2 text-brand-100 text-sm md:text-base leading-relaxed">
-                                Official inspection completed on {formatted}. View the full report for detailed hygiene, structure, and management scores.
-                              </p>
-                            </div>
-                          </div>
-                          <a
-                            href={fsaHref}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-outline border-white text-white hover:bg-white/10 hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-700"
-                            aria-label={`View ${FSA.businessName} Food Standards Agency hygiene rating (opens in new tab)`}
-                            style={{ touchAction: 'manipulation' }}
-                          >
-                            View rating ↗
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })()}
               </div>
             </section>
           </FadeIn>
