@@ -2,12 +2,13 @@ import Image from 'next/image';
 import sportsImage from '@cimages/Slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png';
 import Link from '@/lib/debugLink';
 import React from 'react';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export const SportsSlide: React.FC = () => {
   return (
     <section
       aria-roledescription="slide"
-      aria-label="Live sports in Waterbeach - Premier League, rugby and more"
+      aria-label={`Live sports at ${BRAND.fullName}`}
       className="relative bg-neutral-900 text-white overflow-hidden rounded-lg shadow-lg"
     >
       <figure className="relative w-full h-[420px] sm:h-[520px]">
@@ -21,20 +22,20 @@ export const SportsSlide: React.FC = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent pointer-events-none" />
         <figcaption id="sports-slide-desc" className="sr-only">
-          Cosy pub bar with polished taps, copper shelving and hanging glassware — the setting for live sports, cocktails and crisp pints in Waterbeach.
+          {`Copper-topped ${BRAND.nickname} bar with HD screens, polished taps, and glass racks ready for Cambridge matchdays.`}
         </figcaption>
       </figure>
 
       <div className="p-6 md:p-8 lg:p-10">
-        <p className="text-sm font-semibold text-accent-200">SKY SPORTS · LIVE · BIG SCREEN</p>
+        <p className="text-sm font-semibold text-accent-200">SKY SPORTS · TNT · OUTDOOR PROJECTOR</p>
         <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight">
-          Live Sports in Waterbeach — Premier League, Football & Rugby
+          Cambridge’s go-to pub for Premier League, rugby, and big finals
         </h2>
         <p className="mt-3 text-sm md:text-base text-gray-100 max-w-3xl">
-          Watch every Premier League match and top sporting fixtures live in Waterbeach, Cambridge.
-          From Premier League and domestic football to international rugby and major tournaments,
-          our venue screens the biggest games on the big screen with a lively matchday atmosphere.
-          Book now for matchday seating and enjoy live sports with great food and drinks.
+          Opposite Cambridge Retail Park and minutes from Abbey Stadium, {BRAND.shortName} keeps every
+          Premier League weekend, Champions League tie, and international clash on wall-to-wall HD screens
+          and the heated garden projector. Reserve matchday cabins, share momo platters at halftime,
+          and soak up the electric sports-bar energy with crisp pints and Nepali grills.
         </p>
 
         <div className="mt-5 flex gap-3">
@@ -46,8 +47,8 @@ export const SportsSlide: React.FC = () => {
           </Link>
         </div>
 
-  <p className="mt-4 text-xs text-gray-300">Image caption: The White Horse bar — polished taps, cocktails, and matchday energy.</p>
-  <p className="mt-2 text-xs text-gray-400">Photo: The White Horse, Waterbeach</p>
+        <p className="mt-4 text-xs text-gray-300">Image caption: {BRAND.nickname} matchday bar — polished taps, cocktails, and HD screens glowing for kick-off.</p>
+        <p className="mt-2 text-xs text-gray-400">Photo: {BRAND.fullName}</p>
       </div>
     </section>
   );

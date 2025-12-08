@@ -8,11 +8,11 @@
     "environmentBanner": false
   },
   "api": {
-    "baseUrl": "https://whitehorsepub.co",
-    "menuEndpoint": "https://whitehorsepub.co/api/menu",
-    "marketingEndpoint": "https://whitehorsepub.co/api/marketing",
-    "restaurantEndpoint": "https://whitehorsepub.co/api/restaurant",
-    "contentEndpoint": "https://whitehorsepub.co/api/content"
+    "baseUrl": "https://{{brand.domain}}",
+    "menuEndpoint": "https://{{brand.domain}}/api/menu",
+    "marketingEndpoint": "https://{{brand.domain}}/api/marketing",
+    "restaurantEndpoint": "https://{{brand.domain}}/api/restaurant",
+    "contentEndpoint": "https://{{brand.domain}}/api/content"
   },
   "cms": { 
     "enabled": true,
@@ -20,8 +20,8 @@
     "fallback": "filesystem"
   },
   "metadata": {
-    "appName": "The White Horse",
-    "domainName": "whitehorsepub.co",
+    "appName": "{{brand.fullName}}",
+    "domainName": "{{brand.domain}}",
     "environment": "production"
   },
   "performance": {

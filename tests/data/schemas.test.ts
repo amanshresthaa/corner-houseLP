@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { MenuSchema, ConfigSchema, MarketingSchema, RestaurantSchema } from '@/src/lib/data/schemas';
+import { BRAND } from '@/src/lib/constants/brand';
 
 describe('schemas', () => {
   test('MenuSchema accepts valid sample', () => {
@@ -28,7 +29,7 @@ describe('schemas', () => {
 
   test('RestaurantSchema minimal', () => {
     const r = RestaurantSchema.parse({
-      name: 'The White Horse', phone: 'x', email: 'y',
+      name: BRAND.fullName, phone: 'x', email: 'y',
       address: { street: 'a', city: 'b', state: 'c', zip: 'd' },
       hours: { Mon: '9-5' }
     });

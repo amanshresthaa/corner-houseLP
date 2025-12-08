@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "The Corner House, Cambridge – Sports Pub & Nepalese Kitchen",
+    "title": "{{brand.shortName}}, Cambridge – Sports Pub & Nepalese Kitchen",
     "subtitle": "Matchday energy, heated garden cabins, and authentic Himalayan plates on Newmarket Road.",
     "description": "1930s art-deco pub reborn as Cambridge’s home for HD sports, momos, and roasts. Settle into a snug, book a heated cabin, or grab a curry before the game.",
     "cta": {
@@ -12,7 +12,7 @@
   },
   "sections": {
     "features": {
-      "title": "Why Cambridge Chooses The Corner House",
+      "title": "Why Cambridge Chooses {{brand.shortName}}",
       "items": [
         {
           "icon": "📺",
@@ -60,7 +60,7 @@
       ]
     },
     "about": {
-      "title": "Welcome to The Corner House",
+      "title": "Welcome to {{brand.shortName}}",
       "tagline": "Pints, momos, and matchday energy on Newmarket Road",
       "description": [
         "A 1930s art-deco corner pub reinvented with a full Nepalese kitchen, proper pints, and HD sports just east of Cambridge city centre.",
@@ -73,70 +73,212 @@
         "Heated private cabins and covered beer garden",
         "Accessible, family- and dog-friendly throughout"
       ],
+      "stats": [
+        {
+          "value": "800+",
+          "label": "Guest reviews",
+          "description": "Tripadvisor & Google"
+        },
+        {
+          "value": "12",
+          "label": "HD screens",
+          "description": "inside & garden"
+        },
+        {
+          "value": "4",
+          "label": "Heated cabins",
+          "description": "bookable all year"
+        }
+      ],
+      "ctaLinks": [
+        {
+          "text": "Book a Table",
+          "href": "/book-a-table"
+        },
+        {
+          "text": "View Menu",
+          "href": "/menu#starters"
+        },
+        {
+          "text": "Call +44 1223 921122",
+          "href": "tel:+441223921122"
+        }
+      ],
+      "milestones": [
+        {
+          "year": "1930s",
+          "title": "Art-deco origin",
+          "copy": "Corner local opens on Newmarket Road with curved glass frontage and timber snug rooms."
+        },
+        {
+          "year": "2019",
+          "title": "Nepalese kitchen",
+          "copy": "Nepali chefs join the team, introducing momos, sizzlers, and Himalayan spice to pub classics."
+        },
+        {
+          "year": "2023",
+          "title": "Garden cabins",
+          "copy": "Heated private cabins, festoon lighting, and an outdoor projector reimagine the beer garden."
+        },
+        {
+          "year": "2025",
+          "title": "Travelers' Choice",
+          "copy": "Awarded Tripadvisor Travelers’ Choice with 800+ glowing reviews across Google & TripAdvisor."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "/images/white-horse/interior/corner-house-snug.jpg",
+          "alt": "Snug seating at {{brand.shortName}} with art-deco lighting",
+          "label": "Snugs & fireplace"
+        },
+        {
+          "src": "/images/white-horse/dishes/momos-platter.jpg",
+          "alt": "Steaming plate of momos with dipping sauce",
+          "label": "Handmade momos"
+        },
+        {
+          "src": "/images/white-horse/garden/heated-cabins.jpg",
+          "alt": "Heated cabin pods with fairy lights",
+          "label": "Heated cabins"
+        }
+      ],
       "image": {
         "src": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg",
-        "alt": "Corner House Cambridge exterior on Newmarket Road with pub signage and garden seating"
+        "alt": "{{brand.fullNameNoArticle}} exterior on Newmarket Road with pub signage and garden seating"
       }
     },
     "signatureDishes": {
       "title": "Signature Nepalese Dishes",
       "subtitle": "Pub classics meet Himalayan favourites",
+      "hero": {
+        "eyebrow": "Chef's tasting",
+        "title": "Plates that define {{brand.shortName}}",
+        "description": "Hand-pinched momos, sizzling mixed grills, and slow-braised curries crafted by our Kathmandu-born kitchen lead.",
+        "quote": "We marinate every skewer for 24 hours and finish with Nepali timmur for that citrus-pepper hit.",
+        "quoteBy": "Chef Lakpa",
+        "cta": {
+          "text": "Explore the full menu",
+          "href": "/menu#starters"
+        }
+      },
       "items": [
         {
           "name": "Chicken Rum Rum",
           "description": "House signature curry with tomato, ginger, and timmur pepper heat — medium and addictive.",
-          "image": "/images/white-horse/dishes/signature-lkk-chicken.png"
+          "image": "/images/white-horse/dishes/signature-lkk-chicken.png",
+          "tags": ["Signature", "Gluten-free"],
+          "spiceLevel": "Medium",
+          "price": "£14",
+          "featured": true,
+          "callout": "Guest favourite"
         },
         {
           "name": "Himali Lamb",
           "description": "Slow-braised lamb in warming Himalayan spices with a velvety, aromatic sauce.",
-          "image": "/images/white-horse/dishes/signature-himali-lamb.png"
+          "image": "/images/white-horse/dishes/signature-himali-lamb.png",
+          "tags": ["Chef's pick"],
+          "spiceLevel": "Warm",
+          "price": "£16"
         },
         {
           "name": "Khasi Ko Masu (Goat Curry)",
           "description": "Traditional goat curry simmered low-and-slow for deep flavour without overpowering heat.",
-          "image": "/images/white-horse/dishes/signature-goat-curry.png"
+          "image": "/images/white-horse/dishes/signature-goat-curry.png",
+          "tags": ["Heritage"],
+          "spiceLevel": "Medium",
+          "price": "£17"
         },
         {
           "name": "House Mixed Grill",
           "description": "Sizzling platter of wings, tikka, seekh kebab, and king prawn — perfect for sharing in the bar or cabins.",
-          "image": "/images/white-horse/dishes/signature-house-mixed-grill.png"
+          "image": "/images/white-horse/dishes/signature-house-mixed-grill.png",
+          "tags": ["Sharing", "Grill"],
+          "spiceLevel": "Varied",
+          "price": "£22"
         }
       ]
     },
     "reviews": {
       "title": "What Guests Say",
-      "subtitle": "Real diners on food, service, and matchday atmosphere",
+      "subtitle": "800+ five-star shoutouts across TripAdvisor & Google prove that Himalayan grills and pub classics belong together.",
+      "hero": {
+        "eyebrow": "Guest highlights",
+        "title": "4.7★ across 800+ reviews",
+        "description": "Families, football fans, and curry hunters rave about sizzling mixed grills, warm service, and heated cabins just outside central Cambridge.",
+        "cta": {
+          "text": "Book a table",
+          "href": "/book-a-table"
+        },
+        "badge": {
+          "label": "Tripadvisor Travelers' Choice 2025",
+          "value": "Top 10%"
+        }
+      },
+      "stats": [
+        { "value": "4.7★", "label": "Average rating", "description": "Google + TripAdvisor" },
+        { "value": "800+", "label": "Guest quotes", "description": "Since 2019 relaunch" },
+        { "value": "24h", "label": "Marinade", "description": "Mixed grill prep" },
+        { "value": "12", "label": "HD screens", "description": "Matchday ready" }
+      ],
+      "spotlights": [
+        {
+          "title": "Food & Drink",
+          "copy": "Momos, Himali Lamb, mixed grills, and Sunday roasts arrive with cask ales and smoky timmur heat.",
+          "accent": "accent"
+        },
+        {
+          "title": "Service & Atmosphere",
+          "copy": "Friendly Nepali-led team guides spice levels, keeps pints flowing, and knows regulars by name.",
+          "accent": "emerald"
+        },
+        {
+          "title": "Spaces",
+          "copy": "Art-deco snugs, heated cabins, and HD screens suit date nights, families, and derby days.",
+          "accent": "amber"
+        }
+      ],
       "items": [
         {
           "quote": "Superb Himali Lamb Curry and friendly staff who helped us navigate the Nepalese dishes.",
-          "source": "5★ — Tony B., TripAdvisor (Nov 2025)",
+          "source": "5★ — Tony B., TripAdvisor",
           "platform": "TripAdvisor",
-          "rating": 5
+          "rating": 5,
+          "date": "Nov 2025",
+          "accent": "accent",
+          "featured": true
         },
         {
           "quote": "Perfect spot for a Cambridge reunion — attentive team, great drinks, brilliant atmosphere.",
-          "source": "5★ — Colin S., TripAdvisor (Nov 2025)",
+          "source": "5★ — Colin S., TripAdvisor",
           "platform": "TripAdvisor",
-          "rating": 5
+          "rating": 5,
+          "date": "Nov 2025",
+          "accent": "emerald"
         },
         {
           "quote": "Old pub with a twist. Nepalese curry was excellent and plenty of HD screens for the match.",
-          "source": "5★ — C.V., TripAdvisor (Oct 2025)",
+          "source": "5★ — C.V., TripAdvisor",
           "platform": "TripAdvisor",
-          "rating": 5
+          "rating": 5,
+          "date": "Oct 2025",
+          "accent": "amber"
         },
         {
           "quote": "Second time here — same delicious curry and very reasonable prices for Cambridge.",
-          "source": "5★ — Josh P., Google (Aug 2025)",
+          "source": "5★ — Josh P., Google",
           "platform": "Google",
-          "rating": 5
+          "rating": 5,
+          "date": "Aug 2025",
+          "accent": "brand"
         },
         {
           "quote": "Family-friendly pub; staff handled dietary requests and the fireplace made it extra cosy.",
-          "source": "5★ — Frances D., TripAdvisor (Jan 2025)",
+          "source": "5★ — Frances D., TripAdvisor",
           "platform": "TripAdvisor",
-          "rating": 5
+          "rating": 5,
+          "date": "Jan 2025",
+          "accent": "lilac"
         }
       ]
     },
@@ -144,13 +286,13 @@
       "label": "In the spotlight",
       "eyebrow": "Awards & Community",
       "title": "Tripadvisor Travelers’ Choice 2025 & CAMRA Most Improved City Pub",
-      "summary": "From CAMRA recognition in 2020 to a Travelers’ Choice badge in 2025, The Corner House continues to blend great beer, bold Nepalese flavours, and a welcoming local vibe.",
+      "summary": "From CAMRA recognition in 2020 to a Travelers’ Choice badge in 2025, {{brand.shortName}} continues to blend great beer, bold Nepalese flavours, and a welcoming local vibe.",
       "quote": "Keeping the local alive with pints, momos, and matchday buzz on Newmarket Road.",
       "quoteAttribution": "Lapen Inns Hospitality",
       "cta": {
         "text": "Explore our story",
         "href": "/about",
-        "ariaLabel": "Read about The Corner House story"
+        "ariaLabel": "Read about {{brand.shortName}} story"
       }
     },
     "quickLinks": [
@@ -174,7 +316,7 @@
       }
     ],
     "cta": {
-      "headline": "Visit The Corner House",
+      "headline": "Visit {{brand.shortName}}",
       "description": "Book a heated cabin, catch the match, or order Nepalese favourites for collection or delivery.",
       "buttons": [
         {
@@ -201,21 +343,21 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "The Corner House Cambridge",
-        "url": "https://thecornerhousepub.co/",
+        "name": "{{brand.fullName}}",
+        "url": "https://{{brand.domain}}/",
         "description": "Sports pub and Nepalese kitchen on Newmarket Road with heated cabins, HD screens, and friendly service.",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://thecornerhousepub.co/menu?search={search_term_string}",
+          "target": "https://{{brand.domain}}/menu?search={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@context": "https://schema.org",
         "@type": "Restaurant",
-        "@id": "https://thecornerhousepub.co/#restaurant",
-        "name": "The Corner House Cambridge",
-        "image": "https://thecornerhousepub.co/opengraph-image.png",
+        "@id": "https://{{brand.domain}}/#restaurant",
+        "name": "{{brand.fullName}}",
+        "image": "https://{{brand.domain}}/opengraph-image.png",
         "description": "1930s Cambridge pub serving authentic Nepalese dishes, pub classics, and Sunday roasts with HD sports and heated cabins.",
         "address": {
           "@type": "PostalAddress",
@@ -230,7 +372,7 @@
           "latitude": 52.20948,
           "longitude": 0.14335
         },
-        "url": "https://thecornerhousepub.co/",
+        "url": "https://{{brand.domain}}/",
         "telephone": "+441223921122",
         "priceRange": "££",
         "servesCuisine": [
@@ -247,9 +389,9 @@
           "worstRating": "1",
           "ratingCount": "800"
         },
-        "hasMenu": "https://thecornerhousepub.co/menu",
+        "hasMenu": "https://{{brand.domain}}/menu",
         "sameAs": [
-          "https://www.facebook.com/search/top?q=Corner%20House%20Cambridge",
+          "https://www.facebook.com/search/top?q={{brand.fullNameNoArticleEncoded}}",
           "https://www.tripadvisor.co.uk/",
           "https://www.google.com/maps/place/231+Newmarket+Rd,+Cambridge+CB5+8JE"
         ],

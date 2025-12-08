@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import type { Menu } from '@/src/lib/data/schemas';
+import { BRAND } from '@/src/lib/constants/brand';
 
 interface MenuItemProps {
   item: Menu['sections'][0]['items'][0];
@@ -118,7 +119,7 @@ export default function MenuItemCard({
         <div className={`relative h-32 w-full ${isDark ? 'bg-white/10' : 'bg-neutral-100'}`}>
           <Image
             src={imageUrl}
-            alt={`${item.name} - ${section} from The White Horse Waterbeach`}
+            alt={`${item.name} - ${section} at ${BRAND.fullName}`}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

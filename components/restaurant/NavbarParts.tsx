@@ -8,6 +8,7 @@ import { useContent } from '@/hooks/useContent';
 import { NavDataSchema, NavDataParsed } from '@/lib/schemas';
 import { sanitizeHref, createHrefKey, isValidHref, logHrefIssue } from '@/utils/href';
 import type { HrefType } from '@/utils/href';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export interface SanitizedNavLink {
   key: string;
@@ -72,7 +73,7 @@ export function useNavContent(): NavContentResult {
     'Close navigation menu';
   const logoAlt =
     content?.global?.accessibility?.altTexts?.logo ||
-    'The White Horse Waterbeach Logo';
+    `${BRAND.fullName} logo`;
 
   return {
     links: sanitizedLinks,
@@ -93,7 +94,7 @@ export function NavbarLogo({ altText }: { altText: string }) {
       className="flex items-center gap-2 px-2 py-1 text-brand-700"
     >
       <Image
-        src="/images/brand/whitehorse-logo.png"
+        src="/images/logo.png"
         alt={altText}
         width={60}
         height={45}
@@ -101,7 +102,7 @@ export function NavbarLogo({ altText }: { altText: string }) {
         priority
       />
       <span className="text-lg font-semibold text-brand-700">
-        WHITE HORSE
+        {BRAND.shortName.toUpperCase()}
       </span>
     </Link>
   );

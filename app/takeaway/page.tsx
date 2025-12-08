@@ -4,6 +4,7 @@ import { getSEOTags, renderSchemaTags } from "@/libs/seo";
 import { getContentSmart } from '@/src/lib/data/server-loader';
 import siteConfig from '@/config';
 import { getContactInfo } from "@/lib/restaurantData";
+import { BRAND } from "@/src/lib/constants/brand";
 
 // Download asset removed; page now focuses on phone ordering
 
@@ -32,9 +33,9 @@ export default async function TakeawayMenuPage() {
     {
       "@context": "https://schema.org",
       "@type": "Menu",
-      name: "The White Horse Waterbeach Takeaway",
+      name: `${BRAND.fullName} Takeaway`,
       description:
-        "Call to arrange authentic Nepalese specialties and British pub classics for collection from The White Horse Waterbeach.",
+        `Call to arrange authentic Nepalese specialties and British pub classics for collection from ${BRAND.fullName}.`,
       url: pageUrl,
       offers: {
         "@type": "Offer",
@@ -43,7 +44,7 @@ export default async function TakeawayMenuPage() {
       },
       provider: {
         "@type": "Restaurant",
-        name: "The White Horse Waterbeach",
+        name: BRAND.fullName,
         telephone: contact.phone.primary,
         address: {
           "@type": "PostalAddress",

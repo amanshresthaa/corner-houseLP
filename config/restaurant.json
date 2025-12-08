@@ -1,13 +1,13 @@
 {
   "identity": {
-    "name": "The Corner House",
-    "displayName": "The Corner House Cambridge",
+    "name": "{{brand.shortName}}",
+    "displayName": "{{brand.fullName}}",
     "tagline": "Cambridge's go-to sports pub with Nepalese plates and cosy snugs.",
     "description": "1930s art-deco pub on Newmarket Road serving Nepalese dishes, pub classics, and HD sports with heated cabins.",
     "established": "1930s",
     "type": "pub-restaurant",
     "cuisine": ["Nepalese", "British Classics", "Pub Favourites"],
-    "slug": "the-white-horse"
+    "slug": "{{brand.slug}}"
   },
   "contact": {
     "phone": {
@@ -17,13 +17,13 @@
       "whatsapp": "+44 1223 921122"
     },
     "email": {
-      "primary": "cornerhouse@lapeninns.com",
-      "bookings": "cornerhouse@lapeninns.com",
-      "events": "cornerhouse@lapeninns.com",
-      "press": "cornerhouse@lapeninns.com"
+      "primary": "{{brand.supportEmail}}",
+      "bookings": "{{brand.supportEmail}}",
+      "events": "{{brand.supportEmail}}",
+      "press": "{{brand.supportEmail}}"
     },
-    "website": "https://whitehorsepub.co",
-    "bookingUrl": "https://www.nabatable.com/restaurants/white-horse-pub-waterbeach/book"
+    "website": "https://{{brand.domain}}",
+    "bookingUrl": "https://{{brand.domain}}/book-a-table"
   },
   "address": {
     "street": "231 Newmarket Road",
@@ -40,7 +40,7 @@
     "map": {
       "google": "https://www.google.com/maps/dir/?api=1&destination=52.20948,0.14335&travelmode=driving",
       "apple": "https://maps.apple.com/?daddr=52.20948,0.14335&dirflg=d",
-      "embed": "https://www.google.com/maps?&q=The%20Corner%20House%20Cambridge%2C%20231%20Newmarket%20Road%2C%20Cambridge%20CB5%208JE&z=15&output=embed"
+      "embed": "https://www.google.com/maps?&q={{brand.fullNameEncoded}}%2C%20231%20Newmarket%20Road%2C%20Cambridge%20CB5%208JE&z=15&output=embed"
     },
     "timezone": "Europe/London"
   },
@@ -85,18 +85,24 @@
     "timezone": "Europe/London"
   },
   "social": {
+    "facebook": {
+      "url": "https://www.facebook.com/CornerHouseCambridge",
+      "label": "Follow us on Facebook"
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/cornerhousecambridge",
+      "label": "Follow us on Instagram"
+    },
     "tripadvisor": {
-      "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html"
+      "url": "https://www.tripadvisor.co.uk/Restaurant_Review-g186225-d26682723-Reviews-The_Corner_House_Cambridge-Cambridgeshire_England.html",
+      "label": "TripAdvisor Travelers’ Choice 2025"
     },
     "camra": {
-      "url": "https://camra.org.uk/pubs/white-horse-waterbeach-131319",
-      "label": "CAMRA Listing"
-    },
-    "visitSouthCambs": {
-      "url": "https://visitsouthcambs.co.uk/hospitality/the-white-horse/"
+      "url": "https://cambridge.camra.org.uk/awards/most-improved-city-pub",
+      "label": "CAMRA Award Listing"
     },
     "google": {
-      "url": "https://www.google.com/maps?q=52.20948,0.14335"
+      "url": "https://maps.app.goo.gl/N2gUbo8Y4mLkkG4Q6"
     }
   },
   "booking": {
@@ -105,17 +111,17 @@
     "leadTimeMinutes": 0,
     "partySizeLimit": 12,
     "depositRequired": false,
-    "cancellationPolicy": "Please phone or email The Corner House team to amend or cancel your booking."
+    "cancellationPolicy": "Please phone or email {{brand.shortName}} team to amend or cancel your booking."
   },
   "meta": {
-    "slug": "the-white-horse",
+    "slug": "{{brand.slug}}",
     "category": ["restaurant", "pub"],
     "rating": {
       "average": 4.4,
       "reviewCount": 451
     }
   },
-  "name": "The White Horse",
+  "name": "{{brand.fullName}}",
   "phone": "+44 1223 921122",
-  "email": "cornerhouse@lapeninns.com"
+  "email": "{{brand.supportEmail}}"
 }

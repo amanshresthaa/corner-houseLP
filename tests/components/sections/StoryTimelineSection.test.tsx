@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import StoryTimelineSection from '../../../components/restaurant/sections/StoryTimelineSection';
+import { BRAND } from '@/src/lib/constants/brand';
 
 // Mock framer-motion
 jest.mock('framer-motion', () => ({
@@ -25,7 +26,7 @@ describe('StoryTimelineSection', () => {
     {
       period: 'Historic Beginnings',
       title: 'The Village Heart',
-      description: 'For centuries, The White Horse has been at the heart of Waterbeach village life.'
+      description: `Since the 1930s, ${BRAND.shortName} has anchored Cambridge matchdays with art-deco charm and community spirit.`
     },
     {
       period: 'Culinary Evolution',
@@ -66,7 +67,9 @@ describe('StoryTimelineSection', () => {
     expect(screen.getByText('Modern Era')).toBeInTheDocument();
     
     // Check all descriptions are rendered
-    expect(screen.getByText(/For centuries, The White Horse has been at the heart/)).toBeInTheDocument();
+    expect(
+      screen.getByText((content) => content.includes(`${BRAND.shortName} has anchored Cambridge matchdays`))
+    ).toBeInTheDocument();
     expect(screen.getByText(/The pub adapted to different culinary trends/)).toBeInTheDocument();
     expect(screen.getByText(/Today we combine traditional and contemporary/)).toBeInTheDocument();
   });

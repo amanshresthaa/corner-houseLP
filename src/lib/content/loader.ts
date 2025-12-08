@@ -6,6 +6,7 @@
  */
 
 import { composeContent, composePageContent, type CompositionConfig, type CompositionResult } from './composition';
+import { replaceBrandTokensInObject } from '@/src/lib/utils/brand';
 
 export interface ContentManifest {
   version: string;
@@ -344,10 +345,11 @@ export class ContentLoader {
 
       const moduleData = await response.json();
       const loadTime = performance.now() - startTime;
+      const hydratedData = replaceBrandTokensInObject(moduleData.data);
 
       return {
         id: moduleId,
-        data: moduleData.data,
+        data: hydratedData,
         metadata: {
           loadedAt: Date.now(),
           source: response.headers.get('x-cache-status') === 'hit' ? 'cache' : 'network',

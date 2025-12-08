@@ -10,6 +10,7 @@ import { getRestaurantIdentity, getPostalAddressSchema, getContactInfo } from '@
 import siteConfig from '@/config';
 import CallToActionSection from '@/components/restaurant/sections/CallToActionSection';
 import contentConfig from '@/config/content.json';
+import { BRAND } from '@/src/lib/constants/brand';
 // Dynamic imports for Menu page sections - optimized for performance
 const MenuInteractive = dynamic(() => import('./_components/MenuInteractive'), {
 	ssr: true,
@@ -140,8 +141,8 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	
 	const defaultSelectedStarters = startersSection ? normalizeId(startersSection.id || startersSection.name) : null;
 	const menuServiceCta = {
-		headline: 'Plan Your Visit to The White Horse',
-		description: 'Reserve your table or chat with the team before you arrive.',
+		headline: `Plan your visit to ${BRAND.fullName}`,
+		description: 'Reserve heated cabins, pre-order Nepalese feasts, or chat with the team before matchday.',
 		buttons: [
 			{
 				text: 'Book a Table',

@@ -8,6 +8,7 @@ import Link from "next/link";
 import contentConfig from '@/config/content.json';
 import siteConfig from '@/config';
 import { getContactInfo } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -66,10 +67,10 @@ function Hero() {
       <div className="absolute inset-0 bg-black/10" />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 id="about-hero" className="h2 text-white mb-3 leading-tight">
-          A village pub with Nepalese soul
+          Cambridge’s art-deco pub with Nepalese soul
         </h1>
         <p className="text-base md:text-lg text-brand-100 mb-6 max-w-2xl mx-auto leading-relaxed">
-          Opposite the Waterbeach green, we pair classic pub comfort with an authentic Nepalese kitchen — modern, relaxed, and welcoming.
+          Opposite Cambridge Retail Park and minutes from Abbey Stadium, we blend classic pub comfort with a full Nepalese kitchen, heated garden cabins, and wall-to-wall matchday screens.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           {bookingExternal ? (
@@ -117,22 +118,22 @@ function OriginStory() {
         <div className="mt-6 grid gap-8 lg:grid-cols-12 lg:items-start">
           <div className="lg:col-span-7 space-y-4 text-brand-800">
             <p>
-              Why we exist: to keep a vital village pub alive and thriving — and to introduce Waterbeach to warm, generous Nepalese cooking.
+              Why we exist: to keep this 1930s corner pub alive for Cambridge — and to introduce the city to warm, generous Nepalese cooking without losing the pub’s social heart.
             </p>
             <p>
-              How we started: in 2025, new local-minded owners reopened The White Horse, preserving the pub’s social heart while launching a true Nepalese kitchen.
+              How we started: in late 2024 Lapen Inns and a Nepali chef team relaunched {BRAND.shortName}, pairing HD sports and cask ales with momo steamers, goat curries, and heated garden cabins.
             </p>
             <ul className="grid gap-2 text-sm" aria-label="Key turning points">
-              <li>• 2009: A large garden and Asian flavours begin to shape the offer.</li>
-              <li>• 2023: Gastropub era with classic British/Italian dishes.</li>
-              <li>• 2025: Revival under new ownership; authentic Nepalese dining meets the village pub.</li>
+              <li>• 1930: Art-deco “{BRAND.nickname}” rises on Newmarket Road, replacing the Butchers Arms.</li>
+              <li>• 2020: Wins CAMRA’s “Most Improved City Pub” after a major refresh.</li>
+              <li>• 2024: Lapen Inns relaunches with Nepali chefs, heated cabins, and Sky/TNT sports.</li>
             </ul>
           </div>
           <div className="lg:col-span-5">
             <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-brand-100">
               <Image
                 src="/images/white-horse/interior/bar-counter-cozy-lighting-taps-and-shelves-landscape.jpeg"
-                alt="Warm, welcoming bar at The White Horse"
+                alt={`Warm, welcoming bar at ${BRAND.fullName}`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -302,7 +303,7 @@ function CallToAction() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl border-2 border-brand-700 bg-gradient-to-r from-brand-600 to-brand-800 p-8 text-center text-white shadow-xl">
           <h2 id="about-cta" className="h2 drop-shadow">
-            Ready to visit The White Horse?
+            Ready to visit {BRAND.shortName}?
           </h2>
           <p className="mt-3 text-white/95">Book a table, or pop in for a pint and a bite.</p>
           <div className="mt-6 flex justify-center gap-3">

@@ -43,7 +43,7 @@ export function ProgressiveHomePage() {
         {/* Adaptive image with device-optimized loading */}
         <AdaptiveImage
           src="/images/restaurant-hero.jpg"
-          alt="The White Horse Waterbeach Restaurant Interior"
+          alt="The Corner House Cambridge restaurant interior"
           width={1920}
           height={1080}
           priority={true}

@@ -12,6 +12,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import themeTokens from '../theme/colors';
 import { getContactInfo } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 const DEFAULT_THEME_COLOR = themeTokens.themes.light.colors.background;
 
@@ -21,9 +22,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const content = await getContentSmart();
   const site = content.global?.site || {} as any;
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://whitehorsepub.co/'),
-    title: site.title || 'The White Horse Waterbeach',
-    description: site.description || `Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics. Book: ${LAYOUT_CONTACT.phone.display}`,
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || `https://${BRAND.domain}/`),
+    title: site.title || BRAND.fullName,
+    description: site.description || `Cambridge's art-deco sports pub for HD matchdays, heated cabins, and Nepalese curries. Book: ${LAYOUT_CONTACT.phone.display}`,
     manifest: '/manifest.webmanifest',
     themeColor: DEFAULT_THEME_COLOR,
     icons: {

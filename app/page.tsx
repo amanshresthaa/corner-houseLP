@@ -3,8 +3,8 @@ export const revalidate = 300;
 import { renderSchemaTags } from '@/libs/seo';
 import { getContentSmart } from '@/src/lib/data/server-loader';
 import dynamic from 'next/dynamic';
-import type { HomeSections } from '@/components/ClientHomeContent';
 import type { Slide } from '@/components/slideshow/types';
+import { buildHomeSections } from '@/src/lib/homepage/sections';
 
 const ClientHomeContent = dynamic(() => import('@/components/ClientHomeContent'), {
   ssr: true,
@@ -37,23 +37,7 @@ export default async function Page() {
   const content = await getContentSmart();
 
   const homeContent = content.pages.home;
-  const homeSections = (homeContent.sections || {}) as Record<string, any>;
-
-  const quickLinks = Array.isArray(homeSections.quickLinks) ? homeSections.quickLinks : [];
-  const pressTicker = homeSections.pressTicker || null;
-  const about = homeSections.about || null;
-  const signatureDishes = homeSections.signatureDishes || null;
-  const reviews = homeSections.reviews || null;
-  const closingCta = homeSections.cta || null;
-
-  const sections: HomeSections = {
-    pressTicker,
-    about,
-    signatureDishes,
-    reviews,
-    quickLinks,
-    closingCta,
-  };
+  const { sections, order: sectionOrder } = buildHomeSections(homeContent.sections);
 
   const rawSlideshow = content.components?.slideshow;
   const slideshowContent = rawSlideshow
@@ -77,6 +61,7 @@ export default async function Page() {
       />
       <ClientHomeContent
         sections={sections}
+        sectionOrder={sectionOrder}
         slideshow={slideshowContent}
         ariaLabels={ariaLabels}
         links={links}

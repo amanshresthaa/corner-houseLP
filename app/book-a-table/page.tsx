@@ -3,6 +3,7 @@ import { FadeIn } from '@/components/animations/MotionWrappers';
 import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import { getContentSmart } from '@/src/lib/data/server-loader';
 import { getContactInfo } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 import RestaurantHoursCard from '@/components/restaurant/RestaurantHoursCard';
 import Link from '@/lib/debugLink';
 import BookByPhoneCard from './_components/BookByPhoneCard';
@@ -11,6 +12,8 @@ import LargeGroupsCard from './_components/LargeGroupsCard';
 import FindUsCard from './_components/FindUsCard';
 
 const CONTACT = getContactInfo();
+const SITE_URL = `https://${BRAND.domain}`;
+const BOOKING_PAGE_URL = `${SITE_URL}/book-a-table`;
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -37,8 +40,8 @@ export default async function BookATablePage() {
   const reservationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Restaurant',
-    name: 'The White Horse Waterbeach',
-    url: 'https://whitehorsepub.co/book-a-table',
+    name: BRAND.fullName,
+    url: BOOKING_PAGE_URL,
     telephone: contact.phone.primary,
     email: contact.email.bookings || contact.email.primary,
     acceptsReservations: contact.bookingUrl ? [contact.bookingUrl, 'Telephone'] : 'Telephone',
@@ -70,7 +73,7 @@ export default async function BookATablePage() {
               id="booking-page-heading"
               className="mt-4 text-3xl font-display font-bold leading-tight sm:text-4xl lg:text-5xl"
             >
-              Book a Table at The White Horse Waterbeach
+              Book a Table at {BRAND.fullName}
             </h1>
             <p className="mt-4 max-w-3xl text-base text-neutral-100 sm:text-lg">
               Secure your table for authentic Nepalese dishes, pub classics, garden gatherings, and
@@ -80,8 +83,8 @@ export default async function BookATablePage() {
               {[
                 'Authentic Nepalese & British pub classics',
                 'Family & dog friendly spaces',
-                'Free on-site parking in Waterbeach',
-                'Garden, marquee & private hire options',
+                'Opposite Cambridge Retail Park & Abbey Stadium',
+                'Heated cabins, garden marquee & private hire options',
               ].map((item) => (
                 <div
                   key={item}

@@ -8,11 +8,11 @@
     "environmentBanner": true
   },
   "api": {
-    "baseUrl": "https://staging.whitehorsepub.co",
-    "menuEndpoint": "https://staging.whitehorsepub.co/api/menu",
-    "marketingEndpoint": "https://staging.whitehorsepub.co/api/marketing",
-    "restaurantEndpoint": "https://staging.whitehorsepub.co/api/restaurant",
-    "contentEndpoint": "https://staging.whitehorsepub.co/api/content"
+    "baseUrl": "https://staging.{{brand.domain}}",
+    "menuEndpoint": "https://staging.{{brand.domain}}/api/menu",
+    "marketingEndpoint": "https://staging.{{brand.domain}}/api/marketing",
+    "restaurantEndpoint": "https://staging.{{brand.domain}}/api/restaurant",
+    "contentEndpoint": "https://staging.{{brand.domain}}/api/content"
   },
   "cms": { 
     "enabled": true,
@@ -20,8 +20,8 @@
     "fallback": "filesystem"
   },
   "metadata": {
-    "appName": "The White Horse [STAGING]",
-    "domainName": "staging.whitehorsepub.co",
+    "appName": "{{brand.shortName}} [STAGING]",
+    "domainName": "staging.{{brand.domain}}",
     "environment": "staging"
   },
   "performance": {

@@ -1,3 +1,5 @@
+import { BRAND } from '@/src/lib/constants/brand';
+
 export type Match = {
   id: string;
   homeTeam: string;
@@ -35,7 +37,7 @@ export async function getUpcomingMatches(count = 6): Promise<Match[]> {
       homeTeam: home,
       awayTeam: away,
       startDate: d.toISOString(),
-      venue: 'The White Horse Screen',
+      venue: `${BRAND.shortName} Sports Lounge`,
       competition: 'Premier League',
       preview: '',
     });

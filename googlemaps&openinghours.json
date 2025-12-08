@@ -46,17 +46,22 @@
     }
   },
   {
-    "name": "The White Horse (Waterbeach)",
-    "google_maps_url": "https://maps.google.com/maps/dir/?entry=wc",
-    "rating": "4.4 / 5 (440 reviews)",
+    "name": "The Corner House Cambridge",
+    "google_maps_url": "https://maps.app.goo.gl/N2gUbo8Y4mLkkG4Q6",
+    "rating": "4.4 / 5 (820 reviews)",
     "opening_hours": {
-      "Monday": "12:00 – 22:00",
-      "Tuesday": "12:00 – 22:00",
-      "Wednesday": "12:00 – 22:00",
-      "Thursday": "12:00 – 22:00",
-      "Friday": "12:00 – 22:00",
-      "Saturday": "12:00 – 22:00",
-      "Sunday": "12:00 – 22:00"
+      "Monday": "12:00 – 23:00",
+      "Tuesday": "12:00 – 23:00",
+      "Wednesday": "12:00 – 23:00",
+      "Thursday": "12:00 – 23:00",
+      "Friday": "12:00 – 23:30",
+      "Saturday": "10:00 – 23:30",
+      "Sunday": "10:00 – 22:00"
+    },
+    "meal_times": {
+      "Monday-Friday": "12:00–15:00 & 17:00–22:00",
+      "Saturday": "12:00–22:00",
+      "Sunday": "10:00–20:00"
     }
   },
   {

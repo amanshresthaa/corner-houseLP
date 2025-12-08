@@ -21,7 +21,7 @@ describe('useContent hook - standardized API unwrapping', () => {
   it('unwraps standardized API response (status+data)', async () => {
     const payload = {
       global: {
-        site: { name: 'The White Horse', title: 'Site', description: '', keywords: [], branding: { tagline: '', slogan: '' } },
+        site: { name: 'The Corner House Cambridge', title: 'Site', description: '', keywords: [], branding: { tagline: '', slogan: '' } },
         navigation: { header: { links: [] }, footer: { sections: [], copyright: '' }, breadcrumbs: { home: '', separator: '>' } },
         ui: { buttons: {}, labels: {}, messages: {}, placeholders: {} },
         accessibility: { ariaLabels: {}, altTexts: {}, descriptions: {} },
@@ -51,7 +51,7 @@ describe('useContent hook - standardized API unwrapping', () => {
     render(<TestComponent />);
 
     const el = await screen.findByTestId('site-name');
-    expect(el.textContent).toBe('The White Horse');
+    expect(el.textContent).toBe('The Corner House Cambridge');
     expect(global.fetch).toHaveBeenCalledWith('/api/content', expect.any(Object));
   });
 

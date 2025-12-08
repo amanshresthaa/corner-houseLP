@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "description": "Content module manifest for The Corner House Cambridge (per-module, mount-path aligned)",
+  "description": "Content module manifest for {{brand.fullName}} (per-module, mount-path aligned)",
   "lastUpdated": "2025-12-07T19:05:00Z",
   "modules": {
     "core/global": {

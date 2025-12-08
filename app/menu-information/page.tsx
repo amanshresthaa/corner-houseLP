@@ -6,6 +6,10 @@ import MenuInfoCollapse from '@/components/menu/MenuInfoCollapse';
 import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 import contentConfig from '@/config/content.json';
+import { BRAND } from '@/src/lib/constants/brand';
+
+const SITE_URL = `https://${BRAND.domain}`;
+const PAGE_URL = `${SITE_URL}/menu-information`;
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -415,13 +419,13 @@ export default function MenuInformationPage() {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "@id": "https://whitehorsepub.co//menu-information#faqpage",
+            "@id": `${PAGE_URL}#faqpage`,
             "name": `Menu Information & Dietary Requirements - ${restaurantName}`,
             "description": `Comprehensive allergen information, dietary requirements, and food safety information for ${restaurantName} restaurant.`,
-            "url": "https://whitehorsepub.co//menu-information",
+            "url": PAGE_URL,
             "mainEntity": faqItems.map((item, index) => ({
               "@type": "Question",
-              "@id": `https://whitehorsepub.co//menu-information#faq-${index}`,
+              "@id": `${PAGE_URL}#faq-${index}`,
               "name": item.title,
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -448,14 +452,14 @@ export default function MenuInformationPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://whitehorsepub.co//menu-information#webpage",
+            "@id": `${PAGE_URL}#webpage`,
             "name": "Menu Information & Dietary Requirements",
-            "description": "Complete guide to allergens, dietary options and food safety at The White Horse Waterbeach",
-            "url": "https://whitehorsepub.co//menu-information",
+            "description": `Complete guide to allergens, dietary options and food safety at ${BRAND.fullName}`,
+            "url": PAGE_URL,
             "isPartOf": {
               "@type": "WebSite",
-              "name": "The White Horse Waterbeach",
-              "url": "https://whitehorsepub.co/"
+              "name": BRAND.fullName,
+              "url": SITE_URL
             },
             "speakable": {
               "@type": "SpeakableSpecification",

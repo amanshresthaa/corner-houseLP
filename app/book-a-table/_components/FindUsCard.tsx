@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "@/lib/debugLink";
 import InteractiveMap from "@/components/restaurant/InteractiveMap";
+import { BRAND } from '@/src/lib/constants/brand';
 
 type Props = {
   addressLine: string;
@@ -18,7 +19,7 @@ export default function FindUsCard({ addressLine, mapHref }: Props) {
           <InteractiveMap
             className="h-56 rounded-lg overflow-hidden border border-neutral-200"
             height="100%"
-            title="Map to The White Horse Waterbeach"
+            title={`Map to ${BRAND.fullName}`}
             directionLabel="Get Directions"
             hintLabel="Click for directions"
           />

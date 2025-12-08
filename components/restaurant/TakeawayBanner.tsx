@@ -2,6 +2,7 @@
 
 import EmojiIcon from '@/components/common/EmojiIcon';
 import { getContactInfo } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export default function TakeawayBanner() {
   const contact = getContactInfo();
@@ -17,12 +18,12 @@ export default function TakeawayBanner() {
               Takeaway ready
             </span>
             <h2 className="text-3xl font-display font-bold md:text-4xl text-foreground-strong">
-              Take the White Horse experience home
+              Take the {BRAND.nickname} feast home
             </h2>
           </div>
 
           <p className="max-w-3xl text-lg md:text-xl md:leading-relaxed">
-            Enjoy our Nepalese favourites from the comfort of your sofa. Call ahead and we&apos;ll have everything boxed, hot, and ready when you arrive.
+            Order Himali lamb curries, goat specials, sizzling grills, or Sunday roasts for collection — boxed, hot, and ready opposite Cambridge Retail Park.
           </p>
 
           <a

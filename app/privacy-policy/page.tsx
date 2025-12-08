@@ -4,6 +4,10 @@ import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
+
+const SITE_URL = `https://${BRAND.domain}`;
+const PAGE_URL = `${SITE_URL}/privacy-policy`;
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -45,14 +49,14 @@ export default function PrivacyPolicy() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://whitehorsepub.co//privacy-policy#webpage",
+            "@id": `${PAGE_URL}#webpage`,
             "name": `Privacy Policy - ${restaurantName}`,
             "description": `Privacy policy and data protection information for ${restaurantName} restaurant bookings, enquiries and website usage.`,
-            "url": "https://whitehorsepub.co//privacy-policy",
+            "url": PAGE_URL,
             "isPartOf": {
               "@type": "WebSite",
               "name": restaurantName,
-              "url": "https://whitehorsepub.co/"
+              "url": SITE_URL
             },
             "about": {
               "@type": "LocalBusiness",
@@ -115,7 +119,7 @@ export default function PrivacyPolicy() {
                 <div className="space-y-8">
                   <section>
                     <p className="text-lg leading-relaxed text-neutral-700">
-                      This Privacy Policy explains how The White Horse Waterbeach, located in Waterbeach, Cambridge, UK, collects, uses, and protects your personal information in accordance with UK GDPR, the Data Protection Act 2018, and other applicable laws.
+                      This Privacy Policy explains how {restaurantName}, located on Newmarket Road in Cambridge, UK, collects, uses, and protects your personal information in accordance with UK GDPR, the Data Protection Act 2018, and other applicable laws.
                     </p>
                   </section>
 

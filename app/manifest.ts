@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { BRAND } from '@/src/lib/constants/brand';
 
 const { themes } = require('../theme/colors');
 
@@ -57,15 +58,15 @@ export default function manifest(): MetadataRoute.Manifest {
   };
 
   const manifestData = {
-    name: 'The White Horse Restaurant - Authentic Nepalese Cuisine',
-    short_name: 'The White Horse',
+    name: `${BRAND.fullName} - Nepalese Kitchen & Sports Pub`,
+    short_name: BRAND.shortName,
     description:
-      'Authentic Nepalese cuisine and traditional pub classics in Waterbeach, Cambridge. Book a table, call ahead, or explore our award-winning menu.',
+      'Cambridge art-deco pub with HD sports, heated cabins, and authentic Nepalese curries. Book a table, call ahead, or explore our award-winning menu.',
     start_url: '/',
     display: 'standalone',
     theme_color: light.primaryAccent,
     background_color: light.background,
-    id: 'the-white-horse-restaurant-app',
+    id: `${BRAND.slug}-restaurant-app`,
     orientation: 'portrait-primary',
     scope: '/',
     categories: ['food', 'lifestyle', 'business'],
@@ -84,7 +85,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: 'Book Table',
         short_name: 'Book',
-        description: 'Reserve a table at The White Horse Restaurant',
+        description: `Reserve a table at ${BRAND.shortName}`,
         url: '/contact?action=booking',
         icons: [{ src: '/booking-shortcut-96.png', sizes: '96x96', type: 'image/png' }],
       },
@@ -98,7 +99,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: 'Contact Us',
         short_name: 'Contact',
-        description: 'Get in touch with The White Horse Restaurant',
+        description: `Get in touch with ${BRAND.shortName}`,
         url: '/contact',
         icons: [{ src: '/contact-shortcut-96.png', sizes: '96x96', type: 'image/png' }],
       },
@@ -110,11 +111,11 @@ export default function manifest(): MetadataRoute.Manifest {
     related_applications: [
       {
         platform: 'play',
-        url: 'https://play.google.com/store/apps/details?id=com.whitehorse.restaurant',
+        url: 'https://play.google.com/store/apps/details?id=com.cornerhouse.restaurant',
       },
       {
         platform: 'itunes',
-        url: 'https://apps.apple.com/app/the-white-horse-restaurant/id123456789',
+        url: 'https://apps.apple.com/app/the-corner-house-restaurant/id123456789',
       },
     ],
     prefer_related_applications: false,

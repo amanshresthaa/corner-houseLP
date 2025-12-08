@@ -1,9 +1,9 @@
 {
   "seo": {
-    "title": "Contact The Corner House Cambridge | Bookings, Directions & Opening Hours",
-    "description": "Call +44 1223 921122 or email cornerhouse@lapeninns.com for bookings, cabins, and takeaway. Find us at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
+    "title": "Contact {{brand.fullName}} | Bookings, Directions & Opening Hours",
+    "description": "Call +44 1223 921122 or email {{brand.supportEmail}} for bookings, cabins, and takeaway. Find us at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
     "keywords": [
-      "Corner House Cambridge contact",
+      "{{brand.fullNameNoArticle}} contact",
       "Newmarket Road pub phone",
       "book table Cambridge pub",
       "Nepalese restaurant Cambridge contact",
@@ -25,7 +25,7 @@
     },
     "email": {
       "title": "Email",
-      "address": "cornerhouse@lapeninns.com",
+      "address": "{{brand.supportEmail}}",
       "description": "General enquiries, reservations, and event requests"
     },
     "location": {

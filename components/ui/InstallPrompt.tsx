@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInstallPrompt, usePWAMetrics, useServiceWorker } from './PWAUtils';
 import { AnimatedButton } from './MicroInteractions';
+import { BRAND } from '@/src/lib/constants/brand';
 
 interface InstallPromptProps {
   onInstall?: () => void;
@@ -78,10 +79,10 @@ const InstallPrompt = ({ onInstall, onDismiss }: InstallPromptProps) => {
               
               <div className="flex-1 min-w-0">
                 <h3 className="text-lg font-semibold text-stout-700 mb-1">
-                  Install The White Horse App
+                  Install the {BRAND.shortName} App
                 </h3>
                 <p className="text-sm text-brand-600 mb-4 leading-relaxed">
-                  Get the full restaurant experience! Fast access to our menu, table booking, and offline browsing.
+                  Book tables, browse our Nepalese menu, and save matchday info offline straight from your home screen.
                 </p>
                 
                 {/* Features */}

@@ -15,6 +15,7 @@ import { GET as marketingGET } from '@/app/api/marketing/route';
 import { GET as configGET } from '@/app/api/config/route';
 import { GET as healthGET } from '@/app/api/health/route';
 import { GET as contentGET } from '@/app/api/content/route';
+import { BRAND } from '@/src/lib/constants/brand';
 
 // Mock data is now defined inline in the jest.mock calls
 
@@ -197,7 +198,7 @@ jest.mock('@/src/lib/data/server-loader', () => ({
       enabled: false
     },
     metadata: {
-      appName: "The White Horse",
+      appName: BRAND.fullName,
       domainName: "localhost"
     },
     site: {

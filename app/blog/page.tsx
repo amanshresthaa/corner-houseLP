@@ -5,6 +5,7 @@ import Link from '@/lib/debugLink';
 import { Images } from '@/src/lib/images';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import { BlogHero, FilterableBlogSection } from './_components';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -44,8 +45,8 @@ export default function BlogPage() {
         {/* Blog Hero Section with motion animation */}
         <section aria-labelledby="blog-hero-heading">
           <BlogHero 
-            title="Stories from The White Horse Waterbeach"
-            subtitle="Discover the rich heritage, delicious cuisine, and vibrant community that makes our historic thatched pub special"
+            title={`Stories from ${BRAND.fullName}`}
+            subtitle="Discover Cambridge matchdays, heated cabins, Nepali chef specials, and the community keeping this art-deco pub buzzing"
           />
         </section>
 
@@ -66,7 +67,7 @@ export default function BlogPage() {
                       📰 Stay Updated
                     </h2>
                     <p className="text-lg text-neutral-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-                      Get the latest stories, event announcements, and special offers from The White Horse Waterbeach
+                      Get the latest stories, event announcements, and special offers from {BRAND.fullName}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                       <label htmlFor="newsletter-email" className="sr-only">Email address</label>

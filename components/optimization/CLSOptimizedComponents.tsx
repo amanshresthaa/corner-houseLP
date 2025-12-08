@@ -8,6 +8,7 @@
 import React from 'react';
 import { CLSImage, CLSContainer, CLSDebugger, useFontOptimization, CLSOptimizedLayouts } from './CLSOptimization';
 import { getContactInfo, getAddress, getHours } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 const CLS_CONTACT = getContactInfo();
 const CLS_ADDRESS = getAddress();
@@ -25,7 +26,7 @@ export function CLSOptimizedHero() {
       {/* Background image with reserved space */}
       <CLSImage
         src="/images/restaurant-hero.jpg"
-        alt="The White Horse Waterbeach Restaurant"
+        alt={`${BRAND.fullName} restaurant`}
         width={1920}
         height={600}
         priority={true}
@@ -41,7 +42,7 @@ export function CLSOptimizedHero() {
           className="text-center text-white px-6 max-w-4xl mx-auto"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4 font-display">
-            Welcome to The White Horse Waterbeach
+            Welcome to {BRAND.fullName}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
             Authentic flavors in Cambridge's most historic setting
@@ -308,13 +309,13 @@ export function CLSOptimizedHeader() {
         >
           <CLSImage
             src="/images/logo.png"
-            alt="The White Horse Waterbeach"
+            alt={`${BRAND.fullName} logo`}
             width={40}
             height={40}
             priority={true}
             className="mr-3"
           />
-          <span className="text-xl font-bold text-gray-900">The White Horse Waterbeach</span>
+          <span className="text-xl font-bold text-gray-900">{BRAND.fullName}</span>
         </CLSContainer>
 
         <nav className="hidden md:flex space-x-8">

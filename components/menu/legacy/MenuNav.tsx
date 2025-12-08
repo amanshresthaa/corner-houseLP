@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from '@/lib/debugLink';
 import Image from 'next/image';
+import { BRAND } from '@/src/lib/constants/brand';
 
 type Props = {
   sections: any[];
@@ -65,7 +66,7 @@ export default function MenuNav({ sections }: Props) {
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/brand/whitehorse-logo.png"
-                alt="The White Horse Waterbeach Logo"
+                alt={`${BRAND.fullName} logo`}
                 width={60}
                 height={45}
                 className="h-8 w-auto"

@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "Events & What's On | The Corner House Cambridge - Live Sports, Quiz Night, Cabins",
+    "title": "Events & What's On | {{brand.fullName}} - Live Sports, Quiz Night, Cabins",
     "description": "HD sports on wall-to-wall screens and an outdoor projector, weekly quiz nights, cosy heated cabins, and flexible spaces for groups on Newmarket Road.",
     "canonicalUrlRelative": "/events"
   },
@@ -48,6 +48,6 @@
     "title": "Plan your visit",
     "description": "Book a table or heated cabin for matchdays, quizzes, and group celebrations.",
     "phone": "+44 1223 921122",
-    "email": "cornerhouse@lapeninns.com"
+    "email": "{{brand.supportEmail}}"
   }
 }

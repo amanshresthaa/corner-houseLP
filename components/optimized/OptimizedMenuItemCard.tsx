@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { memoryMemo, useMemoryCallback, MemoryEfficientImage } from '@/lib/optimized/memoryOptimizations';
 import { useProgressiveLoading } from '@/hooks/optimized/useProgressiveLoading';
 import type { Menu } from '@/src/lib/data/schemas';
+import { BRAND } from '@/src/lib/constants/brand';
 
 interface OptimizedMenuItemProps {
   item: Menu['sections'][0]['items'][0];
@@ -276,7 +277,7 @@ const OptimizedMenuItemCard = memoryMemo<OptimizedMenuItemProps>(({
       {imageInfo.shouldShow && (
         <NetworkAwareImage
           src={imageInfo.url!}
-          alt={`${item.name} - ${section} from The White Horse Waterbeach`}
+          alt={`${item.name} - ${section} at ${BRAND.fullName}`}
           item={item}
           priority={priority}
         />

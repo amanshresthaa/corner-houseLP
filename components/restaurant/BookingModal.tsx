@@ -7,6 +7,7 @@ import { accessibility } from '@/lib/motion/accessibility';
 import { variants } from '@/lib/motion/variants';
 import BookingForm, { BookingFormData } from './BookingForm';
 import { getContactInfo } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -117,7 +118,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </button>
               </div>
               <p className="mt-2 text-brand-600">
-                Reserve your table at The White Horse. We&apos;ll call you within 1 hour to confirm.
+                Reserve your table at {BRAND.fullName}. We&apos;ll call you within 1 hour to confirm.
               </p>
             </div>
 

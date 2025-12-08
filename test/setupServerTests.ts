@@ -23,7 +23,7 @@ export const server = setupServer(
       success: true,
       data: {
         nav: {
-          brand: "The White Horse Waterbeach",
+          brand: "The Corner House Cambridge",
           links: [
             { text: "Menu", href: "/menu" },
             { text: "About", href: "/about" },
@@ -31,7 +31,7 @@ export const server = setupServer(
           ]
         },
         footer: {
-          copyright: "© 2025 The White Horse Waterbeach. All rights reserved."
+          copyright: "© 2025 The Corner House Cambridge. All rights reserved."
         }
       },
       meta: {
@@ -72,7 +72,7 @@ export const server = setupServer(
     return HttpResponse.json({
       success: true,
       data: {
-        name: "The White Horse Waterbeach",
+        name: "The Corner House Cambridge",
         phone: "+44 1223 921122",
         address: "231 Newmarket Road, Cambridge CB5 8JE",
         hours: {

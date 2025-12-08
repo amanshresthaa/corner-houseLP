@@ -6,9 +6,12 @@ import { SchemaInjector } from "@/components/seo/RestaurantSchema";
 import Link from "@/lib/debugLink";
 import { getContactInfo } from "@/lib/restaurantData";
 import ChristmasMusicPlayer from "./_components/ChristmasMusicPlayer";
+import { BRAND } from "@/src/lib/constants/brand";
 
-const CHRISTMAS_MENU_PDF_PATH = "/documents/white-horse-christmas-menu.pdf";
-const CHRISTMAS_MENU_PDF_FILENAME = "white-horse-christmas-menu.pdf";
+const SITE_URL = `https://${BRAND.domain}`;
+const CHRISTMAS_MENU_URL = `${SITE_URL}/christmas-menu`;
+const CHRISTMAS_MENU_PDF_PATH = "/documents/corner-house-christmas-menu.pdf";
+const CHRISTMAS_MENU_PDF_FILENAME = "corner-house-christmas-menu.pdf";
 
 const slugify = (value: string) =>
   value
@@ -43,7 +46,7 @@ type FestiveMenu = {
 const CHRISTMAS_MENU: FestiveMenu = {
   title: "Christmas Menu 2025",
   description:
-    "Four courses of Himalayan-inspired festive dishes for £39.99 per person at The White Horse Waterbeach.",
+    `Four courses of Himalayan-inspired festive dishes for £39.99 per person at ${BRAND.fullName}.`,
   price: {
     value: "39.99",
     display: "£39.99 per person",
@@ -207,12 +210,12 @@ const SUPPORT_POINTS = [
   {
     icon: "📍",
     title: "Central to Waterbeach",
-    description: "Right on the green at 231 Newmarket Road with easy access from Cambridge.",
+    description: "Opposite Cambridge Retail Park on Newmarket Road with easy links to the city and Abbey Stadium.",
   },
 ];
 
 const FALLBACK_DESCRIPTION =
-  "Celebrate Christmas in Waterbeach with a £39.99 four-course menu featuring Himalayan-inspired starters, mains, sides, breads and desserts.";
+  "Celebrate Christmas in Cambridge with a £39.99 four-course menu featuring Himalayan-inspired starters, mains, sides, breads and desserts.";
 
 export async function generateMetadata() {
   try {
@@ -220,38 +223,38 @@ export async function generateMetadata() {
     const seo = (content as any)?.pages?.christmasMenu?.seo || {};
 
     return getSEOTags({
-      title: seo.title ?? "Christmas Menu 2025 | The White Horse Waterbeach",
+      title: seo.title ?? `Christmas Menu 2025 | ${BRAND.fullName}`,
       description: seo.description ?? FALLBACK_DESCRIPTION,
       keywords:
         seo.keywords ?? [
-          "White Horse Waterbeach Christmas menu",
+          `${BRAND.fullNameNoArticle} Christmas menu`,
           "Cambridge Christmas dinner",
-          "Waterbeach festive menu",
+          "Newmarket Road festive menu",
           "Nepalese Christmas menu",
         ],
       canonicalUrlRelative: seo.canonicalUrlRelative ?? "/christmas-menu",
       openGraph: {
-        title: seo.openGraph?.title ?? "Christmas Menu 2025 at The White Horse Waterbeach",
+        title: seo.openGraph?.title ?? `Christmas Menu 2025 at ${BRAND.fullName}`,
         description: seo.openGraph?.description ?? FALLBACK_DESCRIPTION,
-        url: seo.openGraph?.url ?? "https://whitehorsepub.co/christmas-menu",
+        url: seo.openGraph?.url ?? CHRISTMAS_MENU_URL,
         images: seo.openGraph?.images,
       },
     });
   } catch (error) {
     return getSEOTags({
-      title: "Christmas Menu 2025 | The White Horse Waterbeach",
+      title: `Christmas Menu 2025 | ${BRAND.fullName}`,
       description: FALLBACK_DESCRIPTION,
       keywords: [
-        "White Horse Waterbeach Christmas menu",
+        `${BRAND.fullNameNoArticle} Christmas menu`,
         "Cambridge Christmas dinner",
-        "Waterbeach festive menu",
+        "Newmarket Road festive menu",
         "Nepalese Christmas menu",
       ],
       canonicalUrlRelative: "/christmas-menu",
       openGraph: {
-        title: "Christmas Menu 2025 at The White Horse Waterbeach",
+        title: `Christmas Menu 2025 at ${BRAND.fullName}`,
         description: FALLBACK_DESCRIPTION,
-        url: "https://whitehorsepub.co/christmas-menu",
+        url: CHRISTMAS_MENU_URL,
       },
     });
   }
@@ -267,9 +270,9 @@ export default async function ChristmasMenuPage() {
     {
       "@context": "https://schema.org",
       "@type": "Menu",
-      name: "The White Horse Waterbeach Christmas Menu 2025",
+      name: `${BRAND.fullName} Christmas Menu 2025`,
       description: CHRISTMAS_MENU.description,
-      url: "https://whitehorsepub.co/christmas-menu",
+      url: CHRISTMAS_MENU_URL,
       hasMenuSection: CHRISTMAS_MENU.sections.map((section) => ({
         "@type": "MenuSection",
         name: section.name,
@@ -289,14 +292,14 @@ export default async function ChristmasMenuPage() {
           "@type": "Offer",
           price: CHRISTMAS_MENU.price.value,
           priceCurrency: "GBP",
-          description: "Per person Christmas menu price at The White Horse Waterbeach.",
+          description: `Per person Christmas menu price at ${BRAND.fullName}.`,
           availability: "https://schema.org/InStoreOnly",
-          url: "https://whitehorsepub.co/christmas-menu",
+          url: CHRISTMAS_MENU_URL,
         },
       ],
       provider: {
         "@type": "Restaurant",
-        name: "The White Horse Waterbeach",
+        name: BRAND.fullName,
         telephone: contact.phone.primary,
         email: contact.email.primary,
         address: {
@@ -323,8 +326,8 @@ export default async function ChristmasMenuPage() {
         <SchemaInjector
           type="breadcrumb"
           data={[
-            { name: "Home", url: "https://whitehorsepub.co/" },
-            { name: "Christmas Menu", url: "https://whitehorsepub.co/christmas-menu" },
+            { name: "Home", url: SITE_URL },
+            { name: "Christmas Menu", url: CHRISTMAS_MENU_URL },
           ]}
           page="christmas-menu"
         />
@@ -344,7 +347,7 @@ export default async function ChristmasMenuPage() {
             </FadeIn>
             <FadeInUp>
               <h1 id="christmas-hero-heading" className="h2 leading-tight">
-                Christmas Menu 2025 at The White Horse Waterbeach
+                Christmas Menu 2025 at {BRAND.fullName}
               </h1>
             </FadeInUp>
             <FadeInUp>
@@ -536,8 +539,8 @@ export default async function ChristmasMenuPage() {
                   <dt className="text-sm font-semibold uppercase tracking-wide text-brand-600">Contact</dt>
                   <dd className="mt-2 text-brand-700 leading-relaxed">
                     <div className="flex flex-wrap items-center gap-2">
-                      <Link href={contact.website ?? "https://whitehorsepub.co"} className="font-semibold underline">
-                        whitehorsepub.co
+                      <Link href={contact.website ?? SITE_URL} className="font-semibold underline">
+                        {BRAND.domain}
                       </Link>
                       <span aria-hidden="true" className="text-brand-500">•</span>
                       <Link href={telHref} className="font-semibold underline">
@@ -617,7 +620,7 @@ export default async function ChristmasMenuPage() {
                       className="inline-flex items-center gap-3 rounded-lg border border-brand-200 px-5 py-3 text-brand-700 hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-300"
                     >
                       <span aria-hidden="true" role="img">📍</span>
-                      Visit The White Horse Waterbeach
+                      Visit {BRAND.fullName}
                     </Link>
                   </div>
                   <p className="text-sm text-brand-500 leading-relaxed">

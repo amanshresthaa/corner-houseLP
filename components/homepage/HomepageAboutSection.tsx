@@ -1,6 +1,8 @@
 "use client";
 
 import Image from 'next/image';
+import Link from '@/lib/debugLink';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export interface HomepageAboutContent {
   title?: string;
@@ -11,6 +13,25 @@ export interface HomepageAboutContent {
     src?: string;
     alt?: string;
   };
+  stats?: Array<{
+    value?: string;
+    label?: string;
+    description?: string;
+  }>;
+  ctaLinks?: Array<{
+    text?: string;
+    href?: string;
+  }>;
+  milestones?: Array<{
+    year?: string;
+    title?: string;
+    copy?: string;
+  }>;
+  gallery?: Array<{
+    src?: string;
+    alt?: string;
+    label?: string;
+  }>;
 }
 
 interface HomepageAboutSectionProps {
@@ -24,77 +45,241 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
     description = [],
     features = [],
     image,
+    stats = [],
+    ctaLinks = [],
+    milestones = [],
+    gallery = [],
   } = content;
 
-  return (
-    <section className="relative py-16 sm:py-20" aria-labelledby="about-white-horse">
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-white via-brand-50/70 to-transparent"
-        aria-hidden="true"
-      />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-brand-100 bg-white/90 shadow-xl backdrop-blur-sm">
-          <div className="grid gap-10 p-6 md:gap-12 md:p-10 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
-              <span className="badge badge-outline badge-accent badge-lg text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-                About us
-              </span>
-              <h2 id="about-white-horse" className="mt-4 text-4xl font-display font-bold text-stout-700 sm:text-5xl">
-                {title}
-              </h2>
-              {tagline ? (
-                <p className="mt-3 text-lg font-semibold text-accent">
-                  {tagline}
-                </p>
-              ) : null}
+  const safeStats = stats
+    .filter((stat) => stat?.value && stat?.label)
+    .map((stat) => ({
+      value: stat!.value!,
+      label: stat!.label!,
+      description: stat?.description,
+    }));
 
-              <div className="prose prose-brand mt-6 max-w-none text-brand-700">
-                {description.map((paragraph, idx) => (
-                  <p key={`about-paragraph-${idx}`}>{paragraph}</p>
-                ))}
+  const safeCtas = ctaLinks
+    .filter((cta) => cta?.text && cta?.href)
+    .map((cta) => ({ text: cta!.text!, href: cta!.href! }));
+
+  const featureCards = features.filter(Boolean);
+  const safeMilestones = milestones
+    .filter((milestone) => milestone?.year && (milestone?.title || milestone?.copy))
+    .map((milestone) => ({
+      year: milestone!.year!,
+      title: milestone?.title,
+      copy: milestone?.copy,
+    }));
+  const galleryItems = gallery
+    .filter((item) => item?.src)
+    .map((item) => ({
+      src: item!.src!,
+      alt: item?.alt || '',
+      label: item?.label,
+    }));
+
+  const isInternalLink = (href: string) => href.startsWith('/') && !href.startsWith('//');
+  return (
+    <section className="relative py-16 sm:py-24" aria-labelledby="about-corner-house">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/80 via-white to-white" aria-hidden="true" />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="space-y-10 overflow-hidden rounded-4xl border border-brand-100/80 bg-white/95 p-6 shadow-2xl shadow-brand-900/5 backdrop-blur sm:p-8 md:p-10">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <span className="inline-flex items-center gap-2 rounded-full border border-accent-200/60 bg-accent-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-accent">
+                  House story
+                </span>
+                <div>
+                  <h2 id="about-corner-house" className="text-4xl font-display font-bold text-stout-700 sm:text-5xl">
+                    {title}
+                  </h2>
+                  {tagline ? (
+                    <p className="mt-3 text-lg font-semibold text-accent">
+                      {tagline}
+                    </p>
+                  ) : null}
+                </div>
+                <div className="prose prose-brand max-w-none text-brand-700">
+                  {description.map((paragraph, idx) => (
+                    <p key={`about-paragraph-${idx}`}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
 
-              {features.length > 0 ? (
-                <div className="mt-6 rounded-2xl border border-brand-100 bg-brand-50/80 p-5 shadow-inner sm:mt-8">
-                  <h3 className="text-xl font-display font-semibold text-brand-900">
-                    House highlights
-                  </h3>
-                  <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {features.map((item, idx) => (
-                      <li
-                        key={`about-feature-${idx}`}
-                        className="flex items-start gap-3 rounded-xl bg-white/80 p-3 text-sm font-medium text-brand-700 shadow-sm ring-1 ring-brand-100/70"
-                      >
-                        <span
-                          aria-hidden="true"
-                          className="mt-1 inline-flex h-2.5 w-2.5 flex-none items-center justify-center rounded-full bg-accent"
-                        />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+              {safeStats.length ? (
+                <div className="flex flex-wrap gap-4">
+                  {safeStats.map((stat, idx) => (
+                    <div
+                      key={`about-stat-${stat.label}-${idx}`}
+                      className="min-w-[9rem] rounded-2xl border border-brand-100 bg-brand-50/70 px-4 py-3 shadow-inner"
+                    >
+                      <p className="text-3xl font-display font-bold text-stout-700">{stat.value}</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-500">{stat.label}</p>
+                      {stat.description ? (
+                        <p className="text-sm text-brand-500">{stat.description}</p>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              {safeCtas.length ? (
+                <div className="flex flex-wrap gap-3">
+                  {safeCtas.map((cta, idx) => {
+                    const href = cta.href;
+                    const props = {
+                      className:
+                        'btn btn-sm rounded-full border-brand-200 bg-white text-brand-800 hover:border-brand-300 hover:bg-brand-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300',
+                      'aria-label': cta.text,
+                    } as const;
+                    return isInternalLink(href) ? (
+                      <Link key={`about-cta-${idx}`} href={href} {...props}>
+                        {cta.text}
+                      </Link>
+                    ) : (
+                      <a key={`about-cta-${idx}`} href={href} {...props}>
+                        {cta.text}
+                      </a>
+                    );
+                  })}
                 </div>
               ) : null}
             </div>
 
-            <div className="relative lg:col-span-5">
-              {image?.src ? (
-                <div className="group relative h-80 overflow-hidden rounded-3xl shadow-2xl ring-4 ring-brand-100/60 sm:h-[28rem]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt || 'Exterior of The White Horse Waterbeach'}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                    priority
-                  />
+            <div className="space-y-6">
+              <div className="relative">
+                <div className="absolute inset-0 translate-y-4 rounded-3xl bg-gradient-to-tr from-brand-200/50 via-transparent to-transparent blur-2xl" aria-hidden="true" />
+                <div className="relative overflow-hidden rounded-3xl border border-brand-100 bg-brand-900/5 shadow-2xl">
+                  {image?.src ? (
+                    <Image
+                      src={image.src}
+                      alt={image.alt || `Art-deco exterior of ${BRAND.fullName} on Newmarket Road`}
+                      width={900}
+                      height={720}
+                      className="h-full w-full object-cover"
+                      sizes="(max-width: 1024px) 100vw, 45vw"
+                      priority
+                    />
+                  ) : (
+                    <div className="flex h-80 items-center justify-center bg-brand-50 text-brand-300 sm:h-[28rem]">
+                      <span>No imagery supplied</span>
+                    </div>
+                  )}
+                  {safeStats[0] ? (
+                    <div className="absolute bottom-4 left-4 rounded-2xl border border-white/40 bg-white/90 px-4 py-3 text-sm font-semibold text-brand-800 shadow-lg">
+                      Trusted by {safeStats[0].value}
+                    </div>
+                  ) : null}
                 </div>
-              ) : (
-                <div className="flex h-80 items-center justify-center rounded-3xl border border-dashed border-brand-200 bg-brand-50 text-brand-300 shadow-inner sm:h-[28rem]">
-                  <span>No imagery supplied</span>
+              </div>
+
+              {galleryItems.length ? (
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {galleryItems.slice(0, 2).map((item, idx) => (
+                    <figure
+                      key={`about-gallery-${idx}`}
+                      className="group overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-lg"
+                    >
+                      <div className="relative aspect-[4/3]">
+                        <Image
+                          src={item.src}
+                          alt={item.alt || 'Gallery moment'}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                          sizes="(max-width: 768px) 100vw, 40vw"
+                        />
+                      </div>
+                      {item.label ? (
+                        <figcaption className="p-3 text-sm font-semibold text-brand-700">
+                          {item.label}
+                        </figcaption>
+                      ) : null}
+                    </figure>
+                  ))}
                 </div>
-              )}
+              ) : null}
             </div>
+          </div>
+
+          {safeMilestones.length ? (
+            <div className="rounded-3xl border border-brand-100 bg-brand-50/60 p-5">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-500">Timeline</p>
+                  <h3 className="text-2xl font-display font-bold text-stout-700">Corner House moments</h3>
+                </div>
+              </div>
+              <div className="mt-6 flex gap-6 overflow-x-auto pb-2" aria-label="Corner House timeline">
+                {safeMilestones.map((milestone, idx) => (
+                  <div
+                    key={`about-milestone-${milestone.year}-${idx}`}
+                    className="min-w-[14rem] rounded-2xl border border-brand-100 bg-white p-4 shadow-sm"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-500">
+                      {milestone.year}
+                    </p>
+                    {milestone.title ? (
+                      <p className="mt-2 text-base font-semibold text-stout-700">{milestone.title}</p>
+                    ) : null}
+                    {milestone.copy ? (
+                      <p className="mt-1 text-sm text-brand-600">{milestone.copy}</p>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+            {featureCards.length ? (
+              <div className="rounded-3xl border border-brand-100/80 bg-brand-50/60 p-5">
+                <h3 className="text-base font-semibold uppercase tracking-[0.35em] text-brand-600">
+                  House highlights
+                </h3>
+                <ul className="mt-4 space-y-3">
+                  {featureCards.map((item, idx) => (
+                    <li
+                      key={`about-feature-${idx}`}
+                      className="flex items-start gap-3 rounded-2xl bg-white/95 p-3 text-sm font-medium text-brand-700 shadow-sm"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 inline-flex h-2.5 w-2.5 flex-none items-center justify-center rounded-full bg-accent"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {galleryItems.length > 2 ? (
+              <div className="grid gap-4 sm:grid-cols-2">
+                {galleryItems.slice(2, 6).map((item, idx) => (
+                  <figure
+                    key={`about-gallery-secondary-${idx}`}
+                    className="group overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-lg"
+                  >
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={item.src}
+                        alt={item.alt || 'Gallery moment'}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                        sizes="(max-width: 768px) 100vw, 45vw"
+                      />
+                    </div>
+                    {item.label ? (
+                      <figcaption className="p-3 text-sm font-semibold text-brand-700">
+                        {item.label}
+                      </figcaption>
+                    ) : null}
+                  </figure>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

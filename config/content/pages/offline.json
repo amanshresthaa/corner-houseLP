@@ -1,6 +1,6 @@
 {
   "title": "You’re offline",
-  "message": "It looks like your connection dropped. Once you’re back online, reload to keep exploring The Corner House.",
+  "message": "It looks like your connection dropped. Once you’re back online, reload to keep exploring {{brand.shortName}}.",
   "actions": {
     "primary": {
       "label": "Retry",

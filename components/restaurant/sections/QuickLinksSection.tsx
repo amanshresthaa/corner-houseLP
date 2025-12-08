@@ -8,7 +8,7 @@ import { sanitizeHref, createHrefKey, isValidHref, logHrefIssue } from '@/utils/
  * Props interface for QuickLinksSection component
  * Following the established pattern from existing components
  */
-interface QuickLinkItem {
+export interface QuickLinkItem {
   title?: string;
   description?: string;
   link?: string;

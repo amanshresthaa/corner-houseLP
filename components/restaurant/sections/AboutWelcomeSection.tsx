@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { BRAND } from '@/src/lib/constants/brand';
 
 interface AboutWelcomeContent {
   heading: string;
@@ -63,7 +64,7 @@ export default function AboutWelcomeSection({ content, className = '' }: AboutWe
                 <div className="group relative h-80 overflow-hidden rounded-3xl ring-4 ring-brand-100/60 shadow-2xl sm:h-[28rem]">
                   <Image
                     src={image.src}
-                    alt={image.alt || 'The White Horse Waterbeach'}
+                    alt={image.alt || `${BRAND.fullNameNoArticle} dining room with art-deco lighting`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     sizes="(max-width: 768px) 100vw, 40vw"

@@ -7,6 +7,7 @@ import imgBarPouring from '@cimages/Slideshow/bar-counter-cozy-lighting-taps-and
 import imgGardenEvenings from '@cimages/Slideshow/beer-garden-picnic-benches-and-sky-portrait.png';
 import imgSignatureDish from '@cimages/Slideshow/steamed-momo-with-spicy-sauce-portrait.png';
 import { getRestaurantIdentity, getContactInfo, getHours, getMenu, getTestimonials, getReviewLinks } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 // Schema.org types for restaurant
 interface RestaurantSchema {
@@ -326,7 +327,7 @@ export const useRestaurantSchema = () => {
     return {
       '@context': 'https://schema.org',
       '@type': 'Menu',
-      name: 'The White Horse Restaurant Menu',
+    name: `${BRAND.shortName} Menu`,
       description: 'Authentic Nepalese cuisine and traditional pub classics',
       hasMenuSection: [
         {

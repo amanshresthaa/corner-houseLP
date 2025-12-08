@@ -10,6 +10,7 @@ import { useContent } from '@/hooks/useContent';
 import { useOpeningHours } from '@/hooks/data/useOpeningHours';
 import { MarketingDataSchema } from '@/lib/schemas';
 import Link from '@/lib/debugLink';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export default function Hero() {
   const contact = getContactInfo();
@@ -44,8 +45,8 @@ export default function Hero() {
   const bookingUrl = contact.bookingUrl;
   
   // Hero content with fallbacks
-  const heroTitle = heroContent?.title || 'Waterbeach\'s Historic Thatched Pub with Himalayan Flavour';
-  const heroDescription = heroContent?.description || 'A welcoming village hub just outside Cambridge – authentic Nepalese dishes alongside trusted British pub comfort in a distinctive thatched setting.';
+  const heroTitle = heroContent?.title || 'Cambridge’s go-to sports pub with Nepalese plates and cosy snugs';
+  const heroDescription = heroContent?.description || 'A 1930s art-deco corner pub opposite Cambridge Retail Park with Nepali-chef curries, heated cabins, HD sports screens, and CAMRA-awarded hospitality.';
   const heroCTA = heroContent?.cta || {};
   const primaryCTA = heroCTA.primary || labelBookOnline;
   const secondaryCTA = heroCTA.secondary || 'View Menu';
@@ -60,15 +61,15 @@ export default function Hero() {
   const secondaryExternal = heroCTA.secondaryExternal ?? secondaryHref.startsWith('http');
   const altText =
     content?.global?.accessibility?.altTexts?.heroBanner ||
-    'Exterior of The White Horse country pub on a sunny day with chalkboards by the door';
+    `Art-deco exterior of ${BRAND.fullName} with cosy snugs and heated cabins`;
   
   // Feature tags from content or fallback
   const features = content?.pages?.home?.sections?.features?.items || [
-    { title: 'Authentic Nepalese + Pub Classics' },
-    { title: 'Family & Dog Friendly' },
-    { title: 'Near Waterbeach College' },
-    { title: 'Garden • Live Sports' },
-    { title: 'Community Events' }
+    { title: 'Nepali chefs serving Himali Lamb & momos' },
+    { title: 'Sky & TNT Sports + outdoor projector' },
+    { title: 'Heated garden cabins & beer garden' },
+    { title: 'Family & dog friendly with play space' },
+    { title: 'TripAdvisor Travelers’ Choice 2025' }
   ];
 
   const renderCTAButton = (href: string, label: string, className: string, isExternal?: boolean) => {

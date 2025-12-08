@@ -1,18 +1,18 @@
 {
   "seo": {
-    "title": "Terms of Service | The Corner House Cambridge - Booking Terms & Conditions",
-    "description": "Terms of service for The Corner House Cambridge covering table bookings, reservations, and dining policies.",
+    "title": "Terms of Service | {{brand.fullName}} - Booking Terms & Conditions",
+    "description": "Terms of service for {{brand.fullName}} covering table bookings, reservations, and dining policies.",
     "keywords": [
-      "The Corner House Cambridge terms",
+      "{{brand.fullName}} terms",
       "Cambridge pub booking terms",
       "Nepalese restaurant Cambridge terms",
       "dining terms conditions"
     ],
     "canonicalUrlRelative": "/tos",
     "openGraph": {
-      "title": "Terms of Service | The Corner House Cambridge",
-      "description": "Terms of service for The Corner House Cambridge covering restaurant bookings, table reservations and dining policies.",
-      "url": "https://thecornerhousepub.co/tos"
+      "title": "Terms of Service | {{brand.fullName}}",
+      "description": "Terms of service for {{brand.fullName}} covering restaurant bookings, table reservations and dining policies.",
+      "url": "https://{{brand.domain}}/tos"
     }
   }
 }

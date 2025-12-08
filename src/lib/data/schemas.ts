@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { BRAND } from "@/src/lib/constants/brand";
 
 export const DietarySchema = z.object({
   vegetarian: z.boolean().optional(),
@@ -195,10 +196,10 @@ export const ConfigSchema = z.object({
   cms: z.object({ enabled: z.boolean().default(false) }).default({ enabled: false }),
   metadata: z
     .object({
-      appName: z.string().default("The White Horse"),
-      domainName: z.string().default("whitehorsepub.co"),
+      appName: z.string().default(BRAND.fullName),
+      domainName: z.string().default(BRAND.domain),
     })
-    .default({ appName: "The White Horse", domainName: "whitehorsepub.co" }),
+    .default({ appName: BRAND.fullName, domainName: BRAND.domain }),
 });
 
 // Content Management Schemas

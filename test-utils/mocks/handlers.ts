@@ -1,5 +1,6 @@
 import { http, HttpResponse } from 'msw';
 import { getMapLinks } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 /**
  * MSW handlers for mocking API responses in tests
@@ -8,19 +9,19 @@ import { getMapLinks } from '@/lib/restaurantData';
 
 // Mock restaurant data (matches the structure from data/restaurant.json)
 const mockRestaurantData = {
-  name: "The White Horse Waterbeach",
+  name: BRAND.fullName,
   phone: "+44 1223 921122",
   email: "cornerhouse@lapeninns.com",
-  description: "Historic thatched pub serving Nepalese cuisine in Waterbeach.",
+  description: "Art-deco Cambridge pub serving Nepalese sharing feasts, grills, and HD sports hospitality.",
   identity: {
-    name: "The White Horse Waterbeach",
-    displayName: "The White Horse Waterbeach",
+    name: BRAND.fullName,
+    displayName: BRAND.shortName,
     tagline: "Historic Thatched Pub & Nepalese Restaurant",
-    description: "Authentic Nepalese cuisine and traditional British pub classics.",
+    description: "Authentic Nepalese cuisine, HD sports, and heated private cabins by the Cam.",
     established: "1840s",
     type: "pub-restaurant",
     cuisine: ["Nepalese", "British"],
-    slug: "the-white-horse-girton"
+    slug: BRAND.slug
   },
   contact: {
     phone: {
@@ -34,8 +35,8 @@ const mockRestaurantData = {
       bookings: "cornerhouse@lapeninns.com",
       events: "cornerhouse@lapeninns.com"
     },
-    website: "https://whitehorsepub.co",
-    bookingUrl: "https://whitehorsepub.co/book-a-table"
+    website: `https://${BRAND.domain}`,
+    bookingUrl: `https://${BRAND.domain}/book-a-table`
   },
   address: {
     street: "231 Newmarket Road",
@@ -103,8 +104,8 @@ const mockRestaurantData = {
   },
   social: {
     facebook: {
-      url: "https://www.facebook.com/people/The-White-Horse/61572172781807/",
-      handle: "@thewhitehorsewaterbeach",
+      url: "https://www.facebook.com/cornerhousecambridge",
+      handle: "@cornerhousecambridge",
       label: "Follow us on Facebook"
     }
   },
@@ -117,7 +118,7 @@ const mockRestaurantData = {
     cancellationPolicy: "Please contact us 24 hours in advance for cancellations."
   },
   meta: {
-    slug: "the-white-horse-girton",
+    slug: BRAND.slug,
     category: ["restaurant", "pub"],
     rating: {
       average: 4.8,

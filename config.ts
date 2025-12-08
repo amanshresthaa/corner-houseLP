@@ -1,6 +1,7 @@
 import themes from "daisyui/src/theming/themes";
 import { ConfigProps } from "./types/config";
 import { resolveEnv } from "@/src/lib/data/env";
+import { BRAND } from "@/src/lib/constants/brand";
 
 // Build-time synchronous snapshot of config.json mapped to legacy ConfigProps
 // Note: This file is imported client and server. Do not leak secrets.
@@ -12,10 +13,10 @@ function snapshot(): ConfigProps {
   // config should use the data loader directly server-side.
   const isProd = process.env.NODE_ENV === "production";
   return {
-    appName: "The White Horse",
+    appName: BRAND.fullName,
     appDescription:
-      "Village coaching inn on Waterbeach green serving Nepalese feasts, British pub classics, and cask ales from brunch through last orders.",
-    domainName: "whitehorsepub.co",
+      "Art-deco Cambridge pub with HD sports, heated cabins, and a Nepali-chef kitchen serving curries, grills, and Sunday roasts.",
+    domainName: BRAND.domain,
     crisp: { id: "", onlyShowOnRoutes: ["/"] },
     stripe: {
       plans: [
@@ -32,10 +33,10 @@ function snapshot(): ConfigProps {
     aws: { bucket: undefined, bucketUrl: undefined, cdn: undefined },
     mailgun: {
       subdomain: "mg",
-      fromNoReply: `The White Horse <cornerhouse@lapeninns.com>`,
-      fromAdmin: `The White Horse <cornerhouse@lapeninns.com>`,
-      supportEmail: "cornerhouse@lapeninns.com",
-      forwardRepliesTo: "cornerhouse@lapeninns.com",
+      fromNoReply: `${BRAND.shortName} <${BRAND.supportEmail}>`,
+      fromAdmin: `${BRAND.shortName} <${BRAND.supportEmail}>`,
+      supportEmail: BRAND.supportEmail,
+      forwardRepliesTo: BRAND.supportEmail,
     },
     colors: { theme: "light", main: themes["light"]["primary"] },
     auth: { loginUrl: "/book-a-table", callbackUrl: "/" },

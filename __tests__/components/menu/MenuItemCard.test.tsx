@@ -135,6 +135,6 @@ describe('MenuItemCard', () => {
     render(<MenuItemCard {...defaultProps} />);
     
     const image = screen.getByRole('img');
-    expect(image).toHaveAttribute('alt', 'Test Dish - starters from The White Horse Waterbeach');
+    expect(image).toHaveAttribute('alt', 'Test Dish - starters from The Corner House Cambridge');
   });
 });

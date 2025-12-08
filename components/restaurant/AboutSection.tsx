@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { PerformantMotionSection, PerformantMotionDiv, performantVariants } from '@/components/motion/DynamicMotion';
 import Image from 'next/image';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export default function AboutSection() {
   return (
@@ -22,13 +23,13 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold text-stout-700 mb-6">
-              Welcome to <span className="text-accent">The White Horse</span>
+              Welcome to <span className="text-accent">{BRAND.fullName}</span>
             </h2>
             
             <div className="prose prose-lg text-brand-600 space-y-4">
-              <p>Waterbeach’s historic thatched pub just outside Cambridge – blending community heritage with a warmly spiced Nepalese kitchen and familiar British pub comfort.</p>
-              <p>Garden space for long summer evenings, cosy interior for winter gatherings, and a welcoming spot for locals, families, students, professionals & visitors.</p>
-              <p>Our dual identity means you can explore aromatic Himalayan-inspired dishes while friends opt for classic favourites – shared tables, shared experiences.</p>
+              <p>Our art-deco corner site on Newmarket Road pairs Cambridge pub culture with a Nepalese kitchen run by chefs from Kathmandu and Pokhara.</p>
+              <p>Think Himali Lamb Curry, Khasi Ko Masu goat, and sizzling mixed grills alongside Sunday roasts, cask ales, and a fridge of craft lagers.</p>
+              <p>Heated garden cabins, HD sports screens, and CAMRA’s “Most Improved City Pub” award make us the meet-up spot for locals, shoppers, hotel guests, and matchday fans.</p>
             </div>
 
             {/* Awards Section */}
@@ -41,11 +42,11 @@ export default function AboutSection() {
             >
               <h3 className="text-xl font-display font-bold text-stout-700 mb-4">Why Guests Visit</h3>
               <ul className="list-disc pl-5 text-sm text-brand-600 space-y-1">
-                <li>Distinctive thatched setting & village feel</li>
-                <li>Authentic Nepalese flavour + pub classics</li>
-                <li>Inclusive for mixed groups & families</li>
-                <li>Close to Waterbeach College / north Cambridge</li>
-                <li>Garden & seasonal community events</li>
+                <li>TripAdvisor Travelers’ Choice 2025 & CAMRA award winner</li>
+                <li>Opposite Cambridge Retail Park and minutes from Abbey Stadium</li>
+                <li>Heated cabins, garden fire pits, and dog-friendly snugs</li>
+                <li>Sky & TNT Sports with an outdoor projector for big games</li>
+                <li>Family-friendly menus with kids’ portions and high chairs</li>
               </ul>
             </motion.div>
           </motion.div>
@@ -61,7 +62,7 @@ export default function AboutSection() {
             <div className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/restaurant-interior.jpg"
-                alt="The White Horse restaurant interior"
+                alt={`${BRAND.fullNameNoArticle} interior with art-deco lighting and cosy banquettes`}
                 fill
                 className="object-cover"
                 placeholder="blur"

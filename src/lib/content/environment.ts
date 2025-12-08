@@ -6,6 +6,7 @@
  */
 
 import { composeContent, type CompositionConfig, type CompositionResult } from './composition';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export interface EnvironmentConfig {
   id: string;
@@ -295,7 +296,7 @@ export class EnvironmentManager {
       'environments/dev/overrides/': [
         {
           path: 'global.site.name',
-          value: 'The White Horse [DEV]',
+          value: `${BRAND.shortName} [DEV]`,
           priority: 10,
           description: 'Development site name indicator',
         },
@@ -309,7 +310,7 @@ export class EnvironmentManager {
       'environments/staging/overrides/': [
         {
           path: 'global.site.name',
-          value: 'The White Horse [STAGING]',
+          value: `${BRAND.shortName} [STAGING]`,
           priority: 10,
           description: 'Staging site name indicator',
         },
@@ -324,7 +325,7 @@ export class EnvironmentManager {
         {
           path: 'global.site.description',
           value:
-            'Village coaching inn on Waterbeach green serving Nepalese feasts, British pub classics, and cask ales from brunch through last orders. Call or email the team to book.',
+            'Art-deco Cambridge sports pub hosting HD matchdays, heated private cabins, and a Nepalese-chef kitchen for curries, grills, and Sunday roasts.',
           priority: 10,
           description: 'Production optimized description',
         },

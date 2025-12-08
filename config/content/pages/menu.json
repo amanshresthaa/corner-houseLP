@@ -1,13 +1,13 @@
 {
   "seo": {
-    "title": "Menu | Authentic Nepalese Cuisine & British Pub Classics | The White Horse Waterbeach",
-    "description": "Explore our menu featuring authentic Nepalese cuisine prepared with traditional recipes - Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo - alongside British pub classics and cask ales. Takeaway available. Call +44 1223 921122.",
-    "keywords": "authentic Nepalese menu Cambridge, Bhutuwa chicken, Pokhareli fish curry, Rara king prawns, momo Cambridge, dal bhat, tandoori king prawns, curry Waterbeach, Baltis, Jalfrezis, pub classics, cask ales, collection & delivery Cambridge, takeaway Cambridge, Greene King IPA, Timothy Taylor Landlord",
+    "title": "Menu | Nepalese Curries & Pub Classics | {{brand.fullName}}",
+    "description": "Browse our Cambridge menu of Nepali chef specials—Himali lamb, Khasi ko masu, sizzling platters—served alongside Sunday roasts, burgers, and cask ales. Call +44 1223 921122 for bookings or takeaway.",
+    "keywords": "{{brand.fullNameNoArticle}} menu, Nepalese curry Cambridge, Himali lamb, Khasi ko masu, momo Cambridge, Nepali mixed grill, Sunday roast Cambridge, heated cabins, Sky Sports pub food",
     "openGraph": {
-      "title": "Menu | Authentic Nepalese Food & Pub Classics | The White Horse Waterbeach",
-      "description": "Discover our interactive menu with search and dietary filters, combining authentic Nepalese cuisine with traditional British pub favorites at Waterbeach's historic thatched pub",
-      "url": "https://whitehorsepub.co//menu",
-      "siteName": "The White Horse Waterbeach",
+      "title": "Menu | Nepalese Food & Pub Classics | {{brand.fullName}}",
+      "description": "Discover our interactive menu with filters covering Nepalese curries, pub favourites, vegan dishes, and heated cabin feasts opposite Cambridge Retail Park.",
+      "url": "https://{{brand.domain}}/menu",
+      "siteName": "{{brand.fullName}}",
       "locale": "en_GB",
       "type": "website"
     }

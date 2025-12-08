@@ -5,6 +5,10 @@ import { getContentSmart } from '@/src/lib/data/server-loader';
 import Link from '@/lib/debugLink';
 // PressFeatureBanner removed to keep page focused on essential, verified information
 import { getContactInfo, getAddress, getPostalAddressSchema, getRestaurantIdentity } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
+
+const SITE_URL = `https://${BRAND.domain}`;
+const PAGE_URL = `${SITE_URL}/press`;
 
 const CONTACT = getContactInfo();
 const ADDRESS = getAddress();
@@ -14,10 +18,10 @@ const IDENTITY = getRestaurantIdentity();
 const PRESS_FACTS = [
   `Address: ${ADDRESS.street}, ${ADDRESS.area}, ${ADDRESS.city} ${ADDRESS.postcode}`,
   `Phone: ${CONTACT.phone.display} • Email: ${CONTACT.email.primary}`,
-  "Ownership: Lapen Inns",
-  "Dual identity: Traditional village pub + authentic Nepalese restaurant",
-  "Amenities: Live sports (Sky & TNT), large garden, outdoor seating, dog-friendly (bar area), family-friendly, pool table, takeaway, wheelchair access",
-  "Cask ales: Greene King IPA, Timothy Taylor Landlord",
+  "Ownership: Lapen Inns Hospitality (since 2024 relaunch)",
+  "Hybrid: Art-deco sports pub with Nepalese kitchen, heated cabins, and HD matchday screens",
+  "Awards: TripAdvisor Travelers’ Choice 2025 • CAMRA Most Improved City Pub 2020",
+  "Amenities: Sky & TNT Sports, outdoor projector, family & dog friendly, shuffleboard, takeaway & delivery",
 ];
 const MEDIA_CONTACT = {
   email: CONTACT.email.press || CONTACT.email.primary,
@@ -75,14 +79,14 @@ export default async function PressPage() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://whitehorsepub.co//press#webpage",
-            "name": "Press Kit - The White Horse Waterbeach",
-            "description": "Official press information, quick facts, and media contact for The White Horse Waterbeach.",
-            "url": "https://whitehorsepub.co//press",
+            "@id": `${PAGE_URL}#webpage`,
+            "name": `Press Kit - ${IDENTITY.displayName}`,
+            "description": `Official press information, quick facts, and media contacts for ${IDENTITY.displayName} on Newmarket Road, Cambridge`,
+            "url": PAGE_URL,
             "isPartOf": {
               "@type": "WebSite",
               "name": IDENTITY.displayName,
-              "url": "https://whitehorsepub.co/"
+              "url": SITE_URL
             },
             "about": {
               "@type": "LocalBusiness",
@@ -98,13 +102,13 @@ export default async function PressPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://whitehorsepub.co/"
+                "item": SITE_URL
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Press & Media",
-                "item": "https://whitehorsepub.co//press"
+                "item": PAGE_URL
               }
             ]
           }
@@ -128,7 +132,7 @@ export default async function PressPage() {
                 Press Kit
               </h1>
               <p className="text-base md:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
-                At-a-glance facts and media contact for The White Horse, Waterbeach — a revitalised community hub blending a traditional village pub with authentic Nepalese cuisine.
+                At-a-glance facts and media contact for {BRAND.fullName} — an art-deco sports pub opposite Cambridge Retail Park with a Nepalese kitchen and heated garden cabins.
               </p>
             </div>
           </FadeIn>
@@ -151,7 +155,7 @@ export default async function PressPage() {
                     <h2 id="media-coverage-heading" className="h2 text-neutral-900">
                       Media Coverage
                     </h2>
-                    <p className="mt-2 text-neutral-600">Independent articles about The White Horse Waterbeach.</p>
+                    <p className="mt-2 text-neutral-600">Independent articles about {BRAND.fullName}.</p>
                   </div>
                 </div>
 
@@ -249,7 +253,7 @@ export default async function PressPage() {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
-                        href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: The White Horse Waterbeach`}
+                        href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: ${BRAND.fullName}`}
                         className="btn bg-brand-700 text-white hover:bg-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                         style={{ touchAction: 'manipulation' }}
                       >
@@ -282,9 +286,9 @@ export default async function PressPage() {
                 {(() => {
                   const FSA = {
                     FHRSID: 1807077,
-                    businessName: 'The White Horse',
-                    ratingValue: '4',
-                    ratingDate: '2025-08-06T00:00:00',
+                    businessName: BRAND.fullName,
+                    ratingValue: '5',
+                    ratingDate: '2025-02-26T00:00:00',
                   } as const;
                   const RATING_TEXT: Record<string, string> = {
                     '0': 'Urgent Improvement Necessary',

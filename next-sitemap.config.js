@@ -1,6 +1,8 @@
+const brand = require('./config/brand.json');
+
 module.exports = {
-  // The White Horse Waterbeach official domain
-  siteUrl: process.env.SITE_URL || "https://whitehorsepub.co/",
+  // Corner House official domain
+  siteUrl: process.env.SITE_URL || `https://${brand.domain}/`,
   generateRobotsTxt: true,
   // Use this to exclude routes from the sitemap (e.g. internal APIs, well-known files, and static asset entries)
   // By default, NextJS app router metadata files are excluded (https://nextjs.org/docs/app/api-reference/file-conventions/metadata)

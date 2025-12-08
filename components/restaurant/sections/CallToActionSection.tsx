@@ -4,7 +4,7 @@ import Link from '@/lib/debugLink';
 /**
  * Props interfaces for CallToActionSection component
  */
-interface CTAButton {
+export interface CTAButton {
   text: string;
   href: string;
   variant: 'accent' | 'brand' | 'crimson';
@@ -12,7 +12,7 @@ interface CTAButton {
   key?: string;
 }
 
-interface CallToActionSectionProps {
+export interface CallToActionSectionProps {
   headline: string;
   description: string;
   buttons: CTAButton[];

@@ -4,6 +4,10 @@ import RestaurantLayout from "@/components/restaurant/Layout";
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import Link from '@/lib/debugLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
+
+const SITE_URL = `https://${BRAND.domain}`;
+const PAGE_URL = `${SITE_URL}/tos`;
 
 export async function generateMetadata() {
   const content = await getContentSmart();
@@ -45,14 +49,14 @@ export default function TOS() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://whitehorsepub.co//tos#webpage",
+            "@id": `${PAGE_URL}#webpage`,
             "name": `Terms of Service - ${restaurantName}`,
             "description": `Terms of service and conditions for ${restaurantName} restaurant bookings, reservations and dining services.`,
-            "url": "https://whitehorsepub.co//tos",
+            "url": PAGE_URL,
             "isPartOf": {
               "@type": "WebSite",
               "name": restaurantName,
-              "url": "https://whitehorsepub.co/"
+              "url": SITE_URL
             },
             "about": {
               "@type": "LocalBusiness",
@@ -115,7 +119,7 @@ export default function TOS() {
                 <div className="space-y-8">
                   <section>
                     <p className="text-lg leading-relaxed text-neutral-700">
-                      These Terms of Service govern your use of The White Horse Waterbeach's website and services. By making a booking, placing an order, or using our site, you agree to these terms.
+                      These Terms of Service govern your use of {BRAND.fullName}&apos;s website and services. By making a booking, placing an order, or using our site, you agree to these terms.
                     </p>
                   </section>
 
@@ -164,7 +168,7 @@ export default function TOS() {
                   <section>
                     <h2 className="h3 text-brand-700 mb-4">5. Intellectual Property</h2>
                     <p className="leading-relaxed">
-                      All website content, branding, and materials are the property of The White Horse Waterbeach or its licensors. You may not reproduce, distribute, or use content without written permission.
+                      All website content, branding, and materials are the property of {BRAND.fullName} or its licensors. You may not reproduce, distribute, or use content without written permission.
                     </p>
                   </section>
 

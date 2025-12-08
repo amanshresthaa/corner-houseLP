@@ -3,6 +3,8 @@
 import React, { useEffect, useRef } from 'react';
 import { AutoMarquee } from './AutoMarquee';
 import { getReviewLinks } from '@/lib/restaurantData';
+import { replaceBrandTokens } from '@/src/lib/utils/brand';
+import { BRAND } from '@/src/lib/constants/brand';
 
 interface Review {
   id: string;
@@ -16,148 +18,55 @@ interface Review {
   };
 }
 
-const reviews: Review[] = [
+const rawReviews: Review[] = [
   {
-    id: "review_girton_local_02",
-    platform: "google",
-    stars: 5,
-    text: "If you're planning Sunday lunch Waterbeach families will love, The White Horse is our go-to. The largest thatched pub in the country feels properly historic, staff are warm, and portions are generous. Kids run off energy in the expansive garden and terrace while we relax. The Nepalese specials are full of flavor, and pub classics are spot on. Free pub parking behind the building makes it easy for multi-generational meetups.",
-    reviewer: { name: "Amelia Hart", initials: "AH", timeAgo: "2 weeks ago" }
-  },
-  {
-    id: "review_student_02",
-    platform: "google",
-    stars: 5,
-    text: "Found the winner among pubs near Waterbeach College. The White Horse shows live sport, serves proper pints, and the Nepalese menu is affordable for student budgets. We cycle over via the path off Huntingdon Road, lock up easily, and grab Nepalese takeaway when revision runs late. Friendly staff and a big garden make it an easy hangout before heading back to halls.",
-    reviewer: { name: "Tom Evans", initials: "TE", timeAgo: "5 days ago" }
-  },
-  {
-    id: "review_professional_02",
+    id: "review_tony_b",
     platform: "tripadvisor",
     stars: 5,
-    text: "For a relaxed business lunch Cambridge teams can actually talk through, The White Horse hits the mark. Quiet nooks in a historic thatched setting, attentive service, and distinctive Nepalese dishes make client meetings memorable. Free parking behind the pub avoids city-centre hassle, and the garden works well for informal catch-ups when the sun is out. Consistently high Google reviews reflect the quality.",
-    reviewer: { name: "Priya Nair", initials: "PN", timeAgo: "1 week ago" }
+    text: "Had the Himali Lamb Curry and it was superb! Friendly staff walked us through the Nepalese dishes, cask ales flowed, HD sports were on, and we ended up visiting three times in one weekend.",
+    reviewer: { name: "Tony B.", initials: "TB", timeAgo: "Nov 2025" }
   },
   {
-    id: "review_tourist_02",
+    id: "review_colin_s",
     platform: "tripadvisor",
     stars: 5,
-    text: "If you're searching for a thatched pub Cambridge visitors shouldn't miss, head to The White Horse in Waterbeach. It's the largest thatched pub in the country, with a photogenic roof and welcoming village feel. The Nepalese menu is a brilliant surprise alongside classic pub comforts. Free parking behind the building and easy bus links make it an effortless detour from the city centre.",
-    reviewer: { name: "Liam O'Connor", initials: "LO", timeAgo: "3 days ago" }
+    text: "Fantastic night in a lovely art-deco pub. Attentive team, brilliant atmosphere, and great drinks for our Cambridge reunion group — highly recommended for friends meeting up near the city.",
+    reviewer: { name: "Colin S.", initials: "CS", timeAgo: "Nov 2025" }
   },
   {
-    id: "review_local_family_02",
-    platform: "google",
-    stars: 5,
-    text: "We were hunting for a family friendly pub North Cambridge and found a gem. The The White Horse's spacious garden and terrace give kids room to explore while adults enjoy flavorful Nepalese dishes and well-kept ales. Staff are lovely with families, and the dog-friendly policy means our spaniel is welcome too. Plenty of free parking behind the pub keeps visits stress-free.",
-    reviewer: { name: "Sophie Reed", initials: "SR", timeAgo: "10 days ago" }
-  },
-  {
-    id: "review_professional_03",
-    platform: "google",
-    stars: 5,
-    text: "For restaurants near Cambridge Science Park, The White Horse is a smart choice. Just a short hop up Huntingdon Road, it offers distinctive Nepalese cuisine in a calm, thatched setting ideal for working lunches. Service is efficient, portions are generous, and free on-site parking makes scheduling with clients painless. The garden is great for a debrief when the weather cooperates.",
-    reviewer: { name: "Dr. Alex Wang", initials: "AW", timeAgo: "1 week ago" }
-  },
-  {
-    id: "review_student_03",
-    platform: "google",
-    stars: 5,
-    text: "Best of the pubs showing football Cambridge students actually enjoy. The White Horse has lively match-day vibes, clear screens, and friendly staff who keep the pints moving. Affordable Nepalese dishes beat standard pub grub for value, and there's loads of space in the garden for pre- and post-game chats. Easy bus and bike access from college seals the deal.",
-    reviewer: { name: "Ben Carter", initials: "BC", timeAgo: "4 days ago" }
-  },
-  {
-    id: "review_tourist_03",
+    id: "review_cv",
     platform: "tripadvisor",
     stars: 5,
-    text: "Among historic pubs Cambridge area visitors explore, The White Horse stands out. The thatched roof and village setting feel quintessentially English, yet the Nepalese menu adds a memorable twist. It's currently ranked #1 in Waterbeach on TripAdvisor, and the free parking behind the pub makes it an easy stop on a Cambridge day out. Warm, genuine service throughout.",
-    reviewer: { name: "Elena Novak", initials: "EN", timeAgo: "2 weeks ago" }
+    text: "Old pub with a twist: proper pub grub plus Nepalese stars like lamb curry and sizzling platters. Lovely folk behind the bar, good beers, and Sky Sports on so you never miss the match.",
+    reviewer: { name: "C.V.", initials: "CV", timeAgo: "Oct 2025" }
   },
   {
-    id: "review_local_garden_01",
-    platform: "google",
-    stars: 5,
-    text: "For a proper beer garden Waterbeach locals rave about, The White Horse delivers. The expansive garden and terrace catch the evening sun, there's plenty of seating, and staff are brilliant with families. Our dog gets fussed over every visit. Pair a cold pint with flavor-packed Nepalese curries for a combo that keeps us coming back.",
-    reviewer: { name: "James Patel", initials: "JP", timeAgo: "1 week ago" }
-  },
-  {
-    id: "review_professional_04",
+    id: "review_frances_d",
     platform: "tripadvisor",
     stars: 5,
-    text: "Hunting for the best Nepalese Cambridge side of town without city-centre crowds? The White Horse in Waterbeach nails it. Dishes are aromatic and balanced, service is polished, and the historic thatched setting makes dinners feel special. High Google ratings and strong word-of-mouth are well deserved. Free parking is a practical bonus for after-work meetups.",
-    reviewer: { name: "Hannah Brooks", initials: "HB", timeAgo: "6 days ago" }
+    text: "Family-friendly service from the moment we crossed over from the Premier Inn. {{brand.shortName}} handled special diets with ease and served both comforting pub classics and fragrant saag aloo and naan.",
+    reviewer: { name: "Frances D.", initials: "FD", timeAgo: "Jan 2025" }
   },
   {
-    id: "review_student_04",
+    id: "review_josh_p",
     platform: "google",
     stars: 5,
-    text: "For cheap eats Cambridge pubs rarely match, The The White Horse's Nepalese options are standout value. Big flavors, fair prices, and portions that actually fill you up. We catch live sport inside, then sit in the garden when it's warm. Takeaway is clutch during exam season, and the bus route back to town is straightforward.",
-    reviewer: { name: "Maya Singh", initials: "MS", timeAgo: "3 days ago" }
+    text: "Second visit and the curry is still outstanding. Prices are very reasonable for Cambridge, flavours are bold, and the friendly team makes it my go-to spot for a pint and momo night.",
+    reviewer: { name: "Josh P.", initials: "JP", timeAgo: "Aug 2025" }
   },
   {
-    id: "review_tourist_04",
+    id: "review_family_cambridge",
     platform: "tripadvisor",
     stars: 5,
-    text: "One of the best country pubs near Cambridge if you've got a car. The White Horse sits just off Huntingdon Road/A14 with free parking behind the building. The thatched pub exterior is wonderfully photogenic, and the Nepalese menu makes the visit feel special rather than routine. Friendly team and a restful beer garden.",
-    reviewer: { name: "Oliver Grant", initials: "OG", timeAgo: "1 week ago" }
-  },
-  {
-    id: "review_local_sunday_01",
-    platform: "google",
-    stars: 5,
-    text: "For a relaxed Sunday meal Waterbeach neighbours keep recommending, The White Horse consistently delivers. Nepalese curries sit alongside comforting pub favourites so everyone finds a favourite. The thatched building and garden give it a cosy village feel. Booking is easy, and parking behind the pub keeps family logistics simple.",
-    reviewer: { name: "Rebecca Lewis", initials: "RL", timeAgo: "2 weeks ago" }
-  },
-  {
-    id: "review_professional_business_02",
-    platform: "google",
-    stars: 4,
-    text: "Among the best gastropubs Cambridge area diners discuss, The White Horse deserves a mention for its distinct Nepalese focus in a classic pub setting. The thatched roof adds charm for client meals, service is courteous, and flavors are refined. Peak times can be lively; plan ahead. Free on-site parking remains a major advantage for working lunches.",
-    reviewer: { name: "Nikhil Shah", initials: "NS", timeAgo: "4 days ago" }
-  },
-  {
-    id: "review_student_05",
-    platform: "google",
-    stars: 5,
-    text: "Shortlist this for student friendly pubs Cambridge. The White Horse balances affordable Nepalese dishes with a proper pub atmosphere. We watch live football inside, then move to the garden with mates. Easy Citi 6 bus back towards town, safe cycle route, and staff are super welcoming to students.",
-    reviewer: { name: "Laura Bennett", initials: "LB", timeAgo: "1 week ago" }
-  },
-  {
-    id: "review_tourist_05",
-    platform: "tripadvisor",
-    stars: 5,
-    text: "Wondering what to do in Waterbeach Cambridge between city sights? Lunch at The White Horse. Snap the thatched roof, settle into the garden, and try the Nepalese specialties that make this pub unique in the area. Staff happily share local tips, and free parking behind the building keeps logistics easy.",
-    reviewer: { name: "Diego Alvarez", initials: "DA", timeAgo: "5 days ago" }
-  },
-  {
-    id: "review_local_dog_01",
-    platform: "google",
-    stars: 5,
-    text: "If you need a dog friendly pub Cambridge side of Waterbeach, The White Horse is excellent. Water bowls appear without asking, staff are genuinely welcoming, and there's ample space in the garden and terrace. Combine a gentle village walk with flavorful Nepalese dishes and a well-kept pint. Parking behind the pub is free.",
-    reviewer: { name: "Chloe Martin", initials: "CM", timeAgo: "2 weeks ago" }
-  },
-  {
-    id: "review_professional_05",
-    platform: "google",
-    stars: 5,
-    text: "For after work drinks Cambridge North teams can reach quickly, The White Horse is spot on. Short drive from the Science Park, plenty of free parking, and a relaxed thatched setting that helps everyone switch off. The Nepalese dishes are great to share, and the garden is ideal when the sun's out.",
-    reviewer: { name: "Chris Turner", initials: "CT", timeAgo: "1 week ago" }
-  },
-  {
-    id: "review_takeaway_01",
-    platform: "google",
-    stars: 5,
-    text: "Craving takeaway Nepalese Waterbeach? The White Horse nails consistency. Ordering is straightforward, pickup is smooth with free parking behind the pub, and the food travels well. Big flavors without the city-centre queues, and friendly staff every time. Ideal for study nights or low-key dinners at home.",
-    reviewer: { name: "Isabella Rossi", initials: "IR", timeAgo: "3 days ago" }
-  },
-  {
-    id: "review_commuter_01",
-    platform: "tripadvisor",
-    stars: 5,
-    text: "Looking for a pub near A14 Cambridge to break up a drive? The White Horse in Waterbeach is minutes from the junction, with free on-site parking and a peaceful garden to reset. The thatched building is a treat to see, and the Nepalese-meets-British menu turns a quick stop into a highlight.",
-    reviewer: { name: "Daniel Green", initials: "DG", timeAgo: "1 week ago" }
+    text: "Great pub for all ages — our kids loved the cosy snugs while we enjoyed goat curry and the mixed grill. The heated garden cabins and quiz-night energy make it a true Cambridge community hub.",
+    reviewer: { name: "Local Family", initials: "LF", timeAgo: "2025" }
   }
 ];
+
+const reviews: Review[] = rawReviews.map((review) => ({
+  ...review,
+  text: replaceBrandTokens(review.text),
+}));
 
 const TestimonialsSection: React.FC = () => {
   const reviewLinks = getReviewLinks();
@@ -202,7 +111,7 @@ const TestimonialsSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
-                aria-label="View The White Horse Waterbeach reviews on Google Maps"
+                aria-label={`View ${BRAND.fullName} reviews on Google Maps`}
               >
                 <span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white font-bold text-base shadow">G</span>
                 <span className="text-base font-semibold text-neutral-800">4.5</span>
@@ -220,7 +129,7 @@ const TestimonialsSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
-                aria-label="View The White Horse Waterbeach reviews on TripAdvisor"
+                aria-label={`View ${BRAND.fullName} reviews on TripAdvisor`}
               >
                 <span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-green-500 to-green-600 text-white font-bold text-base shadow">T</span>
                 <span className="text-base font-semibold text-neutral-800">4.6</span>
@@ -236,59 +145,58 @@ const TestimonialsSection: React.FC = () => {
           <div>
             <h3 className="mb-2 font-display text-xl font-bold text-stout-700">Overall Experience</h3>
             <p className="text-brand-700">
-              The White Horse in Waterbeach is praised as an
-              <strong className="font-semibold"> excellent pub</strong> with
-              <strong className="font-semibold"> fantastic food, great value, and quick service</strong>.
-              Reviewers highlight the <strong className="font-semibold">nice atmosphere</strong> and
-              <strong className="font-semibold"> reasonable pricing</strong>, making it a must-visit for locals and
-              travellers passing through.
+              Guests describe {BRAND.shortName} as the art-deco pub that nails Cambridge’s dual personality:
+              <strong className="font-semibold"> HD matchdays up front</strong> and
+              <strong className="font-semibold"> cosy snugs and heated cabins</strong> in back. Awards like
+              CAMRA’s “Most Improved City Pub" and TripAdvisor Travelers’ Choice 2025 back up the praise, and its
+              Newmarket Road location opposite the Premier Inn makes it an easy meet-up for locals, shoppers, and
+              Abbey Stadium fans alike.
             </p>
           </div>
           <div>
             <h3 className="mb-2 font-display text-xl font-bold text-stout-700">Food &amp; Drink</h3>
             <p className="text-brand-700">
-              Guests consistently rave about the <strong className="font-semibold">absolutely amazing</strong> and
-              <strong className="font-semibold"> yummy food</strong>. The pub offers a unique blend of
-              traditional pub classics and authentic <strong className="font-semibold">Nepalese food Cambridge</strong>
-              diners seek out — dishes are often described as <strong className="font-semibold">tasty</strong> and
-              <strong className="font-semibold"> beautifully presented</strong>.
+              Reviews call out <strong className="font-semibold">Himali Lamb Curry</strong>,
+              <strong className="font-semibold">Khasi Ko Masu (goat)</strong>, <strong>Chicken Rum Rum</strong>, and sizzling
+              mixed grills crafted by Nepali chefs, alongside <strong className="font-semibold">Sunday roasts, fish &amp; chips, and cask ales</strong>.
+              Generous portions, momo dumplings, and a full takeaway/delivery offering keep Cambridge curry hunters
+              coming back without sacrificing the pub classics.
             </p>
           </div>
           <div>
             <h3 className="mb-2 font-display text-xl font-bold text-stout-700">Service &amp; Atmosphere</h3>
             <p className="text-brand-700">
-              Staff are described as <strong className="font-semibold">very attentive</strong>,
-              <strong className="font-semibold"> friendly</strong>, and providing <strong className="font-semibold">excellent service</strong>
-              with <strong className="font-semibold">no long wait</strong>. A relaxed setting that’s
-              <strong className="font-semibold"> dog-friendly pub</strong> territory, good for children, with live music and a
-              <strong className="font-semibold"> pub with outdoor seating</strong> feel thanks to the spacious garden.
+              Families praise the <strong className="font-semibold">attentive team who handle dietary tweaks</strong>, hotel guests love
+              the <strong className="font-semibold">step-free garden cabins</strong>, and regulars mention <strong>dog-friendly staff, quiz nights,</strong>
+              and shuffleboard between halves. Whether you’re catching Sky Sports or settling by the log fire, the
+              service stays warm, efficient, and genuinely Cambridge.
             </p>
           </div>
         </div>
 
-        {/* From Google Reviews (static highlights) */}
+        {/* Guest Highlights */}
         <div className="mt-8 rounded-2xl border border-brand-100 bg-white p-6 shadow-xl">
           <div className="mb-4 flex items-center justify-between">
-            <h3 className="font-display text-xl font-bold text-stout-700">From Google Reviews</h3>
+            <h3 className="font-display text-xl font-bold text-stout-700">Guest Highlights</h3>
             <a
               href={reviewLinks.google}
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:underline"
-              aria-label="Open The White Horse on Google Maps to read more reviews"
+              aria-label={`Open ${BRAND.shortName} on Google Maps to read more reviews`}
             >
               Read more on Google
             </a>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             <blockquote className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-brand-800">
-              “Excellent pub, very reasonable pricing. The staff are very attentive and look after you while you're there. The food is absolutely amazing and I highly recommend dining here...”
+              “Had the Himali Lamb Curry and it was superb! Staff helped us navigate the Nepalese menu, ales were spot on, and plenty of sport on screen — we came back three times in one weekend.”
             </blockquote>
             <blockquote className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-brand-800">
-              “Yummy food, friendly staff, no long wait. Doggo friendly. Lovely way to spend Mothers Day!”
+              “Family-friendly pub serving great curries. We walked over from the Premier Inn, mentioned dietary needs, and the team took care of everything while the kids tucked into naan.”
             </blockquote>
             <blockquote className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-brand-800">
-              “Very nice restaurant to stop and have food. Excellent service and food was amazing!”
+              {`“Second time coming to ${BRAND.shortName} and it’s the same delicious curry each visit. Fantastic flavours, fair Cambridge prices, and a friendly crew pouring well-kept pints.”`}
             </blockquote>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { getSEOTags, renderSchemaTags } from '@/libs/seo';
 import { FadeIn } from '@/components/animations/MotionWrappers';
 import dynamic from 'next/dynamic';
 import { getContactInfo, getFormattedAddress, getAddress, getRestaurantIdentity } from '@/lib/restaurantData';
+import { BRAND } from '@/src/lib/constants/brand';
 
 const CONTACT = getContactInfo();
 const ADDRESS_LINE = getFormattedAddress();
@@ -15,7 +16,7 @@ export async function generateMetadata() {
   const content = await getContentSmart();
   const seo = (content.pages?.contact as any)?.seo || {};
   return getSEOTags({
-    title: seo.title || 'Contact The Corner House Cambridge',
+    title: seo.title || `Contact ${BRAND.fullName}`,
     description: seo.description || 'Contact us for bookings, cabins, directions, or matchday enquiries on Newmarket Road.',
     keywords: seo.keywords,
     canonicalUrlRelative: seo.canonicalUrlRelative || '/contact',

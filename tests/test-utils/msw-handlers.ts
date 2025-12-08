@@ -1,6 +1,7 @@
 import { http, HttpResponse } from 'msw';
 import { getMapLinks } from '@/lib/restaurantData';
 import type { Menu, Marketing, Restaurant, AppConfig } from '@/src/lib/data/schemas';
+import { BRAND } from '@/src/lib/constants/brand';
 
 // Mock data builders
 export const mockMenu: Menu = {
@@ -32,7 +33,7 @@ export const mockMenu: Menu = {
     },
     {
       id: 'specials',
-      name: 'The White Horse Specialities',
+      name: `${BRAND.shortName} Specials`,
       items: [
         {
           id: 'bhutuwa-chicken',
@@ -50,8 +51,8 @@ export const mockMenu: Menu = {
 
 export const mockMarketing: Marketing = {
   hero: {
-    title: 'The White Horse Restaurant',
-    subtitle: 'Authentic Nepalese Cuisine',
+    title: BRAND.fullName,
+    subtitle: 'Nepali chefs, HD sport, and heated cabins near the Abbey',
   },
   promos: [
     {
@@ -61,8 +62,8 @@ export const mockMarketing: Marketing = {
     },
   ],
   seo: {
-    title: 'The White Horse - Best Nepalese Restaurant',
-    description: 'Experience authentic Nepalese cuisine',
+    title: `${BRAND.fullName} - Nepalese Kitchen & Sports Pub`,
+    description: '1930s art-deco pub on Newmarket Road with Nepalese curries, pub classics, Sky & TNT Sports, and heated garden cabins.',
   },
   buttons: {
     book: 'Book Now',
@@ -71,19 +72,19 @@ export const mockMarketing: Marketing = {
 };
 
 export const mockRestaurant: Restaurant = {
-  name: 'The White Horse Waterbeach',
+  name: BRAND.fullName,
   phone: '+44 1223 921122',
-  email: 'cornerhouse@lapeninns.com',
-  description: 'Historic thatched pub serving Nepalese cuisine in Waterbeach.',
+  email: BRAND.supportEmail,
+  description: 'Art-deco Cambridge pub serving Nepalese cuisine, pub classics, and Sky & TNT sports.',
   identity: {
-    name: 'The White Horse Waterbeach',
-    displayName: 'The White Horse Waterbeach',
-    tagline: 'Historic Thatched Pub & Nepalese Restaurant',
-    description: 'Authentic Nepalese cuisine and traditional British pub classics in Waterbeach.',
-    established: '1840s',
+    name: BRAND.fullName,
+    displayName: BRAND.fullName,
+    tagline: 'Art-deco sports pub with Nepalese plates',
+    description: 'Authentic Nepalese cuisine, British pub classics, and heated cabins opposite Cambridge Retail Park.',
+    established: '1930s',
     type: 'pub-restaurant',
     cuisine: ['Nepalese', 'British'],
-    slug: 'the-white-horse-girton',
+    slug: BRAND.slug,
   },
   contact: {
     phone: {
@@ -93,12 +94,12 @@ export const mockRestaurant: Restaurant = {
       whatsapp: '+44 1223 921122',
     },
     email: {
-      primary: 'cornerhouse@lapeninns.com',
-      bookings: 'cornerhouse@lapeninns.com',
-      events: 'cornerhouse@lapeninns.com',
+      primary: BRAND.supportEmail,
+      bookings: BRAND.supportEmail,
+      events: BRAND.supportEmail,
     },
-    website: 'https://whitehorsepub.co',
-    bookingUrl: 'https://whitehorsepub.co/book-a-table',
+    website: `https://${BRAND.domain}`,
+    bookingUrl: `https://${BRAND.domain}/book-a-table`,
   },
   address: {
     street: '231 Newmarket Road',
@@ -150,8 +151,8 @@ export const mockRestaurant: Restaurant = {
   },
   social: {
     facebook: {
-      url: 'https://www.facebook.com/people/The-White-Horse/61572172781807/',
-      handle: '@thewhitehorsewaterbeach',
+      url: 'https://www.facebook.com/CornerHouseCambridge',
+      handle: '@cornerhousecambridge',
       label: 'Follow us on Facebook',
     },
   },
@@ -164,7 +165,7 @@ export const mockRestaurant: Restaurant = {
     cancellationPolicy: 'Please contact us 24 hours in advance for cancellations.',
   },
   meta: {
-    slug: 'the-white-horse-girton',
+    slug: BRAND.slug,
     category: ['restaurant', 'pub'],
     rating: {
       average: 4.8,
@@ -182,7 +183,7 @@ export const mockConfig: AppConfig = {
   },
   cms: { enabled: false },
   metadata: {
-    appName: 'The White Horse',
+    appName: BRAND.fullName,
     domainName: 'localhost',
   },
 };

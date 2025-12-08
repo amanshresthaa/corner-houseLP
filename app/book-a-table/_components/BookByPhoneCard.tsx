@@ -26,7 +26,7 @@ export default function BookByPhoneCard({ telHref, displayNumber, email, booking
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent-500 px-4 py-3 text-base font-semibold text-neutral-900 transition-colors hover:bg-accent-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-              aria-label="Book online via Nabatable (opens in new tab)"
+              aria-label="Book online via our booking page (opens in new tab)"
               style={{ touchAction: 'manipulation' }}
             >
               🗓️ Book online

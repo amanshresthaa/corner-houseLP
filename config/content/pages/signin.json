@@ -1,10 +1,10 @@
 {
-  "title": "Sign in to The Corner House",
+  "title": "Sign in to {{brand.shortName}}",
   "subtitle": "Access your account",
   "form": {
     "email": {
       "label": "Email",
-      "placeholder": "cornerhouse@lapeninns.com"
+      "placeholder": "{{brand.supportEmail}}"
     },
     "buttons": {
       "google": "Sign in with Google",

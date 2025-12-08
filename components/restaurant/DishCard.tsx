@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { BRAND } from '@/src/lib/constants/brand';
 import { motion, useReducedMotion } from 'framer-motion';
 import { v } from '@/components/variants';
 import { getContactInfo } from '@/lib/restaurantData';
@@ -32,7 +33,7 @@ export default function DishCard({
       <div className="relative h-44 sm:h-48 w-full">
         <Image
           src={image}
-          alt={`${title} - authentic Nepalese cuisine at The White Horse Waterbeach Cambridge`}
+        alt={`${title} - authentic Nepalese cuisine at ${BRAND.fullName}`}
           fill
           className="object-cover"
           placeholder="blur"

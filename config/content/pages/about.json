@@ -1,26 +1,26 @@
 {
   "seo": {
-    "title": "About The Corner House Cambridge | Our Story & Mission",
+    "title": "About {{brand.fullName}} | Our Story & Mission",
     "description": "1930s art-deco pub on Newmarket Road blending HD sports with authentic Nepalese cuisine, heated cabins, and a warm Cambridge welcome.",
     "canonicalUrlRelative": "/about",
     "openGraph": {
-      "title": "About The Corner House – Pints, Momos, and Matchday Energy",
+      "title": "About {{brand.shortName}} – Pints, Momos, and Matchday Energy",
       "description": "How a historic Cambridge pub became the city’s go-to sports pub with a full Nepalese kitchen and cosy snugs.",
-      "url": "https://thecornerhousepub.co/about"
+      "url": "https://{{brand.domain}}/about"
     }
   },
   "hero": {
-    "title": "About The Corner House",
+    "title": "About {{brand.shortName}}",
     "subtitle": "Cambridge’s go-to sports pub with Nepalese plates and cosy snugs on Newmarket Road."
   },
   "story": {
     "title": "Our Story",
-    "introduction": "Built in the 1930s as a corner pub, The Corner House now pairs authentic Nepalese cooking with a lively sports bar atmosphere. After earning CAMRA’s Most Improved City Pub award in 2020, the pub entered a new chapter in late 2024 under Lapen Inns, installing a Nepalese kitchen while keeping real ale, HD screens, and the community spirit alive.",
+    "introduction": "Built in the 1930s as a corner pub, {{brand.shortName}} now pairs authentic Nepalese cooking with a lively sports bar atmosphere. After earning CAMRA’s Most Improved City Pub award in 2020, the pub entered a new chapter in late 2024 under Lapen Inns, installing a Nepalese kitchen while keeping real ale, HD screens, and the community spirit alive.",
     "timeline": [
       {
         "period": "1930s",
         "title": "Art-deco corner pub opens",
-        "description": "The Corner House takes its place on Newmarket Road, becoming a local landmark with its distinctive facade and fireplaces."
+        "description": "{{brand.shortName}} takes its place on Newmarket Road, becoming a local landmark with its distinctive facade and fireplaces."
       },
       {
         "period": "2020",
@@ -40,7 +40,7 @@
     ]
   },
   "cta": {
-    "title": "Visit The Corner House",
+    "title": "Visit {{brand.shortName}}",
     "description": "Book a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites.",
     "button": "Call +44 1223 921122",
     "contact": {

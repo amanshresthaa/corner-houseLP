@@ -17,9 +17,9 @@
     "showcaseSection": "Restaurant showcase"
   },
   "altTexts": {
-    "logo": "The Corner House Cambridge logo",
-    "heroBanner": "Art-deco Corner House pub exterior on Newmarket Road with signage and garden cabins",
-    "defaultImage": "The Corner House Cambridge interior with Nepalese dishes",
+    "logo": "{{brand.fullName}} logo",
+    "heroBanner": "Art-deco {{brand.nickname}} pub exterior on Newmarket Road with signage and garden cabins",
+    "defaultImage": "{{brand.fullName}} interior with Nepalese dishes",
     "profilePicture": "Profile picture",
     "background": "Background image"
   },

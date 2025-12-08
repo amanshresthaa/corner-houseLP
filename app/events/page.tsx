@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import RestaurantLayout from "@/components/restaurant/Layout";
 import { getContactInfo } from "@/lib/restaurantData";
 import { getContentSmart } from '@/src/lib/data/server-loader';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContentSmart();
@@ -155,7 +156,7 @@ export default async function EventsPage() {
             {/* Left column */}
             <div>
               <h2 className="h3">
-                Match Day at The White Horse
+                Match Day at {BRAND.shortName}
               </h2>
               <p className="mt-3 text-white/80">
                 Settle in with friends, follow every moment, and enjoy great food and drink while you watch. We’re built for sport — without losing the charm of a village pub.

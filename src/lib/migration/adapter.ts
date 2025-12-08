@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import { useModularContent, type UseModularContentOptions } from '../../../hooks/data/useModularContent';
 import { getProductionConfig } from '../config/production';
 import { getContentLoader } from '../content/loader';
+import { BRAND } from '@/src/lib/constants/brand';
 
 export interface MigrationConfig {
   enableModularSystem: boolean;
@@ -299,9 +300,9 @@ export class ContentMigrationAdapter {
     return {
       global: {
         site: {
-          name: 'The White Horse Waterbeach',
-          title: 'Historic Thatched Pub & Nepalese Restaurant',
-          description: 'Historic thatched pub serving authentic Nepalese cuisine and British pub classics.',
+          name: BRAND.fullName,
+          title: 'Cambridge sports pub with Nepalese kitchen and cosy snugs',
+          description: 'Art-deco pub on Newmarket Road blending Nepali-chef curries, Sunday roasts, heated cabins, and HD sports.',
         },
         navigation: {
           header: {

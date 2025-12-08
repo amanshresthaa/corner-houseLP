@@ -1,5 +1,5 @@
 /**
- * Enhanced Service Worker for The White Horse Waterbeach
+ * Enhanced Service Worker for the restaurant web app
  * 
  * Provides advanced caching strategies, offline support, and performance optimizations
  * with restaurant-specific optimizations and background sync capabilities.

@@ -1,8 +1,10 @@
 // Centralized image registry for the site.
 // Grouped by domain to keep usage consistent and avoid scattered string paths.
 
+import { BRAND } from '@/src/lib/constants/brand';
+
 const brandImages = {
-  logo: '/images/brand/whitehorse-logo.png',
+  logo: '/images/logo.png',
   building: '/images/slideshow/whitehorsebuilding.png',
 } as const;
 
@@ -75,19 +77,19 @@ export type ImageRegistry = typeof Images;
 // Optional: centralized alt texts for key assets (non-breaking; keep separate from paths)
 export const ImageAlts: { [K in keyof ImageRegistry]?: Record<string, string> } = {
   brand: {
-    logo: 'The White Horse Waterbeach logo',
-    building: 'Exterior of The White Horse country pub with chalkboards at the entrance',
+    logo: `${BRAND.fullName} logo`,
+    building: `Exterior of ${BRAND.fullName} with chalkboards by the entrance`,
   },
   home: {
-    heroExteriorDay: 'Thatched exterior of The White Horse Waterbeach on a bright day',
-    heroExteriorWide: 'Wide view of The White Horse Waterbeach facing the village green',
-    heroBar: 'Copper-topped bar with cask ales at The White Horse',
-    heroCommunity: 'Handpull bar counter ready for Sky Sports at The White Horse',
-    heroDish: 'Nepalese sizzling mixed grill served with lemon at The White Horse',
-    diningNook: 'Cosy dining nook with glass chandelier inside the Waterbeach coaching inn',
-    splitLevelSeating: 'Split-level seating linking bar and dining floor at The White Horse',
-    gardenPatio: 'Terrace seating with parasols beside Waterbeach village green',
-    beerGarden: 'Beer garden picnic benches under wide Fenland skies',
+    heroExteriorDay: `Art-deco frontage of ${BRAND.fullName} on a bright Cambridge day`,
+    heroExteriorWide: `Wide view of ${BRAND.fullName} along Newmarket Road`,
+    heroBar: `Copper-topped bar with cask ales at ${BRAND.shortName}`,
+    heroCommunity: `Handpull bar counter ready for Sky Sports at ${BRAND.shortName}`,
+    heroDish: `Nepalese sizzling mixed grill served with lemon at ${BRAND.shortName}`,
+    diningNook: `Cosy dining nook with glass chandelier inside ${BRAND.fullName}`,
+    splitLevelSeating: `Split-level seating linking bar and dining floor at ${BRAND.shortName}`,
+    gardenPatio: 'Terrace seating with parasols beside the heated cabins on Newmarket Road',
+    beerGarden: `Beer garden picnic benches under fairy lights at ${BRAND.fullName}`,
     momoPlate: 'Steamed momo dumplings with Nepalese tomato-timmur chutney',
     goatCurry: 'Bhutuwa chicken-style curry simmered in chilli, garlic and ginger',
     saladBowl: 'Fresh mixed salad with cherry tomatoes served in the garden',
@@ -98,11 +100,11 @@ export const ImageAlts: { [K in keyof ImageRegistry]?: Record<string, string> } 
     pokhareliFish: 'Pokhareli fish curry with fenugreek and mustard seed heat',
     raraKingPrawn: 'Rara king prawns arriving tableside on a sizzling platter',
     momoDumplings: 'Hand-pinched chicken momo with timmur chilli chutney',
-    gardenSizzlerSalad: 'Garden-fresh salad served at The White Horse Waterbeach',
+    gardenSizzlerSalad: `Garden-fresh salad served at ${BRAND.fullName}`,
     tomatoChutney: 'Tomato and chilli achar garnish for Nepalese dishes',
   },
   spaces: {
-    barEvening: 'Warmly lit copper bar at The White Horse Waterbeach',
+    barEvening: `Warmly lit copper bar at ${BRAND.fullName}`,
     barHandpulls: 'Cask ale handpulls ready for service at the bar',
     barCask: 'Close-up of cask pumps and bottled spirits behind the bar',
     diningCorner: 'Intimate dining corner with banquette seating',
@@ -114,18 +116,18 @@ export const ImageAlts: { [K in keyof ImageRegistry]?: Record<string, string> } 
     splitLevel: 'Split-level walkway between bar and dining areas',
     carvedDetail: 'Carved wood panel and corner table detail',
     horseLamp: 'Decorative horse-head lamp with green foliage',
-    exteriorFront: 'Thatched frontage of The White Horse from the village green',
-    exteriorEntrance: 'Front entrance of The White Horse Waterbeach',
-    exteriorWide: 'Panoramic view of England’s largest thatched pub',
-    gardenTerrace: 'Wicker terrace seating with parasols for sunny days',
-    gardenVillage: 'Picnic benches overlooking Waterbeach village green',
+    exteriorFront: `Frontage of ${BRAND.shortName} from Newmarket Road`,
+    exteriorEntrance: `Front entrance of ${BRAND.fullName}`,
+    exteriorWide: `Panoramic view of the art-deco ${BRAND.fullNameNoArticle} frontage`,
+    gardenTerrace: 'Wicker terrace seating with parasols beside the heated cabins',
+    gardenVillage: 'Picnic benches and planters in the Cambridge beer garden',
   },
   blog: {
     momo: 'Steamed momo dumplings ready to share',
     businessLunch: 'Bright dining room suited to Cambridge business lunches',
     dogFriendly: 'Garden benches ideal for dog-friendly visits',
     studentGuide: 'Relaxed dining space popular with students',
-    thatchedExterior: 'Exterior of The White Horse Waterbeach with thatched roof',
+    thatchedExterior: `Exterior of ${BRAND.fullName} art-deco pub`,
     sportsViewing: 'Bar counter set for live Sky and TNT Sports',
     localIngredients: 'Fresh produce inspiring our Nepalese kitchen',
     nepaleseHero: 'Pokhareli fish curry showcasing Himalayan spice',

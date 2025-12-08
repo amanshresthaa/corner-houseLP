@@ -19,17 +19,20 @@ import {
 import { resolveEnv, resolveContentEnvChain, type AppEnv } from "./env";
 import { globalCache, createCacheKey } from "./cache";
 import type { ZodTypeAny } from "zod";
+import { replaceBrandTokensInObject } from '@/src/lib/utils/brand';
 
 // Server-side file reading function
 async function readJson<T>(p: string, schema: any, name: string): Promise<T> {
   const raw = await fs.readFile(p, "utf8");
   const parsed = JSON.parse(raw);
-  return schema.parse(parsed) as T;
+  const hydrated = replaceBrandTokensInObject(parsed);
+  return schema.parse(hydrated) as T;
 }
 
 async function readJsonRaw(p: string): Promise<any> {
   const raw = await fs.readFile(p, "utf8");
-  return JSON.parse(raw);
+  const parsed = JSON.parse(raw);
+  return replaceBrandTokensInObject(parsed);
 }
 
 async function readJsonIfExists(p: string): Promise<any | null> {

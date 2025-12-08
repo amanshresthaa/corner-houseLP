@@ -1,5 +1,6 @@
 import rawRestaurant from '../config/restaurant.json';
 import { RestaurantSchema, type Restaurant } from '@/src/lib/data/schemas';
+import { BRAND } from '@/src/lib/constants/brand';
 
 type DetailedHours = {
   kitchen: Record<string, string>;
@@ -123,15 +124,15 @@ export interface MenuItem {
 }
 
 const FALLBACK_IDENTITY: NormalizedIdentity = {
-  name: 'The Corner House',
-  displayName: 'The Corner House Cambridge',
+  name: BRAND.shortName,
+  displayName: BRAND.fullName,
   tagline: "Cambridge's go-to sports pub with Nepalese plates and cosy snugs.",
   description:
     '1930s art-deco pub on Newmarket Road serving Nepalese dishes, pub classics, and HD sports with heated cabins.',
   established: '1930s',
   type: 'pub-restaurant',
   cuisine: ['Nepalese', 'British Classics', 'Pub Favourites'],
-  slug: 'the-corner-house-cambridge',
+  slug: BRAND.slug,
 };
 
 const FALLBACK_ADDRESS: NormalizedAddress = {
@@ -150,7 +151,7 @@ const FALLBACK_ADDRESS: NormalizedAddress = {
     google: 'https://www.google.com/maps/dir/?api=1&destination=52.20948,0.14335&travelmode=driving',
     apple: 'https://maps.apple.com/?daddr=52.20948,0.14335&dirflg=d',
     embed:
-      'https://www.google.com/maps?&q=The%20Corner%20House%20Cambridge%2C%20231%20Newmarket%20Road%2C%20Cambridge%20CB5%208JE&z=15&output=embed',
+      `https://www.google.com/maps?&q=${BRAND.fullNameEncoded}%2C%20231%20Newmarket%20Road%2C%20Cambridge%20CB5%208JE&z=15&output=embed`,
   },
   timezone: 'Europe/London',
 };
@@ -169,8 +170,8 @@ const FALLBACK_CONTACT_BASE: ContactFallback = {
     press: 'cornerhouse@lapeninns.com',
     support: 'cornerhouse@lapeninns.com',
   },
-  website: 'https://whitehorsepub.co',
-  bookingUrl: undefined,
+  website: `https://${BRAND.domain}`,
+  bookingUrl: `https://${BRAND.domain}/book-a-table`,
   orderUrl: undefined,
   enquiryUrl: 'mailto:cornerhouse@lapeninns.com',
 };
@@ -218,21 +219,24 @@ const FALLBACK_HOURS: DetailedHours = {
 
 const FALLBACK_SOCIAL: SocialCollection = {
   facebook: {
-    url: 'https://www.facebook.com/people/The-White-Horse/61572172781807/',
+    url: 'https://www.facebook.com/CornerHouseCambridge',
     label: 'Follow us on Facebook',
   },
+  instagram: {
+    url: 'https://www.instagram.com/cornerhousecambridge',
+    label: 'Follow us on Instagram',
+  },
   tripadvisor: {
-    url: 'https://www.tripadvisor.co.uk/Restaurant_Review-g2549675-d26682723-Reviews-The_White_Horse-Waterbeach_Cambridgeshire_England.html',
+    url: 'https://www.tripadvisor.co.uk/Restaurant_Review-g186225-d26682723-Reviews-The_Corner_House_Cambridge-Cambridgeshire_England.html',
+    label: 'TripAdvisor Travelers’ Choice 2025',
   },
   camra: {
-    url: 'https://camra.org.uk/pubs/white-horse-waterbeach-131319',
-    label: 'CAMRA Listing',
-  },
-  visitSouthCambs: {
-    url: 'https://visitsouthcambs.co.uk/hospitality/the-white-horse/',
+    url: 'https://cambridge.camra.org.uk/awards/most-improved-city-pub',
+    label: 'CAMRA Award Listing',
   },
   google: {
-    url: 'https://www.google.com/maps?q=52.20948,0.14335',
+    url: 'https://maps.app.goo.gl/N2gUbo8Y4mLkkG4Q6',
+    label: 'Google Maps',
   },
 };
 
@@ -242,7 +246,7 @@ const FALLBACK_BOOKING = {
   leadTimeMinutes: 0,
   partySizeLimit: 12,
   depositRequired: false,
-  cancellationPolicy: 'Please phone or email The Corner House team to amend or cancel your booking.',
+  cancellationPolicy: `Please phone or email ${BRAND.teamName} to amend or cancel your booking.`,
 };
 
 const FALLBACK_META = {

@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "England's Largest Thatched Pub Reborn",
-    "subtitle": "Authentic Nepalese cooking, cask ales and community spirit opposite Waterbeach green."
+    "title": "Cambridge's Art-Deco Pub with Nepalese Heart",
+    "subtitle": "Nepali chefs, cask ales, Sky & TNT Sports, and heated cabins opposite Cambridge Retail Park."
   },
   "promos": [
     {
@@ -21,8 +21,8 @@
     }
   ],
   "seo": {
-    "title": "The White Horse Waterbeach",
-    "description": "Waterbeach's thatched coaching inn serving Nepalese cuisine, British pub favourites, Sky Sports and village events."
+    "title": "{{brand.fullName}}",
+    "description": "1930s art-deco pub on Newmarket Road with Nepalese curries, British pub classics, HD sports, and heated garden cabins."
   },
   "buttons": {
     "bookOnline": "Book Online",

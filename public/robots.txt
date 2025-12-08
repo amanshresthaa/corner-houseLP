@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://whitehorsepub.co/
+Host: https://thecornerhousepub.co/
 
 # Sitemaps
-Sitemap: https://whitehorsepub.co/sitemap.xml
+Sitemap: https://thecornerhousepub.co/sitemap.xml

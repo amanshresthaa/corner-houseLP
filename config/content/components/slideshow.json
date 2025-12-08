@@ -12,10 +12,10 @@
       "image": {
         "primary": "/images/slideshow/whitehorsebuilding.png"
       },
-      "alt": "Exterior of The White Horse country pub on a sunny day with chalkboards by the door and a wide forecourt.",
-      "eyebrow": "Your village pub for cosy pints, fresh plates & big-sky evenings.",
-      "headline": "Welcome to The White Horse",
-      "copy": "A friendly, independent local where characterful interiors meet a spacious garden, and the menu ranges from comforting classics to bright, modern bites.",
+      "alt": "Art-deco exterior of {{brand.fullName}} with heated cabins and chalkboard signage.",
+      "eyebrow": "Cambridge corner pub for HD sport, cosy snugs & Nepalese kitchens.",
+      "headline": "Welcome to {{brand.shortName}}",
+      "copy": "An independent Newmarket Road pub where HD matchdays meet Nepali-chef curries, Sunday roasts, and a heated garden packed with private cabins.",
       "badges": [
         "Village pub",
         "Family friendly",
@@ -36,7 +36,7 @@
       "alt": "Long rustic table layered with Nepalese sharing plates, salads, pickles, and drinks ready for a crowd inside the pub.",
       "eyebrow": "Gather the crew around a table full of colour.",
       "headline": "Feasts Made for Sharing",
-      "copy": "Mix momo, samosa, onion bhaji, crispy squid, and crunchy salads for the ultimate White Horse feast — ideal for family-style dining or laid-back celebrations.",
+      "copy": "Mix momo, samosa, onion bhaji, crispy squid, and crunchy salads for the ultimate {{brand.nickname}} feast — ideal for family-style dining or laid-back celebrations.",
       "badges": [
         "Nepalese feasts",
         "Family-style",

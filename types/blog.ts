@@ -4,6 +4,7 @@
  */
 
 import { z } from 'zod';
+import { BRAND } from '@/src/lib/constants/brand';
 
 // Blog post schema for runtime validation
 export const BlogPostSchema = z.object({
@@ -60,11 +61,11 @@ export interface BlogContentStructure {
 export const BLOG_FALLBACK_CONTENT: BlogContentStructure = {
   posts: {},
   metadata: {
-    siteName: 'The White Horse Waterbeach',
-    baseUrl: 'https://whitehorsepub.co',
+    siteName: BRAND.fullName,
+    baseUrl: `https://${BRAND.domain}`,
     defaultAuthor: {
-      name: 'The White Horse Team',
-      bio: 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
+      name: BRAND.teamName,
+      bio: `The passionate team behind ${BRAND.fullName}'s unique dining experience.`,
     },
   },
   ui: {

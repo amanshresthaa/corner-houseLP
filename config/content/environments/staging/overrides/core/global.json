@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "The White Horse Waterbeach [STAGING]",
-    "description": "[STAGING] Historic thatched pub in Waterbeach serving authentic Nepalese cuisine and British pub classics"
+    "name": "{{brand.fullName}} [STAGING]",
+    "description": "[STAGING] 1930s art-deco pub near Cambridge centre with Nepalese curries, pub classics, and Sky & TNT sports"
   }
 }

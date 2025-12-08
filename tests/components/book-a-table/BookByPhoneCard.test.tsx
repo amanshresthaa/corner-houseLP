@@ -8,7 +8,7 @@ describe('BookByPhoneCard', () => {
   const email = 'cornerhouse@lapeninns.com';
 
   it('renders online booking CTA with correct attributes when bookingUrl is provided', () => {
-    const bookingUrl = 'https://www.nabatable.com/restaurants/white-horse-pub-waterbeach/book';
+    const bookingUrl = 'https://thecornerhousepub.co/book-a-table';
 
     render(
       <BookByPhoneCard
@@ -20,7 +20,7 @@ describe('BookByPhoneCard', () => {
     );
 
     const onlineLink = screen.getByRole('link', {
-      name: /Book online via Nabatable \(opens in new tab\)/i,
+      name: /Book online via our booking page \(opens in new tab\)/i,
     });
 
     expect(onlineLink).toHaveAttribute('href', bookingUrl);
@@ -43,7 +43,7 @@ describe('BookByPhoneCard', () => {
     render(<BookByPhoneCard telHref={telHref} displayNumber={displayNumber} email={email} />);
 
     const onlineLink = screen.queryByRole('link', {
-      name: /Book online via Nabatable/i,
+      name: /Book online via our booking page/i,
     });
 
     expect(onlineLink).not.toBeInTheDocument();

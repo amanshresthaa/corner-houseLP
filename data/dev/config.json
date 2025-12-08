@@ -20,7 +20,7 @@
     "fallback": "default"
   },
   "metadata": {
-    "appName": "The White Horse [DEV]",
+    "appName": "{{brand.shortName}} [DEV]",
     "domainName": "localhost",
     "environment": "development"
   },

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { BlogContentStructure, BLOG_FALLBACK_CONTENT } from '@/types/blog';
+import { BRAND } from '@/src/lib/constants/brand';
 
 /**
  * Blog Content API Route
@@ -15,21 +16,21 @@ import { BlogContentStructure, BLOG_FALLBACK_CONTENT } from '@/types/blog';
 const BlogContentResponseSchema = z.object({
   posts: z.record(z.string(), z.any()).optional().default({}),
   metadata: z.object({
-    siteName: z.string().optional().default('The White Horse Waterbeach'),
-    baseUrl: z.string().optional().default('https://whitehorsepub.co'),
+    siteName: z.string().optional().default(BRAND.fullName),
+    baseUrl: z.string().optional().default(`https://${BRAND.domain}`),
     defaultAuthor: z.object({
-      name: z.string().optional().default('The White Horse Team'),
-      bio: z.string().optional().default('The passionate team behind The White Horse Waterbeach\'s unique dining experience.'),
+      name: z.string().optional().default(BRAND.teamName),
+      bio: z.string().optional().default(`The passionate team behind ${BRAND.fullName}'s unique dining experience.`),
     }).optional().default({
-      name: 'The White Horse Team',
-      bio: 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
+      name: BRAND.teamName,
+      bio: `The passionate team behind ${BRAND.fullName}'s unique dining experience.`,
     }),
   }).optional().default({
-    siteName: 'The White Horse Waterbeach',
-    baseUrl: 'https://whitehorsepub.co',
+    siteName: BRAND.fullName,
+    baseUrl: `https://${BRAND.domain}`,
     defaultAuthor: {
-      name: 'The White Horse Team',
-      bio: 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
+      name: BRAND.teamName,
+      bio: `The passionate team behind ${BRAND.fullName}'s unique dining experience.`,
     },
   }),
   ui: z.object({
@@ -78,11 +79,11 @@ const BlogContentResponseSchema = z.object({
 }).transform((data) => ({
   posts: data.posts || {},
   metadata: {
-    siteName: data.metadata?.siteName || 'The White Horse Waterbeach',
-    baseUrl: data.metadata?.baseUrl || 'https://whitehorsepub.co',
+    siteName: data.metadata?.siteName || BRAND.fullName,
+    baseUrl: data.metadata?.baseUrl || `https://${BRAND.domain}`,
     defaultAuthor: {
-      name: data.metadata?.defaultAuthor?.name || 'The White Horse Team',
-      bio: data.metadata?.defaultAuthor?.bio || 'The passionate team behind The White Horse Waterbeach\'s unique dining experience.',
+      name: data.metadata?.defaultAuthor?.name || BRAND.teamName,
+      bio: data.metadata?.defaultAuthor?.bio || `The passionate team behind ${BRAND.fullName}'s unique dining experience.`,
     },
   },
   ui: {
