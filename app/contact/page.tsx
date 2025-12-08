@@ -92,8 +92,8 @@ export default async function ContactPage() {
             />
             <div className="absolute -left-24 top-12 h-64 w-64 rounded-full bg-brand-700/20 blur-3xl" aria-hidden />
           </div>
-          <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <FadeIn className="space-y-8 text-center">
+          <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+            <FadeIn className="space-y-6 text-center">
               <div className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.35em] text-white/80">
                 Concierge desk
               </div>
@@ -115,7 +115,7 @@ export default async function ContactPage() {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
                 <a
                   href={phoneHref}
                   className="btn btn-lg border-none bg-white text-brand-900 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/80"
@@ -150,8 +150,8 @@ export default async function ContactPage() {
         </section>
 
         <section className="bg-gradient-to-b from-white via-brand-50/50 to-white">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <FadeIn className="space-y-10">
+          <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+            <FadeIn className="space-y-8">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="text-xs uppercase tracking-[0.35em] text-brand-500">Always-on support</p>
                 <h2 className="mt-4 font-display text-3xl font-bold text-brand-900 sm:text-4xl">Talk to the Corner House team</h2>
@@ -159,8 +159,8 @@ export default async function ContactPage() {
               </div>
 
               <div className="grid gap-6 lg:grid-cols-2">
-                <article className="h-full rounded-[2rem] border border-brand-100 bg-white p-8 shadow-2xl">
-                  <div className="space-y-6">
+                <article className="h-full rounded-[1.75rem] border border-brand-100 bg-white p-6 sm:p-8 shadow-2xl">
+                  <div className="space-y-5">
                     <div>
                       <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Contact</p>
                       <h3 className="mt-2 font-display text-2xl text-brand-900">We reply fast</h3>
@@ -198,8 +198,8 @@ export default async function ContactPage() {
                   </div>
                 </article>
 
-                <article className="h-full rounded-[2rem] border border-brand-100 bg-white p-8 shadow-2xl">
-                  <div className="space-y-4">
+                <article className="h-full rounded-[1.75rem] border border-brand-100 bg-white p-6 sm:p-8 shadow-2xl">
+                  <div className="space-y-5">
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Find us</p>
@@ -208,12 +208,12 @@ export default async function ContactPage() {
                       <span className="badge badge-outline border-brand-200 text-brand-700">CB5 8JE</span>
                     </div>
                     <InteractiveMap
-                      className="h-72 rounded-2xl border border-brand-100 overflow-hidden"
+                      className="h-64 rounded-2xl border border-brand-100 overflow-hidden"
                       height="100%"
                       directionLabel="Get directions"
                       hintLabel="Tap for directions"
                     />
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3">
                       <a
                         href={mapGoogle}
                         target="_blank"

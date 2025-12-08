@@ -96,12 +96,13 @@ export default async function PressPage() {
         <main className="bg-white text-brand-900">
           <FadeIn>
             <section
-              className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 py-16 text-white"
+              className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 py-12 sm:py-16 text-white"
               aria-labelledby="press-hero-heading"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/40 via-transparent to-brand-700/20" aria-hidden="true" />
               <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
+                <div className="space-y-6">
+                  <nav aria-label="Breadcrumb" className="text-sm text-white/70">
                   <ol className="flex items-center gap-2">
                     <li>
                       <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -110,104 +111,106 @@ export default async function PressPage() {
                     <li className="text-white">Press &amp; Media</li>
                   </ol>
                 </nav>
-                <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
-                  Press &amp; Media
-                </span>
-                <h1 id="press-hero-heading" className="mt-4 text-4xl font-display font-semibold leading-tight sm:text-5xl">
-                  Official press kit for {BRAND.fullName}
-                </h1>
-                <p className="mt-4 max-w-3xl text-base text-white/80 sm:text-lg">
-                  Story-ready facts, imagery access, and rapid contacts for The Corner House Cambridge—an art-deco sports pub with a Nepalese kitchen, heated cabins, and HD matchday screens opposite Cambridge Retail Park.
-                </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <a
-                    href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: ${BRAND.fullName}`}
-                    className="btn border-none bg-white text-brand-900 hover:bg-white/90"
-                    style={{ touchAction: 'manipulation' }}
-                  >
-                    Email press desk
-                  </a>
-                  <a
-                    href={MEDIA_CONTACT.phoneTel}
-                    className="btn btn-outline border-white/50 text-white hover:bg-white/10"
-                    style={{ touchAction: 'manipulation' }}
-                    aria-label={`Call ${MEDIA_CONTACT.phoneDisplay}`}
-                  >
-                    Call {MEDIA_CONTACT.phoneDisplay}
-                  </a>
+                  <div className="space-y-4">
+                    <span className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
+                      Press &amp; Media
+                    </span>
+                    <h1 id="press-hero-heading" className="text-4xl font-display font-semibold leading-tight sm:text-5xl">
+                      Official press kit for {BRAND.fullName}
+                    </h1>
+                    <p className="max-w-3xl text-base text-white/80 sm:text-lg">
+                      Story-ready facts, imagery access, and rapid contacts for The Corner House Cambridge—an art-deco sports pub with a Nepalese kitchen, heated cabins, and HD matchday screens opposite Cambridge Retail Park.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center">
+                    <a
+                      href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: ${BRAND.fullName}`}
+                      className="btn border-none bg-white text-brand-900 hover:bg-white/90"
+                      style={{ touchAction: 'manipulation' }}
+                    >
+                      Email press desk
+                    </a>
+                    <a
+                      href={MEDIA_CONTACT.phoneTel}
+                      className="btn btn-outline border-white/50 text-white hover:bg-white/10"
+                      style={{ touchAction: 'manipulation' }}
+                      aria-label={`Call ${MEDIA_CONTACT.phoneDisplay}`}
+                    >
+                      Call {MEDIA_CONTACT.phoneDisplay}
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>
           </FadeIn>
 
           <FadeIn>
-            <section className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 py-16 text-white" aria-labelledby="press-kit-heading">
-              <div className="absolute inset-0 bg-brand-900/40" aria-hidden="true" />
-              <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="grid gap-10 lg:grid-cols-2">
-                  <div>
-                    <span className="inline-flex items-center rounded-full border border-white/30 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
+            <section className="bg-white" aria-labelledby="press-kit-heading">
+              <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+                <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+                  <div className="space-y-5">
+                    <span className="inline-flex items-center rounded-full border border-brand-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-brand-600">
                       Quick facts
                     </span>
-                    <h2 id="press-kit-heading" className="mt-4 text-3xl font-display font-semibold">
+                    <h2 id="press-kit-heading" className="text-3xl font-display font-semibold text-brand-900">
                       Press kit &amp; story starters
                     </h2>
-                    <p className="mt-3 text-white/80">
+                    <p className="text-brand-700">
                       Use the essentials below or reference our homepage design system for deeper dives into menu, events, and booking flows.
                     </p>
-                    <ul className="mt-6 space-y-4 text-white/80">
+                    <ul className="space-y-3 text-brand-700">
                       {PRESS_FACTS.map((fact) => (
                         <li key={fact} className="flex items-start gap-3">
-                          <span aria-hidden="true" className="mt-1 inline-flex h-2 w-2 rounded-full bg-white/70" />
+                          <span aria-hidden="true" className="mt-1 inline-flex h-2 w-2 rounded-full bg-brand-400" />
                           <span>{fact}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <article className="rounded-[2.5rem] border border-white/15 bg-white/5 p-6 shadow-2xl backdrop-blur">
-                    <h3 className="text-2xl font-display">Talk to the team</h3>
-                    <p className="mt-3 text-white/80">
+                  <article className="rounded-[2rem] border border-brand-100 bg-white p-6 sm:p-8 shadow-xl shadow-brand-900/10">
+                    <h3 className="text-2xl font-display text-brand-900">Talk to the team</h3>
+                    <p className="mt-3 text-brand-700">
                       Tell us your outlet, deadline, and angle so we can connect you with a spokesperson or chef quickly. We aim to reply within one working day.
                     </p>
-                    <dl className="mt-6 space-y-3 text-sm">
+                    <dl className="mt-6 space-y-3 text-sm text-brand-800">
                       <div>
-                        <dt className="uppercase tracking-[0.35em] text-white/60">Email</dt>
+                        <dt className="uppercase tracking-[0.35em] text-brand-500">Email</dt>
                         <dd>
-                          <a href={`mailto:${MEDIA_CONTACT.email}`} className="text-white underline-offset-4 hover:underline">
+                          <a href={`mailto:${MEDIA_CONTACT.email}`} className="text-brand-900 underline-offset-4 hover:underline">
                             {MEDIA_CONTACT.email}
                           </a>
                         </dd>
                       </div>
                       <div>
-                        <dt className="uppercase tracking-[0.35em] text-white/60">Phone</dt>
+                        <dt className="uppercase tracking-[0.35em] text-brand-500">Phone</dt>
                         <dd>
-                          <a href={MEDIA_CONTACT.phoneTel} className="text-white underline-offset-4 hover:underline">
+                          <a href={MEDIA_CONTACT.phoneTel} className="text-brand-900 underline-offset-4 hover:underline">
                             {MEDIA_CONTACT.phoneDisplay}
                           </a>
                         </dd>
                       </div>
                       <div>
-                        <dt className="uppercase tracking-[0.35em] text-white/60">Address</dt>
-                        <dd>{MEDIA_CONTACT.address}</dd>
+                        <dt className="uppercase tracking-[0.35em] text-brand-500">Address</dt>
+                        <dd className="text-brand-900">{MEDIA_CONTACT.address}</dd>
                       </div>
                     </dl>
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                       <a
                         href={`mailto:${MEDIA_CONTACT.email}?subject=Press enquiry: ${BRAND.fullName}`}
-                        className="btn border-none bg-white text-brand-900 hover:bg-white/90"
+                        className="btn border-none bg-brand-900 text-white hover:bg-brand-800"
                         style={{ touchAction: 'manipulation' }}
                       >
                         Email press team
                       </a>
                       <a
                         href={MEDIA_CONTACT.phoneTel}
-                        className="btn btn-outline border-white/40 text-white hover:bg-white/10"
+                        className="btn btn-outline border-brand-200 text-brand-900 hover:bg-white"
                         style={{ touchAction: 'manipulation' }}
                       >
                         Call us
                       </a>
                     </div>
-                    <div className="mt-6 rounded-2xl border border-dashed border-white/40 p-4 text-sm text-white/80">
+                    <div className="mt-6 rounded-2xl border border-dashed border-brand-200/80 p-4 text-sm text-brand-700">
                       Need imagery? Mention preferred format (web, print, portrait, landscape) so we can send the right files on first reply.
                     </div>
                   </article>

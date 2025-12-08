@@ -121,10 +121,10 @@ export default async function BookATablePage() {
               <div className="absolute -left-10 top-6 h-40 w-40 rounded-full bg-white/5 blur-3xl" aria-hidden />
               <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-brand-800/50 blur-3xl" aria-hidden />
             </div>
-            <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-              <FadeIn className="space-y-10">
-                <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
-                  <div className="space-y-6">
+            <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+              <FadeIn className="space-y-8">
+                <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+                  <div className="space-y-5">
                     <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
                       Bookings desk
                     </span>
@@ -136,14 +136,14 @@ export default async function BookATablePage() {
                         Reserve online in seconds or call the duty manager. We hold walk-in space daily and confirm requests quickly.
                       </p>
                     </div>
-                    <div className="flex flex-wrap gap-2" aria-label="Booking highlights">
+                    <div className="flex flex-wrap gap-3" aria-label="Booking highlights">
                       {heroBadges.map((badge) => (
                         <span key={badge} className="badge badge-outline border-white/40 text-white/80">
                           {badge}
                         </span>
                       ))}
                     </div>
-                    <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+                    <div className="flex flex-wrap gap-3 pt-1 sm:flex-row sm:items-center">
                       {renderBookingButton(
                         'Book online',
                         'btn rounded-full border-none bg-white text-brand-900 hover:bg-white/90',
@@ -159,7 +159,7 @@ export default async function BookATablePage() {
                       </a>
                     </div>
                   </div>
-                  <div className="grid gap-4">
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
                     {reassuranceCards.map((card) => (
                       <article
                         key={card.title}
@@ -185,10 +185,10 @@ export default async function BookATablePage() {
           </section>
 
           <section className="bg-white" aria-labelledby="booking-options-heading">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
               <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
                 <FadeIn>
-                  <article className="card h-full border border-brand-100 bg-white shadow-xl shadow-brand-900/10">
+                  <article className="card h-full rounded-3xl border border-brand-100 bg-white shadow-xl shadow-brand-900/10">
                     <div className="card-body space-y-4 sm:space-y-5">
                       <div className="space-y-2">
                         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-600">
@@ -234,7 +234,7 @@ export default async function BookATablePage() {
 
                 <FadeIn>
                   <div className="space-y-4">
-                    <article className="card border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
+                    <article className="card rounded-3xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
                       <div className="card-body space-y-3">
                         <div className="flex items-center justify-between">
                           <h3 className="text-xl font-display text-brand-900">Opening hours</h3>
@@ -253,8 +253,8 @@ export default async function BookATablePage() {
                       </div>
                     </article>
 
-                    <article className="card border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
-                      <div className="card-body space-y-3">
+                    <article className="card rounded-3xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
+                      <div className="card-body space-y-4">
                         <div className="flex items-center justify-between">
                           <h3 className="text-xl font-display text-brand-900">Find us</h3>
                           <span className="badge badge-outline border-brand-200 text-brand-700">CB5 8JE</span>
@@ -263,12 +263,12 @@ export default async function BookATablePage() {
                           {contact.address.street}, {contact.address.area}, {contact.address.city} {contact.address.postcode}
                         </p>
                         <InteractiveMap
-                          className="h-64 rounded-2xl border border-brand-100 overflow-hidden"
+                          className="h-60 sm:h-64 rounded-2xl border border-brand-100 overflow-hidden"
                           height="100%"
                           directionLabel="Get directions"
                           hintLabel="Tap for directions"
                         />
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-3">
                           <a
                             href={googleMapLink}
                             target="_blank"
@@ -291,7 +291,7 @@ export default async function BookATablePage() {
                       </div>
                     </article>
 
-                    <article className="card border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
+                    <article className="card rounded-3xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
                       <div className="card-body space-y-3">
                         <h3 className="text-xl font-display text-brand-900">Quick contact</h3>
                         <div className="flex flex-wrap gap-2">
