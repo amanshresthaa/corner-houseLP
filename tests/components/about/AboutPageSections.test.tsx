@@ -25,7 +25,7 @@ describe('About page sections', () => {
       />,
     );
 
-    expect(screen.getByRole('heading', { name: /Our Story/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Corner House milestones/i })).toBeInTheDocument();
     expect(screen.getByText(/1930s/i)).toBeInTheDocument();
     expect(screen.getByText(/Lapen Inns relaunches/i)).toBeInTheDocument();
   });
