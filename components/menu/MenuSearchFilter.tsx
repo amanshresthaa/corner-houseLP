@@ -28,6 +28,18 @@ interface FilterState {
   };
 }
 
+interface PresetEventDetail {
+  reset?: boolean;
+  filters?: Partial<FilterState>;
+}
+
+const dietaryDefaults: FilterState['dietary'] = {
+  vegetarian: false,
+  vegan: false,
+  glutenFree: false,
+  spicy: false,
+};
+
 /**
  * Enhanced search and filter component for menu items
  * Implements debounced search and accessibility features
@@ -41,12 +53,7 @@ export default function MenuSearchFilter({
 }: MenuSearchFilterProps) {
   const [filters, setFilters] = useState<FilterState>({
     searchTerm: '',
-    dietary: {
-      vegetarian: false,
-      vegan: false,
-      glutenFree: false,
-      spicy: false
-    },
+    dietary: { ...dietaryDefaults },
     priceRange: {
       min: 0,
       max: 50
@@ -172,6 +179,48 @@ export default function MenuSearchFilter({
     }, 300); // 300ms debounce
   }, [sections, onFilterChange, buildSummary, priceRange, syncFiltersToUrl]);
 
+  const applyPresetDetail = useCallback((detail: PresetEventDetail) => {
+    setIsExpanded(true);
+    setFilters((prev) => {
+      if (detail.reset) {
+        const resetState: FilterState = {
+          searchTerm: '',
+          dietary: { ...dietaryDefaults },
+          priceRange: {
+            min: priceRange.min,
+            max: priceRange.max,
+          },
+        };
+        applyFilters(resetState);
+        return resetState;
+      }
+
+      const overrides = detail.filters || {};
+      const nextState: FilterState = {
+        searchTerm:
+          Object.prototype.hasOwnProperty.call(overrides, 'searchTerm')
+            ? overrides.searchTerm || ''
+            : prev.searchTerm,
+        dietary: {
+          ...prev.dietary,
+          ...(overrides.dietary || {}),
+        },
+        priceRange: {
+          min:
+            overrides.priceRange && typeof overrides.priceRange.min === 'number'
+              ? overrides.priceRange.min
+              : prev.priceRange.min,
+          max:
+            overrides.priceRange && typeof overrides.priceRange.max === 'number'
+              ? overrides.priceRange.max
+              : prev.priceRange.max,
+        },
+      };
+      applyFilters(nextState);
+      return nextState;
+    });
+  }, [applyFilters, priceRange]);
+
   // Update filters and apply
   const updateFilters = useCallback((newFilters: Partial<FilterState>) => {
     setFilters(prev => {
@@ -180,6 +229,18 @@ export default function MenuSearchFilter({
       return updated;
     });
   }, [applyFilters]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handler = (event: Event) => {
+      const detail = (event as CustomEvent<PresetEventDetail>).detail || {};
+      applyPresetDetail(detail);
+    };
+    window.addEventListener('menu:preset', handler as EventListener);
+    return () => {
+      window.removeEventListener('menu:preset', handler as EventListener);
+    };
+  }, [applyPresetDetail]);
 
   // Handle search input
   const handleSearchChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -201,12 +262,7 @@ export default function MenuSearchFilter({
   const clearFilters = useCallback(() => {
     const clearedFilters: FilterState = {
       searchTerm: '',
-      dietary: {
-        vegetarian: false,
-        vegan: false,
-        glutenFree: false,
-        spicy: false
-      },
+      dietary: { ...dietaryDefaults },
       priceRange: {
         min: priceRange.min,
         max: priceRange.max
@@ -319,10 +375,10 @@ export default function MenuSearchFilter({
     return chips;
   }, [filters, priceRange, updateFilters, handleDietaryChange]);
 
-  return (
-    <div className={`${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/10 text-neutral-100' : 'bg-white border border-neutral-200'} rounded-lg shadow-sm ${className}`}>
+	return (
+		<div className={`${isDark ? 'border border-white/15 bg-brand-950/50 text-neutral-100' : 'border border-brand-100 bg-white/95 text-brand-800'} rounded-[1.75rem] shadow-md ${className}`}>
       {/* Search Bar */}
-      <div className={`p-4 border-b ${isDark ? 'border-white/10' : 'border-neutral-200'}`}>
+			<div className={`p-5 border-b ${isDark ? 'border-white/10' : 'border-brand-100/80'}`}>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <svg
@@ -339,12 +395,12 @@ export default function MenuSearchFilter({
               />
             </svg>
           </div>
-          <input
+					<input
             ref={searchInputRef}
             type="text"
             value={filters.searchTerm}
             onChange={handleSearchChange}
-            className={`block w-full pl-10 pr-12 py-3 rounded-lg text-sm focus:outline-none focus:ring-2 ${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/20 text-neutral-100 placeholder-neutral-400 focus:ring-white/40 focus:border-white/40' : 'border border-neutral-300 placeholder-neutral-500 focus:ring-accent-500 focus:border-accent-500'}`}
+						className={`block w-full rounded-2xl border pl-10 pr-12 py-3 text-sm focus:outline-none focus:ring-2 ${isDark ? 'border-white/20 bg-brand-950/50 text-neutral-100 placeholder-neutral-400 focus:ring-white/35 focus:border-white/35' : 'border-brand-200 bg-brand-50 text-brand-900 placeholder:text-brand-400 focus:ring-brand-300 focus:border-brand-300'}`}
             placeholder="Search menu items..."
             aria-label="Search menu items by name or description"
           />
@@ -367,14 +423,14 @@ export default function MenuSearchFilter({
         </div>
 
         {/* Active filter chips + results status */}
-        {(activeChips.length > 0 || resultsCount !== null) && (
-          <div className="mt-3 flex flex-wrap items-center gap-2">
+				{(activeChips.length > 0 || resultsCount !== null) && (
+					<div className="mt-3 flex flex-wrap items-center gap-2">
             {activeChips.map((chip) => (
               <button
                 key={chip.key}
                 type="button"
                 onClick={chip.onRemove}
-                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs focus:outline-none focus:ring-2 ${isDark ? 'border border-white/20 bg-white/10 text-neutral-100 hover:bg-white/20 focus:ring-white/40' : 'border border-accent-200 bg-accent-50 text-accent-800 hover:bg-accent-100 focus:ring-accent-500'}`}
+								className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isDark ? 'border border-white/20 bg-white/10 text-neutral-100 hover:bg-white/15 focus-visible:ring-white/30' : 'border border-brand-200 bg-brand-50 text-brand-700 hover:bg-brand-100 focus-visible:ring-brand-200'}`}
                 aria-label={`Remove filter ${chip.label}`}
               >
                 <span>{chip.label}</span>
@@ -383,8 +439,8 @@ export default function MenuSearchFilter({
                 </svg>
               </button>
             ))}
-            {resultsCount !== null && (
-              <span className={`ml-auto text-xs ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>{resultsCount} item{resultsCount === 1 ? '' : 's'} match</span>
+						{resultsCount !== null && (
+							<span className={`ml-auto text-xs ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>{resultsCount} item{resultsCount === 1 ? '' : 's'} match</span>
             )}
             {/* Screen reader live region */}
             <span className="sr-only" aria-live="polite">
@@ -394,13 +450,13 @@ export default function MenuSearchFilter({
         )}
       </div>
 
-      {/* Filter Controls */}
-      <div className={`p-4 ${isDark ? 'text-neutral-100' : ''}`}>
-        <div className="flex items-center justify-between">
+			{/* Filter Controls */}
+			<div className={`p-5 ${isDark ? 'text-neutral-100' : ''}`}>
+				<div className="flex items-center justify-between">
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`flex items-center gap-2 text-sm font-medium rounded focus:outline-none focus:ring-2 ${isDark ? 'text-neutral-100 hover:text-white focus:ring-white/40' : 'text-brand-700 hover:text-brand-800 focus:ring-accent-500'}`}
+						className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium focus:outline-none focus-visible:ring-2 ${isDark ? 'text-neutral-100 hover:text-white focus-visible:ring-white/30' : 'text-brand-700 hover:text-brand-800 focus-visible:ring-brand-200'}`}
             aria-expanded={isExpanded}
             aria-controls="filter-options"
           >
@@ -423,15 +479,15 @@ export default function MenuSearchFilter({
             </svg>
           </button>
 
-          {activeFilterCount > 0 && (
-            <button
-              type="button"
-              onClick={clearFilters}
-              className={`text-sm font-medium rounded focus:outline-none focus:ring-2 ${isDark ? 'text-neutral-100 hover:text-white focus:ring-white/40' : 'text-accent-700 hover:text-accent-800 focus:ring-accent-500'}`}
-            >
-              Clear all
-            </button>
-          )}
+					{activeFilterCount > 0 && (
+						<button
+							type="button"
+							onClick={clearFilters}
+							className={`rounded-full px-3 py-1.5 text-sm font-medium focus:outline-none focus-visible:ring-2 ${isDark ? 'text-neutral-100 hover:text-white focus-visible:ring-white/30' : 'text-brand-700 hover:text-brand-800 focus-visible:ring-brand-200'}`}
+						>
+							Clear all
+						</button>
+					)}
         </div>
 
         {/* Expanded Filter Options */}
@@ -439,17 +495,17 @@ export default function MenuSearchFilter({
           <div id="filter-options" className="mt-4 space-y-4">
             {/* Dietary Filters */}
             <div>
-              <h3 className={`text-sm font-medium mb-2 ${isDark ? 'text-neutral-100' : 'text-brand-700'}`}>Dietary Options</h3>
+							<h3 className={`mb-2 text-sm font-medium ${isDark ? 'text-neutral-100' : 'text-brand-700'}`}>Dietary Options</h3>
               <div className="grid grid-cols-2 gap-2">
                 {Object.entries(filters.dietary).map(([key, value]) => (
-                  <label key={key} className={`flex items-center space-x-2 cursor-pointer ${isDark ? 'text-neutral-200' : ''}`}>
+									<label key={key} className={`flex items-center space-x-2 rounded-lg border border-transparent px-2 py-1 ${isDark ? 'text-neutral-200' : 'text-brand-700'}`}>
                     <input
                       type="checkbox"
                       checked={value}
                       onChange={() => handleDietaryChange(key as keyof FilterState['dietary'])}
-                      className={`rounded focus:ring-2 ${isDark ? 'border-white/30 bg-transparent text-accent-200 focus:ring-white/40' : 'border-neutral-300 text-accent-600 focus:ring-accent-500'}`}
+											className={`rounded focus:ring-2 ${isDark ? 'border-white/30 bg-transparent text-accent-200 focus:ring-white/30' : 'border-brand-200 text-brand-700 focus:ring-brand-200'}`}
                     />
-                    <span className={`text-sm capitalize ${isDark ? 'text-neutral-200' : 'text-brand-600'}`}>
+										<span className="text-sm capitalize">
                       {key === 'glutenFree' ? 'Gluten Free' : key}
                     </span>
                   </label>
@@ -459,7 +515,7 @@ export default function MenuSearchFilter({
 
             {/* Price Range */}
             <div>
-              <h3 className={`text-sm font-medium mb-2 ${isDark ? 'text-neutral-100' : 'text-brand-700'}`}>Price Range</h3>
+							<h3 className={`mb-2 text-sm font-medium ${isDark ? 'text-neutral-100' : 'text-brand-700'}`}>Price Range</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="min-price" className="sr-only">Minimum price</label>
@@ -481,7 +537,7 @@ export default function MenuSearchFilter({
                         }
                       });
                     }}
-                    className={`w-full px-3 py-2 rounded text-sm focus:outline-none focus:ring-2 ${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/20 text-neutral-100 placeholder-neutral-400 focus:ring-white/40 focus:border-white/40' : 'border border-neutral-300 focus:ring-accent-500'}`}
+										className={`w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 ${isDark ? 'border-white/20 bg-brand-950/50 text-neutral-100 placeholder-neutral-400 focus:ring-white/30 focus:border-white/30' : 'border-brand-200 bg-brand-50 text-brand-900 placeholder:text-brand-400 focus:ring-brand-200 focus:border-brand-200'}`}
                     placeholder="Min £"
                   />
                 </div>
@@ -505,20 +561,20 @@ export default function MenuSearchFilter({
                         }
                       });
                     }}
-                    className={`w-full px-3 py-2 rounded text-sm focus:outline-none focus:ring-2 ${isDark ? 'bg-brand-950 bg-opacity-70 border border-white/20 text-neutral-100 placeholder-neutral-400 focus:ring-white/40 focus:border-white/40' : 'border border-neutral-300 focus:ring-accent-500'}`}
+										className={`w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 ${isDark ? 'border-white/20 bg-brand-950/50 text-neutral-100 placeholder-neutral-400 focus:ring-white/30 focus:border-white/30' : 'border-brand-200 bg-brand-50 text-brand-900 placeholder:text-brand-400 focus:ring-brand-200 focus:border-brand-200'}`}
                     placeholder="Max £"
                   />
                 </div>
               </div>
 
               {/* Dual-range slider for price */}
-              <div className="mt-3">
+							<div className="mt-3">
                 <div className="relative h-6">
                   {/* Track background */}
-                  <div className={`absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1 rounded ${isDark ? 'bg-white/15' : 'bg-neutral-200'}`} />
+									<div className={`absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1 rounded ${isDark ? 'bg-white/20' : 'bg-brand-100'}`} />
                   {/* Selected range highlight */}
                   <div
-                    className={`absolute top-1/2 -translate-y-1/2 h-1 rounded ${isDark ? 'bg-white' : 'bg-accent-500'}`}
+										className={`absolute top-1/2 -translate-y-1/2 h-1 rounded ${isDark ? 'bg-white' : 'bg-brand-600'}`}
                     style={{
                       left: `${((filters.priceRange.min - priceRange.min) / (priceRange.max - priceRange.min)) * 100}%`,
                       right: `${(1 - (filters.priceRange.max - priceRange.min) / (priceRange.max - priceRange.min)) * 100}%`,

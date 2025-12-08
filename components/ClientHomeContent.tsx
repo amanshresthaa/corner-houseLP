@@ -27,9 +27,6 @@ interface ClientHomeContentProps {
 }
 
 export default function ClientHomeContent({ sections, sectionOrder, slideshow, ariaLabels, links }: ClientHomeContentProps) {
-  const primarySections = sectionOrder.filter((key) => key !== 'closingCta');
-  const closingSections = sectionOrder.filter((key) => key === 'closingCta');
-
   return (
     <div className="min-h-screen bg-neutral-50 text-brand-700">
       <Navbar />
@@ -47,12 +44,10 @@ export default function ClientHomeContent({ sections, sectionOrder, slideshow, a
           />
         </section>
 
-        <HomeSectionsRenderer sections={sections} order={primarySections} />
+        <HomeSectionsRenderer sections={sections} order={sectionOrder} />
 
         <TakeawayBanner />
         <LocationSection />
-
-        <HomeSectionsRenderer sections={sections} order={closingSections} />
       </main>
       <ClientFooter />
     </div>

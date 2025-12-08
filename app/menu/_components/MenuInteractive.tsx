@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { Menu } from '@/src/lib/data/schemas';
 import MenuSearchFilter from '@/components/menu/MenuSearchFilter';
 import MenuSections from '@/components/menu/MenuSections';
@@ -22,15 +22,41 @@ function normalizeId(input?: string | number | null) {
  * Maintains backward compatibility with existing functionality
  * Enhanced with improved sticky navigation for all responsive devices
  */
+type DietaryRecord = {
+  vegetarian: boolean;
+  vegan: boolean;
+  glutenFree: boolean;
+  spicy: boolean;
+};
+
+type FilterSnapshot = {
+  searchTerm: string;
+  dietary: DietaryRecord;
+};
+
+type FilterMeta = {
+  summary?: string;
+  filters?: {
+    searchTerm: string;
+    dietary: DietaryRecord;
+    priceRange?: {
+      min: number;
+      max: number;
+    };
+  };
+};
+
 export default function MenuInteractive({ sections, defaultSelected, preloadedData = false, tone = 'light' }: Props) {
   const [selected, setSelected] = useState<string | null>(defaultSelected ?? null);
-  const [isHydrated, setIsHydrated] = useState(preloadedData); // Start hydrated if data is preloaded
+  const [isHydrated, setIsHydrated] = useState(preloadedData);
   const [filteredSections, setFilteredSections] = useState<Menu['sections']>(sections);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterSummary, setFilterSummary] = useState<string>('');
-  const [showSearch, setShowSearch] = useState(false);
-  const [navbarHeight, setNavbarHeight] = useState(64); // Default to 64px
-  const contentRef = useRef<HTMLDivElement>(null);
+  const [filterSnapshot, setFilterSnapshot] = useState<FilterSnapshot>({
+    searchTerm: '',
+    dietary: { vegetarian: false, vegan: false, glutenFree: false, spicy: false },
+  });
+  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
   const isDark = tone === 'dark';
 
   // Debounce hash changes to prevent rapid state updates - maintaining existing pattern
@@ -40,46 +66,6 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
       setSelected(newHash);
     }
   }, [selected]);
-
-  // Detect actual navbar height for accurate sticky positioning
-  useEffect(() => {
-    const detectNavbarHeight = () => {
-      // Try to find the navbar element
-      const navbar = document.querySelector('nav[class*="sticky"]') || 
-                     document.querySelector('header nav') || 
-                     document.querySelector('nav') ||
-                     document.querySelector('header');
-      
-      if (navbar) {
-        const rect = navbar.getBoundingClientRect();
-        const height = rect.height;
-        // Use detected height, but ensure it's reasonable (between 40-120px)
-        if (height >= 40 && height <= 120) {
-          setNavbarHeight(height);
-        } else {
-          // Fallback to standard height based on screen size
-          setNavbarHeight(window.innerWidth < 768 ? 56 : 64);
-        }
-      } else {
-        // Fallback if no navbar found
-        setNavbarHeight(window.innerWidth < 768 ? 56 : 64);
-      }
-    };
-
-    // Initial detection with a small delay to ensure DOM is ready
-    const timeoutId = setTimeout(detectNavbarHeight, 100);
-    
-    // Re-detect on resize for responsive navbar changes
-    const handleResize = () => {
-      setTimeout(detectNavbarHeight, 150); // Slightly longer delay on resize
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => {
-      clearTimeout(timeoutId);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   // Optimized hydration effect for preloaded data
   useEffect(() => {
@@ -126,6 +112,15 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
       if (newId) {
         const safeNewId = String(newId).toLowerCase().replace(/[^a-z0-9]+/g, '-');
         window.history.replaceState(null, '', window.location.pathname + window.location.search + `#${safeNewId}`);
+
+        // Smoothly scroll the relevant section into view while honoring reduced-motion preferences.
+        window.requestAnimationFrame(() => {
+          const target = document.getElementById(safeNewId);
+          if (target) {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+          }
+        });
       } else {
         window.history.replaceState(null, '', window.location.pathname + window.location.search);
       }
@@ -133,10 +128,18 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
   }, [selected]);
 
   // Handle filter changes from search component
-  const handleFilterChange = useCallback((newFilteredSections: Menu['sections'], newSearchTerm: string, meta?: { summary?: string }) => {
+  const handleFilterChange = useCallback((newFilteredSections: Menu['sections'], newSearchTerm: string, meta?: FilterMeta) => {
     setFilteredSections(newFilteredSections);
     setSearchTerm(newSearchTerm);
     if (meta?.summary !== undefined) setFilterSummary(meta.summary);
+    if (meta?.filters) {
+      setFilterSnapshot({
+        searchTerm: meta.filters.searchTerm,
+        dietary: { ...meta.filters.dietary },
+      });
+    } else if (newSearchTerm !== filterSnapshot.searchTerm) {
+      setFilterSnapshot((prev) => ({ ...prev, searchTerm: newSearchTerm }));
+    }
     
     // If searching/filtering, clear section selection to show all results
     if (newSearchTerm || newFilteredSections.length !== sections.length) {
@@ -144,174 +147,133 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
         handleSectionChange(null);
       }
     }
-  }, [sections.length, selected, handleSectionChange]);
+  }, [sections.length, selected, handleSectionChange, filterSnapshot.searchTerm]);
 
-  // Toggle search panel
-  const toggleSearch = useCallback(() => {
-    setShowSearch(prev => !prev);
+  const sendPresetEvent = useCallback((detail: { reset?: boolean; filters?: Partial<{ searchTerm: string; dietary: Partial<DietaryRecord>; priceRange: { min?: number; max?: number } }> }) => {
+    if (typeof window === 'undefined') return;
+    window.dispatchEvent(new CustomEvent('menu:preset', { detail }));
   }, []);
 
-  // Clear search and filters
-  const clearSearchAndFilters = useCallback(() => {
-    setFilteredSections(sections);
-    setSearchTerm('');
-    setShowSearch(false);
-  }, [sections]);
+  const handleQuickSearchChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    sendPresetEvent({ filters: { searchTerm: event.target.value } });
+  }, [sendPresetEvent]);
 
-  // Determine which sections to display
-  const displaySections = searchTerm || filteredSections.length !== sections.length 
-    ? filteredSections 
-    : sections;
+  const toggleQuickDietary = useCallback((key: keyof FilterSnapshot['dietary']) => {
+    const current = filterSnapshot.dietary[key];
+    sendPresetEvent({ filters: { dietary: { [key]: !current } } });
+  }, [filterSnapshot.dietary, sendPresetEvent]);
 
-  return (
-    <div className="scroll-manual">
-      {/* Enhanced Navigation Bar with dynamic positioning */}
-      <section 
-        className={`py-2 sm:py-3 sticky z-30 backdrop-blur-md transition-colors ${isDark ? 'bg-brand-950 bg-opacity-80 border-b border-white/10 shadow-lg' : 'bg-white/95 border-b border-neutral-200/50 shadow-sm'}`}
-        style={{ 
-          top: `${navbarHeight}px`,
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-          {/* Search Toggle and Navigation */}
-          <div className="flex items-center justify-between mb-2 sm:mb-3">
-            <button
-              type="button"
-              onClick={toggleSearch}
-              className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-medium text-sm sm:text-base focus:outline-none focus-visible:ring-2 ${
-                showSearch 
-                  ? `bg-accent text-white shadow-md ${isDark ? 'border border-accent-200/60 focus-visible:ring-accent-200/70' : 'focus-visible:ring-accent-500'}`
-                  : isDark
-                    ? 'bg-transparent text-neutral-100 border border-white/20 shadow-sm focus-visible:ring-white/40'
-                    : 'bg-white text-brand-700 border border-neutral-300 shadow-sm focus-visible:ring-brand-500/40'
-              }`}
-              aria-expanded={showSearch}
-              aria-controls="search-panel"
-            >
-              <svg className={`w-4 h-4 ${isDark ? 'text-white' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <span className="hidden sm:inline">
-                {showSearch ? 'Hide Search' : 'Search & Filter'}
-              </span>
-              {(searchTerm || filteredSections.length !== sections.length) && (
-                <span className={`text-xs px-2 py-1 rounded-full ${isDark ? 'bg-white/20 text-white' : 'bg-accent-50 text-accent-800 border border-accent-200'}`}>
-                  Active
-                </span>
-              )}
-            </button>
+  const resetFilters = useCallback(() => {
+    sendPresetEvent({ reset: true });
+  }, [sendPresetEvent]);
 
-            {/* Clear filters button */}
-            {(searchTerm || filteredSections.length !== sections.length) && (
+	return (
+		<div className="space-y-6">
+			<div className={`rounded-[2rem] border ${isDark ? 'border-white/15 bg-brand-950/40' : 'border-brand-100/80 bg-white/95'} p-4 shadow-sm sm:p-6`}>
+				<div className="flex flex-wrap items-center justify-between gap-3">
+					<label htmlFor="menu-quick-search" className={`text-xs font-semibold uppercase tracking-[0.35em] ${isDark ? 'text-neutral-200' : 'text-brand-500'}`}>
+						Search & filters
+					</label>
+					<button
+						type="button"
+						onClick={() => {
+							setShowAdvancedFilters(false);
+							resetFilters();
+						}}
+						className="rounded-full px-3 py-1 text-xs font-semibold text-accent-600 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-200"
+					>
+						Reset
+					</button>
+				</div>
+				<input
+					id="menu-quick-search"
+					type="search"
+					value={filterSnapshot.searchTerm}
+					onChange={handleQuickSearchChange}
+					placeholder="Search dishes or ingredients"
+					className={`mt-3 w-full rounded-2xl border px-4 py-3 text-sm focus:outline-none focus:ring-2 ${
+						isDark
+							? 'border-white/20 bg-brand-950 text-white placeholder:text-white/50 focus:ring-white/30'
+							: 'border-brand-200 bg-brand-50 text-brand-900 placeholder:text-brand-400 focus:ring-brand-400'
+					}`}
+				/>
+				<div className="mt-3 flex flex-wrap gap-2">
+					{(['vegetarian', 'vegan', 'glutenFree', 'spicy'] as const).map((key) => (
+						<button
+							key={key}
+							type="button"
+							onClick={() => toggleQuickDietary(key)}
+							className={`rounded-full px-3 py-1.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+								filterSnapshot.dietary[key]
+									? isDark
+										? 'bg-white text-brand-900 focus-visible:ring-white/40'
+										: 'bg-brand-900 text-white focus-visible:ring-brand-200'
+									: isDark
+										? 'border border-white/30 text-white focus-visible:ring-white/30'
+										: 'border border-brand-200 text-brand-700 hover:bg-brand-50 focus-visible:ring-brand-200'
+							}`}
+							aria-pressed={filterSnapshot.dietary[key]}
+						>
+							{key === 'glutenFree' ? 'Gluten-free' : key.charAt(0).toUpperCase() + key.slice(1)}
+						</button>
+					))}
+				</div>
+				<button
+					type="button"
+					onClick={() => setShowAdvancedFilters((prev) => !prev)}
+					className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold ${isDark ? 'text-neutral-100' : 'text-brand-700'} underline-offset-4 hover:underline`}
+				>
+					{showAdvancedFilters ? 'Hide advanced filters' : 'Advanced filters'}
+					<span aria-hidden>↧</span>
+				</button>
+				{showAdvancedFilters ? (
+					<div className="pt-4">
+						<MenuSearchFilter
+							sections={sections}
+							onFilterChange={handleFilterChange}
+							className="w-full"
+							tone={tone}
+						/>
+					</div>
+				) : null}
+			</div>
+
+			<div className="overflow-x-auto pb-2">
+				<nav className="flex gap-2 whitespace-nowrap pr-2" aria-label="Menu categories">
+          {sections.map((section) => {
+            const idSeed = normalizeId(section?.id || section?.name);
+            const isActive = selected === idSeed;
+            const sectionItemCount = filteredSections.find((s) => normalizeId(s?.id || s?.name) === idSeed)?.items.length || section.items.length;
+            return (
               <button
+                key={section.id || section.name}
                 type="button"
-                onClick={clearSearchAndFilters}
-                className={`text-sm font-medium px-3 py-1 rounded border transition-colors focus:outline-none focus-visible:ring-2 ${
-                  isDark
-                    ? 'text-neutral-100 border-white/20 hover:bg-white/10 focus-visible:ring-white/40'
-                    : 'text-accent-700 border-accent-300 hover:bg-accent-50 focus-visible:ring-accent-400/60'
+                onClick={() => handleSectionChange(isActive ? null : idSeed)}
+						className={`rounded-full border px-3 py-1.5 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                  isActive
+                    ? isDark
+									? 'border-white/80 bg-white/10 text-white'
+									: 'border-brand-900 bg-brand-900 text-white focus-visible:ring-brand-200'
+								: 'border-brand-100 text-brand-700 hover:bg-brand-50 focus-visible:ring-brand-200'
                 }`}
+                aria-pressed={isActive}
               >
-                Clear All
+                {section.name}
+                <span className="ml-2 text-xs opacity-70">{sectionItemCount}</span>
               </button>
-            )}
-          </div>
-
-          {/* Section Navigation with improved mobile support */}
-          <div className="overflow-x-auto -mx-3 sm:-mx-4 px-3 sm:px-4 scrollbar-hide">
-            <nav className="flex gap-2 sm:gap-3 whitespace-nowrap items-center pb-1" aria-label="Menu categories">
-              {/* Section buttons with enhanced responsive design */}
-              {sections.map((section) => {
-                const idSeed = normalizeId(section?.id || section?.name);
-                const isActive = selected === idSeed;
-                const sectionItemCount = displaySections.find(s => normalizeId(s?.id || s?.name) === idSeed)?.items.length || 0;
-                
-                return (
-                <button
-                  key={section.id || section.name}
-                  type="button"
-                  onClick={() => handleSectionChange(isActive ? null : idSeed)}
-                  disabled={sectionItemCount === 0}
-                    className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-colors ${
-                      isActive 
-                        ? `bg-accent text-white shadow-sm ${isDark ? 'border border-accent-200/70' : ''}` 
-                        : sectionItemCount > 0
-                          ? isDark
-                            ? 'bg-white/10 text-neutral-100 border border-white/15 hover:bg-white/15'
-                            : 'bg-neutral-50 text-brand-700 border border-neutral-200 hover:bg-neutral-100'
-                          : isDark
-                            ? 'bg-white/5 text-white/40 border border-white/10 cursor-not-allowed'
-                            : 'bg-neutral-200 text-neutral-500 cursor-not-allowed border border-neutral-200'
-                    }`}
-                  aria-pressed={isActive}
-                  title={sectionItemCount === 0 ? 'No items in this section match current filters' : undefined}
-                >
-                    <span className="truncate max-w-[80px] sm:max-w-none">{section.name}</span>
-                    <span className={`text-xs px-1 sm:px-1.5 py-0.5 rounded-full flex-shrink-0 ${isDark ? 'bg-white/20 text-white' : 'bg-brand-100 text-brand-700'}`}>
-                      {sectionItemCount}
-                    </span>
-                  </button>
-                );
-              })}
-            </nav>
-          </div>
-          {/* Applied filters summary row (visible when search panel collapsed) */}
-          {!showSearch && (searchTerm || filteredSections.length !== sections.length) && (
-            <div className={`mt-2 text-xs ${isDark ? 'text-neutral-200' : 'text-brand-700'}`}>
-              <span className="font-semibold">Applied:</span>{' '}
-              <span className={isDark ? 'text-neutral-100' : 'text-brand-600'}>{filterSummary || 'filters active'}</span>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Search Panel with improved positioning */}
-      {showSearch && (
-        <div 
-          id="search-panel" 
-          className={`py-3 sm:py-4 sticky ${isDark ? 'bg-brand-950 bg-opacity-80 border-b border-white/10' : 'bg-neutral-50 border-b border-neutral-200'}`}
-          style={{
-            top: `${navbarHeight + 60}px`, // Account for navbar + menu nav estimated height
-            zIndex: 25,
-          }}
-        >
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-            <MenuSearchFilter
-              sections={sections}
-              onFilterChange={handleFilterChange}
-              className="w-full"
-              tone={tone}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* Content Area */}
-      <div className="relative min-h-[400px]" ref={contentRef}>
-        <div style={{ position: 'relative' }}>
-          <div className="py-8">
-            <MenuSections 
-              sections={displaySections} 
-              selectedId={selected}
-              searchTerm={searchTerm}
-              tone={tone}
-            />
-          </div>
-        </div>
+            );
+          })}
+        </nav>
       </div>
 
-      {/* Results Summary */}
-      {(searchTerm || filteredSections.length !== sections.length) && (
-        <div className={`py-3 ${isDark ? 'bg-brand-950 bg-opacity-80 border-t border-white/10' : 'bg-neutral-100 border-t border-neutral-200'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <p className={`text-sm ${isDark ? 'text-neutral-100' : 'text-neutral-600'}`}>
-              Showing {displaySections.reduce((total, section) => total + section.items.length, 0)} items
-              {searchTerm && ` matching "${searchTerm}"`}
-              {filteredSections.length !== sections.length && ` with applied filters`}
-            </p>
-          </div>
-        </div>
-      )}
+
+
+			<MenuSections sections={filteredSections} selectedId={selected} searchTerm={searchTerm} tone={tone} />
+
+			<div className={`rounded-[2rem] border ${isDark ? 'border-white/10 bg-brand-950/40 text-white/80' : 'border-brand-100 bg-brand-50/80 text-brand-700'} p-4 text-sm text-center`}>
+				{filteredSections.reduce((total, section) => total + section.items.length, 0)} dishes
+				{filterSummary ? ` • ${filterSummary}` : searchTerm ? ` • “${searchTerm}”` : ' • Showing all'}
+			</div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { expect } from '@jest/globals';
 
 import CallToActionSection from '../../../../components/restaurant/sections/CallToActionSection';
@@ -50,27 +50,45 @@ jest.mock('next/link', () => {
   };
 });
 
+jest.mock('next/image', () => {
+  return ({ alt, src, ...props }: any) => {
+    const { fill, priority, ...rest } = props;
+    return <img alt={alt} src={src} {...rest} />;
+  };
+});
+
 describe('CallToActionSection', () => {
   const mockCTAData = {
-    headline: 'Ready to Experience Waterbeach\'s Thatched Nepalese Pub?',
-    description: 'Reserve a table, explore the menu or plan an event – we\'d love to host you.',
+    eyebrow: 'Takeaway hotline',
+    badge: { label: 'Prep time', value: '20 min avg' },
+    headline: 'Takeaway-ready Nepalese feasts',
+    description: 'Reserve heated cabins, or tap the hotline for sizzling mixed grills to go.',
+    features: [
+      'Collection or delivery across Cambridge all week',
+      'Heated cabins with HD sport and full table service',
+      'Mixed grills, momos, and roasts prepped fast'
+    ],
+    contact: { label: 'Call to order', value: '+44 1223 921122', detail: 'Daily from noon' },
+    image: { src: '/cta.jpg', alt: 'CTA' },
     buttons: [
       {
         text: 'View Menu',
         href: '/menu',
         variant: 'accent' as const,
-        key: 'viewMenu'
+        key: 'menu'
       },
       {
-        text: 'What\'s On',
-        href: '/events',
-        variant: 'brand' as const
+        text: 'Order Takeaway',
+        href: '/takeaway',
+        variant: 'brand' as const,
+        key: 'takeaway'
       },
       {
         text: 'Book Online',
         href: '/book-a-table',
         variant: 'crimson' as const,
-        external: false
+        external: false,
+        key: 'bookOnline'
       }
     ]
   };
@@ -78,15 +96,17 @@ describe('CallToActionSection', () => {
   it('renders headline and description correctly', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
-    expect(screen.getByText(/Ready to Experience Waterbeach's Thatched Nepalese Pub\?/)).toBeInTheDocument();
-    expect(screen.getByText(/Reserve a table, explore the menu/)).toBeInTheDocument();
+    expect(screen.getByText(/Takeaway-ready Nepalese feasts/)).toBeInTheDocument();
+    expect(screen.getByText(/Reserve heated cabins/)).toBeInTheDocument();
+    expect(screen.getByText('Takeaway hotline')).toBeInTheDocument();
+    expect(screen.getByText('Prep time')).toBeInTheDocument();
   });
 
   it('renders all CTA buttons with correct text', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
     expect(screen.getByRole('link', { name: 'View Menu' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'What\'s On' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Order Takeaway' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Book Online' })).toBeInTheDocument();
   });
 
@@ -94,11 +114,11 @@ describe('CallToActionSection', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
     const menuLink = screen.getByRole('link', { name: 'View Menu' });
-    const eventsLink = screen.getByRole('link', { name: 'What\'s On' });
+    const takeawayLink = screen.getByRole('link', { name: 'Order Takeaway' });
     const bookingLink = screen.getByRole('link', { name: /Book Online/ });
 
     expect(menuLink).toHaveAttribute('href', '/menu');
-    expect(eventsLink).toHaveAttribute('href', '/events');
+    expect(takeawayLink).toHaveAttribute('href', '/takeaway');
     expect(bookingLink).toHaveAttribute('href', '/book-a-table');
   });
 
@@ -114,17 +134,17 @@ describe('CallToActionSection', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
     const menuLink = screen.getByRole('link', { name: 'View Menu' });
-    const eventsLink = screen.getByRole('link', { name: 'What\'s On' });
+    const takeawayLink = screen.getByRole('link', { name: 'Order Takeaway' });
     const bookingLink = screen.getByRole('link', { name: /Book Online/ });
 
     // Check accent variant
-    expect(menuLink).toHaveClass('bg-white', 'hover:bg-neutral-50', 'text-brand-800');
+    expect(menuLink).toHaveClass('bg-white', 'text-brand-800');
     
     // Check brand variant
-    expect(eventsLink).toHaveClass('bg-brand-900', 'hover:bg-brand-950', 'text-white');
+    expect(takeawayLink).toHaveClass('bg-brand-900', 'text-white');
     
     // Check crimson variant
-    expect(bookingLink).toHaveClass('bg-white', 'hover:bg-neutral-50', 'text-crimson-700');
+    expect(bookingLink).toHaveClass('bg-white', 'text-crimson-700');
   });
 
   it('detects external links automatically by URL pattern', () => {
@@ -156,6 +176,27 @@ describe('CallToActionSection', () => {
     expect(bookingLink).toHaveAttribute('aria-label', 'Book Online');
   });
 
+  it('renders highlight chips for each feature item', () => {
+    const { container } = render(<CallToActionSection {...mockCTAData} />);
+    const grid = container.querySelector('[data-testid="cta-highlight-grid"]');
+    expect(grid).toBeInTheDocument();
+    const items = grid?.querySelectorAll('li') || [];
+    expect(items).toHaveLength(mockCTAData.features.length);
+  });
+
+  it('shows hotline contact card when contact data is provided', () => {
+    render(<CallToActionSection {...mockCTAData} />);
+    const hotlineCard = screen.getByTestId('cta-hotline-card');
+    expect(hotlineCard).toHaveTextContent('+44 1223 921122');
+    const tapToCallLink = screen.getByRole('link', { name: 'Tap to call' });
+    expect(tapToCallLink).toHaveAttribute('href', 'tel:+441223921122');
+  });
+
+  it('renders hero image wrapper even without provided image', () => {
+    render(<CallToActionSection {...mockCTAData} image={undefined as any} />);
+    expect(screen.getByTestId('cta-hero-image')).toBeInTheDocument();
+  });
+
   it('renders semantic HTML structure', () => {
     const { container } = render(<CallToActionSection {...mockCTAData} />);
     
@@ -163,16 +204,17 @@ describe('CallToActionSection', () => {
     const heading = container.querySelector('h2');
 
     expect(section).toBeInTheDocument();
-    expect(section).toHaveClass('py-16', 'bg-white');
-    expect(heading).toHaveClass('font-display', 'font-bold', 'text-white', 'h2');
+    expect(section).toHaveClass('py-12');
+    expect(heading).toHaveClass('font-display', 'font-bold');
   });
 
   it('includes focus management for accessibility', () => {
     render(<CallToActionSection {...mockCTAData} />);
 
-    const buttons = screen.getAllByRole('link');
+    const buttonContainer = screen.getByTestId('cta-buttons');
+    const buttons = within(buttonContainer).getAllByRole('link');
     buttons.forEach(button => {
-      expect(button).toHaveClass('focus:outline-none', 'focus:ring-4', 'focus:ring-offset-2');
+      expect(button).toHaveClass('focus-visible:ring-2', 'focus-visible:ring-offset-2');
     });
   });
 
@@ -210,8 +252,8 @@ describe('CallToActionSection', () => {
   it('handles responsive button layout correctly', () => {
     const { container } = render(<CallToActionSection {...mockCTAData} />);
     
-    const buttonContainer = container.querySelector('.flex');
-    expect(buttonContainer).toHaveClass('flex-wrap', 'gap-4', 'justify-center');
+    const buttonContainer = container.querySelector('[data-testid="cta-buttons"]');
+    expect(buttonContainer).toHaveClass('flex-wrap', 'gap-3');
   });
 
   it('uses button key for React key when available', () => {

@@ -326,9 +326,30 @@ export const PressFeatureSchema = z.object({
   }).optional(),
 });
 
+export const CTABadgeSchema = z.object({
+  label: z.string(),
+  value: z.string().optional(),
+});
+
+export const CTAContactSchema = z.object({
+  label: z.string().optional(),
+  value: z.string().optional(),
+  detail: z.string().optional(),
+});
+
+export const CTAImageSchema = z.object({
+  src: z.string(),
+  alt: z.string().optional(),
+});
+
 export const HomeCTASectionSchema = z.object({
+  eyebrow: z.string().optional(),
+  badge: CTABadgeSchema.optional(),
   headline: z.string(),
   description: z.string(),
+  features: z.array(z.string()).optional(),
+  contact: CTAContactSchema.optional(),
+  image: CTAImageSchema.optional(),
   buttons: z.array(CTAButtonSchema),
 });
 
@@ -343,6 +364,17 @@ export const QuickLinkSchema = z.object({
   description: z.string(),
   link: z.string(),
   linkText: z.string(),
+  eyebrow: z.string().optional(),
+  ctaText: z.string().optional(),
+  accent: z.string().optional(),
+  icon: z.string().optional(),
+});
+
+export const QuickLinksSectionSchema = z.object({
+  eyebrow: z.string().optional(),
+  title: z.string().optional(),
+  description: z.string().optional(),
+  items: z.array(QuickLinkSchema),
 });
 
 export const TestimonialSchema = z.object({
@@ -483,7 +515,7 @@ export const ContentSchema = z.object({
           title: z.string(),
           items: z.array(FeatureItemSchema),
         }),
-        quickLinks: z.array(QuickLinkSchema),
+        quickLinks: z.union([z.array(QuickLinkSchema), QuickLinksSectionSchema]),
         pressFeature: PressFeatureSchema.optional(),
         cta: HomeCTASectionSchema.optional(),
       }).passthrough(),

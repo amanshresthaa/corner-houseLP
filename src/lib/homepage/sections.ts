@@ -8,7 +8,7 @@ import type {
 } from '@/components/homepage/HomepageReviewHighlights';
 import type { PressTickerItem } from '@/components/homepage/PressTicker';
 import type { QuickLinkItem } from '@/components/restaurant/sections/QuickLinksSection';
-import type { CTAButton } from '@/components/restaurant/sections/CallToActionSection';
+import type { CTAButton, CTABadge, CTAContact, CTAImage } from '@/components/restaurant/sections/CallToActionSection';
 
 export type HomeSectionKey =
   | 'pressTicker'
@@ -23,9 +23,21 @@ export interface PressTickerSection {
   items: PressTickerItem[];
 }
 export interface ClosingCtaSection {
+  eyebrow?: string;
+  badge?: CTABadge;
   headline: string;
   description: string;
+  features?: string[];
+  contact?: CTAContact;
+  image?: CTAImage;
   buttons: CTAButton[];
+}
+
+export interface QuickLinksContent {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  items: QuickLinkItem[];
 }
 
 export interface SignatureHero {
@@ -65,16 +77,16 @@ export interface NormalizedHomeSections {
     spotlights?: ReviewSpotlight[];
     items: ReviewHighlight[];
   } | null;
-  quickLinks?: QuickLinkItem[] | null;
+  quickLinks?: QuickLinksContent | null;
   closingCta?: ClosingCtaSection | null;
 }
 
 export const HOME_SECTION_ORDER: HomeSectionKey[] = [
   'pressTicker',
-  'about',
+  'quickLinks',
   'signatureDishes',
   'reviews',
-  'quickLinks',
+  'about',
   'closingCta',
 ];
 
@@ -475,12 +487,15 @@ const normalizeReviews = (raw: unknown): NormalizedHomeSections['reviews'] => {
   };
 };
 
-const normalizeQuickLinks = (raw: unknown): QuickLinkItem[] | null => {
-  if (!Array.isArray(raw)) {
+const normalizeQuickLinks = (raw: unknown): QuickLinksContent | null => {
+  if (!raw) {
     return null;
   }
 
-  const items: Array<QuickLinkItem | null> = raw
+  const source = !Array.isArray(raw) && typeof raw === 'object' ? (raw as Record<string, unknown>) : undefined;
+  const payload = Array.isArray(source?.items) ? source?.items : Array.isArray(raw) ? (raw as unknown[]) : [];
+
+  const items: Array<QuickLinkItem | null> = payload
     .map((item) => {
       if (!item || typeof item !== 'object') {
         return null;
@@ -489,19 +504,52 @@ const normalizeQuickLinks = (raw: unknown): QuickLinkItem[] | null => {
       const description = (item as any).description;
       const link = (item as any).link;
       const linkText = (item as any).linkText;
-      if (![title, description, link, linkText].every((value) => isString(value) && Boolean(value.trim()))) {
+      if (!isString(title) || !title.trim() || !isString(description) || !description.trim()) {
         return null;
       }
-      return {
-        title: (title as string).trim(),
-        description: (description as string).trim(),
-        link: (link as string).trim(),
-        linkText: (linkText as string).trim(),
-      } as QuickLinkItem;
+      if (!isString(link) || !link.trim() || !isString(linkText) || !linkText.trim()) {
+        return null;
+      }
+      const entry: QuickLinkItem = {
+        title: title.trim(),
+        description: description.trim(),
+        link: link.trim(),
+        linkText: linkText.trim(),
+      };
+      const eyebrow = (item as any).eyebrow;
+      const ctaText = (item as any).ctaText;
+      const accent = (item as any).accent;
+      const icon = (item as any).icon;
+      if (isString(eyebrow) && eyebrow.trim()) {
+        entry.eyebrow = eyebrow.trim();
+      }
+      if (isString(ctaText) && ctaText.trim()) {
+        entry.ctaText = ctaText.trim();
+      }
+      if (isString(accent) && accent.trim()) {
+        entry.accent = accent.trim();
+      }
+      if (isString(icon) && icon.trim()) {
+        entry.icon = icon.trim();
+      }
+      return entry;
     })
     .filter((item): item is QuickLinkItem => Boolean(item));
 
-  return items.length ? items : null;
+  if (!items.length) {
+    return null;
+  }
+
+  const eyebrow = source && isString(source.eyebrow) ? source.eyebrow : undefined;
+  const title = source && isString(source.title) ? source.title : undefined;
+  const description = source && isString(source.description) ? source.description : undefined;
+
+  return {
+    eyebrow,
+    title,
+    description,
+    items,
+  };
 };
 
 const normalizeClosingCta = (raw: unknown): ClosingCtaSection | null => {
@@ -550,10 +598,58 @@ const normalizeClosingCta = (raw: unknown): ClosingCtaSection | null => {
   }
 
   const description = isString(obj.description) ? obj.description : '';
+  const features = coerceStringArray(obj.features);
+  const badge = obj.badge && typeof obj.badge === 'object'
+    ? (() => {
+        const label = (obj.badge as any).label;
+        const value = (obj.badge as any).value;
+        if (!isString(label) || !label.trim()) {
+          return undefined;
+        }
+        return {
+          label: label.trim(),
+          value: isString(value) && value.trim() ? value.trim() : undefined,
+        } satisfies CTABadge;
+      })()
+    : undefined;
+  const contact = obj.contact && typeof obj.contact === 'object'
+    ? (() => {
+        const label = (obj.contact as any).label;
+        const value = (obj.contact as any).value;
+        const detail = (obj.contact as any).detail;
+        if (![label, value, detail].some((field) => isString(field) && field.trim())) {
+          return undefined;
+        }
+        const entry: CTAContact = {};
+        if (isString(label) && label.trim()) entry.label = label.trim();
+        if (isString(value) && value.trim()) entry.value = value.trim();
+        if (isString(detail) && detail.trim()) entry.detail = detail.trim();
+        return entry;
+      })()
+    : undefined;
+  const image = obj.image && typeof obj.image === 'object'
+    ? (() => {
+        const src = (obj.image as any).src;
+        if (!isString(src) || !src.trim()) {
+          return undefined;
+        }
+        const alt = (obj.image as any).alt;
+        return {
+          src: src.trim(),
+          alt: isString(alt) ? alt : undefined,
+        } satisfies CTAImage;
+      })()
+    : undefined;
+  const eyebrow = isString(obj.eyebrow) ? obj.eyebrow : undefined;
 
   return {
+    eyebrow,
+    badge,
     headline: obj.headline.trim(),
     description,
+    features: features.length ? features : undefined,
+    contact,
+    image,
     buttons,
   };
 };

@@ -27,13 +27,25 @@ const sectionRenderers: Record<HomeSectionKey, SectionRenderer> = {
       items={data.items}
     />
   ),
-  quickLinks: (data) => <QuickLinksSection links={data} />,
+  quickLinks: (data) => (
+    <QuickLinksSection
+      links={data.items}
+      eyebrow={data.eyebrow}
+      title={data.title}
+      description={data.description}
+    />
+  ),
   closingCta: (data) => (
     <CallToActionSection
+      eyebrow={data.eyebrow}
+      badge={data.badge}
       headline={data.headline}
       description={data.description}
+      features={data.features}
+      contact={data.contact}
+      image={data.image}
       buttons={data.buttons}
-      className="pt-6 pb-8 sm:pt-8 sm:pb-10"
+      theme="dark"
     />
   ),
 };

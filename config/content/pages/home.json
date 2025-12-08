@@ -295,45 +295,84 @@
         "ariaLabel": "Read about {{brand.shortName}} story"
       }
     },
-    "quickLinks": [
-      {
-        "title": "Events & What's On",
-        "description": "Live sport schedules, quiz nights, and garden projector screenings.",
-        "link": "/events",
-        "linkText": "View Events →"
-      },
-      {
-        "title": "Our Story",
-        "description": "From a 1930s art-deco pub to Cambridge’s Nepalese sports hub.",
-        "link": "/about",
-        "linkText": "Read Our Story →"
-      },
-      {
-        "title": "Our Menu",
-        "description": "Momos, curries, grills, burgers, and Sunday roasts under one roof.",
-        "link": "/menu#starters",
-        "linkText": "View Menu →"
-      }
-    ],
+    "quickLinks": {
+      "eyebrow": "Plan your visit",
+      "title": "Book, celebrate, or send Corner House home",
+      "description": "Skip the scrolling and head straight to cabins, events, or takeaway ordering.",
+      "items": [
+        {
+          "title": "Reserve heated cabins",
+          "eyebrow": "Book",
+          "description": "Lock in private, heated cabins for matchdays, reunions, or winter evenings with full table service.",
+          "link": "/book-a-table",
+          "linkText": "Book a table →",
+          "ctaText": "Reserve now",
+          "icon": "calendar",
+          "accent": "accent"
+        },
+        {
+          "title": "Events & Matchdays",
+          "eyebrow": "Line-up",
+          "description": "See quiz nights, screenings, brunch pop-ups, and Premier League fixtures on the garden projector.",
+          "link": "/events",
+          "linkText": "View events →",
+          "ctaText": "See schedule",
+          "icon": "ticket",
+          "accent": "emerald"
+        },
+        {
+          "title": "Menus & Takeaway",
+          "eyebrow": "Order",
+          "description": "Browse Nepalese grills, momos, and pub classics for dine-in, collection, or delivery nights in.",
+          "link": "/menu#starters",
+          "linkText": "View menu →",
+          "ctaText": "Order Nepalese",
+          "icon": "takeaway",
+          "accent": "amber"
+        }
+      ]
+    },
     "cta": {
-      "headline": "Visit {{brand.shortName}}",
-      "description": "Book a heated cabin, catch the match, or order Nepalese favourites for collection or delivery.",
+      "eyebrow": "Takeaway hotline",
+      "badge": {
+        "label": "Prep time",
+        "value": "20 min avg"
+      },
+      "headline": "Takeaway-ready Nepalese feasts or art-deco snug nights in minutes",
+      "description": "Lock in heated cabins for matchdays, or ring the hotline to send sizzling mixed grills and momos home across Cambridge.",
+      "features": [
+        "Collection or delivery across Cambridge all week",
+        "Heated cabins with HD sport, fires, and full table service",
+        "Mixed grills, momos, and roasts prepped to travel hot",
+        "Phone ordering + online booking with no deposit"
+      ],
+      "contact": {
+        "label": "Call to order",
+        "value": "+44 1223 921122",
+        "detail": "Daily from midday for collection & delivery"
+      },
+      "image": {
+        "src": "/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg",
+        "alt": "Takeaway spread with sizzling mixed grills and momos"
+      },
       "buttons": [
         {
-          "text": "Book a Table",
+          "text": "Order takeaway",
+          "href": "/takeaway",
+          "variant": "brand",
+          "key": "takeaway"
+        },
+        {
+          "text": "Book heated cabins",
           "href": "/book-a-table",
           "variant": "accent",
           "key": "bookOnline"
         },
         {
-          "text": "View Menu",
+          "text": "View full menu",
           "href": "/menu#starters",
-          "variant": "brand"
-        },
-        {
-          "text": "Call +44 1223 921122",
-          "href": "tel:+441223921122",
-          "variant": "crimson"
+          "variant": "crimson",
+          "key": "menu"
         }
       ]
     }

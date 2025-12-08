@@ -86,12 +86,31 @@ describe('buildHomeSections', () => {
           { quote: 'Superb', platform: 'Google', rating: 5 },
         ],
       },
-      quickLinks: [
-        { title: 'Menu', description: 'See menu', link: '/menu', linkText: 'View →' },
-      ],
+      quickLinks: {
+        eyebrow: 'Plan',
+        title: 'Plan visit',
+        description: 'Do things',
+        items: [
+          {
+            title: 'Menu',
+            description: 'See menu',
+            link: '/menu',
+            linkText: 'View →',
+            eyebrow: 'Eat',
+            ctaText: 'Order',
+            accent: 'brand',
+            icon: 'menu',
+          },
+        ],
+      },
       cta: {
+        eyebrow: 'Takeaway',
+        badge: { label: 'Hotline', value: '12-22' },
         headline: 'Visit us',
         description: 'Join now',
+        features: ['Cabins', 'Takeaway'],
+        contact: { label: 'Call', value: '01223', detail: 'Daily' },
+        image: { src: '/cta.jpg', alt: 'CTA' },
         buttons: [
           { text: 'Book', href: '/book', variant: 'brand' },
           { text: 'Call', href: 'tel:+1', variant: 'foo' },
@@ -114,16 +133,18 @@ describe('buildHomeSections', () => {
     expect(sections.reviews?.spotlights?.length).toBe(1);
     expect(sections.reviews?.items).toHaveLength(2);
     expect(sections.reviews?.items[0].featured).toBe(true);
-    expect(sections.quickLinks).toHaveLength(1);
+    expect(sections.quickLinks?.items).toHaveLength(1);
+    expect(sections.quickLinks?.title).toBe('Plan visit');
+    expect(sections.closingCta?.badge?.label).toBe('Hotline');
     expect(sections.closingCta?.buttons[1].variant).toBe('accent');
   });
 
   it('filters invalid entries and emits empty order when nothing is enabled', () => {
     const { sections, order } = buildHomeSections({
       pressTicker: { items: [{ title: '' }] },
-      quickLinks: [
-        { title: 'Missing fields' },
-      ],
+      quickLinks: {
+        items: [{ title: 'Missing fields' }],
+      },
       cta: {
         headline: 'Hello',
         buttons: [{ text: 'Book', href: '' }],

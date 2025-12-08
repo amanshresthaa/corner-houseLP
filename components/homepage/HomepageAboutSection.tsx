@@ -81,12 +81,12 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
 
   const isInternalLink = (href: string) => href.startsWith('/') && !href.startsWith('//');
   return (
-    <section className="relative py-16 sm:py-24" aria-labelledby="about-corner-house">
+    <section className="relative py-12 sm:py-20" aria-labelledby="about-corner-house">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/80 via-white to-white" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-10 overflow-hidden rounded-4xl border border-brand-100/80 bg-white/95 p-6 shadow-2xl shadow-brand-900/5 backdrop-blur sm:p-8 md:p-10">
+        <div className="space-y-8 overflow-hidden rounded-4xl border border-brand-100/80 bg-white/95 p-6 shadow-2xl shadow-brand-900/5 backdrop-blur sm:p-8 md:p-9">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-            <div className="space-y-6">
+            <div className="space-y-5">
               <div className="space-y-4">
                 <span className="inline-flex items-center gap-2 rounded-full border border-accent-200/60 bg-accent-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-accent">
                   House story

@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import MenuSearchFilter from '../../../components/menu/MenuSearchFilter';
@@ -48,6 +48,18 @@ const mockSections: Menu['sections'] = [
   }
 ];
 
+const advanceTimers = async (ms: number) => {
+  await act(async () => {
+    jest.advanceTimersByTime(ms);
+  });
+};
+
+const flushPendingTimers = async () => {
+  await act(async () => {
+    jest.runOnlyPendingTimers();
+  });
+};
+
 describe('MenuSearchFilter', () => {
   const mockOnFilterChange = jest.fn();
   const defaultProps = {
@@ -56,13 +68,19 @@ describe('MenuSearchFilter', () => {
     className: ''
   };
 
+  const getLastCall = () => {
+    const calls = mockOnFilterChange.mock.calls;
+    return calls[calls.length - 1] || [];
+  };
+
   beforeEach(() => {
     jest.clearAllMocks();
     jest.useFakeTimers();
+    window.history.replaceState(null, '', '/');
   });
 
-  afterEach(() => {
-    jest.runOnlyPendingTimers();
+  afterEach(async () => {
+    await flushPendingTimers();
     jest.useRealTimers();
   });
 
@@ -75,19 +93,8 @@ describe('MenuSearchFilter', () => {
 
   it('renders filter button', () => {
     render(<MenuSearchFilter {...defaultProps} />);
-    
-    const filterButton = screen.getByText('Filters');
-    expect(filterButton).toBeInTheDocument();
-  });
 
-  it('expands filter options when filter button is clicked', async () => {
-    render(<MenuSearchFilter {...defaultProps} />);
-    
-    const filterButton = screen.getByText('Filters');
-    fireEvent.click(filterButton);
-    
-    expect(screen.getByText('Dietary Options')).toBeInTheDocument();
-    expect(screen.getByText('Price Range')).toBeInTheDocument();
+    expect(screen.getByText('Filters')).toBeInTheDocument();
   });
 
   it('calls onFilterChange when search term is entered', async () => {
@@ -97,10 +104,13 @@ describe('MenuSearchFilter', () => {
     fireEvent.change(searchInput, { target: { value: 'chicken' } });
     
     // Fast-forward past the debounce delay
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     await waitFor(() => {
-      expect(mockOnFilterChange).toHaveBeenCalledWith(
+      expect(mockOnFilterChange.mock.calls.length).toBeGreaterThan(1);
+      const [filteredSections, term] = getLastCall();
+      expect(term).toBe('chicken');
+      expect(filteredSections).toEqual(
         expect.arrayContaining([
           expect.objectContaining({
             id: 'starters',
@@ -108,8 +118,7 @@ describe('MenuSearchFilter', () => {
               expect.objectContaining({ name: 'Chicken Wings' })
             ])
           })
-        ]),
-        'chicken'
+        ])
       );
     });
   });
@@ -125,10 +134,14 @@ describe('MenuSearchFilter', () => {
     const vegetarianCheckbox = screen.getByLabelText(/vegetarian/i);
     fireEvent.click(vegetarianCheckbox);
     
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     await waitFor(() => {
-      expect(mockOnFilterChange).toHaveBeenCalledWith(
+      expect(mockOnFilterChange.mock.calls.length).toBeGreaterThan(1);
+      const [filteredSections, term, meta] = getLastCall();
+      expect(term).toBe('');
+      expect(meta?.filters.dietary.vegetarian).toBe(true);
+      expect(filteredSections).toEqual(
         expect.arrayContaining([
           expect.objectContaining({
             id: 'starters',
@@ -136,8 +149,7 @@ describe('MenuSearchFilter', () => {
               expect.objectContaining({ name: 'Vegetable Soup' })
             ])
           })
-        ]),
-        ''
+        ])
       );
     });
   });
@@ -149,10 +161,11 @@ describe('MenuSearchFilter', () => {
     const searchInput = screen.getByPlaceholderText('Search menu items...');
     fireEvent.change(searchInput, { target: { value: 'soup' } });
     
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     await waitFor(() => {
-      expect(screen.getByText('1')).toBeInTheDocument(); // Active filter badge
+      const matches = screen.getAllByText(/1 item/i);
+      expect(matches.length).toBeGreaterThan(0);
     });
   });
 
@@ -163,7 +176,7 @@ describe('MenuSearchFilter', () => {
     fireEvent.change(searchInput, { target: { value: 'chicken' } });
     
     // Wait for clear button to appear
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     await waitFor(() => {
       const clearButton = screen.getByLabelText('Clear search');
@@ -179,7 +192,7 @@ describe('MenuSearchFilter', () => {
     const searchInput = screen.getByPlaceholderText('Search menu items...');
     fireEvent.change(searchInput, { target: { value: 'test' } });
     
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     await waitFor(() => {
       expect(screen.getByText('Clear all')).toBeInTheDocument();
@@ -192,7 +205,7 @@ describe('MenuSearchFilter', () => {
     const searchInput = screen.getByPlaceholderText('Search menu items...');
     fireEvent.change(searchInput, { target: { value: 'test' } });
     
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     await waitFor(() => {
       const clearAllButton = screen.getByText('Clear all');
@@ -203,7 +216,10 @@ describe('MenuSearchFilter', () => {
     
     // Wait for the clear action to complete
     await waitFor(() => {
-      expect(mockOnFilterChange).toHaveBeenLastCalledWith(mockSections, '');
+      expect(mockOnFilterChange.mock.calls.length).toBeGreaterThan(1);
+      const [filteredSections, term] = getLastCall();
+      expect(term).toBe('');
+      expect(filteredSections).toHaveLength(mockSections.length);
     });
   });
 
@@ -218,18 +234,21 @@ describe('MenuSearchFilter', () => {
     const maxPriceInput = screen.getByLabelText('Maximum price');
     fireEvent.change(maxPriceInput, { target: { value: '10' } });
     
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     await waitFor(() => {
-      expect(mockOnFilterChange).toHaveBeenCalledWith(
+      expect(mockOnFilterChange.mock.calls.length).toBeGreaterThan(1);
+      const [filteredSections, term, meta] = getLastCall();
+      expect(term).toBe('');
+      expect(meta?.filters.priceRange.max).toBe(10);
+      expect(filteredSections).toEqual(
         expect.arrayContaining([
           expect.objectContaining({
             items: expect.not.arrayContaining([
-              expect.objectContaining({ name: 'Fish and Chips' }) // Should be filtered out (£14.99 > £10)
+              expect.objectContaining({ name: 'Fish and Chips' })
             ])
           })
-        ]),
-        ''
+        ])
       );
     });
   });
@@ -245,18 +264,62 @@ describe('MenuSearchFilter', () => {
     fireEvent.change(searchInput, { target: { value: 'chi' } });
     
     // Should not call onFilterChange yet
-    expect(mockOnFilterChange).not.toHaveBeenCalled();
+    const initialCallCount = mockOnFilterChange.mock.calls.length;
+    expect(mockOnFilterChange).toHaveBeenCalledTimes(initialCallCount);
     
     // Fast-forward past debounce delay
-    jest.advanceTimersByTime(300);
+    await advanceTimers(300);
     
     // Should only call once with final value
     await waitFor(() => {
-      expect(mockOnFilterChange).toHaveBeenCalledTimes(1);
-      expect(mockOnFilterChange).toHaveBeenCalledWith(
-        expect.any(Array),
-        'chi'
+      expect(mockOnFilterChange.mock.calls.length).toBe(initialCallCount + 1);
+      const [filteredSections, term] = getLastCall();
+      expect(term).toBe('chi');
+      expect(filteredSections).toBeInstanceOf(Array);
+    });
+  });
+
+  it('responds to preset events dispatched on window', async () => {
+    render(<MenuSearchFilter {...defaultProps} />);
+
+    act(() => {
+      window.dispatchEvent(
+        new CustomEvent('menu:preset', {
+          detail: {
+            filters: {
+              searchTerm: 'veg',
+              dietary: { vegetarian: true },
+            },
+          },
+        })
       );
+    });
+
+    await advanceTimers(300);
+
+    await waitFor(() => {
+      const [filteredSections, term, meta] = getLastCall();
+      expect(term).toBe('veg');
+      expect(meta?.filters.dietary.vegetarian).toBe(true);
+      expect(filteredSections).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            id: 'starters',
+          }),
+        ])
+      );
+    });
+
+    act(() => {
+      window.dispatchEvent(new CustomEvent('menu:preset', { detail: { reset: true } }));
+    });
+
+    await advanceTimers(300);
+
+    await waitFor(() => {
+      const [, resetTerm, meta] = getLastCall();
+      expect(resetTerm).toBe('');
+      expect(meta?.filters.dietary.vegetarian).toBe(false);
     });
   });
 

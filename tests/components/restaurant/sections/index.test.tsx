@@ -36,7 +36,9 @@ jest.mock('framer-motion', () => {
       div: createMotionComponent('div'),
       section: createMotionComponent('section'),
       a: createMotionComponent('a'),
+      article: createMotionComponent('article'),
     },
+    useReducedMotion: () => false,
   };
 });
 
