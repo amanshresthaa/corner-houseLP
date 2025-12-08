@@ -24,6 +24,19 @@ This document captures the current homepage composition so we can replicate the 
 
 Maintain alternation when inserting new sections—swap palettes or add separators to preserve contrast.
 
+### /about Page Light ↔ Dark Stack
+
+The About experience now mirrors the homepage rhythm. The navbar starts light, then sections alternate:
+
+1. **Hero (`components/about/Hero.tsx`) – Dark:** art-deco photography with gradient overlay. CTA buttons reuse homepage tokens.
+2. **Story (`components/about/StorySection.tsx`) – Light:** copy-first layout with white glass shell, commitment cards, and a “Neighbourhood promise” note.
+3. **Gallery (`components/about/GallerySection.tsx`) – Dark:** cinematic grid with `bg-stout-950`, white borders, and Next/Image.
+4. **House highlights (`components/about/HouseHighlights.tsx`) – Light:** gradient-to-white background, brand-outline cards listing guest-favourite touches.
+5. **Milestones (`components/about/Timeline.tsx`) – Dark:** glass stat rail + timeline list, sharing palette with QuickLinks/Reviews.
+6. **Visit CTA (`components/restaurant/sections/CallToActionSection.tsx`) – Light theme:** closes the page while matching the homepage CTA contract.
+
+When extending `/about`, follow this alternation (dark hero → light story → dark gallery …) so new sections don’t break the established rhythm.
+
 ## Components & Patterns
 
 ### Eyebrow + Badge Tokens
@@ -67,10 +80,18 @@ Maintain alternation when inserting new sections—swap palettes or add separato
 - **Spotlights:** `accentGradient` and `accentBorder` maps provide subtle colored glows.
 - **Platform Links:** DaisyUI buttons with `focus-visible:ring` for keyboard accessibility.
 
-### About Section
-- **Structure:** White glass card (`rounded-4xl border-brand-100 bg-white/95`) containing copy, stats, gallery, CTA buttons, and timeline chips.
-- **Stats chips:** `rounded-2xl border border-brand-100 bg-brand-50/70 px-4 py-3`.
-- **CTAs:** Use `btn btn-sm rounded-full border-brand-200 bg-white` for parity with hero CTA styles.
+### Story Section (About stack)
+- **Structure:** `StorySection` replaced the old homepage widget on `/about`. It uses a light gradient section with a white glass shell for paragraphs plus a side column containing the promise card and commitment tiles.
+- **Commitments:** Each tile uses `rounded-2xl border-brand-100 bg-brand-50/80 p-4 shadow-inner` with `0X` eyebrow badges.
+- **Notes:** Promise card sticks to white background, uppercase eyebrow, and `font-display` heading for continuity with homepage typography.
+
+### Gallery Section (About stack)
+- **Palette:** Dark `bg-stout-950`, white/10 borders, and `rounded-3xl` cards. Uses Next/Image with aspect ratios to prevent CLS.
+- **Copy:** Eyebrow + heading follow the same uppercase chip + display title combo from the homepage.
+
+### House Highlights (About stack)
+- **Structure:** Gradient-to-white background with a white container and three-column grid of outline cards.
+- **Usage:** Reuses the same bullet strings as the homepage feature chips, keeping content DRY.
 
 ### Closing CTA
 - **Themes:** `theme="dark"` toggles glassmorphism colors; when adding elsewhere reuse the same prop contract (eyebrow, badge, features, contact, image, buttons).
