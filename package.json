@@ -75,6 +75,7 @@
     "axios": "^1.6.8",
     "caniuse-lite": "^1.0.30001731",
     "client-only": "^0.0.1",
+    "clsx": "^2.1.1",
     "crisp-sdk-web": "^1.0.22",
     "daisyui": "4.10.1",
     "eslint": "8.47.0",
@@ -95,6 +96,7 @@
     "server-only": "^0.0.1",
     "stripe": "^13.11.0",
     "swr": "^2.3.6",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss": "3.4.3",
     "web-vitals": "^5.1.0",
     "zod": "^3.23.8"

@@ -68,6 +68,13 @@ const STORY_NOTE = {
   footer: '— Team Corner House',
 };
 
+type CommitmentLike = {
+  title?: string;
+  label?: string;
+  description?: string;
+  copy?: string;
+};
+
 const GALLERY_SHOTS = [
   {
     src: '/images/white-horse/interior/dining-room-main-tv-and-tables-portrait.jpeg',
@@ -117,17 +124,17 @@ export default async function AboutPage() {
     }));
 
   const storyParagraphs = splitParagraphs(story.introduction);
-  const rawCommitments = Array.isArray(story.pillars)
+  const rawCommitments: CommitmentLike[] = Array.isArray(story.pillars)
     ? story.pillars
     : Array.isArray(story.commitments)
       ? story.commitments
       : [];
   const storyCommitments = rawCommitments
-    .map((item: any) => ({
+    .map((item: CommitmentLike) => ({
       title: item?.title ?? item?.label ?? '',
       description: item?.description ?? item?.copy ?? '',
     }))
-    .filter((item) => item.title && item.description);
+    .filter((item: CommitmentLike) => item.title && item.description);
 
   const derivedStoryNote = story?.note && (story.note.title || story.note.copy)
     ? {
