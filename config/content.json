@@ -18,7 +18,7 @@
         "Newmarket Road pub",
         "takeaway Cambridge",
         "Deliveroo Cambridge Nepalese",
-        "Sunday roast Cambridge"
+        "pub classics Cambridge"
       ],
       "branding": {
         "tagline": "Cambridge's go-to sports pub with Nepalese plates and cosy snugs.",
@@ -307,82 +307,106 @@
           ]
         },
         "about": {
-          "title": "Welcome to {{brand.shortName}}",
-          "tagline": "Pints, momos, and matchday energy on Newmarket Road",
+          "title": "Our Story",
+          "tagline": "Where Cambridge's pub heritage meets Himalayan hospitality",
           "description": [
-            "A 1930s art-deco corner pub reinvented with a full Nepalese kitchen, proper pints, and HD sports just east of Cambridge city centre.",
-            "Grab sizzling mixed grills, Himali Lamb, or a Sunday roast before settling into our snugs, dining wing, or heated cabins.",
-            "Families, football fans, and food lovers all find a spot — with wheelchair access, friendly staff, and a cosy fire when it’s cold."
+            "Built in the 1930s on the site of the old Butchers Arms, The Corner House is an Art Deco landmark on Newmarket Road — a true neighbourhood pub at the heart of Abbey for nearly a century.",
+            "In 2024, we entered an exciting new chapter under Lapen Inns, introducing an authentic Nepalese kitchen while preserving everything locals love: real ales, crackling fireplaces, quiz nights, and that unmistakable pub warmth.",
+            "The result is something uniquely Cambridge — hand-pinched momos and Himalayan curries served alongside proper pints and pub classics."
           ],
           "features": [
-            "Authentic Nepalese cuisine prepared by Nepali chefs",
-            "HD screens plus outdoor projector for big games",
-            "Heated private cabins and covered beer garden",
-            "Accessible, family- and dog-friendly throughout"
+            "1930s Art Deco heritage with original fireplaces and timber snugs",
+            "Authentic Nepalese kitchen led by Kathmandu-born chefs",
+            "Wall-to-wall HD screens plus outdoor projector for big matches",
+            "Heated private cabins bookable year-round in the beer garden",
+            "CAMRA 'Most Improved City Pub' 2020 award winner",
+            "BII Sustainability Champion venue"
           ],
           "image": {
-            "src": "/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg",
-            "alt": "{{brand.fullNameNoArticle}} exterior on Newmarket Road with pub signage and garden seating"
+            "src": "/assets-slideshow/corner-house-building.webp",
+            "alt": "The Corner House — Art Deco pub on Newmarket Road, Cambridge since the 1930s"
           }
         },
         "signatureDishes": {
           "title": "Signature Nepalese Dishes",
-          "subtitle": "Pub classics meet Himalayan favourites",
+          "subtitle": "Authentic Himalayan flavours crafted by our Kathmandu-born chefs",
           "items": [
             {
               "name": "Chicken Rum Rum",
-              "description": "House signature curry with tomato, ginger, and timmur pepper heat — medium and addictive.",
-              "image": "/images/white-horse/dishes/signature-lkk-chicken.png"
+              "description": "Our signature curry — tender chicken simmered in rich tomato, ginger, and timmur pepper sauce with distinctive citrus-spice warmth.",
+              "image": "/assets-dishes/chicken-rum-rum.png"
             },
             {
               "name": "Himali Lamb",
-              "description": "Slow-braised lamb in warming Himalayan spices with a velvety, aromatic sauce.",
-              "image": "/images/white-horse/dishes/signature-himali-lamb.png"
+              "description": "Slow-braised lamb shoulder in aromatic Himalayan spices with a velvety, cardamom-infused sauce. Fall-off-the-bone tender.",
+              "image": "/assets-dishes/himalilamb.png"
             },
             {
-              "name": "Khasi Ko Masu (Goat Curry)",
-              "description": "Traditional goat curry simmered low-and-slow for deep flavour without overpowering heat.",
-              "image": "/images/white-horse/dishes/signature-goat-curry.png"
+              "name": "Khasi Ko Masu",
+              "description": "Traditional Nepali goat curry — bone-in meat slow-cooked with whole spices until meltingly tender. A heritage recipe.",
+              "image": "/assets-dishes/goat-curry.png"
             },
             {
               "name": "House Mixed Grill",
-              "description": "Sizzling platter of wings, tikka, seekh kebab, and king prawn — perfect for sharing in the bar or cabins.",
-              "image": "/images/white-horse/dishes/signature-house-mixed-grill.png"
+              "description": "A sizzling feast of tandoori chicken, seekh kebab, lamb chops, and king prawns — marinated 24 hours and grilled to perfection.",
+              "image": "/assets-dishes/mixed-grill.png"
+            },
+            {
+              "name": "Steamed Momo",
+              "description": "Hand-pleated Nepali dumplings with spiced chicken or vegetables, served with signature tomato-sesame achar. Made fresh daily.",
+              "image": "/assets-dishes/steamed-momos-with-spicy-sauce-portrait.png"
+            },
+            {
+              "name": "Samosa Chaat",
+              "description": "Crispy samosas crumbled over tangy chickpea curry, topped with yoghurt, tamarind chutney, and crunchy sev. Nepali street food.",
+              "image": "/assets-dishes/samosa-chat.png"
             }
           ]
         },
         "reviews": {
-          "title": "What Guests Say",
-          "subtitle": "Real diners on food, service, and matchday atmosphere",
+          "title": "Loved by Locals & Visitors Alike",
+          "subtitle": "From first-time visitors to devoted regulars, our guests share what makes The Corner House a Cambridge favourite.",
           "items": [
             {
-              "quote": "Superb Himali Lamb Curry and friendly staff who helped us navigate the Nepalese dishes.",
+              "quote": "Superb Himali Lamb Curry and friendly staff who helped us navigate the Nepalese dishes. We'll definitely be back!",
               "source": "5★ — Tony B., TripAdvisor (Nov 2025)",
               "platform": "TripAdvisor",
               "rating": 5
             },
             {
-              "quote": "Perfect spot for a Cambridge reunion — attentive team, great drinks, brilliant atmosphere.",
+              "quote": "Perfect spot for a Cambridge reunion — attentive team, great drinks, brilliant atmosphere. The heated cabins are a game-changer.",
               "source": "5★ — Colin S., TripAdvisor (Nov 2025)",
               "platform": "TripAdvisor",
               "rating": 5
             },
             {
-              "quote": "Old pub with a twist. Nepalese curry was excellent and plenty of HD screens for the match.",
+              "quote": "Old pub with a twist. Nepalese curry was excellent and plenty of HD screens for the match. Best of both worlds!",
               "source": "5★ — C.V., TripAdvisor (Oct 2025)",
               "platform": "TripAdvisor",
               "rating": 5
             },
             {
-              "quote": "Second time here — same delicious curry and very reasonable prices for Cambridge.",
+              "quote": "The momos are the best I've had outside Nepal. Authentic taste, generous portions, and the staff genuinely care.",
+              "source": "5★ — Priya M., Google (Dec 2025)",
+              "platform": "Google",
+              "rating": 5
+            },
+            {
+              "quote": "Second time here — same delicious curry and very reasonable prices for Cambridge. Now our go-to Friday night spot.",
               "source": "5★ — Josh P., Google (Aug 2025)",
               "platform": "Google",
               "rating": 5
             },
             {
-              "quote": "Family-friendly pub; staff handled dietary requests and the fireplace made it extra cosy.",
+              "quote": "Family-friendly pub with incredible food. Staff handled our kids' dietary requests perfectly.",
               "source": "5★ — Frances D., TripAdvisor (Jan 2025)",
               "platform": "TripAdvisor",
+              "rating": 5
+            },
+            {
+              "quote": "Came for the pre-match atmosphere, stayed for the Chicken Rum Rum. This pub has soul!",
+              "source": "5★ — Marcus T., Google (Nov 2025)",
+              "platform": "Google",
               "rating": 5
             }
           ]
@@ -415,33 +439,11 @@
           },
           {
             "title": "Our Menu",
-            "description": "Momos, curries, grills, burgers, and Sunday roasts under one roof.",
+            "description": "Momos, curries, grills, burgers, and pub classics under one roof.",
             "link": "/menu#starters",
             "linkText": "View Menu →"
           }
-        ],
-        "cta": {
-          "headline": "Visit {{brand.shortName}}",
-          "description": "Book a heated cabin, catch the match, or order Nepalese favourites for collection or delivery.",
-          "buttons": [
-            {
-              "text": "Book a Table",
-              "href": "/book-a-table",
-              "variant": "accent",
-              "key": "bookOnline"
-            },
-            {
-              "text": "View Menu",
-              "href": "/menu#starters",
-              "variant": "brand"
-            },
-            {
-              "text": "Call +44 1223 921122",
-              "href": "tel:+441223921122",
-              "variant": "crimson"
-            }
-          ]
-        }
+        ]
       },
       "seo": {
         "schemas": [
@@ -463,7 +465,7 @@
             "@id": "https://{{brand.domain}}/#restaurant",
             "name": "{{brand.fullName}}",
             "image": "https://{{brand.domain}}/opengraph-image.png",
-            "description": "1930s Cambridge pub serving authentic Nepalese dishes, pub classics, and Sunday roasts with HD sports and heated cabins.",
+            "description": "1930s Cambridge pub serving authentic Nepalese dishes and pub classics with HD sports and heated cabins.",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "231 Newmarket Road",
@@ -709,8 +711,8 @@
     "menu": {
       "seo": {
         "title": "Menu | Nepalese Curries & Pub Classics | {{brand.fullName}}",
-        "description": "Browse our Cambridge menu of Nepali chef specials—Himali lamb, Khasi ko masu, sizzling platters—served alongside Sunday roasts, burgers, and cask ales. Call +44 1223 921122 for bookings or takeaway.",
-        "keywords": "{{brand.fullNameNoArticle}} menu, Nepalese curry Cambridge, Himali lamb, Khasi ko masu, momo Cambridge, Nepali mixed grill, Sunday roast Cambridge, heated cabins, Sky Sports pub food",
+        "description": "Browse our Cambridge menu of Nepali chef specials—Himali lamb, Khasi ko masu, sizzling platters—served alongside burgers, pub classics, and cask ales. Call +44 1223 921122 for bookings or takeaway.",
+        "keywords": "{{brand.fullNameNoArticle}} menu, Nepalese curry Cambridge, Himali lamb, Khasi ko masu, momo Cambridge, Nepali mixed grill, pub classics Cambridge, heated cabins, Sky Sports pub food",
         "openGraph": {
           "title": "Menu | Nepalese Food & Pub Classics | {{brand.fullName}}",
           "description": "Discover our interactive menu with filters covering Nepalese curries, pub favourites, vegan dishes, and heated cabin feasts opposite Cambridge Retail Park.",
@@ -1003,14 +1005,14 @@
       },
       "slides": [
         {
-          "id": "slide-welcome-whitehorse",
+          "id": "slide-welcome-exterior",
           "image": {
-            "primary": "/images/slideshow/whitehorsebuilding.png"
+            "primary": "/assets-slideshow/corner-house-exterior-dusk-hero.webp"
           },
-          "alt": "Art-deco exterior of {{brand.fullName}} with heated cabins and chalkboard signage.",
+          "alt": "The Corner House pub exterior at dusk with warm lighting and welcoming atmosphere.",
           "eyebrow": "Cambridge corner pub for HD sport, cosy snugs & Nepalese kitchens.",
           "headline": "Welcome to {{brand.shortName}}",
-          "copy": "An independent Newmarket Road pub where HD matchdays meet Nepali-chef curries, Sunday roasts, and a heated garden packed with private cabins.",
+          "copy": "An independent Newmarket Road pub where HD matchdays meet Nepali-chef curries, pub classics, and a heated garden packed with private cabins.",
           "badges": [
             "Village pub",
             "Family friendly",
@@ -1026,7 +1028,7 @@
         {
           "id": "slide-sharing-table",
           "image": {
-            "primary": "/images/slideshow/shared-table-nepalese-feast-landscape.png"
+            "primary": "/assets-slideshow/table-food.png"
           },
           "alt": "Long rustic table layered with Nepalese sharing plates, salads, pickles, and drinks ready for a crowd inside the pub.",
           "eyebrow": "Gather the crew around a table full of colour.",
@@ -1046,7 +1048,7 @@
         {
           "id": "slide-pouring-character",
           "image": {
-            "primary": "/images/slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png"
+            "primary": "/assets-slideshow/corner-house-bar-view-landscape.webp"
           },
           "alt": "Warm wood bar with glass racks and a row of beer taps in a cosy pub interior.",
           "eyebrow": "Cask ales, craft lagers & small-batch spirits.",
@@ -1066,9 +1068,9 @@
         {
           "id": "slide-garden-evenings",
           "image": {
-            "primary": "/images/slideshow/beer-garden-picnic-benches-and-sky-portrait.png"
+            "primary": "/assets-slideshow/corner-house-outdoor-rear.webp"
           },
-          "alt": "Large pub garden at dusk with string lights and wooden picnic tables.",
+          "alt": "Large pub garden with outdoor seating area and relaxed atmosphere.",
           "eyebrow": "Big garden energy – gather, relax, and watch the sky turn indigo.",
           "headline": "Evenings Under the Lights",
           "copy": "From golden hour to starlight, our garden is your go-to for after-work drinks, weekend catch-ups, and easy outdoor dining.",
@@ -1086,7 +1088,7 @@
         {
           "id": "slide-fresh-starts",
           "image": {
-            "primary": "/images/slideshow/fresh-mixed-salad-cherry-tomatoes-portrait.png"
+            "primary": "/assets-slideshow/fresh-mixed-salad-cherry-tomatoes-portrait.png"
           },
           "alt": "Bowl of mixed green salad with cherry tomatoes and cucumber on a white plate.",
           "eyebrow": "Crunchy greens, bright flavours, made to order.",
@@ -1105,11 +1107,11 @@
         {
           "id": "slide-hand-pleated-momo",
           "image": {
-            "primary": "/images/slideshow/steamed-momo-with-spicy-sauce-portrait.png"
+            "primary": "/assets-slideshow/steamed-momos-with-spicy-sauce-portrait.png"
           },
           "alt": "Row of steamed dumplings with bright orange dipping sauce on a rectangular plate.",
           "eyebrow": "Steamed, delicate, and dunked in our bold chilli sauce.",
-          "headline": "Hand-Pleated momo",
+          "headline": "Hand-Pleated Momo",
           "copy": "Comfort in one bite - soft wrappers, savoury filling, and a creamy kick on the side. A favourite for sharing or not.",
           "badges": [
             "House momo",
@@ -1122,23 +1124,23 @@
           }
         },
         {
-          "id": "slide-hearty-healthy",
+          "id": "slide-cosy-dining",
           "image": {
-            "primary": "/images/slideshow/warm-chicken-salad-with-cherry-tomatoes-portrait.png"
+            "primary": "/assets-slideshow/corner-house-dining-angle.webp"
           },
-          "alt": "Mixed green salad topped with warm seared chicken pieces and cherry tomatoes.",
-          "eyebrow": "Warm chicken salad with crunch and zing.",
-          "headline": "Hearty & Healthy",
-          "copy": "Tender seared chicken tossed through fresh greens and a lively dressing - big on flavour, light on fuss.",
+          "alt": "Cosy dining area with warm lighting and comfortable seating.",
+          "eyebrow": "Intimate spaces for every occasion.",
+          "headline": "Dine in Style",
+          "copy": "Whether it's a romantic dinner for two or a celebration with friends, our cosy dining areas provide the perfect backdrop.",
           "badges": [
-            "Warm salad",
-            "Protein packed",
-            "Pub lunch"
+            "Cosy ambiance",
+            "Private dining",
+            "Group friendly"
           ],
           "ctas": {
-            "menuUrl": "/menu#lunch",
+            "bookUrl": "/book-a-table",
             "callTel": "tel:+441223921122",
-            "secondaryUrl": "/book-a-table"
+            "secondaryUrl": "/about"
           }
         }
       ]

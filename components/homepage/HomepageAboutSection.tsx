@@ -79,18 +79,25 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
       label: item?.label,
     }));
 
+  const primaryImageSrc = image?.src?.trim();
+  const uniqueGalleryItems = primaryImageSrc
+    ? galleryItems.filter((item) => item.src !== primaryImageSrc)
+    : galleryItems;
+
+  const overlayStat = safeStats.find((stat) => /review/i.test(stat.label));
+
   const isInternalLink = (href: string) => href.startsWith('/') && !href.startsWith('//');
   return (
     <section className="relative py-12 sm:py-20" aria-labelledby="about-corner-house">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/80 via-white to-white" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="space-y-8 overflow-hidden rounded-4xl border border-brand-100/80 bg-white/95 p-6 shadow-2xl shadow-brand-900/5 backdrop-blur sm:p-8 md:p-9">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
             <div className="space-y-5">
               <div className="space-y-4">
-                <span className="inline-flex items-center gap-2 rounded-full border border-accent-200/60 bg-accent-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-accent">
-                  House story
-                </span>
+                <p className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-brand-600">
+                  Our story
+                </p>
                 <div>
                   <h2 id="about-corner-house" className="text-4xl font-display font-bold text-stout-700 sm:text-5xl">
                     {title}
@@ -109,11 +116,11 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
               </div>
 
               {safeStats.length ? (
-                <div className="flex flex-wrap gap-4">
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {safeStats.map((stat, idx) => (
                     <div
                       key={`about-stat-${stat.label}-${idx}`}
-                      className="min-w-[9rem] rounded-2xl border border-brand-100 bg-brand-50/70 px-4 py-3 shadow-inner"
+                      className="rounded-2xl border border-brand-100 bg-brand-50/70 px-4 py-3 text-center shadow-inner"
                     >
                       <p className="text-3xl font-display font-bold text-stout-700">{stat.value}</p>
                       <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-500">{stat.label}</p>
@@ -167,17 +174,17 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
                       <span>No imagery supplied</span>
                     </div>
                   )}
-                  {safeStats[0] ? (
+                  {overlayStat ? (
                     <div className="absolute bottom-4 left-4 rounded-2xl border border-white/40 bg-white/90 px-4 py-3 text-sm font-semibold text-brand-800 shadow-lg">
-                      Trusted by {safeStats[0].value}
+                      {overlayStat.value} {overlayStat.label}
                     </div>
                   ) : null}
                 </div>
               </div>
 
-              {galleryItems.length ? (
+              {uniqueGalleryItems.length ? (
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {galleryItems.slice(0, 2).map((item, idx) => (
+                  {uniqueGalleryItems.slice(0, 2).map((item, idx) => (
                     <figure
                       key={`about-gallery-${idx}`}
                       className="group overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-lg"
@@ -211,11 +218,11 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
                   <h3 className="text-2xl font-display font-bold text-stout-700">Corner House moments</h3>
                 </div>
               </div>
-              <div className="mt-6 flex gap-6 overflow-x-auto pb-2" aria-label="Corner House timeline">
+              <div className="mt-6 flex gap-5 overflow-x-auto pb-3 snap-x snap-mandatory" aria-label="Corner House timeline">
                 {safeMilestones.map((milestone, idx) => (
                   <div
                     key={`about-milestone-${milestone.year}-${idx}`}
-                    className="min-w-[14rem] rounded-2xl border border-brand-100 bg-white p-4 shadow-sm"
+                    className="min-w-[14rem] snap-start rounded-2xl border border-brand-100 bg-white p-4 shadow-sm"
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-500">
                       {milestone.year}
@@ -238,7 +245,7 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
                 <h3 className="text-base font-semibold uppercase tracking-[0.35em] text-brand-600">
                   House highlights
                 </h3>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                   {featureCards.map((item, idx) => (
                     <li
                       key={`about-feature-${idx}`}
@@ -253,11 +260,11 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
                   ))}
                 </ul>
               </div>
-            ) : null}
+              ) : null}
 
-            {galleryItems.length > 2 ? (
+            {uniqueGalleryItems.length > 2 ? (
               <div className="grid gap-4 sm:grid-cols-2">
-                {galleryItems.slice(2, 6).map((item, idx) => (
+                {uniqueGalleryItems.slice(2, 6).map((item, idx) => (
                   <figure
                     key={`about-gallery-secondary-${idx}`}
                     className="group overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-lg"

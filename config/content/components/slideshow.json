@@ -8,14 +8,14 @@
   },
   "slides": [
     {
-      "id": "slide-welcome-whitehorse",
+      "id": "slide-welcome-exterior",
       "image": {
-        "primary": "/images/slideshow/whitehorsebuilding.png"
+        "primary": "/assets-slideshow/corner-house-exterior-dusk-hero.webp"
       },
-      "alt": "Art-deco exterior of {{brand.fullName}} with heated cabins and chalkboard signage.",
+      "alt": "The Corner House pub exterior at dusk with warm lighting and welcoming atmosphere.",
       "eyebrow": "Cambridge corner pub for HD sport, cosy snugs & Nepalese kitchens.",
       "headline": "Welcome to {{brand.shortName}}",
-      "copy": "An independent Newmarket Road pub where HD matchdays meet Nepali-chef curries, Sunday roasts, and a heated garden packed with private cabins.",
+      "copy": "An independent Newmarket Road pub where HD matchdays meet Nepali-chef curries, pub classics, and a heated garden packed with private cabins.",
       "badges": [
         "Village pub",
         "Family friendly",
@@ -31,7 +31,7 @@
     {
       "id": "slide-sharing-table",
       "image": {
-        "primary": "/images/slideshow/shared-table-nepalese-feast-landscape.png"
+        "primary": "/assets-slideshow/table-food.png"
       },
       "alt": "Long rustic table layered with Nepalese sharing plates, salads, pickles, and drinks ready for a crowd inside the pub.",
       "eyebrow": "Gather the crew around a table full of colour.",
@@ -51,7 +51,7 @@
     {
       "id": "slide-pouring-character",
       "image": {
-        "primary": "/images/slideshow/bar-counter-cozy-lighting-taps-and-shelves-landscape.png"
+        "primary": "/assets-slideshow/corner-house-bar-view-landscape.webp"
       },
       "alt": "Warm wood bar with glass racks and a row of beer taps in a cosy pub interior.",
       "eyebrow": "Cask ales, craft lagers & small-batch spirits.",
@@ -71,9 +71,9 @@
     {
       "id": "slide-garden-evenings",
       "image": {
-        "primary": "/images/slideshow/beer-garden-picnic-benches-and-sky-portrait.png"
+        "primary": "/assets-slideshow/corner-house-outdoor-rear.webp"
       },
-      "alt": "Large pub garden at dusk with string lights and wooden picnic tables.",
+      "alt": "Large pub garden with outdoor seating area and relaxed atmosphere.",
       "eyebrow": "Big garden energy – gather, relax, and watch the sky turn indigo.",
       "headline": "Evenings Under the Lights",
       "copy": "From golden hour to starlight, our garden is your go-to for after-work drinks, weekend catch-ups, and easy outdoor dining.",
@@ -91,7 +91,7 @@
     {
       "id": "slide-fresh-starts",
       "image": {
-        "primary": "/images/slideshow/fresh-mixed-salad-cherry-tomatoes-portrait.png"
+        "primary": "/assets-slideshow/fresh-mixed-salad-cherry-tomatoes-portrait.png"
       },
       "alt": "Bowl of mixed green salad with cherry tomatoes and cucumber on a white plate.",
       "eyebrow": "Crunchy greens, bright flavours, made to order.",
@@ -110,11 +110,11 @@
     {
       "id": "slide-hand-pleated-momo",
       "image": {
-        "primary": "/images/slideshow/steamed-momo-with-spicy-sauce-portrait.png"
+        "primary": "/assets-slideshow/steamed-momos-with-spicy-sauce-portrait.png"
       },
       "alt": "Row of steamed dumplings with bright orange dipping sauce on a rectangular plate.",
       "eyebrow": "Steamed, delicate, and dunked in our bold chilli sauce.",
-      "headline": "Hand-Pleated momo",
+      "headline": "Hand-Pleated Momo",
       "copy": "Comfort in one bite - soft wrappers, savoury filling, and a creamy kick on the side. A favourite for sharing or not.",
       "badges": [
         "House momo",
@@ -127,23 +127,23 @@
       }
     },
     {
-      "id": "slide-hearty-healthy",
+      "id": "slide-cosy-dining",
       "image": {
-        "primary": "/images/slideshow/warm-chicken-salad-with-cherry-tomatoes-portrait.png"
+        "primary": "/assets-slideshow/corner-house-dining-angle.webp"
       },
-      "alt": "Mixed green salad topped with warm seared chicken pieces and cherry tomatoes.",
-      "eyebrow": "Warm chicken salad with crunch and zing.",
-      "headline": "Hearty & Healthy",
-      "copy": "Tender seared chicken tossed through fresh greens and a lively dressing - big on flavour, light on fuss.",
+      "alt": "Cosy dining area with warm lighting and comfortable seating.",
+      "eyebrow": "Intimate spaces for every occasion.",
+      "headline": "Dine in Style",
+      "copy": "Whether it's a romantic dinner for two or a celebration with friends, our cosy dining areas provide the perfect backdrop.",
       "badges": [
-        "Warm salad",
-        "Protein packed",
-        "Pub lunch"
+        "Cosy ambiance",
+        "Private dining",
+        "Group friendly"
       ],
       "ctas": {
-        "menuUrl": "/menu#lunch",
+        "bookUrl": "/book-a-table",
         "callTel": "tel:+441223921122",
-        "secondaryUrl": "/book-a-table"
+        "secondaryUrl": "/about"
       }
     }
   ]

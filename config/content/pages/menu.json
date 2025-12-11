@@ -1,8 +1,8 @@
 {
   "seo": {
     "title": "Menu | Nepalese Curries & Pub Classics | {{brand.fullName}}",
-    "description": "Browse our Cambridge menu of Nepali chef specials—Himali lamb, Khasi ko masu, sizzling platters—served alongside Sunday roasts, burgers, and cask ales. Call +44 1223 921122 for bookings or takeaway.",
-    "keywords": "{{brand.fullNameNoArticle}} menu, Nepalese curry Cambridge, Himali lamb, Khasi ko masu, momo Cambridge, Nepali mixed grill, Sunday roast Cambridge, heated cabins, Sky Sports pub food",
+    "description": "Browse our Cambridge menu of Nepali chef specials—Himali lamb, Khasi ko masu, sizzling platters—served alongside burgers, pub classics, and cask ales. Call +44 1223 921122 for bookings or takeaway.",
+    "keywords": "{{brand.fullNameNoArticle}} menu, Nepalese curry Cambridge, Himali lamb, Khasi ko masu, momo Cambridge, Nepali mixed grill, pub classics Cambridge, heated cabins, Sky Sports pub food",
     "openGraph": {
       "title": "Menu | Nepalese Food & Pub Classics | {{brand.fullName}}",
       "description": "Discover our interactive menu with filters covering Nepalese curries, pub favourites, vegan dishes, and heated cabin feasts opposite Cambridge Retail Park.",
