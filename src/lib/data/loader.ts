@@ -20,16 +20,19 @@ import { resolveEnv, resolveContentEnvChain, type AppEnv } from "./env";
 import { globalCache, createCacheKey, PerformanceCacheManager } from "./cache";
 import type { ZodTypeAny } from "zod";
 import { composeContentFromModules } from "@/src/lib/content/composer";
+import { replaceBrandTokensInObject } from '@/src/lib/utils/brand';
 
 async function readJson<T>(p: string, schema: any, name: string): Promise<T> {
   const raw = await fs.readFile(p, "utf8");
   const parsed = JSON.parse(raw);
-  return schema.parse(parsed) as T;
+  const hydrated = replaceBrandTokensInObject(parsed);
+  return schema.parse(hydrated) as T;
 }
 
 async function readJsonRaw(p: string): Promise<any> {
   const raw = await fs.readFile(p, "utf8");
-  return JSON.parse(raw);
+  const parsed = JSON.parse(raw);
+  return replaceBrandTokensInObject(parsed);
 }
 
 async function readJsonIfExists(p: string): Promise<any | null> {
@@ -95,7 +98,10 @@ function shouldUseModularContent(): boolean {
 
 async function loadContentFromFilesystem(env: AppEnv): Promise<Content> {
   try {
-    return await composeContentFromModules(env);
+    const composed = await composeContentFromModules(env);
+    const hydrated = replaceBrandTokensInObject(composed);
+    // Re-validate after hydration to guard against malformed replacements
+    return ContentSchema.parse(hydrated) as Content;
   } catch (error) {
     // Without legacy fallback, fail fast so issues surface in logs/tests
     console.error('Modular content composition failed:', error);
@@ -121,7 +127,8 @@ async function loadLegacyContentFromFilesystem(env: AppEnv): Promise<Content> {
     }
   }
 
-  return ContentSchema.parse(merged) as Content;
+  const hydrated = replaceBrandTokensInObject(merged);
+  return ContentSchema.parse(hydrated) as Content;
 }
 
 export async function getMenuData(env: AppEnv = resolveEnv()): Promise<Menu> {

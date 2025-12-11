@@ -45,16 +45,7 @@ const brandPatterns: Array<{ pattern: RegExp; replacement: string }> = [
   { pattern: /White\s+Horse/gi, replacement: BRAND.shortName },
   { pattern: /whitehorsepub\.co/gi, replacement: BRAND.domain },
   { pattern: /the-white-horse/gi, replacement: BRAND.slug },
-  // Current brand literals to ensure future-proofing
-  { pattern: /The\s+Corner\s+House\s+Cambridge/gi, replacement: BRAND.fullName },
-  { pattern: /Corner\s+House\s+Cambridge/gi, replacement: BRAND.fullName },
-  { pattern: /The\s+Corner\s+House/gi, replacement: BRAND.shortName },
-  { pattern: /Corner\s+House/gi, replacement: BRAND.nickname },
-  { pattern: /The%20Corner%20House%20Cambridge/gi, replacement: BRAND.fullNameEncoded },
-  { pattern: /Corner%20House%20Cambridge/gi, replacement: BRAND.fullNameNoArticleEncoded },
-  { pattern: /The%20Corner%20House/gi, replacement: BRAND.shortNameEncoded },
-  { pattern: /Corner%20House/gi, replacement: BRAND.nicknameEncoded },
-  { pattern: /cornerhousepub\.co/gi, replacement: BRAND.domain },
+  // Domain/slug normalization for old hostnames
   { pattern: /corner-house/gi, replacement: BRAND.slug },
 ];
 

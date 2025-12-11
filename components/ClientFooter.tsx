@@ -87,7 +87,7 @@ export default function ClientFooter() {
             <p className="mt-1">
               <Link href="/privacy-policy" className="hover:text-foreground-strong">Privacy Policy</Link>
               {' | '}
-              <Link href="/terms-of-service" className="hover:text-foreground-strong">Terms of Service</Link>
+              <Link href="/tos" className="hover:text-foreground-strong">Terms of Service</Link>
             </p>
           </div>
         </div>

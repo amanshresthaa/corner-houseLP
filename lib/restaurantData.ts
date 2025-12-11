@@ -1,6 +1,7 @@
 import rawRestaurant from '../config/restaurant.json';
 import { RestaurantSchema, type Restaurant } from '@/src/lib/data/schemas';
 import { BRAND } from '@/src/lib/constants/brand';
+import { replaceBrandTokensInObject } from '@/src/lib/utils/brand';
 
 type DetailedHours = {
   kitchen: Record<string, string>;
@@ -259,7 +260,8 @@ const FALLBACK_META = {
 };
 
 const restaurantData: NormalizedRestaurant = (() => {
-  const parsed = RestaurantSchema.safeParse(rawRestaurant);
+  const hydrated = replaceBrandTokensInObject(rawRestaurant);
+  const parsed = RestaurantSchema.safeParse(hydrated);
   const base: Restaurant = parsed.success
     ? parsed.data
     : ({

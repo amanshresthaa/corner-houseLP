@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { getContentSmart } from '@/src/lib/data/server-loader';
 import contentConfig from '@/config/content.json';
 import ClientLayout from '@/components/LayoutClient';
@@ -18,6 +18,13 @@ const DEFAULT_THEME_COLOR = themeTokens.themes.light.colors.background;
 
 const LAYOUT_CONTACT = getContactInfo();
 
+// Viewport configuration (themeColor must be here in Next.js 14.2+)
+export const viewport: Viewport = {
+  themeColor: DEFAULT_THEME_COLOR,
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContentSmart();
   const site = content.global?.site || {} as any;
@@ -26,7 +33,6 @@ export async function generateMetadata(): Promise<Metadata> {
     title: site.title || BRAND.fullName,
     description: site.description || `Cambridge's art-deco sports pub for HD matchdays, heated cabins, and Nepalese curries. Book: ${LAYOUT_CONTACT.phone.display}`,
     manifest: '/manifest.webmanifest',
-    themeColor: DEFAULT_THEME_COLOR,
     icons: {
       icon: [
         { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
