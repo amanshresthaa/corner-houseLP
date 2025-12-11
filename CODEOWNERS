@@ -1,5 +1,0 @@
-# Image assets ownership
-/src/assets/images/ @design-lead @fe-architect
-/src/assets/images/shared/icons @design-systems
-/scripts/** @fe-architect
-
