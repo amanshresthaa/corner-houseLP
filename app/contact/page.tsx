@@ -150,96 +150,133 @@ export default async function ContactPage() {
         </section>
 
         <section className="bg-gradient-to-b from-white via-brand-50/50 to-white">
-          <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12 lg:px-8">
             <FadeIn className="space-y-8">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="text-xs uppercase tracking-[0.35em] text-brand-500">Always-on support</p>
                 <h2 id="contact-info-heading" className="mt-4 scroll-mt-24 font-display text-3xl font-bold text-brand-900 sm:text-4xl">Talk to the Corner House team</h2>
-                <p className="mt-3 text-lg text-brand-600">Choose the quickest route — everything lands with the same concierge desk.</p>
+                <p className="mt-2 text-lg text-brand-600">Choose the quickest route — everything lands with the same concierge desk.</p>
               </div>
 
-              <div className="grid gap-6 lg:grid-cols-2">
-                <article className="h-full rounded-[1.75rem] border border-brand-100 bg-white p-6 sm:p-8 shadow-2xl">
-                  <div className="space-y-5">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Contact</p>
-                      <h3 className="mt-2 font-display text-2xl text-brand-900">We reply fast</h3>
-                      <p className="mt-2 text-brand-700">Call for same-day answers or email for itineraries, menus, and access notes.</p>
+              <div className="grid gap-6 lg:grid-cols-2 items-start">
+                {/* Card 1: Contact Routes */}
+                <FadeIn className="h-full">
+                  <article className="card h-full rounded-2xl border border-brand-100 bg-white shadow-xl shadow-brand-900/10">
+                    <div className="card-body !p-6 sm:!p-8 space-y-5">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Contact</p>
+                        <h3 className="mt-2 font-display text-2xl text-brand-900">We reply fast</h3>
+                        <p className="mt-2 text-brand-700">Call for same-day answers or email for itineraries, menus, and access notes.</p>
+                      </div>
+                      <div className="space-y-3">
+                        <a
+                          href={phoneHref}
+                          className="btn w-full rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
+                          aria-label={`Call ${IDENTITY.displayName}`}
+                          style={{ touchAction: 'manipulation' }}
+                        >
+                          Call {phoneDisplay}
+                        </a>
+                        <a
+                          href={`mailto:${bookingsEmail || primaryEmail}`}
+                          className="btn w-full rounded-full border border-brand-200 text-brand-900 hover:bg-white"
+                          aria-label="Email the bookings team"
+                        >
+                          Email us
+                        </a>
+                      </div>
+                      <div className="mt-auto rounded-xl border border-brand-100 bg-brand-50/70 p-4 text-sm text-brand-800">
+                        <p className="font-semibold text-brand-900">Address</p>
+                        <p className="mt-1">{ADDRESS.street}, {ADDRESS.area}, {ADDRESS.city} {ADDRESS.postcode}</p>
+                        <p className="mt-2 text-xs text-brand-700">Opposite Cambridge Retail Park; step-free entry from Newmarket Road.</p>
+                      </div>
                     </div>
-                    <div className="space-y-3">
-                      <a
-                        href={phoneHref}
-                        className="btn w-full rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
-                        aria-label={`Call ${IDENTITY.displayName}`}
-                        style={{ touchAction: 'manipulation' }}
-                      >
-                        Call {phoneDisplay}
-                      </a>
-                      <a
-                        href={`mailto:${bookingsEmail || primaryEmail}`}
-                        className="btn w-full rounded-full border border-brand-200 text-brand-900 hover:bg-brand-50"
-                        aria-label="Email the bookings team"
-                      >
-                        Email us
-                      </a>
-                    </div>
-                    <div className="rounded-2xl border border-brand-100 bg-brand-50/70 p-4 text-sm text-brand-800">
-                      <p className="font-semibold text-brand-900">Address</p>
-                      <p className="mt-1">{ADDRESS.street}, {ADDRESS.area}, {ADDRESS.city} {ADDRESS.postcode}</p>
-                      <p className="mt-2 text-brand-700">Opposite Cambridge Retail Park; step-free entry from Newmarket Road.</p>
-                    </div>
-                    <div>
+                  </article>
+                </FadeIn>
+
+                {/* Card 2: Opening Hours */}
+                <FadeIn className="h-full">
+                  <article className="card h-full rounded-2xl border border-brand-100 bg-white shadow-xl shadow-brand-900/10">
+                    <div className="card-body !p-6 sm:!p-8 space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-xl font-display text-brand-900">Opening hours</h3>
+                        <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-800">
+                          <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden />
+                          Live
+                        </span>
+                      </div>
                       <RestaurantHoursCard
                         variant="light"
                         className="!bg-transparent !border-none !shadow-none p-0"
                       />
-                      <p className="mt-2 text-sm text-brand-700">Walk-ins welcome daily; call for live wait times.</p>
+                      <p className="mt-auto text-sm text-brand-700">Walk-ins welcome daily; call for live wait times.</p>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </FadeIn>
 
-                <article className="h-full rounded-[1.75rem] border border-brand-100 bg-white p-6 sm:p-8 shadow-2xl">
-                  <div className="space-y-5">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Find us</p>
-                        <h3 className="font-display text-2xl text-brand-900">Directions & access</h3>
+                {/* Card 3: Find Us (Full Width) */}
+                <FadeIn className="lg:col-span-2">
+                  <article className="card rounded-2xl border border-brand-100 bg-white shadow-xl shadow-brand-900/10">
+                    <div className="card-body !p-6 sm:!p-8 space-y-5">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div className="space-y-1">
+                          <p className="text-xs uppercase tracking-[0.3em] text-brand-500">Find us</p>
+                          <h3 className="font-display text-2xl text-brand-900">Directions & access</h3>
+                        </div>
+                        <span className="self-start sm:self-center badge badge-outline border-brand-200 text-brand-700">{ADDRESS.postcode}</span>
                       </div>
-                      <span className="badge badge-outline border-brand-200 text-brand-700">CB5 8JE</span>
+
+                      <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+                        <div className="space-y-4">
+                          <InteractiveMap
+                            className="h-64 sm:h-72 rounded-2xl border border-brand-100 overflow-hidden"
+                            height="100%"
+                            directionLabel="Get directions"
+                            hintLabel="Tap for directions"
+                          />
+                          <div className="flex flex-wrap gap-3">
+                            <a
+                              href={mapGoogle}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
+                              aria-label="Open Google Maps directions (opens in new tab)"
+                            >
+                              Google Maps ↗
+                            </a>
+                            <a
+                              href={mapApple}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
+                              aria-label="Open Apple Maps directions (opens in new tab)"
+                            >
+                              Apple Maps
+                            </a>
+                          </div>
+                        </div>
+
+                        <div className="space-y-4">
+                          <h4 className="font-semibold text-brand-900">Access Guide</h4>
+                          <ul className="space-y-3 text-sm text-brand-700">
+                            <li className="flex items-start gap-3">
+                              <span className="text-brand-500">🚗</span>
+                              <span>Free short-stay parking available opposite the garden entrance for 2–4 hours (subject to retail park terms).</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-brand-500">🚶</span>
+                              <span>10-minute walk from Abbey Stadium and local river paths. We&apos;re 2 minutes from the local Premier Inn.</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                              <span className="text-brand-500">♿</span>
+                              <span>Step-free entrance and buggy space available; call ahead to reserve quiet seating or if you require specific table access.</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    <InteractiveMap
-                      className="h-64 rounded-2xl border border-brand-100 overflow-hidden"
-                      height="100%"
-                      directionLabel="Get directions"
-                      hintLabel="Tap for directions"
-                    />
-                    <div className="flex flex-wrap gap-3">
-                      <a
-                        href={mapGoogle}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
-                        aria-label="Open Google Maps directions (opens in new tab)"
-                      >
-                        Google Maps ↗
-                      </a>
-                      <a
-                        href={mapApple}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
-                        aria-label="Open Apple Maps directions (opens in new tab)"
-                      >
-                        Apple Maps
-                      </a>
-                    </div>
-                    <ul className="space-y-2 text-sm text-brand-700">
-                      <li>• Free short-stay parking opposite the garden entrance.</li>
-                      <li>• 10-minute walk from Abbey Stadium and river paths.</li>
-                      <li>• Step-free entrance and buggy space available; call ahead to reserve quiet seating.</li>
-                    </ul>
-                  </div>
-                </article>
+                  </article>
+                </FadeIn>
               </div>
             </FadeIn>
           </div>

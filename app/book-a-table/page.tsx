@@ -121,24 +121,24 @@ export default async function BookATablePage() {
               <div className="absolute -left-10 top-6 h-40 w-40 rounded-full bg-white/5 blur-3xl" aria-hidden />
               <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-brand-800/50 blur-3xl" aria-hidden />
             </div>
-            <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-              <FadeIn className="space-y-8">
-                <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
-                  <div className="space-y-5">
+            <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+              <FadeIn className="space-y-6">
+                <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+                  <div className="space-y-4">
                     <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
                       Bookings desk
                     </span>
-                    <div className="space-y-4">
-                      <h1 id="booking-page-hero" className="text-4xl font-display font-bold sm:text-5xl">
+                    <div className="space-y-3">
+                      <h1 id="booking-page-hero" className="text-3xl font-display font-bold sm:text-4xl lg:text-5xl">
                         Book your table at {BRAND.fullName}
                       </h1>
                       <p className="max-w-2xl text-base text-white/80 sm:text-lg">
                         Reserve online in seconds or call the duty manager. We hold walk-in space daily and confirm requests quickly.
                       </p>
                     </div>
-                    <div className="flex flex-wrap gap-3" aria-label="Booking highlights">
+                    <div className="flex flex-wrap gap-2" aria-label="Booking highlights">
                       {heroBadges.map((badge) => (
-                        <span key={badge} className="badge badge-outline border-white/40 text-white/80">
+                        <span key={badge} className="badge badge-sm badge-outline border-white/40 text-white/80">
                           {badge}
                         </span>
                       ))}
@@ -146,12 +146,12 @@ export default async function BookATablePage() {
                     <div className="flex flex-wrap gap-3 pt-1 sm:flex-row sm:items-center">
                       {renderBookingButton(
                         'Book online',
-                        'btn rounded-full border-none bg-white text-brand-900 hover:bg-white/90',
+                        'btn btn-sm sm:btn-md rounded-full border-none bg-white text-brand-900 hover:bg-white/90',
                         'Book a table online'
                       )}
                       <a
                         href={contact.phone.tel}
-                        className="btn btn-outline rounded-full border-white/40 text-white hover:bg-white/10"
+                        className="btn btn-sm sm:btn-md btn-outline rounded-full border-white/40 text-white hover:bg-white/10"
                         aria-label={`Call ${contact.phone.display} to book a table`}
                         style={{ touchAction: 'manipulation' }}
                       >
@@ -163,17 +163,17 @@ export default async function BookATablePage() {
                     {reassuranceCards.map((card) => (
                       <article
                         key={card.title}
-                        className="rounded-3xl border border-white/15 bg-white/5 p-6 text-white shadow-2xl backdrop-blur"
+                        className="rounded-2xl border border-white/15 bg-white/5 p-4 text-white shadow-xl backdrop-blur sm:p-5"
                       >
                         <div className="flex items-start gap-3">
-                          <span className="text-2xl" aria-hidden>
+                          <span className="text-xl" aria-hidden>
                             {card.icon}
                           </span>
                           <div>
-                            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
+                            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
                               {card.title}
                             </p>
-                            <p className="mt-2 text-sm text-white/85">{card.body}</p>
+                            <p className="mt-1 text-sm text-white/85">{card.body}</p>
                           </div>
                         </div>
                       </article>
@@ -185,11 +185,11 @@ export default async function BookATablePage() {
           </section>
 
           <section className="bg-white" aria-labelledby="booking-options-heading">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-              <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
-                <FadeIn>
-                  <article className="card h-full rounded-3xl border border-brand-100 bg-white shadow-xl shadow-brand-900/10">
-                    <div className="card-body space-y-4 sm:space-y-5">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+              <div className="grid gap-6 lg:grid-cols-2 items-start">
+                <FadeIn className="h-full">
+                  <article className="card h-full rounded-2xl border border-brand-100 bg-white shadow-xl shadow-brand-900/10">
+                    <div className="card-body !p-6 sm:!p-8 space-y-4">
                       <div className="space-y-2">
                         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-600">
                           Booking routes
@@ -223,7 +223,7 @@ export default async function BookATablePage() {
                           Email us
                         </a>
                       </div>
-                      <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-700">
+                      <div className="mt-auto rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-700">
                         <p className="font-semibold text-brand-800">Need help planning?</p>
                         <p className="mt-1">Share headcount, dietary notes, or access needs and we&apos;ll confirm the best space.</p>
                         <p className="mt-2 text-xs text-neutral-500">Same-day? Call for fastest response. We keep walk-in space daily.</p>
@@ -232,102 +232,75 @@ export default async function BookATablePage() {
                   </article>
                 </FadeIn>
 
-                <FadeIn>
-                  <div className="space-y-4">
-                    <article className="card rounded-3xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
-                      <div className="card-body space-y-3">
-                        <div className="flex items-center justify-between">
-                          <h3 className="text-xl font-display text-brand-900">Opening hours</h3>
-                          <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-800">
-                            <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden />
-                            Live
-                          </span>
-                        </div>
-                        <RestaurantHoursCard
-                          variant="light"
-                          className="!bg-transparent !border-none !shadow-none p-0"
-                        />
-                        <p className="text-sm text-brand-700">
-                          Walk-ins held daily; call for live wait times or to flag accessibility needs.
-                        </p>
+                <FadeIn className="h-full">
+                  <article className="card h-full rounded-2xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
+                    <div className="card-body !p-6 sm:!p-8 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-xl font-display text-brand-900">Opening hours</h3>
+                        <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-800">
+                          <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden />
+                          Live
+                        </span>
                       </div>
-                    </article>
+                      <RestaurantHoursCard
+                        variant="light"
+                        className="!bg-transparent !border-none !shadow-none p-0"
+                      />
+                      <p className="text-sm text-brand-700 mt-auto">
+                        Walk-ins held daily; call for live wait times or to flag accessibility needs.
+                      </p>
+                    </div>
+                  </article>
+                </FadeIn>
 
-                    <article className="card rounded-3xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
-                      <div className="card-body space-y-4">
-                        <div className="flex items-center justify-between">
+                <FadeIn className="lg:col-span-2">
+                  <article className="card rounded-2xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
+                    <div className="card-body !p-6 sm:!p-8 space-y-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
                           <h3 className="text-xl font-display text-brand-900">Find us</h3>
-                          <span className="badge badge-outline border-brand-200 text-brand-700">CB5 8JE</span>
+                          <p className="text-sm text-brand-700 mt-1">
+                            {contact.address.street}, {contact.address.area}, {contact.address.city} {contact.address.postcode}
+                          </p>
                         </div>
-                        <p className="text-sm text-brand-700">
-                          {contact.address.street}, {contact.address.area}, {contact.address.city} {contact.address.postcode}
-                        </p>
-                        <InteractiveMap
-                          className="h-60 sm:h-64 rounded-2xl border border-brand-100 overflow-hidden"
-                          height="100%"
-                          directionLabel="Get directions"
-                          hintLabel="Tap for directions"
-                        />
-                        <div className="flex flex-wrap gap-3">
-                          <a
-                            href={googleMapLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
-                            aria-label="Open Google Maps directions (opens in new tab)"
-                          >
-                            Google Maps ↗
-                          </a>
-                          <a
-                            href={contact.address.map.apple ?? googleMapLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
-                            aria-label="Open Apple Maps directions (opens in new tab)"
-                          >
-                            Apple Maps
-                          </a>
-                        </div>
+                        <span className="self-start sm:self-center badge badge-outline border-brand-200 text-brand-700">CB5 8JE</span>
                       </div>
-                    </article>
 
-                    <article className="card rounded-3xl border border-brand-100 bg-white shadow-lg shadow-brand-900/10">
-                      <div className="card-body space-y-3">
-                        <h3 className="text-xl font-display text-brand-900">Quick contact</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {renderBookingButton(
-                            'Book online',
-                            'btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800',
-                            'Book online now'
-                          )}
-                          <a
-                            href={contact.phone.tel}
-                            className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
-                            aria-label={`Call ${contact.phone.display}`}
-                            style={{ touchAction: 'manipulation' }}
-                          >
-                            Call {contact.phone.display}
-                          </a>
-                          <a
-                            href={`mailto:${bookingEmail || primaryEmail}`}
-                            className="btn btn-sm btn-ghost rounded-full border border-brand-100 text-brand-900 hover:bg-brand-50"
-                            aria-label="Email the bookings team"
-                          >
-                            Email
-                          </a>
-                        </div>
-                        <p className="text-sm text-brand-700">
-                          Need same-day? Call for the fastest reply; we keep space across the bar, snugs, and covered garden tables.
-                        </p>
+                      <InteractiveMap
+                        className="h-64 sm:h-72 rounded-xl border border-brand-100 overflow-hidden"
+                        height="100%"
+                        directionLabel="Get directions"
+                        hintLabel="Tap for directions"
+                      />
+
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href={googleMapLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
+                          aria-label="Open Google Maps directions (opens in new tab)"
+                        >
+                          Google Maps ↗
+                        </a>
+                        <a
+                          href={contact.address.map.apple ?? googleMapLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
+                          aria-label="Open Apple Maps directions (opens in new tab)"
+                        >
+                          Apple Maps
+                        </a>
                       </div>
-                    </article>
-                  </div>
+                    </div>
+                  </article>
                 </FadeIn>
               </div>
             </div>
           </section>
         </main>
-      </RestaurantLayout>
+      </RestaurantLayout >
     </>
   );
 }
