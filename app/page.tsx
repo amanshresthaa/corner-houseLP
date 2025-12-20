@@ -1,7 +1,7 @@
 export const revalidate = 300;
 
 import { renderSchemaTags } from '@/libs/seo';
-import { getContentSmart } from '@/src/lib/data/server-loader';
+import { getContentSmart, getRestaurantSmart } from '@/src/lib/data/server-loader';
 import dynamic from 'next/dynamic';
 import type { Slide } from '@/components/slideshow/types';
 import { buildHomeSections } from '@/src/lib/homepage/sections';
@@ -34,7 +34,10 @@ const ClientHomeContent = dynamic(() => import('@/components/ClientHomeContent')
 });
 
 export default async function Page() {
-  const content = await getContentSmart();
+  const [content, restaurant] = await Promise.all([
+    getContentSmart(),
+    getRestaurantSmart(),
+  ]);
 
   const homeContent = content.pages.home;
   const { sections, order: sectionOrder } = buildHomeSections(homeContent.sections);
@@ -65,6 +68,8 @@ export default async function Page() {
         slideshow={slideshowContent}
         ariaLabels={ariaLabels}
         links={links}
+        initialContent={content}
+        initialRestaurant={restaurant}
       />
     </>
   );

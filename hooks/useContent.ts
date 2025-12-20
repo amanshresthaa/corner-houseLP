@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
+import useSWR, { useSWRConfig } from 'swr';
 import { ContentSchema, type Content } from '@/src/lib/data/schemas';
 import { fetchWithResilience } from '@/src/lib/data/fetchWithResilience';
 
@@ -27,33 +27,34 @@ async function fetchContent(): Promise<Content> {
 
 // Hook for loading complete content data (unwraps standardized API shape)
 export function useContent(): UseContentResult {
-  const [data, setData] = useState<Content | null>(null);
-  const [error, setError] = useState<Error | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    let alive = true;
-    setLoading(true);
-    fetchContent()
-      .then((c) => { if (alive) setData(c); })
-      .catch((e) => { if (alive) setError(e as Error); })
-      .finally(() => { if (alive) setLoading(false); });
-    return () => { alive = false; };
-  }, []);
+  const { fallback } = useSWRConfig();
+  const hasFallback = typeof fallback === 'object' &&
+    fallback !== null &&
+    Object.prototype.hasOwnProperty.call(fallback as Record<string, unknown>, '/api/content');
+  const {
+    data,
+    error,
+    isLoading,
+    mutate,
+  } = useSWR<Content, Error>(
+    '/api/content',
+    fetchContent,
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateOnMount: !hasFallback,
+      revalidateIfStale: !hasFallback,
+      refreshInterval: 0,
+      dedupingInterval: 5 * 60 * 1000,
+      keepPreviousData: true,
+    }
+  );
 
   const refetch = async () => {
-    setLoading(true);
-    try {
-      const c = await fetchContent();
-      setData(c);
-    } catch (e: any) {
-      setError(e);
-    } finally {
-      setLoading(false);
-    }
+    await mutate();
   };
 
-  return { data, error, loading, refetch };
+  return { data: data ?? null, error: error ?? null, loading: isLoading, refetch };
 }
 
 // Hook for loading specific page content

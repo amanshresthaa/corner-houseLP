@@ -1,6 +1,6 @@
 "use client";
 
-import useSWR, { type SWRConfiguration } from 'swr';
+import useSWR, { type SWRConfiguration, useSWRConfig } from 'swr';
 import { RestaurantSchema, type Restaurant } from '@/src/lib/data/schemas';
 import { fetchWithResilience } from '@/src/lib/data/fetchWithResilience';
 
@@ -263,6 +263,10 @@ const formatTime = (hours: number, minutes: number): string => {
  * ```
  */
 export function useRestaurant(options: UseRestaurantOptions = {}): UseRestaurantResult {
+  const { fallback } = useSWRConfig();
+  const hasFallback = typeof fallback === 'object' &&
+    fallback !== null &&
+    Object.prototype.hasOwnProperty.call(fallback as Record<string, unknown>, '/api/restaurant');
   const {
     enabled = true,
     refreshInterval = 1800000, // 30 minutes default (restaurant info changes rarely)
@@ -274,10 +278,12 @@ export function useRestaurant(options: UseRestaurantOptions = {}): UseRestaurant
     enabled ? '/api/restaurant' : null,
     restaurantFetcher,
     {
-      revalidateOnFocus: true,
-      revalidateOnReconnect: true,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateOnMount: !hasFallback,
+      revalidateIfStale: !hasFallback,
       refreshInterval,
-      dedupingInterval: cacheTimeout / 2,
+      dedupingInterval: cacheTimeout,
       shouldRetryOnError: (error) => {
         // Don't retry on 4xx errors (client errors)
         if (error.message.includes('4')) {
