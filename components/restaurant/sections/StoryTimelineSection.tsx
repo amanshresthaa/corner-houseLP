@@ -38,10 +38,11 @@ export default function StoryTimelineSection({
   timeline, 
   className = '' 
 }: StoryTimelineSectionProps) {
+  const prefersReduced = useReducedMotion();
+
   if (!timeline || timeline.length === 0) {
     return null;
   }
-  const prefersReduced = useReducedMotion();
   const itemVariant = prefersReduced ? mv.fadeIn : mv.fadeUp;
 
   return (

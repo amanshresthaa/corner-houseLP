@@ -4,6 +4,7 @@
  * Core color palette - Design-first system with WCAG-focused, perceptually uniform scales
  * Forest (brand), Sand (accent/CTA), Ocean (info), Mint (success), Clay (error), Warm Neutral
  */
+/* eslint-disable no-restricted-syntax */
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // COLOR SCALES

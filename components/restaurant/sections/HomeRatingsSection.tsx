@@ -25,11 +25,11 @@ export default function HomeRatingsSection({
   ratings,
   className = ''
 }: HomeRatingsSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   if (!ratings || ratings.length === 0) {
     return null;
   }
-
-  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className={`bg-brand-50 py-16 ${className}`} aria-labelledby="home-ratings-heading">

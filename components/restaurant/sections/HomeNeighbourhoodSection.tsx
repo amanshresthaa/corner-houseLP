@@ -23,11 +23,11 @@ export default function HomeNeighbourhoodSection({
   spots,
   className = ''
 }: HomeNeighbourhoodSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   if (!spots || spots.length === 0) {
     return null;
   }
-
-  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className={`bg-white py-16 ${className}`} aria-labelledby="home-neighbourhood-heading">

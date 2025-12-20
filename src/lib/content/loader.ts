@@ -320,9 +320,9 @@ export class ContentLoader {
     this.loadingPromises.set(moduleId, loadPromise);
 
     try {
-      const module = await loadPromise;
-      this.moduleCache.set(moduleId, module);
-      return module;
+      const loadedModule = await loadPromise;
+      this.moduleCache.set(moduleId, loadedModule);
+      return loadedModule;
     } finally {
       this.loadingPromises.delete(moduleId);
     }

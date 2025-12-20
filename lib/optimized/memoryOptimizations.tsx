@@ -186,8 +186,8 @@ class MemoryManager {
     }
 
     try {
-      const module = await importFn();
-      const component = module.default;
+      const loadedModule = await importFn();
+      const component = loadedModule.default;
       
       // Cache with size limit
       if (this.componentCache.size >= this.maxComponentCacheSize) {

@@ -102,14 +102,14 @@ export function composeContent<T = any>(
   
   // Merge remaining modules
   for (let i = 1; i < sortedModules.length; i++) {
-    const module = sortedModules[i];
-    sources.push(module.context.moduleId);
+    const moduleEntry = sortedModules[i];
+    sources.push(moduleEntry.context.moduleId);
     
     const mergeResult = mergeObjects(
       result,
-      module.data,
+      moduleEntry.data,
       fullConfig,
-      module.context,
+      moduleEntry.context,
       ''
     );
     

@@ -33,11 +33,11 @@ export default function HomeRecognitionSection({
   press,
   className = ''
 }: HomeRecognitionSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   if ((!awards || awards.length === 0) && (!press || press.length === 0)) {
     return null;
   }
-
-  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className={`bg-white py-16 ${className}`} aria-labelledby="home-recognition-heading">

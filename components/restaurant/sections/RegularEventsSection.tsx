@@ -38,10 +38,11 @@ export default function RegularEventsSection({
   events, 
   className = '' 
 }: RegularEventsSectionProps) {
+  const prefersReduced = useReducedMotion();
+
   if (!events || events.length === 0) {
     return null;
   }
-  const prefersReduced = useReducedMotion();
   const itemVariant = prefersReduced ? mv.fadeIn : mv.fadeUp;
 
   return (

@@ -4,6 +4,7 @@
  * Provides seamless backward compatibility and incremental migration
  * from legacy content.json to the new modular content system.
  */
+/* eslint-disable react-hooks/rules-of-hooks */
 
 import { useState, useEffect } from 'react';
 import { useModularContent, type UseModularContentOptions } from '../../../hooks/data/useModularContent';

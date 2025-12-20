@@ -54,6 +54,8 @@ const accentBorder: Record<string, string> = {
 const getIconSymbol = (icon?: string) => iconMap[icon ?? ''] || iconMap.default;
 
 export default function QuickLinksSection({ links, eyebrow, title, description, className = '' }: QuickLinksSectionProps) {
+  const prefersReduced = useReducedMotion();
+
   if (!links || links.length === 0) {
     return null;
   }
@@ -61,7 +63,6 @@ export default function QuickLinksSection({ links, eyebrow, title, description, 
   const heading = title || 'Plan your visit';
   const eyebrowLabel = eyebrow || 'Quick links';
   const summary = description || 'Book cabins, browse menus, or plan a quiz night straight from these shortcuts';
-  const prefersReduced = useReducedMotion();
 
   const card = (link: QuickLinkItem, index: number) => {
     if (!link.title || !link.description || !link.link || !link.linkText) {
