@@ -51,16 +51,26 @@ export default function MenuSections({
     }).format(item.price.amount);
   }, []);
 
-  // Filter sections based on selectedId
-  const displaySections = selectedId 
-    ? sections.filter(section => {
+  // Filter sections based on selectedId (from URL hash / nav selection).
+  // Normalize first so hashes like '#Mixed_Grills' still match.
+  const normalizedSelectedId = selectedId
+    ? String(selectedId).toLowerCase().replace(/[^a-z0-9]+/g, '-')
+    : null;
+
+  const matchingSections = normalizedSelectedId
+    ? sections.filter((section) => {
         const sectionId = ((section.id || section.name || '') as string)
           .toString()
           .toLowerCase()
           .replace(/[^a-z0-9]+/g, '-');
-        return sectionId === selectedId;
+        return sectionId === normalizedSelectedId;
       })
     : sections; // Show all sections when selectedId is null/undefined
+
+  // If the selectedId doesn't correspond to any real menu section (e.g. legacy '#drinks'),
+  // fall back to rendering the full menu instead of an empty state.
+  const displaySections =
+    normalizedSelectedId && matchingSections.length === 0 ? sections : matchingSections;
 
   // Early return if no sections to display
   if (!displaySections || displaySections.length === 0) {

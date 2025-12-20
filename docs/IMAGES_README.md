@@ -7,7 +7,7 @@ Overview
 
 Structure (physical folders)
 - Public brand assets
-  - `public/images/brand/whitehorse-logo.png` (primary)
+  - `public/images/brand/corner-house-logo.png` (primary)
   - `public/images/slideshow/whitehorsebuilding.png`
 - Venue photos (slideshow set)
   - `public/images/slideshow/*.png` (seven curated hero assets sourced from `Everythingyouneed/Slideshowimage/`)

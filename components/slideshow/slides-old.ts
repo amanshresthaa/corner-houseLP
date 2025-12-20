@@ -12,7 +12,7 @@ export const slides = [
     alt: `Nepalese-inspired dining area with Buddha artwork at ${BRAND.fullName}`,
     eyebrow: 'Art-Deco Dining Wing',
     headline: 'Nepalese Plates in a 1930s Cambridge Landmark',
-    copy: `Settle into the ${BRAND.nickname} dining wing — a 1930s art-deco space where Nepali chefs serve momos, Himali lamb, and Sunday roasts side by side.`,
+    copy: `Settle into the ${BRAND.nickname} dining wing — a 1930s art-deco space where Nepali chefs serve momo, Himali lamb, and Sunday roasts side by side.`,
     badges: ['Nepalese Chefs', 'Art-Deco Interior', 'Family Dining'],
     ctas: { bookUrl: '/book-a-table', callTel: CALL_TEL }
   },

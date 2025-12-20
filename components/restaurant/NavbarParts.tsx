@@ -94,7 +94,7 @@ export function NavbarLogo({ altText }: { altText: string }) {
       className="flex items-center gap-2 px-2 py-1 text-brand-700"
     >
       <Image
-        src="/images/logo.png"
+        src="/images/brand/corner-house-logo.png"
         alt={altText}
         width={60}
         height={45}

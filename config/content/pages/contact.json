@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Contact {{brand.fullName}} | Bookings, Directions & Opening Hours",
-    "description": "Call +44 1223 921122 or email {{brand.supportEmail}} for bookings, cabins, and takeaway. Find us at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
+    "description": "Call +44 1223 921122 or email {{brand.supportEmail}} for bookings, groups, and takeaway. Find us 2 minutes from Premier Inn & Travelodge at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
     "keywords": [
       "{{brand.fullNameNoArticle}} contact",
       "Newmarket Road pub phone",
@@ -14,14 +14,14 @@
   },
   "hero": {
     "title": "Contact Us",
-    "subtitle": "Book a table or cabin, plan matchday, or order takeaway & delivery"
+    "subtitle": "Book a table, plan matchday, or order takeaway & delivery 2 minutes from your hotel"
   },
   "contactInfo": {
     "title": "Get in Touch",
     "phone": {
       "title": "Phone / WhatsApp",
       "number": "+44 1223 921122",
-      "description": "Call for table bookings, cabins, takeaway, or quick matchday questions"
+      "description": "Call for table bookings, groups, takeaway, or quick matchday questions"
     },
     "email": {
       "title": "Email",
@@ -42,7 +42,7 @@
     "title": "What We Offer",
     "items": [
       { "icon": "📺", "text": "HD sports screens + outdoor projector" },
-      { "icon": "🔥", "text": "Heated garden cabins & covered beer garden" },
+      { "icon": "🌿", "text": "Covered garden seating by the projector" },
       { "icon": "🥡", "text": "Takeaway & delivery via Uber Eats, Deliveroo, Just Eat" },
       { "icon": "🅿️", "text": "Limited on-site parking; retail park parking opposite" },
       { "icon": "♿", "text": "Wheelchair ramp access & accessible WC" },

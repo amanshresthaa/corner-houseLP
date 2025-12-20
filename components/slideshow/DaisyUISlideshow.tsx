@@ -178,6 +178,14 @@ const DEFAULT_SESSION_SIZE = 5;
 
 const DEFAULT_REGION_LABEL = 'Featured experiences slideshow';
 
+const isNearActiveSlide = (index: number, activeIndex: number, total: number) => {
+  if (total <= 1) return true;
+  const diff = Math.abs(index - activeIndex);
+  if (diff <= 1) return true;
+  return (activeIndex === 0 && index === total - 1) ||
+    (activeIndex === total - 1 && index === 0);
+};
+
 const DaisyUISlideshow = ({
   slides,
   autoplay = true,
@@ -454,6 +462,8 @@ const DaisyUISlideshow = ({
           const imageSrc = resolveImageSrc(slide.image);
           const { primaryButton, secondaryButton } = getCTAConfig(slide, bookOnlineUrl);
           const shouldRenderCTAs = Boolean(primaryButton.href || secondaryButton.href);
+          const shouldRenderImage = Boolean(imageSrc) &&
+            isNearActiveSlide(index, currentIndex, totalSlides);
           return (
             <div
               key={slide.id ?? index}
@@ -461,15 +471,19 @@ const DaisyUISlideshow = ({
             >
               {imageSrc && (
                 <div className="absolute inset-0 h-full w-full">
-                  <Image
-                    src={imageSrc}
-                    alt={slide.alt || `Slide ${index + 1}`}
-                    fill
-                    priority={index === 0}
-                    sizes="100vw"
-                    className="object-cover"
-                    quality={90}
-                  />
+                  {shouldRenderImage ? (
+                    <Image
+                      src={imageSrc}
+                      alt={slide.alt || `Slide ${index + 1}`}
+                      fill
+                      priority={index === 0}
+                      sizes="100vw"
+                      className="object-cover"
+                      quality={90}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-neutral-900" />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/40 backdrop-blur-[2px]" aria-hidden="true" />
                 </div>
               )}

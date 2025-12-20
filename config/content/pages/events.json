@@ -1,20 +1,20 @@
 {
   "seo": {
     "title": "Events & What's On | {{brand.fullName}} - Live Sports, Quiz Night, Cabins",
-    "description": "HD sports on wall-to-wall screens and an outdoor projector, weekly quiz nights, cosy heated cabins, and flexible spaces for groups on Newmarket Road.",
+    "description": "HD sports on wall-to-wall screens and an outdoor projector, weekly quiz nights, and flexible spaces for groups 2 minutes from Premier Inn & Travelodge on Newmarket Road.",
     "canonicalUrlRelative": "/events"
   },
   "hero": {
     "badgeLabel": "What’s On",
     "title": "Events & What's On",
-    "subtitle": "Matchdays, quiz nights, live music pop-ups, and private heated cabins for your crew",
+    "subtitle": "Matchdays, quiz nights, live music pop-ups, and covered garden seating 2 minutes from your hotel",
     "buttons": {
       "book": "Book for Big Games",
       "viewMenu": "View Menu"
     },
     "badges": [
       "HD Screens",
-      "Heated Cabins",
+      "Garden Projector",
       "Quiz Night"
     ]
   },
@@ -38,15 +38,15 @@
       "icon": "🎸"
     },
     {
-      "title": "Heated Cabin Bookings",
-      "description": "Reserve a private, heated garden cabin for small groups — perfect for celebrations or matchday bases.",
+      "title": "Garden & snug reservations",
+      "description": "Reserve covered garden tables or indoor snugs for groups — ideal for celebrations or matchday bases.",
       "frequency": "Available year-round",
-      "icon": "🔥"
+      "icon": "🌿"
     }
   ],
   "contact": {
     "title": "Plan your visit",
-    "description": "Book a table or heated cabin for matchdays, quizzes, and group celebrations.",
+    "description": "Book tables for matchdays, quizzes, and group celebrations — 2 minutes from Premier Inn & Travelodge, 10 minutes to Abbey Stadium.",
     "phone": "+44 1223 921122",
     "email": "{{brand.supportEmail}}"
   }

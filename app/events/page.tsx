@@ -22,9 +22,9 @@ export default function EventsPage() {
       title: "HD screens everywhere",
       body: "Bar, snug, and garden projector views for every seat.",
     },
-    { icon: "🔊", title: "Commentary zones", body: "Sky & TNT audio stays on for headline fixtures." },
-    { icon: "🍔", title: "Match fuel", body: "Nepalese grills, wings, and veggie plates till late." },
-    { icon: "🔥", title: "Heated cabins", body: "Private pods with speakers and table service." },
+    { icon: "🔊", title: "Commentary zones", body: "Sky, TNT & Prime audio stays on for headline fixtures." },
+    { icon: "🍔", title: "Match fuel", body: "Nepalese grills, wings, veggie plates, and pub classics till late." },
+    { icon: "🌿", title: "Covered garden", body: "Projector-ready covered seating plus cosy indoor snugs for away fans and locals." },
   ];
 
   const sportsBadges = [
@@ -38,8 +38,8 @@ export default function EventsPage() {
   const heroContent = {
     eyebrow: "What's on",
     title: `Matchdays & Events at ${BRAND.shortName}`,
-    subtitle: 'HD sport on every screen, heated cabins for crews, private hire options, and free Sunday pool.',
-    badges: ['Sky & TNT', 'Heated cabins', 'Free Sunday pool'],
+    subtitle: 'HD sport on every screen, covered garden projector, private hire options, and free Sunday pool.',
+    badges: ['Sky, TNT & Prime', 'Garden projector', 'Free Sunday pool'],
   };
 
   const experienceCards = [
@@ -53,8 +53,8 @@ export default function EventsPage() {
       },
     },
     {
-      title: 'Private hire & cabins',
-      description: 'Reserve dining rooms, the snug, or heated pods with tailored menus and AV support.',
+      title: 'Private hire & garden tables',
+      description: 'Reserve dining rooms, snugs, or covered garden tables with tailored menus and AV support.',
       cta: {
         label: 'Plan private hire',
         href: '/contact#contact-info-heading',
@@ -152,9 +152,9 @@ export default function EventsPage() {
                   <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1">
                     Live sport hub
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1">
-                    Heated cabins
-                  </span>
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1">
+                  Garden projector
+                </span>
                 </div>
                 <h2 id="live-sport-heading" className="mt-6 text-3xl font-display font-bold text-white">
                   Matchday essentials at {BRAND.shortName}
@@ -233,15 +233,15 @@ export default function EventsPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 lg:grid-cols-2">
               <article className="rounded-[2.25rem] border border-brand-100 bg-white/95 p-8 shadow-2xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-600">Heated cabins</p>
-                <h2 className="mt-3 text-3xl font-display text-brand-900">Private match pods for 6–10</h2>
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-600">Garden & snugs</p>
+                <h2 className="mt-3 text-3xl font-display text-brand-900">Book covered garden tables or cosy snugs</h2>
                 <p className="mt-3 text-brand-700">
-                  Close the door, plug into Bluetooth speakers, and enjoy table service while the match plays on the garden screens.
+                  Reserve covered garden seating by the projector or indoor snugs near the main screens — ideal for away fans, hotel guests, and local crews.
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-brand-700">
-                  <li>• Pre-order momo + sharing feasts</li>
-                  <li>• Heaters, blankets, and personal sound</li>
-                  <li>• Perfect for watch parties or mini celebrations</li>
+                  <li>• Pre-order momo, sharing grills, or pub classics</li>
+                  <li>• Commentary-on zones; fast service for kick-off</li>
+                  <li>• 2-minute walk from Premier Inn & Travelodge</li>
                 </ul>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
@@ -250,7 +250,7 @@ export default function EventsPage() {
                     aria-label={bookingAria}
                     {...(bookingExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
-                    Reserve a cabin {bookingExternal && <span aria-hidden className="text-xs">↗</span>}
+                    Reserve a table {bookingExternal && <span aria-hidden className="text-xs">↗</span>}
                   </a>
                   <a href={contact.phone.tel} className="btn btn-ghost rounded-full border border-brand-100 text-brand-900 hover:bg-brand-50">
                     Call {contact.phone.display}
@@ -272,8 +272,8 @@ export default function EventsPage() {
                   <a href="/contact#contact-info-heading" className="btn btn-outline rounded-full border-brand-200 text-brand-900">
                     Plan a takeover
                   </a>
-                  <a href={`mailto:${contact.email?.events ?? contact.email?.primary}`} className="btn btn-ghost rounded-full border border-brand-100 text-brand-900 hover:bg-brand-50">
-                    Email the team
+                  <a href={contact.phone.tel} className="btn btn-ghost rounded-full border border-brand-100 text-brand-900 hover:bg-brand-50">
+                    Call {contact.phone.display}
                   </a>
                 </div>
               </article>

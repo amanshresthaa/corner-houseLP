@@ -4,7 +4,8 @@
 import { BRAND } from '@/src/lib/constants/brand';
 
 const brandImages = {
-  logo: '/images/logo.png',
+  // Primary brand mark used across nav, schema, and placeholders
+  logo: '/images/brand/corner-house-logo.png',
   building: '/images/slideshow/whitehorsebuilding.png',
 } as const;
 

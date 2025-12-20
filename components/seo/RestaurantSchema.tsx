@@ -302,7 +302,7 @@ export const useRestaurantSchema = () => {
         absoluteUrl(typeof imgGardenEvenings === 'string' ? imgGardenEvenings : (imgGardenEvenings as any)),
         absoluteUrl(typeof imgSignatureDish === 'string' ? imgSignatureDish : (imgSignatureDish as any)),
       ],
-      logo: absoluteUrl('/images/brand/whitehorse-logo.png'),
+      logo: absoluteUrl('/images/brand/corner-house-logo.png'),
       sameAs: [
         data.reviewLinks.facebook,
         data.reviewLinks.tripadvisor,

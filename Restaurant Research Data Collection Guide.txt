@@ -44,12 +44,40 @@ Parking Dynamics:
 3.1 Contact Directory
 The Corner House maintains a professional communication infrastructure, utilizing both local and group-level channels.
 
-ChannelDetailUsage ContextSourcePrimary Phone+44 (0) 1223 921122Table bookings, takeaway orders, day-to-day inquiries.1Group Phone+44 (0) 1223 277217Corporate inquiries, press, supplier relations (Lapen Inns Head Office).3Local Emailhellothecornerhouse@gmail.comCustomer feedback, local event queries.5Corporate Emailcornerhouse@lapeninns.comFormal bookings, group management.3Websitethecornerhousepub.coMenus, booking forms, gallery.5Group Sitelapeninns.comBrand story, sister venue cross-promotion.1Insight: The use of a Gmail address (hellothecornerhouse@gmail.com) alongside a corporate domain (cornerhouse@lapeninns.com) suggests a transitional phase or a strategy to keep a "local, accessible" feel for regulars while maintaining corporate professionalism for wider operations.
+Channel
+Detail
+Usage Context
+Source
+Primary Phone
++44 (0) 1223 921122
+Table bookings, takeaway orders, day-to-day inquiries.
+1
+Group Phone
++44 (0) 1223 277217
+Corporate inquiries, press, supplier relations (Lapen Inns Head Office).
+3
+Local Email
+hellothecornerhouse@gmail.com
+Customer feedback, local event queries.
+5
+Corporate Email
+cornerhouse@lapeninns.com
+Formal bookings, group management.
+3
+Website
+thecornerhousepub.co
+Menus, booking forms, gallery.
+5momo
+Group Site
+lapeninns.com
+Brand story, sister venue cross-promotion.
+1
+Insight: The use of a Gmail address (hellothecornerhouse@gmail.com) alongside a corporate domain (cornerhouse@lapeninns.com) suggests a transitional phase or a strategy to keep a "local, accessible" feel for regulars while maintaining corporate professionalism for wider operations.
 3.2 Operating Schedule Analysis
 The venue employs a "Split Service" model for food but a "Continuous Service" model for drinks. This distinction is vital for managing customer expectations.
 Kitchen Hours (Food Service):
 ● Monday - Friday: Lunch (12:00 - 15:00) and Dinner (17:00 - 22:00).
-○ Operational Note: The two-hour closure (15:00-17:00) allows for kitchen restock, cleaning, and staff breaks, a common efficiency measure in kitchens handling complex preparations like fresh curries.
+○ Operational Note: The two-hour closmomo15:00-17:00) allows for kitchen restock, cleaning, and staff breaks, a common efficiency measure in kitchens handling complex preparations like fresh curries.
 ● Saturday: 12:00 - 22:00 (Continuous).
 ○ Strategic Note: Continuous service on Saturday is essential to capture the pre-match, mid-match, and post-match footfall from the Abbey Stadium.
 ● Sunday: 12:00 - 21:00 (Continuous).

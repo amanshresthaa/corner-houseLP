@@ -104,6 +104,11 @@ export default function MenuExploreSection({
 
 					<div className="space-y-6" data-testid="menu-explore-right">
 						<div className="rounded-[2.75rem] border border-white/10 bg-white p-5 text-brand-900 shadow-2xl sm:p-6 lg:p-8" id="menu-interactive-card">
+							{/* Anchor aliases for legacy CTAs / marketing hashes */}
+							<span id="nepalese" className="sr-only" aria-hidden />
+							<span id="drinks" className="sr-only" aria-hidden />
+							<span id="takeaway" className="sr-only" aria-hidden />
+							<span id="lunch" className="sr-only" aria-hidden />
 							<div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-100/70 pb-4">
 								<div>
 									<p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-500">Interactive menu</p>

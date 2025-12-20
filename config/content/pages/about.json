@@ -1,26 +1,50 @@
 {
   "seo": {
     "title": "About {{brand.fullName}} | Our Story & Mission",
-    "description": "1930s art-deco pub on Newmarket Road blending HD sports with authentic Nepalese cuisine, heated cabins, and a warm Cambridge welcome.",
+    "description": "1930s art-deco pub on Newmarket Road blending HD sports with authentic Nepalese cuisine, heated cabins, and a warm Cambridge welcome 2 minutes from Premier Inn & Travelodge.",
     "canonicalUrlRelative": "/about",
     "openGraph": {
-      "title": "About {{brand.shortName}} – Pints, Momos, and Matchday Energy",
-      "description": "How a historic Cambridge pub became the city’s go-to sports pub with a full Nepalese kitchen and cosy snugs.",
+      "title": "About {{brand.shortName}} – Pints, momo, and Matchday Energy",
+      "description": "How a historic Cambridge pub became the city’s go-to sports pub with a full Nepalese kitchen, cosy snugs, and hotel-doorstep proximity.",
       "url": "https://{{brand.domain}}/about"
     }
   },
   "hero": {
     "title": "About {{brand.shortName}}",
-    "subtitle": "Cambridge’s go-to sports pub with Nepalese plates and cosy snugs on Newmarket Road."
+    "subtitle": "2-minute walk from Premier Inn & Travelodge — Nepalese kitchen, HD sport, and cosy snugs in a 1930s art-deco pub."
   },
   "story": {
     "title": "Our Story",
-    "introduction": "Built in the 1930s as a corner pub, {{brand.shortName}} now pairs authentic Nepalese cooking with a lively sports bar atmosphere. After earning CAMRA’s Most Improved City Pub award in 2020, the pub entered a new chapter in late 2024 under Lapen Inns, installing a Nepalese kitchen while keeping real ale, HD screens, and the community spirit alive.",
+    "introduction": "Built in the 1930s as a corner pub, {{brand.shortName}} is now Cambridge’s home of pints and momo — 2 minutes from Premier Inn & Travelodge and 10 minutes to Abbey Stadium. After CAMRA’s Most Improved City Pub award in 2020, Lapen Inns relaunched the house in late 2024 with a Kathmandu-led kitchen, heated cabins, and wall-to-wall HD sports while keeping real ales, snugs, and free Wi-Fi for solo travellers, families, and away fans alike.",
+    "pillars": [
+      {
+        "title": "Hybrid comfort",
+        "description": "Pub classics and authentic Nepalese plates in one room — perfect for groups with mixed tastes and kids in tow."
+      },
+      {
+        "title": "Hotel-doorstep easy",
+        "description": "2-minute walk from Premier Inn & Travelodge, 10 minutes to Abbey Stadium, with takeaway and fast service for matchdays."
+      },
+      {
+        "title": "Inclusive welcome",
+        "description": "Home and away fans, families, and dogs greeted with free Wi-Fi, walk-ins in the bar, and accessible ramp/WC at the rear."
+      },
+      {
+        "title": "Heated garden life",
+        "description": "Bookable heated cabins, covered projector, and year-round garden seating for watch parties or cosy dinners."
+      }
+    ],
+    "note": {
+      "eyebrow": "Neighbourhood promise",
+      "title": "Best-of-both worlds on Newmarket Road",
+      "copy": "We keep a seat for hotel guests, locals, and travelling fans: HD sport on, momo steamers running, cask ales pouring, and staff ready to adjust spice, portions, or pace so you make kick-off on time.",
+      "footer": "— Team {{brand.shortName}}"
+    },
     "timeline": [
       {
         "period": "1930s",
         "title": "Art-deco corner pub opens",
-        "description": "{{brand.shortName}} takes its place on Newmarket Road, becoming a local landmark with its distinctive facade and fireplaces."
+        "description": "{{brand.shortName}} takes its place on Newmarket Road, becoming a local landmark with its distinctive facade, fireplaces, and timber snugs."
       },
       {
         "period": "2020",
@@ -30,18 +54,18 @@
       {
         "period": "Late 2024",
         "title": "Nepalese kitchen & sports hub relaunch",
-        "description": "Lapen Inns integrates a full Nepalese menu (momos, Himali Lamb, Chicken Rum Rum) with HD sports, heated garden cabins, and family-friendly service."
+        "description": "Under Lapen Inns, the pub installs a Kathmandu-led kitchen, heated cabins, and HD projector screens — keeping real ales, roasts, and pub warmth."
       },
       {
         "period": "2025",
         "title": "Travelers’ Choice & 5★ hygiene",
-        "description": "Tripadvisor Travelers’ Choice 2025 plus a 5-star food hygiene rating underscore consistent quality and care."
+        "description": "Tripadvisor Travelers’ Choice top 10% and a 5★ hygiene rating as Cambridge’s matchday HQ for pints, momo, and away-fan friendly service."
       }
     ]
   },
   "cta": {
     "title": "Visit {{brand.shortName}}",
-    "description": "Book a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites.",
+    "description": "Book a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites — 2 minutes from your hotel.",
     "button": "Call +44 1223 921122",
     "contact": {
       "address": "231 Newmarket Road, Cambridge CB5 8JE",
