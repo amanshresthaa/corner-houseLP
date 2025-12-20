@@ -134,6 +134,7 @@ export function AdaptiveImage({
   const imgRef = useRef<HTMLImageElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const queueRef = useRef(new LoadQueue());
+  const unobserveRef = useRef<() => void>(null);
 
   // Generate image variants based on device capabilities
   const imageVariants = useMemo(() => 
@@ -330,8 +331,6 @@ export function AdaptiveImage({
     </div>
   );
 }
-
-const unobserveRef = useRef<() => void>(null);
 
 /**
  * Hook for adaptive image preloading

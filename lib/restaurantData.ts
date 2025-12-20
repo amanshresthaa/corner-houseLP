@@ -228,7 +228,7 @@ const FALLBACK_SOCIAL: SocialCollection = {
     label: 'Follow us on Instagram',
   },
   tripadvisor: {
-    url: 'https://www.tripadvisor.co.uk/Restaurant_Review-g186225-d26682723-Reviews-The_Corner_House_Cambridge-Cambridgeshire_England.html',
+    url: 'https://www.tripadvisor.co.uk/Attraction_Review-g186225-d10319504-Reviews-The_Corner_House-Cambridge_Cambridgeshire_England.html',
     label: 'TripAdvisor Travelers’ Choice 2025',
   },
   camra: {
@@ -236,7 +236,7 @@ const FALLBACK_SOCIAL: SocialCollection = {
     label: 'CAMRA Award Listing',
   },
   google: {
-    url: 'https://maps.app.goo.gl/N2gUbo8Y4mLkkG4Q6',
+    url: 'https://www.google.com/maps/place/The+Corner+House/@52.2094872,0.1407771,17z/data=!4m8!3m7!1s0x47d8708a6144f827:0x93bee63859418e0e!8m2!3d52.2094872!4d0.143352!9m1!1b1!16s%2Fg%2F1tctqy58?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
     label: 'Google Maps',
   },
 };

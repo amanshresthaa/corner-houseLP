@@ -17,11 +17,11 @@ export default function HomeAmenitiesSection({
   amenities,
   className = ''
 }: HomeAmenitiesSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   if (!amenities || amenities.length === 0) {
     return null;
   }
-
-  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className={`bg-brand-800 py-16 text-white ${className}`} aria-labelledby="home-amenities-heading">

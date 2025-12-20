@@ -148,7 +148,7 @@ const TestimonialsSection: React.FC = () => {
               Guests describe {BRAND.shortName} as the art-deco pub that nails Cambridge’s dual personality:
               <strong className="font-semibold"> HD matchdays up front</strong> and
               <strong className="font-semibold"> cosy snugs and heated cabins</strong> in back. Awards like
-              CAMRA’s “Most Improved City Pub" and TripAdvisor Travelers’ Choice 2025 back up the praise, and its
+              CAMRA’s &quot;Most Improved City Pub&quot; and TripAdvisor Travelers’ Choice 2025 back up the praise, and its
               Newmarket Road location opposite the Premier Inn makes it an easy meet-up for locals, shoppers, and
               Abbey Stadium fans alike.
             </p>
@@ -242,7 +242,7 @@ const TestimonialsSection: React.FC = () => {
                 </div>
                 {/* Review Text - italic like design */}
                 <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-6 font-medium italic">
-                  "{review.text}"
+                  &quot;{review.text}&quot;
                 </p>
                 {/* Reviewer Info */}
                 <div className="flex items-center gap-3">

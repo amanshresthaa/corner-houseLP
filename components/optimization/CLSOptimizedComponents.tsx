@@ -45,7 +45,7 @@ export function CLSOptimizedHero() {
             Welcome to {BRAND.fullName}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            Authentic flavors in Cambridge's most historic setting
+            Authentic flavors in Cambridge&apos;s most historic setting
           </p>
           <div className="space-x-4">
             <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
@@ -247,7 +247,7 @@ export function CLSOptimizedTestimonials() {
                       <span key={i} className="text-yellow-400">★</span>
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                  <p className="text-gray-700 mb-4 italic">&quot;{testimonial.text}&quot;</p>
                   <div className="flex items-center">
                     <CLSImage
                       src={testimonial.avatar}

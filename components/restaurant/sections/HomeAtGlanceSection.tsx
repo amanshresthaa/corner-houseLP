@@ -19,11 +19,11 @@ export default function HomeAtGlanceSection({
   cards,
   className = ''
 }: HomeAtGlanceSectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   if (!cards || cards.length === 0) {
     return null;
   }
-
-  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className={`bg-white py-16 ${className}`} aria-labelledby="home-at-a-glance-heading">

@@ -23,11 +23,11 @@ export default function HomeGallerySection({
   images,
   className = ''
 }: HomeGallerySectionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   if (!images || images.length === 0) {
     return null;
   }
-
-  const prefersReducedMotion = useReducedMotion();
 
   return (
     <section className={`bg-neutral-950 py-16 text-white ${className}`} aria-labelledby="home-gallery-heading">

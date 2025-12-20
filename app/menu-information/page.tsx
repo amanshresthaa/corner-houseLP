@@ -86,11 +86,11 @@ const buildFaqItems = (phoneDisplay: string) => ([
     )
   },
   {
-    title: "Are you compliant with Natasha's Law?",
+    title: "Are you compliant with Natasha&apos;s Law?",
     content: (
       <div className="space-y-4">
         <p>
-          Yes, we fully comply with Natasha's Law (Prepacked for Direct Sale regulations) that came into effect on 1 October 2021.
+          Yes, we fully comply with Natasha&apos;s Law (Prepacked for Direct Sale regulations) that came into effect on 1 October 2021.
         </p>
         <div className="bg-green-50 border border-green-200 rounded-lg p-4">
           <h4 className="font-semibold text-green-800 mb-2">Our PPDS Compliance:</h4>
@@ -114,7 +114,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
     content: (
       <div className="space-y-4">
         <p>
-          We offer extensive vegetarian and vegan options across our menu, clearly marked with 'V' (vegetarian) and 'VE' (vegan) symbols.
+          We offer extensive vegetarian and vegan options across our menu, clearly marked with &apos;V&apos; (vegetarian) and &apos;VE&apos; (vegan) symbols.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-indiagreen-50 border border-indiagreen-200 rounded-lg p-4">
@@ -156,7 +156,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
           Yes, we have many naturally gluten-free dishes and can accommodate gluten-free requirements with proper precautions.
         </p>
         <div className="bg-cardamom-50 border border-cardamom-200 rounded-lg p-4">
-          <h4 className="font-semibold text-cardamom-800 mb-2">Gluten-Free Options (marked 'GF'):</h4>
+          <h4 className="font-semibold text-cardamom-800 mb-2">Gluten-Free Options (marked &apos;GF&apos;):</h4>
           <ul className="text-sm text-cardamom-700 space-y-1">
             <li>• Rice-based dishes and biryanis</li>
             <li>• Most curries and dal preparations</li>
@@ -219,14 +219,14 @@ const buildFaqItems = (phoneDisplay: string) => ([
     )
   },
   {
-    title: "What children's options and dietary considerations do you provide?",
+    title: "What children&apos;s options and dietary considerations do you provide?",
     content: (
       <div className="space-y-4">
         <p>
           We welcome families and provide various options suitable for children with different dietary needs and preferences.
         </p>
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-          <h4 className="font-semibold text-yellow-800 mb-2">Kids' Menu Highlights:</h4>
+          <h4 className="font-semibold text-yellow-800 mb-2">Kids&apos; Menu Highlights:</h4>
           <ul className="text-sm text-yellow-700 space-y-1">
             <li>• Mild curry options with reduced spice levels</li>
             <li>• Plain rice and naan bread</li>
@@ -249,7 +249,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
           </ul>
         </div>
         <p className="text-sm text-neutral-600">
-          <strong>Family dining:</strong> Our staff are experienced in helping families find suitable options for children. Don't hesitate to ask about modifying dishes or preparation methods.
+          <strong>Family dining:</strong> Our staff are experienced in helping families find suitable options for children. Don&apos;t hesitate to ask about modifying dishes or preparation methods.
         </p>
       </div>
     )
@@ -295,7 +295,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
     content: (
       <div className="space-y-4">
         <p>
-          We're committed to accommodating your dietary needs safely and deliciously. Here's how to ensure we can serve you properly:
+          We&apos;re committed to accommodating your dietary needs safely and deliciously. Here&apos;s how to ensure we can serve you properly:
         </p>
         <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
           <h4 className="font-semibold text-indigo-800 mb-2">When Booking:</h4>
@@ -303,7 +303,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
             <li>• Call us directly at <strong>{phoneDisplay}</strong> to discuss requirements</li>
             <li>• Specify any severe allergies or medical dietary needs</li>
             <li>• Mention the number of people with dietary requirements</li>
-            <li>• Ask about specific dishes or ingredients you're unsure about</li>
+            <li>• Ask about specific dishes or ingredients you&apos;re unsure about</li>
             <li>• Request advance preparation if needed (24-48 hours notice)</li>
           </ul>
         </div>
@@ -312,9 +312,9 @@ const buildFaqItems = (phoneDisplay: string) => ([
           <ul className="text-sm text-cyan-700 space-y-1">
             <li>• Inform your server about any allergies or dietary restrictions</li>
             <li>• Ask to speak with the kitchen manager for severe allergies</li>
-            <li>• Request ingredient lists for dishes you're considering</li>
+            <li>• Request ingredient lists for dishes you&apos;re considering</li>
             <li>• Confirm preparation methods (e.g., separate fryer for gluten-free)</li>
-            <li>• Don't hesitate to ask questions about any dish</li>
+            <li>• Don&apos;t hesitate to ask questions about any dish</li>
           </ul>
         </div>
         <div className="bg-rose-50 border border-rose-200 rounded-lg p-4">
@@ -484,7 +484,7 @@ export default function MenuInformationPage() {
                   <span className="text-sm font-medium">UK Food Regulations 2014 Compliant</span>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                  <span className="text-sm font-medium">Natasha's Law Certified</span>
+                  <span className="text-sm font-medium">Natasha&apos;s Law Certified</span>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
                   <span className="text-sm font-medium">14 Allergen Information</span>
@@ -564,7 +564,7 @@ export default function MenuInformationPage() {
                     </svg>
                   </div>
                   <h3 className="h5 text-neutral-900 mb-2 font-semibold">Legal Compliance</h3>
-                  <p className="text-sm text-neutral-600">Full compliance with UK Food Information Regulations and Natasha's Law</p>
+                  <p className="text-sm text-neutral-600">Full compliance with UK Food Information Regulations and Natasha&apos;s Law</p>
                 </div>
               </div>
 

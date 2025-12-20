@@ -226,7 +226,7 @@ export default function HomepageSignatureDishes({ title, subtitle, hero, items }
 
         <div className="mt-10 space-y-5">
           <div className="flex items-center justify-between text-sm text-brand-500">
-            <p className="uppercase tracking-[0.3em]">Chef's gallery</p>
+            <p className="uppercase tracking-[0.3em]">Chef&apos;s gallery</p>
             {subtitle ? <span className="text-brand-600">{subtitle}</span> : null}
           </div>
 

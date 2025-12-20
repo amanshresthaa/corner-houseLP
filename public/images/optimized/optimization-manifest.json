@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2025-12-20T19:32:13.730Z",
+  "totalProcessed": 16,
+  "totalSaved": 1644780,
+  "config": {
+    "formats": {
+      "webp": {
+        "quality": 85,
+        "effort": 6
+      },
+      "avif": {
+        "quality": 80,
+        "effort": 9
+      },
+      "jpeg": {
+        "quality": 85,
+        "progressive": true
+      },
+      "png": {
+        "compressionLevel": 9,
+        "adaptiveFiltering": true
+      }
+    },
+    "responsiveSizes": [
+      400,
+      600,
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "slideshowSizes": [
+      800,
+      1200,
+      1600,
+      2000
+    ],
+    "maxFileSize": 512000,
+    "outputDir": "public/images/optimized",
+    "sourcePatterns": [
+      "public/images/**/*.{jpg,jpeg,png}",
+      "!public/images/optimized/**/*"
+    ]
+  },
+  "errors": [
+    {
+      "file": "public/images/food/Vindalo.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/food/CrispyHotWings.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/food/HimaliLamb.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/food/GoatCurry.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/food/ChickenCurry.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/food/ChickenBhuna.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/split-level-seating-wood-and-tile-floors-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/horse-head-lamp-and-plants-decor-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/dining-room-overview-tv-and-tables-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/dining-room-windows-striped-chairs-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/dining-room-mesh-pendant-light-and-seating-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/dining-room-main-tv-and-tables-alt-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/dining-room-main-tv-and-tables-portrait.jpeg",
+      "error": "Input file has corrupt header:"
+    },
+    {
+      "file": "public/images/white-horse/interior/carved-wood-panel-corner-table-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/bar-counter-front-view-taps-and-bottles-landscape.jpeg",
+      "error": "Input file has corrupt header:"
+    },
+    {
+      "file": "public/images/white-horse/interior/bar-counter-cozy-lighting-taps-and-shelves-landscape.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/cozy-dining-nook-glass-chandelier-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/interior/bar-counter-beer-taps-and-bottles-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/garden/beer-garden-picnic-benches-and-sky-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/exterior/white-horse-pub-exterior-wide-frontage-landscape.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/garden/patio-terrace-wicker-chairs-and-parasols-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/exterior/white-horse-pub-exterior-front-entrance-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/dishes/tomato-chili-chutney-garnished-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/dishes/warm-chicken-salad-with-cherry-tomatoes-portrait.jpeg",
+      "error": "Input file has corrupt header:"
+    },
+    {
+      "file": "public/images/white-horse/dishes/steamed-momo-with-spicy-sauce-portrait.jpeg",
+      "error": "Input file has corrupt header:"
+    },
+    {
+      "file": "public/images/white-horse/dishes/sizzler-mixed-grill-with-lemon-landscape.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/dishes/fresh-mixed-salad-cherry-tomatoes-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS\nVipsJpeg: Invalid component ID 0 in SOS"
+    },
+    {
+      "file": "public/images/white-horse/dishes/rich-red-curry-in-balti-bowl-portrait.jpeg",
+      "error": "Input file has corrupt header:"
+    },
+    {
+      "file": "public/images/white-horse/dishes/creamy-curry-in-ceramic-bowl-portrait.jpeg",
+      "error": "Input file has corrupt header: VipsJpeg: Invalid component ID 0 in SOS"
+    }
+  ]
+}

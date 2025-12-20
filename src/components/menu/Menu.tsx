@@ -166,7 +166,7 @@ export default function MenuComponent({ menu }: MenuProps) {
                             <div className="mt-4">
                               <h4 className="text-sm font-semibold text-brand-700 mb-3 flex items-center gap-2">
                                 <Star className="w-4 h-4 text-accent-600 fill-current" />
-                                What's Included:
+                                What&apos;s Included:
                               </h4>
                               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 {[
@@ -230,7 +230,7 @@ export default function MenuComponent({ menu }: MenuProps) {
                             <Crown className="w-4 h-4 text-white" />
                           </div>
                           <div>
-                            <p className="text-sm font-bold text-brand-800">Chef's Recommendation</p>
+                            <p className="text-sm font-bold text-brand-800">Chef&apos;s Recommendation</p>
                             <p className="text-xs text-brand-600">Our most ordered starter combination</p>
                           </div>
                         </div>

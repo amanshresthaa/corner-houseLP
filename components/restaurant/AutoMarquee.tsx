@@ -47,6 +47,11 @@ export const AutoMarquee = forwardRef<AutoMarqueeHandle, AutoMarqueeProps>(funct
   const manualPauseRef = useRef<boolean>(false);
   const [prefersReduced, setPrefersReduced] = useState<boolean>(false);
   const inViewRef = useRef<boolean>(true);
+  const isDev = process.env.NODE_ENV === 'development';
+  const [debugFPS, setDebugFPS] = useState<number>(0);
+  const debugAccumRef = useRef<number>(0);
+  const debugCountRef = useRef<number>(0);
+  const lastDebugTsRef = useRef<number>(0);
 
   useEffect(() => {
     if (typeof window === 'undefined' || !window.matchMedia) return;
@@ -88,13 +93,6 @@ export const AutoMarquee = forwardRef<AutoMarqueeHandle, AutoMarqueeProps>(funct
       </div>
     );
   }
-
-  // Dev FPS overlay state (sampled infrequently to avoid re-render cost)
-  const isDev = process.env.NODE_ENV === 'development';
-  const [debugFPS, setDebugFPS] = useState<number>(0);
-  const debugAccumRef = useRef<number>(0);
-  const debugCountRef = useRef<number>(0);
-  const lastDebugTsRef = useRef<number>(0);
 
   useEffect(() => {
     const viewport = viewportRef.current;

@@ -177,7 +177,7 @@ export default function PrivacyPolicy() {
                     <ul className="space-y-2">
                       <li><strong>Access:</strong> Request copies of your personal data</li>
                       <li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
-                      <li><strong>Erasure:</strong> Request deletion of your data ("right to be forgotten")</li>
+                      <li><strong>Erasure:</strong> Request deletion of your data (&quot;right to be forgotten&quot;)</li>
                       <li><strong>Restriction:</strong> Limit how we process your data</li>
                       <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
                       <li><strong>Portability:</strong> Receive your data in a portable format</li>
@@ -204,7 +204,7 @@ export default function PrivacyPolicy() {
                       <li><strong>Marketing cookies:</strong> Used to deliver relevant advertisements</li>
                     </ul>
                     <p className="leading-relaxed mt-4">
-                      You can manage cookie preferences via our website's cookie banner or your browser settings. Disabling certain cookies may affect site functionality.
+                      You can manage cookie preferences via our website&apos;s cookie banner or your browser settings. Disabling certain cookies may affect site functionality.
                     </p>
                   </section>
 
@@ -232,7 +232,7 @@ export default function PrivacyPolicy() {
                   </section>
 
                   <section>
-                    <h2 className="h3 text-brand-700 mb-4">9. Children's Privacy</h2>
+                    <h2 className="h3 text-brand-700 mb-4">9. Children&apos;s Privacy</h2>
                     <p className="leading-relaxed">
                       Our services are not directed at children under 13. We do not knowingly collect personal information from children under 13. If we become aware of such collection, we will delete the information immediately.
                     </p>
@@ -271,7 +271,7 @@ export default function PrivacyPolicy() {
                         </p>
                       </div>
                       <p className="text-sm leading-relaxed">
-                        You also have the right to lodge a complaint with the Information Commissioner's Office (ICO), the UK supervisory authority for data protection issues:
+                        You also have the right to lodge a complaint with the Information Commissioner&apos;s Office (ICO), the UK supervisory authority for data protection issues:
                       </p>
                       <div className="text-sm space-y-1 mt-2">
                         <p><strong>ICO</strong> - <Link href="https://ico.org.uk" className="text-brand-600 hover:text-brand-700 underline" target="_blank" rel="noopener noreferrer">ico.org.uk</Link></p>
