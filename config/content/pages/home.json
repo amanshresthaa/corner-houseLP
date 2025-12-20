@@ -1,8 +1,8 @@
 {
   "hero": {
     "title": "{{brand.shortName}}, Cambridge – Sports Pub & Nepalese Kitchen",
-    "subtitle": "Matchday energy, heated garden cabins, and authentic Himalayan plates on Newmarket Road.",
-    "description": "1930s art-deco pub reborn as Cambridge’s home for HD sports, momos, and roasts. Settle into a snug, book a heated cabin, or grab a curry before the game.",
+    "subtitle": "2-minute walk from Premier Inn & Travelodge, 10 minutes to Abbey Stadium — HD sport, heated cabins, and authentic Himalayan plates on Newmarket Road.",
+    "description": "1930s art-deco pub reborn as Cambridge’s best-of-both-worlds: pints, momo, roasts, and pub classics with free Wi-Fi, away-fan welcome, and cosy snugs on Newmarket Road.",
     "cta": {
       "primary": "Call +44 1223 921122",
       "secondary": "Book a Table",
@@ -15,14 +15,14 @@
       "title": "Why Cambridge Chooses {{brand.shortName}}",
       "items": [
         {
-          "icon": "📺",
-          "title": "Matchday HQ",
-          "description": "Wall-to-wall HD screens and an outdoor projector for big fixtures near Abbey Stadium."
+          "icon": "🚶",
+          "title": "2 minutes from your hotel",
+          "description": "Premier Inn and Travelodge are across the road — perfect for a post check-in pint, working dinner, or takeaway."
         },
         {
           "icon": "🍛",
           "title": "Authentic Nepalese kitchen",
-          "description": "Nepali-chef favourites like momos, Chicken Rum Rum, Himali Lamb, and goat curry."
+          "description": "Nepali-chef favourites like momo, Chicken Rum Rum, Himali Lamb, and goat curry — alongside pub classics."
         },
         {
           "icon": "🔥",
@@ -30,9 +30,9 @@
           "description": "Book a private heated cabin or relax under lights in the covered beer garden year-round."
         },
         {
-          "icon": "♿",
-          "title": "Welcoming for all",
-          "description": "Family- and dog-friendly with wheelchair ramp access, accessible WC, and kids’ tweaks on request."
+          "icon": "📺",
+          "title": "Matchday HQ",
+          "description": "Wall-to-wall HD screens, outdoor projector, away-fan welcome, and quick eats 10 minutes from Abbey Stadium."
         }
       ]
     },
@@ -61,19 +61,19 @@
     },
     "about": {
       "title": "Our Story",
-      "tagline": "Where Cambridge's pub heritage meets Himalayan hospitality",
+      "tagline": "Pints, momo, and matchday buzz for locals, hotel guests, and travelling fans",
       "description": [
-        "Built in the 1930s on the site of the old Butchers Arms, The Corner House is an Art Deco landmark on Newmarket Road — a true neighbourhood pub that's been at the heart of Abbey for nearly a century.",
-        "In 2024, we entered an exciting new chapter under Lapen Inns, introducing an authentic Nepalese kitchen while preserving everything locals love: real ales, crackling fireplaces, quiz nights, and that unmistakable pub warmth.",
-        "The result is something uniquely Cambridge — hand-pinched momos and Himalayan curries served alongside proper pints and pub classics. Whether you're here for the match, the momos, or both, there's always a seat by the fire."
+        "Built in the 1930s on the site of the old Butchers Arms, {{brand.shortName}} is an Art Deco landmark with fireplaces, timber snugs, and real ales that have anchored Abbey for nearly a century.",
+        "Since 2024 under Lapen Inns, we've paired that heritage with a Kathmandu-led kitchen — hand-pinched momo, Chicken Rum Rum, Himali Lamb, and pub classics that keep both locals and hotel guests coming back.",
+        "Find us 2 minutes from Premier Inn and Travelodge and 10 minutes from Abbey Stadium: away-fan friendly, family- and dog-welcoming, with free Wi-Fi, accessible ramp entrance, and seats by the fire."
       ],
       "features": [
         "1930s Art Deco heritage with original fireplaces and timber snugs",
         "Authentic Nepalese kitchen led by Kathmandu-born chefs",
-        "Wall-to-wall HD screens plus outdoor projector for big matches",
+        "Wall-to-wall HD screens plus outdoor projector for big matches (home & away fans welcome)",
         "Heated private cabins bookable year-round in the beer garden",
-        "CAMRA 'Most Improved City Pub' 2020 award winner",
-        "BII Sustainability Champion venue"
+        "2-minute walk from Premier Inn/Travelodge; 10-minute walk to Abbey Stadium",
+        "Free Wi-Fi, wheelchair ramp at rear entrance, and accessible WC"
       ],
       "stats": [
         {
@@ -125,7 +125,7 @@
         {
           "year": "2024",
           "title": "The Lapen Inns chapter",
-          "copy": "A full Nepalese kitchen arrives under new management, introducing momos, Himali Lamb, and Chicken Rum Rum while keeping real ales and roasts on tap."
+          "copy": "A full Nepalese kitchen arrives under new management, introducing momo, Himali Lamb, and Chicken Rum Rum while keeping real ales and roasts on tap."
         },
         {
           "year": "2025",
@@ -140,9 +140,9 @@
           "label": "1930s heritage"
         },
         {
-          "src": "/assets-dishes/steamed-momos-with-spicy-sauce-portrait.png",
-          "alt": "Hand-pleated Nepalese momos with signature achar",
-          "label": "Handmade momos"
+          "src": "/assets-dishes/steamed-momo-with-spicy-sauce-portrait.png",
+          "alt": "Hand-pleated Nepalese momo with signature achar",
+          "label": "Handmade momo"
         },
         {
           "src": "/assets-slideshow/corner-house-bar-view-landscape.webp",
@@ -161,7 +161,7 @@
       "hero": {
         "eyebrow": "From the Himalayan Kitchen",
         "title": "Plates that define {{brand.shortName}}",
-        "description": "Every dish tells a story of Nepal's rich culinary heritage — hand-pinched momos, aromatic slow-braised curries, and sizzling tandoori platters crafted with traditional spices.",
+        "description": "Every dish tells a story of Nepal's rich culinary heritage — hand-pinched momo, aromatic slow-braised curries, and sizzling tandoori platters crafted with traditional spices.",
         "quote": "We source our timmur and timilo spices directly from Nepal. Each marinade rests 24 hours for authentic depth.",
         "quoteBy": "Head Chef",
         "cta": {
@@ -222,7 +222,7 @@
         {
           "name": "Steamed Momo",
           "description": "Hand-pleated Nepali dumplings filled with spiced chicken or vegetables, served with our signature tomato-sesame achar. Each momo is wrapped fresh in-house daily.",
-          "image": "/assets-dishes/steamed-momos-with-spicy-sauce-portrait.png",
+          "image": "/assets-dishes/steamed-momo-with-spicy-sauce-portrait.png",
           "tags": [
             "Handmade",
             "Street food"
@@ -250,8 +250,8 @@
       "subtitle": "From first-time visitors to devoted regulars, our guests share what makes The Corner House a Cambridge favourite.",
       "hero": {
         "eyebrow": "Real Stories, Real Flavours",
-        "title": "Rated 4.7★ by 800+ Happy Guests",
-        "description": "Whether it's the aromatic Himali Lamb, the buzzing matchday atmosphere, or the warm welcome from our Nepali-led team — guests keep coming back and spreading the word.",
+        "title": "Rated 4.4★ on Google (800+) & 4.6★ on TripAdvisor",
+        "description": "Aromatic Himali Lamb, buzzing matchday atmosphere, heated cabins, and a warm Nepali-led team keep hotel guests, locals, and travelling fans returning.",
         "cta": {
           "text": "Join our happy guests",
           "href": "/book-a-table"
@@ -286,7 +286,7 @@
       "spotlights": [
         {
           "title": "Authentic Flavours",
-          "copy": "Hand-pleated momos, 24-hour marinated grills, and curries that transport you to Kathmandu — all in a cosy Cambridge pub.",
+          "copy": "Hand-pleated momo, 24-hour marinated grills, and curries that transport you to Kathmandu — all in a cosy Cambridge pub.",
           "accent": "accent"
         },
         {
@@ -327,7 +327,7 @@
           "accent": "amber"
         },
         {
-          "quote": "The momos are the best I've had outside Nepal. Authentic taste, generous portions, and the staff genuinely care about your experience.",
+          "quote": "The momo are the best I've had outside Nepal. Authentic taste, generous portions, and the staff genuinely care about your experience.",
           "source": "5★ — Priya M., Google",
           "platform": "Google",
           "rating": 5,
@@ -366,7 +366,7 @@
       "eyebrow": "Awards & Community",
       "title": "Tripadvisor Travelers’ Choice 2025 & CAMRA Most Improved City Pub",
       "summary": "From CAMRA recognition in 2020 to a Travelers’ Choice badge in 2025, {{brand.shortName}} continues to blend great beer, bold Nepalese flavours, and a welcoming local vibe.",
-      "quote": "Keeping the local alive with pints, momos, and matchday buzz on Newmarket Road.",
+      "quote": "Keeping the local alive with pints, momo, and matchday buzz on Newmarket Road.",
       "quoteAttribution": "Lapen Inns Hospitality",
       "cta": {
         "text": "Explore our story",
@@ -376,8 +376,8 @@
     },
     "quickLinks": {
       "eyebrow": "Plan your visit",
-      "title": "Book, celebrate, or send Corner House home",
-      "description": "Skip the scrolling and head straight to cabins, events, or takeaway ordering.",
+      "title": "Book, watch the match, or order Nepalese from 2 minutes away",
+      "description": "Staying across the road or heading to the Abbey? Jump straight to cabins, fixtures, or menu/collection.",
       "items": [
         {
           "title": "Reserve heated cabins",
@@ -400,9 +400,19 @@
           "accent": "emerald"
         },
         {
+          "title": "Staying at Premier Inn or Travelodge?",
+          "eyebrow": "2-minute walk",
+          "description": "Show your room key, settle into a snug with free Wi-Fi, and order momo, curries, or pub classics without the hotel buffet.",
+          "link": "/book-a-table",
+          "linkText": "Book now →",
+          "ctaText": "Call +44 1223 921122",
+          "icon": "hotel",
+          "accent": "brand"
+        },
+        {
           "title": "Menus & Takeaway",
           "eyebrow": "Order",
-          "description": "Browse Nepalese grills, momos, and pub classics for dine-in, collection, or delivery nights in.",
+          "description": "Browse Nepalese grills, momo, and pub classics for dine-in or fast collection 2 minutes from your room.",
           "link": "/menu#starters",
           "linkText": "View menu →",
           "ctaText": "Order Nepalese",

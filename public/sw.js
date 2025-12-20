@@ -10,10 +10,11 @@
  * Implements aggressive caching strategies for mobile devices
  */
 
-const CACHE_NAME = 'restaurant-mobile-v1';
-const STATIC_CACHE = 'static-v1';
-const DYNAMIC_CACHE = 'dynamic-v1';
-const IMAGE_CACHE = 'images-v1';
+// Bump versions to invalidate old cached assets (including replaced logo)
+const CACHE_NAME = 'restaurant-mobile-v2';
+const STATIC_CACHE = 'static-v2';
+const DYNAMIC_CACHE = 'dynamic-v2';
+const IMAGE_CACHE = 'images-v2';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
@@ -773,7 +774,7 @@ const CRITICAL_RESOURCES = [
   '/_next/static/css/app/layout.css',
   '/_next/static/chunks/webpack.js',
   '/_next/static/chunks/main.js',
-  '/images/logo.png',
+  '/images/brand/corner-house-logo.png',
   '/fonts/inter-var.woff2',
   '/fonts/playfair-display-var.woff2'
 ];

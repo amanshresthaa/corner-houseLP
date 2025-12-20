@@ -18,7 +18,7 @@ async function ensureSharp() {
 
 function findDefaultSource() {
   const candidates = [
-    'public/images/brand/whitehorse-logo.png',
+    'public/images/brand/corner-house-logo.png',
   ];
   for (const p of candidates) {
     if (fs.existsSync(p)) return p;

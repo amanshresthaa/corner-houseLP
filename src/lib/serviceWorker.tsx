@@ -224,7 +224,7 @@ class ServiceWorkerManager {
       '/api/content',
       '/api/menu',
       '/api/restaurant',
-      '/images/logo.png'
+      '/images/brand/corner-house-logo.png'
     ];
 
     try {

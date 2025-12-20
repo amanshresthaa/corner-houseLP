@@ -46,7 +46,7 @@ export default async function BookATablePage() {
   const bookingEmail = fillBrandPlaceholders(contact.email.bookings ?? contact.email.primary);
   const primaryEmail = fillBrandPlaceholders(contact.email.primary);
 
-  const heroBadges = ['Same-day replies', 'Heated cabins & snugs', 'Families & pups welcome'];
+  const heroBadges = ['2 min from Premier Inn/Travelodge', 'Same-day replies', 'Families, pups & away fans welcome'];
   const reassuranceCards = [
     {
       icon: '⚡',
@@ -56,12 +56,12 @@ export default async function BookATablePage() {
     {
       icon: '🧑‍🤝‍🧑',
       title: 'Group ready',
-      body: 'Cabins for 6–10 and marquee space for gatherings; no deposit for standard tables.',
+      body: 'Covered garden tables and indoor snugs for 6–10; no deposit for standard tables.',
     },
     {
       icon: '🧭',
       title: 'Easy arrival',
-      body: 'Opposite Abbey Stadium with step-free entry and nearby short-stay parking.',
+      body: '2-minute walk from Premier Inn/Travelodge, 10 minutes to Abbey Stadium; step-free entry and nearby parking.',
     },
   ];
 
@@ -317,7 +317,7 @@ export default async function BookATablePage() {
                           </a>
                         </div>
                         <p className="text-sm text-brand-700">
-                          Need same-day? Call for the fastest reply; we keep space across the bar, snug, and heaters.
+                          Need same-day? Call for the fastest reply; we keep space across the bar, snugs, and covered garden tables.
                         </p>
                       </div>
                     </article>

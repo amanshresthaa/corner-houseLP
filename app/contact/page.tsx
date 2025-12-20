@@ -154,7 +154,7 @@ export default async function ContactPage() {
             <FadeIn className="space-y-8">
               <div className="mx-auto max-w-3xl text-center">
                 <p className="text-xs uppercase tracking-[0.35em] text-brand-500">Always-on support</p>
-                <h2 className="mt-4 font-display text-3xl font-bold text-brand-900 sm:text-4xl">Talk to the Corner House team</h2>
+                <h2 id="contact-info-heading" className="mt-4 scroll-mt-24 font-display text-3xl font-bold text-brand-900 sm:text-4xl">Talk to the Corner House team</h2>
                 <p className="mt-3 text-lg text-brand-600">Choose the quickest route — everything lands with the same concierge desk.</p>
               </div>
 

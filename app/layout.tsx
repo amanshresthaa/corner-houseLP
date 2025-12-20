@@ -50,7 +50,8 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
       apple: [
         { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
-      ]
+      ],
+      shortcut: '/favicon.ico'
     }
   } as Metadata;
 }

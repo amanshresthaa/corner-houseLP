@@ -19,7 +19,7 @@ const PRESS_FACTS = [
   `Address: ${ADDRESS.street}, ${ADDRESS.area}, ${ADDRESS.city} ${ADDRESS.postcode}`,
   `Phone: ${CONTACT.phone.display} • Email: ${CONTACT.email.primary}`,
   "Ownership: Lapen Inns Hospitality (since 2024 relaunch)",
-  "Hybrid: Art-deco sports pub with Nepalese kitchen, heated cabins, and HD matchday screens",
+  "Hybrid: Art-deco sports pub with Nepalese kitchen, covered garden projector, and HD matchday screens",
   "Awards: TripAdvisor Travelers' Choice 2025 • CAMRA Most Improved City Pub 2020",
   "Amenities: Sky & TNT Sports, outdoor projector, family & dog friendly, shuffleboard, takeaway & delivery",
 ];
@@ -119,7 +119,7 @@ export default async function PressPage() {
                       Official press kit for {BRAND.fullName}
                     </h1>
                     <p className="max-w-3xl text-base text-white/80 sm:text-lg">
-                      Story-ready facts, imagery access, and rapid contacts for The Corner House Cambridge—an art-deco sports pub with a Nepalese kitchen, heated cabins, and HD matchday screens opposite Cambridge Retail Park.
+                      Story-ready facts, imagery access, and rapid contacts for The Corner House Cambridge—an art-deco sports pub with a Nepalese kitchen, covered garden projector, and HD matchday screens opposite Cambridge Retail Park (2 minutes from Premier Inn/Travelodge).
                     </p>
                   </div>
                   <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center">

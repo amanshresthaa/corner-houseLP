@@ -308,7 +308,7 @@ export function CLSOptimizedHeader() {
           className="flex items-center"
         >
           <CLSImage
-            src="/images/logo.png"
+            src="/images/brand/corner-house-logo.png"
             alt={`${BRAND.fullName} logo`}
             width={40}
             height={40}

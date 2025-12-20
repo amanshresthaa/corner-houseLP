@@ -65,7 +65,7 @@ export default function Hero() {
   
   // Feature tags from content or fallback
   const features = content?.pages?.home?.sections?.features?.items || [
-    { title: 'Nepali chefs serving Himali Lamb & momos' },
+    { title: 'Nepali chefs serving Himali Lamb & momo' },
     { title: 'Sky & TNT Sports + outdoor projector' },
     { title: 'Heated garden cabins & beer garden' },
     { title: 'Family & dog friendly with play space' },

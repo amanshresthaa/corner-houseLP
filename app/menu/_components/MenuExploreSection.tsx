@@ -48,51 +48,51 @@ export default function MenuExploreSection({
 								Simple interactive menu
 							</h2>
 							<p className="mt-3 text-base leading-relaxed text-white/80 sm:text-lg">
-								{menuDescription || 'Peek at every section, use a single search box, or tap a quick filter to narrow things down.'}
+								{menuDescription || 'Peek at every section and explore our offerings.'}
 							</p>
 							{hasHighlights ? (
 								<div className="mt-6 space-y-4" data-testid="menu-explore-stats">
 									{highlightCards.length ? (
 										<dl className="grid gap-3 sm:grid-cols-3">
-										{highlightCards.map((stat) => (
-											<div key={stat.label} className="rounded-2xl border border-white/20 bg-white/5 p-4">
-												<dt className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-white/70">{stat.label}</dt>
-												<dd className="mt-2 text-2xl font-display font-semibold text-white">{stat.value}</dd>
-												{stat.description ? (
-													<p className="text-xs text-white/70">{stat.description}</p>
+											{highlightCards.map((stat) => (
+												<div key={stat.label} className="rounded-2xl border border-white/20 bg-white/5 p-4">
+													<dt className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-white/70">{stat.label}</dt>
+													<dd className="mt-2 text-2xl font-display font-semibold text-white">{stat.value}</dd>
+													{stat.description ? (
+														<p className="text-xs text-white/70">{stat.description}</p>
 													) : null}
-											</div>
-										))}
-									</dl>
-								) : null}
-								{dietaryNotes.length ? (
-									<div className="rounded-2xl border border-white/20 bg-white/10 p-4">
-										<p className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-white/70">Dietary care</p>
-										<ul className="mt-2 space-y-1 text-sm text-white/80" data-testid="menu-dietary-highlight-grid">
-											{dietaryNotes.map((note) => (
-												<li key={note} className="list-disc pl-4">
-													{note}
-												</li>
+												</div>
 											))}
-										</ul>
-									</div>
-								) : null}
-							</div>
-						) : null}
-					</div>
+										</dl>
+									) : null}
+									{dietaryNotes.length ? (
+										<div className="rounded-2xl border border-white/20 bg-white/10 p-4">
+											<p className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-white/70">Dietary care</p>
+											<ul className="mt-2 space-y-1 text-sm text-white/80" data-testid="menu-dietary-highlight-grid">
+												{dietaryNotes.map((note) => (
+													<li key={note} className="list-disc pl-4">
+														{note}
+													</li>
+												))}
+											</ul>
+										</div>
+									) : null}
+								</div>
+							) : null}
+						</div>
 
-					<div className="rounded-[2.25rem] border border-white/20 bg-white/5 p-6 shadow-lg">
+						<div className="rounded-[2.25rem] border border-white/20 bg-white/5 p-6 shadow-lg">
 							<div className="flex flex-wrap items-center gap-3">
 								{telHref ? (
 									<a
 										href={telHref}
-									className="btn rounded-full border border-white/30 bg-white text-brand-900 shadow-lg hover:bg-white/90"
+										className="btn rounded-full border border-white/30 bg-white text-brand-900 shadow-lg hover:bg-white/90"
 										style={{ touchAction: 'manipulation' }}
 									>
-											Call {contactDisplayPhone || 'us'}
-										</a>
+										Call {contactDisplayPhone || 'us'}
+									</a>
 								) : null}
-							<Link href={menuInformationHref} className="btn btn-outline rounded-full border-white/30 text-white hover:bg-white/10">
+								<Link href={menuInformationHref} className="btn btn-outline rounded-full border-white/30 text-white hover:bg-white/10">
 									View menu info
 								</Link>
 							</div>
@@ -103,19 +103,21 @@ export default function MenuExploreSection({
 					</div>
 
 					<div className="space-y-6" data-testid="menu-explore-right">
-						<div className="rounded-[2.75rem] border border-white/10 bg-white p-5 text-brand-900 shadow-2xl sm:p-6 lg:p-8" id="menu-interactive-card">
-							<div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-100/70 pb-4">
-								<div>
-									<p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-500">Interactive menu</p>
-									<p className="text-sm text-brand-600">Search, filter, and jump through sections.</p>
+						<div className="rounded-[2.75rem] border border-white/10 bg-white shadow-2xl" id="menu-interactive-card">
+							<div className="p-5 sm:p-8 lg:p-10 text-brand-900">
+								<div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-100/70 pb-6 mb-6">
+									<div>
+										<p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-500">Interactive menu</p>
+										<p className="text-sm text-brand-600 mt-1">Explore our menu sections.</p>
+									</div>
 								</div>
+								<MenuInteractive
+									sections={sections}
+									defaultSelected={defaultSelected || undefined}
+									preloadedData
+									tone="light"
+								/>
 							</div>
-							<MenuInteractive
-								sections={sections}
-								defaultSelected={defaultSelected || undefined}
-								preloadedData
-								tone="light"
-							/>
 						</div>
 					</div>
 				</div>

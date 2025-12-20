@@ -31,33 +31,34 @@ export async function generateMetadata() {
 }
 
 const HERO_IMAGE = {
-  src: '/images/white-horse/exterior/white-horse-pub-exterior-frontage-bright-sky-landscape.jpeg',
-  alt: `${BRAND.fullName} exterior on Newmarket Road`,
+  src: '/assets-slideshow/corner-house-exterior-dusk-hero.webp',
+  alt: `${BRAND.fullName} exterior on Newmarket Road at dusk`,
 };
 
 const STORY_FEATURES = [
-  'Heated garden cabins, HD projectors, and wall-to-wall matchday screens.',
-  'Tripadvisor Travelers’ Choice 2025 and a 5★ food hygiene rating.',
-  'Hand-folded momos, Himali lamb, and comforting pub classics from Nepali chefs.',
-  'Award-winning real ale program with cocktails and no/low options at the bar.',
+  '2-minute walk from Premier Inn & Travelodge; 10 minutes to Abbey Stadium.',
+  'Heated garden cabins, HD projector, and wall-to-wall matchday screens (home & away fans welcome).',
+  'Hand-folded momo, Chicken Rum Rum, Himali lamb, and pub classics from Nepali chefs.',
+  'Tripadvisor Travelers’ Choice 2025, 5★ hygiene, and CAMRA “Most Improved City Pub” recognition.',
+  'Free Wi-Fi, accessible ramp + WC, and family/dog-friendly seating.',
 ];
 
 const STORY_PILLARS = [
   {
     title: 'Cambridge hospitality',
-    description: 'Neighbourhood pub energy with family seating, dog-friendly nooks, and Sky/TNT on all matchdays.',
+    description: 'Neighbourhood pub energy with family seating, dog-friendly nooks, and Sky/TNT/Prime on all matchdays.',
   },
   {
-    title: 'Nepalese kitchen',
-    description: 'Chef-led momo steamers, charcoal grilled Himali lamb, and vegan plates from midday to late.',
+    title: 'Nepalese + pub favourites',
+    description: 'Chef-led momo, Himali lamb, goat curry, plus burgers, roasts, and chips for the classics crowd.',
   },
   {
-    title: 'Art-deco heritage',
-    description: 'Restored glass block facade, rich timber, and brushed brass lighting anchored in the 1930s build.',
+    title: 'Hotel-doorstep easy',
+    description: '2-minute walk from Premier Inn/Travelodge with quick service for matchdays and late check-ins.',
   },
   {
-    title: 'Seasonal garden',
-    description: 'Heated cabins, projector-ready pergola, and planters shaped around summer DJs and winter gatherings.',
+    title: 'Heated garden',
+    description: 'Bookable heated cabins, covered projector, and all-weather garden seating year-round.',
   },
 ];
 
@@ -77,24 +78,34 @@ type CommitmentLike = {
 
 const GALLERY_SHOTS = [
   {
-    src: '/images/white-horse/interior/dining-room-main-tv-and-tables-portrait.jpeg',
-    alt: `Matchday-ready dining room inside ${BRAND.fullName}`,
-    label: 'Matchday dining room',
+    src: '/assets-slideshow/corner-house-building.webp',
+    alt: `${BRAND.fullName} 1930s exterior on Newmarket Road`,
+    label: 'Art-deco exterior',
   },
   {
-    src: '/images/white-horse/garden/patio-terrace-wicker-chairs-and-parasols-portrait.jpeg',
-    alt: `${BRAND.fullName} garden cabins and terrace seating`,
-    label: 'Garden cabins',
+    src: '/assets-slideshow/corner-house-bar-view-landscape.webp',
+    alt: `${BRAND.fullName} bar with real ales and HD screens`,
+    label: 'Bar & HD screens',
   },
   {
-    src: '/images/white-horse/dishes/steamed-momo-with-spicy-sauce-portrait.jpeg',
-    alt: 'Hand-folded momo and chutney',
-    label: 'Hand-folded momo',
+    src: '/assets-slideshow/corner-house-outdoor-rear.webp',
+    alt: `${BRAND.fullName} garden terrace with covered seating`,
+    label: 'Garden terrace seating',
   },
   {
-    src: '/images/white-horse/interior/bar-counter-cozy-lighting-taps-and-shelves-landscape.jpeg',
-    alt: 'Art-deco bar counter with illuminated taps',
-    label: 'Art-deco bar',
+    src: '/assets-dishes/steamed-momo-with-spicy-sauce-portrait.png',
+    alt: 'Hand-folded momo with tomato-sesame achar',
+    label: 'Handmade momo',
+  },
+  {
+    src: '/assets-slideshow/corner-house-dining-angle.webp',
+    alt: `${BRAND.fullName} dining room with cosy snugs and screens`,
+    label: 'Dining room snugs',
+  },
+  {
+    src: '/assets-slideshow/corner-house-lounge-friends.webp',
+    alt: `${BRAND.fullName} lounge seating with friends enjoying drinks`,
+    label: 'Lounge with friends',
   },
 ];
 

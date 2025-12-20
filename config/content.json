@@ -22,7 +22,7 @@
       ],
       "branding": {
         "tagline": "Cambridge's go-to sports pub with Nepalese plates and cosy snugs.",
-        "slogan": "Pints, momos, and matchday energy on Newmarket Road since the 1930s."
+        "slogan": "Pints, momo, and matchday energy on Newmarket Road since the 1930s."
       }
     },
     "navigation": {
@@ -249,7 +249,7 @@
       "hero": {
         "title": "{{brand.shortName}}, Cambridge – Sports Pub & Nepalese Kitchen",
         "subtitle": "Matchday energy, heated garden cabins, and authentic Himalayan plates on Newmarket Road.",
-        "description": "1930s art-deco pub reborn as Cambridge’s home for HD sports, momos, and roasts. Settle into a snug, book a heated cabin, or grab a curry before the game.",
+        "description": "1930s art-deco pub reborn as Cambridge’s home for HD sports, momo, and roasts. Settle into a snug, book a heated cabin, or grab a curry before the game.",
         "cta": {
           "primary": "Call +44 1223 921122",
           "secondary": "Book a Table",
@@ -269,7 +269,7 @@
             {
               "icon": "🍛",
               "title": "Authentic Nepalese kitchen",
-              "description": "Nepali-chef favourites like momos, Chicken Rum Rum, Himali Lamb, and goat curry."
+              "description": "Nepali-chef favourites like momo, Chicken Rum Rum, Himali Lamb, and goat curry."
             },
             {
               "icon": "🔥",
@@ -312,7 +312,7 @@
           "description": [
             "Built in the 1930s on the site of the old Butchers Arms, The Corner House is an Art Deco landmark on Newmarket Road — a true neighbourhood pub at the heart of Abbey for nearly a century.",
             "In 2024, we entered an exciting new chapter under Lapen Inns, introducing an authentic Nepalese kitchen while preserving everything locals love: real ales, crackling fireplaces, quiz nights, and that unmistakable pub warmth.",
-            "The result is something uniquely Cambridge — hand-pinched momos and Himalayan curries served alongside proper pints and pub classics."
+            "The result is something uniquely Cambridge — hand-pinched momo and Himalayan curries served alongside proper pints and pub classics."
           ],
           "features": [
             "1930s Art Deco heritage with original fireplaces and timber snugs",
@@ -354,7 +354,7 @@
             {
               "name": "Steamed Momo",
               "description": "Hand-pleated Nepali dumplings with spiced chicken or vegetables, served with signature tomato-sesame achar. Made fresh daily.",
-              "image": "/assets-dishes/steamed-momos-with-spicy-sauce-portrait.png"
+              "image": "/assets-dishes/steamed-momo-with-spicy-sauce-portrait.png"
             },
             {
               "name": "Samosa Chaat",
@@ -386,7 +386,7 @@
               "rating": 5
             },
             {
-              "quote": "The momos are the best I've had outside Nepal. Authentic taste, generous portions, and the staff genuinely care.",
+              "quote": "The momo are the best I've had outside Nepal. Authentic taste, generous portions, and the staff genuinely care.",
               "source": "5★ — Priya M., Google (Dec 2025)",
               "platform": "Google",
               "rating": 5
@@ -416,7 +416,7 @@
           "eyebrow": "Awards & Community",
           "title": "Tripadvisor Travelers’ Choice 2025 & CAMRA Most Improved City Pub",
           "summary": "From CAMRA recognition in 2020 to a Travelers’ Choice badge in 2025, {{brand.shortName}} continues to blend great beer, bold Nepalese flavours, and a welcoming local vibe.",
-          "quote": "Keeping the local alive with pints, momos, and matchday buzz on Newmarket Road.",
+          "quote": "Keeping the local alive with pints, momo, and matchday buzz on Newmarket Road.",
           "quoteAttribution": "Lapen Inns Hospitality",
           "cta": {
             "text": "Explore our story",
@@ -439,7 +439,7 @@
           },
           {
             "title": "Our Menu",
-            "description": "Momos, curries, grills, burgers, and pub classics under one roof.",
+            "description": "momo, curries, grills, burgers, and pub classics under one roof.",
             "link": "/menu#starters",
             "linkText": "View Menu →"
           }
@@ -540,7 +540,7 @@
         "description": "1930s art-deco pub on Newmarket Road blending HD sports with authentic Nepalese cuisine, heated cabins, and a warm Cambridge welcome.",
         "canonicalUrlRelative": "/about",
         "openGraph": {
-          "title": "About {{brand.shortName}} – Pints, Momos, and Matchday Energy",
+          "title": "About {{brand.shortName}} – Pints, momo, and Matchday Energy",
           "description": "How a historic Cambridge pub became the city’s go-to sports pub with a full Nepalese kitchen and cosy snugs.",
           "url": "https://{{brand.domain}}/about"
         }
@@ -566,7 +566,7 @@
           {
             "period": "Late 2024",
             "title": "Nepalese kitchen & sports hub relaunch",
-            "description": "Lapen Inns integrates a full Nepalese menu (momos, Himali Lamb, Chicken Rum Rum) with HD sports, heated garden cabins, and family-friendly service."
+            "description": "Lapen Inns integrates a full Nepalese menu (momo, Himali Lamb, Chicken Rum Rum) with HD sports, heated garden cabins, and family-friendly service."
           },
           {
             "period": "2025",
@@ -1107,7 +1107,7 @@
         {
           "id": "slide-hand-pleated-momo",
           "image": {
-            "primary": "/assets-slideshow/steamed-momos-with-spicy-sauce-portrait.png"
+            "primary": "/assets-slideshow/steamed-momo-with-spicy-sauce-portrait.png"
           },
           "alt": "Row of steamed dumplings with bright orange dipping sauce on a rectangular plate.",
           "eyebrow": "Steamed, delicate, and dunked in our bold chilli sauce.",
