@@ -86,10 +86,10 @@ const EmailSchema = z.object({
 const ContactSchema = z.object({
   phone: PhoneSchema,
   email: EmailSchema,
-  website: z.string().url().optional(),
-  bookingUrl: z.string().url().optional(),
-  orderUrl: z.string().url().optional(),
-  enquiryUrl: z.string().url().optional(),
+  website: z.string().optional(),
+  bookingUrl: z.string().optional(),
+  orderUrl: z.string().optional(),
+  enquiryUrl: z.string().optional(),
 });
 
 const HoursDetailedSchema = z.object({
@@ -187,10 +187,10 @@ export const ConfigSchema = z.object({
   api: z
     .object({
       baseUrl: z.string().url().optional(),
-  menuEndpoint: z.string().url().optional(),
-  marketingEndpoint: z.string().url().optional(),
-  restaurantEndpoint: z.string().url().optional(),
-  contentEndpoint: z.string().url().optional(),
+      menuEndpoint: z.string().url().optional(),
+      marketingEndpoint: z.string().url().optional(),
+      restaurantEndpoint: z.string().url().optional(),
+      contentEndpoint: z.string().url().optional(),
     })
     .default({}),
   cms: z.object({ enabled: z.boolean().default(false) }).default({ enabled: false }),

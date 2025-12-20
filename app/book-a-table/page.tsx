@@ -7,6 +7,9 @@ import { BRAND } from '@/src/lib/constants/brand';
 import RestaurantHoursCard from '@/components/restaurant/RestaurantHoursCard';
 import Link from '@/lib/debugLink';
 import InteractiveMap from '@/components/restaurant/InteractiveMap';
+import dynamic from 'next/dynamic';
+
+const SmartMapLink = dynamic(() => import('@/components/restaurant/SmartMapLink'));
 
 const CONTACT = getContactInfo();
 const SITE_URL = `https://${BRAND.domain}`;
@@ -40,7 +43,6 @@ const fillBrandPlaceholders = (value?: string | null) => {
 
 export default async function BookATablePage() {
   const contact = CONTACT;
-  const googleMapLink = contact.address.map.google ?? contact.address.map.embed ?? '#';
   const bookingHref = fillBrandPlaceholders(contact.bookingUrl) || '/contact#contact-info-heading';
   const bookingExternal = bookingHref.startsWith('http');
   const bookingEmail = fillBrandPlaceholders(contact.email.bookings ?? contact.email.primary);
@@ -133,7 +135,7 @@ export default async function BookATablePage() {
                         Book your table at {BRAND.fullName}
                       </h1>
                       <p className="max-w-2xl text-base text-white/80 sm:text-lg">
-                        Reserve online in seconds or call the duty manager. We hold walk-in space daily and confirm requests quickly.
+                        Call the duty manager or email us to book your table. We hold walk-in space daily and confirm requests quickly.
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2" aria-label="Booking highlights">
@@ -144,18 +146,20 @@ export default async function BookATablePage() {
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-3 pt-1 sm:flex-row sm:items-center">
-                      {renderBookingButton(
-                        'Book online',
-                        'btn btn-sm sm:btn-md rounded-full border-none bg-white text-brand-900 hover:bg-white/90',
-                        'Book a table online'
-                      )}
                       <a
                         href={contact.phone.tel}
-                        className="btn btn-sm sm:btn-md btn-outline rounded-full border-white/40 text-white hover:bg-white/10"
+                        className="btn btn-sm sm:btn-md rounded-full border-none bg-white text-brand-900 hover:bg-white/90"
                         aria-label={`Call ${contact.phone.display} to book a table`}
                         style={{ touchAction: 'manipulation' }}
                       >
                         Call {contact.phone.display}
+                      </a>
+                      <a
+                        href={`mailto:${bookingEmail || primaryEmail}`}
+                        className="btn btn-sm sm:btn-md btn-outline rounded-full border-white/40 text-white hover:bg-white/10"
+                        aria-label="Email the bookings team"
+                      >
+                        Email us
                       </a>
                     </div>
                   </div>
@@ -198,18 +202,13 @@ export default async function BookATablePage() {
                           Book in seconds
                         </h2>
                         <p className="text-sm text-brand-700 sm:text-base">
-                          Pick the fastest option for you — online, call, or email. We reply within one working day (faster during open hours).
+                          Call or email our team to secure your space. We reply within one working day (faster during open hours).
                         </p>
                       </div>
                       <div className="flex flex-col gap-3 sm:flex-row">
-                        {renderBookingButton(
-                          'Book online',
-                          'btn rounded-full border-none bg-brand-900 text-white hover:bg-brand-800',
-                          'Book a table online'
-                        )}
                         <a
                           href={contact.phone.tel}
-                          className="btn btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
+                          className="btn rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
                           aria-label={`Call ${contact.phone.display} to book a table`}
                           style={{ touchAction: 'manipulation' }}
                         >
@@ -217,7 +216,7 @@ export default async function BookATablePage() {
                         </a>
                         <a
                           href={`mailto:${bookingEmail || primaryEmail}`}
-                          className="btn btn-ghost rounded-full border border-brand-100 text-brand-900 hover:bg-brand-50"
+                          className="btn btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
                           aria-label="Email the bookings team"
                         >
                           Email us
@@ -273,26 +272,10 @@ export default async function BookATablePage() {
                         hintLabel="Tap for directions"
                       />
 
-                      <div className="flex flex-wrap gap-3">
-                        <a
-                          href={googleMapLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
-                          aria-label="Open Google Maps directions (opens in new tab)"
-                        >
-                          Google Maps ↗
-                        </a>
-                        <a
-                          href={contact.address.map.apple ?? googleMapLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
-                          aria-label="Open Apple Maps directions (opens in new tab)"
-                        >
-                          Apple Maps
-                        </a>
-                      </div>
+                      <SmartMapLink
+                        variant="primary"
+                        size="sm"
+                      />
                     </div>
                   </article>
                 </FadeIn>

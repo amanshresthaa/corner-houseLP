@@ -31,7 +31,7 @@
       },
       {
         "title": "Heated garden life",
-        "description": "Bookable heated cabins, covered projector, and year-round garden seating for watch parties or cosy dinners."
+        "description": "Heated private cabins, covered projector, and year-round garden seating for watch parties or cosy dinners."
       }
     ],
     "note": {
@@ -65,7 +65,7 @@
   },
   "cta": {
     "title": "Visit {{brand.shortName}}",
-    "description": "Book a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites — 2 minutes from your hotel.",
+    "description": "Call or email to reserve a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites — 2 minutes from your hotel.",
     "button": "Call +44 1223 921122",
     "contact": {
       "address": "231 Newmarket Road, Cambridge CB5 8JE",

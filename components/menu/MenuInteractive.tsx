@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Menu } from '@/src/lib/data/schemas';
-import MenuSearchFilter from './MenuSearchFilter';
 import MenuSections from './MenuSections';
 
 type Props = {
@@ -162,8 +161,8 @@ export default function MenuInteractive({ sections, defaultSelected, preloadedDa
                     onClick={() => handleSectionChange(isActive ? null : idSeed)}
                     disabled={isAnimating}
                     className={`inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive
-                        ? 'bg-accent text-white'
-                        : 'bg-neutral-50 text-brand-700 hover:bg-accent hover:text-white'
+                      ? 'bg-accent text-white'
+                      : 'bg-neutral-50 text-brand-700 hover:bg-accent hover:text-white'
                       } ${isAnimating ? 'opacity-70 cursor-not-allowed' : ''}`}
                     aria-pressed={isActive}
                   >

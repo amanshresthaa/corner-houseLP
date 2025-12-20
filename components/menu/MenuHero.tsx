@@ -11,11 +11,11 @@ type Props = {
 export default function MenuHero({ labelBookOnline, labelOrderTakeaway }: Props) {
   const contact = getContactInfo();
   const phoneHref = contact.phone.tel;
-  const bookingUrl = contact.bookingUrl ?? '/book-a-table';
+  const bookingUrl = contact.bookingUrl ?? '/contact';
   const bookingExternal = bookingUrl.startsWith('http');
   const bookingAria = bookingExternal ? `${labelBookOnline} (opens in new tab)` : labelBookOnline;
   return (
-  <section className="py-8 bg-gradient-to-br from-stout-800 to-stout-800/80">
+    <section className="py-8 bg-gradient-to-br from-stout-800 to-stout-800/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Menu — Nepalese & Pub Classics</h1>
         <p className="text-sm sm:text-base text-neutral-200 mb-4">Curated menu — quick to scan. Book or call us.</p>

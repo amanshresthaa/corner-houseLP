@@ -44,14 +44,6 @@
           "label": "Events"
         },
         {
-          "href": "/book-a-table",
-          "label": "Book a Table"
-        },
-        {
-          "href": "/press",
-          "label": "Press"
-        },
-        {
           "href": "/contact",
           "label": "Contact"
         }
@@ -112,6 +104,6 @@
     }
   },
   "links": {
-    "bookOnline": "https://{{brand.domain}}/book-a-table/"
+    "viewMenu": "https://{{brand.domain}}/menu"
   }
 }

@@ -11,7 +11,7 @@ interface InteractiveMapProps {
   hintLabel?: string;
 }
 
-export default function InteractiveMap({ 
+export default function InteractiveMap({
   className = "h-[600px] bg-neutral-50 rounded-xl shadow-lg overflow-hidden",
   height = "100%",
   title,
@@ -70,28 +70,28 @@ export default function InteractiveMap({
       setShouldLoad(true);
       return;
     }
-    const isiOS = typeof navigator !== 'undefined' && /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    
-    if (isiOS) {
+    const isApple = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
+
+    if (isApple) {
       try {
         // Try native Apple Maps first
         window.location.href = appleNative;
         // Fallback to web version after delay
-        setTimeout(() => window.open(appleHref, '_blank', 'noopener'), 1200);
+        setTimeout(() => window.open(appleHref, '_blank', 'noopener'), 1500);
       } catch (err) {
         window.open(appleHref, '_blank', 'noopener');
       }
     } else {
-      // Open Google Maps for non-iOS devices
+      // Open Google Maps for non-Apple devices
       window.open(googleHref, '_blank', 'noopener');
     }
 
     // Analytics tracking
     if ((window as any).dataLayer) {
-      (window as any).dataLayer.push({ 
-        event: "map_directions_click", 
+      (window as any).dataLayer.push({
+        event: "map_directions_click",
         action: "directions_click",
-        href: isiOS ? appleHref : googleHref
+        href: isApple ? appleHref : googleHref
       });
     }
   };
@@ -106,7 +106,7 @@ export default function InteractiveMap({
 
   return (
     <div className={className} ref={containerRef}>
-      <div 
+      <div
         className="relative h-full cursor-pointer group"
         onClick={handleMapClick}
         role="button"

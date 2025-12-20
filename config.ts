@@ -39,7 +39,7 @@ function snapshot(): ConfigProps {
       forwardRepliesTo: BRAND.supportEmail,
     },
     colors: { theme: "light", main: themes["light"]["primary"] },
-    auth: { loginUrl: "/book-a-table", callbackUrl: "/" },
+    auth: { loginUrl: "/contact", callbackUrl: "/" },
   };
 }
 

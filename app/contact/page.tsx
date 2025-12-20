@@ -13,6 +13,7 @@ const SITE_URL = `https://${BRAND.domain}`;
 
 const RestaurantHoursCard = dynamic(() => import('@/components/restaurant/RestaurantHoursCard'));
 const InteractiveMap = dynamic(() => import('@/components/restaurant/InteractiveMap'));
+const SmartMapLink = dynamic(() => import('@/components/restaurant/SmartMapLink'));
 
 const reduceMotionStyles = `
   @media (prefers-reduced-motion: reduce) {
@@ -53,8 +54,6 @@ export default async function ContactPage() {
   const phoneHref = CONTACT.phone.tel;
   const primaryEmail = fillBrandPlaceholders(CONTACT.email.primary);
   const bookingsEmail = fillBrandPlaceholders(CONTACT.email.bookings ?? CONTACT.email.primary);
-  const mapGoogle = ADDRESS.map.google ?? '#';
-  const mapApple = ADDRESS.map.apple ?? mapGoogle;
 
   const reservationSchema = {
     '@context': 'https://schema.org',
@@ -132,18 +131,10 @@ export default async function ContactPage() {
                 >
                   Email our team
                 </a>
-                {mapGoogle && (
-                  <a
-                    href={mapGoogle}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-lg border-white/40 bg-transparent text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/70"
-                    aria-label={`Get directions to ${IDENTITY.displayName}`}
-                    style={{ touchAction: 'manipulation' }}
-                  >
-                    Get directions ↗
-                  </a>
-                )}
+                <SmartMapLink
+                  variant="ghost"
+                  size="lg"
+                />
               </div>
             </FadeIn>
           </div>
@@ -234,26 +225,10 @@ export default async function ContactPage() {
                             directionLabel="Get directions"
                             hintLabel="Tap for directions"
                           />
-                          <div className="flex flex-wrap gap-3">
-                            <a
-                              href={mapGoogle}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="btn btn-sm rounded-full border-none bg-brand-900 text-white hover:bg-brand-800"
-                              aria-label="Open Google Maps directions (opens in new tab)"
-                            >
-                              Google Maps ↗
-                            </a>
-                            <a
-                              href={mapApple}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="btn btn-sm btn-outline rounded-full border-brand-200 text-brand-900 hover:bg-white"
-                              aria-label="Open Apple Maps directions (opens in new tab)"
-                            >
-                              Apple Maps
-                            </a>
-                          </div>
+                          <SmartMapLink
+                            variant="primary"
+                            size="sm"
+                          />
                         </div>
 
                         <div className="space-y-4">

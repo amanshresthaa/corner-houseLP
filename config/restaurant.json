@@ -6,7 +6,11 @@
     "description": "1930s art-deco pub on Newmarket Road serving Nepalese dishes, pub classics, and HD sports with heated cabins.",
     "established": "1930s",
     "type": "pub-restaurant",
-    "cuisine": ["Nepalese", "British Classics", "Pub Favourites"],
+    "cuisine": [
+      "Nepalese",
+      "British Classics",
+      "Pub Favourites"
+    ],
     "slug": "{{brand.slug}}"
   },
   "contact": {
@@ -23,7 +27,7 @@
       "press": "{{brand.supportEmail}}"
     },
     "website": "https://{{brand.domain}}",
-    "bookingUrl": "https://{{brand.domain}}/book-a-table"
+    "bookingUrl": "/contact"
   },
   "address": {
     "street": "231 Newmarket Road",
@@ -115,7 +119,10 @@
   },
   "meta": {
     "slug": "{{brand.slug}}",
-    "category": ["restaurant", "pub"],
+    "category": [
+      "restaurant",
+      "pub"
+    ],
     "rating": {
       "average": 4.4,
       "reviewCount": 451

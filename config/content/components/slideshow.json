@@ -19,10 +19,10 @@
       "badges": [
         "Village pub",
         "Family friendly",
-        "Book a table"
+        "View Menu"
       ],
       "ctas": {
-        "bookUrl": "/book-a-table",
+        "menuUrl": "/menu#starters",
         "callTel": "tel:+441223921122",
         "secondaryUrl": "/about"
       },
@@ -83,7 +83,7 @@
         "Alfresco dining"
       ],
       "ctas": {
-        "bookUrl": "/book-a-table",
+        "menuUrl": "/menu#starters",
         "callTel": "tel:+441223921122",
         "secondaryUrl": "/events"
       }
@@ -108,25 +108,6 @@
       }
     },
     {
-      "id": "slide-hand-pleated-momo",
-      "image": {
-        "primary": "/assets-slideshow/steamed-momo-with-spicy-sauce-portrait.png"
-      },
-      "alt": "Row of steamed dumplings with bright orange dipping sauce on a rectangular plate.",
-      "eyebrow": "Steamed, delicate, and dunked in our bold chilli sauce.",
-      "headline": "Hand-Pleated Momo",
-      "copy": "Comfort in one bite - soft wrappers, savoury filling, and a creamy kick on the side. A favourite for sharing or not.",
-      "badges": [
-        "House momo",
-        "Chilli dip",
-        "Shareable"
-      ],
-      "ctas": {
-        "menuUrl": "/menu#nepalese",
-        "callTel": "tel:+441223921122"
-      }
-    },
-    {
       "id": "slide-cosy-dining",
       "image": {
         "primary": "/assets-slideshow/corner-house-dining-angle.webp"
@@ -141,7 +122,7 @@
         "Group friendly"
       ],
       "ctas": {
-        "bookUrl": "/book-a-table",
+        "menuUrl": "/menu#starters",
         "callTel": "tel:+441223921122",
         "secondaryUrl": "/about"
       }

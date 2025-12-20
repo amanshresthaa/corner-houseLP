@@ -2,6 +2,7 @@
 
 import RestaurantHoursCard from './RestaurantHoursCard';
 import InteractiveMap from './InteractiveMap';
+import SmartMapLink from './SmartMapLink';
 import { getContactInfo, getRestaurantIdentity } from '@/lib/restaurantData';
 import {
   ArrowUpRight,
@@ -46,8 +47,6 @@ export default function LocationSection() {
   const identity = getRestaurantIdentity();
   const travelTips = buildTravelTips();
   const telHref = formatTelHref(contact.phone.display);
-  const googleMapsUrl = contact.address.map?.google;
-  const appleMapsUrl = contact.address.map?.apple;
 
   return (
     <section
@@ -99,30 +98,14 @@ export default function LocationSection() {
                       Call us
                     </a>
                   ) : null}
-                  {googleMapsUrl ? (
-                    <a
-                      href={googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn border-brand-200 bg-brand-50 text-brand-900 shadow-lg transition hover:bg-brand-100"
-                    >
-                      <Navigation className="h-4 w-4" aria-hidden="true" />
-                      Google Maps
-                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                    </a>
-                  ) : null}
-                  {appleMapsUrl ? (
-                    <a
-                      href={appleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn border-brand-200 bg-white text-brand-900 shadow-lg transition hover:bg-brand-50"
-                    >
-                      <MapPin className="h-4 w-4" aria-hidden="true" />
-                      Apple Maps
-                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                    </a>
-                  ) : null}
+                  <SmartMapLink
+                    variant="outline"
+                    className="bg-brand-50 shadow-lg transition hover:bg-brand-100"
+                  >
+                    <Navigation className="h-4 w-4" aria-hidden="true" />
+                    Get directions
+                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </SmartMapLink>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">

@@ -89,22 +89,22 @@ const Slide: React.FC<SlideProps> = ({ slide, slideIndex, active, preloaded, vis
     setImageLoaded(false);
     setCurrentSrc(fallback || primary);
   }, [fallback, primary]);
-  
+
   // Dynamic button logic with ABC cycling pattern
-  // A (slides 0, 3, 6...): Book Online + Call for Takeaway
-  // B (slides 1, 4, 7...): Call for Takeaway + Call for Booking
-  // C (slides 2, 5, 8...): Call for Booking + Book Online
+  // A (slides 0, 3, 6...): View Menu + Call for Takeaway
+  // B (slides 1, 4, 7...): Call for Takeaway + Call to Book
+  // C (slides 2, 5, 8...): Call to Book + View Menu
   const slideType = slideIndex % 3; // 0=A, 1=B, 2=C
-  
+
   const baseBtn = 'text-white font-bold rounded-xl shadow-xl shadow-black/25 ring-1 ring-white/10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60';
 
   const getButtonConfig = () => {
     switch (slideType) {
-      case 0: // A: Book Online + Call for Takeaway
+      case 0: // A: View Menu + Call for Takeaway
         return {
           primaryButton: {
-            variant: 'book' as const,
-            href: slide.ctas?.bookUrl,
+            variant: 'menu' as const,
+            href: slide.ctas?.menuUrl || '/menu#starters',
             className: `${baseBtn} bg-accent hover:bg-accent/90`
           },
           secondaryButton: {
@@ -126,7 +126,7 @@ const Slide: React.FC<SlideProps> = ({ slide, slideIndex, active, preloaded, vis
             className: `${baseBtn} bg-accent hover:bg-accent/90`
           }
         };
-      case 2: // C: Call for Booking + Book Online
+      case 2: // C: Call to Book + View Menu
         return {
           primaryButton: {
             variant: 'call-booking' as const,
@@ -134,17 +134,17 @@ const Slide: React.FC<SlideProps> = ({ slide, slideIndex, active, preloaded, vis
             className: `${baseBtn} bg-crimson-600 hover:bg-crimson-700`
           },
           secondaryButton: {
-            variant: 'book' as const,
-            href: slide.ctas?.bookUrl,
+            variant: 'menu' as const,
+            href: slide.ctas?.menuUrl || '/menu#starters',
             className: `${baseBtn} bg-accent hover:bg-accent/90`
           }
         };
       default:
-        // Fallback (should never reach here)
+        // Fallback
         return {
           primaryButton: {
-            variant: 'book' as const,
-            href: slide.ctas?.bookUrl,
+            variant: 'menu' as const,
+            href: slide.ctas?.menuUrl || '/menu#starters',
             className: `${baseBtn} bg-accent hover:bg-accent/90`
           },
           secondaryButton: {
@@ -155,7 +155,7 @@ const Slide: React.FC<SlideProps> = ({ slide, slideIndex, active, preloaded, vis
         };
     }
   };
-  
+
   const { primaryButton, secondaryButton } = getButtonConfig();
   return (
     <section className="relative h-[52svh] sm:h-[58svh] md:h-[65svh] flex items-center justify-center overflow-hidden" aria-hidden={visualOnly || undefined}>
@@ -192,51 +192,51 @@ const Slide: React.FC<SlideProps> = ({ slide, slideIndex, active, preloaded, vis
           </div>
         )}
         {/* Overlay for text contrast; ease in slightly after image loads to avoid "grey flash" perception */}
-  <div className={`absolute inset-0 bg-black/55 transition-opacity duration-300 ease-in-out ${imageLoaded ? 'opacity-100' : 'opacity-80'}`} />
+        <div className={`absolute inset-0 bg-black/55 transition-opacity duration-300 ease-in-out ${imageLoaded ? 'opacity-100' : 'opacity-80'}`} />
       </div>
 
       {!visualOnly && (
-      <span className="sr-only" role="status" aria-live="polite">
-        {imageLoaded ? 'Image loaded' : 'Image loading'}
-      </span>
+        <span className="sr-only" role="status" aria-live="polite">
+          {imageLoaded ? 'Image loaded' : 'Image loading'}
+        </span>
       )}
 
       {!visualOnly && (
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-5xl mx-auto">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-5xl mx-auto">
             <h1 className="h1 text-white mb-4 sm:mb-6 leading-tight md:leading-tight">
               <span className="block eyebrow text-white">{slide.eyebrow}</span>
               <span className="block text-neutral-100 h3">{slide.headline}</span>
             </h1>
 
-          <p className="lead text-neutral-200 mb-5 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-1 sm:px-0">{slide.copy}</p>
+            <p className="lead text-neutral-200 mb-5 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-1 sm:px-0">{slide.copy}</p>
 
-          <div className="flex flex-wrap justify-center gap-2 xs:gap-2 sm:gap-3 text-meta md:text-base text-neutral-100 mb-6 sm:mb-10 max-w-3xl mx-auto px-1 sm:px-0">
-            {(slide.badges || []).map((b) => (
-              <span key={b} className="px-2 sm:px-3 py-1 bg-white/20 rounded-full backdrop-blur border border-white/30 text-center text-white">
-                {b}
-              </span>
-            ))}
-          </div>
+            <div className="flex flex-wrap justify-center gap-2 xs:gap-2 sm:gap-3 text-meta md:text-base text-neutral-100 mb-6 sm:mb-10 max-w-3xl mx-auto px-1 sm:px-0">
+              {(slide.badges || []).map((b) => (
+                <span key={b} className="px-2 sm:px-3 py-1 bg-white/20 rounded-full backdrop-blur border border-white/30 text-center text-white">
+                  {b}
+                </span>
+              ))}
+            </div>
 
-          <div className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center items-center max-w-full overflow-hidden px-2 sm:px-0">
-            {primaryButton.href && (
-              <SlideCTAButton
-                variant={primaryButton.variant}
-                href={primaryButton.href}
-                className={`${primaryButton.className} text-white font-bold py-2 px-4 xs:py-2.5 xs:px-5 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-lg text-sm xs:text-base sm:text-lg shadow-lg w-full sm:w-auto max-w-full sm:max-w-xs truncate text-center`}
-              />
-            )}
-            {secondaryButton.href && (
-              <SlideCTAButton
-                variant={secondaryButton.variant}
-                href={secondaryButton.href}
-                className={`${secondaryButton.className} text-white font-bold py-2 px-4 xs:py-2.5 xs:px-5 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-lg text-sm xs:text-base sm:text-lg shadow-lg w-full sm:w-auto max-w-full sm:max-w-xs truncate text-center`}
-              />
-            )}
+            <div className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center items-center max-w-full overflow-hidden px-2 sm:px-0">
+              {primaryButton.href && (
+                <SlideCTAButton
+                  variant={primaryButton.variant}
+                  href={primaryButton.href}
+                  className={`${primaryButton.className} text-white font-bold py-2 px-4 xs:py-2.5 xs:px-5 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-lg text-sm xs:text-base sm:text-lg shadow-lg w-full sm:w-auto max-w-full sm:max-w-xs truncate text-center`}
+                />
+              )}
+              {secondaryButton.href && (
+                <SlideCTAButton
+                  variant={secondaryButton.variant}
+                  href={secondaryButton.href}
+                  className={`${secondaryButton.className} text-white font-bold py-2 px-4 xs:py-2.5 xs:px-5 sm:py-3 sm:px-6 md:py-4 md:px-8 rounded-lg text-sm xs:text-base sm:text-lg shadow-lg w-full sm:w-auto max-w-full sm:max-w-xs truncate text-center`}
+                />
+              )}
+            </div>
           </div>
         </div>
-      </div>
       )}
 
 

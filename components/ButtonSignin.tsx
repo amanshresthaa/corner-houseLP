@@ -12,7 +12,7 @@ const ButtonSignin = ({
   extraStyle?: string;
 }) => {
   const { data: content } = useContent();
-  const defaultText = content?.global?.ui?.buttons?.bookOnline || content?.global?.ui?.buttons?.getStarted || "Book Online";
+  const defaultText = content?.global?.ui?.buttons?.getStarted || content?.global?.ui?.buttons?.viewMenu || "Learn More";
   const href = config.auth.loginUrl || "/contact";
 
   return (

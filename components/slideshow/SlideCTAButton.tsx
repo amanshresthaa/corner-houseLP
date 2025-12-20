@@ -16,9 +16,9 @@ type SlideCTAButtonProps = {
 
 const buttonVariants = {
   book: {
-    emoji: "🍽️",
-    text: content.global?.ui?.buttons?.bookOnline || "Book Online",
-    ariaLabel: "Book a table online"
+    emoji: "📞",
+    text: content.global?.ui?.buttons?.callToBook || "Book by Phone",
+    ariaLabel: "Call us to book a table"
   },
   menu: {
     emoji: "📖",
@@ -26,13 +26,13 @@ const buttonVariants = {
     ariaLabel: "View the menu"
   },
   "call-takeaway": {
-    emoji: "📞", 
+    emoji: "📞",
     text: content.global?.ui?.buttons?.callTakeaway || content.global?.ui?.buttons?.callNow || "Call Us",
     ariaLabel: "Call us"
   },
   "call-booking": {
     emoji: "📞",
-    text: content.global?.ui?.buttons?.callToBook || content.global?.ui?.buttons?.callNow || "Call to Book", 
+    text: content.global?.ui?.buttons?.callToBook || content.global?.ui?.buttons?.callNow || "Call to Book",
     ariaLabel: "Call to make a booking"
   },
   "learn-more": {
@@ -45,12 +45,12 @@ const buttonVariants = {
 /**
  * Standardized CTA button for slideshow with consistent emoji handling
  */
-export function SlideCTAButton({ 
-  href, 
-  onClick, 
-  className = "", 
+export function SlideCTAButton({
+  href,
+  onClick,
+  className = "",
   variant,
-  ariaLabel 
+  ariaLabel
 }: SlideCTAButtonProps) {
   const baseConfig = buttonVariants[variant];
   const hrefStr = typeof href === 'string' ? href : undefined;
@@ -59,18 +59,18 @@ export function SlideCTAButton({
   const effective = baseConfig;
 
   const finalAriaLabel = ariaLabel || effective.ariaLabel;
-  
+
   const buttonContent = (
     <>
       <EmojiIcon emoji={effective.emoji} className="mr-2" />
       {effective.text}
     </>
   );
-  
+
   if (href) {
     const renderAsAnchor = isHttpHref || isTelHref;
     const shouldOpenNewTab = isHttpHref;
-    
+
     if (renderAsAnchor) {
       return (
         <a
@@ -85,7 +85,7 @@ export function SlideCTAButton({
         </a>
       );
     }
-    
+
     return (
       <Link
         href={href}
@@ -97,7 +97,7 @@ export function SlideCTAButton({
       </Link>
     );
   }
-  
+
   return (
     <button
       className={className}

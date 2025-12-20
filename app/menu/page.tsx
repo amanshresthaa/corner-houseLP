@@ -20,20 +20,20 @@ const RestaurantHoursCard = dynamic(() => import('@/components/restaurant/Restau
 export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const content = await getContentSmart();
-  const seo = (content.pages?.menu as any)?.seo || {};
-  return {
-    title: seo.title,
-    description: seo.description,
-    keywords: seo.keywords,
-    openGraph: seo.openGraph,
-  } as Metadata;
+	const content = await getContentSmart();
+	const seo = (content.pages?.menu as any)?.seo || {};
+	return {
+		title: seo.title,
+		description: seo.description,
+		keywords: seo.keywords,
+		openGraph: seo.openGraph,
+	} as Metadata;
 }
 
 export default async function MenuPage({ searchParams }: { searchParams?: { category?: string } }) {
 	// Detect priority category from search params or URL hash (for server-side optimization)
 	const priorityCategory = searchParams?.category;
-	
+
 	// Preload all data concurrently with priority category optimization
 	const [m, content, menu] = await Promise.all([
 		getMarketingSmart(),
@@ -50,8 +50,8 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const bookingUrl = contact.bookingUrl ?? '/book-a-table';
 	const bookingExternal = bookingUrl.startsWith('http');
 
-		const labels = m.buttons || {};
-		const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline;
+	const labels = m.buttons || {};
+	const labelBookOnline = labels.bookOnline || menuContent.hero.cta.book || content.global.ui.buttons.bookOnline;
 	const callLabel =
 		labels.callTakeaway ||
 		labels.callUs ||
@@ -61,7 +61,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	const menuDescription = menuContent.sections.description;
 	const formattedAddress = `${contact.address.street}, ${contact.address.area}, ${contact.address.city} ${contact.address.postcode}`;
 	const directionsHref = contact.address.map?.google || contact.address.map?.apple || contact.address.map?.embed || '#';
-	
+
 	// Optimize menu data structure for faster client-side rendering
 	const optimizedMenu = {
 		...menu,
@@ -77,7 +77,7 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 			} : null
 		}))
 	};
-	
+
 	// Enhanced structured data with optimized menu
 	const siteBase = (process.env.NEXT_PUBLIC_SITE_URL || `https://${siteConfig.domainName}/`).replace(/\/$/, '/');
 	const structuredData = {
@@ -102,10 +102,10 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 				description: item.description || undefined,
 				offers: item.price
 					? {
-							'@type': 'Offer',
-							price: String(item.price.amount),
-							priceCurrency: item.price.currency || 'GBP',
-						}
+						'@type': 'Offer',
+						price: String(item.price.amount),
+						priceCurrency: item.price.currency || 'GBP',
+					}
 					: undefined,
 				suitableForDiet: [
 					...(item.dietary?.vegetarian ? ['https://schema.org/VegetarianDiet'] : []),
@@ -127,12 +127,12 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 	}
 
 	// Find starters section and set as default
-	const startersSection = optimizedMenu?.sections?.find((section: any) => 
-		section.name?.toLowerCase().includes('starter') || 
+	const startersSection = optimizedMenu?.sections?.find((section: any) =>
+		section.name?.toLowerCase().includes('starter') ||
 		section.name?.toLowerCase().includes('appetizer') ||
 		section.id?.toLowerCase().includes('starter')
 	);
-	
+
 	const defaultSelectedStarters = startersSection ? normalizeId(startersSection.id || startersSection.name) : null;
 	const menuPageData = buildMenuPageData({
 		sections: optimizedMenu?.sections || [],
@@ -162,16 +162,16 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 		},
 		buttons: [
 			{
-				text: 'Book a Table',
-				href: bookingUrl,
-				variant: 'brand' as const,
-				key: 'bookOnline',
-			},
-			{
 				text: callLabel,
 				href: contact.phone.tel,
-				variant: 'accent' as const,
+				variant: 'brand' as const,
 				key: 'call',
+			},
+			{
+				text: 'Get Directions',
+				href: directionsHref,
+				variant: 'accent' as const,
+				key: 'directions',
 			},
 		],
 	};
@@ -199,7 +199,8 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 
 	return (
 		<>
-			<style dangerouslySetInnerHTML={{ __html: `
+			<style dangerouslySetInnerHTML={{
+				__html: `
 			  @media (prefers-reduced-motion: reduce) {
 			    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 			    html:focus-within{scroll-behavior:auto!important}
@@ -228,43 +229,43 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 				/>
 
 				<main>
-			<FadeIn>
-				<MenuExploreSection
-					sections={optimizedMenu?.sections || []}
-					defaultSelected={defaultSelectedStarters}
-					statHighlights={heroHighlights}
-					menuDescription={menuDescription}
-					telHref={telHref}
-					menuInformationHref="/menu-information"
-					contactDisplayPhone={phoneDisplay}
-					dietaryHighlights={dietaryHighlights}
-				/>
-			</FadeIn>
+					<FadeIn>
+						<MenuExploreSection
+							sections={optimizedMenu?.sections || []}
+							defaultSelected={defaultSelectedStarters}
+							statHighlights={heroHighlights}
+							menuDescription={menuDescription}
+							telHref={telHref}
+							menuInformationHref="/menu-information"
+							contactDisplayPhone={phoneDisplay}
+							dietaryHighlights={dietaryHighlights}
+						/>
+					</FadeIn>
 
-				<FadeIn>
-					<section
-						aria-labelledby="menu-hours-heading"
-						data-testid="menu-visit-section"
-						className="bg-gradient-to-b from-white via-brand-50/40 to-white py-12 sm:py-16"
-					>
-						<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-							<div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
-								<div className="space-y-8">
+					<FadeIn>
+						<section
+							aria-labelledby="menu-hours-heading"
+							data-testid="menu-visit-section"
+							className="bg-gradient-to-b from-white via-brand-50/40 to-white py-12 sm:py-16"
+						>
+							<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+								<div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
+									<div className="space-y-8">
 										<span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-brand-700">
 											Visit us soon
 										</span>
-									<h2 id="menu-hours-heading" className="text-4xl font-display font-bold text-stout-900 sm:text-[2.75rem]">
-										Restaurant &amp; bar opening times
+										<h2 id="menu-hours-heading" className="text-4xl font-display font-bold text-stout-900 sm:text-[2.75rem]">
+											Restaurant &amp; bar opening times
 										</h2>
-									<p className="text-base leading-relaxed text-brand-700 sm:text-lg">
+										<p className="text-base leading-relaxed text-brand-700 sm:text-lg">
 											Drop in for a relaxed pint, cosy supper, or speedy takeaway pick-up. Let us know how many are dining and we’ll make sure your table is ready.
 										</p>
 
-									<ul className="grid gap-4 sm:grid-cols-2" data-testid="menu-visit-cards">
+										<ul className="grid gap-4 sm:grid-cols-2" data-testid="menu-visit-cards">
 											{visitHighlights.map((card) => (
-											<li key={card.title} className="rounded-[2rem] border border-brand-100/80 bg-white/95 p-6 shadow-md">
-												<p className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-brand-500">{card.title}</p>
-												<p className="mt-2 text-sm text-brand-800 sm:text-base">{card.description}</p>
+												<li key={card.title} className="rounded-[2rem] border border-brand-100/80 bg-white/95 p-6 shadow-md">
+													<p className="text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-brand-500">{card.title}</p>
+													<p className="mt-2 text-sm text-brand-800 sm:text-base">{card.description}</p>
 													{card.ctaHref ? (
 														<a
 															href={card.ctaHref}
@@ -280,50 +281,29 @@ export default async function MenuPage({ searchParams }: { searchParams?: { cate
 											))}
 										</ul>
 
-									<div className="flex flex-wrap gap-3" data-testid="menu-visit-cta-group">
-											{(() => {
-												const isExternal = bookingUrl.startsWith('http');
-												const ariaLabel = isExternal ? `${labelBookOnline} now (opens in new tab)` : `${labelBookOnline} now`;
-												const classes = 'btn rounded-full bg-brand-900 text-white border-none shadow-lg hover:-translate-y-0.5';
-											return isExternal ? (
-												<a
-													href={bookingUrl}
-													target="_blank"
-													rel="noopener noreferrer"
-													className={classes}
-													aria-label={ariaLabel}
-													style={{ touchAction: 'manipulation' }}
-												>
-													{labelBookOnline}
-													<span aria-hidden className="ml-1 text-xs">↗</span>
-												</a>
-											) : (
-												<Link href={bookingUrl} className={classes} aria-label={ariaLabel}>
-													{labelBookOnline}
-												</Link>
-											);
-											})()}
-							<a
-								href={telHref}
-								className="btn rounded-full border border-brand-200 bg-white text-brand-800 hover:bg-white/90"
-								aria-label={`Call ${phoneDisplay || 'the restaurant'}`}
-								style={{ touchAction: 'manipulation' }}
-							>
-								{callLabel}
-							</a>
-							<a
-								href={directionsHref}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="btn rounded-full border border-brand-200 bg-white text-brand-800 hover:bg-white/90"
-								aria-label={`Open directions to ${identity.displayName} in a new tab`}
-							>
+										<div className="flex flex-wrap gap-3" data-testid="menu-visit-cta-group">
+
+											<a
+												href={telHref}
+												className="btn rounded-full border border-brand-200 bg-white text-brand-800 hover:bg-white/90"
+												aria-label={`Call ${phoneDisplay || 'the restaurant'}`}
+												style={{ touchAction: 'manipulation' }}
+											>
+												{callLabel}
+											</a>
+											<a
+												href={directionsHref}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="btn rounded-full border border-brand-200 bg-white text-brand-800 hover:bg-white/90"
+												aria-label={`Open directions to ${identity.displayName} in a new tab`}
+											>
 												Get directions
 											</a>
 										</div>
 									</div>
-								<div className="rounded-[2.75rem] border border-brand-100/80 bg-white/95 p-4 shadow-2xl">
-									<RestaurantHoursCard variant="light" className="w-full rounded-[1.75rem] border border-brand-100/60" />
+									<div className="rounded-[2.75rem] border border-brand-100/80 bg-white/95 p-4 shadow-2xl">
+										<RestaurantHoursCard variant="light" className="w-full rounded-[1.75rem] border border-brand-100/60" />
 									</div>
 								</div>
 							</div>

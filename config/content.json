@@ -45,14 +45,6 @@
             "label": "Events"
           },
           {
-            "href": "/book-a-table",
-            "label": "Book a Table"
-          },
-          {
-            "href": "/press",
-            "label": "Press"
-          },
-          {
             "href": "/contact",
             "label": "Contact"
           }
@@ -113,11 +105,11 @@
       }
     },
     "links": {
-      "bookOnline": "https://{{brand.domain}}/book-a-table/"
+      "viewMenu": "/menu#starters"
     },
     "ui": {
       "buttons": {
-        "bookOnline": "Book Online",
+        "bookOnline": "Book by Phone",
         "viewMenu": "View Menu",
         "callNow": "Call Now",
         "callToBook": "Call to Book",
@@ -251,10 +243,10 @@
         "subtitle": "Matchday energy, heated garden cabins, and authentic Himalayan plates on Newmarket Road.",
         "description": "1930s art-deco pub reborn as Cambridge’s home for HD sports, momo, and roasts. Settle into a snug, book a heated cabin, or grab a curry before the game.",
         "cta": {
-          "primary": "Call +44 1223 921122",
-          "secondary": "Book a Table",
-          "primaryHref": "tel:+441223921122",
-          "secondaryHref": "/book-a-table"
+          "primary": "View Menu",
+          "secondary": "Call +44 1223 921122",
+          "primaryHref": "/menu#starters",
+          "secondaryHref": "tel:+441223921122"
         }
       },
       "sections": {
@@ -726,7 +718,7 @@
         "title": "Our Menu: Authentic Nepalese Cuisine & British Pub Classics",
         "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to British favourites and well-kept cask ales.",
         "cta": {
-          "book": "Book Online",
+          "book": "Book by Phone",
           "order": "Order for Collection or Delivery: +44 1223 921122"
         }
       },
@@ -953,7 +945,7 @@
       "items": [
         {
           "question": "How do I book a table or cabin?",
-          "answer": "Call +44 1223 921122, email {{brand.supportEmail}}, or use our Book a Table page. Book early for big matchdays or heated cabins."
+          "answer": "Call +44 1223 921122 or email {{brand.supportEmail}} to book. Book early for big matchdays or heated cabins."
         },
         {
           "question": "Do you show live sports?",
@@ -1016,10 +1008,10 @@
           "badges": [
             "Village pub",
             "Family friendly",
-            "Book a table"
+            "View Menu"
           ],
           "ctas": {
-            "bookUrl": "/book-a-table",
+            "bookUrl": "/menu#starters",
             "callTel": "tel:+441223921122",
             "secondaryUrl": "/about"
           },
@@ -1080,7 +1072,7 @@
             "Alfresco dining"
           ],
           "ctas": {
-            "bookUrl": "/book-a-table",
+            "bookUrl": "/menu#starters",
             "callTel": "tel:+441223921122",
             "secondaryUrl": "/events"
           }
@@ -1138,7 +1130,7 @@
             "Group friendly"
           ],
           "ctas": {
-            "bookUrl": "/book-a-table",
+            "bookUrl": "/menu#starters",
             "callTel": "tel:+441223921122",
             "secondaryUrl": "/about"
           }

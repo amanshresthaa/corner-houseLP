@@ -1,30 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<<<<<<< HEAD
-<url><loc>https://thecornerhousepub.co/manifest.webmanifest</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/robots.txt</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/events</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/book-a-table</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/press</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/privacy-policy</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/contact</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/tos</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://thecornerhousepub.co/blog</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/menu-information</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/about</loc><lastmod>2025-12-20T15:03:10.619Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-=======
-<url><loc>https://thecornerhousepub.co/manifest.webmanifest</loc><lastmod>2025-12-20T14:32:41.042Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/robots.txt</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/about</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/book-a-table</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/tos</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/press</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/blog</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/menu-information</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://thecornerhousepub.co/events</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/contact</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://thecornerhousepub.co/privacy-policy</loc><lastmod>2025-12-20T14:32:41.043Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
->>>>>>> fe82f2616a7f759c16a4e7aa25aec0bb83889aab
+<url><loc>https://thecornerhousepub.co/manifest.webmanifest</loc><lastmod>2025-12-20T18:12:06.967Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/robots.txt</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/contact</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/events</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/press</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+<url><loc>https://thecornerhousepub.co/about</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/blog</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/book-a-table</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/menu-information</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/tos</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://thecornerhousepub.co/privacy-policy</loc><lastmod>2025-12-20T18:12:06.968Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

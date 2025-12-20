@@ -9,7 +9,7 @@
     "title": "Events & What's On",
     "subtitle": "Matchdays, quiz nights, live music pop-ups, and covered garden seating 2 minutes from your hotel",
     "buttons": {
-      "book": "Book for Big Games",
+      "book": "Call to Book",
       "viewMenu": "View Menu"
     },
     "badges": [
@@ -46,7 +46,7 @@
   ],
   "contact": {
     "title": "Plan your visit",
-    "description": "Book tables for matchdays, quizzes, and group celebrations — 2 minutes from Premier Inn & Travelodge, 10 minutes to Abbey Stadium.",
+    "description": "Call or email to reserve tables for matchdays, quizzes, and group celebrations — 2 minutes from Premier Inn & Travelodge, 10 minutes to Abbey Stadium.",
     "phone": "+44 1223 921122",
     "email": "{{brand.supportEmail}}"
   }

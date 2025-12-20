@@ -172,7 +172,7 @@ const FALLBACK_CONTACT_BASE: ContactFallback = {
     support: 'cornerhouse@lapeninns.com',
   },
   website: `https://${BRAND.domain}`,
-  bookingUrl: `https://${BRAND.domain}/book-a-table`,
+  bookingUrl: '/contact',
   orderUrl: undefined,
   enquiryUrl: 'mailto:cornerhouse@lapeninns.com',
 };
@@ -265,18 +265,18 @@ const restaurantData: NormalizedRestaurant = (() => {
   const base: Restaurant = parsed.success
     ? parsed.data
     : ({
-        name: FALLBACK_IDENTITY.name,
-        phone: FALLBACK_CONTACT_BASE.phone.primary,
-        email: FALLBACK_CONTACT_BASE.email.primary,
-        address: {
-          street: FALLBACK_ADDRESS.street,
-          city: FALLBACK_ADDRESS.city,
-          state: FALLBACK_ADDRESS.state,
-          zip: FALLBACK_ADDRESS.zip,
-        },
-        hours: FALLBACK_HOURS,
-        description: FALLBACK_IDENTITY.description,
-      } as unknown as Restaurant);
+      name: FALLBACK_IDENTITY.name,
+      phone: FALLBACK_CONTACT_BASE.phone.primary,
+      email: FALLBACK_CONTACT_BASE.email.primary,
+      address: {
+        street: FALLBACK_ADDRESS.street,
+        city: FALLBACK_ADDRESS.city,
+        state: FALLBACK_ADDRESS.state,
+        zip: FALLBACK_ADDRESS.zip,
+      },
+      hours: FALLBACK_HOURS,
+      description: FALLBACK_IDENTITY.description,
+    } as unknown as Restaurant);
   return normalizeRestaurant(base);
 })();
 

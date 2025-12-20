@@ -4,7 +4,7 @@
   "items": [
     {
       "question": "How do I book a table or cabin?",
-      "answer": "Call +44 1223 921122, email {{brand.supportEmail}}, or use our Book a Table page. Book early for big matchdays or heated cabins."
+      "answer": "Call +44 1223 921122 or email {{brand.supportEmail}} to book. Book early for big matchdays or heated cabins."
     },
     {
       "question": "Do you show live sports?",

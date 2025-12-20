@@ -3,6 +3,7 @@ import React from "react";
 import Link from "@/lib/debugLink";
 import InteractiveMap from "@/components/restaurant/InteractiveMap";
 import { BRAND } from '@/src/lib/constants/brand';
+import SmartMapLink from "@/components/restaurant/SmartMapLink";
 
 type Props = {
   addressLine: string;
@@ -24,14 +25,12 @@ export default function FindUsCard({ addressLine, mapHref }: Props) {
             hintLabel="Click for directions"
           />
         </div>
-        <Link
-          href={mapHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-brand-700 underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+        <SmartMapLink
+          variant="ghost"
+          className="!p-0 !h-auto text-brand-700 underline underline-offset-4 hover:text-brand-800"
         >
-          View directions on Google Maps ↗
-        </Link>
+          View directions
+        </SmartMapLink>
       </div>
     </div>
   );

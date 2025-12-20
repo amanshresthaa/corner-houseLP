@@ -5,9 +5,9 @@
     "description": "1930s art-deco pub reborn as Cambridge’s best-of-both-worlds: pints, momo, roasts, and pub classics with free Wi-Fi, away-fan welcome, and cosy snugs on Newmarket Road.",
     "cta": {
       "primary": "Call +44 1223 921122",
-      "secondary": "Book a Table",
+      "secondary": "View Menu",
       "primaryHref": "tel:+441223921122",
-      "secondaryHref": "/book-a-table"
+      "secondaryHref": "/menu#starters"
     }
   },
   "sections": {
@@ -27,7 +27,7 @@
         {
           "icon": "🔥",
           "title": "Heated cabins & garden",
-          "description": "Book a private heated cabin or relax under lights in the covered beer garden year-round."
+          "description": "Reserve a private heated cabin or relax under lights in the covered beer garden year-round."
         },
         {
           "icon": "📺",
@@ -71,7 +71,7 @@
         "1930s Art Deco heritage with original fireplaces and timber snugs",
         "Authentic Nepalese kitchen led by Kathmandu-born chefs",
         "Wall-to-wall HD screens plus outdoor projector for big matches (home & away fans welcome)",
-        "Heated private cabins bookable year-round in the beer garden",
+        "Heated private cabins available year-round in the beer garden",
         "2-minute walk from Premier Inn/Travelodge; 10-minute walk to Abbey Stadium",
         "Free Wi-Fi, wheelchair ramp at rear entrance, and accessible WC"
       ],
@@ -99,8 +99,8 @@
       ],
       "ctaLinks": [
         {
-          "text": "Book a Table",
-          "href": "/book-a-table"
+          "text": "Call to Book",
+          "href": "tel:+441223921122"
         },
         {
           "text": "View Menu",
@@ -253,8 +253,8 @@
         "title": "Rated 4.4★ on Google (800+) & 4.6★ on TripAdvisor",
         "description": "Aromatic Himali Lamb, buzzing matchday atmosphere, heated cabins, and a warm Nepali-led team keep hotel guests, locals, and travelling fans returning.",
         "cta": {
-          "text": "Join our happy guests",
-          "href": "/book-a-table"
+          "text": "Call to Book",
+          "href": "tel:+441223921122"
         },
         "badge": {
           "label": "Tripadvisor Travelers' Choice 2025",
@@ -376,16 +376,16 @@
     },
     "quickLinks": {
       "eyebrow": "Plan your visit",
-      "title": "Book, watch the match, or order Nepalese from 2 minutes away",
+      "title": "Visit, watch the match, or order Nepalese from 2 minutes away",
       "description": "Staying across the road or heading to the Abbey? Jump straight to cabins, fixtures, or menu/collection.",
       "items": [
         {
           "title": "Reserve heated cabins",
-          "eyebrow": "Book",
+          "eyebrow": "Visit",
           "description": "Lock in private, heated cabins for matchdays, reunions, or winter evenings with full table service.",
-          "link": "/book-a-table",
-          "linkText": "Book a table →",
-          "ctaText": "Reserve now",
+          "link": "/contact",
+          "linkText": "Get directions →",
+          "ctaText": "Call to Book",
           "icon": "calendar",
           "accent": "accent"
         },
@@ -403,8 +403,8 @@
           "title": "Staying at Premier Inn or Travelodge?",
           "eyebrow": "2-minute walk",
           "description": "Show your room key, settle into a snug with free Wi-Fi, and order momo, curries, or pub classics without the hotel buffet.",
-          "link": "/book-a-table",
-          "linkText": "Book now →",
+          "link": "/menu#starters",
+          "linkText": "View Menu →",
           "ctaText": "Call +44 1223 921122",
           "icon": "hotel",
           "accent": "brand"

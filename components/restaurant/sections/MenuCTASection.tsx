@@ -37,9 +37,9 @@ interface MenuCTASectionProps {
  * - Responsive button layout
  * - Design system styling
  */
-export default function MenuCTASection({ 
+export default function MenuCTASection({
   title = "Ready to Try Our Unique Menu?",
-  description = "Book a table or call ahead to experience the best of Nepal and Britain at Waterbeach's historic thatched pub.",
+  description = "Call ahead or email us to experience the best of Nepal and Britain at the Corner House Cambridge.",
   buttons,
   allergenNotice,
   className = '',
@@ -76,20 +76,20 @@ export default function MenuCTASection({
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 text-white drop-shadow-lg">
               🍽️ {title}
             </h2>
-            
+
             <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto leading-relaxed">
               {description}
             </p>
-            
+
             <div className="flex flex-wrap gap-4 justify-center mb-6">
               {buttons.map((button, index) => {
                 const ButtonComponent = button.external ? 'a' : Link;
-                const buttonProps = button.external 
-                  ? { 
-                      href: button.href,
-                      target: '_blank',
-                      rel: 'noopener noreferrer'
-                    }
+                const buttonProps = button.external
+                  ? {
+                    href: button.href,
+                    target: '_blank',
+                    rel: 'noopener noreferrer'
+                  }
                   : { href: button.href };
 
                 return (
