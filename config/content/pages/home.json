@@ -4,9 +4,9 @@
     "subtitle": "2-minute walk from Premier Inn & Travelodge, 10 minutes to Abbey Stadium — HD sport, heated cabins, and authentic Himalayan plates on Newmarket Road.",
     "description": "1930s art-deco pub reborn as Cambridge’s best-of-both-worlds: pints, momo, roasts, and pub classics with free Wi-Fi, away-fan welcome, and cosy snugs on Newmarket Road.",
     "cta": {
-      "primary": "Call +44 1223 921122",
+      "primary": "Call 01223 603907",
       "secondary": "View Menu",
-      "primaryHref": "tel:+441223921122",
+      "primaryHref": "tel:+441223603907",
       "secondaryHref": "/menu#starters"
     }
   },
@@ -100,15 +100,15 @@
       "ctaLinks": [
         {
           "text": "Call to Book",
-          "href": "tel:+441223921122"
+          "href": "tel:+441223603907"
         },
         {
           "text": "View Menu",
           "href": "/menu#starters"
         },
         {
-          "text": "Call +44 1223 921122",
-          "href": "tel:+441223921122"
+          "text": "Call 01223 603907",
+          "href": "tel:+441223603907"
         }
       ],
       "milestones": [
@@ -254,7 +254,7 @@
         "description": "Aromatic Himali Lamb, buzzing matchday atmosphere, heated cabins, and a warm Nepali-led team keep hotel guests, locals, and travelling fans returning.",
         "cta": {
           "text": "Call to Book",
-          "href": "tel:+441223921122"
+          "href": "tel:+441223603907"
         },
         "badge": {
           "label": "Tripadvisor Travelers' Choice 2025",
@@ -405,7 +405,7 @@
           "description": "Show your room key, settle into a snug with free Wi-Fi, and order momo, curries, or pub classics without the hotel buffet.",
           "link": "/menu#starters",
           "linkText": "View Menu →",
-          "ctaText": "Call +44 1223 921122",
+          "ctaText": "Call 01223 603907",
           "icon": "hotel",
           "accent": "brand"
         },
@@ -457,7 +457,7 @@
           "longitude": 0.14335
         },
         "url": "https://{{brand.domain}}/",
-        "telephone": "+441223921122",
+        "telephone": "+441223603907",
         "priceRange": "££",
         "servesCuisine": [
           "Nepalese",

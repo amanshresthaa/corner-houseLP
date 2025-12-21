@@ -15,10 +15,10 @@
   },
   "contact": {
     "phone": {
-      "primary": "+44 1223 921122",
-      "display": "+44 1223 921122",
-      "tel": "tel:+441223921122",
-      "whatsapp": "+44 1223 921122"
+      "primary": "01223 603907",
+      "display": "01223 603907",
+      "tel": "tel:+441223603907",
+      "whatsapp": "01223 603907"
     },
     "email": {
       "primary": "{{brand.supportEmail}}",
@@ -56,7 +56,7 @@
       "thursday": "12:00-15:00,17:00-22:00",
       "friday": "12:00-22:00",
       "saturday": "12:00-22:00",
-      "sunday": "10:00-16:00,17:00-20:00"
+      "sunday": "12:00-21:00"
     },
     "bar": {
       "monday": "12:00-22:00",
@@ -65,20 +65,20 @@
       "thursday": "12:00-22:00",
       "friday": "12:00-23:00",
       "saturday": "12:00-23:00",
-      "sunday": "10:00-20:00"
+      "sunday": "12:00-22:00"
     },
     "display": {
       "kitchen": {
         "weekdays": "Mon-Thu: Lunch 12:00-15:00 • Dinner 17:00-22:00",
         "friday": "Fri: Kitchen 12:00-22:00",
         "saturday": "Sat: Kitchen 12:00-22:00",
-        "sunday": "Sun: Brunch 10:00-12:00 • Nepalese menu 12:00-16:00 & 17:00-20:00"
+        "sunday": "Sun: Kitchen 12:00-21:00"
       },
       "bar": {
         "weekdays": "Mon-Thu: Bar 12:00-22:00",
         "friday": "Fri: Bar 12:00-23:00",
         "saturday": "Sat: Bar 12:00-23:00",
-        "sunday": "Sun: Bar 10:00-20:00"
+        "sunday": "Sun: Bar 12:00-22:00"
       }
     },
     "notes": [
@@ -129,6 +129,6 @@
     }
   },
   "name": "{{brand.fullName}}",
-  "phone": "+44 1223 921122",
+  "phone": "01223 603907",
   "email": "{{brand.supportEmail}}"
 }

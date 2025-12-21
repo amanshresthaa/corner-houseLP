@@ -1,13 +1,13 @@
 {
   "seo": {
     "title": "Contact {{brand.fullName}} | Bookings, Directions & Opening Hours",
-    "description": "Call +44 1223 921122 or email {{brand.supportEmail}} for bookings, groups, and takeaway. Find us 2 minutes from Premier Inn & Travelodge at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
+    "description": "Call 01223 603907 or email {{brand.supportEmail}} for bookings, groups, and takeaway. Find us 2 minutes from Premier Inn & Travelodge at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
     "keywords": [
       "{{brand.fullNameNoArticle}} contact",
       "Newmarket Road pub phone",
       "book table Cambridge pub",
       "Nepalese restaurant Cambridge contact",
-      "+44 1223 921122",
+      "01223 603907",
       "231 Newmarket Road Cambridge"
     ],
     "canonicalUrlRelative": "/contact"
@@ -20,7 +20,7 @@
     "title": "Get in Touch",
     "phone": {
       "title": "Phone / WhatsApp",
-      "number": "+44 1223 921122",
+      "number": "01223 603907",
       "description": "Call for table bookings, groups, takeaway, or quick matchday questions"
     },
     "email": {

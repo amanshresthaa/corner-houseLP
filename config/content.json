@@ -3,7 +3,7 @@
     "site": {
       "name": "{{brand.fullName}}",
       "title": "{{brand.fullName}} - Sports Pub & Nepalese Kitchen on Newmarket Road",
-      "description": "1930s art-deco pub on Newmarket Road, Cambridge serving authentic Nepalese cuisine and British pub classics. Call +44 1223 921122",
+      "description": "1930s art-deco pub on Newmarket Road, Cambridge serving authentic Nepalese cuisine and British pub classics. Call 01223 603907",
       "keywords": [
         "sports pub Cambridge",
         "Nepalese restaurant Cambridge",
@@ -251,9 +251,9 @@
         "subtitle": "2-minute walk from Premier Inn & Travelodge, 10 minutes to Abbey Stadium — HD sport, heated cabins, and authentic Himalayan plates on Newmarket Road.",
         "description": "1930s art-deco pub reborn as Cambridge’s best-of-both-worlds: pints, momo, roasts, and pub classics with free Wi-Fi, away-fan welcome, and cosy snugs on Newmarket Road.",
         "cta": {
-          "primary": "Call +44 1223 921122",
+          "primary": "Call 01223 603907",
           "secondary": "View Menu",
-          "primaryHref": "tel:+441223921122",
+          "primaryHref": "tel:+441223603907",
           "secondaryHref": "/menu#starters"
         }
       },
@@ -347,15 +347,15 @@
           "ctaLinks": [
             {
               "text": "Call to Book",
-              "href": "tel:+441223921122"
+              "href": "tel:+441223603907"
             },
             {
               "text": "View Menu",
               "href": "/menu#starters"
             },
             {
-              "text": "Call +44 1223 921122",
-              "href": "tel:+441223921122"
+              "text": "Call 01223 603907",
+              "href": "tel:+441223603907"
             }
           ],
           "milestones": [
@@ -501,7 +501,7 @@
             "description": "Aromatic Himali Lamb, buzzing matchday atmosphere, heated cabins, and a warm Nepali-led team keep hotel guests, locals, and travelling fans returning.",
             "cta": {
               "text": "Call to Book",
-              "href": "tel:+441223921122"
+              "href": "tel:+441223603907"
             },
             "badge": {
               "label": "Tripadvisor Travelers' Choice 2025",
@@ -652,7 +652,7 @@
               "description": "Show your room key, settle into a snug with free Wi-Fi, and order momo, curries, or pub classics without the hotel buffet.",
               "link": "/menu#starters",
               "linkText": "View Menu →",
-              "ctaText": "Call +44 1223 921122",
+              "ctaText": "Call 01223 603907",
               "icon": "hotel",
               "accent": "brand"
             },
@@ -704,7 +704,7 @@
               "longitude": 0.14335
             },
             "url": "https://{{brand.domain}}/",
-            "telephone": "+441223921122",
+            "telephone": "+441223603907",
             "priceRange": "££",
             "servesCuisine": [
               "Nepalese",
@@ -826,7 +826,7 @@
       "cta": {
         "title": "Visit {{brand.shortName}}",
         "description": "Call or email to reserve a table or heated cabin, catch the match, and enjoy authentic Nepalese dishes alongside British pub favourites — 2 minutes from your hotel.",
-        "button": "Call +44 1223 921122",
+        "button": "Call 01223 603907",
         "contact": {
           "address": "231 Newmarket Road, Cambridge CB5 8JE",
           "hours": "Kitchen: Mon–Fri 12:00–15:00 & 17:00–22:00; Sat 12:00–22:00; Sun 12:00–21:00. Bar: Mon–Thu/Sun 12:00–22:00; Fri–Sat 12:00–23:00."
@@ -836,13 +836,13 @@
     "contact": {
       "seo": {
         "title": "Contact {{brand.fullName}} | Bookings, Directions & Opening Hours",
-        "description": "Call +44 1223 921122 or email {{brand.supportEmail}} for bookings, groups, and takeaway. Find us 2 minutes from Premier Inn & Travelodge at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
+        "description": "Call 01223 603907 or email {{brand.supportEmail}} for bookings, groups, and takeaway. Find us 2 minutes from Premier Inn & Travelodge at 231 Newmarket Road, Cambridge CB5 8JE (opposite Cambridge Retail Park).",
         "keywords": [
           "{{brand.fullNameNoArticle}} contact",
           "Newmarket Road pub phone",
           "book table Cambridge pub",
           "Nepalese restaurant Cambridge contact",
-          "+44 1223 921122",
+          "01223 603907",
           "231 Newmarket Road Cambridge"
         ],
         "canonicalUrlRelative": "/contact"
@@ -855,7 +855,7 @@
         "title": "Get in Touch",
         "phone": {
           "title": "Phone / WhatsApp",
-          "number": "+44 1223 921122",
+          "number": "01223 603907",
           "description": "Call for table bookings, groups, takeaway, or quick matchday questions"
         },
         "email": {
@@ -952,14 +952,14 @@
       "contact": {
         "title": "Plan your visit",
         "description": "Call or email to reserve tables for matchdays, quizzes, and group celebrations — 2 minutes from Premier Inn & Travelodge, 10 minutes to Abbey Stadium.",
-        "phone": "+44 1223 921122",
+        "phone": "01223 603907",
         "email": "{{brand.supportEmail}}"
       }
     },
     "menu": {
       "seo": {
         "title": "Menu | Nepalese Curries & Pub Classics | {{brand.fullName}}",
-        "description": "Browse our Cambridge menu of Nepali chef specials—Himali lamb, Khasi ko masu, sizzling platters—served alongside burgers, pub classics, and cask ales. Call +44 1223 921122 for bookings or takeaway.",
+        "description": "Browse our Cambridge menu of Nepali chef specials—Himali lamb, Khasi ko masu, sizzling platters—served alongside burgers, pub classics, and cask ales. Call 01223 603907 for bookings or takeaway.",
         "keywords": "{{brand.fullNameNoArticle}} menu, Nepalese curry Cambridge, Himali lamb, Khasi ko masu, momo Cambridge, Nepali mixed grill, pub classics Cambridge, heated cabins, Sky Sports pub food",
         "openGraph": {
           "title": "Menu | Nepalese Food & Pub Classics | {{brand.fullName}}",
@@ -975,7 +975,7 @@
         "subtitle": "Discover authentic Himalayan flavours prepared with traditional recipes alongside your favourite pub classics. From Bhutuwa chicken and Pokhareli fish curry to British favourites and well-kept cask ales.",
         "cta": {
           "book": "Book by Phone",
-          "order": "Order for Collection or Delivery: +44 1223 921122"
+          "order": "Order for Collection or Delivery: 01223 603907"
         }
       },
       "sections": {
@@ -1201,7 +1201,7 @@
       "items": [
         {
           "question": "How do I book a table or cabin?",
-          "answer": "Call +44 1223 921122 or email {{brand.supportEmail}} to book. Book early for big matchdays or heated cabins."
+          "answer": "Call 01223 603907 or email {{brand.supportEmail}} to book. Book early for big matchdays or heated cabins."
         },
         {
           "question": "Do you show live sports?",
@@ -1268,7 +1268,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#starters",
-            "callTel": "tel:+441223921122",
+            "callTel": "tel:+441223603907",
             "secondaryUrl": "/about"
           },
           "required": true
@@ -1289,7 +1289,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#nepalese",
-            "callTel": "tel:+441223921122"
+            "callTel": "tel:+441223603907"
           },
           "required": true
         },
@@ -1309,7 +1309,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#drinks",
-            "callTel": "tel:+441223921122",
+            "callTel": "tel:+441223603907",
             "secondaryUrl": "/events"
           }
         },
@@ -1329,7 +1329,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#starters",
-            "callTel": "tel:+441223921122",
+            "callTel": "tel:+441223603907",
             "secondaryUrl": "/events"
           }
         },
@@ -1349,7 +1349,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#starters",
-            "callTel": "tel:+441223921122"
+            "callTel": "tel:+441223603907"
           }
         },
         {
@@ -1368,7 +1368,7 @@
           ],
           "ctas": {
             "menuUrl": "/menu#starters",
-            "callTel": "tel:+441223921122",
+            "callTel": "tel:+441223603907",
             "secondaryUrl": "/about"
           }
         }

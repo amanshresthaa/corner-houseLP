@@ -159,10 +159,10 @@ const FALLBACK_ADDRESS: NormalizedAddress = {
 
 const FALLBACK_CONTACT_BASE: ContactFallback = {
   phone: {
-    primary: '+44 1223 921122',
-    display: '+44 1223 921122',
-    tel: sanitizeTel('+44 1223 921122'),
-    whatsapp: '+44 1223 921122',
+    primary: '01223 603907',
+    display: '01223 603907',
+    tel: sanitizeTel('+44 1223 603907'),
+    whatsapp: '01223 603907',
   },
   email: {
     primary: 'cornerhouse@lapeninns.com',
@@ -185,7 +185,7 @@ const FALLBACK_HOURS: DetailedHours = {
     thursday: '12:00-15:00,17:00-22:00',
     friday: '12:00-22:00',
     saturday: '12:00-22:00',
-    sunday: '10:00-16:00,17:00-20:00',
+    sunday: '12:00-21:00',
   },
   bar: {
     monday: '12:00-22:00',
@@ -194,20 +194,20 @@ const FALLBACK_HOURS: DetailedHours = {
     thursday: '12:00-22:00',
     friday: '12:00-23:00',
     saturday: '12:00-23:00',
-    sunday: '10:00-20:00',
+    sunday: '12:00-22:00',
   },
   display: {
     kitchen: {
       weekdays: 'Mon-Thu: Lunch 12:00-15:00 • Dinner 17:00-22:00',
       friday: 'Fri: Kitchen 12:00-22:00',
       saturday: 'Sat: Kitchen 12:00-22:00',
-      sunday: 'Sun: Brunch 10:00-12:00 • Nepalese menu 12:00-16:00 & 17:00-20:00',
+      sunday: 'Sun: Kitchen 12:00-21:00',
     },
     bar: {
       weekdays: 'Mon-Thu: Bar 12:00-22:00',
       friday: 'Fri: Bar 12:00-23:00',
       saturday: 'Sat: Bar 12:00-23:00',
-      sunday: 'Sun: Bar 10:00-20:00',
+      sunday: 'Sun: Bar 12:00-22:00',
     },
   },
   notes: [

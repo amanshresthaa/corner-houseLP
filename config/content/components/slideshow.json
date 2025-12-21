@@ -23,7 +23,7 @@
       ],
       "ctas": {
         "menuUrl": "/menu#starters",
-        "callTel": "tel:+441223921122",
+        "callTel": "tel:+441223603907",
         "secondaryUrl": "/about"
       },
       "required": true
@@ -44,7 +44,7 @@
       ],
       "ctas": {
         "menuUrl": "/menu#nepalese",
-        "callTel": "tel:+441223921122"
+        "callTel": "tel:+441223603907"
       },
       "required": true
     },
@@ -64,7 +64,7 @@
       ],
       "ctas": {
         "menuUrl": "/menu#drinks",
-        "callTel": "tel:+441223921122",
+        "callTel": "tel:+441223603907",
         "secondaryUrl": "/events"
       }
     },
@@ -84,7 +84,7 @@
       ],
       "ctas": {
         "menuUrl": "/menu#starters",
-        "callTel": "tel:+441223921122",
+        "callTel": "tel:+441223603907",
         "secondaryUrl": "/events"
       }
     },
@@ -104,7 +104,7 @@
       ],
       "ctas": {
         "menuUrl": "/menu#starters",
-        "callTel": "tel:+441223921122"
+        "callTel": "tel:+441223603907"
       }
     },
     {
@@ -123,7 +123,7 @@
       ],
       "ctas": {
         "menuUrl": "/menu#starters",
-        "callTel": "tel:+441223921122",
+        "callTel": "tel:+441223603907",
         "secondaryUrl": "/about"
       }
     }
