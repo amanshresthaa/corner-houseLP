@@ -70,6 +70,12 @@ const reviews: Review[] = rawReviews.map((review) => ({
 
 const TestimonialsSection: React.FC = () => {
   const reviewLinks = getReviewLinks();
+  const isValidHref = (href?: string) => Boolean(href && href.trim() && href.trim() !== '#');
+  const googleUrl = reviewLinks.google;
+  const tripadvisorUrl = reviewLinks.tripadvisor;
+  const hasGoogle = isValidHref(googleUrl);
+  const hasTripadvisor = isValidHref(tripadvisorUrl);
+  const showPlatformCtas = hasGoogle || hasTripadvisor;
   const renderStars = (count: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <span key={i} className="text-yellow-400 text-lg md:text-xl drop-shadow-sm">
@@ -105,38 +111,45 @@ const TestimonialsSection: React.FC = () => {
             <p className="text-lg md:text-xl text-neutral-700 font-light tracking-wide">
               Real reviews from Google Maps and TripAdvisor — trusted by locals and visitors
             </p>
-            <div className="flex items-center justify-center gap-4 md:gap-6 mt-2 md:mt-0 flex-wrap w-full">
-              <a 
-                href={reviewLinks.google}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
-                aria-label={`View ${BRAND.fullName} reviews on Google Maps`}
-              >
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white font-bold text-base shadow">G</span>
-                <span className="text-base font-semibold text-neutral-800">4.5</span>
-                <span className="text-yellow-400 ml-1">★</span>
-                <span className="text-sm text-neutral-600 ml-2">(800+)</span>
-              </a>
-              
-              {/* Elegant Brand Divider */}
-              <div className="flex items-center">
-                <div className="w-1 h-8 bg-gradient-to-b from-brand-200 via-accent-300 to-brand-200 rounded-full"></div>
+            {showPlatformCtas ? (
+              <div className="flex items-center justify-center gap-4 md:gap-6 mt-2 md:mt-0 flex-wrap w-full">
+                {hasGoogle ? (
+                  <a 
+                    href={googleUrl!.trim()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
+                    aria-label={`View ${BRAND.fullName} reviews on Google Maps`}
+                  >
+                    <span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 text-white font-bold text-base shadow">G</span>
+                    <span className="text-base font-semibold text-neutral-800">4.5</span>
+                    <span className="text-yellow-400 ml-1">★</span>
+                    <span className="text-sm text-neutral-600 ml-2">(800+)</span>
+                  </a>
+                ) : null}
+                
+                {hasGoogle && hasTripadvisor ? (
+                  <div className="flex items-center">
+                    <div className="w-1 h-8 bg-gradient-to-b from-brand-200 via-accent-300 to-brand-200 rounded-full"></div>
+                  </div>
+                ) : null}
+                
+                {hasTripadvisor ? (
+                  <a
+                    href={tripadvisorUrl!.trim()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
+                    aria-label={`View ${BRAND.fullName} reviews on TripAdvisor`}
+                  >
+                    <span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-green-500 to-green-600 text-white font-bold text-base shadow">T</span>
+                    <span className="text-base font-semibold text-neutral-800">4.6</span>
+                    <span className="text-yellow-400 ml-1">★</span>
+                    <span className="text-sm text-neutral-600 ml-2">(400+)</span>
+                  </a>
+                ) : null}
               </div>
-              
-              <a
-                href={reviewLinks.tripadvisor}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 shrink-0"
-                aria-label={`View ${BRAND.fullName} reviews on TripAdvisor`}
-              >
-                <span className="w-7 h-7 rounded-full flex items-center justify-center bg-gradient-to-br from-green-500 to-green-600 text-white font-bold text-base shadow">T</span>
-                <span className="text-base font-semibold text-neutral-800">4.6</span>
-                <span className="text-yellow-400 ml-1">★</span>
-                <span className="text-sm text-neutral-600 ml-2">(400+)</span>
-              </a>
-            </div>
+            ) : null}
           </div>
         </div>
 
@@ -178,15 +191,6 @@ const TestimonialsSection: React.FC = () => {
         <div className="mt-8 rounded-2xl border border-brand-100 bg-white p-6 shadow-xl">
           <div className="mb-4 flex items-center justify-between">
             <h3 className="font-display text-xl font-bold text-stout-700">Guest Highlights</h3>
-            <a
-              href={reviewLinks.google}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-              aria-label={`Open ${BRAND.shortName} on Google Maps to read more reviews`}
-            >
-              Read more on Google
-            </a>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             <blockquote className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-brand-800">

@@ -4,7 +4,7 @@ import Link from '@/lib/debugLink';
 import EmojiIcon from '@/components/common/EmojiIcon';
 import AllergenNotice from '@/components/restaurant/AllergenNotice';
 import SimpleFooterHours from '@/components/simple/SimpleFooterHours';
-import { getContactInfo, getRestaurantIdentity, getAddress } from '@/lib/restaurantData';
+import { getContactInfo, getRestaurantIdentity, getAddress, getSocialMedia } from '@/lib/restaurantData';
 import { BRAND } from '@/src/lib/constants/brand';
 
 /**
@@ -15,6 +15,10 @@ export default function ClientFooter() {
   const contact = getContactInfo();
   const identity = getRestaurantIdentity();
   const address = getAddress();
+  const social = getSocialMedia();
+  const facebookUrl = social.facebook?.url?.trim();
+  const hasFacebook = Boolean(facebookUrl && facebookUrl !== '#');
+  const facebookExternal = Boolean(facebookUrl && /^https?:\/\//i.test(facebookUrl));
 
   return (
     <footer className="bg-brand-700 text-white">
@@ -74,12 +78,19 @@ export default function ClientFooter() {
         {/* Social Links & Copyright */}
         <div className="border-t border-neutral-600 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="https://www.facebook.com/cornerhousecambridge" className="text-neutral-100 hover:text-foreground-strong transition-colors" aria-label="Facebook">
-              <span className="sr-only">Facebook</span>
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
+            {hasFacebook ? (
+              <a
+                href={facebookUrl}
+                className="text-neutral-100 hover:text-foreground-strong transition-colors"
+                aria-label="Facebook"
+                {...(facebookExternal ? { target: '_blank' as const, rel: 'noopener noreferrer' as const } : {})}
+              >
+                <span className="sr-only">Facebook</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            ) : null}
           </div>
           
           <div className="text-sm text-neutral-100 text-center md:text-right">

@@ -67,6 +67,8 @@ const accentBorder: Record<string, string> = {
 };
 
 const isInternal = (href: string) => href.startsWith('/') && !href.startsWith('//');
+const isExternalHttp = (href: string) => /^https?:\/\//i.test(href);
+const isValidHref = (href?: string) => Boolean(href && href.trim() && href.trim() !== '#');
 
 const renderStars = (rating?: number) => {
   if (!rating || rating <= 0) {
@@ -153,14 +155,20 @@ export default function HomepageReviewHighlights({
   }
 
   const reviewLinks = getReviewLinks();
-  const tripadvisorUrl = reviewLinks.tripadvisor || '#';
-  const googleUrl = reviewLinks.google || '#';
+  const tripadvisorUrl = reviewLinks.tripadvisor;
+  const googleUrl = reviewLinks.google;
 
   const eyebrow = hero?.eyebrow || 'Guest highlights';
   const heading = hero?.title || title || 'Guest Highlights';
   const heroDescription = hero?.description || subtitle;
   const heroCta = hero?.cta;
   const heroBadge = hero?.badge;
+  const heroCtaHref = heroCta?.href?.trim();
+  const shouldRenderHeroCta = Boolean(heroCta?.text && isValidHref(heroCtaHref));
+  const platformLinks = [
+    { href: tripadvisorUrl, label: 'Tripadvisor', tone: 'accent' as const },
+    { href: googleUrl, label: 'Google Reviews', tone: 'brand' as const },
+  ].filter((link) => isValidHref(link.href));
 
   const featuredReview = items.find((review) => review.featured) || items[0];
   const supportingReviews = items.filter((review) => review !== featuredReview).slice(0, 6);
@@ -180,19 +188,26 @@ export default function HomepageReviewHighlights({
               {heroDescription ? <p className="text-lg text-white/80">{heroDescription}</p> : null}
             </div>
             <div className="flex flex-wrap gap-3">
-              {heroCta ? (
-                isInternal(heroCta.href) ? (
-                  <Link href={heroCta.href} className="btn btn-accent btn-sm rounded-full border-none text-sm font-semibold">
-                    {heroCta.text}
+              {shouldRenderHeroCta ? (
+                isInternal(heroCtaHref!) ? (
+                  <Link href={heroCtaHref!} className="btn btn-accent btn-sm rounded-full border-none text-sm font-semibold">
+                    {heroCta!.text}
                   </Link>
                 ) : (
-                  <a href={heroCta.href} className="btn btn-accent btn-sm rounded-full border-none text-sm font-semibold">
-                    {heroCta.text}
+                  <a
+                    href={heroCtaHref!}
+                    className="btn btn-accent btn-sm rounded-full border-none text-sm font-semibold"
+                    {...(isExternalHttp(heroCtaHref!)
+                      ? { target: '_blank' as const, rel: 'noopener noreferrer' as const }
+                      : {})}
+                  >
+                    {heroCta!.text}
                   </a>
                 )
               ) : null}
-              <PlatformLink href={tripadvisorUrl} label="Tripadvisor" tone="accent" />
-              <PlatformLink href={googleUrl} label="Google Reviews" tone="brand" />
+              {platformLinks.map((link) => (
+                <PlatformLink key={link.label} href={link.href!.trim()} label={link.label} tone={link.tone} />
+              ))}
             </div>
             {heroBadge?.label ? (
               <div className="flex items-center gap-3 rounded-3xl border border-white/25 bg-white/10 px-5 py-3">
@@ -279,13 +294,6 @@ export default function HomepageReviewHighlights({
           </div>
         ) : null}
 
-        <div className="mt-12 flex flex-col items-center gap-3 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Read every word</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-            <PlatformLink href={tripadvisorUrl} label="Tripadvisor" tone="accent" />
-            <PlatformLink href={googleUrl} label="Google Reviews" tone="brand" />
-          </div>
-        </div>
       </div>
     </section>
   );

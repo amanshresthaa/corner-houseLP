@@ -19,6 +19,8 @@ interface HomeRatingsSectionProps {
   className?: string;
 }
 
+const isValidHref = (href?: string) => Boolean(href && href.trim() && href.trim() !== '#');
+
 export default function HomeRatingsSection({
   title,
   subtitle,
@@ -87,13 +89,14 @@ export default function HomeRatingsSection({
               </motion.article>
             );
 
-            if (rating.url) {
-              const external = rating.url.startsWith('http');
+            if (isValidHref(rating.url)) {
+              const href = rating.url!.trim();
+              const external = href.startsWith('http');
               if (external) {
                 return (
                   <a
                     key={`${rating.source}-${index}`}
-                    href={rating.url}
+                    href={href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-300 rounded-2xl"
@@ -107,7 +110,7 @@ export default function HomeRatingsSection({
               return (
                 <Link
                   key={`${rating.source}-${index}`}
-                  href={rating.url}
+                  href={href}
                   className="focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-300 rounded-2xl"
                   aria-label={`Open ${rating.source} reviews`}
                 >

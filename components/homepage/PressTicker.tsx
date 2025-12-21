@@ -15,6 +15,8 @@ interface HomepagePressTickerProps {
 }
 
 const LABEL_DEFAULT = 'In the press';
+const isInternalLink = (href: string) => href.startsWith('/') && !href.startsWith('//');
+const isValidHref = (href?: string) => Boolean(href && href.trim() && href.trim() !== '#');
 
 export default function HomepagePressTicker({ label, items }: HomepagePressTickerProps) {
   if (!Array.isArray(items) || items.length === 0) {
@@ -53,16 +55,25 @@ export default function HomepagePressTicker({ label, items }: HomepagePressTicke
                     {item.summary}
                   </p>
                 ) : null}
-                {item.href ? (
+                {isValidHref(item.href) ? (
                   <div className="mt-auto pt-2">
-                    <Link
-                      href={item.href}
-                      className="btn btn-sm btn-outline border-brand-200 text-brand-900 transition-colors hover:border-brand-400 hover:bg-white"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {item.ctaText || 'Read more'}
-                    </Link>
+                    {isInternalLink(item.href!.trim()) ? (
+                      <Link
+                        href={item.href!.trim()}
+                        className="btn btn-sm btn-outline border-brand-200 text-brand-900 transition-colors hover:border-brand-400 hover:bg-white"
+                      >
+                        {item.ctaText || 'Read more'}
+                      </Link>
+                    ) : (
+                      <a
+                        href={item.href!.trim()}
+                        className="btn btn-sm btn-outline border-brand-200 text-brand-900 transition-colors hover:border-brand-400 hover:bg-white"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.ctaText || 'Read more'}
+                      </a>
+                    )}
                   </div>
                 ) : null}
               </div>

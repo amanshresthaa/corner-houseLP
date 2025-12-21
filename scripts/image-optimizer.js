@@ -24,8 +24,11 @@ const CONFIG = {
   outputDir: 'public/images/optimized',
   sourcePatterns: [
     'public/images/**/*.{jpg,jpeg,png}',
-    '!public/images/optimized/**/*'
-  ]
+  ],
+  ignorePatterns: [
+    'public/images/optimized/**',
+    'public/images/srcset/**'
+  ],
 };
 
 class ImageOptimizer {
@@ -33,6 +36,7 @@ class ImageOptimizer {
     this.processedCount = 0;
     this.savedBytes = 0;
     this.errors = [];
+    this.skipped = [];
   }
 
   async optimizeAll() {
@@ -65,14 +69,12 @@ class ImageOptimizer {
   }
 
   async findImages() {
-    const files = [];
-    
-    for (const pattern of CONFIG.sourcePatterns) {
-      const matches = await glob(pattern, { cwd: process.cwd() });
-      files.push(...matches);
-    }
+    const matches = await glob(CONFIG.sourcePatterns, {
+      cwd: process.cwd(),
+      ignore: CONFIG.ignorePatterns,
+    });
 
-    return [...new Set(files)]; // Remove duplicates
+    return [...new Set(matches)];
   }
 
   async processImage(imagePath) {
@@ -188,6 +190,10 @@ class ImageOptimizer {
       };
 
     } catch (error) {
+      if (this.isCorruptImageError(error)) {
+        this.skipCorruptImage(imagePath, error);
+        return null;
+      }
       console.error(`  ❌ Error processing ${imagePath}:`, error.message);
       this.errors.push({ file: imagePath, error: error.message });
       return null;
@@ -249,6 +255,10 @@ class ImageOptimizer {
       console.log(`  📐 Generated responsive variants for ${path.basename(imagePath)}`);
       
     } catch (error) {
+      if (this.isCorruptImageError(error)) {
+        this.skipCorruptImage(imagePath, error);
+        return;
+      }
       console.error(`  ❌ Error generating srcset for ${imagePath}:`, error.message);
     }
   }
@@ -259,7 +269,8 @@ class ImageOptimizer {
       totalProcessed: this.processedCount,
       totalSaved: this.savedBytes,
       config: CONFIG,
-      errors: this.errors
+      errors: this.errors,
+      skipped: this.skipped
     };
 
     await fs.writeFile(
@@ -291,6 +302,7 @@ class ImageOptimizer {
     console.log('============================');
     console.log(`✅ Processed: ${this.processedCount} images`);
     console.log(`💾 Total saved: ${this.formatBytes(this.savedBytes)}`);
+    console.log(`⚠️ Skipped: ${this.skipped.length}`);
     console.log(`❌ Errors: ${this.errors.length}`);
 
     if (this.errors.length > 0) {
@@ -305,6 +317,24 @@ class ImageOptimizer {
     console.log('• Implement responsive image loading with srcset');
     console.log('• Configure CDN caching for optimized images');
     console.log('• Test image loading performance across devices');
+  }
+
+  isCorruptImageError(error) {
+    const message = String(error?.message || error || '');
+    return (
+      message.includes('Input file has corrupt header') ||
+      message.includes('Invalid component ID') ||
+      message.includes('VipsJpeg') ||
+      message.includes('VipsPng') ||
+      message.includes('VipsTIFF')
+    );
+  }
+
+  skipCorruptImage(imagePath, error) {
+    const message = String(error?.message || error || '');
+    const entry = { file: imagePath, error: message };
+    this.skipped.push(entry);
+    console.warn(`  ⚠️ Skipping corrupt image ${imagePath}: ${message}`);
   }
 }
 

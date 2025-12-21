@@ -98,6 +98,12 @@ const formatTelHref = (value?: string): string | undefined => {
   return digits ? `tel:${digits}` : undefined;
 };
 
+const normalizeHref = (href?: string) => (href ?? '').trim();
+const isValidHref = (href?: string) => {
+  const trimmed = normalizeHref(href);
+  return Boolean(trimmed) && trimmed !== '#';
+};
+
 export default function CallToActionSection({
   eyebrow,
   badge,
@@ -111,7 +117,26 @@ export default function CallToActionSection({
   noBackground = false,
   theme = 'light',
 }: CallToActionSectionProps) {
-  if (!headline || !buttons || buttons.length === 0) {
+  const normalizedButtons = (buttons || [])
+    .map((button) => ({
+      ...button,
+      href: normalizeHref(button.href),
+    }))
+    .filter((button) => isValidHref(button.href));
+
+  const dedupedButtons = (() => {
+    const seen = new Set<string>();
+    return normalizedButtons.filter((button) => {
+      const key = button.href.toLowerCase();
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
+  })();
+
+  if (!headline || dedupedButtons.length === 0) {
     return null;
   }
 
@@ -136,7 +161,7 @@ export default function CallToActionSection({
   };
 
   const renderButton = (button: CTAButton, index: number) => {
-    const href = button.href || '#';
+    const href = button.href.trim();
     const isInternalLink = typeof href === 'string' && href.startsWith('/') && !button.external;
     const opensNewTab = Boolean(button.external || (typeof href === 'string' && href.startsWith('http')));
     const ariaLabel = opensNewTab ? `${button.text} (opens in new tab)` : button.text;
@@ -295,7 +320,7 @@ export default function CallToActionSection({
               ) : null}
 
               <div className="flex flex-wrap justify-center gap-3 lg:justify-start" data-testid="cta-buttons">
-                {buttons.map(renderButton)}
+                {dedupedButtons.map(renderButton)}
               </div>
             </div>
 

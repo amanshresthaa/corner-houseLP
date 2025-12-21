@@ -1,5 +1,6 @@
 'use client';
 
+import Link from '@/lib/debugLink';
 import { motion, useReducedMotion } from 'framer-motion';
 import { variants as mv } from '@/lib/motion/variants';
 type PressItem = {
@@ -17,6 +18,9 @@ type RecognitionItem = {
   body?: string;
   year?: string | number;
 };
+
+const isInternalLink = (href: string) => href.startsWith('/') && !href.startsWith('//');
+const isValidHref = (href?: string) => Boolean(href && href.trim() && href.trim() !== '#');
 
 interface HomeRecognitionSectionProps {
   title: string;
@@ -94,11 +98,24 @@ export default function HomeRecognitionSection({
                   </motion.article>
                 );
 
-                if (item.url) {
+                if (isValidHref(item.url)) {
+                  const href = item.url!.trim();
+                  if (isInternalLink(href)) {
+                    return (
+                      <Link
+                        key={`${item.title}-${index}`}
+                        href={href}
+                        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-300 rounded-2xl"
+                        aria-label={`Open ${item.title}`}
+                      >
+                        {body}
+                      </Link>
+                    );
+                  }
                   return (
                     <a
                       key={`${item.title}-${index}`}
-                      href={item.url}
+                      href={href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-300 rounded-2xl"
@@ -156,11 +173,24 @@ export default function HomeRecognitionSection({
                     </motion.article>
                   );
 
-                  if (item.url) {
+                  if (isValidHref(item.url)) {
+                    const href = item.url!.trim();
+                    if (isInternalLink(href)) {
+                      return (
+                        <Link
+                          key={`${item.publication}-${index}`}
+                          href={href}
+                          className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-300 rounded-2xl"
+                          aria-label={`Read ${item.publication} coverage`}
+                        >
+                          {content}
+                        </Link>
+                      );
+                    }
                     return (
                       <a
                         key={`${item.publication}-${index}`}
-                        href={item.url}
+                        href={href}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent-300 rounded-2xl"

@@ -11,6 +11,10 @@ export default async function Footer() {
   const social = getSocialMedia();
   const content = await getContentSmart();
   const footerContent = content.global.navigation.footer;
+  const facebookUrlRaw = footerContent.socialMedia?.facebook?.url ?? social.facebook?.url;
+  const facebookUrl = facebookUrlRaw?.trim();
+  const hasFacebook = Boolean(facebookUrl && facebookUrl !== '#');
+  const facebookExternal = Boolean(facebookUrl && /^https?:\/\//i.test(facebookUrl));
 
   return (
     <footer className="bg-brand-700 text-white">
@@ -66,24 +70,23 @@ export default async function Footer() {
         {/* Social Links & Copyright */}
         <div className="border-t border-neutral-600 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex space-x-4 mb-4 md:mb-0">
-            <a
-              href={
-                footerContent.socialMedia?.facebook?.url ??
-                social.facebook?.url ??
-                '#'
-              }
-              className="text-neutral-100 hover:text-foreground-strong transition-colors"
-              aria-label={
-                footerContent.socialMedia?.facebook?.label ??
-                social.facebook?.handle ??
-                'Facebook'
-              }
-            >
-              <span className="sr-only">Facebook</span>
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
+            {hasFacebook ? (
+              <a
+                href={facebookUrl}
+                className="text-neutral-100 hover:text-foreground-strong transition-colors"
+                aria-label={
+                  footerContent.socialMedia?.facebook?.label ??
+                  social.facebook?.handle ??
+                  'Facebook'
+                }
+                {...(facebookExternal ? { target: '_blank' as const, rel: 'noopener noreferrer' as const } : {})}
+              >
+                <span className="sr-only">Facebook</span>
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            ) : null}
           </div>
 
           <div className="text-sm text-neutral-100 text-center md:text-right">

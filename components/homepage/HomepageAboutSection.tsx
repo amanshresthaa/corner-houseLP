@@ -60,8 +60,19 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
     }));
 
   const safeCtas = ctaLinks
-    .filter((cta) => cta?.text && cta?.href)
-    .map((cta) => ({ text: cta!.text!, href: cta!.href! }));
+    .filter((cta) => cta?.text && cta?.href && cta.href.trim() && cta.href.trim() !== '#')
+    .map((cta) => ({ text: cta!.text!, href: cta!.href!.trim() }));
+  const dedupedCtas = (() => {
+    const seen = new Set<string>();
+    return safeCtas.filter((cta) => {
+      const key = cta.href.toLowerCase();
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
+  })();
 
   const featureCards = features.filter(Boolean);
   const safeMilestones = milestones
@@ -132,9 +143,9 @@ export default function HomepageAboutSection({ content }: HomepageAboutSectionPr
                 </div>
               ) : null}
 
-              {safeCtas.length ? (
+              {dedupedCtas.length ? (
                 <div className="flex flex-wrap gap-3">
-                  {safeCtas.map((cta, idx) => {
+                  {dedupedCtas.map((cta, idx) => {
                     const href = cta.href;
                     const props = {
                       className:

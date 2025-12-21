@@ -13,6 +13,50 @@ interface LazyLocationSectionProps {
   rootMargin?: string;
 }
 
+const LocationSectionPlaceholder = () => (
+  <section className="bg-brand-50 py-16" aria-hidden="true">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+      <div className="mb-8 text-center sm:mb-10">
+        <div className="mx-auto h-6 w-32 rounded-full bg-brand-100" />
+        <div className="mx-auto mt-4 h-10 w-3/4 rounded bg-brand-100" />
+        <div className="mx-auto mt-3 h-5 w-2/3 rounded bg-brand-100" />
+      </div>
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start">
+        <div className="flex flex-col gap-6">
+          <div className="rounded-[2.5rem] border border-brand-100 bg-white/90 p-6 shadow-2xl">
+            <div className="space-y-4">
+              <div className="h-6 w-40 rounded bg-brand-100" />
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="h-11 rounded bg-brand-100" />
+                <div className="h-11 rounded bg-brand-100" />
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="h-28 rounded bg-brand-100" />
+                <div className="h-28 rounded bg-brand-100" />
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="h-16 rounded bg-brand-100" />
+                <div className="h-16 rounded bg-brand-100" />
+              </div>
+            </div>
+          </div>
+          <div className="rounded-[1.75rem] border border-brand-100 bg-white p-4 shadow-xl">
+            <div className="h-32 rounded bg-brand-100" />
+          </div>
+        </div>
+        <div>
+          <div className="rounded-[2.5rem] border border-brand-100 bg-white/90 p-3 shadow-2xl">
+            <div className="rounded-[2rem] border border-brand-100 bg-brand-50 p-2">
+              <div className="h-[480px] w-full rounded-[1.75rem] bg-brand-100" />
+            </div>
+            <div className="mt-4 h-16 rounded-2xl border border-brand-100 bg-brand-50" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 /**
  * Optimized lazy loader for LocationSection with intersection observer
  * Includes network-aware loading and reduced motion support
@@ -104,13 +148,7 @@ export default function LazyLocationSection({
           <LocationSection />
         </Suspense>
       ) : (
-        // Static placeholder to preserve layout without animations
-        // Match the loaded map height to avoid layout shift (CLS)
-        <section className="bg-brand-50 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="h-[600px]" />
-          </div>
-        </section>
+        <LocationSectionPlaceholder />
       )}
     </div>
   );

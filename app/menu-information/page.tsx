@@ -86,7 +86,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
     )
   },
   {
-    title: "Are you compliant with Natasha&apos;s Law?",
+    title: "Are you compliant with Natasha's Law?",
     content: (
       <div className="space-y-4">
         <p>
@@ -219,7 +219,7 @@ const buildFaqItems = (phoneDisplay: string) => ([
     )
   },
   {
-    title: "What children&apos;s options and dietary considerations do you provide?",
+    title: "What children's options and dietary considerations do you provide?",
     content: (
       <div className="space-y-4">
         <p>

@@ -77,24 +77,10 @@ export const AutoMarquee = forwardRef<AutoMarqueeHandle, AutoMarqueeProps>(funct
 
   const sets = useMemo(() => Array.from({ length: dupCount }), [dupCount]);
 
-  if (prefersReduced) {
-    return (
-      <div
-        ref={viewportRef}
-        className="overflow-x-auto py-6 sm:py-8"
-        aria-roledescription="carousel"
-        aria-label={ariaLabel || 'Items'}
-        role="region"
-        tabIndex={0}
-      >
-        <div className="flex gap-4 sm:gap-6 items-stretch px-2">
-          {children}
-        </div>
-      </div>
-    );
-  }
-
   useEffect(() => {
+    if (prefersReduced) {
+      return;
+    }
     const viewport = viewportRef.current;
     const track = trackRef.current;
     if (!viewport || !track) return;
@@ -180,7 +166,7 @@ export const AutoMarquee = forwardRef<AutoMarqueeHandle, AutoMarqueeProps>(funct
       io.disconnect();
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [speedPxPerSec, resumeAfterMs, direction, dupCount]);
+  }, [prefersReduced, speedPxPerSec, resumeAfterMs, direction, dupCount]);
 
   // Keyboard controls and pause/resume via Space
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -195,6 +181,23 @@ export const AutoMarquee = forwardRef<AutoMarqueeHandle, AutoMarqueeProps>(funct
       return;
     }
   };
+
+  if (prefersReduced) {
+    return (
+      <div
+        ref={viewportRef}
+        className="overflow-x-auto py-6 sm:py-8"
+        aria-roledescription="carousel"
+        aria-label={ariaLabel || 'Items'}
+        role="region"
+        tabIndex={0}
+      >
+        <div className="flex gap-4 sm:gap-6 items-stretch px-2">
+          {children}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
