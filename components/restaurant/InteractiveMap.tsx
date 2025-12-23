@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAddress, getRestaurantIdentity, getMapLinks } from '@/lib/restaurantData';
 
 interface InteractiveMapProps {
@@ -19,8 +19,7 @@ export default function InteractiveMap({
   hintLabel = 'Click for directions'
 }: InteractiveMapProps) {
   const [shouldLoad, setShouldLoad] = useState(false);
-  const [autoLoadAllowed, setAutoLoadAllowed] = useState(true);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [autoLoadAllowed, setAutoLoadAllowed] = useState<boolean | null>(null);
 
   const address = getAddress();
   const identity = getRestaurantIdentity();
@@ -46,23 +45,10 @@ export default function InteractiveMap({
   }, []);
 
   useEffect(() => {
-    const node = containerRef.current;
-    if (!node || typeof IntersectionObserver === 'undefined') return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry && entry.isIntersecting) {
-          if (autoLoadAllowed) {
-            setShouldLoad(true);
-            observer.disconnect();
-          }
-        }
-      },
-      { rootMargin: '200px 0px', threshold: 0.1 }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
+    if (autoLoadAllowed === null) return;
+    if (autoLoadAllowed) {
+      setShouldLoad(true);
+    }
   }, [autoLoadAllowed]);
 
   const handleMapClick = () => {
@@ -105,7 +91,7 @@ export default function InteractiveMap({
     : `Tap to load map for ${identity.displayName}`;
 
   return (
-    <div className={className} ref={containerRef}>
+    <div className={className}>
       <div
         className="relative h-full cursor-pointer group"
         onClick={handleMapClick}

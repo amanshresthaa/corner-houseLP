@@ -24,5 +24,6 @@ export type Slide = {
     callTel?: string;
     menuUrl?: string;
     secondaryUrl?: string;
+    orderUrl?: string;
   };
 };

@@ -6,7 +6,7 @@ import Navbar from '@/components/restaurant/Navbar';
 import ClientFooter from '@/components/ClientFooter';
 import Showcase from '@/components/slideshow/Showcase';
 import TakeawayBanner from '@/components/restaurant/TakeawayBanner';
-import LazyLocationSection from '@/components/optimized/LazyLocationSection';
+import LocationSection from '@/components/restaurant/LocationSection';
 import type { Slide } from '@/components/slideshow/types';
 import HomeSectionsRenderer from '@/components/homepage/HomeSectionsRenderer';
 import type { HomeSectionKey, NormalizedHomeSections } from '@/src/lib/homepage/sections';
@@ -51,6 +51,12 @@ export default function ClientHomeContent({
     return entries;
   }, [initialContent, initialRestaurant]);
 
+  const defaultOrderUrl = 'https://www.just-eat.co.uk/restaurants-corner-house-chesterton/menu';
+  const bookOnlineUrl = links?.bookOnline ?? '/book-a-table';
+  const orderOnlineUrl = links?.orderOnline ?? defaultOrderUrl;
+  const callToBookTel = initialRestaurant?.contact?.phone?.tel ?? 'tel:+441223603907';
+  const menuUrl = links?.viewMenu ?? '/menu#starters';
+
   return (
     <SWRConfig value={{ fallback }}>
       <div className="min-h-screen bg-neutral-50 text-brand-700">
@@ -65,14 +71,17 @@ export default function ClientHomeContent({
               settings={slideshow?.settings}
               regionLabel={ariaLabels?.slideshowRegion ?? slideshow?.settings?.regionLabel}
               sectionLabel={ariaLabels?.showcaseSection ?? slideshow?.settings?.sectionLabel}
-              bookOnlineUrl={links?.bookOnline}
+              bookOnlineUrl={bookOnlineUrl}
+              orderOnlineUrl={orderOnlineUrl}
+              callToBookTel={callToBookTel}
+              menuUrl={menuUrl}
             />
           </section>
 
           <HomeSectionsRenderer sections={sections} order={sectionOrder} />
 
           <TakeawayBanner />
-          <LazyLocationSection />
+          <LocationSection />
         </main>
         <ClientFooter />
       </div>

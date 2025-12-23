@@ -33,6 +33,10 @@
             "label": "Home"
           },
           {
+            "href": "/book-a-table",
+            "label": "Book a Table"
+          },
+          {
             "href": "/menu#starters",
             "label": "Menu"
           },
@@ -59,6 +63,10 @@
           {
             "title": "Quick Links",
             "links": [
+              {
+                "href": "/book-a-table",
+                "label": "Book a Table"
+              },
               {
                 "href": "/menu#starters",
                 "label": "Menu"
@@ -113,15 +121,18 @@
       }
     },
     "links": {
-      "viewMenu": "https://{{brand.domain}}/menu"
+      "viewMenu": "https://{{brand.domain}}/menu",
+      "bookOnline": "/book-a-table",
+      "orderOnline": "https://www.just-eat.co.uk/restaurants-corner-house-chesterton/menu"
     },
     "ui": {
       "buttons": {
-        "bookOnline": "Book by Phone",
+  "bookOnline": "Book Online",
         "viewMenu": "View Menu",
         "callNow": "Call Now",
         "callToBook": "Call to Book",
         "callTakeaway": "Call Us",
+        "orderOnline": "Order Online",
         "getDirections": "Get Directions",
         "emailUs": "Email Us",
         "loadMore": "Load More",

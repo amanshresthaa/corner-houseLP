@@ -12,6 +12,7 @@ export default function MenuHero({ labelBookOnline, labelOrderTakeaway }: Props)
   const contact = getContactInfo();
   const phoneHref = contact.phone.tel;
   const bookingUrl = contact.bookingUrl ?? '/contact';
+  const orderOnlineUrl = contact.orderUrl || 'https://www.just-eat.co.uk/restaurants-corner-house-chesterton/menu';
   const bookingExternal = bookingUrl.startsWith('http');
   const bookingAria = bookingExternal ? `${labelBookOnline} (opens in new tab)` : labelBookOnline;
   return (
@@ -19,7 +20,7 @@ export default function MenuHero({ labelBookOnline, labelOrderTakeaway }: Props)
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Menu — Nepalese & Pub Classics</h1>
         <p className="text-sm sm:text-base text-neutral-200 mb-4">Curated menu — quick to scan. Book or call us.</p>
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3">
           {bookingExternal ? (
             <a
               href={bookingUrl}
@@ -43,6 +44,15 @@ export default function MenuHero({ labelBookOnline, labelOrderTakeaway }: Props)
           )}
           <a href={phoneHref} className="bg-crimson-500 text-white font-semibold py-2 px-4 rounded-md text-sm">
             {labelOrderTakeaway}
+          </a>
+          <a
+            href={orderOnlineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-emerald-600 text-white font-semibold py-2 px-4 rounded-md text-sm transition-colors hover:bg-emerald-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-emerald-300"
+          >
+            Order Online
+            <span aria-hidden className="ml-1 text-xs">↗</span>
           </a>
         </div>
       </div>

@@ -12,6 +12,9 @@ interface DaisyUISlideshowProps {
   sessionSize?: number;
   regionLabel?: string;
   bookOnlineUrl?: string;
+  orderOnlineUrl?: string;
+  callToBookTel?: string;
+  menuUrl?: string;
 }
 
 type ScrollBehaviorOption = 'auto' | 'instant' | 'smooth';
@@ -21,7 +24,7 @@ type SlideBuckets = {
   optional: SlideType[];
 };
 
-type CTAButtonVariant = 'book' | 'menu' | 'call-booking';
+type CTAButtonVariant = 'book' | 'menu' | 'call-booking' | 'order-online' | 'call-takeaway';
 
 const resolveImageSrc = (image: SlideType['image']) => {
   if (!image) return null;
@@ -132,6 +135,8 @@ const resolveCTAClass = (variant: CTAButtonVariant) => {
   switch (variant) {
     case 'call-booking':
       return `${CTA_BASE_CLASS} bg-crimson-600 hover:bg-crimson-700`;
+    case 'order-online':
+      return `${CTA_BASE_CLASS} bg-emerald-500 hover:bg-emerald-600`;
     case 'menu':
       return `${CTA_BASE_CLASS} bg-accent-500 hover:bg-accent-600`;
     case 'book':
@@ -140,16 +145,24 @@ const resolveCTAClass = (variant: CTAButtonVariant) => {
   }
 };
 
-const getCTAConfig = (
+type CTALinkConfig = {
+  bookUrl?: string;
+  callTel?: string;
+  menuUrl?: string;
+  orderUrl?: string;
+};
+
+const getCTAList = (
   slide: SlideType,
-  fallbackBookUrl?: string
-) => {
+  fallbacks: CTALinkConfig = {}
+): Array<{ variant: CTAButtonVariant; href: string; className: string }> => {
   const ctas = slide.ctas ?? {};
 
   const candidates: Array<{ variant: CTAButtonVariant; href?: string }> = [
-    { variant: 'book', href: ctas.bookUrl || fallbackBookUrl },
-    { variant: 'menu', href: ctas.menuUrl },
-    { variant: 'call-booking', href: ctas.callTel || ctas.secondaryUrl },
+    { variant: 'book', href: ctas.bookUrl || fallbacks.bookUrl },
+    { variant: 'call-booking', href: ctas.callTel || ctas.secondaryUrl || fallbacks.callTel },
+    { variant: 'menu', href: ctas.menuUrl || fallbacks.menuUrl },
+    { variant: 'order-online', href: ctas.orderUrl || fallbacks.orderUrl },
   ];
 
   const unique = candidates.filter((candidate, index, arr) => {
@@ -157,21 +170,49 @@ const getCTAConfig = (
     return arr.findIndex((c) => c.href === candidate.href) === index;
   });
 
-  const primary = unique[0] ?? { variant: 'book' as const, href: undefined };
-  const secondary = unique[1] ?? { variant: 'menu' as const, href: undefined };
+  return unique.map((candidate) => ({
+    variant: candidate.variant,
+    href: candidate.href as string,
+    className: resolveCTAClass(candidate.variant),
+  }));
+};
 
-  return {
-    primaryButton: {
-      variant: primary.variant,
-      href: primary.href,
-      className: resolveCTAClass(primary.variant),
-    },
-    secondaryButton: {
-      variant: secondary.variant,
-      href: secondary.href,
-      className: resolveCTAClass(secondary.variant),
-    },
-  };
+const selectRotatedCTAs = (
+  available: Array<{ variant: CTAButtonVariant; href: string; className: string }>,
+  slideIndex: number
+) => {
+  if (!available.length) return [] as typeof available;
+
+  const order: CTAButtonVariant[] = ['book', 'call-booking', 'menu', 'order-online'];
+  const byVariant = new Map<CTAButtonVariant, (typeof available)[number]>(
+    available.map((cta) => [cta.variant, cta])
+  );
+
+  const start = slideIndex % order.length;
+  const desiredVariants: CTAButtonVariant[] = [
+    order[start],
+    order[(start + 1) % order.length],
+  ];
+
+  const picked: typeof available = [];
+  for (const variant of desiredVariants) {
+    const cta = byVariant.get(variant);
+    if (cta) {
+      picked.push(cta);
+    }
+  }
+
+  if (picked.length < 2) {
+    for (const variant of order) {
+      const cta = byVariant.get(variant);
+      if (cta && !picked.some((p) => p.variant === cta.variant)) {
+        picked.push(cta);
+      }
+      if (picked.length >= 2) break;
+    }
+  }
+
+  return picked;
 };
 
 const DEFAULT_SESSION_SIZE = 5;
@@ -193,6 +234,9 @@ const DaisyUISlideshow = ({
   sessionSize = DEFAULT_SESSION_SIZE,
   regionLabel = DEFAULT_REGION_LABEL,
   bookOnlineUrl,
+  orderOnlineUrl,
+  callToBookTel,
+  menuUrl,
 }: DaisyUISlideshowProps) => {
   const normalizedSlides = useMemo(
     () => (Array.isArray(slides) ? slides.filter(Boolean) : []),
@@ -460,8 +504,13 @@ const DaisyUISlideshow = ({
       >
         {sessionSlides.map((slide, index) => {
           const imageSrc = resolveImageSrc(slide.image);
-          const { primaryButton, secondaryButton } = getCTAConfig(slide, bookOnlineUrl);
-          const shouldRenderCTAs = Boolean(primaryButton.href || secondaryButton.href);
+          const ctaButtons = selectRotatedCTAs(getCTAList(slide, {
+            bookUrl: bookOnlineUrl,
+            callTel: callToBookTel,
+            menuUrl,
+            orderUrl: orderOnlineUrl,
+          }), index);
+          const shouldRenderCTAs = ctaButtons.length > 0;
           const shouldRenderImage = Boolean(imageSrc) &&
             isNearActiveSlide(index, currentIndex, totalSlides);
           return (
@@ -518,20 +567,14 @@ const DaisyUISlideshow = ({
                   )}
                   {shouldRenderCTAs && (
                     <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
-                      {primaryButton.href && (
+                      {ctaButtons.map((button) => (
                         <SlideCTAButton
-                          variant={primaryButton.variant}
-                          href={primaryButton.href}
-                          className={`${primaryButton.className} w-full shrink-0 px-[clamp(1.5rem,3vw,3rem)] text-center text-sm xs:text-base sm:text-lg lg:text-xl sm:w-auto sm:max-w-[20rem]`}
+                          key={`${button.variant}-${button.href}`}
+                          variant={button.variant}
+                          href={button.href}
+                          className={`${button.className} w-full shrink-0 px-[clamp(1.5rem,3vw,3rem)] text-center text-sm xs:text-base sm:text-lg lg:text-xl sm:w-auto sm:max-w-[20rem]`}
                         />
-                      )}
-                      {secondaryButton.href && (
-                        <SlideCTAButton
-                          variant={secondaryButton.variant}
-                          href={secondaryButton.href}
-                          className={`${secondaryButton.className} w-full shrink-0 px-[clamp(1.5rem,3vw,3rem)] text-center text-sm xs:text-base sm:text-lg lg:text-xl sm:w-auto sm:max-w-[20rem]`}
-                        />
-                      )}
+                      ))}
                     </div>
                   )}
                 </div>

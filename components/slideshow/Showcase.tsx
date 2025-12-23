@@ -17,11 +17,14 @@ interface ShowcaseProps {
   regionLabel?: string;
   sectionLabel?: string;
   bookOnlineUrl?: string;
+  orderOnlineUrl?: string;
+  callToBookTel?: string;
+  menuUrl?: string;
 }
 
 const DEFAULT_SECTION_LABEL = 'Restaurant showcase';
 
-const Showcase = ({ slides, settings, regionLabel, sectionLabel, bookOnlineUrl }: ShowcaseProps) => {
+const Showcase = ({ slides, settings, regionLabel, sectionLabel, bookOnlineUrl, orderOnlineUrl, callToBookTel, menuUrl }: ShowcaseProps) => {
   if (!Array.isArray(slides) || slides.length === 0) {
     return <SlideshowFallback />;
   }
@@ -41,6 +44,9 @@ const Showcase = ({ slides, settings, regionLabel, sectionLabel, bookOnlineUrl }
         sessionSize={sessionSize}
         regionLabel={effectiveRegionLabel}
         bookOnlineUrl={bookOnlineUrl}
+        orderOnlineUrl={orderOnlineUrl}
+        callToBookTel={callToBookTel}
+        menuUrl={menuUrl}
       />
     </ErrorBoundary>
   );

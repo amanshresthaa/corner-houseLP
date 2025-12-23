@@ -38,7 +38,7 @@ export function useNavContent(): NavContentResult {
     [];
 
   const sanitizedLinks = useMemo<SanitizedNavLink[]>(() => {
-    return navLinksRaw.reduce<SanitizedNavLink[]>((acc, link, index) => {
+    const collected = navLinksRaw.reduce<SanitizedNavLink[]>((acc, link, index) => {
       if (!isValidHref(link.href)) {
         logHrefIssue('Invalid href detected in navbar link', link.href, 'Navbar.useNavContent');
         return acc;
@@ -57,6 +57,18 @@ export function useNavContent(): NavContentResult {
       });
       return acc;
     }, []);
+
+    const hasBookLink = collected.some((link) => link.href === '/book-a-table');
+    if (!hasBookLink) {
+      collected.unshift({
+        key: 'book-a-table',
+        href: '/book-a-table',
+        label: 'Book a Table',
+        isSeasonal: false,
+      });
+    }
+
+    return collected;
   }, [navLinksRaw]);
 
   const uiLabels = content?.global?.ui?.labels;

@@ -5,6 +5,10 @@
       "label": "Home"
     },
     {
+      "href": "/book-a-table",
+      "label": "Book a Table"
+    },
+    {
       "href": "/menu",
       "label": "Menu"
     },

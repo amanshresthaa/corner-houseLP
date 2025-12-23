@@ -5,7 +5,7 @@ import Image from 'next/image';
 import type { LucideIcon } from 'lucide-react';
 import {
   ArrowUpRight,
-  CalendarDays,
+  Clock,
   MenuSquare,
   PhoneCall,
   ScrollText,
@@ -51,8 +51,8 @@ export interface CallToActionSectionProps {
 }
 
 const buttonIconMap: Record<string, LucideIcon> = {
-  bookOnline: CalendarDays,
-  book: CalendarDays,
+  bookOnline: Clock,
+  book: Clock,
   menu: ScrollText,
   takeaway: UtensilsCrossed,
   order: UtensilsCrossed,

@@ -36,6 +36,7 @@ export default function TakeawayBanner() {
   const contact = getContactInfo();
   const phoneDisplay = contact.phone.display;
   const phoneHref = formatTelHref(phoneDisplay);
+  const orderOnlineUrl = contact.orderUrl || 'https://www.just-eat.co.uk/restaurants-corner-house-chesterton/menu';
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 py-12 text-white sm:py-16">
@@ -77,13 +78,16 @@ export default function TakeawayBanner() {
                 <MenuSquare className="h-4 w-4" aria-hidden="true" />
                 View takeaway menu
               </Link>
-              <Link
-                href="/takeaway"
+              <a
+                href={orderOnlineUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn border-white/20 bg-white/10 text-white hover:bg-white/20"
               >
                 <UtensilsCrossed className="h-4 w-4" aria-hidden="true" />
                 Order online
-              </Link>
+                <span aria-hidden className="ml-1 text-xs">↗</span>
+              </a>
             </div>
 
             <div

@@ -172,8 +172,8 @@ const FALLBACK_CONTACT_BASE: ContactFallback = {
     support: 'cornerhouse@lapeninns.com',
   },
   website: `https://${BRAND.domain}`,
-  bookingUrl: '/contact',
-  orderUrl: undefined,
+  bookingUrl: 'https://www.nabatable.com/restaurants/the-corner-house-pub-cambridge/book',
+  orderUrl: 'https://www.just-eat.co.uk/restaurants-corner-house-chesterton/menu',
   enquiryUrl: 'mailto:cornerhouse@lapeninns.com',
 };
 

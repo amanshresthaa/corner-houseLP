@@ -11,14 +11,14 @@ type SlideCTAButtonProps = {
   className?: string;
   children?: React.ReactNode;
   ariaLabel?: string;
-  variant: "book" | "menu" | "call-takeaway" | "call-booking" | "learn-more";
+  variant: "book" | "menu" | "call-takeaway" | "call-booking" | "learn-more" | "order-online";
 };
 
 const buttonVariants = {
   book: {
-    emoji: "📞",
-    text: content.global?.ui?.buttons?.callToBook || "Book by Phone",
-    ariaLabel: "Call us to book a table"
+    emoji: "�",
+    text: content.global?.ui?.buttons?.bookOnline || content.global?.ui?.buttons?.callToBook || "Book a Table",
+    ariaLabel: "Book a table"
   },
   menu: {
     emoji: "📖",
@@ -32,13 +32,18 @@ const buttonVariants = {
   },
   "call-booking": {
     emoji: "📞",
-    text: content.global?.ui?.buttons?.callToBook || content.global?.ui?.buttons?.callNow || "Call to Book",
-    ariaLabel: "Call to make a booking"
+    text: content.global?.ui?.buttons?.callToBook || content.global?.ui?.buttons?.callNow || "Book via Call",
+    ariaLabel: "Book via call"
   },
   "learn-more": {
     emoji: "ℹ️",
     text: content.global?.ui?.buttons?.showMore || "Learn More",
     ariaLabel: "Learn more about this experience"
+  },
+  "order-online": {
+    emoji: "🛵",
+    text: content.global?.ui?.buttons?.orderOnline || "Order Online",
+    ariaLabel: "Order online"
   }
 };
 

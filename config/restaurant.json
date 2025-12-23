@@ -27,7 +27,7 @@
       "press": "{{brand.supportEmail}}"
     },
     "website": "https://{{brand.domain}}",
-    "bookingUrl": "/contact"
+    "bookingUrl": "https://www.nabatable.com/restaurants/the-corner-house-pub-cambridge/book"
   },
   "address": {
     "street": "231 Newmarket Road",
